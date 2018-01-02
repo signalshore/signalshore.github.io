@@ -32,8 +32,12 @@ LOAD_CONTENT_CACHE = False
 
 
 # URL settings
+AUTHORS_SAVE_AS = ''
+CATEGORIES_SAVE_AS = ''
+
 AUTHOR_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
+
 ARTICLE_URL = 'blog/{slug}.html'
 ARTICLE_SAVE_AS='blog/{slug}.html'
 PAGE_URL = '{slug}.html'
