@@ -32,6 +32,8 @@ SOCIAL = (('You can add links in your config file', '#'),
 
 DEFAULT_PAGINATION = 10
 
+PLUGINS = ["render_math"]
+PLUGIN_PATHS = ["plugins", "/mnt/data/work_space/blog/pelican/pelican-plugins"]
 
 LOAD_CONTENT_CACHE = False
 

@@ -14,7 +14,7 @@
 	{% if article.tags %} 
 	{% for tag in article.tags %}
 	<span itemprop="keywords">
-		<a href="{{ SITEURL }}/{{ tag.url }}" rel="tag">{{ tag }}</a>
+		<a href="{{ SITEURL }}/{{ tag.url }}" rel="tag">[ {{ tag }} ]</a>
 	</span>
 	{% endfor %}
 	{% endif %}
