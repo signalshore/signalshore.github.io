@@ -20,6 +20,9 @@
     line-height: 200%;
 }
 
+h2.headerlink {
+    color: inherit;
+}
 .summary {
     margin-bottom: 2em;
     margin-top: 2em;
