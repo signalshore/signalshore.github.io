@@ -11,7 +11,7 @@ learning
 (actually a dialect of LISP
 called
 [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)))
-about 1 year back. The inspiration for learning Scheme was that it is
+sometime back. The inspiration for learning Scheme was that it is
 a completely new programming paradigm
 i.e. [functional programming](https://en.wikipedia.org/wiki/Functional_programming) language
 and I wanted to learn a non-Object-Oriented programming
