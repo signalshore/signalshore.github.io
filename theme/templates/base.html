@@ -65,7 +65,7 @@
 						<h4>Tags</h4>
 						<ul class="list-unstyled my-list-style">
 							{% for tag, art in tags %}
-							<a href="{{SITEURL}}/tag/{{tag | replace(" ", "-") | lower }}.html">[{{tag}} ({{art | count}})] &nbsp</a>
+						<a href="{{SITEURL}}/tag/{{tag | replace(" ", "-") | lower }}.html">{{tag}}</a>,
 							{% endfor %}
 						</ul>
 					</div>
