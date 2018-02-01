@@ -2,7 +2,7 @@
 {% block description %}All posts which refer to tag {{ tag }}{% endblock %}
 {% block title %}{{ tag }} — {{ SITENAME }}{% endblock %}
 {% block content %}
-<h1>Tag <small>{{tag}}</small></h1>
+<h1>Tag <small>: {{tag}} : {{articles | count}}</small></h1>
 <table class="table">
     <tbody>
     {% for article in articles %}
