@@ -2,7 +2,7 @@ Title: Open Access
 Date: 2018-02-01
 Tags: Activism
 
-### What is Open Access ? ###
+## What is Open Access ? ##
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/Open_access)
 Open access refers to online research outputs that are free of all
@@ -19,8 +19,7 @@ research they want to. Scientific research is not meant to be locked
 up, it is meant to be free. Locking up scientific research only serves
 the financial interests of the organizations that benefit from their sales.
 
-### Why it matters ? ###
-
+## Why it matters ? ##
 
 It matters because information should be free for all. It should not
 come with prerequisite conditions for access (which in this case
@@ -95,12 +94,20 @@ _Dušan Barok, Josephine Berry, Bodó Balázs, Sean Dockray, Kenneth Goldsmith, 
 
 
 
-### Conclusion ###
+## Conclusion ##
+
 If you need to download a Scientific Paper; visit [Sci-Hub](http://sci-hub.hk)
 
 If you need books, visit [BookFI](http://bookfi.net) and [libgen](http://libgen.io)
 
 If you come across a book that is not on libgen, digitize it and upload it on libgen.
 
+Watch the movie [The Internet's Own Boy: The Story of Aaron Swartz](http://www.imdb.com/title/tt3268458/). Download it and keep sharing it. 
+
+Read the Open Access Manifesto in University gatherings.
+
+Spread the love.
 
 Knowledge should be free.
+
+Let's keep it that way!!
