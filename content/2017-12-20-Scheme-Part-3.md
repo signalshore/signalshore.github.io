@@ -27,7 +27,7 @@ which is basically functions being treated
 as
 [first class citizens](https://en.wikipedia.org/wiki/First-class_citizen).
 
-In Scheme this is achieved using Higher Order procedures. 
+In Scheme this is achieved using Higher Order procedures.
 
 In this post I am using functions and procedures interchangeably
 because in this context (lisp) everything is a function and there is
@@ -40,7 +40,9 @@ procedures mean Lisp procedures.
 [Wikipedia](https://en.wikipedia.org/wiki/Higher-order_function)
 defines higher order functions as something that does at least one of
 the following
+
 - Take one or more functions as arguments
+
 - Return a function as its result
 
 From the SICP book Page 57 defines higher order procedures as
