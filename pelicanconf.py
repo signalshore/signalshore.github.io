@@ -28,6 +28,9 @@ DEFAULT_PAGINATION = 10
 PLUGINS = ["render_math"]
 PLUGIN_PATHS = ["plugins", "/mnt/data/work_space/blog/pelican/pelican-plugins"]
 
+# Themes
+THEME = '/mnt/data/work_space/blog/signalshore.github.io/theme/'
+
 LOAD_CONTENT_CACHE = False
 
 
