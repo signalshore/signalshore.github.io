@@ -8,7 +8,7 @@ a winter camp
 at [Rajeev Institute of Technology](http://rithassan.org/), Hassan
 from 22nd January to 27th January.
 
-It was a 5 day camp for the the participants with 2 days dedicated to
+It was a 6 day camp for the the participants with 2 days dedicated to
 volunteer training before the camp. In this camp we had three
 different areas of CS that we were focusing on viz. Web Development
 using Ruby on Rails, Android Development and IoT. This camp was
@@ -66,7 +66,7 @@ _digitalWrite(PIN, MODE)_. I said
 This cracked up all the stoners in the group. 
 
 Being a speaker I realized that I do like teaching and that I am quite
-good at it. Even though I was very scared of taking the session i was
+good at it. Even though I was very scared of taking the session I was
 surprised when people started to tell me that I was a good speaker and
 that they enjoyed my session very much. This gave me a much needed
 boost.
