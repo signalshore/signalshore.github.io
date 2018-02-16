@@ -14,7 +14,7 @@ TIMEZONE = 'Asia/Kolkata'
 DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
+FEED_ALL_ATOM = 'feeds/all.atom'
 
 # Social widget
 SOCIAL = (('Twitter', 'https://twitter.com/sohom154')  ,
