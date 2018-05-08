@@ -7,7 +7,7 @@ Tags: CS
 This is the second part of my Lambda Calculus
 series. The
 [first part](https://signalshore.github.io/blog/Lambda-Calculus-Part-1.html) can
-be found here.  recommend reading it first before starting off with
+be found here. I strongly recommend reading it first before starting off with
 this one.
 
 ### What is Computation ? ###
@@ -19,9 +19,10 @@ computation_ for a moment.
 What does it mean for something to be computable ?
 
 Everyday in out lives we use a computer in one form or another,
-i.e. computation takes place every single day in numerous methods, but
-do we know what computation really is ? Gerry Sussan said in SICP (I
-might be paraphrasing him here) 
+i.e. computation takes place every single day in numerous ways, but
+do we know what computation really is ? 
+
+Gerald Jay Sussman said in SICP (Structure and Interpretation of Computer Programs) and I might be paraphrasing him a bit here:
 
 > It's always harder in computer science to talk about what something
 > means than to go about and do it.
@@ -33,7 +34,7 @@ based answer and that would in fact be accurate; but, that is not what
 we are concerned with here. We are more concerned about the logical
 meaning of computation.
 
-Alan Turing invented the Turing machine and that is one of the most
+Alan Turing invented the Turing machine which is one of the most
 robust models of computation. When we talk about _models of
 computation_ we abstract away all the boring details (like time
 complexity and space complexity etc :-P ) and try to deal with the
@@ -41,7 +42,7 @@ meaning of computation at a much abstract level.  Alan Turing's Turing
 Machine captures the idea of computation in a mechanical sense.
 
 At the same time (actually before Alan Turing) the logician Alonzo
-Church came up with lambda Calculus to capture the very same thing.
+Church came up with Lambda Calculus to capture the very same thing but in a mathematically formal manner. 
 
 ### What is Lambda Calculus ###
  
