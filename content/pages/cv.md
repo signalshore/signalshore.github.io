@@ -3,8 +3,7 @@ Title: CV
 
 # Sohom Bhattacharjee #
 
-Email: [soham.bhattacharjee15@gmail.com](mailto:soham.bhattacharjee15@gmail.com) \| Ph:    8792225194<br/>
-Github/Gitlab: [github.com/83bytes](https://github.com/83bytes) | [gitlab.com/83bytes](https://gitlab.com/83bytes)
+[soham.bhattacharjee15@gmail.com](mailto:soham.bhattacharjee15@gmail.com) | [gitlab.com/83bytes](https://gitlab.com/83bytes)
 
 ---
 
@@ -20,14 +19,19 @@ In Progress
 Kolkata, West Bengal <br/>
 **CGPA:** 8.4 
 
+---
 
+## Research/Academic Interests ##
+
+Theoretical Computer Science, Programming Langauge Theory, Functional Programming, Algorithms, Data Structures, and other cool stuff.
 
 ---
 
-## Professional Associations and Experience ##
+## Technical Experience ##
 
 
 ### Azim Premji Foundaton ###
+
 *Technical Consultant*, May 2017 - September 2017
 
 - Worked directly with the content development team to train them on GNU/Linux 
@@ -36,7 +40,7 @@ Kolkata, West Bengal <br/>
 - Was the main contact person for all GNU/Linux related issues including various services and applications that can be run on GNU/Linux.
 
 
-### Free Software Movement Karnataka (Bengaluru, India) ###
+### Free Software Movement Karnataka ###
 *System Administrator (Volunteer)*, May 2016 - present
 
 - Maintaining and Managing servers that host the main website and the discussion forum as well as various other sub-domains including the git server and etherpad and ethercalc instances
@@ -44,34 +48,34 @@ Kolkata, West Bengal <br/>
 - Setting up and maintaining different services like ownCloud, etherpad, XMPP server etc
 
 
+### Gnu GUIX ###
+- I write packages from the GNU GUIX package manager from time to time as a hobby :-)
+
+### Melon - Social Networking Site (Academic Project) ###
+- Core developed in J2EE
+- Backend in Python, Bash, MongoDb, MySQL
+- Used pretrained Neural Network model for image processing
+
+### HomeMatic - Home Automation system (Academic Project) ###
+- Core written in VB.NET and Embedded C (for the Arduino)
+- Used Arduino Nano for interfacing with Electricals
+- Used EmguCV for real time video processing
+
 ---
+
 ## Technical Profile ##
 
 
 #### Programming Languages ####
-C/C++ (Competent) <br/>
-Bash (Competent) <br/>
-Lisp (Advanced Beginner) <br/>
-Python (Advanced Beginner) <br/>
-VB.NET (Advanced Beginner) <br/>
-JAVA (Advanced Beginner) <br/>
-HTML + CSS (Novice) <br/>
+C/C++ (Competent), Bash (Competent), Scheme (Competent), Python
+(Competent), VB.NET (Advanced Beginner), JAVA (Advanced Beginner),
+Javascript (Advanced Beginner), HTML + CSS (Advanced Beginner)
 
-#### Other Software and Tools ####
-Git <br/>
-PGP <br/>
-Jekyll <br/>
-OpenCV <br/>
-EmguCV <br/>
-GCC/GDB <br/>
+#### Other Software and Tools
+Git, PGP, Jekyll, Pelican, OpenCV, EmguCV, GCC/GDB 
 
 #### Operating Systems ####
-Linux (Proficient) <br/>
-Windows (Competent)
-
----
-## Areas of Interest ##
-Theoretical Computer Science, Physics, Mathematics, Quantum Computing, Cryptography (pre and post quantum-cryptograpy), Blockchain, Artifical Intelligence, Machine Learning, Neural Networks
+Linux (Proficient), Windows (Competent)
 
 ---
 ## References ##
