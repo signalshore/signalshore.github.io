@@ -63,19 +63,29 @@ Theoretical Computer Science, Programming Langauge Theory, Functional Programmin
 
 ---
 
+## Public Talks ##
+
+- Introduction to NodeMCU programming using Arduino IDE
+	- FSMK Winter Camp, Hassan, 2018
+- Sensor Interfacing techniques with NodeMCU
+    - CMR Institute of Technology, Bangalore, 2018
+
+---
+
 ## Technical Profile ##
 
 
-#### Programming Languages ####
-C/C++ (Competent), Bash (Competent), Scheme (Competent), Python
-(Competent), VB.NET (Advanced Beginner), JAVA (Advanced Beginner),
-Javascript (Advanced Beginner), HTML + CSS (Advanced Beginner)
+### Programming Languages ###
 
-#### Other Software and Tools
+C/C++, Bash, Scheme, Python, VB.NET, JAVA, Javascript, HTML + CSS
+
+### Other Software and Tools ###
+
 Git, PGP, Jekyll, Pelican, OpenCV, EmguCV, GCC/GDB 
 
-#### Operating Systems ####
-Linux (Proficient), Windows (Competent)
+### Operating Systems ###
+
+Linux, Windows
 
 ---
 ## References ##

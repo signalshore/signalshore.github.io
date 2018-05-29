@@ -5,11 +5,11 @@ title: About
 ---
 <br>
 
-### what is this ... ###
+### What is this ? ###
 
 This is is SignalShore. This is my blog and/or site (or information sharing system).
 
-### why this ...  ###
+### Why this ?  ###
 
 - I want this to be a live documentation of what I am learning/working on at any point of time. 
 - Journalling in this form helps me track what I've learnt and other intersting things that I encounter
@@ -20,11 +20,10 @@ This is is SignalShore. This is my blog and/or site (or information sharing syst
 
 Most of the content on this site is just me blabbering on and on....
 
-### Contact Us ... ###
+### Contact ... ###
 
 Email: soham.bhattacharjee15 [at] gmail [dot] com 
 <br>
 Xmpp: sohom154 [at] fsmk [dot] org
 
-P.S. We like using fancy words. :-P
  
