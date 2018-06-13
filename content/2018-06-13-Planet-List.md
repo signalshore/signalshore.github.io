@@ -134,7 +134,8 @@ everyone of them to the final word is very very difficult and
 sometimes the circumstances are just not right, it is okay to
 compromize during such scenarios.
 	
-	
+Even though it is hard, there are some communities might be helpful.
 
-   
-		   
+1. [Reddit Climate Change](https://www.reddit.com/r/climatechange/)
+2. [Reddit Zero Waste](https://www.reddit.com/r/ZeroWaste/)
+3. [The Elephant Podcast](http://www.elephantpodcast.org/)
