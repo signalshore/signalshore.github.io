@@ -1,5 +1,5 @@
 Title: CO2 trends between India and USA
-Date: 2018-07-21
+Date: 2018-06-21
 Tags: Env, Data
 
 # Disclaimer and Introduction
