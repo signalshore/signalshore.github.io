@@ -128,7 +128,7 @@ a
 
 This is my first kernel. I will keep writing more cool kernels. 
 
-The data-set was also obtained from [Kaggle](kaggle.com) and it is the [World development Indicators](https://www.kaggle.com/worldbank/world-development-indicators) by the World Bank. 
+The data-set was also obtained from [Kaggle](https://kaggle.com) and it is the [World development Indicators](https://www.kaggle.com/worldbank/world-development-indicators) by the World Bank. 
 
 Its a HUGE data-set and I have not even managed to explore even 1% of
 it. A LOT of domain knowledge is needed to do some actual data
@@ -137,4 +137,5 @@ science. :-P
 Anyway, this was my Hello-World and I am happy!! :-)
 
 
+p.s. Check out my [Kaggle profile](https://kaggle.com/data83)
 
