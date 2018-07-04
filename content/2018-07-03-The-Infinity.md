@@ -101,7 +101,7 @@ the set $\mathbb{R}$.
 
 You can image this as having numbers on a number line and you can just
 *zoom* into the line indefinitely and all you would do is just
-increase the granularity of the numbers. The would **never** end.
+increase the granularity of the numbers. The numbers would **never** end.
 
 Thus the set $\mathbb{N}$ is a countably-infinite set while the set
 $\mathbb{R}$ is uncountably-infinite.
