@@ -23,7 +23,7 @@ Kolkata, West Bengal <br/>
 
 ## Research/Academic Interests ##
 
-Theoretical Computer Science, Programming Langauge Theory, Functional Programming, Algorithms, Data Structures, and other cool stuff.
+Theoretical Computer Science, Programming Langauge Theory, Functional Programming, Algorithms and Data Structures
 
 ---
 
