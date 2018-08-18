@@ -39,6 +39,7 @@ I will try to make this list as exhaustive as possible and I will keep
 adding things to this list as I learn them. 
 
 The main goal of the **rules** in this list is:
+
 * To reduce the waste that I am introducing into the world
 * To reduce my personal [carbon footprint](https://en.wikipedia.org/wiki/Carbon_footprint)
 * To reduce the environmental impact of my actions
@@ -50,7 +51,7 @@ on this planet for no fault of theirs.
 
 ## The List
 
-1. Getting from point A to point B (aka transportation)
+1. **Getting from point A to point B (aka transportation)**
 	1. Walk if the destination is less than 3kms from the source.
 	2. Ride a bicycle is the destination is less than 10kms from the source.
     3. Use public modes of transport. ALWAYS.
@@ -66,12 +67,8 @@ on this planet for no fault of theirs.
        not need to travel to the same area multiple times a day to
        get some job done.
 
-2. Eating Stuff
-    1. Go vegetarian. (latest research reports show that going
-      vegetarian is possibly the most significant step you take from
-      an environmental perspective as the carbon footprint of growing
-      a crop is significantly lower than the carbon footprint of
-      raising cattle and slaughtering them). [relevant link](https://planetsave.com/2010/08/13/go-vegetarian-or-vegan-going-green-tips/)
+2. **Eating Stuff**
+    1. <s>Go vegetarian</s>. Well this is not quite true. The problem is with beef and not any other form of meat. Beef production takes a huge toll on the environment. [Washington Post article](https://www.washingtonpost.com/news/wonk/wp/2015/12/18/being-a-vegetarian-might-make-you-feel-environmentally-superior-why-that-may-be-wrong/?noredirect=on&utm_term=.af44bcb67180)
     2. DO NOT accept take-out/parcel containers if they are made of
        plastic
     3. Carry your own containers if you want to get take-out/parcel
@@ -82,11 +79,12 @@ on this planet for no fault of theirs.
       when things are not sold. Large supermarkets are super-wasteful
       from procurement of the resources to the final selling.
 
-3. Clothing
-    1. Stay away from synthetic material. When synthetic material is
-       washed they release tiny micro-filaments which then filter
-       their way down to the ocean and accumulate in marine
-       life. [guradian article](https://www.theguardian.com/environment/2016/jun/20/microfibers-plastic-pollution-oceans-patagonia-synthetic-clothes-microbeads)
+3. **Clothing**
+    1. Stay away from synthetic material as much as possible. When
+       synthetic material is washed they release tiny micro-filaments
+       which then filter their way down to the ocean and accumulate in
+       marine
+       life. [guardian article](https://www.theguardian.com/environment/2016/jun/20/microfibers-plastic-pollution-oceans-patagonia-synthetic-clothes-microbeads)
     2. Do not buy clothing online. This single move will reduce the
        amount of waste you generate. Packing of articles bought online
        is almost always useless and it can be easily avoided if we
@@ -121,10 +119,19 @@ on this planet for no fault of theirs.
 	12. Dispose off single use plastics responsibly. Throwing them
         away here and there leads to them filtering down to the oceans
         and messing up the ecological balance in the marine ecosystems
-        not to mention cause grevious damage to marine
+        not to mention cause grievous damage to marine
         life. [wiki link](https://en.wikipedia.org/wiki/Great_Pacific_garbage_patch),
         [facts](https://plasticoceans.org/the-facts/)
-	 13. Carry a re-useable water bottle. 
+	 13. Carry a reusable water bottle. 
+	 14. Stop using sanitary napkins. Sanitary napkins are
+         non-biodegradable and are very difficult to dispose off
+         properly. Instead switch to reusable cloth pads or menstrual
+         cups. Check out [BOONDH](http://www.boondh.co/) for
+         information about menstrual cups.
+	 15. If you have kids stop using conventional diapers. There are
+         very difficult to dispose off properly and are
+         non-biodegradable. Instead start using cloth reusable
+         nappies.
 	
 	
 ### That should be it for now. I will add to this whenever I can. 
@@ -132,10 +139,12 @@ on this planet for no fault of theirs.
 This is a very exhaustive list and I will admit that following
 everyone of them to the final word is very very difficult and
 sometimes the circumstances are just not right, it is okay to
-compromize during such scenarios.
+compromise during such scenarios.
 	
 Even though it is hard, there are some communities might be helpful.
 
 1. [Reddit Climate Change](https://www.reddit.com/r/climatechange/)
 2. [Reddit Zero Waste](https://www.reddit.com/r/ZeroWaste/)
 3. [The Elephant Podcast](http://www.elephantpodcast.org/)
+
+Updated on 18th, Aug, 2018
