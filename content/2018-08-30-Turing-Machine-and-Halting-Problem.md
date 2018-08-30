@@ -1,8 +1,6 @@
 Title: Turing Machine and Halting Problem 
-Date: 2018-08-27
+Date: 2018-08-30
 Tags: CS
-
-
 
 In a [previous
 post](https://signalshore.github.io/blog/Lambda-Calculus-Part-2.html)
@@ -18,14 +16,16 @@ To fully grasp the severity of this problem we need to step back in time.
 
 This is the 1930s that we are talking about, there were no *proper*
 computers yet. Computers and the whole computer science field was not
-yet born. So in this context a computer was a *person* who could
-compute.  Compute in this context meant to perform arithmatic
-operations. There were mechanical
-[calculators](https://en.wikipedia.org/wiki/Mechanical_calculator) that
-existed back then but again. they all required an operator.
+yet born. So in this context a computer something that could perform
+arithmetic operations. Humans who did this were
+called [human computers](https://en.wikipedia.org/wiki/Human_computer)
+There were
+mechanical
+[calculators](https://en.wikipedia.org/wiki/Mechanical_calculator)
+that existed back then but again. they all required a human operator.
 
 So ultimately it was the operator who was responsible for making
-deisions about what to do with the numbers. There was not automated
+decisions about what to do with the numbers. There was not automated
 reasoning that any machine could follow.
 
 What Alan Turing was interested in; was to understand the meaning of
@@ -44,12 +44,12 @@ is what we now call the Turing Machine.
 
 ## The Idea
 Picture a typewriter.  The Turing Machine is heavily inspired by this
-system (typewrite + operator). In the book "Alan Turing: The Enigma"
-the writer Andrew Hodges tells us that Alan was fscinated by
+system (typewriter + operator). In the book "Alan Turing: The Enigma"
+the writer Andrew Hodges tells us that Alan was fascinated by
 typewriters. We can see this inspiring his work.
 
 What does a typewriter have ? A typewriter has a paper for printing, a
-system that outputs charaters on said paper, a mechanism for input
+system that outputs characters on said paper, a mechanism for input
 that tells the typewriter what to print.  Additionally the typewriter
 system also has the user whose job is to tell the typewrite what to do
 and it keeps track of what the typewriter has already done.
@@ -69,18 +69,19 @@ A Turing Machine has 4 main parts:
 - The state
 - The transition table
 
-The **tape** is the memory of the machine. The tape is divided into blocks
-of the same width. The machine can read symbols from this tape and can
-write symbols to this tape. At a given time there is only one symbol
-in the machine. This symbol is referred to as the /scanned/
-symbol. The machine can be supplied with an infinitely long tape.
+The **tape** is the memory of the machine. The tape is divided into
+blocks of the same width and only one symbol is present in one
+block. The machine can read symbols from this tape and can write
+symbols to this tape. At a given time there is only one symbol in the
+machine. This symbol is referred to as the *scanned* symbol. The
+machine can be supplied with an infinitely long tape.
 
 The **head** is a contraption that can read symbols from the tape and can
 write symbols to the tape as well. The head can also move the tape to
 the left or right but by only one block at a time.
 
 The **state** of the Turing Machine. This state is a intriguing
-concept. This /state/ is used to replace the /state of mind/ of the
+concept. This *state* is used to replace the *state of mind* of the
 typewriter operator (or any person performing any computation for that
 matter). At any time the Turing Machine can be one of many finite
 states.
@@ -98,10 +99,10 @@ Problems in Automata Theory are generally of the form that involves
 some "computer" determining if some string belongs to a set of strings
 or not, based on some rules. This set of strings is called that follow
 a general rule for membership is called a Language and the "computer"
-involved is called an automaton which is nothig but a model of
+involved is called an automaton which is nothing but a model of
 computation. We choose to represent various computational problems as
-languages because we already have etablished a terminology for
-detaling with languges.
+languages because we already have established a terminology for
+dealing with languages.
 
 To perform some computation in a Turing Machine we write a program
 for the machine. This program is basically a set of transition rules.
@@ -110,14 +111,14 @@ Given any string as input the Turing Machine can do one of three
 things. It can stop and **accept** the string or it can **reject** the
 string or it can **loop** indefinitely over the input.
 
-When the TM is in either of these states after processing a string we
-say that the TM has halted (as in stopped running on the output). On
-the other hand if the TM does not halt and instead keeps on looping
-indefinitely then it means that the TM will never stop working or
-never halt. When a TM has halted it indicates that the TM has decided
-the string (either accept or reject) on the other hand when it does
-not halt then the string (or rather the problem) is said to be
-undecideable.
+When the TM is in either the accept or the reject state after
+processing a string then we say that the TM has halted (as in stopped
+running on the output). On the other hand if the TM does not halt and
+instead keeps on looping indefinitely then it means that the TM will
+never stop working or never halt. When a TM has halted it indicates
+that the TM has decided the string (either accept or reject) on the
+other hand when it does not halt then the string (or rather the
+problem) is said to be undecidable.
 
 All this can get quite intense, so here is an intuitive definition of
 computation by a Turing
@@ -125,10 +126,10 @@ Machine. The
 [Church-Turing thesis](https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis) showed
 that a Turing Machine algorithm captures **all** algorithms. This
 means that if for a given problem we can design a Turing Machine
-algorithms then that problem is actually solveable. As we will soon
+algorithms then that problem is actually solvable. As we will soon
 see that there are certain problems that are so complex that there
 exists no algorithm that can solve them. In-fact while describing
-Turing Machine algorithms we do not need to go into the implementaion
+Turing Machine algorithms we do not need to go into the implementation
 level details of how the head and the tapes move; instead we can just
 use English prose to describe an algorithm. The only requirement is
 that an algorithm to stop in a finite number of steps (this is quite
@@ -141,36 +142,36 @@ Universal Turing Machine which can perform any sort of computation. In
 fact this property of this Turing Machine is what makes a Turing
 Machine such a powerful model for computation. 
 
-The Universal Turing Machine can simulate any arbitrary turing machine
+The Universal Turing Machine can simulate any arbitrary Turing machine
 on any arbitrary string. It does this by reading the description of
-the turing machine and the string input from its own tape and then
+the Turing machine and the string input from its own tape and then
 processing them.
 
 This makes the Turing Machine capable of answering questions about the
-behaviour of other Turing machines. This model of computation is a
+behavior of other Turing machines. This model of computation is a
 very accurate model of modern computers where computers have access to
 a random access memory. This is the same as the tape in a Turing
 Machine.
 
-Thus the probalems these Turing Machines can tackle are generally of
-the form where we test the behaviour of some arbitrary turing machine
+Thus the problems these Turing Machines can tackle are generally of
+the form where we test the behavior of some arbitrary Turing machine
 on some arbitrary input.
 
 ## The Halting Problem
 
-The Hatling Problem is a decision problem of determining wheather any
+The Halting Problem is a decision problem of determining whether any
 arbitrary Turing Machine will halt on an arbitrary string input or
 not. 
 
 In other words lets say that we have a Language $H_{Lang}$ which is
-made up of all string encodings of the form $<B,w>$ where $B$ is a
-Turing Machie and $w$ is a string and $B$ halts on $w$. We need to
-show that $H_{Lang}$ is undecideable. Which means that there isn't a
-single imagineable Turing Machine that can decide $H_{Lang}$.
+made up of all string encoding of the form $<B,w>$ where $B$ is a
+Turing Machine and $w$ is a string and $B$ halts on $w$. We need to
+show that $H_{Lang}$ is undecidable. Which means that there isn't a
+single imaginable Turing Machine that can decide $H_{Lang}$.
 
 > Which means that no one can ever design a Turing Machine that will
-be able to take an arbitrary string $w$ and an arbitrary turing
-machine $B$ and tell wheather $B$ will halt on $w$ or not. 
+be able to take an arbitrary string $w$ and an arbitrary Turing
+machine $B$ and tell whether $B$ will halt on $w$ or not. 
 
 Now, this might seem like a fairly un-important detail but this has
 some far-reaching implications as we will soon see. But before that we
@@ -197,7 +198,7 @@ subroutine (hence the sub-subscript notation).
 
 Construction of $D_{TM_H}$:
 
-- **Input :** String $<M>$, where $M$ is a turing machine
+- **Input :** String $<M>$, where $M$ is a Turing machine
 - **Runs :** Simulates $<M, <M>>$ on $H_{TM}$
 - **Accepts :** $<M>$ if $H_{TM}$ rejects $<M, <M>>$, i.e. if $M$ rejects $<M>$
 - **Rejects :** $<M>$ if $H_{TM}$ accepts $<M, <M>>$, i.e. if $M$ accepts $<M<$
@@ -222,14 +223,18 @@ wrong. Hence $H_{TM}$ can not exist.
 
 ###### There is another proof for this that uses the Cantor's diagonalisation argument ######
 
-### Implications
+### Conclusion
 
 This means that
 
 > There does not exist a single algorithm that can us if another
 algorithm will halt or not
 
-Static analysers try and do solve some of these limitations but yes,
-they are not 100% accurate, because they are mathematically guranteed
+Static analyzers try and do solve some of these limitations but yes,
+they are not 100% accurate, because they are mathematically guaranteed
 to not be 100% accurate.
 
+
+This post is part of a series of posts that I have planned. In the
+next one we will talk about Godels Incompletelness Theorems and
+Hilberts Problems.
