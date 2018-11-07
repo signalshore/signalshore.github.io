@@ -16,13 +16,13 @@ To fully grasp the severity of this problem we need to step back in time.
 
 This is the 1930s that we are talking about, there were no *proper*
 computers yet. Computers and the whole computer science field was not
-yet born. So in this context a computer something that could perform
-arithmetic operations. Humans who did this were
+yet born. So in this context a computer was something (or someone)
+that could perform arithmetic operations. Humans who did this were
 called [human computers](https://en.wikipedia.org/wiki/Human_computer)
 There were
 mechanical
 [calculators](https://en.wikipedia.org/wiki/Mechanical_calculator)
-that existed back then but again. they all required a human operator.
+that existed back then but again, they all required a human operator.
 
 So ultimately it was the operator who was responsible for making
 decisions about what to do with the numbers. There was not automated
@@ -201,7 +201,7 @@ Construction of $D_{TM_H}$:
 - **Input :** String $<M>$, where $M$ is a Turing machine
 - **Runs :** Simulates $<M, <M>>$ on $H_{TM}$
 - **Accepts :** $<M>$ if $H_{TM}$ rejects $<M, <M>>$, i.e. if $M$ rejects $<M>$
-- **Rejects :** $<M>$ if $H_{TM}$ accepts $<M, <M>>$, i.e. if $M$ accepts $<M<$
+- **Rejects :** $<M>$ if $H_{TM}$ accepts $<M, <M>>$, i.e. if $M$ accepts $<M>$
 
 
 > **Now, what happens if we run $D_{TM_H}$ on $<D_{TM_H}>$ ?**

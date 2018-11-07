@@ -120,7 +120,7 @@ have exactly the same number of elements.
 
 This suggests some weird arithmetic. 
 If you add infinity with a number; you get back infinity.
-If you remove infinity from a number; you get back infinity.
+If you remove a number from a infinity; you get back infinity.
 If you divide infinity by a number; you get back infinity.
 If you multiply infinity by a number; you get back infinity.
 
