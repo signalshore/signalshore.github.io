@@ -5,7 +5,7 @@ Tags: Meta
 This is going to be a brain-splatter for myself at the beginning
 of 2019. I feel like that I have some of my stuff sorted out by now,
 But I want to have a backup so that I can look back for
-reference if shit hits and fan.
+reference if shit hits the fan.
 
 ### Write more ###
 
