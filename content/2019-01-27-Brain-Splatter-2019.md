@@ -119,8 +119,8 @@ your life.
 
 There is very good chance that what you do during your 20s will be
 what you end up doing for the rest of your life (mainly because doing
-something else requires a significant amount of time investment in
-learning a new skill and after 20s finding that time is difficult).
+something else requires a significant amount of time investment and to
+learn a new skill after 20s will become an increasingly difficult task).
 
 Also, DO NOT be stupid with money.
 
