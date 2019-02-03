@@ -9,16 +9,17 @@ I've been an arm-chair environmentalist for far too long.
 
 Starting 2019 I decided to do something real for a change.  I am
 starting small and trying to optimize my consumption habits to have
-the least possible Carbon Footprint as well as un-needed waste.
-
-The next goal is to measure and optimize my food consumption habits. 
+the least possible Carbon Footprint, as well as un-needed waste.
 
 
 # Plan of Action #
 
-"Optimize" often is just reduction in consumption pattern. Now all I
-had to do was to reduce what I buy. Easier said than done. The lack of
-observability in the whole "reduce waste"  process complicates things.
+"Optimize" often boils down to reduction in (unnecessary) consumption
+pattern for the most part.
+
+Now all I had to do was to reduce what I buy. Easier said than
+done. The lack of observability in the whole "reduce waste" process
+complicates things.
 
 Someone said 
 > You can not fix what you can not see!
@@ -26,7 +27,8 @@ Someone said
 With that in mind I know what I had to do. I had to collect every
 single-use plastic that I used in the month of January.
 
-The plan was simple.
+The plan was simple:
+
 - If you buy something that it has a plastic wrapper. Put it in the
   bag (I had a dedicated pocket for this)
 - Be liberal with what you buy. Don't get into the "buy less" thingy
@@ -60,7 +62,8 @@ This is a photo of all the stuff I collected. It's grouped into 4 sections
 Anyway, the stuff is divided into 4 groups. 
 
 <br>
-#### **A.** Chocolate Wrappers ####
+
+### *A. Chocolate Wrappers* ###
 
 These are all chocolate wrappers. I don't always buy chocolates except
 some candies from the office canteen. The stuff in the yellow box are
@@ -73,7 +76,9 @@ I can get rid of this entire section by not eating chocolates at all
 or by buying proper chocolates.
 
 <br>
-#### **B.** Peanut Brittle Wrappers ####
+
+### *B. Peanut Brittle Wrappers* ###
+
 This section is entirely made up of peanut-brittle wrappers of all
 shapes and sizes.
 
@@ -89,10 +94,12 @@ either buying peanut brittle in large quantities locally or making
 them myself.
 
 <br>
-#### **C.** Monthly rations ####
+
+### *C. Monthly rations* ###
+
 This is the part that I require on a monthly basis.
 This includes the wrappers of:
-- Oats (1 500gm packet per month)
+- Oats (500gm packet per month)
 - Raw peanuts (either this or peanut butter)
 - Dates (about 250 gms a month)
 - Flax seeds (about 60 gms a month)
@@ -102,17 +109,22 @@ This part is a bit tricky. I'll have to do some further research to
 optimize this part (suggestions are welcome).
 
 <br>
-#### **D.** Miscellaneous ####
+
+### *D. Miscellaneous* ###
+
 This is the stuff that I do not buy regularly at all. All of these
 are from one-time purchases for this month.
 
 This includes some biscuit wrappers, a mobile phone case wrapper, some
 plastic that they use to serve food with in Bangalore.
 
-This part will be eliminated in February.
+This part will be eliminated and/or changed in February.
 
 <br>
-#### **E.** Long term purchases ####
+
+### *E. Long term purchases* ###
+
+###### p.s. not in the photo ######
 
 This part will include things that are made of plastic but that also
 last a long time or those that are repurposed into something else.
