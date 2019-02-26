@@ -4,7 +4,7 @@ Tags: Travel, Env
 
 
 Growing up I've always been interested in trekking; So, naturally when
-a friend suggested that we should go for a trek in 2 018, I was kinda
+a friend suggested that we should go for a trek in 2018, I was kinda
 skeptical and kinda excited. Skeptical mainly because it was a
 significant amount of money including all the equipment I had to buy
 for a high altitude trek in the winter; and excited because it was a
@@ -27,28 +27,26 @@ basis and I also started running after moving to Mumbai.
 However for this trek I needed to buy some rather expensive equipment.
 I needed to buy one rucksack, and some clothing for the low
 temperature and shoes. The clothing was most important. I did not want
-to buy something too expensive and too specialized that would be of
-no use otherwise. 
+to buy something too expensive and too specialized for the trek. I
+wanted something more versatile.
 
-Buying the rucksack was kinda easy. I bought a 60L pack. I really
-wanted to buy a 70L one but with my history of efficient packing (this
-one time I had 30 days worth of stuff in a 30L bag along with my work
-laptop), the 60L one seemed perfect.
+Buying the rucksack was easy. I bought a 60L pack. I really wanted to
+buy a 70L but realized that it would be too much.
 
 Buying the clothing was more fun! When you are selecting clothing for
 treks, you want to be as efficient as possible because everything you
-own, you have to carry it yourself. Furthermore, you want to use
-layering to protect yourself. There are plenty of good websites online
-that talk about layering (fyi. the layering information on IndiaHikes
-site is shit and absolutely not reliable).
+own, you have to carry it yourself. One of the techniques is to use
+layering. There are plenty of good websites online that talk about
+layering (fyi. the layering information on IndiaHikes site is shit and
+absolutely not reliable).
 
 The layering can be quite complicated but ultimately it boils down to
-minimizing loss of heat (clothes do not generate heat, instead they
-keep you warm by minimizing heat loss). So I bought two polyester base
-layers and one hollow-fill jacket from decathlon. The hollow-fill jacket
-was good enough for heat but under certain extreme windy conditions I
-did find it a bit too cold as it is not completely wind-proof. But it
-was good enough for this trek.
+minimizing the loss of heat (clothes do not generate heat, instead
+they keep you warm by minimizing heat loss). So tl;dr I bought two
+polyester base layers and one hollow-fill jacket from decathlon. The
+hollow-fill jacket was good enough for heat but under certain extreme
+windy conditions I did find it a bit too cold as it is not completely
+wind-proof. But it was good enough for this trek.
 
 For shoes I decided to rent a pair from IndiaHikes.
 
@@ -56,13 +54,12 @@ For shoes I decided to rent a pair from IndiaHikes.
 The trek was from 22nd to 28th of December. We picked this batch
 hoping that we would get extreme cold temperature.
 
-
 On 22nd we met the rest of the team the NJP station in West Bengal and
 we started off to Jaubhari. Jaubhari is the IndiaHikes base camp for
-the Sandakphu trek.  At Jaubhari we were briefed about the trek
-leader. I was really surprised to know about the various activities
-that IndiaHikes does on the mountains to make the treks more
-sustainable. Someone from IndiaHikes also briefed the entire team
+the Sandakphu trek.  At Jaubhari we were briefed about the trek by our
+trek leader. I was really surprised to know about the various
+activities that IndiaHikes does on the mountains to make the treks
+more sustainable. Someone from IndiaHikes also briefed the entire team
 about the benefits of using menstrual cups which I found really cool!
 After this out medical parameters were checked and recorded, followed
 by some dinner. Jaubhari is at 2134 meters.
@@ -76,23 +73,26 @@ One 23rd, we reached Tumling which was at 2970 meters. The trek was
 fun. We stopped in the middle of the trek for lunch. At Tumling the
 temp was somewhere around 2-5 C.
 
-On the way to Tumling the waist belt of a ruck sack got ripped. So at
-tumling we managed to get hold of some needle and thread and stitched
-the ripped belt. It was a hacky job but the belt worked till the last
-day of the trek. 
+On the way to Tumling the waist belt of the pack of a fellow trekker
+got ripped. At Tumling we managed to get hold of some needle and
+thread and stitched the ripped belt. It was a hacky job but the belt
+worked till the last day of the trek. Note to self: Carry needles and
+nylon thread.
 
-The views were amazing. We got brilliant views of the mountains. On
-the left we could see Mount Everest and on the right we could see the
-Kanchenjunga Ranges.
+One thing that was constant throughout the trek were the view of the
+Everest on the left and Kanchenjunga on the right. We could see them
+everyday, which is a welcome change from the normal stuff we are used
+to seeing everyday. :-P
 
 ![Everest](/assets/images/2019-02-24/everest.png)
 
 ##### Lhotse, Everest, Makalu peaks on the right.  #####
 
-It was quite cold and I loved it. I went for a walk after dinner to
-experience the cold and also to test my jacket. I did remove my jacket
-for a bit and it got too cold too fast. The jacket was doing its job
-perfectly and I was satisfied with my purchase. :-P
+The weather was quite cold which was quite enjoyable for me. I went
+for a walk after dinner to experience the cold and also to test my
+jacket. I did remove my jacket for a bit and it got too cold too
+fast. The jacket was doing its job perfectly and I was satisfied with
+my purchase. :-P
 
 On 24th we reached Kalipokhri which is at 3170 meters. I do not
 remember the details of this days trek. I do remember that at
@@ -103,20 +103,26 @@ have dinner a all of us sang. It was a beautiful experience.
 
 ##### Kanchenjunga. #####
 
-After dinner I headed out for another walk. It was super-cold and it
-was super-windy. I could feel my legs starting to die (i did not carry
-any layers for my legs).
-
+After dinner I headed out for another walk. I told three people that I
+would be going outside and where I would be going and gave them a
+tentative timeframe. There was a short hill nearby our lodge. I
+fancied walking up it in the morning but couldn't. So now was my
+time. It was exceptionally dark although the moon was
+present. thankfully my headlamp came handy. I was climbing the hill
+from the leeward side so I could not figure out the wind speed. On top
+it was another story. It was extremely windy. It was good. This was a
+good place.
+ 
 On 25th we reached Sandakphu which was at 3577 meters. It was quite
 cold, but the views were amazing. 
 
 The trek to sandakphu was mostly thorough a motor-able road although
-there were certain shortcuts which we obviously took. Wile trekking we
-were also picking up small pieces of plastic. I managed to pick up a
-used sanitary napkin (who the fuck throws a sanitary napkin out in the
-wild). Anyway, I also managed to annoy a co-trekker when I was being
-stupid and picked up a water bottle that was not in a safe position
-(sorry!!).
+there were certain shortcuts which were somewhat more technical than
+the road. Wile trekking we were also picking up small pieces of
+plastic. I managed to pick up a used sanitary napkin (who the fuck
+throws a sanitary napkin out there). Anyway, I also managed to
+annoy a co-trekker when I was being stupid and picked up a water
+bottle that was not in a safe position (sorry!!).
 
 We had some time to kill in Sandakphu so we all got together and sang
 and played dumb charades. It was my turn and I froze completely
@@ -151,8 +157,8 @@ competition. The water wasn't that cold.
 
 As this was the second last day of the trek we all gathers in the
 men's dorm and everyone shared small bits and pieces about what they
-would be taking away from the trek. This was also amazing. So many
-beautiful people pouring some parts of their heart out. :-)
+would be taking away from the trek. This was another noteworthy
+experience.
 
 28th marked the last day of the trek and quite possibly the last day
 some of us would ever see each other again. We started off early in
@@ -186,31 +192,34 @@ And that was it. My first trek had ended. :-)
 
 I like being self-reliant. I get a lot of pleasure out of doing
 everything I need myself. It's about being able to solve my own
-problems myself and also understand how the world works in some small
-narrow way.
+problems myself and also understand how the world works in some tiny
+manner.
 
 I also believe in owning less and living a simple, minimalist and
-sustainable life. I do not care for the luxuries of life and the
-ultimate target would be to carve a life in which I do not own
-anything I do not need.
+sustainable life. People who know me, know that I have very little
+respect for the more common *needs* of life. The ultimate target would
+be to carve a life in which I do not own anything I do not need and
+quite possibly live out of a suitcase. :-P
 
-I also enjoy solitude more than the average human being I think. I
-also enjoy walking a lot. Walking helps me orient myself in some sort
-of way. Whenever I am having trouble deciding something, or I can not
-understand something I am studying or I start feeling lonely, I go for
-a walk. I enjoy the conversations I have with myself during these
-walks. I walk to unwind after a stressful day. It's not too uncommon
-to find me walking home after work.
+I also enjoy solitude more than the average human being (or so I
+think). I also enjoy walking a lot. Walking helps me orient myself
+wiht my thoughts in some sort of way. Whenever I am having some
+(any!!) trouble, or I can not understand something I am studying or I
+start feeling lonely, I go for a walk. I enjoy the conversations I
+have with myself during these walks. I walk to unwind after a
+stressful day. I regularly walk home (roughly 6 kms) after a weird day
+at work.
 
-Trekking is something that ties all of this together in some weird sort
-of way.
+Trekking is something that ties all of this together in some weird
+sort of way. It makes you realize what all you do not need. It helps
+you declutter.
 
 There is something thrilling about carrying everything you *think*
 you can need in a bag and walk into the wilderness. Now, the trek was
 not like "walking into the wilderness"; in-fact far from it actually,
 but I guess this is the beginning. I would actually love to trek in a
 completely un-supported fashion but right here, right now, its not
-feasible. 
+feasible. Maybe someday. Right now, this is good enough. :-)
 
 That's it. Thanks for reading. :-)
 
