@@ -6,14 +6,14 @@ Status: draft
 In the second week of January I had a trip planned to Bangalore. The
 main goal here was to figure out some work in Bangalore and college. 
 
-However during the Sandakphu trek some of the ttrekkers there
+However during the Sandakphu trek some of the trekkers there
 convinced me that Western Ghats is amazing and that I should
 absolutely trek the Kumarparvatha thing. Its long, its challenging,
 its fun. 
 
 I had another trek planned with some of my Bangalore friends. So, I
-had to figure out how to sqeeze these two treks in a single weekend as
-I was travelling during the middle of the week for cheaper tickets. On
+had to figure out how to squeeze these two treks in a single weekend as
+I was traveling during the middle of the week for cheaper tickets. On
 top of this Richard Stallman came to India during that weekend (I got
 super lucky tbh) and I could attend his talk in person.
 
@@ -24,7 +24,7 @@ have 2 days to spare. I had to fit 2 treks in the weekend.
 I had divided the weekend into two parts; Part 1, the trek to
 Kumaraparvatha and Part 2, the trek to Savandurga. My plan *was*
 flawless. The plan was to work from home on Friday and take an
-overnight bus to Kukkesubramaya and start our trek. We finish the trek
+overnight bus to Kukke-Subramanya and start our trek. We finish the trek
 at Kukke on and take another overnight bus to Bangalore on Sunday
 morning. Then I head off to meet the other group for he Savandurga
 trek. Then finish the Savandurga trek by 1800 hrs and get back home.
@@ -41,10 +41,10 @@ some work as well. Went to a friends house and left some of my stuff
 rested, but by the time I was in the bus, i was carrying 7 hours of
 extra sweat.
 
-ALl said and done I met with Sonakshi and Niranjan at Majestic at the
+All said and done I met with Sonakshi and Niranjan at Majestic at the
 stipulated time . We had 2 idlis for dinner. I was under the
 impression that I would be able to get bananas from Kukke-Subramanya but
-I was mistken. In the morning none of the shops would be open. So, the
+I was mistaken. In the morning none of the shops would be open. So, the
 others made me buy the wonder fruit. We also got a bunch of peanut
 brittles.
 
@@ -58,31 +58,31 @@ using the torch on my powerbank. I did not want to use my phone as a
 torch because I was recording the entire trek in OSMAND with
 continuous logging.
 
-We reached Battaramane soon enough. We stopped there for some time for
+We reached Buttaramane soon enough. We stopped there for some time for
 food and the loo. We also filled our water bottles. I had to brush my
 teeth due to peer pressure. We had some lemon rice and got three
 plates packed to carry with us. The forest office was nearby from here.
 
-At the forst office we had to pay for entry and had to get our bags
-inspected We could also leave some stuff at the forst office so as to
+At the forest office we had to pay for entry and had to get our bags
+inspected We could also leave some stuff at the forest office so as to
 reduce the load that we would be carrying. I didn't leave anything
 behind. I was kinda-sorta training for the next trek.
 
 The trek was amazing. It is a pretty trek. We were not trekking for
 the view anyway. The thing I like about Kumaraparvatha is the
-challenge. It is a long trek. 12kmks in one direction. Generally
+challenge. It is a long trek. 12kms in one direction. Generally
 people hike up to the forest office in a day and use the next day to
-trek upto the peak and back. The forest officials do not allow anyone
+trek up-to the peak and back. The forest officials do not allow anyone
 into the forest after 12 noon. Its almost 6 kms to the peak from the
 forest office, and also more technical, so if you do not start from
-the forst office before 12 noon, it can get dangerous.
+the forest office before 12 noon, it can get dangerous.
 
 > In this photo we have Sonakshi and Niranjan far into the frame. 
 > ![One of the flatter stretches](/assets/images/2019-03-17/kum2.jpg)
 
 
 On the way to the top there is a section where you come across a steep
-rockface which looked inviting. But Sonakshi and Niranjan being the
+rock-face which looked inviting. But Sonakshi and Niranjan being the
 saner members of the group stopped me from climbing via that route. I
 was disappointed.
 
@@ -100,14 +100,14 @@ water with us as well.
 > ![big rock](/assets/images/2019-03-17/kum1.jpg)
 
 <br>
-> This is the otherside from the same location
+> This is the other side from the same location
 > ![big rock](/assets/images/2019-03-17/kum4.jpg)
 
 The first part of the descent was somewhat difficult because of the
-heat, and we ran out of water just before reaching buttaramane but
+heat, and we ran out of water just before reaching Buttaramane but
 nothing too much. I got disoriented for sometime and kept slipping for
-some time. A banana fixed it. We waited at the forst office for some
-time and then headed to Battaramane. We refilled our bottles here and
+some time. A banana fixed it. We waited at the forest office for some
+time and then headed to Buttaramane. We refilled our bottles here and
 started off again. From then the journey was fun. We kept descending
 at a faster pace, we were almost running downhill. We took a detour
 went to a stream nearby. Dipping our feet in the stream felt
@@ -123,7 +123,7 @@ Then we boarded the bus and slept.
 
 We reached Bangalore quite early. I was trying to convince Sonakshi
 and Niranjan to come to the Savandurga trek with me but I was not
-succesful. Niranjan said he would come. Then Sonakshi went her way,
+successful. Niranjan said he would come. Then Sonakshi went her way,
 while me and Niranjan headed to his place. We were planning freshen up
 (no showering) and then head to the meetup location for Savandurga. In
 the end Niranjan also ditched me. I removed the base layer I was
@@ -148,7 +148,7 @@ The road to Savandurga (via Magdi Road) is just beautiful. This was a
 familiar route since I had cycled through the same road about a year
 back. We could see the hill as we started to approach it. Some of the
 team members expressed their concerns over the difficulty of what
-aviated them.
+awaited them.
 
 > This is how Savndurga looks from the road.
 > ![savnd](/assets/images/2019-03-17/savn3.jpg)
@@ -186,9 +186,9 @@ decided to sprint to the top and come back ASAP.
 
 In my honest opinion the trek to the top from the spot is the most
 trickiest part since it has some of the more challenging
-terrain. Untill now we were trekking on the rock itself, but the
+terrain. Until now we were trekking on the rock itself, but the
 monolith plateaus at the spot and after that there is a section where
-you walk between huge boulders, a section where you have to sqeeze
+you walk between huge boulders, a section where you have to squeeze
 between two boulders and a section just before the peak where you have
 to climb a very steep boulder. It's not too tough, just challenging. 
 
@@ -202,7 +202,7 @@ pics here.
 > ![savnd-temple](/assets/images/2019-03-17/savn2.jpg)
 
 
-On our way back we met the friend who decided to stay back just belwo
+On our way back we met the friend who decided to stay back just below
 the spot. She started feeling better so she decided to trek to the top
 herself. It was super awesome to see her so unexpectedly. She also had
 some food with her, which was very much needed. Needless to say, all
@@ -223,9 +223,9 @@ fun. These folks had completed their very first trek.
 > ![savnd-team](/assets/images/2019-03-17/team_savn.jpg)
 
 
-We returned to bangalore soon enough. I took an hour long nap for the
+We returned to Bangalore soon enough. I took an hour long nap for the
 major part of the journey back home. The others I believe took some
-embarassing photos of me sleeping.
+embarrassing photos of me sleeping.
 
 
 # GPX tracks and Analysis
@@ -253,7 +253,7 @@ Overall this was a fun trek. I do think I will return to
 Kumaraparvatha once again after monsoon. This is the time when the
 Western Ghats is in its full glory. :-)
 
-Untill then!
+Until then!
 
 Oh! BTW;
 > This is me sleeping. Open mouth for better breathing.
