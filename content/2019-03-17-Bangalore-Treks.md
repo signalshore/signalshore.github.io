@@ -25,7 +25,7 @@ Kumaraparvatha and Part 2, the trek to Savandurga. My plan *was*
 flawless. The plan was to work from home on Friday and take an
 overnight bus to Kukke-Subramanya and start our trek. We finish the trek
 at Kukke on and take another overnight bus to Bangalore on Sunday
-morning. Then I head off to meet the other group for he Savandurga
+morning. Then I head off to meet the other group for the Savandurga
 trek. Then finish the Savandurga trek by 1800 hrs and get back home.
 
 Things clearly did not go as planned. They never do.
@@ -104,13 +104,13 @@ water with us as well.
 
 The first part of the descent was somewhat difficult because of the
 heat, and we ran out of water just before reaching Buttaramane but
-nothing too much. I got disoriented for sometime and kept slipping for
-some time. A banana fixed it. We waited at the forest office for some
-time and then headed to Buttaramane. We refilled our bottles here and
-started off again. From then the journey was fun. We kept descending
-at a faster pace, we were almost running downhill. We took a detour
-went to a stream nearby. Dipping our feet in the stream felt
-amazing. We waited for about half an hour here before leaving.
+nothing too much. I got disoriented a bit and kept slippin. A banana
+fixed it. We waited at the forest office for some time and then headed
+to Buttaramane. We refilled our bottles here and started off
+again. From then the journey was fun. We kept descending at a faster
+pace, we were almost running downhill. We took a detour went to a
+stream nearby. Dipping our feet in the stream felt amazing. We waited
+for about half an hour here before leaving.
 
 We exited the forest at about 1800 hours. Our bus was at 22:30 hrs, so
 we had a bunch of hours to kill. We jumped around for a bit
@@ -161,12 +161,12 @@ The thing that makes Savandurga challenging is the gradient and the
 feature. It's steep. It's a short but a very steep climb. It's also
 just a rock. You are climbing on a rock. Which means that it heats up
 really fast and finding traction is quite difficult. On top of that
-there are not many trees on the rock, so shade is really hard to find as
-well. Finding a place to sit is also a challenge since once you are on
-the rock, there is a constant gradient. You are always tilted
+there are not many trees on the rock, so shade is really hard to find
+as well. Finding a place to sit is also a challenge since once you are
+on the rock, there is a constant gradient. You are always tilted
 somewhere, so even if you decide to sit down, you have to make sure
-you do not slide down. Considering this I really wanted to avoid the
-afternoon sun, but by the time we started it was almost 12 when we
+you do not slide down. Considering all this I really wanted to avoid
+the afternoon sun, but by the time we started it was almost 12 when we
 started.
 
 > Look at the gradient.
