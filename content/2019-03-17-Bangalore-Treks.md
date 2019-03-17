@@ -237,7 +237,7 @@ Here are screenshots.
 
 As we can see, the total time for the recording is 11 hours and 25
 minutes and the total distance recorded is 23.7
-kms. [Here](/assets/files/2019-03-17/KumaraParvatha.gpx) is the
+kms. [Here](/assets/files/2019-03-17/KumaraParvatha.gpx.zip) is the
 GPX-track for Kumaraparvatha.
 
 
@@ -245,7 +245,7 @@ GPX-track for Kumaraparvatha.
 > ![savand-gpx](/assets/images/2019-03-17/savnd.png)
 
 In this trek we covered 5.9 kms in about 4 hours and 9 minutes.
-[Here](/assets/files/2019-03-17/savandurga.gpx) is the GPX file.
+[Here](/assets/files/2019-03-17/savandurga.gpx.zip) is the GPX file.
 
 # The End
 Overall this was a fun trek. I do think I will return to
