@@ -84,7 +84,7 @@ Everest on the left and Kanchenjunga on the right. We could see them
 everyday, which is a welcome change from the normal stuff we are used
 to seeing everyday. :-P
 
->Lhotse, Everest, Makalu peaks on the right.
+>Lhotse, Everest, Makalu peaks from the right.
 >![Everest](/assets/images/2019-02-24/everest.png)
 
 
