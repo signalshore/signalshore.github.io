@@ -84,9 +84,9 @@ Everest on the left and Kanchenjunga on the right. We could see them
 everyday, which is a welcome change from the normal stuff we are used
 to seeing everyday. :-P
 
-![Everest](/assets/images/2019-02-24/everest.png)
+>Lhotse, Everest, Makalu peaks on the right.
+>![Everest](/assets/images/2019-02-24/everest.png)
 
-##### Lhotse, Everest, Makalu peaks on the right.  #####
 
 The weather was quite cold which was quite enjoyable for me. I went
 for a walk after dinner to experience the cold and also to test my
@@ -99,9 +99,9 @@ remember the details of this days trek. I do remember that at
 Kalipokhri all of us gathered in the hut where we were supposed to
 have dinner a all of us sang. It was a beautiful experience.
 
-![Kanchenjunga](/assets/images/2019-02-24/kanchenjunga.png)
+>Kanchenjunga.                                           
+>![Kanchenjunga](/assets/images/2019-02-24/kanchenjunga.png)
 
-##### Kanchenjunga. #####
 
 After dinner I headed out for another walk. I told three people that I
 would be going outside and where I would be going and gave them a
@@ -137,9 +137,9 @@ meters. This place was really cold. I helped pitch some toilet tents.
 We also managed to do some amazing photography and got good shots of
 the milky-way.
 
-![camp](/assets/images/2019-02-24/camp.png)
+> This was our camp location at Sabargram.
+>![camp](/assets/images/2019-02-24/camp.png)
 
-##### This was our camp location at Sabargram. #####
 
 On 27th we were supposed to reach Phalut which is at 3642 meters and
 then descend back to Gorkhey which is at 2300 meters. This day was too
@@ -184,9 +184,9 @@ delayed. We all said our goodbyes and promised to stay in touch.
 
 And that was it. My first trek had ended. :-)
 
-![group](/assets/images/2019-02-24/team.jpg)
+>The entire group for the trek
+>![group](/assets/images/2019-02-24/team.jpg)
 
-##### The entire group for the trek. #####
 
 ## What does trekking mean for me ? ##
 
@@ -223,5 +223,5 @@ feasible. Maybe someday. Right now, this is good enough. :-)
 
 That's it. Thanks for reading. :-)
 
-I will end this with a picture of me. 
-![ME](/assets/images/2019-02-24/me.jpg)
+>I will end this with a picture of me. 
+>![ME](/assets/images/2019-02-24/me.jpg)
