@@ -123,7 +123,7 @@ Then we boarded the bus and slept.
 We reached Bangalore quite early. I was trying to convince Sonakshi
 and Niranjan to come to the Savandurga trek with me but I was not
 successful. Niranjan said he would come. Then Sonakshi went her way,
-while me and Niranjan headed to his place. We were planning freshen up
+while me and Niranjan headed to his place. We were planning to freshen up
 (no showering) and then head to the meetup location for Savandurga. In
 the end Niranjan also ditched me. I removed the base layer I was
 wearing. That improved the smell a tiny bit.  I left Niranjans place
