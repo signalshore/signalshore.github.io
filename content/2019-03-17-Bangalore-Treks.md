@@ -23,10 +23,11 @@ have 2 days to spare. I had to fit 2 treks in the weekend.
 I had divided the weekend into two parts; Part 1, the trek to
 Kumaraparvatha and Part 2, the trek to Savandurga. My plan *was*
 flawless. The plan was to work from home on Friday and take an
-overnight bus to Kukke-Subramanya and start our trek. We finish the trek
-at Kukke on and take another overnight bus to Bangalore on Sunday
-morning. Then I head off to meet the other group for the Savandurga
-trek. Then finish the Savandurga trek by 1800 hrs and get back home.
+overnight bus to Kukke-Subramanya and start the trek, trek for the day
+and return to Kukke by Saturday eveing just in time to board a bus to
+Bangalore. Reach Bangalore early morning and then head off to meet
+the other group for the Savandurga trek. Then finish the Savandurga
+trek by 1800 hrs and get back home.
 
 Things clearly did not go as planned. They never do.
 
@@ -153,7 +154,7 @@ awaited them.
 > ![savnd](/assets/images/2019-03-17/savn3.jpg)
 
 We reached Savandurga in about 90 minutes.The team was quite worried
-when we they saw the monolith. We were making good time, however we
+when we saw the monolith. We were making good time, however we
 wasted a decent amount of time eating stuff before we started
 trekking. 
  
