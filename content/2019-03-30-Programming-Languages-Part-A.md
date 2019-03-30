@@ -295,7 +295,14 @@ course. Anyway, super fun, can't wait for Part B.
 Since I paid for this course (first online course I paid for) I got a
 certificate. My official final score is 95.1% which is good
 enough. [This](https://www.coursera.org/account/accomplishments/certificate/PF8DZ3V2S6N2) is
-my online certificate.
+my online certificate. 
+
+I am using the Gitlab
+repo
+[Programming_languages_coursera](https://gitlab.com/83bytes/programming_languages_coursera) to
+keep track of all my exercises and solutions. Currently I am keeping
+notes in a single large document with tons of comments. I haven't
+found a better way.
 
 Its been a long time since I finished this course. I got detracted
 from my plan to start Part B ASAP. 
