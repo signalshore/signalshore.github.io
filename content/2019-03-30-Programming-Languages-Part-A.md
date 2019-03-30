@@ -2,7 +2,7 @@ Title: Programming Languages Part A
 Date: 2019-03-18
 Tags: Learning, CS
 
-I am planning to use the Learning tag to create a series of posts
+I am planning to use the [Learning](https://signalshore.github.io/tag/learning.html) tag to create a series of posts
 about _every_ online course I will take. The idea is to document
 everything in my blog. Having something that I can refer to is also
 super awesome.
@@ -284,12 +284,21 @@ in the helper function without explicitly passing it during every
 call. This makes for very readable code. Using an accumulator to store the intermediate results also helps us avoid re-computation of already computed values. This is called memoization. 
 
 
-# Wrapping up.
-Its been a long time since I finished this course. I got detracted
-from my plan to start Part B ASAP. 
+# Wrapping up and Reflections.
+This was by-far the most amazing course I have ever taken. I am 95%
+confident that this is exactly what I want to study going forward. It
+was quite challenging as well. Had a tough tiem figuring out work (I
+need to pay my bills :-P) and this course and a bunch of ofther
+commitments. I reckon I spent about 20 hours a week on this particular
+course. Anyway, super fun, can't wait for Part B.
 
 Since I paid for this course (first online course I paid for) I got a
-certificate. My official final score is 95% which is good enough. 
+certificate. My official final score is 95.1% which is good
+enough. [This](https://www.coursera.org/account/accomplishments/certificate/PF8DZ3V2S6N2) is
+my online certificate.
+
+Its been a long time since I finished this course. I got detracted
+from my plan to start Part B ASAP. 
 
 I plan to revisit the challenge problems of week 2 and week 3 before
 starting Part B, which should take about a week more.
