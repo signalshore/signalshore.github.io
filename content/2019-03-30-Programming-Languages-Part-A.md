@@ -1,7 +1,6 @@
 Title: Programming Languages Part A
 Date: 2019-03-18
 Tags: Learning, CS
-Status: draft
 
 I am planning to use the Learning tag to create a series of posts
 about _every_ online course I will take. The idea is to document
