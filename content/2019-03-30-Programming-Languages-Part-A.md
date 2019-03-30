@@ -1,5 +1,5 @@
 Title: Programming Languages Part A
-Date: 2019-03-18
+Date: 2019-03-30
 Tags: Learning, CS
 
 I am planning to use the [Learning](https://signalshore.github.io/tag/learning.html) tag to create a series of posts
@@ -13,9 +13,9 @@ structured the course is that he divided the course into 3 parts.
 
 In Part A we used the programming language SML (Standard Meta
 Language) since the primary focus of this part of the course is to
-learn about strongly typed, functional programming language with
-static type checking (I will talk about these later). In Part B we use
-Racket and in Part C we use Ruby.
+learn about functional programming languages with static type checking
+(I will talk about these later). In Part B we use Racket and in Part C
+we use Ruby.
 
 #### _NOTE: haven't taken parts B and C of the course so I'm not too clear on that._ ####
 
