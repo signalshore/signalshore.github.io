@@ -203,11 +203,12 @@ have a lot of remote friends, so WhatsApp (or any IM application) is
 necessary, which is one of the reasons I will be installing it back
 again. But yes! it was a good change.
 
-That said, a lot of international groups work and function as they
-precisely because of these applications and the kind of closeness they
-enable. So it would be unfair to say that these applications are all
-"bad". I would speculate that the only "bad" thing is that when these
-applications form a rather large part of your daily communication.
+That said, a lot of international collaborations work and function as
+they do precisely because of these applications and the kind of closeness
+they enable. So it would be unfair to say that these applications are
+all "bad". I would speculate that the only "bad" thing is that when
+these applications form a rather large part of your daily
+communication.
 
 Letting go of Reddit was much easier.
 
