@@ -31,7 +31,7 @@ status and get angry (unreasonably so) if someone was online but not
 replying.
 
 Notice how self-centered and negative this line of thinking is for it
-completely ignores the fact that the other person is human being who
+completely ignores the fact that the other person is a human being who
 has some work other than replying to my messages and instead focuses
 only on, "they got my message (double ticks), they saw my
 message (the ticks are blue), they are online (it shows online), but
@@ -45,10 +45,11 @@ conversation as long as you are signed-in to the channel (chat room).
 
 ## The human-ness of communication ##
 
-Communication is a very human phenomenon, however communicating via
-Instant Messaging reduces the experience of communication to just some
-exchange of text messages and maybe some emojis. Human communication
-isn't that shallow.
+Communication is a very human phenomenon (not only limited to humans,
+but in this context we are focusing on communication between humans),
+however communicating via Instant Messaging reduces the experience of
+communication to just some exchange of text messages and maybe some
+emojis. Human communication isn't that shallow.
 
 When we talk with someone face-to-face or via a phone call it's not
 just the normal exchange of words, but at the same time there are
@@ -115,7 +116,7 @@ least three communication applications open at the same time and I am
 interacting with at least 4 groups on a regular basis (work group,
 meetup group, NGO etc etc).
 
-Also "work" is not like a continuous 9 hours marathon. Most of my work
+Also "work" is not like a continuous 9 hour marathon. Most of my work
 is some random hours distributed over multiple smaller spikes
 throughout the day. (because hey, the database backup takes a long time
 and a problem is a problem regardless of whether its a work problem
@@ -137,7 +138,7 @@ Things aren't that bad though. I find that I am able to focus only
 when the problem at hand is too critical or too challenging (not
 difficult) or when it is something that I am very interested
 in. Anything less that and my mind starts to wander. Needless to say
-all this is extremely difficult for me admit and hence I really think
+all this is extremely difficult for me to admit and hence I really think
 I should do something actively to fix it.
 
 It's a mess in my head and I need to fix it. Removing WhatsApp and
@@ -158,7 +159,7 @@ recollections of the same conversation. Memory is plastic after-all
 This also means that people forget things that they talked about from
 time to time and this is normal. The brain does a regular clean-up job
 when we sleep deleting the less important stuff while stashing the
-more imp stuff (watch Inside Out). For me personally I tend to
+more important stuff (watch Inside Out). For me personally I tend to
 remember some weird details and whatnot.
 
 Initially this used to be very annoying but over time I realized that
@@ -170,7 +171,7 @@ With instant messaging everything is permanent since everything is
 recorded. There is no ambiguity as to what was said, but at the same
 time there is no context information also. This can be weird
 especially if you re-read old messages without any context
-whatsoever. Again, in my opinion this is now human communication is
+whatsoever. Again, in my opinion this is not how human communication is
 supposed to be. (Watch Black Mirror S1E3 - 
 [The Entire History of You](https://en.wikipedia.org/wiki/The_Entire_History_of_You)).
 
@@ -201,6 +202,12 @@ to, who are available only on WhatsApp and since I moved around a bit I
 have a lot of remote friends, so WhatsApp (or any IM application) is
 necessary, which is one of the reasons I will be installing it back
 again. But yes! it was a good change.
+
+That said, a lot of international groups work and function as they
+precisely because of these applications and the kind of closeness they
+enable. So it would be unfair to say that these applications are all
+"bad". I would speculate that the only "bad" thing is that when these
+applications form a rather large part of your daily communication.
 
 Letting go of Reddit was much easier.
 
