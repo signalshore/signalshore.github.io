@@ -193,7 +193,7 @@ thinking that it would be too difficult; that life would be too tough
 without them.
 
 To my utter surprise, nothing could be further from the truth. I
-stopping "missing" WhatsApp from the moment I uninstalled it from my
+stopped "missing" WhatsApp from the moment I uninstalled it from my
 phone and to be honest, its been rather an amazing experience so
 far. I have a lot of time now.
 
