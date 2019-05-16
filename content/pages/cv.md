@@ -89,7 +89,7 @@ C/C++, Bash, Scheme, Python, VB.NET, JAVA, Javascript, HTML + CSS
 
 ### Other Software and Tools ###
 
-Git, PGP, Jekyll, Pelican, OpenCV, EmguCV, GCC/GDB 
+Git, PGP, Jekyll, Pelican, Ansible, Terraform, Packer, Jenkins 
 
 ### Operating Systems ###
 
