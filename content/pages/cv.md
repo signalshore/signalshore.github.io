@@ -85,7 +85,7 @@ Theoretical Computer Science, Programming Langauge Theory, Functional Programmin
 
 ### Programming Languages ###
 
-C/C++, Bash, Scheme, Python, VB.NET, JAVA, Javascript, HTML + CSS
+C/C++, Bash, Scheme, Python
 
 ### Other Software and Tools ###
 
