@@ -9,9 +9,9 @@ Title: CV
 
 ## Education ##
 **Bachelor of Computer Applications (Bangalore University)** <br/>
-2015 to present (expected 2018)<br/>
+2015 to 2018<br/>
 Bangalore, Karnataka<br/>
-In Progress
+**CGPA:** 8
 
 
 **Senior Secondary School (CBSE)**<br/>
@@ -28,6 +28,14 @@ Theoretical Computer Science, Programming Langauge Theory, Functional Programmin
 ---
 
 ## Technical Experience ##
+
+### Nexsales Solutions ###
+
+*DevOps Engineer*, June 2018 - Present
+
+- Infra with Ansible, Terraform and Packer
+- CI with Jenkins.
+- Everything else with Python, Bash etc :-P
 
 
 ### Azim Premji Foundaton ###
