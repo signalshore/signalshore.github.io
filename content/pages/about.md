@@ -15,7 +15,7 @@ way a low-restriction exhaust system makes an engine more powerful."
 
 
 <br>
-Hi,my name is Sohom. I started SignalShore in 2017 as a *sounding
+Hi, my name is Sohom. I started SignalShore in 2017 as a *sounding
 board* and an outlet for my intellectual curiosity.
 
 I am interested in almost everything and there is a *lot* to learn. In
@@ -25,13 +25,22 @@ is this blog.
 
 I have experienced
 that [writing](http://www.paulgraham.com/essay.html) is an exceptional
-aid to thinking; it helps me think clearly, it helps me serialize my
-thoughts properly (which BTW my notebook does not do) and most importantly
-it helps me identify holes in my reasoning.
+*form* of thinking. Often, I expand on ideas as I am writing them. It
+took a lot of effort to get used to being empty inside my head but
+flowing on the keyboard. Expressing ideas helps to form them.
 
-Writing helps me clear the system for even more ideas.
+When I started out, my intended audience was myself, but as I kept at
+it, I realized that when I write, I like to write as if someone will
+read them. This means that what I write needs to have some
+standard. Otherwise I could write 10000 words that do not mean
+anything about no particular topic. That is not good.
 
-This is my excuse to try out new ideas and to learn new things.
+Writing helps me write better and hence it help me think better. I
+can't just write anything, it needs to make sense, it needs to be
+right.
+
+This is my excuse to try out new ideas, to learn new things.
+> *I have to understand the world, you see.  — Richard Feynman*
 
 ## "SignalShore" ? ##
 
@@ -40,7 +49,6 @@ I asked a friend for something "different". He suggested 4 names. This was the o
 
 ## Inspiration ##
 
-> *I have to understand the world, you see.  — Richard Feynman*
 
 ### Contact ... ###
 
