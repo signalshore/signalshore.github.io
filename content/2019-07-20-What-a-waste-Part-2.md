@@ -3,7 +3,7 @@ Date: 2019-07-20
 Tags: Meta, Env
 
 So back in January 2019 I decided to reduce the amount of waste I
-produce on a monthly basis. 
+produce on a monthly basis. Read it [here](https://signalshore.github.io/blog/What-a-waste.html).
 
 Initial plan was to behave "normally" for three months and then try
 the reduction thing. That did not work because I was inconsistent with
