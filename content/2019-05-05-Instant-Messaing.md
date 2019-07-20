@@ -1,5 +1,5 @@
 Title: Instant Messaging et. al.
-Date: 5-5-2019
+Date: 2019-05-05
 Tags: Meta
 
 About 2 weeks ago I uninstalled WhatsApp from my phone. This decision
