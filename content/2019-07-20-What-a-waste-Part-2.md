@@ -3,7 +3,7 @@ Date: 2019-07-20
 Tags: Meta, Env
 
 So back in January 2019 I decided to reduce the amount of waste I
-produce on a monthly basis. Read it [here](https://signalshore.github.io/blog/What-a-waste.html).
+produce on a monthly basis. Read it [here](https://signalshore.github.io/blog/What-a-waste.html)
 
 Initial plan was to behave "normally" for three months and then try
 the reduction thing. That did not work because I was inconsistent with
@@ -82,5 +82,26 @@ unless absolutely needed. Very recently I bought an amazon Kindle
 Paperwhite and I feel quite guilty about it. In my defense I wanted
 this for a long time, ever since my school days.
 
-Anyway, so yeah. 
-This is where I am at.
+# Why all this ?
+It should not be surprising to anyone reading this that Climate Change
+is a big problem right now. In-fact it is probably one of the top most
+issues threatening the survival of all species on the planet. I am
+extremely pessimistic about the entire situation and I do not think
+that we will be able to contain climate change to a reasonable limit
+any time soon.
+
+That said, I still want to fight the good fight and there are multiple
+ways in which that can be done. Currently the situation so dire that
+individual changes in lifestyle can not solve everything and the best
+way to fight this is to form groups and pressurize corporations and
+governments into making drastic changes that favor the
+environment. However, I would argue that individual changes also have
+a huge effect mainly because no individual exists in isolation, and
+hence they will spread some influence around. Furthermore, if every
+individual starts making drastic changes to their lifestyle then that
+will change the marketplace in which big companies operate and I think
+that that would have some positive effect.
+
+Anyway, Thanks for reading. This is it for today. :-)
+
+
