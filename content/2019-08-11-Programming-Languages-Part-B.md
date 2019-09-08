@@ -87,7 +87,7 @@ This is just one of the many programming idioms that are there that we
 can use to mess around with the order of evaluation in a program.
 
 
-## delay & force (call by need or lazy evaluation or promises)
+## Delay & Force (call by need or lazy evaluation or promises)
 
 So thunking provides us a solution to the problem of evaluating
 expression that are not needed.  What about expressions that can be
@@ -131,7 +131,7 @@ This is something that hit me in the face with a brick when I first understood i
 It's so beautiful and cool. :-)
 
 
-## streams producers and consumers
+## Streams; Producers and Consumers
 Let me preface this section by stating that before this I had no idea
 what strems were and how they worked.
 
@@ -168,22 +168,177 @@ natural number is needed. In this case the starting point is 1 and the
 method of obtaining the next number is that you increment the current
 number by 1.
 
-    This gives us a good starting point of how to go about designing
-    streams.  In a stream (in this case) the flow of data is controlled by
-    the consumer as data is produced only when it is asked for by the
-    consumer and the only two pieces of information needed by either the
-    producer or the consumer is the current position on the stream (the
-    producer already knows about the starting position) and the formula.
+This gives us a good starting point of how to go about designing
+streams.  In a stream (in this case) the flow of data is controlled by
+the consumer as data is produced only when it is asked for by the
+consumer and the only two pieces of information needed by either the
+producer or the consumer is the starting element of the stream and the
+formula.
 
-** Memoization
- This is another interesting programming idiom that i used to reduce
- computation while evaluating programs.
+So we can code up streams by writing a thunk that evaluates to a pair
+wherein the first element is the first element and the second element
+is a thunk that has everything we need to get all the elements from 2
+to infinity.
 
-If a function produces the same value when it is called with multiple
-times then, we do not need to evaluate it everytime (even if we are
-using thunks). We can just save the value of the function the first
-time it is called and use that computed value next time it is
-required. 
+Let us write a stream that just produces an infinite stream of 1's
+    
+    #!Racket
+    (define ones-st (lambda () (cons 1 ones)))
+    
+    ;; we call this stream by
+    
+    ;; this gives the first element
+    (car (one-st))
+    
+    ;; this gives us the second element
+    (car (cdr (one-st)))
+    
+The stream is a thunk which when evaluated gives a pair. The first
+element in the pair is the first value in the stream and the second
+element is another thunk. We can clearly see how this works in the way
+we call it.
 
-How we do it in racket is by using mutation. We have a static list that 
-The idea is that we do this at 
+This stream is a bit easy to understand since there is not
+transformation that is taking place between the subsequent elements.
+
+Now we will define the same stream and put a transformation function
+in the middle. This function will not do anything but it will act as a
+good placeholder for future transformations.
+
+    #!Racket
+    (define (ones)
+        (define (ones-help x)
+        (cons x (lambda () (ones-help (+ x 0)))))
+    (ones-help 1))
+    
+In this way we have a framework of how to go about designing different streams. 
+Let use write an infinite stream of the square of all the natual numbers.
+
+
+    #!Racket
+    (define (square)
+        (define (square-help x)
+        (cons (* x x) (lambda () (square-help (+ x 1)))))
+    (square-help 1))
+
+How do we get elements from the stream ? 
+
+To get the first element we evaluate the stream and get the first
+element form the pair. To get the second element from the stream we
+evaluate the cdr of the pair we get.
+
+
+    #!Racket
+    (car (square))
+    ;; first element
+    
+    (car ((cdr (square))))
+    ;; second element
+    
+Thus we can get new elements from the list.
+
+Note: This is the exact same way in which Alonzo Church defines Church Numerals. 
+
+
+## Datatype with structs.
+
+SML has records and datatype bindings that allows us to make compund
+dataypes and data-structures and it lets us use pattern matching to
+get the desired data out form the data structure.
+
+For Example,
+
+    #$!SML
+    val record_test =  { first = "sohom", second = "b", number = 1000 };
+    (* creates a new record in the env and binds it to record_test *)
+    
+    val { first = t : string , second = tt : string, number = ttt : int } = record_test; 
+    
+    (* This pattern matches the record on the left with the record on
+    the right and binds the values after extracting them from the
+    record *)
+
+We could implement the same kind of the thing in Racket using cons
+cells but there is an even better way in Racket. In Racket we can use
+structs to define custom data types.
+
+When we add a new datatype with `struct` it introduces a bunch of
+other functions into the environment. Let me illustrate this wtih an example.
+
+
+    #!Racket
+    (struct foo (field1 field2 field3))
+    
+This will introduce a constructor for this struct, a checker for this
+struct and accessor functions for each field in the struct. This is
+super handy.
+
+So we can do things like
+    
+    #!Racket
+    (define new_t (foo 1 2 3))
+    
+    (foo? new_t)
+    ;; evaluates to #t
+    
+    (foo-field1 new_t)
+    ;; evaluates to 1
+    
+    (foo-field2 new_t)
+    ;; evaluates to 2
+    
+    (foo-field3 new_t)
+    ;; evaluates to 3
+
+    
+I think this is really cool. Especially becase the user does not have
+to write accessor functions for all the types they define, but instead
+the language system generates them. Also, struct is not a syntactic
+sugar for some list or something else. Struct actually creates a new
+type in the env. 
+
+## Implementing a Programming Language
+This something that we actually have to do this course. It's a part of
+the homework.
+
+I will not go into the details but this week was particularly very
+interesting because you had to first understand the syntax and the
+semantics of the programming language that you were supposed to build
+and then write the interpretor for it. 
+
+One thing that I did get over was my fear of interpretors and realize
+that a compiler or and interpreter is just a normal program; there is
+nothing too fancy about it. That was really fun to learn.
+
+I had a really geat time trying and implementing Closures and writing
+the main eval function.
+
+### What is the environment ?
+During programming we often hear about the "environment" a lot but we
+do not spend too much time thinking about what it actually is. Turns
+out that the environment is just a mapping that stores the indentifies
+that the values/expressions the identifiers are bound too. When you
+think about it, this makes sense, right ?
+
+I mean, what is the role of the environment ? Like all the environment
+is supposed to do is to make sure that when the expressions are
+evaluated they get evaluated with the correct values.
+
+In the made up programming language we  do this by using a list as the
+environment.
+
+
+### Closures and Lexical Scoping
+In the MUPL (made up programing language), we implement lexical
+scoping and closures.
+
+It's quite simple. When the interpreter encounter a fuction defition
+it just wraps the function along with the env in a data structure
+(like a cons of two elements) and that is about it.
+
+
+The most challenging part of this whole exercise was to write the cse
+for the function calls.
+
+## Static Checking 
+ 
