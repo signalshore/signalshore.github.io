@@ -1,7 +1,7 @@
 Title: Programming Languages Part B
 Date: 2019-08-11
 Tags: Learning, CS
-
+Status: draft
 
 In Part B we study functional programming languages with dynamic type
 checking. For this we use the programming language Racket which is a
@@ -248,7 +248,7 @@ get the desired data out form the data structure.
 
 For Example,
 
-    #$!SML
+    #!SML
     val record_test =  { first = "sohom", second = "b", number = 1000 };
     (* creates a new record in the env and binds it to record_test *)
     
@@ -342,3 +342,69 @@ for the function calls.
 
 ## Static Checking 
  
+We talked briefly about static checking in the first paragraph.
+In this section we will look at static checking in more detail.
+
+Couple of thing first.
+
+- ML has static type checking
+- Racket does not have static type checking
+
+The job of static chekcer is to reject programs after they have been
+parsed but before they have been run.
+
+The static checker checks the program for correctness. 
+
+How do we define this correctness ?
+
+One way we check for correctness is by evaluating the program against
+a set of rules. Most commonly these rules are the typing rules. Mix
+all of these together and you the type checker and the set of rules
+that are used to evaluate the correctness of a program is called the
+type system.
+
+
+### Correctness of a type system
+The type system is a part of the programming language definiton that
+sprcifies what type of programs are legal and what are not in that
+programming language.
+
+The Type System is designed to prevent a cretain kind of bad behaviour
+in the programming language. If the type system prevents the behaviour
+that it claims to prevent then the type system is correct.
+
+We use two different and opposing metrics to determine the correctness
+of a type system:
+
+#### **Soundness** ####
+A type system is sound if it all type-checked programs are correct.
+This means that the type checker will never accept an in-correct
+program, i.e. there wont be any false negetives. 
+
+   
+#### **Completeness** ####
+A type system is complete if all correct programs can be accepted by
+the type checker. This means that the Type Checker will never reject a
+correct program, i.e. there wont be any false positives.
+
+
+We define the positives/negetives with respect to the ppresence of
+undesirable bugs in a program. These are the bugs that the type
+checker is designed to prevent. Hence, for *negetive* the type checker
+claims that the bug is not present in the progam i.e. the program is
+correct and vice-versa.
+
+In the broader context of logic systems these terms have some interesting meanings.
+1. A system is sound if only true statemenats are proveable.
+2. A system is complete if *all*  true statements are proveable.
+
+Now, completeness is much more difficult to have than soundness. This
+is because for a type checker to be complete it needs to show that all
+correct programs are accepted by it and the set of *all correct
+programs* is inifinite in nature. The tradeoff that gets made is that
+programming language designers will rather have a sound system than a
+complete system.
+
+
+
+
