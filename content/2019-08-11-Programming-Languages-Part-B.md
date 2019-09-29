@@ -15,7 +15,7 @@ I will highlight what were the major learning points for me.
 ## Dynamic Typing
 
 Static or dynamic typing is defined on the basis of when the type
-checking takes place during the lifecycle of a program. In static type
+checking takes place during the life-cycle of a program. In static type
 checking the type checking happens at compile time while in dynamic
 type checking the type checking happens at run time. Dynamic typing
 can be convenient when you are writing programs as you do not have to
@@ -27,8 +27,8 @@ same time this also means the most of the errors happen at run-time.
 ## Delayed Evaluation
 
 In a programming language the manner in which expressions (and
-subexpressions) are evaluated can have a large impact on how programs
-are constucted.
+sub-expressions) are evaluated can have a large impact on how programs
+are constructed.
 
 Generally when we evaluate a function expression, we evaluate the
 sub-expressions first before evaluating the actual function. This is
@@ -40,7 +40,7 @@ For example consider this function which tries to emulate the functionality of t
     (define (my-if a b c)
         (if a b c))
         
-Let's use this 'my-if' as we would use a normal if caluse
+Let's use this 'my-if' as we would use a normal if clause
 
     #!Racket
     (my-if (= 2 3) 2 3)
@@ -95,13 +95,13 @@ needed in multiple places in a program ? If we use thunking we can
 delay the evaluation untill needed but we will still need to evaluate
 it every single time it is needed. Here we see another design
 consideration. It is not only important to delay evaluation, it is
-also important to avoid expensive computation or recomputation.
+also important to avoid expensive computation or re-computation.
 
 This is called call-by-need or lazy evaluation.
 
 What is Lazy evaluation ?  Lazy evaluation is an evaluation strategy
 in which an expression is not not evaluated when they are bound to
-variables. Insted they are evaluated when their results are needed by
+variables. Instead they are evaluated when their results are needed by
 other computations. This is the default mode of evaluation used in the
 Haskell programming Language.
 
@@ -133,7 +133,7 @@ It's so beautiful and cool. :-)
 
 ## Streams; Producers and Consumers
 Let me preface this section by stating that before this I had no idea
-what strems were and how they worked.
+what streams were and how they worked.
 
 A stream (in the context of computers) is an infinite source of
 data. It is never ending. This is a very hand-wavy definition and it
@@ -161,7 +161,7 @@ Consider the set of all Natural Numbers which we can all agree that is an infini
 How would one go about printing out all the natural numbers if the
 entire set is infinite ?  
 
-The answer is that one does not need to print all the natual numbers
+The answer is that one does not need to print all the natural numbers
 all at once. All one needs to do is to keep track of the current
 number being printed and then increment the number by 1 when the next
 natural number is needed. In this case the starting point is 1 and the
@@ -212,7 +212,7 @@ good placeholder for future transformations.
     (ones-help 1))
     
 In this way we have a framework of how to go about designing different streams. 
-Let use write an infinite stream of the square of all the natual numbers.
+Let use write an infinite stream of the square of all the natural numbers.
 
 
     #!Racket
@@ -242,7 +242,7 @@ Note: This is the exact same way in which Alonzo Church defines Church Numerals.
 
 ## Datatype with structs.
 
-SML has records and datatype bindings that allows us to make compund
+SML has records and datatype bindings that allows us to make compound
 dataypes and data-structures and it lets us use pattern matching to
 get the desired data out form the data structure.
 
@@ -263,7 +263,7 @@ cells but there is an even better way in Racket. In Racket we can use
 structs to define custom data types.
 
 When we add a new datatype with `struct` it introduces a bunch of
-other functions into the environment. Let me illustrate this wtih an example.
+other functions into the environment. Let me illustrate this with an example.
 
 
     #!Racket
@@ -291,7 +291,7 @@ So we can do things like
     ;; evaluates to 3
 
     
-I think this is really cool. Especially becase the user does not have
+I think this is really cool. Especially because the user does not have
 to write accessor functions for all the types they define, but instead
 the language system generates them. Also, struct is not a syntactic
 sugar for some list or something else. Struct actually creates a new
@@ -304,19 +304,19 @@ the homework.
 I will not go into the details but this week was particularly very
 interesting because you had to first understand the syntax and the
 semantics of the programming language that you were supposed to build
-and then write the interpretor for it. 
+and then write the interpreter for it. 
 
-One thing that I did get over was my fear of interpretors and realize
+One thing that I did get over was my fear of interpreter's and realize
 that a compiler or and interpreter is just a normal program; there is
 nothing too fancy about it. That was really fun to learn.
 
-I had a really geat time trying and implementing Closures and writing
+I had a really great time trying and implementing Closures and writing
 the main eval function.
 
 ### What is the environment ?
 During programming we often hear about the "environment" a lot but we
 do not spend too much time thinking about what it actually is. Turns
-out that the environment is just a mapping that stores the indentifies
+out that the environment is just a mapping that stores the identifies
 that the values/expressions the identifiers are bound too. When you
 think about it, this makes sense, right ?
 
@@ -329,15 +329,15 @@ environment.
 
 
 ### Closures and Lexical Scoping
-In the MUPL (made up programing language), we implement lexical
+In the MUPL (made up programming language), we implement lexical
 scoping and closures.
 
-It's quite simple. When the interpreter encounter a fuction defition
+It's quite simple. When the interpreter encounter a function definition
 it just wraps the function along with the env in a data structure
 (like a cons of two elements) and that is about it.
 
 
-The most challenging part of this whole exercise was to write the cse
+The most challenging part of this whole exercise was to write the case
 for the function calls.
 
 ## Static Checking 
@@ -350,7 +350,7 @@ Couple of thing first.
 - ML has static type checking
 - Racket does not have static type checking
 
-The job of static chekcer is to reject programs after they have been
+The job of static checker is to reject programs after they have been
 parsed but before they have been run.
 
 The static checker checks the program for correctness. 
