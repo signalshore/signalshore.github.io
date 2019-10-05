@@ -59,9 +59,10 @@ first and based on that result it evaluates either of the branches.
 
 There should be a way of passing around expression in a language
 without actually evaluating them. In Racket we can do this by wrapping
-the desired function in lambda functions that take no arguments. Thus
-we can pass this lambda function around as we want and we can evaluate
-it when we need it by using an extras set of parenthesis.
+the function that we want to dealy in a lambda function that takes no
+arguments. Thus we can pass this lambda function around as much as  we
+want and we can evaluate it when we need it by using an extras set of
+parenthesis.
 
 Thus we need to rewrite the old functions. We can do it as
     
@@ -91,26 +92,29 @@ can use to mess around with the order of evaluation in a program.
 
 So thunking provides us a solution to the problem of evaluating
 expression that are not needed.  What about expressions that can be
-needed in multiple places in a program ? If we use thunking we can
-delay the evaluation untill needed but we will still need to evaluate
-it every single time it is needed. Here we see another design
-consideration. It is not only important to delay evaluation, it is
-also important to avoid expensive computation or re-computation.
+used in multiple places in a program ? If we use thunking we can delay
+the evaluation untill needed but we will still have to evaluate it
+every single time it is needed. Here we see another design
+consideration. It is not only important to have a framework to delay
+evaluation, it is also important to have to framework that allows you
+to avoid re-computation.
 
 This is called call-by-need or lazy evaluation.
 
-What is Lazy evaluation ?  Lazy evaluation is an evaluation strategy
-in which an expression is not not evaluated when they are bound to
-variables. Instead they are evaluated when their results are needed by
-other computations. This is the default mode of evaluation used in the
-Haskell programming Language.
+### What is Lazy evaluation ? ###
 
-One way to do this is to transform every function call into a value
-look-up. We can store the thunk of the function in a cons cell along
-with the result. If the result is not computed then we will evaluate
-the thunk and store the value in the cell (we will mutate the cons
-cell) and thus, the next time we need to evaluate the same function,
-we can just look up the value in the cons cell.
+Lazy evaluation is an evaluation strategy in which an expression is
+not evaluated when they are bound to variables. Instead they are
+evaluated when their results are needed by other computations. This is
+the default mode of evaluation used in the Haskell programming
+Language.
+
+One way to do this (in Racket) is to transform every function call
+into a value look-up. We can store the thunk of the function in a cons
+cell along with the result. If the result is not computed then we will
+evaluate the thunk and store the value in the cell (we will mutate the
+cons cell) and thus, the next time we need to evaluate the same
+function, we can just look up the value in the cons cell.
 
 Basically when we implement a system where we store the output of a
 function if it has been evaluated once. As noted above this can be
@@ -150,16 +154,19 @@ endless stream of water and humans are the consumers. The consumers
 get to decide how to and how much to consume the stream.
 
 Constructing an endless source of data is quite impossible since you
-never really know when to stop. So instead we use a short-cut. To
-construct an infinite stream of data all you need is a starting point
-and a method to go to the next point.
+never really know when to stop. So how do producers produce an endless
+stream of data ? To do that producers use a short-cut. To construct an
+infinite stream of data all you need is a starting point and a method
+to go to the next point. With these two information you can create
+data on-demand without needing to know when to stop.
 
 We will try to understand this with an example.
 
-Consider the set of all Natural Numbers which we can all agree that is an infinite set.
+Consider the set of all Natural Numbers which we can all agree that is
+an infinite set.
 
 How would one go about printing out all the natural numbers if the
-entire set is infinite ?  
+entire set is infinite ?
 
 The answer is that one does not need to print all the natural numbers
 all at once. All one needs to do is to keep track of the current
@@ -295,7 +302,7 @@ I think this is really cool. Especially because the user does not have
 to write accessor functions for all the types they define, but instead
 the language system generates them. Also, struct is not a syntactic
 sugar for some list or something else. Struct actually creates a new
-type in the env. 
+type in the environment.
 
 ## Implementing a Programming Language
 This something that we actually have to do this course. It's a part of
@@ -306,9 +313,11 @@ interesting because you had to first understand the syntax and the
 semantics of the programming language that you were supposed to build
 and then write the interpreter for it. 
 
-One thing that I did get over was my fear of interpreter's and realize
-that a compiler or and interpreter is just a normal program; there is
-nothing too fancy about it. That was really fun to learn.
+One thing that I did get over was my fear of interpreters and realize
+that a compiler or an interpreter is just a normal program; there is
+nothing too fancy about it. It is a normal program in the sense that
+it takes data input in some form, and produces an output in some form
+which is mostly transformation based on certain rules.
 
 I had a really great time trying and implementing Closures and writing
 the main eval function.
@@ -316,9 +325,9 @@ the main eval function.
 ### What is the environment ?
 During programming we often hear about the "environment" a lot but we
 do not spend too much time thinking about what it actually is. Turns
-out that the environment is just a mapping that stores the identifies
-that the values/expressions the identifiers are bound too. When you
-think about it, this makes sense, right ?
+out that the environment is just a mapping that stores the identifiers
+that the values/expressions are bound too. When you think about it,
+this makes sense, right ?
 
 I mean, what is the role of the environment ? Like all the environment
 is supposed to do is to make sure that when the expressions are
@@ -365,11 +374,11 @@ type system.
 
 
 ### Correctness of a type system
-The type system is a part of the programming language definiton that
-sprcifies what type of programs are legal and what are not in that
+The type system is a part of the programming language definition that
+specifies what type of programs are legal and what are not in that
 programming language.
 
-The Type System is designed to prevent a cretain kind of bad behaviour
+The Type System is designed to prevent a certain kind of bad behaviour
 in the programming language. If the type system prevents the behaviour
 that it claims to prevent then the type system is correct.
 
@@ -377,7 +386,7 @@ We use two different and opposing metrics to determine the correctness
 of a type system:
 
 #### **Soundness** ####
-A type system is sound if it all type-checked programs are correct.
+A type system is sound if all type-checked programs are correct.
 This means that the type checker will never accept an in-correct
 program, i.e. there wont be any false negetives. 
 
@@ -391,7 +400,7 @@ correct program, i.e. there wont be any false positives.
 We define the positives/negetives with respect to the ppresence of
 undesirable bugs in a program. These are the bugs that the type
 checker is designed to prevent. Hence, for *negetive* the type checker
-claims that the bug is not present in the progam i.e. the program is
+claims that the bug is not present in the program i.e. the program is
 correct and vice-versa.
 
 In the broader context of logic systems these terms have some interesting meanings.
@@ -407,4 +416,8 @@ complete system.
 
 
 
+## That's it ##
+This course bought me immense joy and I hope that it's the same for
+you as well.  Bear in mind that week 2 will be quite difficult but
+just push through. It will be worth it.
 
