@@ -1,7 +1,6 @@
 Title: Programming Languages Part B
-Date: 2019-08-11
+Date: 2019-10-06
 Tags: Learning, CS
-Status: draft
 
 In Part B we study functional programming languages with dynamic type
 checking. For this we use the programming language Racket which is a
