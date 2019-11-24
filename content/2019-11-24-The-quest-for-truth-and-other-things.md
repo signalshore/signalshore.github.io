@@ -130,7 +130,11 @@ valued knowing both sides of an argument very well.
 I read somewhere that 
 > You don't know something unless you can argue both _for_ and _against_ it; cause otherwise your opinions are not well informed.
 
-This was a major learning moment for me personally.
+This was a major learning moment for me personally. The fundamental
+idea is to analyze your life trough a very critical lens, so you can
+be sure that whatever you say, however you act, everything you do can
+be reconciled with your internal metric of truth. Otherwise, what's
+the point ?
 
 # Kindness and Empathy #
 
