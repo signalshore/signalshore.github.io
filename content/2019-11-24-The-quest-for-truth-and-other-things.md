@@ -8,8 +8,9 @@ random things and asking endless series of questions etc etc. I still
 do all those. I can be relentless when it comes to looking for answers
 that do not satisfy my internal metric for truth.
 
-This was partially inspired by a episode 41 (Belief) from the
-philosophize this podcast, and partially about certain things that I
+This was partially inspired by
+a [Episode 41 (Belief)](https://philosophizethis.org/belief/) from the
+_Philosophize This!_ podcast, and partially about certain things that I
 have observed in myself, but did not really want to address/accept.
 
 > ###### Everything that follows is what I think and this is true for me at this point in time and space. There is a very good chance that the definition will evolve and grow ######
@@ -39,15 +40,15 @@ place.
 
 I have an internal metric for truth. This means that if some
 hypothesis does not reconcile with my metric for truth then I find it
-very difficult to accept. This often manifests in the form of
+very difficult to accept said hypothesis. This often manifests in the form of
 dissatisfaction from a proposed solution to a problem at work or not
 trusting a narrative until a convincing argument is presented, etc
 etc. Needless to say this makes me quite obnoxious and a difficult
 person at times.
 
-I've been reading a bunch of old philosophy and I one school of
-thought that I find myself agreeing with a lot is is skeptics (and the
-stoics as well). I would argue that this skepticism is good. It keeps
+I've been reading a bunch of old philosophy and one school of
+thought that I find myself agreeing with a lot is is Skeptics (and the
+Stoics as well). I would argue that this _deliberate_ skepticism is good. It keeps
 me on my toes and I can see bullshit from half a mile away. This habit
 has made me take myself and my beliefs very seriously as well.
 
@@ -55,20 +56,21 @@ It has also made me very very skeptical of grand claims that seem too
 good to be true. After all, there is no free lunch, and everything has
 a cost.
 
+
 # Belief #
 
 During growing up, I learnt very early on that most of the things that
 my family told me about how the world works is False. 
 
-The biggest of these experiences were when I was moving to Bangalore
-and everyone I knew in Kolkata told me that South India was a weird
-place. Their food, their language and their customs are different and
-they are very racist towards outsiders. My personal experience was much
-different and exactly the opposite. There was a similar mismatch
-between what people said and how my experience was when I travelled to
-Chennai alone using public transport. The point is, I learnt to
-skeptical about everything I hear early on and that has consumed
-certain other parts of my life.
+The biggest of these experiences heppened when I was moving to
+Bangalore and everyone I knew in Kolkata told me that South India was
+a weird place. Their food, their language and their customs are
+different and they are very racist towards outsiders. My personal
+experience was much different and exactly the opposite. There was a
+similar mismatch between what people said and how my experience was
+when I travelled to Chennai and until quite recently when I moved to
+Mumbai. The point is, I learnt to be skeptical about everything I hear
+and that has consumed certain other parts of my life.
 
 In the podcast we talk about how Belief and truth are two different
 things. When you think about it, it makes sense. After all, just
@@ -86,6 +88,50 @@ that your beliefs are as closer to the truth as possible.
 
 The aim is to as intellectually rigorous as possible.
 
+# Intellectually Rigorous Thinking
+I do not idolize a lot of people, however I do idolize certain kind of
+behaviour in people. I really value knowledge and I hold learning/the
+ability and willingness to learn new things above everything else. 
+
+In my experience the most forward thinking, interesting, wise and calm
+and kind people are the ones who never stopped learning in the first
+place. 
+
+I read somewhere that 
+> Life is best filled by learning as much as you can about as much as you can.
+and I agree with this completely. 
+
+So, one thing that I noticed amongst the people I idolized was that
+they had a very lear way of thinking about things. I'm not talking
+about a certain ideology. I'm talking about a way of _thinking_ about
+things no matter which ideology they follow.
+
+Initially I was quite impressedd by Jordan Peterson and he advocated
+to "think for yourself". That was quite powerful, until I discovered
+Slavoj Zizek and a bunch of other philosophers (can not recall then
+but the Hellinistic age was rad), and its amazing to see how they can
+think through an issue or a problem.
+
+One major thing that all these people have in common and all of them
+advocate for is to read a lot, or in other words to study as much as
+possible. The world is increasingly complex with a lot of interrelated
+connections and you can only begin to make sense of it by trying to
+understand how these relationships unfold. What I am presonally
+impressedd by is that after a certain amount of time you begin to see
+things you could not see before, like hidden patterns that show you
+how the world works. Listening to people like Bill Gates, Harari,
+Peterson (to some extent), Zizek etc etc gives you a feeling of that.
+
+I recently came across Hellinistic Skepticism and one of the major take
+aways from learning about Hellinistic Skepticism is that they believed
+that truth is not binary and it was impossible to attain it and they
+valued knowing both sides of an argument very well.
+
+I read somewhere that 
+> You don't know something unless you can argue both _for_ and _against_ it; cause otherwise your opinions are not well informed.
+
+This was a major learning moment for me personally.
+
 # Kindness and Empathy #
 
 In this process to find the closest truth one can often become quite
@@ -94,4 +140,4 @@ I am guilty of myself and I am trying my best to get better at being
 kind.
 
 I will with a quote -
-> Doubt is not a pleasant Condition but Certainty is absurd. - Voltaire
+> Doubt is not a pleasant condition but Certainty is absurd. - Voltaire
