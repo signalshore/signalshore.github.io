@@ -12,7 +12,7 @@ This was partially inspired by a episode 41 (Belief) from the
 philosophize this podcast, and partially about certain things that I
 have observed in myself, but did not really want to address/accept.
 
-###### Everything that follows is what I think and this is true for me at this point in time and space. There is a very good chance that the definition will evolve and grow ######
+> ###### Everything that follows is what I think and this is true for me at this point in time and space. There is a very good chance that the definition will evolve and grow ######
 
 # What is truth and how to find it ?
 
