@@ -7,13 +7,13 @@ How many times when we want to do something do we stop and think that
 maybe what we are attempting to do is futile because we do not have
 what the pros have ?
 
-maybe it's because you dont have that cutting edge climbing shoes, or
+maybe it's because you don't have that cutting edge climbing shoes, or
 that expensive camera, or that fancy guitar.
 
 Most of us have some thing that we would like to get better at, be it
 any particular sport or mathematics or computer programming or
 trekking for that matter and in most of these fields there are certain
-people who are at the very top. These are the inspiring poeple, these
+people who are at the very top. These are the inspiring people, these
 are the people we look up to and often we imitate the habits of these
 people, believing that imitation would help us get there. Now this
 imitation can often take a bad turn. I'll make my case below.
@@ -26,14 +26,14 @@ this point in time and space, this is true for me.
 # All Imitation is not the same
 
 I think that there are two very different forms of imitation. In one
-form you look at a prollific programmer and you start
-studying/practicisng how they practised. Or you look at the footsteps
+form you look at a prolific programmer and you start
+studying/practicing how they practised. Or you look at the footsteps
 of a developer that you admire and study what they did etc etc. I
 believe that this is a good model to imitate.
 
 On the other hand you have the kind of imitation where you look at
-what posessions a person has or what tools that person uses and you
-conclude that the posession/tool is a part of the reason why they are
+what possessions a person has or what tools that person uses and you
+conclude that the possession/tool is a part of the reason why they are
 so prolific. Case in point, it's the fancy Mac Book Pro that makes
 prolific programmer so prolific and maybe, if you also use a Mac Book
 Pro you would be equally closer to being prolific.
@@ -65,7 +65,7 @@ point. It took me quite some time to see that point.
 
 I have seen inspiring people do inspiring work is shittier laptops and
 I can tell you (and myself) that the choice of laptop does not
-matter. It's a _good to have_, not a _neccecity_.
+matter. It's a _good to have_, not a _necessity_.
 
 # A word about Isomorphic Mimicry #
 
@@ -99,11 +99,11 @@ The fact that the bicycling industry has come up with various
 different types of bicycles each designed for a specific form of the
 sport does not help either. There are mountain bikes, road bikes,
 hybrids, commuters, gravel bikes, touring bikes, TT bikes etc
-etc. Now, there are differnt specialized sports that need these
+etc. Now, there are different specialized sports that need these
 specialized bicycle variants, but the point is that for the kind of
 riding I do, all of the differences do not matter at all. So, the
-bottom line for me is not that these differences are unneccesary, but
-that they are unneccesary for me.
+bottom line for me is not that these differences are unnecessary, but
+that they are unnecessary for me.
 
 The same logic applies to programming and nay sort of exercise that
 requires some gear. If you are just getting started, the kind of gear
@@ -111,7 +111,7 @@ that you have does not really matter. This is mainly because the gear
 plays a very small part when you are just starting out with
 something. Often when you are starting out, you yourself are the
 biggest bottleneck, and the only way you can get better is to becomes
-less of a bottleneck. The quipment (bicycle, compuer) that you own
+less of a bottleneck. The equipment (bicycle, computer) that you own
 beings to matter only when they begin to become the bottleneck and not
 you.
 
@@ -129,7 +129,7 @@ You need a _good laptop_ for programming.
 You need a _Gaming PC_ for gaming.
 You need a _Kindle_ (or any e-reader) to experience ebook properly. 
 You need a _mechanical keyboard_ to experience typing joy.
-You need a _audiopile headphone_ to experince good music quality.
+You need a _audiophile headphone_ to experience good music quality.
 
 All of this is just shit advise tbh.
 
