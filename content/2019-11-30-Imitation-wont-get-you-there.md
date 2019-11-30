@@ -1,5 +1,5 @@
 Title: Imitation wont get me there
-Date: 2019-11-25
+Date: 2019-11-30
 Tags: Meta
 
 
@@ -42,7 +42,7 @@ It might seem that these are small examples that I have cherry picked,
 but I have seem myself do it a lot of times and I have seen other
 people do it too.
 
-# Where does this show up in the Tech Industry ?
+# The scene in Tech ?
 
 Have you seen a popular Youtuber do a _setup tour_. Have you seen
 questions like _which text editor does <insert person here> use_ (I
