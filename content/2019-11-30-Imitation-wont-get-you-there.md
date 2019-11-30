@@ -115,6 +115,18 @@ less of a bottleneck. The equipment (bicycle, computer) that you own
 beings to matter only when they begin to become the bottleneck and not
 you.
 
+# How did I get out of it ?
+
+I don't think I have fully managed to look byond the BS in most fields
+when it comes to arguments like these, however I have come a long way.
+
+It was a blog post on the website
+of
+[Surly Bikes](https://surlybikes.com/blog/some_answers_to_just_about_any_bike_forum_post_ive_ever_read?fbclid=IwAR3AA7ubNCtsUtwSdEtDBXtZ0HMLpIhq4sv_QWkxMXPiQXvg1jrmv689FXU). Read
+it. It is amazing. Surly makes amazinf bikes and are known for their
+steel framed touring bikes. People have travelled around the world on Surly Long Haul Truckers. <3
+
+Also, outside of cycling I have seen people do great things on not-so-great equipment, the equipment does not really matter. :-)
 
 # Where else does this happen ?
 
