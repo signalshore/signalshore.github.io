@@ -67,24 +67,20 @@ I have seen inspiring people do inspiring work is shittier laptops and
 I can tell you (and myself) that the choice of laptop does not
 matter. It's a _good to have_, not a _neccecity_.
 
-# A segway into Isomorphic Mimicry #
+# A word about Isomorphic Mimicry #
 
 I heard of this term first time In episode 138 (12 dream reforms) on
 the Seen and the Unseen podcast.
 
-Isoorphic Mimicry is a form of cheap imitation. Its a process in which
-nation states imitate some of the policies/techniques that are used in
-other countries (countries that already have what they are trying to
-achieve). This is what makes governemnts build expensive schools and
-courthouses even if there are no students present and the justice
-system is riddled with corruption for any courthouse to actually work.
+https://en.wikipedia.org/wiki/Capacity_building#Isomorphic_mimicry
 
-Sometimes it can work, but it generally does not because it ignores
-the subjective truths about a different countries. If you want to
-model solution then you need to look deeper, look into what makes you
-different (or unique) and then reason forward from there.
+This method is used by governments of developing countries which try
+to mimic other government success's by replicating methods and policy
+designs deemed successful in other countries. This does not work in
+certain cases for it ignores all ground level realities.
 
-This applies to humans too.
+Now, when I heard it for the first time, I could immediately see how
+this could apply in a personal way.
 
 # How did I fall into this trap ?
 
@@ -92,33 +88,63 @@ For a decent amount of time I used to believe that I needed a good and
 powerful laptop to do good work. Which is not the case. 
 
 I kind of like cycling, and for a long time I used to believe that I
-need a very fancy bicycle so that I can do "proper" cycling. I
-realized that there is no "proper" cycling, and any bicycle that you
-own is okay.
+need a very fancy bicycle so that I can do "proper" cycling. I enjoy
+thinking about "bicycle touring" and it's a sport where you need some
+amount of gear. I quite like the gear too. But, for a lot of time I
+used to believe that having the gear will make you an expert
+tourer. Which is false. There are lots of people who use non-fancy
+bicycles to tour.
+
+The fact that the bicycling industry has come up with various
+different types of bicycles each designed for a specific form of the
+sport does not help either. There are mountain bikes, road bikes,
+hybrids, commuters, gravel bikes, touring bikes, TT bikes etc
+etc. Now, there are differnt specialized sports that need these
+specialized bicycle variants, but the point is that for the kind of
+riding I do, all of the differences do not matter at all. So, the
+bottom line for me is not that these differences are unneccesary, but
+that they are unneccesary for me.
+
+The same logic applies to programming and nay sort of exercise that
+requires some gear. If you are just getting started, the kind of gear
+that you have does not really matter. This is mainly because the gear
+plays a very small part when you are just starting out with
+something. Often when you are starting out, you yourself are the
+biggest bottleneck, and the only way you can get better is to becomes
+less of a bottleneck. The quipment (bicycle, compuer) that you own
+beings to matter only when they begin to become the bottleneck and not
+you.
 
 
-How many times when we want to do something do we stop and think that maybe what we are attempting to do is futile because we do not have what the pros have ?
+# Where else does this happen ?
 
-How many times have we convinced ourselves that we need something that the pros have in order to do somthing ?
+There is a similar narrative in almost all forms of sport, where we
+are sold the idea that in order to become a pro or in order to
+participate in that sport, you need to have some specialized
+equipment.
 
-This is quite true in case of cycling. Cycling happens to be a sport that I like and often times I would box myself in a category that "I cant do that because I don't have this so-and-so expensive bicycle"
+You need _running shoes_ for running.
+You need _special climbing shoes_ for climbing
+You need a _good laptop_ for programming.
+You need a _Gaming PC_ for gaming.
+You need a _Kindle_ (or any e-reader) to experience ebook properly. 
+You need a _mechanical keyboard_ to experience typing joy.
+You need a _audiopile headphone_ to experince good music quality.
 
-I listened to this podcast episode where shruti rajgopalan talks about how the govt engages in this hting called "isomorphic mimicry" which basically means that it tries to mimic good things that the other govts have done elsewhere and implements them in india and then hopes that the outcomes will be the same. Clearly this is false because what works for them will not work for you. 
-
-I realized that this is something I do too. and this is something that almost everyone does. 
-
-Being a programmer there are loads of advise on the interenet about which laptops are good for programmers. Often these "guides" suggest something that is quite significantly expensive and not meant for the average person (with respect to india). 
-
-There is a similar narrative in almost all forms of sport, where we are sold the idea that in order to become a pro or in oder to participate in that sport, you need to have some specialized equipment. 
-
-You need running shoes for running.
-You need special climbing shoes for climbing
-you need a good laptop for programming.
-you need an Gaming PC for gaming
- 
-If you read books you should buy a e-reader etc etc. 
 All of this is just shit advise tbh.
 
-What really matter is to get started. Just get started. And things will sort itself out. :-)
+As Sheldon Cooper said
+> You only __need__ to breathe. Rest everything is optional. 
 
-This is also partially inspired by a blog post on surly bikes web page which set me up to just get started. 
+# What's the Tl;DR ?
+If I were to sum everything up for myself, it would be this. 
+
+> If there is something that you want to do, and you are waiting for
+> that perfect equipment or that perfect time or someone told you that
+> you need to master something else before doing that; they were lying
+> or they didn't know better themselves. All, you need is to just get
+> started. Get the ball rolling with whatever you have. :-)
+
+
+
+
