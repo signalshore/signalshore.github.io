@@ -31,6 +31,10 @@ system. Moreover named pipes are blocking, i.e. if there is no reader
 present then you can not write to a named pipe. This feature makes it
 ideal to signal backpressure etc etc.
 
+You make a named pipe is bash using the `mkfifo <filename>` command. As you can
+see, a named pipe is nothing but a first-in-first-out stream (with
+some added bells and whistles).
+
 
 In a cool hack you can make a TCP proxy using netcat and named pipes
 
