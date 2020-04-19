@@ -94,11 +94,13 @@ For example: This shows how much I've spent on House Rent and etc etc stuff. (I 
             
 Its just fun. You also use sed/awk to generate reports/graphs of your own.
             
-# More Complexity In the Future
+# For the Future
 I see more complexity coming my way as I start investing properly. I
 only stick to mutual funds as of now, but tracking them has been a
 pain. I am recording all the `buy`s in my system, but I don't record
 the `sell`s properly.
+
+I also need to record Reimburseable expenses better and salaries better. 
 
 Apart from that, this system looks robust as of now.
 
