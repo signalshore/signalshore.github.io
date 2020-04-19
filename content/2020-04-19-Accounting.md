@@ -31,7 +31,7 @@ wage. On top of it I also had proper expenses, rent, taxes, internet
 bills etc etc. I realized that the simple spreadsheet would be too
 complicated and a proper accounting software (like Tally) would be too
 much for my needs. I knew that in order to track everything properly I
-needed to use the Double-Entry accounting system.
+needed to use the [Double-Entry](https://en.wikipedia.org/wiki/Double-entry_bookkeeping) accounting system.
 
 The Double-Entry Accounting system is a concept that says that every
 transaction has two parties that are involved. One party gives money
@@ -43,8 +43,8 @@ I needed something that would be simple for my needs and something
 that would be able to handle double-entry accounting system.
 
 # Enter ledger-cli
-This is a plaintext accounting software. What this means is that
-ledger-cli uses plaintext files to do proper accounting. 
+This is a [plaintext accounting](https://plaintextaccounting.org/) software. What this means is that
+[ledger-cli](https://www.ledger-cli.org/) uses plaintext files to do proper accounting. 
 
 I *love* text files. Simple text files with no magic sauce on the file
 itself, and you can have whatever sauce you want on the application
