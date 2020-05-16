@@ -1,6 +1,7 @@
 Title: Personal Accounting
 Date: 2020-04-19
 Tags: Meta
+Summary: A description of my accounting system at 2020.
 
 
 
