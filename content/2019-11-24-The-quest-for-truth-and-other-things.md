@@ -99,6 +99,7 @@ place.
 
 I read somewhere that 
 > Life is best filled by learning as much as you can about as much as you can.
+
 and I agree with this completely. 
 
 So, one thing that I noticed amongst the people I idolized was that
@@ -106,7 +107,7 @@ they had a very lear way of thinking about things. I'm not talking
 about a certain ideology. I'm talking about a way of _thinking_ about
 things no matter which ideology they follow.
 
-Initially I was quite impressedd by Jordan Peterson and he advocated
+Initially I was quite impressed by Jordan Peterson and he advocated
 to "think for yourself". That was quite powerful, until I discovered
 Slavoj Zizek and a bunch of other philosophers (can not recall then
 but the Hellinistic age was rad), and its amazing to see how they can

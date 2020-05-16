@@ -2,6 +2,8 @@ Title: Personal Accounting
 Date: 2020-04-19
 Tags: Meta
 
+
+
 I used to hate accounting when I had the subject in my Undergrad. It
 seemed extremely complicated for no apparent reason. 
 

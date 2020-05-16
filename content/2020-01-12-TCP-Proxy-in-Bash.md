@@ -1,7 +1,7 @@
 Title: Bash and Netcat
 Date: 2020-01-12
 Tags: Tech
-
+Summary: Some bash tricks; named pipes, netcat, and a tcp proxy.
 
 I have a fascination for bash based tooling. I prefer awk, sed, grep
 over any fancy tooling. Anyway, recently I have discovered two really
