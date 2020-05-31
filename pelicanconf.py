@@ -5,6 +5,8 @@ from __future__ import unicode_literals
 AUTHOR = 'Sohom'
 SITENAME = 'SignalShore'
 SITEURL = ''
+SITESUBTITLE = 'Current Status: Overthinking...'
+
 
 PATH = 'content'
 STATIC_PATHS = ['assets']
@@ -20,6 +22,11 @@ FEED_ALL_ATOM = 'feeds/all.atom'
 SOCIAL = (('Twitter', 'https://twitter.com/sohom83'),
           ('Github', 'https://github.com/83bytes'),
           ('Gitlab', 'https://gitlab.com/83bytes'))
+
+# Links
+LINKS = (('Archives', '/archives.html'),
+         ('Tags', '/tags.html'))
+
 
 # Pagination
 DEFAULT_PAGINATION = 10
