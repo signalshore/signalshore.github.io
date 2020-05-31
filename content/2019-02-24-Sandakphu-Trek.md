@@ -1,6 +1,6 @@
 Title: Sandakphu Trek
 Date: 2019-02-24
-Tags: Travel, Env
+Tags: Travel, Env, Trek
 
 
 Growing up I've always been interested in trekking; So, naturally when

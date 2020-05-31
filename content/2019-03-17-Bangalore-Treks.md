@@ -1,6 +1,6 @@
 Title: Kumara-Parvatha and Savandurga
-Date: 2019-03-16
-Tags: Travel, Env
+Date: 2019-03-17
+Tags: Travel, Env, Trek
 
 In the second week of January I had a trip planned to Bangalore. The
 main goal here was to figure out some work in Bangalore and college. 

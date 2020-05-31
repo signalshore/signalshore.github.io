@@ -1,6 +1,6 @@
 Title: Savandurga Trek
 Date: 2018-04-10
-Tags: Cycling, Travel
+Tags: Cycling, Travel, Trek
 
 
 I came to know about Savandurga Hill a couple of weeks back when me and my friend went there for a casual ride (motorcycle). When we went there the trekking part of the hill was already closed. This was okay since both of us did not plan on trekking anyway. 
