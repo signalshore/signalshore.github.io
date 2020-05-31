@@ -1,4 +1,4 @@
-Title: Life During a Paandemic
+Title: Life During a Pandemic
 Date: 2020-05-16
 Tags: Meta
 Summary: In case you are reading this from the future.
