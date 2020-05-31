@@ -25,7 +25,7 @@ SOCIAL = (('Twitter', 'https://twitter.com/sohom83'),
 
 # Links
 LINKS = (('Archives', '/archives.html'),
-         ('Tags', '/tags.html'))
+         ('Tags', '/tag/index.html'))
 
 
 # Pagination
@@ -52,7 +52,7 @@ ARTICLE_URL = 'blog/{slug}.html'
 ARTICLE_SAVE_AS='blog/{slug}.html'
 PAGE_URL = '{slug}.html'
 PAGE_SAVE_AS='{slug}.html'
-
+TAGS_SAVE_AS = 'tag/index.html'
 
 # Metadata regex
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
