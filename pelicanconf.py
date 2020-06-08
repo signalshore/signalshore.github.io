@@ -5,7 +5,6 @@ from __future__ import unicode_literals
 AUTHOR = 'Sohom'
 SITENAME = 'SignalShore'
 SITEURL = ''
-SITESUBTITLE = 'Current Status: Overthinking...'
 
 
 PATH = 'content'
