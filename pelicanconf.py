@@ -32,14 +32,15 @@ LINKS = (('Archives', '/archives.html'),
 DEFAULT_PAGINATION = 10
 
 # Plugins
-PLUGINS = ["render_math"]
+PLUGINS = ["render_math", "org_reader"]
 PLUGIN_PATHS = ["plugins", "/mnt/data/work_space/blog/pelican/pelican-plugins"]
 
 # Themes
+# I am using the AboutWilson theme
 THEME = '/mnt/data/work_space/blog/signalshore.github.io/theme/'
 
 LOAD_CONTENT_CACHE = False
-
+ORG_READER_EMACS_LOCATION = '/usr/bin/emacs'
 
 # URL settings
 AUTHORS_SAVE_AS = ''
