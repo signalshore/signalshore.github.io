@@ -18,10 +18,6 @@ DEFAULT_LANG = 'en'
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = 'feeds/all.atom'
 
-# Social widget
-SOCIAL = (('Twitter', 'https://twitter.com/sohom83'),
-          ('Github', 'https://github.com/83bytes'),
-          ('Gitlab', 'https://gitlab.com/83bytes'))
 
 # Links
 LINKS = (('Archives', '/archives.html'),
