@@ -1,0 +1,21 @@
+#+TITLE: The Title Of This BlogPost
+#+DATE: 2020-06-01
+#+CATEGORY: blog-category
+#+AUTHOR: My Name
+#+PROPERTY: SUMMARY hello, this is the description
+#+PROPERTY: TAGS my, first, tags
+#+PROPERTY: STATUS draft
+
+
+* Hello
+ho sis it going
+
+** Hello my family
+
+
+
+What is wrong ?
+
+
+
+
