@@ -12,19 +12,24 @@
 		<![endif]-->
 	<link href="{{ SITEURL }}/theme/css/ipython.css" rel="stylesheet">
 	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.mn.css" rel="stylesheet">
 	<link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
 	<link href="{{ SITEURL }}/theme/css/local.css" rel="stylesheet">
-	<link href="{{ SITEURL }}/theme/css/pygments.css" rel="stylesheet">
 	{% block head %}{% endblock %}
 </head>
 
 <body>
+
 <div class="container">
 	<div class="page-header">
 		<h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a>
 			<br>{% if SITESUBTITLE %}<small>{{ SITESUBTITLE }}</small></h1>{% endif %}
 	</div>
+
+        <p>
+<a href="{{ SITEURL }}">Home</a> |  <a href="{{ SITEURL }}">Home1</a> | <a href="{{ SITEURL }}">Home2</a> | <a href="{{ SITEURL }}/about.html">Page 1</a> | <a href="{{ SITEURL }}/about.html">Page 12</a> | <a href="{{ SITEURL }}/about.html">Page 22</a> </p>
+
+<br>        
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			{% block content %}{% endblock %}
@@ -67,26 +72,6 @@
 			</div>
 		</div>
 	</div>
- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> 
 </footer>
 <div class="container">
 	<div class="row">
