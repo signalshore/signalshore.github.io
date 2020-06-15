@@ -6,30 +6,19 @@
 	<meta name="description" content="{% block description %}Computer Science, Mathematics, Theoretical Computer Science, Functional Programming{% endblock %}">
 	<meta name="author" content="{{ AUTHOR }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src="{{ SITEURL }}/theme/html5.js"></script>
-		<![endif]-->
 	<link href="{{ SITEURL }}/theme/css/ipython.css" rel="stylesheet">
-	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.mn.css" rel="stylesheet">
 	<link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
 	<link href="{{ SITEURL }}/theme/css/local.css" rel="stylesheet">
+	<link href="{{ SITEURL }}/theme/css/pygments.css" rel="stylesheet">
 	{% block head %}{% endblock %}
 </head>
 
 <body>
-
 <div class="container">
 	<div class="page-header">
 		<h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a>
 			<br>{% if SITESUBTITLE %}<small>{{ SITESUBTITLE }}</small></h1>{% endif %}
 	</div>
-
-        <p>
-<a href="{{ SITEURL }}">Home</a> |  <a href="{{ SITEURL }}">Home1</a> | <a href="{{ SITEURL }}">Home2</a> | <a href="{{ SITEURL }}/about.html">Page 1</a> | <a href="{{ SITEURL }}/about.html">Page 12</a> | <a href="{{ SITEURL }}/about.html">Page 22</a> </p>
-
-        <hr>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			{% block content %}{% endblock %}
@@ -80,24 +69,6 @@
 		</div>
 	</div>
 </div>
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-	$("div.collapseheader").click(function () {
-		$header = $(this).children("span").first();
-		$codearea = $(this).children(".input_area");
-		$codearea.slideToggle(500, function () {
-			$header.text(function () {
-				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
-			});
-		});
-	});
-});
-</script>
-{% include "analytics.html" %}
-{% include "github.html" %}
 </body>
 </html>
 
