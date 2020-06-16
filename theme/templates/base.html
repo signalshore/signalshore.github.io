@@ -27,41 +27,40 @@
 	<!-- <hr> -->
 </div> <!-- /container -->
 <footer class="aw-footer bg-danger">
-	<div class="container"> <!-- footer -->
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row">
-					<div class="col-md-3">
-						<h4>Navigation</h4>
-						<ul class="list-unstyled my-list-style">
-							{% if DISPLAY_PAGES_ON_MENU %}
-							{% for page in pages %}
-							<li><a href="{{ SITEURL }}/{{ page.url }}"><i class="fa fa-{{ page.title }} "></i> {{page.title}}</a></li>
-							{% endfor %}
-							{% endif %}
-							{% if FEED_ALL_ATOM %}
-							<li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
-							{% endif %}
-							{% if FEED_ALL_RSS %}
-							<li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml"><i class="fa fa-rss "></i> rss</a></li>
-							{% endif %}
-						</ul>
-					</div>
-				{% if LINKS %}
-					<div class="col-md-3">
-						<h4>Links</h4>
-						<ul class="list-unstyled my-list-style">
-						{% for name, link in LINKS %}
-							<li><a href="{{ link }}">{{ name }}</a></li>
-						{% endfor %}
-						</ul>
-					</div>
-				{% endif %}
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
+<!-- 	<div class="container"> <\!-- footer -\-> -->
+<!-- 		<div class="row"> -->
+<!-- 			<div class="col-md-10 col-md-offset-1"> -->
+<!-- 				<div class="row"> -->
+<!-- 					<div class="col-md-3"> -->
+<!-- 						<h4>Navigation</h4> -->
+<!-- 						<ul class="list-unstyled my-list-style"> -->
+<!-- 							{% if DISPLAY_PAGES_ON_MENU %} -->
+<!-- 							{% for page in pages %} -->
+<!-- 							<li><a href="{{ SITEURL }}/{{ page.url }}"><i class="fa fa-{{ page.title }} "></i> {{page.title}}</a></li> -->
+<!-- 							{% endfor %} -->
+<!-- 							{% endif %} -->
+<!-- 							{% if FEED_ALL_ATOM %} -->
+<!-- 							<li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li> -->
+<!-- 							{% endif %} -->
+<!-- 							{% if FEED_ALL_RSS %} -->
+<!-- 							<li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml"><i class="fa fa-rss "></i> rss</a></li> -->
+<!-- 							{% endif %} -->
+<!-- 						</ul> -->
+<!-- 					</div> -->
+<!-- 				{% if LINKS %} -->
+<!-- 					<div class="col-md-3"> -->
+<!-- 						<h4>Links</h4> -->
+<!-- 						<ul class="list-unstyled my-list-style"> -->
+<!-- 						{% for name, link in LINKS %} -->
+<!-- 							<li><a href="{{ link }}">{{ name }}</a></li> -->
+<!-- 						{% endfor %} -->
+<!-- 						</ul> -->
+<!-- 					</div> -->
+<!-- 				{% endif %} -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 text-center center-block aw-bottom">
@@ -69,6 +68,7 @@
 		</div>
 	</div>
 </div>
+</footer>
 </body>
 </html>
 
