@@ -12,10 +12,233 @@ ho sis it going
 
 ** Hello my family
 
-
+#+begin_quote
+Hello This is a quote
+#+end_quote
 
 What is wrong ?
 
 
+This is a latex thing
+
+#+begin_src latex
+$expr \thinspace$ $:=$ $\thinspace constant$
+ 
+$\qquad \qquad$ $|$ $variable$ 
+ 
+$\qquad \qquad$ $|$ $(expr \space expr)$ 
+ 
+$\qquad \qquad$ $|$ $( \lambda \thinspace variable.expr)$
+
+#+end_src
 
 
+** A very simple  $\lambda$-expression
+
+* BOOKS [4/47]
+** CS Books
+*** TODO The little schemer by Daniel P. Friedman
+*** TODO The seasoned schemer by Daniel P. Friedman
+*** TODO The resoned schemer by Daniel P. Friedman
+*** TODO The little prover by Daniel P. Friedman
+*** TODO The little Typer by Daniel P. Friedman
+*** TODO Programming Pearls
+*** TODO Types and Programming Languages By Benjamin C. Pierce
+*** TODO Essentials of Programming Languages by Daniel P. Friedman
+*** TODO Programming Languages: Application and Interpretation by Shriram Krishnamurth
+*** TODO Programming and Programming Languages https://papl.cs.brown.edu/2018/
+*** STARTED Site Reliability Engineering
+*** STARTED The pheonix project
+*** STARTED The Devops Handbook
+** Non CS
+*** TODO The Ivory Throne by Manu S Pillai 
+    
+   - Context :: Amit verma. seen and unseen
+*** TODO Sebastian and Sons by TM Krishna 
+    
+   - Context :: Seen and Unseen with TM Krishna. greatly attacks caste system in hindu brahmanical society
+*** TODO A slow death: 83 days of radiation sickness by NHK TV crew
+*** TODO Art of War by Sun Tzu
+*** TODO Code: The Hidden Language of Computer Hardware and Software by Charles Petzold
+*** TODO Columbine by David Cullen
+*** TODO Crime and Punishment by Fydoor Dostoevsky
+    - Reddit recommends this as an entry point to Dostovesky
+
+*** TODO Democracy in Deficit by James M. Buchana
+    Macroeconomic theory in democracy
+*** TODO Drinking the sea at Gaza
+    About the war in gaza
+*** TODO Early Indians by Tony Joseph
+*** TODO Evil by Julia Shaw
+*** TODO Godel, Escher, Bach by Douglas Richard Hofstadter
+*** TODO India’s Big Government: The Intrusive State & How It's Hurting Us by Vivek Kaul
+*** TODO Easy Money by Vivek Kaul 
+*** TODO infinity and the mind by Rudy Rucker
+*** TODO Meditations by Marcus Aurelious 
+*** TODO Men of Mathematics by Eric Temple Bell
+*** TODO michio kaku
+*** TODO Midnights Children Salman Rushdie 
+*** TODO Notes from Underground by Fydoor Dostoevs
+    - Reddit recommends this as the seocnd book
+*** TODO Oath Betrayed by Steven H Miles 
+    Book about doctors doing terrible things
+*** TODO Panzram
+*** TODO Pedagopgy of the opressed
+*** TODO Philosophical Investigations by Ludwig Wittgenstein
+*** TODO Pure White and Deadly John Yudkin
+*** TODO Rape of Nanking
+*** TODO richard dawkings
+*** TODO Slavoj Zizek, the plague of fantasies 
+*** TODO The Annotated Turing by Charles Petzold
+*** TODO The Beekeeper of Aleppo by Christy Lefteri
+*** TODO The denial of death by Ernest Becker 
+*** TODO The Dispossessed by Ursula Ke LeGuin
+*** TODO The Enperrors new mind, Roger Penrose
+*** TODO The Gods themselves by Isaac Asimov
+*** TODO The Gulag Archipelago by Aleksandr Solzhenitsyn
+*** TODO The Hitchhickers Guide to Galaxy by Douglas Adams
+*** TODO The language instinct by Steven Pinker
+*** TODO The Left Hand of Darkness by Ursula Ke LeGuin
+*** TODO The Liberatarian Mind by David Boaz
+*** TODO The pea and the sun: A Mathematical Paradox by Leanard M. Wapner
+*** TODO The Shallows: What the Internet Is Doing to Our Brains by Nicholas Carr
+*** TODO The Soul of a new Machine : Tracy Kidder
+*** TODO The story of Philosophy by Will Durant
+*** TODO The Tattoist of Auchwitz by Christy Lefteri
+*** TODO The Tell-Tale Brain by VS Ramachandran
+*** TODO Things to make and do in the Fourth dimension
+*** TODO Tractatus Logico-Philosophicus by ludwig Wittgenstein
+*** TODO Turing's Cathedral by George Dyson
+*** TODO Voices from Chernobyl : Svetlana Alexievich
+*** TODO Cuckoos Egg by Clifford Stoll
+- Context :: Computer Espionage
+*** TODO The Gift of Fear by Gavin deBecker
+    
+   - Context :: somewhere on reddit. talking about how it reframes PSTD and fear as a superpower
+*** TODO War and Peace in Modern India by Srinath Raghavan
+*** TODO The beginning of Infinity by David Deutsch 
+  
+   - Context :: twitter. it says its quite full of ideas and very clearly written
+*** TODO The Rules of Contagion by Adam Krsarski
+  
+   - Context :: Vivek Kaul recommended this in a tweet
+*** TODO Deadliest Enemy by Michaie T Osterholm
+  
+   - Context :: Book by Epidemiologist
+*** TODO Tell her everything by Mirza Wahid
+  
+   - Context :: won an award and the book looks amazing
+*** TODO The Wheel of Time Series.  
+  
+   - Context :: This is better than HP seris
+*** TODO Trouble In Paradise by Slavoj Zizek
+  
+   - Context :: zizek sub. about paedophilia in the church
+*** TODO Bad Science by Ben Goldacre
+  
+   - Context :: amit verma article on quackery
+*** TODO Trick of Treat by Simon Singh
+  
+   - Context :: amit verma article on quackery
+*** TODO Seveneves by Neat Stephenson
+  
+   - Context :: smarter everyday recommended this one. sci-fi
+*** TODO The Calculating Stars by mary robinette kowal
+  
+   - Context :: again by smarter every day
+*** TODO The Outsourcer by Dinesh Sharma 
+Its a story of the IT revolution in India
+  
+   - Context :: Twitter
+*** TODO Cajing Skies
+  
+   - Context :: This book inspired jojo rabbit
+*** STARTED Poor economics by Abhijit Banerjee
+*** STARTED The Intellligent Investor by Benjamin Grahm
+*** STARTED Confession of an economic hitman by john perkins
+  
+   - Context :: Vikram gve this book.
+*** PAUSED Chaos by James Gleick
+*** PAUSED Bullshit jobs by David graever
+*** PAUSED Everybody loves a good drought by P. Sainath
+    CLOSED: [2020-06-06 Sat 08:06]
+*** CANCEL a billion wicked thoughts
+    CLOSED: [2020-01-20 Mon 09:22]
+
+*** CANCEL The Mindfull Geek by Michael Taft
+*** CANCEL The Outer Limits of reason (mit press)
+    CLOSED: [2020-01-22 Wed 22:59]
+*** DONE 12 Rules for Life by Jordan B Peterson
+- Nothing too fancy. A bit too right-wing maybe, and some things are
+  awfully wrong.
+    
+*** DONE 21 lessons for 21st century
+    CLOSED: [2019-12-26 Thu 12:33]
+*** DONE Algorithms to live by
+    CLOSED: [2019-10-17 Thu 22:07]
+*** DONE ENIGMA by Andrew Hodge
+- The movies does not do justice to the book. It portrays Turing as a
+  very Human person instead of that methematical genius as protrayed
+  by the movie.
+*** DONE Harry Potter series [7/7]
+    CLOSED: [2020-01-20 Mon 09:22]
+**** DONE The Philosopher's Stone (1997)
+     CLOSED: [2019-12-26 Thu 12:34]
+**** DONE The Chamber of Secrets (1998)
+     CLOSED: [2019-12-26 Thu 12:34]
+**** DONE The Prisoner of Azkaban (1999)
+     CLOSED: [2019-12-26 Thu 12:34]
+**** DONE The Goblet of Fire (2000)
+     CLOSED: [2020-01-02 Thu 10:52]
+**** DONE The Order of the Phoenix (2003)
+     CLOSED: [2020-01-20 Mon 09:22]
+**** DONE The Half-Blood Prince (2005)
+     CLOSED: [2020-01-20 Mon 09:22]
+**** DONE The Deathly Hallows (2007)
+     CLOSED: [2020-01-20 Mon 09:22]
+*** DONE Mans search for meaning by Victor E Frankl
+    CLOSED: [2019-07-08 Mon 22:19]
+*** DONE Ordianry men by Christopher Brownning
+*** DONE Ruined by Design by Mike Monteiro 
+*** DONE sapiens by Yuval Noah Harari
+    CLOSED: [2019-12-26 Thu 12:33]
+*** DONE The Subtle art of not giving a fuck
+*** DONE homo deus by Youval Noah Harari
+    CLOSED: [2020-03-08 Sun 11:46]
+*** DONE The Anarchy by William Darylimple 
+    CLOSED: [2020-03-14 Sat 17:37]
+    
+   - Context :: A good book on the history of the east india company
+*** DONE The Undercover Economist by Tim Harford
+    CLOSED: [2020-04-12 Sun 21:01]
+* PAPERS [4/13]
+** TODO Why Functional Programming Matters by John Hughes
+** TODO On computable numbers by Alan M. Turing
+** TODO Can programming be liberated from the Von Neuman Style by John Backus
+** DONE Amazon DynamoDB
+   CLOSED: [2018-12-04 Tue 13:17]
+
+** DONE Google BigTable
+   CLOSED: [2019-02-12 Tue 13:17]
+** TODO Google MapReduce
+** DONE Consistent Hashing Akamai
+   CLOSED: [2019-08-21 Wed 23:58]
+** DONE Out of the tarpits
+   CLOSED: [2020-03-28 Sat 13:54]
+** TODO On expressive power of programming languages by MatthiasFelleisen
+** TODO John Macarthy LISP
+** TODO Church Lambda calculus
+** TODO Your server as function from twitter
+** TODO NO Silver Bullet by Brooks
+   
+* Web [0/2]
+** TODO  HP from Hermion's perspective 
+https://www.reddit.com/r/harrypotter/comments/e4nq6x/so_i_rewrote_hp_and_the_philosophers_stone_from/
+ 
+  - Context :: HP from Hermione's perspective
+** TODO PID1 thingy from jenkins  
+https://github.com/krallin/tini/issues/8
+ 
+  - Context :: Docker pid1 prob
+* Kitchen Sink
+  
