@@ -4,9 +4,12 @@ Tags: CS, Tech
 <!-- Summary:  -->
 
 
-How do you run tcpdump only on a container ?  In this we will explore
-some bits of container networking and figure out how to run tcpdump in
-such a way that only the traffic from a container is captured.
+How do you run tcpdump only on a container ? How does container
+networking even work ?
+
+In this we will explore some bits of container networking and figure
+out how to run tcpdump in such a way that only the traffic from a
+container is captured.
 
 Normally running `tcpdump` on the eth0 interface on a instance is good
 enough, but what do you do when your container host is running
