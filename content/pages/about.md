@@ -3,8 +3,6 @@ layout: page
 permalink: /about/
 title: About
 ---
-<br>
-
 # About
 
 <br> 
