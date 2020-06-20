@@ -2,6 +2,7 @@ Title: Life During a Pandemic 12
 Date: 2020-05-26
 Tags: Meta
 Summary: In case you are reading this from the future.
+Status: Draft
 
 # Table of Contents
 
