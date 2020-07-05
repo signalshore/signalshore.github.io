@@ -21,17 +21,19 @@ Kolkata, West Bengal <br/>
 
 ---
 
-## Research/Academic Interests ##
-
-Theoretical Computer Science, Programming Langauge Theory, Functional Programming, Algorithms and Data Structures
-
----
-
 ## Technical Experience ##
+
+### People Interactive ###
+*DevOps Engineer*, June 2018 - Present
+
+- AWS (random bits and pieces)
+- Entire Container platform (ECS)
+- A lot of Python, Bash and awscli 
+- CI/CD pipeline for said container platform using Gitlab
 
 ### Nexsales Solutions ###
 
-*DevOps Engineer*, June 2018 - Present
+*DevOps Engineer*, June 2018 - June 2019
 
 - Infra with Ansible, Terraform and Packer
 - CI with Jenkins.
