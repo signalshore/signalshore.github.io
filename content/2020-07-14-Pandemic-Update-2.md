@@ -30,23 +30,16 @@ even though soap water also works.
 
 ## Work ##
 Work has been good. Apparently my performance was good enough that I
-received a good promotion. This was most unexpected. 
-
-The past few weeks were bit rough. There was an overall lack of
-direction and feeling overworked and a bit un-noticed at work. After
-the promotion I got a chance to talk to some people that learnt that
-the "I am not doing good enough" were just in my head.
+received a good promotion. This was most unexpected because I felt
+that I was not doing good enough or that there was something more to
+do always.
 
 The promotion has been interesting. Apart from the technical
 responsibilities, I have started making detailed plans for projects
 and time estimates. Need to see how this plays out.
 
-I am also taking interviews of people for a position in our company. 
-
-I sometimes feel out of my depth; but then again, there is hardly
-anything productive that I can do other than keep studying and
-growing.
-
+My recent project involves working with a distributed database which I
+am enjoying a lot.
 
 ## Social Stuff ##
 I've been cutting down on my social media consumption for a while
