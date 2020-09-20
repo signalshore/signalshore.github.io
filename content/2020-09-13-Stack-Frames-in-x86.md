@@ -4,7 +4,7 @@ Tags: CS
 
 
 A very brief primer on x86 Stack Frames. Stumbled onto this while
-reading about linux performanc monitoring tools. It's been a while
+reading about Linux performance monitoring tools. It's been a while
 since I looked at assembly code so this was more fun than I expected.
 
 Anyhow, This post will summarize some basics of what are Stack Frames
@@ -21,7 +21,7 @@ memory is called the process' stack.
 The Stack is a Last In First Out data structure. In x86 the stack grows
 downwards. Which means that the `bottom` of the stack has the highest
 memory address and the `top` of the stack has the lowest memory
-address. We will not get into the reasosn for such a design, but there
+address. We will not get into the reasons for such a design, but there
 are other systems where the stack does not work this way.
 
 The main function of the stack is to keep track of execution
@@ -36,7 +36,7 @@ a new function is executed.
 
 The Stack Frame is a part of the process' stack that is responsible
 for keeping track of the execution env that is relevant only to that
-funciton call. 
+function call. 
 
 The processor creates a new stack frame whenever there is a new
 function call. Each stack frame hold the following details
@@ -46,8 +46,8 @@ function call. Each stack frame hold the following details
 - Return Address 
 - Data (Local variables and Parameters)
 
-When we look at the assembly code, every function has a prolouge and
-an epilouge. These are the sections that are responsible for building
+When we look at the assembly code, every function has a prologue and
+an epilogue. These are the sections that are responsible for building
 the stack frame for that function as well as tearing down the stack
 frame when the control-flow needs to return to the caller function.
 
@@ -128,7 +128,7 @@ The only sections that we will focus on are the `main` and the `foo` sections.
     push   DWORD PTR [ebp-0x8]
     call   4ed <foo>
     
-In this segement we are leading the value stored in the memory
+In this segment we are leading the value stored in the memory
 location `ebp-0x8` into the stack and then we `call` the foo
 subroutine. parameters are passed using the stack (pushed onto the
 stack) and the results are returned by using the `eax` register.
@@ -149,7 +149,7 @@ Notice the first two lines of both the functions.
     push   ebp
     mov    ebp,esp
 
-In this sequnce we built the stack from for the current function. 
+In this sequence we built the stack from for the current function. 
 
 
 After ther _call_ in the previous section, the control flow jumps to
@@ -162,6 +162,8 @@ well.
 After that we set the current value of the _esp_ as the _ebp_ for the
 current frame.  Note that the _esp_ is currently pointing to the top
 of the stack. This effectively starts a new frame.
+
+##### Note: As every frame contains a reference to the base pointer of the previous frame, this enables debuggers to _walk_ the call-stack. #####
 
 Thus the `stack frame` for `foo` function (or the `callee` function) contains the following.
 
@@ -191,7 +193,7 @@ Thus the `stack frame` for `foo` function (or the `callee` function) contains th
     ret
 
 Now, the function has finished executing and it needs to return the
-control flow to the calling funciton. We need to do some cleanup
+control flow to the calling function. We need to do some cleanup
 first.
 
 The first thing that happens is that the space on the stack that was
@@ -203,7 +205,7 @@ After that we pop the first element from the stack and store it in the
 `ebp` register. Recall that the top of the stack contained the address
 to the previous stack frame. Now, we store that address back in the `ebp`.
 
-All that is left to do is to return to the instruction that we shold
+All that is left to do is to return to the instruction that we should
 execute after the call to this procedure. This is done by _poping_ the
 next element from the stack (the return address) and storing it in the
 `isp` or the instruction pointer.
@@ -212,13 +214,18 @@ next element from the stack (the return address) and storing it in the
 This is basically what the above instructions do.
 
 
+## References ##
 
-It does this be poping the first
-element of the stack and restoring it to the ebp. This effectively
-restores the ebp to the ebp of the previous frame. Then it pops the
-next item on the stack and restores it to the _eip_. This is the
-return address and hence the control-flow returns to the original
-function.
+1. [Assembly Syntax](https://imada.sdu.dk/~kslarsen/dm546/Material/IntelnATT.htm) 
+2. [Call Stack](https://en.wikipedia.org/wiki/Call_stack)
+3. [Stack Frames](https://www.cs.rutgers.edu/~pxk/419/notes/frames.html)
+4. [Function Prolouge](https://en.wikipedia.org/wiki/Function_prologue)
+5. [The Stack](https://en.wikibooks.org/wiki/X86_Disassembly/The_Stack)
+6. [Pratical Reverse Engineering](https://shantanugoel.com/2017/12/04/practical-reverse-engineering-tutorial-2-protostar-stack4/)
+7. [Stack Based memory Allocation](https://en.wikipedia.org/wiki/Stack-based_memory_allocation)
+8. [x86 Opcode Reference](http://ref.x86asm.net/)
 
 
+This was jsut somethnig to stroke my systems-programming/hardware bug. This was super fun. 
 
+Untill next time. :)
