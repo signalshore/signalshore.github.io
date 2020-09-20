@@ -115,7 +115,7 @@ The only sections that we will focus on are the `main` and the `foo` sections.
         545:	c3                   	ret    
         
 
-
+###### Note: This is assembly in Intel syntax. Which follows the [oeprand destination, source] format.######
 
 <br>
 <hr>
@@ -152,13 +152,18 @@ Notice the first two lines of both the functions.
 In this sequnce we built the stack from for the current function. 
 
 
-After ther `call` in the previous section, the control flow jumps to
-this instruction. This instruction pushes the `current base pointer`
-to the stack. This is base pointer of the caller function. After that
-we set the current value of the `esp` as the `base pointer` for the
-current frame.
+After ther _call_ in the previous section, the control flow jumps to
+this instruction. This instruction pushes the _current base pointer_
+to the stack. This is base pointer of the previous stack frame. `ebp`
+is a register, so the previous command effectively pushes the data
+stored in that register onto the stack. This increments the `esp` as
+well.
 
-Thus the `stack frame` for `foo` function (or the `callee` function) contains the following, in-order.
+After that we set the current value of the _esp_ as the _ebp_ for the
+current frame.  Note that the _esp_ is currently pointing to the top
+of the stack. This effectively starts a new frame.
+
+Thus the `stack frame` for `foo` function (or the `callee` function) contains the following.
 
     :::bash
     +========================+
@@ -171,17 +176,13 @@ Thus the `stack frame` for `foo` function (or the `callee` function) contains th
     +------------------------+
     |     Return Address     |
     +------------------------+
-    |   Base Pointer (foo)   |
+    |   Base Pointer (main)  |
     +------------------------+ <---- ebp foo
     |     Local variables    |
     +------------------------+
     |     Local variables    | 
     +========================+ <---- esp foo
     
-1. Parameters
-2. Return Address
-3. Base Pointer of previous frame
-4. Local Variables.
 
 ### The Exit Sequence ###
 
@@ -189,22 +190,35 @@ Thus the `stack frame` for `foo` function (or the `callee` function) contains th
     leave
     ret
 
+Now, the function has finished executing and it needs to return the
+control flow to the calling funciton. We need to do some cleanup
+first.
+
+The first thing that happens is that the space on the stack that was
+used for local variables is teared down. This is done by moving _esp_
+to the _ebp_. Since, the _esp_ tracks the top of the stack, by moving
+it, we effectively reset the stack. 
+
+After that we pop the first element from the stack and store it in the
+`ebp` register. Recall that the top of the stack contained the address
+to the previous stack frame. Now, we store that address back in the `ebp`.
+
+All that is left to do is to return to the instruction that we shold
+execute after the call to this procedure. This is done by _poping_ the
+next element from the stack (the return address) and storing it in the
+`isp` or the instruction pointer.
+
+
+This is basically what the above instructions do.
 
 
 
+It does this be poping the first
+element of the stack and restoring it to the ebp. This effectively
+restores the ebp to the ebp of the previous frame. Then it pops the
+next item on the stack and restores it to the _eip_. This is the
+return address and hence the control-flow returns to the original
+function.
 
 
 
-## NOTEs
-
-    ============
-    parent frame   [EBP-Parent]
-    ------------
-    parameters
-    -----------
-    return address
-    ============
-    saved EBP of parent frame 
-    ------------
-    child frame
-    ===========
