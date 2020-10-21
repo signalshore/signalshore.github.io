@@ -1,6 +1,7 @@
 Title: Containers; The Interesting Bits
 Date: 2020-09-26
 Tags: CS
+Status: draft
 
 # What is Container ?
 Docker Hub says that a container is [_A standardized unit of software_](https://www.docker.com/resources/what-container). 
@@ -176,15 +177,13 @@ can isolate 8 different resources from your process):
 - cgroup (`cgroup`)
 - User(`user`)
 
+## Pid and Network namspace.
 
-
-
-* Talk about docker architecture  --- client : daemon : containerd : containerd-shim : runc 
-* talk about unshare
-* talk about docker network namespace
-* Show how cgrops work when you put limits
-
-
+- We can create namespces using the `unshare` command
+- `unshare --fork --pid --net --mount-proc bash` - This command will run a bash shell in a different network and pid namespace.
+    - This means, no internet (unless we manually enable it) and bash is running as `pid 1` (how cool is that ?)
+    
+To fix this we need to add a veth device to the new namespace and stuff.
 
 
 
@@ -200,3 +199,4 @@ can isolate 8 different resources from your process):
 - [what are containers made from](https://www.youtube.com/watch?v=sK5i-N34im8)
 - [Gitbook - Linux Insides - Control Groups](https://0xax.gitbooks.io/linux-insides/content/Cgroups/linux-cgroups-1.html)
 - [Detailed Memory CGroup Reference](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-memory)
+- [Capabilities man page](https://man7.org/linux/man-pages/man7/capabilities.7.html)
