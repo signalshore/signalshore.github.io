@@ -5,6 +5,8 @@ from __future__ import unicode_literals
 AUTHOR = 'Sohom'
 SITENAME = 'SignalShore'
 SITEURL = ''
+RELATIVE_URLS = False
+
 
 
 PATH = 'content'
