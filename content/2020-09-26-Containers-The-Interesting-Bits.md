@@ -9,7 +9,7 @@ Tags: CS, Tech
 
 <a id="orgd7d2bf9"></a>
 
-A container as a <span class="underline">fancy</span> process as in a process in Linux.
+A container is a <span class="underline">fancy</span> Linux (unix) process.
 
 The fancy-ness of the process comes from the fact that this process
 is running in a very isolated environment and a very restricted
