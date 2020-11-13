@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Containers; The Interesting Bits — SignalShore</title>
+    <meta name="description" content="Title: Containers; The Interesting Bits; Date: 2020-09-26; Author: Sohom">
+    <meta name="author" content="Sohom">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+<h4> 
+  <a href="https://signalshore.github.io/about.html">About</a>
+  |
+  <a href="https://signalshore.github.io/cv.html">CV</a>
+  |
+
+  <a href="/archives.html">Archives</a>
+  |
+  <a href="/tag/index.html">Tags</a>
+  |
+
+  <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+  Atom
+  </a>
+
+</h4>
+</div>
+<!-- From here starts the content blocks -->
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Containers; The Interesting Bits</h1>
+		<time datetime="2020-09-26T00:00:00+05:30" itemprop="datePublished">Sat 26 September 2020</time>
+	</div>
+ 
+	<div>
+		Tags:
+		<span itemprop="keywords">
+			[<a href="https://signalshore.github.io/tag/cs.html" rel="tag">CS</a>]
+		</span>
+		
+		<span itemprop="keywords">
+			[<a href="https://signalshore.github.io/tag/tech.html" rel="tag">Tech</a>]
+		</span>
+		
+	</div>
+	<div itemprop="articleBody" class="article-body"><p><a id="org1f3b3fd"></a></p>
+<h1>Container</h1>
+<p><a id="orgd7d2bf9"></a></p>
+<p>A container is a <span class="underline">fancy</span> Linux (unix) process.</p>
+<p>The fancy-ness of the process comes from the fact that this process
+is running in a very isolated environment and a very restricted
+environment. This means that the process can not see other
+processess and it has very limited access to system resources.</p>
+<p>This is essentially a container. It is made up two features of the
+Linux Kernel called <span class="underline">control groups</span> (or cgroups for short) and
+<span class="underline">namespaces</span>. </p>
+<p>Docker on Mac OS runs the Linux Kernel as a VM so that you can run
+containers on top it.</p>
+<h1>Table of Contents</h1>
+<ol>
+<li><a href="#org1f3b3fd">Container</a><ol>
+<li><a href="#orgd7d2bf9">What are containers ?</a></li>
+<li><a href="#org91f8bf2">Containers vs VMs</a></li>
+<li><a href="#org5641d24">Docker Basics</a></li>
+<li><a href="#orged10953">Linux Process-fu</a></li>
+</ol>
+</li>
+<li><a href="#org8542faf">Cgroups and Namespaces</a><ol>
+<li><a href="#orgcdfaeba">Control Groups</a><ol>
+<li><a href="#orgece3764">Operations with Control Groups</a></li>
+<li><a href="#org5a69f04">Cgroup demo - memory subsystem</a></li>
+<li><a href="#org43d6014">Cgroup demo - PID subsystem</a></li>
+</ol>
+</li>
+<li><a href="#org3d234e3">Namespaces</a><ol>
+<li><a href="#org2631bea">Pid and Network namspace.</a></li>
+</ol>
+</li>
+<li><a href="#org34f6f5d">Reference</a></li>
+</ol>
+</li>
+</ol>
+<p><a id="org91f8bf2"></a></p>
+<h2>Containers vs VMs</h2>
+<p>A container is a fancy process; a Virtual Machine on the other hand is
+an entire <span class="underline">virtual computer</span>. It is not difficult to see the
+differences from here. In a VM you set up an entirely new OS on top of
+virtualied hardware. In a contianer you limit the execution
+envrionment of the process. Essentially, a VM is a OS level isolation,
+while a contianer is a process level isolation mechanism.</p>
+<p><a id="org5641d24"></a></p>
+<h2>Docker Basics</h2>
+<p>The course at <a href="https://docker-curriculum.com/">Docker-Curriculum</a> is
+highly recommended for beginners.</p>
+<p>As a refresher we will look at the common docker commands:</p>
+<ul>
+<li><strong>docker build:</strong> build an image from a recipe</li>
+<li><strong>docker run  :</strong> run an image</li>
+<li><strong>docker stop :</strong> stop a running contianer</li>
+<li><strong>docker kill :</strong> kill a running container</li>
+<li><strong>docker ps   :</strong> List running containers</li>
+</ul>
+<p><a id="orged10953"></a></p>
+<h2>Linux Process-fu</h2>
+<p>This is a brief (albeit incomplete and highly simplified) description
+of how processess work in linux; i.e. how they are created, managed
+and cleaned-up.</p>
+<p>In linux, processess are managed using a tree like structure, with
+processess having a parent-child relationship. Processess have a
+unique idenfier called the process-id (or pid). The first process that starts
+when a Linux computer starts is called the <em>init</em> process and it has
+<em>PID 1</em> and it is responsible for starting/managing all other
+processess.</p>
+<p>When a process creates a child-process, the parent process gets a
+child-pid. This is important because the parent processess need to
+wait for the child process to finish its execution. The parent is also
+responsible for cleaning up after its children.</p>
+<p><a id="org8542faf"></a></p>
+<h1>Cgroups and Namespaces</h1>
+<p>Container is OS level virutalisation framework that uses namespaces
+(provided by the linux kernel) to isolate system resources into
+namespaces such that the processess that run in different namespaces
+are isolated from each other; i.e. they can not see each other. Thus
+they do not step on each others toes.</p>
+<p>It also uses cgroups which is a kernel feature that is used to limit
+and monitor the usage of system resouces like CPU, memory, pids etc.</p>
+<p>So, with these tools, we can isolate process into a sandbox of their
+own AND limit them with the amount of CPU/Memory they can use.</p>
+<p>Apart from this the filesystem that is used by containers is also
+interesting. This file system is implemented as layers and this
+enables some really interesting use-cases.</p>
+<p>Things are not that simple. There are other things like seccomp
+(which is a mechanism that is used to limit the system calls that a
+process can use.)</p>
+<p>(there are some extra bits as well which I haven't studied yet)</p>
+<p><a id="orgcdfaeba"></a></p>
+<h2>Control Groups</h2>
+<p>Control Groups or cgroups are a kernel feature that lets us allocate
+system resource to processes in a very granular way. Using cgroups you
+can also do granular resource level accounting for tasks.</p>
+<p>You can find the cgroups data-structure at <strong>/sys/fs/cgroups</strong> The
+different directories represent the different subsystem (or
+controller) which are used to control various resources. </p>
+<p>Cgroups is heirarchical in nature. Which means the child cgroup,
+inherits the properties of the parent cgroup. Each directory in one of
+these subsystems is a cgroup. There are multiple files is each of
+these directories. This is how the kernel exposes the control
+variables and accouting information. We will look at 3 of them in
+<span class="underline">slight</span> detail.</p>
+<p><a id="orgece3764"></a></p>
+<h3>Operations with Control Groups</h3>
+<p>In order to create a new cgroup, we can just create a directory under
+the desired controller (we can also use the <strong>cgcreate</strong> command). Once
+you create a directory under any of the cgroups, relevant files for
+that cgroup will automatically be created under that directory.</p>
+<p>After a process is added to a cgroup, all child processess will be
+created in that cgroup itself.</p>
+<p>Quick refrence for operations (non exhaustive):</p>
+<ul>
+<li><strong>lscgroup</strong>- to view all the cgroups present</li>
+<li><strong>systemd-cgls</strong>- to view all cgroups</li>
+<li><strong>cat /proc/cgroups</strong>- to show global stats</li>
+<li><strong>cat /proc/pid/cgroups</strong>- to show the cgroups for a single process</li>
+<li><strong>cgdelete -g subsystem:groupname</strong>- This will delete the control group.</li>
+<li><strong><cgdir>/tasks</strong>- This file contains the pids of all the processes in that cgroup</li>
+<li><strong>cgexec -g <subsystem>:<groupname> <process></strong>- This will run that process (and all child processess) in that cgroup.</li>
+</ul>
+<p><a id="org5a69f04"></a></p>
+<h3>Cgroup demo - memory subsystem</h3>
+<p>In this demo we will look at the <strong>memory</strong> subsystem and do a small
+exercise to solidify our understanding of how this works.
+The Memory cgroup is used to limit/account the amount of memory that is used by a process.</p>
+<p>This is how the cgroup we created under the memory subsystem called <strong>demom</strong> looks just after creation.</p>
+<blockquote>
+<p><img alt="img" src="/assets/images/containers/cg_mem.png"></p>
+</blockquote>
+<p>Quick Ref for the cg :</p>
+<ul>
+<li><strong>memory.failcnt</strong> : shows how many times the tasks running in the group have reached the max limit</li>
+<li><strong>memory.limit_in_bytes</strong> : controls the limit in bytes</li>
+<li><strong>memory.swappiness</strong> : control the <span class="underline">eagerness</span> with which swapping occurs</li>
+<li><strong>memory.usage_in_bytes</strong> : shows accounting of the memory used by all the tasks in the cgroup</li>
+<li><strong>memory.tasks</strong> : contains all the pids for all the tasks in this cgroup</li>
+<li><strong>memory.stat</strong> : shows all memory related stats for this cgroup</li>
+</ul>
+<p>Steps :</p>
+<ul>
+<li>create a new control group under the <strong>sys/fs/cgroup/memory</strong> directory</li>
+<li>start a bash shell and get its pid by <strong>echo $$</strong></li>
+<li>check the cgroups of the shell using <strong>cat /proc/$$/cgroup</strong></li>
+<li>put a shell in the cgroup that we created by adding the pid to <strong>tasks</strong> OR using <strong>sudo cgexec -g memory:demo1 bash</strong></li>
+<li>Now, check the cgroups of the shell using <strong>cat /proc/$$/cgroup</strong> again. it should be different.</li>
+<li>set limit by <strong>echo <value> &gt; memory.limit_in_bytes</strong></li>
+</ul>
+<blockquote>
+<p>if this is smaller than <strong>memory.usage_in__bytes</strong> then we will get <strong>resource busy</strong> error</p>
+</blockquote>
+<ul>
+<li>set <strong>echo 0 &gt; memory.swappiness</strong> (otherwise things will be sent to swap and OOM wont happen) (do not know why this happens)</li>
+<li>now run something big in here (docker pull works) and it should be killed.</li>
+<li>delete the cg using <strong>cgdelete</strong></li>
+</ul>
+<blockquote>
+<p>This is how <strong>dmesg</strong> looks when an OOM-kill occurs
+<img alt="img" src="/assets/images/containers/oom1.png">
+<img alt="img" src="/assets/images/containers/oom2.png"></p>
+</blockquote>
+<p>Look at this <em><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-memory">Detailed Memory
+Reference</a></em>
+for a Deep-Dive.</p>
+<p><a id="org43d6014"></a></p>
+<h3>Cgroup demo - PID subsystem</h3>
+<p>We now do a demo with the pid subsystem to get a better understanding. 
+This is very helpful as it will protect you case of a fork-bomb.
+The PID subsystem is used to limit the number of processess that are running (or can run). We will see it in action soon.</p>
+<p>Steps:</p>
+<ul>
+<li>create a new control group under the <strong>sys/fs/cgroup/pid</strong> directory</li>
+<li>put a shell in there by adding the pid to <strong>tasks</strong> OR using <strong>sudo cgexec -g memory:demo bash</strong></li>
+<li>check <strong>pids.max</strong>. This should be set to <strong>max</strong> by default. This controls the number of tasks this cgroup can run (by limiting the no of pids)</li>
+<li>set limit by <strong>echo 2 &gt; pids.max</strong> [default is /max/]</li>
+<li>Now run <strong>$(cat tasks 1&gt;&amp;2)</strong> (this creates 3 tasks)</li>
+<li>
+<p>It should fail with <strong>Resource Temporarily unavailable</strong></p>
+<p>The whole demo looks like this. </p>
+</li>
+</ul>
+<blockquote>
+<p><img alt="img" src="/assets/images/containers/pid1.png"></p>
+</blockquote>
+<h6>This is for cgroup v1. There is also cgroup2 which I havent looked at yet!</h6>
+<p><a id="org3d234e3"></a></p>
+<h2>Namespaces</h2>
+<p>Namespaces allow users to isolate the execution environment for a
+process.  Currently there are 8 namespaces available (which means you
+can isolate 8 different resources between your process):</p>
+<ul>
+<li>mount (<strong>mnt</strong>)</li>
+<li>process id (<strong>pid</strong>)</li>
+<li>network (<strong>net</strong>)</li>
+<li>IPC (<strong>ipc</strong>)</li>
+<li>time </li>
+<li>UTS (<strong>hostname</strong>)</li>
+<li>cgroup (<strong>cgroup</strong>)</li>
+<li>User(<strong>user</strong>)</li>
+</ul>
+<p><a id="org2631bea"></a></p>
+<h3>Pid and Network namspace.</h3>
+<ul>
+<li>We can create namespces using the <strong>unshare</strong> command</li>
+<li>Running <strong>unshare &#x2013;fork &#x2013;pid &#x2013;net &#x2013;mount-proc bash</strong> will run a bash shell in a different network and pid namespace.<ul>
+<li>This means, no internet (unless we manually enable it) and bash is running as <strong>pid 1</strong> (how cool is that ?)</li>
+</ul>
+</li>
+</ul>
+<p>The <strong>bash</strong> process is runnig as pid 1. This is because its running
+inside a new PID namespace. The PID namespace provides a set of
+processess an new independent set of process-ids.</p>
+<p>To fix this we need to add a veth device to the new namespace and
+stuff.</p>
+<p><em>TODO:  Demo : adding veth devices to namespaces shells and establish communication between them</em></p>
+<p><a id="org34f6f5d"></a></p>
+<h2>Reference</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=mGWWTP1Jeso">Life of a Container - Indradhanush Gupta</a></li>
+<li><a href="https://www.youtube.com/watch?v=q1BnNRId0R4">Alice Goldfuss - The Container Operators manual</a></li>
+<li><a href="https://jvns.ca/blog/2016/10/10/what-even-is-a-container/">Julia Evans - What is even a container</a></li>
+<li><a href="https://www.youtube.com/watch?v=hgN8pCMLI2U">PWL NYC - Bryan Cantril - Solaris Jails &amp; Zones</a></li>
+<li><a href="https://dev.to/polarbit/how-docker-container-networking-works-mimic-it-using-linux-network-namespaces-9mj">Set Up container namespaces manually, ref 1</a></li>
+<li><a href="https://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/">Container Networking, ref 2</a></li>
+<li><a href="https://man7.org/linux/man-pages/man4/veth.4.html">veth man page</a></li>
+<li><a href="https://www.youtube.com/watch?v=-YnMr1lj4Z8">LiveOverfllow video on Docker</a></li>
+<li><a href="https://www.youtube.com/watch?v=sK5i-N34im8">what are containers made from</a></li>
+<li><a href="https://0xax.gitbooks.io/linux-insides/content/Cgroups/linux-cgroups-1.html">Gitbook - Linux Insides - Control Groups</a></li>
+<li><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-memory">Detailed Memory CGroup Reference</a></li>
+<li><a href="https://man7.org/linux/man-pages/man7/capabilities.7.html">Capabilities man page</a></li>
+</ul></div>
+	<hr>
+	<!-- <h2>Comments</h2> -->
+	<!--  -->
+	<!--  -->
+</div>
+  </div>
+</div> </div> <!-- /container -->
+
+<footer class="aw-footer bg-danger">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center center-block aw-bottom">
+        <p>Life is best filled by learning as much as you can about as much as you can </p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

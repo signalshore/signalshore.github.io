@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Scheme - Part 4 - Higher Order Procedures (contd.) — SignalShore</title>
-	<meta name="description" content="Title: Scheme - Part 4 - Higher Order Procedures (contd.); Date: 2018-02-06; Author: Sohom">
-	<meta name="author" content="Sohom">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src="https://signalshore.github.io/theme/html5.js"></script>
-		<![endif]-->
-	<link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
-	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Scheme - Part 4 - Higher Order Procedures (contd.) — SignalShore</title>
+    <meta name="description" content="Title: Scheme - Part 4 - Higher Order Procedures (contd.); Date: 2018-02-06; Author: Sohom">
+    <meta name="author" content="Sohom">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  </head>
 
-<body>
-<div class="container">
-	<div class="page-header">
-		<h1><a href="https://signalshore.github.io/">SignalShore</a>
-			<br>	</div>
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+<h4> 
+  <a href="https://signalshore.github.io/about.html">About</a>
+  |
+  <a href="https://signalshore.github.io/cv.html">CV</a>
+  |
+
+  <a href="/archives.html">Archives</a>
+  |
+  <a href="/tag/index.html">Tags</a>
+  |
+
+  <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+  Atom
+  </a>
+
+</h4>
+</div>
+<!-- From here starts the content blocks -->
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="text-center article-header">
 		<h1 itemprop="name headline" class="article-title">Scheme - Part 4 - Higher Order Procedures (contd.)</h1>
@@ -76,11 +89,11 @@ variable, etc.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">lists</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">lists</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="k">def</span> <span class="nf">sqrr</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">sqrr</span><span class="p">,</span> <span class="n">lists</span><span class="p">))</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p><em><a href="https://docs.python.org/3.5/library/functions.html#map">map</a></em> takes a function and a list of elements and it returns a list with the function applied to all the elements of the input list.</p>
@@ -91,19 +104,19 @@ variable, etc.</p>
 <p>To illustrate this concept we will write some procedures. Recall that procedures in Scheme are written using <code>define</code>.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">summ-old</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">summ-old</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
 
 <span class="p">(</span><span class="nf">summ-old</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>This same procedure can be written using lambdas like so ...</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="nv">summ</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)))</span>
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">define </span><span class="nv">summ</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)))</span>
 
 <span class="p">(</span><span class="nf">summ</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>Basically a lambda is used to create procedures the same way define is used, but with lambda no name of the procedure is mentioned. 
@@ -113,10 +126,10 @@ The syntax of lambdas is </p>
 Such a definition looks like this ..</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">((</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))</span> 
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">((</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))</span> 
   <span class="mi">3</span>
   <span class="mi">4</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <h4><strong>Returning Procedures</strong></h4>
@@ -124,10 +137,10 @@ Such a definition looks like this ..</p>
 <p>Let us illustrate this idea with some examples.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">adder</span> <span class="nv">x</span><span class="p">)</span>
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">adder</span> <span class="nv">x</span><span class="p">)</span>
     <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">m</span><span class="p">)</span> 
         <span class="p">(</span><span class="nb">+ </span><span class="nv">m</span>  <span class="nv">x</span><span class="p">)))</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>In this example we have a procedure <em>adder</em> that accepts an argument and returns another procedure (that is what the lambda does) that accepts another parameter and returns the sum of the two numbers.</p>
@@ -135,39 +148,39 @@ Such a definition looks like this ..</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="nv">adder-2</span>
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">define </span><span class="nv">adder-2</span>
     <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> 
         <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">m</span><span class="p">)</span>
             <span class="p">(</span><span class="nb">+ </span><span class="nv">m</span> <span class="nv">x</span><span class="p">))))</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>The procedure <em>adder-2</em> returns a procedure that accepts an argument and returns another procedure that accepts an argument and returns the sum of these two arguments.</p>
 <p>If all this sounds too complex do not worry! How we go about applying these two procedures to operands should make things a lot clearer.</p>
 <p>For applying <em>adder</em> the thing that we should keep in mind is that <em>adder</em>  returns a function that needs an argument. </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">((</span><span class="nf">adder</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">((</span><span class="nf">adder</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>It is quite easy to see what is going on here. Let us assume that the inner set of parenthesis is evaluated to a procedure <em>f</em> so after the first set of evaluation the statement should look like this </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">f</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">f</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>and the resulting output should be 15. </p>
 <p>This is also true for the <em>adder-2</em> procedure. </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">((</span><span class="nf">adder-2</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">((</span><span class="nf">adder-2</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
 </td></tr></table>
 
 <p>The <em>adder-2</em> procedure returns a procedure that accepts 5 as an argument and then returns a procedure that accepts 10 as an argument.</p>
 <p>This lets us do all sorts of interesting things with these functions. For example we can chain them together to add more than two numbers.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">((</span><span class="nf">adder</span> <span class="p">((</span><span class="nf">adder</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">5</span><span class="p">))</span> <span class="mi">5</span><span class="p">)</span>
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">((</span><span class="nf">adder</span> <span class="p">((</span><span class="nf">adder</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">5</span><span class="p">))</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="p">((</span><span class="nf">adder-2</span> <span class="p">((</span><span class="nf">adder-2</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">5</span><span class="p">))</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>Both of these procedures return 15.</p>
@@ -175,8 +188,8 @@ Such a definition looks like this ..</p>
 <p>Lambdas can be very useful when you need to write a procedure but there is no need to name the procedure. Situations where you will not be calling the procedure suing the name in any scenario whatsoever. </p>
 <p>Personally I have a lambda function written in my Emacs config file that opens my To-Do list everytime I press F6 on my keyboard. I did not write this function; I just copied it from some answer on Stack Overflow, but nevertheless it is a good start.</p>
 <p>This is the function.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">global-set-key</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">&quot;&lt;f6&gt;&quot;</span><span class="p">)</span> <span class="p">(</span><span class="nf">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nf">interactive</span><span class="p">)(</span><span class="nf">find-file</span> <span class="s">&quot;path/to/file.org&quot;</span><span class="p">)))</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">global-set-key</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">&quot;&lt;f6&gt;&quot;</span><span class="p">)</span> <span class="p">(</span><span class="nf">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nf">interactive</span><span class="p">)(</span><span class="nf">find-file</span> <span class="s">&quot;path/to/file.org&quot;</span><span class="p">)))</span>
+</code></pre></div>
 </td></tr></table>
 
 <h3>now ...</h3>
@@ -201,10 +214,13 @@ Such a definition looks like this ..</p>
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
     mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -218,6 +234,8 @@ Such a definition looks like this ..</p>
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -238,6 +256,8 @@ Such a definition looks like this ..</p>
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script></div>
@@ -246,75 +266,18 @@ Such a definition looks like this ..</p>
 	<!--  -->
 	<!--  -->
 </div>
-		</div>
-	</div> 	<!-- <hr> -->
-</div> <!-- /container -->
+  </div>
+</div> </div> <!-- /container -->
+
 <footer class="aw-footer bg-danger">
-	<div class="container"> <!-- footer -->
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row">
-					<div class="col-md-3">
-						<h4>Navigation</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://signalshore.github.io/about.html"><i class="fa fa-About "></i> About</a></li>
-							<li><a href="https://signalshore.github.io/cv.html"><i class="fa fa-CV "></i> CV</a></li>
-							<li><a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h4>Social</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://twitter.com/sohom154">Twitter</a></li>
-							<li><a href="https://github.com/83bytes">Github</a></li>
-							<li><a href="https://gitlab.com/83bytes">Gitlab</a></li>
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<h4>Tags</h4>
-						<ul class="list-unstyled my-list-style">
-						<a href="https://signalshore.github.io/tag/travel.html">Travel</a>,
-						<a href="https://signalshore.github.io/tag/env.html">Env</a>,
-						<a href="https://signalshore.github.io/tag/meta.html">Meta</a>,
-						<a href="https://signalshore.github.io/tag/cs.html">CS</a>,
-						<a href="https://signalshore.github.io/tag/misc.html">Misc</a>,
-						<a href="https://signalshore.github.io/tag/math.html">Math</a>,
-						<a href="https://signalshore.github.io/tag/data.html">Data</a>,
-						<a href="https://signalshore.github.io/tag/cycling.html">Cycling</a>,
-						<a href="https://signalshore.github.io/tag/guix.html">Guix</a>,
-						<a href="https://signalshore.github.io/tag/work.html">Work</a>,
-						<a href="https://signalshore.github.io/tag/scheme.html">Scheme</a>,
-						<a href="https://signalshore.github.io/tag/activism.html">Activism</a>,
-						<a href="https://signalshore.github.io/tag/linux.html">Linux</a>,
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center center-block aw-bottom">
+        <p>Life is best filled by learning as much as you can about as much as you can </p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+      </div>
+    </div>
+  </div>
 </footer>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center center-block aw-bottom">
-		  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
-		</div>
-	</div>
-</div>
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-	$("div.collapseheader").click(function () {
-		$header = $(this).children("span").first();
-		$codearea = $(this).children(".input_area");
-		$codearea.slideToggle(500, function () {
-			$header.text(function () {
-				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
-			});
-		});
-	});
-});
-</script>
 </body>
 </html>

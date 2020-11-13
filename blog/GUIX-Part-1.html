@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>GNU Guix - Part 1 — SignalShore</title>
-	<meta name="description" content="Title: GNU Guix - Part 1; Date: 2018-03-19; Author: Sohom">
-	<meta name="author" content="Sohom">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src="https://signalshore.github.io/theme/html5.js"></script>
-		<![endif]-->
-	<link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
-	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>GNU Guix - Part 1 — SignalShore</title>
+    <meta name="description" content="Title: GNU Guix - Part 1; Date: 2018-03-19; Author: Sohom">
+    <meta name="author" content="Sohom">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  </head>
 
-<body>
-<div class="container">
-	<div class="page-header">
-		<h1><a href="https://signalshore.github.io/">SignalShore</a>
-			<br>	</div>
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+<h4> 
+  <a href="https://signalshore.github.io/about.html">About</a>
+  |
+  <a href="https://signalshore.github.io/cv.html">CV</a>
+  |
+
+  <a href="/archives.html">Archives</a>
+  |
+  <a href="/tag/index.html">Tags</a>
+  |
+
+  <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+  Atom
+  </a>
+
+</h4>
+</div>
+<!-- From here starts the content blocks -->
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="text-center article-header">
 		<h1 itemprop="name headline" class="article-title">GNU Guix - Part 1</h1>
@@ -38,7 +51,11 @@
 		</span>
 		
 		<span itemprop="keywords">
-			[<a href="https://signalshore.github.io/tag/guix.html" rel="tag">Guix</a>]
+			[<a href="https://signalshore.github.io/tag/tech.html" rel="tag">Tech</a>]
+		</span>
+		
+		<span itemprop="keywords">
+			[<a href="https://signalshore.github.io/tag/linux.html" rel="tag">Linux</a>]
 		</span>
 		
 	</div>
@@ -113,9 +130,9 @@ config is a dual-booted uefi setup with Arch Linux)</p>
 In this section I have put together a list of things that should be essential to a smooth start.</p>
 <h3>Per-User profile</h3>
 <p>In the previous section we talked about how you guix maintain packages on a per-user basis. One easy method to maintain per user profiles is to create a manifest file. A manifest file is a scheme file that contains all the packages for a specific user. This way you can specify only the packages that you want to be available globally in the system configuration file and other packages can be installed on a per-user basis using the manifest file.</p>
-<div class="highlight"><pre><span></span>#bash
-$ guix package -m profile.scm
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">#bash</span>
+<span class="err">$ guix package -m profile.scm</span>
+</code></pre></div>
 
 
 <p>This will tell guix package to install the packages from that file. </p>
@@ -125,13 +142,13 @@ $ guix package -m profile.scm
 3
 4
 5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">use-package-modules</span> <span class="nv">&lt;module1&gt;</span> <span class="nv">&lt;module2&gt;</span><span class="p">)</span>
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">use-package-modules</span> <span class="nv">&lt;module1&gt;</span> <span class="nv">&lt;module2&gt;</span><span class="p">)</span>
 
 <span class="p">(</span><span class="nf">package-&gt;manifest</span>
     <span class="p">(</span><span class="nb">list </span><span class="nv">package1</span>
           <span class="nv">package2</span>
           <span class="nv">package3</span><span class="p">))</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>Package modules are the basically the scheme files within which each of the packages are defined. 
@@ -149,7 +166,7 @@ You can find out which package module a given package belongs to by running the 
  9
 10
 11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ guix package -s emacs-neotree
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ guix package -s emacs-neotree
 name: emacs-neotree
 version: <span class="m">0</span>.5.2
 outputs: out
@@ -161,7 +178,7 @@ license: GPL <span class="m">3</span>+
 synopsis: Folder tree view <span class="k">for</span> Emacs  
 description: This Emacs package provides a folder tree view.
 relevance: <span class="m">4</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>The file under <em>gnu/packages/</em> is the module name.</p>
@@ -181,75 +198,18 @@ relevance: <span class="m">4</span>
 	<!--  -->
 	<!--  -->
 </div>
-		</div>
-	</div> 	<!-- <hr> -->
-</div> <!-- /container -->
+  </div>
+</div> </div> <!-- /container -->
+
 <footer class="aw-footer bg-danger">
-	<div class="container"> <!-- footer -->
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row">
-					<div class="col-md-3">
-						<h4>Navigation</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://signalshore.github.io/about.html"><i class="fa fa-About "></i> About</a></li>
-							<li><a href="https://signalshore.github.io/cv.html"><i class="fa fa-CV "></i> CV</a></li>
-							<li><a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h4>Social</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://twitter.com/sohom154">Twitter</a></li>
-							<li><a href="https://github.com/83bytes">Github</a></li>
-							<li><a href="https://gitlab.com/83bytes">Gitlab</a></li>
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<h4>Tags</h4>
-						<ul class="list-unstyled my-list-style">
-						<a href="https://signalshore.github.io/tag/travel.html">Travel</a>,
-						<a href="https://signalshore.github.io/tag/env.html">Env</a>,
-						<a href="https://signalshore.github.io/tag/meta.html">Meta</a>,
-						<a href="https://signalshore.github.io/tag/cs.html">CS</a>,
-						<a href="https://signalshore.github.io/tag/misc.html">Misc</a>,
-						<a href="https://signalshore.github.io/tag/math.html">Math</a>,
-						<a href="https://signalshore.github.io/tag/data.html">Data</a>,
-						<a href="https://signalshore.github.io/tag/cycling.html">Cycling</a>,
-						<a href="https://signalshore.github.io/tag/guix.html">Guix</a>,
-						<a href="https://signalshore.github.io/tag/work.html">Work</a>,
-						<a href="https://signalshore.github.io/tag/scheme.html">Scheme</a>,
-						<a href="https://signalshore.github.io/tag/activism.html">Activism</a>,
-						<a href="https://signalshore.github.io/tag/linux.html">Linux</a>,
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center center-block aw-bottom">
+        <p>Life is best filled by learning as much as you can about as much as you can </p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+      </div>
+    </div>
+  </div>
 </footer>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center center-block aw-bottom">
-		  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
-		</div>
-	</div>
-</div>
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-	$("div.collapseheader").click(function () {
-		$header = $(this).children("span").first();
-		$codearea = $(this).children(".input_area");
-		$codearea.slideToggle(500, function () {
-			$header.text(function () {
-				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
-			});
-		});
-	});
-});
-</script>
 </body>
 </html>

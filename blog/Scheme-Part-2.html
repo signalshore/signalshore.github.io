@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Scheme - Part 2 - Expressions and Evaluations — SignalShore</title>
-	<meta name="description" content="Title: Scheme - Part 2 - Expressions and Evaluations; Date: 2017-11-30; Author: Sohom">
-	<meta name="author" content="Sohom">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src="https://signalshore.github.io/theme/html5.js"></script>
-		<![endif]-->
-	<link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
-	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Scheme - Part 2 - Expressions and Evaluations — SignalShore</title>
+    <meta name="description" content="Title: Scheme - Part 2 - Expressions and Evaluations; Date: 2017-11-30; Author: Sohom">
+    <meta name="author" content="Sohom">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  </head>
 
-<body>
-<div class="container">
-	<div class="page-header">
-		<h1><a href="https://signalshore.github.io/">SignalShore</a>
-			<br>	</div>
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+<h4> 
+  <a href="https://signalshore.github.io/about.html">About</a>
+  |
+  <a href="https://signalshore.github.io/cv.html">CV</a>
+  |
+
+  <a href="/archives.html">Archives</a>
+  |
+  <a href="/tag/index.html">Tags</a>
+  |
+
+  <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+  Atom
+  </a>
+
+</h4>
+</div>
+<!-- From here starts the content blocks -->
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="text-center article-header">
 		<h1 itemprop="name headline" class="article-title">Scheme - Part 2 - Expressions and Evaluations</h1>
@@ -103,21 +116,21 @@ the rest are treated as the operands.</p>
 3
 4
 5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span> <span class="c1">;; + is the operator and 2, 3, 4 are the operands</span>
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span> <span class="c1">;; + is the operator and 2, 3, 4 are the operands</span>
 <span class="nv">&gt;</span> <span class="mi">9</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">* </span><span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span> <span class="c1">;; * is the operator and 2, 3, 4 are the operands</span>
 <span class="nv">&gt;</span> <span class="mi">24</span>
 <span class="nv">&gt;</span> <span class="p">(</span><span class="nb">&gt; </span><span class="mi">2</span> <span class="mi">3</span><span class="p">)</span>   <span class="c1">;; &gt; is the operator; this is equivalent to 2 &gt; 3 </span>
 <span class="nv">&gt;</span> <span class="nv">f</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>This also applied for lists that have other lists in them. Let's have
 a look!</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">3</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">2</span><span class="p">))</span>
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">&gt;</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">3</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">2</span><span class="p">))</span>
 <span class="nv">&gt;</span> <span class="mi">9</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>Let us trace what happens here.  First the evaluator receives the
@@ -147,13 +160,13 @@ evaluated.</p>
 3
 4
 5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">recursive</span> <span class="nv">x</span><span class="p">)</span>
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">recursive</span> <span class="nv">x</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="nv">x</span> <span class="mi">0</span><span class="p">)</span>
         <span class="mi">0</span>
         <span class="p">(</span><span class="nf">recursive</span> <span class="p">(</span><span class="nb">- </span><span class="nv">x</span> <span class="mi">1</span><span class="p">))))</span>
 
 <span class="p">(</span><span class="nf">recursive</span> <span class="nv">x</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>What happens when we evaluate the last expression ? Nothing
@@ -167,10 +180,10 @@ would lead to an infinite loop. But the if-constructs uses <a href="https://en.w
 <code>new-if</code> procedure that will do exactly what <code>if</code> does.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">new-if</span> <span class="nv">predicate</span> <span class="nv">exp1</span> <span class="nv">exp2</span><span class="p">)</span> 
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">new-if</span> <span class="nv">predicate</span> <span class="nv">exp1</span> <span class="nv">exp2</span><span class="p">)</span> 
     <span class="p">(</span><span class="k">cond </span><span class="p">(</span><span class="nf">predicate</span> <span class="nv">exp1</span><span class="p">)</span>
         <span class="p">(</span><span class="k">else </span><span class="nv">exp2</span><span class="p">)))</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>This is the <em>new-if</em> procedure. Let us use this in our previous program.</p>
@@ -179,13 +192,13 @@ would lead to an infinite loop. But the if-constructs uses <a href="https://en.w
 3
 4
 5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">recursive-new</span> <span class="nv">x</span><span class="p">)</span>
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">recursive-new</span> <span class="nv">x</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">new-if</span> <span class="p">(</span><span class="nb">= </span><span class="nv">x</span> <span class="mi">0</span><span class="p">)</span>
         <span class="mi">0</span>
         <span class="p">(</span><span class="nf">recursive-new</span> <span class="p">(</span><span class="nb">- </span><span class="nv">x</span> <span class="mi">1</span><span class="p">))))</span>
 
 <span class="p">(</span><span class="nf">recursive-new</span> <span class="nv">x</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <p>What happens now ? </p>
@@ -204,75 +217,18 @@ enough to cover the full depth and breadth of LISP</p></div>
 	<!--  -->
 	<!--  -->
 </div>
-		</div>
-	</div> 	<!-- <hr> -->
-</div> <!-- /container -->
+  </div>
+</div> </div> <!-- /container -->
+
 <footer class="aw-footer bg-danger">
-	<div class="container"> <!-- footer -->
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row">
-					<div class="col-md-3">
-						<h4>Navigation</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://signalshore.github.io/about.html"><i class="fa fa-About "></i> About</a></li>
-							<li><a href="https://signalshore.github.io/cv.html"><i class="fa fa-CV "></i> CV</a></li>
-							<li><a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h4>Social</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://twitter.com/sohom154">Twitter</a></li>
-							<li><a href="https://github.com/83bytes">Github</a></li>
-							<li><a href="https://gitlab.com/83bytes">Gitlab</a></li>
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<h4>Tags</h4>
-						<ul class="list-unstyled my-list-style">
-						<a href="https://signalshore.github.io/tag/travel.html">Travel</a>,
-						<a href="https://signalshore.github.io/tag/env.html">Env</a>,
-						<a href="https://signalshore.github.io/tag/meta.html">Meta</a>,
-						<a href="https://signalshore.github.io/tag/cs.html">CS</a>,
-						<a href="https://signalshore.github.io/tag/misc.html">Misc</a>,
-						<a href="https://signalshore.github.io/tag/math.html">Math</a>,
-						<a href="https://signalshore.github.io/tag/data.html">Data</a>,
-						<a href="https://signalshore.github.io/tag/cycling.html">Cycling</a>,
-						<a href="https://signalshore.github.io/tag/guix.html">Guix</a>,
-						<a href="https://signalshore.github.io/tag/work.html">Work</a>,
-						<a href="https://signalshore.github.io/tag/scheme.html">Scheme</a>,
-						<a href="https://signalshore.github.io/tag/activism.html">Activism</a>,
-						<a href="https://signalshore.github.io/tag/linux.html">Linux</a>,
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center center-block aw-bottom">
+        <p>Life is best filled by learning as much as you can about as much as you can </p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+      </div>
+    </div>
+  </div>
 </footer>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center center-block aw-bottom">
-		  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
-		</div>
-	</div>
-</div>
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-	$("div.collapseheader").click(function () {
-		$header = $(this).children("span").first();
-		$codearea = $(this).children(".input_area");
-		$codearea.slideToggle(500, function () {
-			$header.text(function () {
-				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
-			});
-		});
-	});
-});
-</script>
 </body>
 </html>

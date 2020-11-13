@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Personal Accounting — SignalShore</title>
+    <meta name="description" content="Title: Personal Accounting; Date: 2020-04-19; Author: Sohom">
+    <meta name="author" content="Sohom">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+    <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+<h4> 
+  <a href="https://signalshore.github.io/about.html">About</a>
+  |
+  <a href="https://signalshore.github.io/cv.html">CV</a>
+  |
+
+  <a href="/archives.html">Archives</a>
+  |
+  <a href="/tag/index.html">Tags</a>
+  |
+
+  <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+  Atom
+  </a>
+
+</h4>
+</div>
+<!-- From here starts the content blocks -->
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Personal Accounting</h1>
+		<time datetime="2020-04-19T00:00:00+05:30" itemprop="datePublished">Sun 19 April 2020</time>
+	</div>
+ 
+	<div>
+		Tags:
+		<span itemprop="keywords">
+			[<a href="https://signalshore.github.io/tag/meta.html" rel="tag">Meta</a>]
+		</span>
+		
+	</div>
+	<div itemprop="articleBody" class="article-body"><p>I used to hate accounting when I had the subject in my Undergrad. It
+seemed extremely complicated for no apparent reason. </p>
+<p>Over the years I have started to appreciate the need for accounting and
+I have a small system for maintaining my personal accounts as well.</p>
+<h1>Beginning</h1>
+<p>It started back in 2015 when I moved to Bangalore and was living alone
+for the first time. The amount of money needed to just survive was
+very surprising to me (not because things were too expensive; but
+because I wasn't used to paying for everything I wanted).</p>
+<p>To keep track of where my money went, I used to maintain a simple
+spreadsheet that had all my transactions in it. Since I was not
+earning any money, this was a good enough system. I used this simple
+process until I started my internship. This complicated things
+because now, I was being paid and I needed to account for the inflow
+of cash as well. With little difficulty I managed to integrate this
+into the spreadsheet as well. Then it became too complicated and I
+gave up. I did not do any accounting till about September 2018.</p>
+<h1>The need for proper accounting</h1>
+<p>I started working about 2 months prior and I was being paid a decent
+wage. On top of it I also had proper expenses, rent, taxes, internet
+bills etc etc. I realized that the simple spreadsheet would be too
+complicated and a proper accounting software (like Tally) would be too
+much for my needs. I knew that in order to track everything properly I
+needed to use the <a href="https://en.wikipedia.org/wiki/Double-entry_bookkeeping">Double-Entry</a> accounting system.</p>
+<p>The Double-Entry Accounting system is a concept that says that every
+transaction has two parties that are involved. One party gives money
+and the other party receives money. This is something that was not
+taught properly in college and was the main reason I hated the
+accounts classes. </p>
+<p>I needed something that would be simple for my needs and something
+that would be able to handle double-entry accounting system.</p>
+<h1>Enter ledger-cli</h1>
+<p>This is a <a href="https://plaintextaccounting.org/">plaintext accounting</a> software. What this means is that
+<a href="https://www.ledger-cli.org/">ledger-cli</a> uses plaintext files to do proper accounting. </p>
+<p>I <em>love</em> text files. Simple text files with no magic sauce on the file
+itself, and you can have whatever sauce you want on the application
+level. This gives you the flexibility of being able to play with the
+plaintext file with other text processing tools available on Linux
+(grep/sed/awk) etc.</p>
+<p>With ledger-cli you do not have to learn a bunch of things just to
+use it.</p>
+<p>Each transaction in ledger looks like this</p>
+<div class="highlight"><pre><span></span><code><span class="err">2019/04/19 Bought some icecream</span>
+<span class="err">    AccountA:SubAccountA1  3000</span>
+<span class="err">    AccountB:SubAccountB1  -3000</span>
+</code></pre></div>
+
+
+<p>That's about it. It basically says that for buying some coffee you paid
+3000 (in any unit of currency) from SubAccountB1 to SubAccountA1.
+The <code>Account:SubAccountA1</code> is used to illustrate that you can have nested accounts.</p>
+<p>Ledger also does amazing reporting.
+For example: This is how much I've spent on travelling over the two years (This exclude everyday transport using busses and autos)</p>
+<div class="highlight"><pre><span></span><code>$ ledger -f personal.ledger balance Expenses:travel
+        <span class="m">78331</span>.94  Expenses:Travel
+          <span class="m">543</span>.51    Cab
+            <span class="m">4137</span>    Cancel
+           <span class="m">55661</span>    Flight
+           <span class="m">10855</span>    Package
+             <span class="m">690</span>    Rent
+         <span class="m">6445</span>.43    Trains
+----------------
+        <span class="m">78331</span>.94
+</code></pre></div>
+
+
+<p>For example: This shows how much I've spent on House Rent and etc etc stuff. (I only have an audible subscription that I share)</p>
+<div class="highlight"><pre><span></span><code>$ ledger -f personal.ledger balance Expenses:Utilities
+          <span class="m">162243</span>  Expenses:Utilities
+           <span class="m">11833</span>    Electricity Bill
+          <span class="m">142900</span>    House Rent
+            <span class="m">3744</span>    Internet
+            <span class="m">3666</span>    Phone Recharge
+             <span class="m">100</span>    Subscriptions
+----------------
+          <span class="m">162243</span>
+</code></pre></div>
+
+
+<p>Its just fun. You also use sed/awk to generate reports/graphs of your own.</p>
+<h1>For the Future</h1>
+<p>I see more complexity coming my way as I start investing properly. I
+only stick to mutual funds as of now, but tracking them has been a
+pain. I am recording all the <code>buy</code>s in my system, but I don't record
+the <code>sell</code>s properly.</p>
+<p>I also need to record Reimburseable expenses better and salaries better. </p>
+<p>Apart from that, this system looks robust as of now.</p>
+<h1>Why do this at all?</h1>
+<p>We struggled with money a lot while growing up, not because we had
+less, but because we didn't measure how we spent it. Moreover, I like
+data, I like reports and I like text files. I want to keep track of my
+money.</p>
+<p>What doesn't get measured; doesn't get fixed. :-)</p>
+<p>That's it for today.</p></div>
+	<hr>
+	<!-- <h2>Comments</h2> -->
+	<!--  -->
+	<!--  -->
+</div>
+  </div>
+</div> </div> <!-- /container -->
+
+<footer class="aw-footer bg-danger">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center center-block aw-bottom">
+        <p>Life is best filled by learning as much as you can about as much as you can </p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
