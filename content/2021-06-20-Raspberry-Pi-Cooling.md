@@ -16,7 +16,6 @@ Took some time to decide which case to buy, as the blogs/tests online were mostl
 
 <hr>
 
-
 # The Setup
 The computer the Raspberry-Pi4 8GB version.
 The tool that I am using to stress-test the board is [stressberry](https://github.com/nschloe/stressberry)
