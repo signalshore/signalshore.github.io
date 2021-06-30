@@ -11,10 +11,18 @@ Took some time to decide which case to buy, as the blogs/tests online were mostl
 
 
 # Table 0f Contents
-[TOC]
+- [Table 0f Contents](#table-0f-contents)
+- [The Setup](#the-setup)
+- [The Benchmark](#the-benchmark)
+- [Results](#results)
+	- [Bare-Board](#bare-board)
+	- [Case - No Fan](#case---no-fan)
+	- [Fan - 3.3V](#fan---33v)
+	- [Fan 5V](#fan-5v)
+- [Decision and Observations](#decision-and-observations)
+- [Improvement](#improvement)
+	- [Data-Files](#data-files)
 
-
-<hr>
 
 # The Setup
 The computer the Raspberry-Pi4 8GB version.
@@ -101,7 +109,7 @@ I am planning to use the GPIO headers on the PI to automate the on-off situation
 
 I could also take better photographs!!!
 
-### Data-Files
+## Data-Files
 You can download the files:
 
 - [bare](/assets/2021-06-20-Raspberry-Pi-Cooling/bare.out)
