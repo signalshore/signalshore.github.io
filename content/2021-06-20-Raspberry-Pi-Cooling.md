@@ -15,13 +15,13 @@ Took some time to decide which case to buy, as the blogs/tests online were mostl
 - [The Setup](#the-setup)
 - [The Benchmark](#the-benchmark)
 - [Results](#results)
-	- [Bare-Board](#bare-board)
-	- [Case - No Fan](#case---no-fan)
-	- [Fan - 3.3V](#fan---33v)
-	- [Fan 5V](#fan-5v)
+    - [Bare-Board](#bare-board)
+    - [Case - No Fan](#case---no-fan)
+    - [Fan - 3.3V](#fan---33v)
+    - [Fan 5V](#fan-5v)
 - [Decision and Observations](#decision-and-observations)
 - [Improvement](#improvement)
-	- [Data-Files](#data-files)
+    - [Data-Files](#data-files)
 
 
 # The Setup
@@ -49,6 +49,7 @@ For the tests, I ran 5 tests in all.
   3. Fan - 3.3V (15min)
   4. Fan - 5V (15min)
   5. Fan - 3.3V (extended)
+
 
 The `bare-board` case is meant to be the base-case.
 The second case is meant to illustrate a fan failure. I had the fan installed but didnt power it.
