@@ -1,0 +1,71 @@
+Friday 02 July 2021 11:00:13 AM IST  :=>  ext4Luks-write
+========================================
+ext4Luks: (g=0): rw=write, bs=(R) 4096KiB-4096KiB, (W) 4096KiB-4096KiB, (T) 4096KiB-4096KiB, ioengine=libaio, iodepth=64
+fio-3.16
+Starting 1 process
+ext4Luks: Laying out IO file (1 file / 2048MiB)
+
+ext4Luks: (groupid=0, jobs=1): err= 0: pid=2937082: Fri Jul  2 11:00:32 2021
+  write: IOPS=27, BW=111MiB/s (117MB/s)(2048MiB/18420msec); 0 zone resets
+    slat (usec): min=225, max=2105.1k, avg=12413.49, stdev=155331.33
+    clat (msec): min=33, max=7083, avg=2284.43, stdev=1057.28
+     lat (msec): min=33, max=7084, avg=2296.84, stdev=1051.94
+    clat percentiles (msec):
+     |  1.00th=[  232],  5.00th=[  642], 10.00th=[  961], 20.00th=[ 1485],
+     | 30.00th=[ 1770], 40.00th=[ 2022], 50.00th=[ 2106], 60.00th=[ 2232],
+     | 70.00th=[ 2702], 80.00th=[ 3272], 90.00th=[ 3842], 95.00th=[ 4111],
+     | 99.00th=[ 4463], 99.50th=[ 5201], 99.90th=[ 7080], 99.95th=[ 7080],
+     | 99.99th=[ 7080]
+   bw (  KiB/s): min=24576, max=532480, per=100.00%, avg=153247.75, stdev=127313.14, samples=24
+   iops        : min=    6, max=  130, avg=37.38, stdev=31.09, samples=24
+  lat (msec)   : 50=0.39%, 100=0.20%, 250=0.78%, 500=1.76%, 750=3.71%
+  lat (msec)   : 1000=3.91%, 2000=28.52%, >=2000=60.74%
+  cpu          : usr=0.75%, sys=0.67%, ctx=931, majf=0, minf=13
+  IO depths    : 1=0.2%, 2=0.4%, 4=0.8%, 8=1.6%, 16=3.1%, 32=6.2%, >=64=87.7%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=99.8%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.2%, >=64=0.0%
+     issued rwts: total=0,512,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+  WRITE: bw=111MiB/s (117MB/s), 111MiB/s-111MiB/s (117MB/s-117MB/s), io=2048MiB (2147MB), run=18420-18420msec
+
+Disk stats (read/write):
+    dm-3: ios=0/2530, merge=0/0, ticks=0/4332168, in_queue=4332168, util=98.56%, aggrios=0/4260, aggrmerge=0/341, aggrticks=0/1025855, aggrin_queue=1020132, aggrutil=98.56%
+  sda: ios=0/4260, merge=0/341, ticks=0/1025855, in_queue=1020132, util=98.56%
+
+Friday 02 July 2021 11:00:42 AM IST  :=>  ext4Luks-read
+========================================
+ext4Luks: (g=0): rw=read, bs=(R) 4096KiB-4096KiB, (W) 4096KiB-4096KiB, (T) 4096KiB-4096KiB, ioengine=libaio, iodepth=64
+fio-3.16
+Starting 1 process
+
+ext4Luks: (groupid=0, jobs=1): err= 0: pid=2937840: Fri Jul  2 11:01:01 2021
+  read: IOPS=28, BW=113MiB/s (118MB/s)(2048MiB/18184msec)
+    slat (usec): min=151, max=305847, avg=35016.61, stdev=25243.15
+    clat (msec): min=248, max=3886, avg=2097.49, stdev=457.68
+     lat (msec): min=265, max=3914, avg=2132.51, stdev=458.53
+    clat percentiles (msec):
+     |  1.00th=[  397],  5.00th=[ 1036], 10.00th=[ 1888], 20.00th=[ 2005],
+     | 30.00th=[ 2022], 40.00th=[ 2072], 50.00th=[ 2089], 60.00th=[ 2165],
+     | 70.00th=[ 2232], 80.00th=[ 2433], 90.00th=[ 2467], 95.00th=[ 2534],
+     | 99.00th=[ 3507], 99.50th=[ 3842], 99.90th=[ 3876], 99.95th=[ 3876],
+     | 99.99th=[ 3876]
+   bw (  KiB/s): min=40960, max=139264, per=99.66%, avg=114936.31, stdev=25522.81, samples=32
+   iops        : min=   10, max=   34, avg=28.03, stdev= 6.22, samples=32
+  lat (msec)   : 250=0.20%, 500=1.56%, 750=1.37%, 1000=1.56%, 2000=15.62%
+  lat (msec)   : >=2000=79.69%
+  cpu          : usr=0.07%, sys=1.07%, ctx=660, majf=0, minf=65547
+  IO depths    : 1=0.2%, 2=0.4%, 4=0.8%, 8=1.6%, 16=3.1%, 32=6.2%, >=64=87.7%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=99.8%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.2%, >=64=0.0%
+     issued rwts: total=512,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=113MiB/s (118MB/s), 113MiB/s-113MiB/s (118MB/s-118MB/s), io=2048MiB (2147MB), run=18184-18184msec
+
+Disk stats (read/write):
+    dm-3: ios=1313/30, merge=0/0, ticks=320756/12236, in_queue=332992, util=79.68%, aggrios=4448/113, aggrmerge=135/7, aggrticks=1003578/24107, aggrin_queue=1020840, aggrutil=98.54%
+  sda: ios=4448/113, merge=135/7, ticks=1003578/24107, in_queue=1020840, util=98.54%
+

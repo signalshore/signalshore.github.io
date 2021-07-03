@@ -5,6 +5,17 @@ Tags: CS, Tech
 
 I bought myself a 5TB external Hard-drive from Seagate. I am going to use this for my home-server build. The computer will the the Raspberry-Pi which I already own. I think its time to up my seeding game. Before installing it on my server I wanted to run some benchmarks on it.
 
+
+- [What am I Benchmarking ?](#what-am-i-benchmarking-)
+- [Why am I doing this ?](#why-am-i-doing-this-)
+- [The setup ?](#the-setup-)
+- [Benchmark Results](#benchmark-results)
+    - [Laptop 128Gb Usb drive](#laptop-128gb-usb-drive)
+    - [Laptop 5TB HDD](#laptop-5tb-hdd)
+    - [Raspberry Pi 128GB Usb drive](#raspberry-pi-128gb-usb-drive)
+    - [Raspberry pi 5TB hdd](#raspberry-pi-5tb-hdd)
+
+
 # What am I Benchmarking ?
 In this Benchmark I will be comparing the performance of the HDD in various filesystem configurations. The test will be done on my laptop and on the Raspberry Pi.
 
@@ -60,6 +71,7 @@ We build a `btrfs` filesystem(s) in single data-mode. This makes sure that btrfs
 In the partitions where encryption was set-up we first build a luks encrypted volume and then build the filesystem on top of it.
 
 Then we mount all of the partitions under  `/mnt/`. It looks like this
+
     :::bash
     ~ ❯❯❯ lsblk /dev/sda
     NAME          MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
@@ -92,5 +104,39 @@ In total, I had to run the script 4 times on my laptop
 
 All the data along with the shitty script will be available for public.
 
+/// write about fio things like bs and size etc
+# Benchmark Results
+Sharing the screenshots of the Netdata dashboard highlighting the disk I/O for tests run on my laptop (the control).
+For tests run on the Raspberry-Pi I was also looking at CPU, Temp and Disk I/O. Those charts are also present below.
 
-# 
+The results will be summarized in a table at the end.
+
+I ran the tests with block-size as 4K initially, but then discovered that changing it to 4M was giving me better throughput.
+The charts below are for the 4M tests.
+
+The data-dump will have all the results for you to look at if you want to.
+There is something really interesting wrt the Raspberry Pi when we use a higher block size. A section will be there that talks about it.
+
+## Laptop 128Gb Usb drive
+![laptop_ssd_4M](/assets/2021-07-03-Storage-Benchmarks/SSD_USB/Laptop/4M/laptop_ssd_4M.png)
+## Laptop 5TB HDD
+![hdd_laptop_4M](/assets/2021-07-03-Storage-Benchmarks/5_TB/Laptop/4M/hdd_laptop_4M.png)
+
+## Raspberry Pi 128GB Usb drive
+![rpi_ssd_4M](/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_io.png)
+> Disk I/O
+
+![rpi_ssd_4M](/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_cpu.png)
+> CPU Utilization and Load Average
+
+![rpi_ssd_4M](/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_temp.png)
+> Temp
+## Raspberry pi 5TB hdd
+![](/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_io.png)
+> Disk I/O
+
+![](/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_cpu.png)
+> CPU Utilization and Load Average
+
+![](/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_temp.png)
+> Temp
