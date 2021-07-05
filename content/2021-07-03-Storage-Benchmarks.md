@@ -169,7 +169,7 @@ The units are `MB/s` and the format is `Write/Read`
 7. Sequential reads from encrypted devices causes a significant rise in CPU temp for the Raspberry Pi. This is almost as much as performing a stress test on the CPUs.
 8. Changing Block Size from 4k to 4M has significant improvement, though it causes a huge rise in CPU Utilisation for the USB on the Raspberry PI.
 9. Overall anything but vanilla ext4 has quite significant CPU load.
-10. If you notice carefully then you should see that the writes are not zeroed in-between the tests. This is because ext4 has a lazyinit feature which allows for faster creation of the filesystem by not initializing all the inode tables at the start (i.e. during mkfs). Instead it defers the initialization to a background process when the filesystem is mounted and uses roughly 10% of the available bandwidth. Btw, initializing the inode tables basically means that when a new filesystem is created, the exisiting regions of the inode tables must be reset to `0`. 
+10. If you notice carefully then you should see that the writes are not zeroed in-between the tests. This is because ext4 has a lazyinit feature which allows for faster creation of the filesystem by not initializing all the inode tables at the start (i.e. during mkfs). Instead it defers the initialization to a background process when the filesystem is mounted and uses roughly 10% of the available bandwidth. Btw, initializing the inode tables basically means that when a new filesystem is created, the exisiting regions of the inode tables must be reset to `0`.
 
 # What is Block Size? Why is it so important ?
 The operating system talks to block I/O devices using get/set operations. These are called IOPS.
