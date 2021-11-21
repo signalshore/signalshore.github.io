@@ -2,6 +2,7 @@ Title: RRusty; Home Server
 Date: 2021-11-21
 Tags: CS, Tech, HomeServer
 Summary: A live record of my home-server journey and the learnings so far in this endeavour
+Status: Draft
 
 There be detailed posts about the setup and learnings from each of the sections below.
 
@@ -15,7 +16,6 @@ For the networking part I have a NetGear AC6850 router. This is a beast. I will 
 # The Use-case(s)
 The Raspberry Pi was bought purely out of FOMO. I did not have a plan as to what I would do with it, but I figured having a less power-hungry computer around would not harm me much.
 I wanted this to try as many things as possible without much cost. This is something that would not be possible with my company-issued laptop.
-
 ## Inexpensive NAS
 This was an obvious one. I needed a lot of storage space. I am starting to take photographs and I want to seed a couple of torrents. I also want to self-host my books and media collection. Moreover, plugging in an external HDD every time I needed storage was not the best solution. Having storage readily available was fun.
 
@@ -44,5 +44,6 @@ As for VPN, I do not use any VPN currently, I'm yet to settle with one provider.
 ## Personal Cloud
 I did set up NextCloud once on RRusty once. It was okay. I'm not a big fan of the whole personal-cloud thing. I feel that its too big for my use-case. The good thing is that NC does have mobile clients, which is absent for my NFS shares.
 
-
+## Monitoring
+For monitoring, I'm using netdata
 

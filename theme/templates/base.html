@@ -1,72 +1,76 @@
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
-  <head>
-    <meta charset="utf-8">
-    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
-    <meta name="description" content="{% block description %}Computer Science, Mathematics, Theoretical Computer Science, Functional Programming{% endblock %}">
-    <meta name="author" content="{{ AUTHOR }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ SITEURL }}/theme/css/ipython.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/css/local.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/css/pygments.css" rel="stylesheet">
-    {% block head %}{% endblock %}
-  </head>
 
-  <body>
-    <div class="container">
-      <div class="page-header">
-        <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
-        {% if SITESUBTITLE %}<br><small>{{ SITESUBTITLE }}</small></h1>{% endif %}
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <meta name="description"
+    content="{% block description %}Computer Science, Mathematics, Theoretical Computer Science, Functional Programming{% endblock %}">
+  <meta name="author" content="{{ AUTHOR }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{{ SITEURL }}/theme/css/ipython.css" rel="stylesheet">
+  <link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ SITEURL }}/theme/css/local.css" rel="stylesheet">
+  <link href="{{ SITEURL }}/theme/css/pygments.css" rel="stylesheet">
+  {% block head %}{% endblock %}
+</head>
 
-<h4> 
-  {% if DISPLAY_PAGES_ON_MENU %}
-  {% for page in pages %}
-  <a href="{{ SITEURL }}/{{ page.url }}">{{page.title}}</a>
-  |
-  {% endfor %}
-  {% endif %}
-
-  {% if LINKS %}
-  {% for name, link in LINKS %}
-  <a href="{{ link }}">{{ name }}</a>
-  |
-  {% endfor %}
-  {% endif %}
-
-  {% if FEED_ALL_ATOM %}
-  <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml">
-  Atom
-  </a>
-  {% endif %}
-
-  {% if FEED_ALL_RSS %}
-  <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml">
-    RSS
-  </a>
-  |
-  {% endif %}
-</h4>
-</div>
-<!-- From here starts the content blocks -->
-
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    {% block content %}{% endblock %}
-  </div>
-</div> {# End row #}
-</div> <!-- /container -->
-
-<footer class="aw-footer bg-danger">
+<body>
   <div class="container">
+    <div class="page-header">
+      <h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+      {% if SITESUBTITLE %}<br><small>{{ SITESUBTITLE }}</small></h1>{% endif %}
+
+      <!-- this  is the nav on the top of the page-->
+      <h4>
+        {% if DISPLAY_PAGES_ON_MENU %}
+        {% for page in pages %}
+        <a href="{{ SITEURL }}/{{ page.url }}">{{page.title}}</a>
+        |
+        {% endfor %}
+        {% endif %}
+
+        {% if LINKS %}
+        {% for name, link in LINKS %}
+        <a href="{{ link }}">{{ name }}</a>
+        |
+        {% endfor %}
+        {% endif %}
+
+        {% if FEED_ALL_ATOM %}
+        <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml">
+          Atom
+        </a>
+        {% endif %}
+
+        {% if FEED_ALL_RSS %}
+        <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml">
+          RSS
+        </a>
+        |
+        {% endif %}
+      </h4>
+    </div>
+    <!-- From here starts the content blocks -->
+
     <div class="row">
-      <div class="col-md-12 text-center center-block aw-bottom">
-        <p>Life is best filled by learning as much as you can about as much as you can </p>
-        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+      <div class="col-md-8 col-md-offset-2">
+        {% block content %}{% endblock %}
+      </div>
+    </div> {# End row #}
+  </div> <!-- /container -->
+
+  <footer class="aw-footer bg-danger">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center center-block aw-bottom">
+          <p>Life is best filled by learning as much as you can about as much as you can </p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License"
+              style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 </body>
-</html>
 
+</html>
