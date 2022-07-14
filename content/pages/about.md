@@ -4,43 +4,26 @@ permalink: /about/
 title: About
 ---
 # About
+I am Sohom.
 
-<br> 
-Name: Sohom.
+I like learning things, for the sake of learning things. That being said, my learning is a bit skewed towards computers and everything related to computer. Ultimate goal is to learn everything that goes into making a working computer.
 
-I started SignalShore in 2017 because I really enjoy reading other
-people's blogs and I wanted to have one for myself.
+> *I have to understand the world, you see.
+>                           — Richard Feynman*
 
-> Life is best filled by learning as much as you can about as much as you can!
-
-I dont know where I heard it but that really sums up what I try to live by.
-
-I change my mind, review my beliefs and sharpen my opinions often, as
-and when I learn new things. I am often wrong about a great many
-things; hence the cycle of Read, Think, Reach your own conclusions
-keeps repeating.
-
-Writing this blog helps me write better and hence it help me think
-better.
+I have found writing to be an excellent way to think. It _really_ helps me. I have personally learnt a __lot__ from other people's blogs/sites and with this blog I hope to help someone else.
 
 This blog is my excuse to try out new ideas, to learn new things and
 to do it properly.
 
-> *I have to understand the world, you see.  — Richard Feynman*
-
-## "SignalShore" ? ##
-
-I asked a friend for something "different". He suggested 4 names. This
-was the only one that was available at that point. It's surprising
-that this was not my first choice. Now that I think about it, the
-hindi word for "noise" is "shore". So I guess I can say its something
-to do with signal and noise.
+I also enjoy walking, cycling and trekking. I often go on long walks and take lots of photos of plants and other things. I also do a teeny-tiny bit of photography. I also liking to visit crowded spaces and just observe people go about their usual days.
 
 
 ### Contact ... ###
+I am extremely online. Reach me at either of these
 
-Email: soham.bhattacharjee15 [at] gmail [dot] com
-<br>
-Telegram: sohom83
- 
+- Twitter: sohom83
+- Telegram: sohom83
+- Email: soham.bhattacharjee15 [at] gmail [dot] com
+
 

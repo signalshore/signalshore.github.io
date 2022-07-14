@@ -28,7 +28,7 @@ Kolkata, West Bengal <br/>
 
 - AWS (random bits and pieces)
 - Entire Container platform (ECS)
-- A lot of Python, Bash and awscli 
+- A lot of Python, Bash and awscli
 - CI/CD pipeline for said container platform using Gitlab
 
 ### Nexsales Solutions ###

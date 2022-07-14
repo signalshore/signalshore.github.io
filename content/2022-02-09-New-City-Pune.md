@@ -11,7 +11,7 @@ After almost 2 years of living at home this feels like the right call. The idea 
 
 Generally when you are moving to a new city, you do not have any place to stay for the initial part. My office took care of this. They put me up in a fancy hotel which helped me immensely.
 
-Apart from this, I did some initial reserach (with the help of a bunch of friends) as to where to look for a house/flat to rent. This time around I can actually afford to spend money on a private flat/house to rent that I do not have to share with other people. My salary has more or less doubled since my Mumbai days and the rents are quite cheaper than Mumbai. Living alone is a bit isolating, which is again something that I need to get used to.
+Apart from this, I did some initial research (with the help of a bunch of friends) as to where to look for a house/flat to rent. This time around I can actually afford to spend money on a private flat/house to rent that I do not have to share with other people. My salary has more or less doubled since my Mumbai days and the rents are quite cheaper than Mumbai. Living alone is a bit isolating, which is again something that I need to get used to.
 
 I found a nice apartment that a colleague was renting out. This was the most lucky event in the whole thing. The apartment is nice. It is very close proximity to a hill and a trail nearby which makes for a very easy weekend getaway.
 

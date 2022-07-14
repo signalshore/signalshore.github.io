@@ -19,7 +19,7 @@ DEFAULT_LANG = 'en'
 FEED_ALL_ATOM = 'feeds/all.atom'
 
 # Links
-LINKS = (('Archives', '/archives.html'), ('Tags', '/tag/index.html'))
+LINKS = (('Archives', '/archives/'), ('Tag', '/tag/'))
 
 MARKDOWN = {
     'extension_configs': {
@@ -37,14 +37,14 @@ DEFAULT_PAGINATION = 10
 
 # Plugins
 PLUGINS = ["render_math"]
-PLUGIN_PATHS = ["plugins", "/home/sohom/wkspc/blog/pelican/pelican-plugins"]
+PLUGIN_PATHS = ["plugins",
+                "/home/sohom/wkspc/personal/blog/pelican/pelican-plugins"]
 
 # Themes
 # I am using the AboutWilson theme
-THEME = '/home/sohom/wkspc/blog/signalshore.github.io/theme/'
+THEME = '/home/sohom/wkspc/personal/blog/signalshore.github.io/theme/'
 
 LOAD_CONTENT_CACHE = False
-ORG_READER_EMACS_LOCATION = '/usr/bin/emacs'
 
 # URL settings
 AUTHORS_SAVE_AS = ''
@@ -54,8 +54,8 @@ CATEGORY_SAVE_AS = ''
 
 ARTICLE_URL = 'blog/{slug}.html'
 ARTICLE_SAVE_AS = 'blog/{slug}.html'
-PAGE_URL = '{slug}.html'
-PAGE_SAVE_AS = '{slug}.html'
+PAGE_URL = '{slug}/'
+PAGE_SAVE_AS = '{slug}/index.html'
 TAGS_SAVE_AS = 'tag/index.html'
 
 # Metadata regex
