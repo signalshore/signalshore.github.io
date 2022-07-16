@@ -12,6 +12,9 @@
   <link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
   <link href="{{ SITEURL }}/theme/css/local.css" rel="stylesheet">
   <link href="{{ SITEURL }}/theme/css/pygments.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto&display=swap" rel="stylesheet">
   {% block head %}{% endblock %}
 </head>
 
@@ -54,7 +57,7 @@
     <!-- From here starts the content blocks -->
 
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
         {% block content %}{% endblock %}
       </div>
     </div> {# End row #}
