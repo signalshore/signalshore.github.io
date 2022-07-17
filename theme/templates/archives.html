@@ -7,12 +7,12 @@
 
 <table class="table">
     <tbody>
-    {% for article in dates %}
+        {% for article in dates %}
         <tr>
-        <td>{{ article.date.strftime("%d %b %Y") }}</td>
-        <td><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></td>
+            <td>{{ article.date.strftime("%d %b %Y") }}</td>
+            <td><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></td>
         </tr>
-    {% endfor %}
+        {% endfor %}
     </tbody>
 </table>
 
