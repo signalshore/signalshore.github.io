@@ -24,9 +24,10 @@ h2.headerlink {
     color: inherit;
 }
 .summary {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
     margin-top: 2em;
     color: black;
+	font-size: 16px;
 }
 
 .summary pre { display: none; }

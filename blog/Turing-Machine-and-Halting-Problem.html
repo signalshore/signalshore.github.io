@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<title>Turing Machine and Halting Problem — SignalShore</title>
-	<meta name="description" content="Title: Turing Machine and Halting Problem; Date: 2018-08-30; Author: Sohom">
-	<meta name="author" content="Sohom">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src="https://signalshore.github.io/theme/html5.js"></script>
-		<![endif]-->
-	<link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
-	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Turing Machine and Halting Problem — SignalShore</title>
+  <meta name="description"
+    content="Title: Turing Machine and Halting Problem; Date: 2018-08-30; Author: Sohom">
+  <meta name="author" content="Sohom">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<div class="container">
-	<div class="page-header">
-		<h1><a href="https://signalshore.github.io/">SignalShore</a>
-			<br>	</div>
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+  <div class="container">
+    <div class="page-header">
+      <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+      <!-- this  is the nav on the top of the page-->
+      <h4>
+        <a href="https://signalshore.github.io/about/">About</a>
+        |
+        <a href="https://signalshore.github.io/cv/">CV</a>
+        |
+
+        <a href="/archives/">Archives</a>
+        |
+        <a href="/tag/">Tag</a>
+        |
+
+        <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+          Atom
+        </a>
+
+      </h4>
+    </div>
+    <!-- From here starts the content blocks -->
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="text-center article-header">
 		<h1 itemprop="name headline" class="article-title">Turing Machine and Halting Problem</h1>
@@ -44,7 +63,7 @@ I talked briefly about Alan Turing's model of computation, called the
 Turing Machine.</p>
 <p>Today we will look into this in more detail and discuss an interesting
 problem called the Halting problem.</p>
-<h2>Context</h2>
+<h2 id="context">Context</h2>
 <p>Alan Turing was interested in what it meant to <em>compute</em> something. 
 To fully grasp the severity of this problem we need to step back in time. </p>
 <p>This is the 1930s that we are talking about, there were no <em>proper</em>
@@ -72,7 +91,7 @@ core, what does computation mean ?</em></p>
 <p>So in order to have a formal definition of computation we needed a
 model for computation. This is what Alan Turing came up with and this
 is what we now call the Turing Machine.</p>
-<h2>The Idea</h2>
+<h2 id="the-idea">The Idea</h2>
 <p>Picture a typewriter.  The Turing Machine is heavily inspired by this
 system (typewriter + operator). In the book "Alan Turing: The Enigma"
 the writer Andrew Hodges tells us that Alan was fascinated by
@@ -115,7 +134,7 @@ Machine to write a symbol into the tape, then move the tape left or
 right and finally to assume a new state (or stay in the same one).</p>
 <p>Now the Turing Machine is a model of computation, thus it must be
 able to do some computation; right? So how does it do that. </p>
-<h2>Problems for a Turing Machine.</h2>
+<h2 id="problems-for-a-turing-machine">Problems for a Turing Machine.</h2>
 <p>Problems in Automata Theory are generally of the form that involves
 some "computer" determining if some string belongs to a set of strings
 or not, based on some rules. This set of strings is called that follow
@@ -151,7 +170,7 @@ level details of how the head and the tapes move; instead we can just
 use English prose to describe an algorithm. The only requirement is
 that an algorithm to stop in a finite number of steps (this is quite
 literally the definition of an algorithm).</p>
-<h2>Universal Turing Machine</h2>
+<h2 id="universal-turing-machine">Universal Turing Machine</h2>
 <p>A Turing Machine is generally programmed to perform only a single type
 of computation. However there is a class of Turing Machines called the
 Universal Turing Machine which can perform any sort of computation. In
@@ -169,7 +188,7 @@ Machine.</p>
 <p>Thus the problems these Turing Machines can tackle are generally of
 the form where we test the behavior of some arbitrary Turing machine
 on some arbitrary input.</p>
-<h2>The Halting Problem</h2>
+<h2 id="the-halting-problem">The Halting Problem</h2>
 <p>The Halting Problem is a decision problem of determining whether any
 arbitrary Turing Machine will halt on an arbitrary string input or
 not. </p>
@@ -187,7 +206,7 @@ machine <span class="math">\(B\)</span> and tell whether <span class="math">\(B\
 some far-reaching implications as we will soon see. But before that we
 will prove the above statement. This is a fun proof that illustrates
 how to think about these problems in general.</p>
-<h3>Proof</h3>
+<h3 id="proof">Proof</h3>
 <p>Let us assume that such a machine does exist and let us call it
 <span class="math">\(H_{TM}\)</span>.</p>
 <p>Construction of <span class="math">\(H_{TM}\)</span>:</p>
@@ -224,8 +243,8 @@ subroutine (hence the sub-subscript notation).</p>
 itself if it rejects itself.</p>
 <p>Hence our initial assumption about the existence of <span class="math">\(H_{TM}\)</span> must be
 wrong. Hence <span class="math">\(H_{TM}\)</span> can not exist.</p>
-<h6>There is another proof for this that uses the Cantor's diagonalisation argument</h6>
-<h3>Conclusion</h3>
+<h6 id="there-is-another-proof-for-this-that-uses-the-cantors-diagonalisation-argument">There is another proof for this that uses the Cantor's diagonalisation argument</h6>
+<h3 id="conclusion">Conclusion</h3>
 <p>This means that</p>
 <blockquote>
 <p>There does not exist a single algorithm that can us if another
@@ -252,10 +271,13 @@ Hilberts Problems.</p>
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
     mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -269,6 +291,8 @@ Hilberts Problems.</p>
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -289,6 +313,8 @@ Hilberts Problems.</p>
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script></div>
@@ -297,75 +323,20 @@ Hilberts Problems.</p>
 	<!--  -->
 	<!--  -->
 </div>
-		</div>
-	</div> 	<!-- <hr> -->
-</div> <!-- /container -->
-<footer class="aw-footer bg-danger">
-	<div class="container"> <!-- footer -->
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row">
-					<div class="col-md-3">
-						<h4>Navigation</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://signalshore.github.io/about.html"><i class="fa fa-About "></i> About</a></li>
-							<li><a href="https://signalshore.github.io/cv.html"><i class="fa fa-CV "></i> CV</a></li>
-							<li><a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h4>Social</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://twitter.com/sohom154">Twitter</a></li>
-							<li><a href="https://github.com/83bytes">Github</a></li>
-							<li><a href="https://gitlab.com/83bytes">Gitlab</a></li>
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<h4>Tags</h4>
-						<ul class="list-unstyled my-list-style">
-						<a href="https://signalshore.github.io/tag/travel.html">Travel</a>,
-						<a href="https://signalshore.github.io/tag/env.html">Env</a>,
-						<a href="https://signalshore.github.io/tag/meta.html">Meta</a>,
-						<a href="https://signalshore.github.io/tag/cs.html">CS</a>,
-						<a href="https://signalshore.github.io/tag/misc.html">Misc</a>,
-						<a href="https://signalshore.github.io/tag/math.html">Math</a>,
-						<a href="https://signalshore.github.io/tag/data.html">Data</a>,
-						<a href="https://signalshore.github.io/tag/cycling.html">Cycling</a>,
-						<a href="https://signalshore.github.io/tag/guix.html">Guix</a>,
-						<a href="https://signalshore.github.io/tag/work.html">Work</a>,
-						<a href="https://signalshore.github.io/tag/scheme.html">Scheme</a>,
-						<a href="https://signalshore.github.io/tag/activism.html">Activism</a>,
-						<a href="https://signalshore.github.io/tag/linux.html">Linux</a>,
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center center-block aw-bottom">
-		  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
-		</div>
-	</div>
-</div>
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-	$("div.collapseheader").click(function () {
-		$header = $(this).children("span").first();
-		$codearea = $(this).children(".input_area");
-		$codearea.slideToggle(500, function () {
-			$header.text(function () {
-				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
-			});
-		});
-	});
-});
-</script>
+      </div>
+    </div>   </div> <!-- /container -->
+
+  <footer class="aw-footer bg-danger">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center center-block aw-bottom">
+          <p>Life is best filled by learning as much as you can about as much as you can </p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License"
+              style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>

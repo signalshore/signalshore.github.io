@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<title>Lambda Calculus - Part 1 — SignalShore</title>
-	<meta name="description" content="Title: Lambda Calculus - Part 1; Date: 2018-02-17; Author: Sohom">
-	<meta name="author" content="Sohom">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src="https://signalshore.github.io/theme/html5.js"></script>
-		<![endif]-->
-	<link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
-	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Lambda Calculus - Part 1 — SignalShore</title>
+  <meta name="description"
+    content="Title: Lambda Calculus - Part 1; Date: 2018-02-17; Author: Sohom">
+  <meta name="author" content="Sohom">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<div class="container">
-	<div class="page-header">
-		<h1><a href="https://signalshore.github.io/">SignalShore</a>
-			<br>	</div>
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+  <div class="container">
+    <div class="page-header">
+      <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+      <!-- this  is the nav on the top of the page-->
+      <h4>
+        <a href="https://signalshore.github.io/about/">About</a>
+        |
+        <a href="https://signalshore.github.io/cv/">CV</a>
+        |
+
+        <a href="/archives/">Archives</a>
+        |
+        <a href="/tag/">Tag</a>
+        |
+
+        <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+          Atom
+        </a>
+
+      </h4>
+    </div>
+    <!-- From here starts the content blocks -->
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="text-center article-header">
 		<h1 itemprop="name headline" class="article-title">Lambda Calculus - Part 1</h1>
@@ -41,12 +60,12 @@
 	<div itemprop="articleBody" class="article-body"><p><a href="https://en.wikipedia.org/wiki/Lambda_calculus">Lambda Calculus</a> is a beautiful thing in Computer Science. </p>
 <p>With this post I will try to motivate and inspire the beauty of Lambda Calculus and impress upon the reader the implications of it.</p>
 <p>This will just be a very very basic overview of Lambda Calculus. I can not write an in-depth post because firstly I want to motivate the inspiration in the reader and secondly I have not completely understood some of the greater intricacies of Lambda Calculus.</p>
-<h2>Introduction - Lambda Calculus</h2>
+<h2 id="introduction-lambda-calculus">Introduction - Lambda Calculus</h2>
 <p>To put in simply Lambda Calculus is the worlds smallest, universal programming language.</p>
 <p>Lambda Calculus is a formal system of mathematical logic that is used for expressing computation. This is a universal model of computation that can be used to encode any Turing Machine algorithm. It was first established by logician <a href="https://en.wikipedia.org/wiki/Alonzo_Church">Alonzo Church</a>. </p>
 <p><a href="https://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a> and Alonzo Church showed that a Turing Machine and Lambda Calculus model are equally powerful models of computation. This is the famous <a href="https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis">Church-Turing thesis</a>.</p>
 <p>Let us learn about Lambda Calculus by describing it as a programming Language that we are designing.</p>
-<h2>Building Blocks of lambda calculus.</h2>
+<h2 id="building-blocks-of-lambda-calculus">Building Blocks of lambda calculus.</h2>
 <p>All valid Lambda Calculus Expressions are called Lambda terms. Any valid Lambda Calculus expression can be constructed using just three building blocks. </p>
 <ul>
 <li>
@@ -88,11 +107,11 @@
 <p><strong>Rule 3</strong> represents the idea of application and is called <strong>application</strong>.</p>
 <p>The lambda abstraction <span class="math">\(\lambda x.M\)</span> defines an anonymous function that takes <span class="math">\(x\)</span> as input argument and maps it to <span class="math">\(M\)</span>. Thus the function <span class="math">\(f(x) = x + 1\)</span> is <span class="math">\(\lambda x . x + 1\)</span>, where <span class="math">\(M\)</span> is <span class="math">\(x+1\)</span></p>
 <p>The application is equivalent to calling function <span class="math">\(M\)</span> on input <span class="math">\(N\)</span> i.e. <span class="math">\(M(N)\)</span></p>
-<h2>How to run Lambda Calculus programs ?</h2>
+<h2 id="how-to-run-lambda-calculus-programs">How to run Lambda Calculus programs ?</h2>
 <p>Now we have seen how Lambda calculus expressions can be formed. In this section we will see how Lambda calculus expressions can be reduced. This is also equivalent to saying "How can we run lambda calculus programs ?"</p>
 <p>There are multiple reduction rules, but the most important and the most relevant one is the <span class="math">\(\beta\)</span>-reduction. <span class="math">\(\beta\)</span>-reduction is defined in terms of substitution rules. This rule captures the idea of function application. </p>
 <p>The <span class="math">\(\beta\)</span> reduction rule states that in an expression of the form <span class="math">\((\lambda x.t)v\)</span> we replace all the occurrences of <span class="math">\(x\)</span> in <span class="math">\(t\)</span> with <span class="math">\(v\)</span>.</p>
-<h4>Examples</h4>
+<h4 id="examples">Examples</h4>
 <ol>
 <li>
 <p><span class="math">\((\lambda  x. x^2)5 \thinspace := \thinspace 5^2 \thinspace := \thinspace 25\)</span></p>
@@ -101,23 +120,23 @@
 <p><span class="math">\(((\lambda x. \lambda y. x + y)\thinspace 5 \thinspace 4) \thinspace:= \thinspace 5 + 4 \thinspace := \thinspace 9\)</span></p>
 </li>
 </ol>
-<h2>Church Encoding</h2>
+<h2 id="church-encoding">Church Encoding</h2>
 <p>Now that we have a working programming language that allows us to define functions and apply functions what else can we do with this language ?</p>
 <p>We realize that to do any sort of meaningful work with this language we need to define numbers and arithmetic operations in this language.</p>
 <p>This is where Church Encoding comes into play. It is a method of encoding numbers and operations in the Lambda calculus. It is meant to illustrate that you can have mathematical operations purely in terms of functions and abstractions without defining any mathematical primitives.</p>
 <p>Under Church Encoding we have a bunch of different formats. Over here we will be discussing only two of them.</p>
-<h2>Church Numerals</h2>
+<h2 id="church-numerals">Church Numerals</h2>
 <p>The basic idea of church numerals is to use multiple applications of a function to represent numbers and the number of times the function is applied is equal the number that the lambda expression represents.</p>
 <p>Starting with the number <span class="math">\(0\)</span> where the function is not applied even once. We define zero as </p>
 <p><span class="math">\(0\thinspace := \thinspace  \lambda \thinspace f. \thinspace \lambda x.\thinspace x\)</span></p>
 <p><span class="math">\(1\thinspace := \thinspace \lambda \thinspace f. \thinspace \lambda x. fx\)</span></p>
 <p><span class="math">\(2\thinspace := \thinspace \lambda \thinspace f. \thinspace \lambda x. f(fx)\)</span></p>
 <p><br></p>
-<h3>Successor Function</h3>
+<h3 id="successor-function">Successor Function</h3>
 <p>We define the successor function as </p>
 <p><span class="math">\(S := \lambda n. \thinspace \lambda f.\thinspace \lambda x.\thinspace f \thinspace ( \thinspace n \thinspace f \thinspace x \thinspace )\)</span> </p>
 <p><br></p>
-<h3>Application</h3>
+<h3 id="application">Application</h3>
 <p>Now, we can confirm the working of this setup by applying the successor function to the definition of <span class="math">\(0\)</span>.</p>
 <p><span class="math">\(S0 := (\lambda n. \lambda f. \lambda x. f \thinspace (n \thinspace f \thinspace x))( \lambda f. \lambda x. \thinspace x)\)</span></p>
 <p><span class="math">\(S0 := \lambda f. \lambda x. \thinspace f(( \lambda f. \lambda x. x) f x)\)</span></p>
@@ -129,13 +148,13 @@
 <p><span class="math">\(S2 := \lambda f. \lambda x. f((\lambda f. \lambda x. fx)fx)\)</span></p>
 <p><span class="math">\(S2 := \lambda f. \lambda x. f(fx)\)</span>, which is <span class="math">\(2\)</span></p>
 <p>So, right now in this programming language we have the ability to use numbers.</p>
-<h2>Church Boolean</h2>
+<h2 id="church-boolean">Church Boolean</h2>
 <p>We can define Boolean values (True and False) quite simple using church Encoding. The way these Boolean values are defines is very intriguing.</p>
 <p><span class="math">\(T := \lambda x. \lambda y. x\)</span></p>
 <p><span class="math">\(F := \lambda x. \lambda y. y\)</span></p>
 <p>Basically, <span class="math">\(T\)</span> is defined as a function that takes in two arguments and returns the first one and <span class="math">\(F\)</span> is defined as a function that takes in two arguments and returns the second one.</p>
 <p>What is surprising is that we can define all logical operations using a clever combination of these functions.    </p>
-<h3>Boolean Operations</h3>
+<h3 id="boolean-operations">Boolean Operations</h3>
 <ol>
 <li>
 <p><span class="math">\(\wedge := \lambda x. \lambda y. x y (\lambda u. \lambda v. v) := \lambda x. \lambda y. x y F\)</span></p>
@@ -164,7 +183,7 @@ In the previous equations replace <span class="math">\(M\)</span> and <span clas
 <p><span class="math">\(M N F := T F F := (\lambda x. \lambda y. x) F F := F\)</span> <em>(because T takes in two inputs and chooses the first one)</em> </p>
 <p>Thus an <span class="math">\(AND\)</span> operation on <span class="math">\(T\)</span> and <span class="math">\(F\)</span> is <span class="math">\(F\)</span>. </p>
 <p>The same can be shows for the rest also.</p>
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>New posts should be up <em>not-so-shortly</em>. In that I will explore each aspect of Lambda Calculus in more detail.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
@@ -181,10 +200,13 @@ In the previous equations replace <span class="math">\(M\)</span> and <span clas
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
     mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -198,6 +220,8 @@ In the previous equations replace <span class="math">\(M\)</span> and <span clas
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -218,6 +242,8 @@ In the previous equations replace <span class="math">\(M\)</span> and <span clas
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script></div>
@@ -226,75 +252,20 @@ In the previous equations replace <span class="math">\(M\)</span> and <span clas
 	<!--  -->
 	<!--  -->
 </div>
-		</div>
-	</div> 	<!-- <hr> -->
-</div> <!-- /container -->
-<footer class="aw-footer bg-danger">
-	<div class="container"> <!-- footer -->
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row">
-					<div class="col-md-3">
-						<h4>Navigation</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://signalshore.github.io/about.html"><i class="fa fa-About "></i> About</a></li>
-							<li><a href="https://signalshore.github.io/cv.html"><i class="fa fa-CV "></i> CV</a></li>
-							<li><a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h4>Social</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://twitter.com/sohom154">Twitter</a></li>
-							<li><a href="https://github.com/83bytes">Github</a></li>
-							<li><a href="https://gitlab.com/83bytes">Gitlab</a></li>
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<h4>Tags</h4>
-						<ul class="list-unstyled my-list-style">
-						<a href="https://signalshore.github.io/tag/travel.html">Travel</a>,
-						<a href="https://signalshore.github.io/tag/env.html">Env</a>,
-						<a href="https://signalshore.github.io/tag/meta.html">Meta</a>,
-						<a href="https://signalshore.github.io/tag/cs.html">CS</a>,
-						<a href="https://signalshore.github.io/tag/misc.html">Misc</a>,
-						<a href="https://signalshore.github.io/tag/math.html">Math</a>,
-						<a href="https://signalshore.github.io/tag/data.html">Data</a>,
-						<a href="https://signalshore.github.io/tag/cycling.html">Cycling</a>,
-						<a href="https://signalshore.github.io/tag/guix.html">Guix</a>,
-						<a href="https://signalshore.github.io/tag/work.html">Work</a>,
-						<a href="https://signalshore.github.io/tag/scheme.html">Scheme</a>,
-						<a href="https://signalshore.github.io/tag/activism.html">Activism</a>,
-						<a href="https://signalshore.github.io/tag/linux.html">Linux</a>,
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center center-block aw-bottom">
-		  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
-		</div>
-	</div>
-</div>
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-	$("div.collapseheader").click(function () {
-		$header = $(this).children("span").first();
-		$codearea = $(this).children(".input_area");
-		$codearea.slideToggle(500, function () {
-			$header.text(function () {
-				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
-			});
-		});
-	});
-});
-</script>
+      </div>
+    </div>   </div> <!-- /container -->
+
+  <footer class="aw-footer bg-danger">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center center-block aw-bottom">
+          <p>Life is best filled by learning as much as you can about as much as you can </p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License"
+              style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>
