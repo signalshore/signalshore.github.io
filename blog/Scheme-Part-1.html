@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<title>Scheme - Part 1 - Wishful Thinking and Abstraction — SignalShore</title>
-	<meta name="description" content="Title: Scheme - Part 1 - Wishful Thinking and Abstraction; Date: 2017-11-20; Author: Sohom">
-	<meta name="author" content="Sohom">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src="https://signalshore.github.io/theme/html5.js"></script>
-		<![endif]-->
-	<link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
-	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Scheme - Part 1 - Wishful Thinking and Abstraction — SignalShore</title>
+  <meta name="description"
+    content="Title: Scheme - Part 1 - Wishful Thinking and Abstraction; Date: 2017-11-20; Author: Sohom">
+  <meta name="author" content="Sohom">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<div class="container">
-	<div class="page-header">
-		<h1><a href="https://signalshore.github.io/">SignalShore</a>
-			<br>	</div>
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+  <div class="container">
+    <div class="page-header">
+      <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+      <!-- this  is the nav on the top of the page-->
+      <h4>
+        <a href="https://signalshore.github.io/about/">About</a>
+        |
+        <a href="https://signalshore.github.io/cv/">CV</a>
+        |
+
+        <a href="/archives/">Archives</a>
+        |
+        <a href="/tag/">Tag</a>
+        |
+
+        <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+          Atom
+        </a>
+
+      </h4>
+    </div>
+    <!-- From here starts the content blocks -->
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="text-center article-header">
 		<h1 itemprop="name headline" class="article-title">Scheme - Part 1 - Wishful Thinking and Abstraction</h1>
@@ -42,7 +61,7 @@
 		</span>
 		
 	</div>
-	<div itemprop="articleBody" class="article-body"><h3>Prologue</h3>
+	<div itemprop="articleBody" class="article-body"><h3 id="prologue">Prologue</h3>
 <p>I started
 learning
 <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">LISP</a>
@@ -61,7 +80,7 @@ because of the
 book
 <a href="https://mitpress.mit.edu/sicp/full-text/book/book.html">Structure and Interpretation of Computer Programs</a> (referred
 to as SICP hereafter).</p>
-<h3>What is this ?</h3>
+<h3 id="what-is-this">What is this ?</h3>
 <p>Even though I started about 1 year back I did not make much progress
 and I realized that one of the main reasons was that I was not doing
 the exercises with enough rigor. Thinking about a solution is very
@@ -72,7 +91,7 @@ them. Furthermore during this course of learning Scheme I've come
 across a lot of cool stuff that completely changed the way how I
 approached computer science and programming in general. I want to
 share those.</p>
-<h3>Lets start</h3>
+<h3 id="lets-start">Lets start</h3>
 <p><strong>Let us write a program</strong></p>
 <p><img alt="sum pic" src="/assets/images/2017-11-20/sum.png"></p>
 <p>(these are cropped screen-shots of Emacs)</p>
@@ -127,7 +146,7 @@ exist. You just use them as if they did existed.</p>
 not bother about how <em>sum</em> and <em>square</em> will be implemented. You can
 just use them as it is.</p>
 <p>This brings me to my next point. </p>
-<h3>Abstraction</h3>
+<h3 id="abstraction">Abstraction</h3>
 <p>Every procedure is like a layer of abstraction that is telling you to
 not worry about how it works and instead focus on the task at hand.
 This idea is immensely helpful. Its so simple. If you don't know how
@@ -136,7 +155,7 @@ the procedure later.</p>
 <p>I didn't think much about this until recently when I started doing
 the exercises in the book more seriously. Its great once you get the
 hang of it.</p>
-<h3>Conclusion</h3>
+<h3 id="conclusion">Conclusion</h3>
 <p>This is not the I have more things to share. Hopefully I will be able
 to write about them soon. :-P</p>
 <p><a href="https://gitlab.com/83bytes/sicp">Here</a> is the Gitlab Repo where I will keep uploading my SICP exercises.</p></div>
@@ -145,75 +164,20 @@ to write about them soon. :-P</p>
 	<!--  -->
 	<!--  -->
 </div>
-		</div>
-	</div> 	<!-- <hr> -->
-</div> <!-- /container -->
-<footer class="aw-footer bg-danger">
-	<div class="container"> <!-- footer -->
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row">
-					<div class="col-md-3">
-						<h4>Navigation</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://signalshore.github.io/about.html"><i class="fa fa-About "></i> About</a></li>
-							<li><a href="https://signalshore.github.io/cv.html"><i class="fa fa-CV "></i> CV</a></li>
-							<li><a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h4>Social</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://twitter.com/sohom154">Twitter</a></li>
-							<li><a href="https://github.com/83bytes">Github</a></li>
-							<li><a href="https://gitlab.com/83bytes">Gitlab</a></li>
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<h4>Tags</h4>
-						<ul class="list-unstyled my-list-style">
-						<a href="https://signalshore.github.io/tag/travel.html">Travel</a>,
-						<a href="https://signalshore.github.io/tag/env.html">Env</a>,
-						<a href="https://signalshore.github.io/tag/meta.html">Meta</a>,
-						<a href="https://signalshore.github.io/tag/cs.html">CS</a>,
-						<a href="https://signalshore.github.io/tag/misc.html">Misc</a>,
-						<a href="https://signalshore.github.io/tag/math.html">Math</a>,
-						<a href="https://signalshore.github.io/tag/data.html">Data</a>,
-						<a href="https://signalshore.github.io/tag/cycling.html">Cycling</a>,
-						<a href="https://signalshore.github.io/tag/guix.html">Guix</a>,
-						<a href="https://signalshore.github.io/tag/work.html">Work</a>,
-						<a href="https://signalshore.github.io/tag/scheme.html">Scheme</a>,
-						<a href="https://signalshore.github.io/tag/activism.html">Activism</a>,
-						<a href="https://signalshore.github.io/tag/linux.html">Linux</a>,
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center center-block aw-bottom">
-		  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
-		</div>
-	</div>
-</div>
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-	$("div.collapseheader").click(function () {
-		$header = $(this).children("span").first();
-		$codearea = $(this).children(".input_area");
-		$codearea.slideToggle(500, function () {
-			$header.text(function () {
-				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
-			});
-		});
-	});
-});
-</script>
+      </div>
+    </div>   </div> <!-- /container -->
+
+  <footer class="aw-footer bg-danger">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center center-block aw-bottom">
+          <p>Life is best filled by learning as much as you can about as much as you can </p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License"
+              style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>

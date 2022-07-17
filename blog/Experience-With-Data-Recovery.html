@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<title>Experience with Data Recovery — SignalShore</title>
-	<meta name="description" content="Title: Experience with Data Recovery; Date: 2017-07-20; Author: Sohom">
-	<meta name="author" content="Sohom">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src="https://signalshore.github.io/theme/html5.js"></script>
-		<![endif]-->
-	<link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
-	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Experience with Data Recovery — SignalShore</title>
+  <meta name="description"
+    content="Title: Experience with Data Recovery; Date: 2017-07-20; Author: Sohom">
+  <meta name="author" content="Sohom">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<div class="container">
-	<div class="page-header">
-		<h1><a href="https://signalshore.github.io/">SignalShore</a>
-			<br>	</div>
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+  <div class="container">
+    <div class="page-header">
+      <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+      <!-- this  is the nav on the top of the page-->
+      <h4>
+        <a href="https://signalshore.github.io/about/">About</a>
+        |
+        <a href="https://signalshore.github.io/cv/">CV</a>
+        |
+
+        <a href="/archives/">Archives</a>
+        |
+        <a href="/tag/">Tag</a>
+        |
+
+        <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+          Atom
+        </a>
+
+      </h4>
+    </div>
+    <!-- From here starts the content blocks -->
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="text-center article-header">
 		<h1 itemprop="name headline" class="article-title">Experience with Data Recovery</h1>
@@ -42,16 +61,16 @@
 		</span>
 		
 	</div>
-	<div itemprop="articleBody" class="article-body"><h3>Prologue</h3>
+	<div itemprop="articleBody" class="article-body"><h3 id="prologue">Prologue</h3>
 <p>We have been planning to set up a backup utility on Sam but somehow we never quite got around to actually doing it. However this week we finally decided to do it. We decided to try out <a href="https://obnam.org/">Obnam</a>. Things were going good until we needed to delete a directory.</p>
 <p>Now remember that this directory was local directory and not a system directory unlike how the name suggests. The directory in question is "mnt".
 Yes we had set up the dummy directory tree for experimenting with the backup tool and it had a mnt in it. </p>
 <p>So for deleting it Sohom should have typed <code>rm -rf mnt</code> but he typed <code>rm -rf /mnt</code>.
 Notice the '/' in the command he typed, Yep true story. Completely nuked all the mounted partitions.</p>
-<h3>Some Context</h3>
+<h3 id="some-context">Some Context</h3>
 <p>Okay we need some context. This is how <code>lsblk</code> looks on our system (Sam). The important partitions that store all the main data and media (movies and documentaries and Pics) are the <code>/dev/sda4</code> and <code>/dev/sda5</code>. As both of them were mounted they both were completely deleted. </p>
 <p><img alt="image" src="/assets/images/2017-07-20/lsblk.png"></p>
-<h3>Aftermath</h3>
+<h3 id="aftermath">Aftermath</h3>
 <p>Okay so what DID we lose ?</p>
 <ul>
 <li>ALL  work related files ( We keep a work_space directory )</li>
@@ -62,26 +81,26 @@ Notice the '/' in the command he typed, Yep true story. Completely nuked all the
 <li>All of our MOOC videos that we had saved. </li>
 </ul>
 <p>So yeah! EVERYTHING. </p>
-<h3>The Recovery</h3>
+<h3 id="the-recovery">The Recovery</h3>
 <p>Now this is where we will trace the thinking that enabled us to get back almost all of our data. </p>
 <p>The First thing that we did was to unmount the affected partitions so as stop any data being overwritten on those partitions. This would increase the chances of getting most of our data back.</p>
 <p>Then we downloaded <a href="https://www.cgsecurity.org/wiki/PhotoRec">PhotoRec</a> ( in Arch it is packaged with the TestDisk package ). We started PhotoRec form the terminal and followed the steps to select the partition we wanted to recover and also we had to select the partition where the recovered files would be stored. It is recommended that the partition where you store the recovered files and the partition that you want to recover data from be different partitions as this would reduce the chances of the old data being overwritten. </p>
 <p>Now after this you might see something like this. <img alt="PhotoRec working" src="/assets/images/2017-07-20/photorec.png">.</p>
 <p>This is normal and its perfectly fine to go about doing other stuff that you have to do while PhotoRec "walks" through the file-system and recovers files for you. </p>
 <p>One thing we should remember is that the recovery part is not such a pain! PhotoRec is amazing and does an amazing job. The main pain is actually picking up the files that YOU want from he whole bunch of recovered files. This is because since PhotoRec does not have any method to determine if the deleted files were deleted accidentally or not, it recovers everything that was deleted and not overwritten. Thus we have a LOT of work to do. </p>
-<h3>After the recovery</h3>
+<h3 id="after-the-recovery">After the recovery</h3>
 <p>These are some of the things that PhotoRec does after recovering the files.
-<em> Stores everything under multiple <code>recup_dir.&lt;integer&gt;</code> directories. It looks something like this <img alt="recovery ls" src="/assets/images/2017-07-20/reco_ls.png">
-</em> Every file other than text files are properly named. As in other than text files all other files have their proper extensions. Thus PhotoRec doesn't mix up JPEG and PNG files.
-<em> That being said it does mix up text files. As in recovered Java files would sometimes be named as C++ header files and so on.
-</em> PhotoRec also recovers ELF files which are nothing but executable files.</p>
+* Stores everything under multiple <code>recup_dir.&lt;integer&gt;</code> directories. It looks something like this <img alt="recovery ls" src="/assets/images/2017-07-20/reco_ls.png">
+* Every file other than text files are properly named. As in other than text files all other files have their proper extensions. Thus PhotoRec doesn't mix up JPEG and PNG files.
+* That being said it does mix up text files. As in recovered Java files would sometimes be named as C++ header files and so on.
+* PhotoRec also recovers ELF files which are nothing but executable files.</p>
 <p><blue> How do we go about sorting this mess ?</blue>
 Our first idea was to launch <a href="http://nongnu.org/ranger/">ranger</a> and inspect every single directory and delete directories if the contents didn't feel too important. Something like this.
 <img alt="manual" src="/assets/images/2017-07-20/manual.png">
 But there was a major flaw with this system. There were a lot of files in those directories and going through each one of them would be a tedious and a very very stupid thing to do. </p>
 <p>So we started making a list of the things that we lost and the things that we wanted to recovered from the mess. We figured that if we could not remember something that we had lost them we probably did not need it in the first place. Thus we figured that the most important stuff in the data directory ware the scripts that we had written for our Arch System. We also realized that we mostly needed text files from this partition recovery so we could delete all the non-text files and thus we started this massive assault on all non essential files. </p>
 <p>Initially we were writing scripts like </p>
-<div class="highlight"><pre><span></span>$ <span class="k">for</span> file in <span class="o">(</span>find ./ -name <span class="s2">&quot;*.jar&quot;</span><span class="o">)</span><span class="p">;</span> rm -vf <span class="nv">$file</span><span class="p">;</span> end<span class="p">;</span>
+<div class="highlight"><pre><span></span>$ <span class="k">for</span> file <span class="k">in</span> <span class="o">(</span>find ./ -name <span class="s2">&quot;*.jar&quot;</span><span class="o">)</span><span class="p">;</span> rm -vf <span class="nv">$file</span><span class="p">;</span> end<span class="p">;</span>
 </pre></div>
 
 
@@ -94,7 +113,7 @@ But there was a major flaw with this system. There were a lot of files in those 
 <p>which does the same thing; finds files with a particular extension (JAR files in this case) and delete them.</p>
 <p>We kept doing this for a huge set of files unless we were left with only text files.</p>
 <p>Now we needed to get all the DOCX files so we did this</p>
-<div class="highlight"><pre><span></span>$ <span class="k">for</span> file in <span class="o">(</span>find ./ -name <span class="s2">&quot;*.docx&quot;</span><span class="o">)</span><span class="p">;</span> cp -c <span class="nv">$file</span> ../store<span class="p">;</span> end<span class="p">;</span>
+<div class="highlight"><pre><span></span>$ <span class="k">for</span> file <span class="k">in</span> <span class="o">(</span>find ./ -name <span class="s2">&quot;*.docx&quot;</span><span class="o">)</span><span class="p">;</span> cp -c <span class="nv">$file</span> ../store<span class="p">;</span> end<span class="p">;</span>
 </pre></div>
 
 
@@ -102,7 +121,7 @@ But there was a major flaw with this system. There were a lot of files in those 
 <p>This is the first script which had a lot of i3-msg in it.
 <img alt="i3-msg" src="/assets/images/2017-07-20/i3-msg.png">
 Similarly we found all the other scripts.</p>
-<h3>The Second Partition</h3>
+<h3 id="the-second-partition">The Second Partition</h3>
 <p>This partition posed a different kind of challenge. We wanted to recover all the images that we had. We ran PhotoRec with the option that would only recover only the JPEG files. But even after that we had about 12000+ JPEG files. Moreover inspection with ranger showed that certain files were duplicated. To confirm our assumption we check the MD5 hash of two such files.</p>
 <p><img alt="duplicate" src="/assets/images/2017-07-20/dupli.png"></p>
 <p>As you can see both the files have the same MD5 hash and thus they are essentially the same files. So now we needed a script that would sort the duplicate files out.</p>
@@ -113,7 +132,7 @@ Similarly we found all the other scripts.</p>
 
 
 <p>and all of them annoying files were gone. :p</p>
-<h3>Conclusion</h3>
+<h3 id="conclusion">Conclusion</h3>
 <p><blue> So what is the takeaway from all this ? </blue></p>
 <ul>
 <li>OFFSITE BACKUPS</li>
@@ -125,75 +144,20 @@ Similarly we found all the other scripts.</p>
 	<!--  -->
 	<!--  -->
 </div>
-		</div>
-	</div> 	<!-- <hr> -->
-</div> <!-- /container -->
-<footer class="aw-footer bg-danger">
-	<div class="container"> <!-- footer -->
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row">
-					<div class="col-md-3">
-						<h4>Navigation</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://signalshore.github.io/about.html"><i class="fa fa-About "></i> About</a></li>
-							<li><a href="https://signalshore.github.io/cv.html"><i class="fa fa-CV "></i> CV</a></li>
-							<li><a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h4>Social</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://twitter.com/sohom154">Twitter</a></li>
-							<li><a href="https://github.com/83bytes">Github</a></li>
-							<li><a href="https://gitlab.com/83bytes">Gitlab</a></li>
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<h4>Tags</h4>
-						<ul class="list-unstyled my-list-style">
-						<a href="https://signalshore.github.io/tag/travel.html">Travel</a>,
-						<a href="https://signalshore.github.io/tag/env.html">Env</a>,
-						<a href="https://signalshore.github.io/tag/meta.html">Meta</a>,
-						<a href="https://signalshore.github.io/tag/cs.html">CS</a>,
-						<a href="https://signalshore.github.io/tag/misc.html">Misc</a>,
-						<a href="https://signalshore.github.io/tag/math.html">Math</a>,
-						<a href="https://signalshore.github.io/tag/data.html">Data</a>,
-						<a href="https://signalshore.github.io/tag/cycling.html">Cycling</a>,
-						<a href="https://signalshore.github.io/tag/guix.html">Guix</a>,
-						<a href="https://signalshore.github.io/tag/work.html">Work</a>,
-						<a href="https://signalshore.github.io/tag/scheme.html">Scheme</a>,
-						<a href="https://signalshore.github.io/tag/activism.html">Activism</a>,
-						<a href="https://signalshore.github.io/tag/linux.html">Linux</a>,
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center center-block aw-bottom">
-		  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
-		</div>
-	</div>
-</div>
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-	$("div.collapseheader").click(function () {
-		$header = $(this).children("span").first();
-		$codearea = $(this).children(".input_area");
-		$codearea.slideToggle(500, function () {
-			$header.text(function () {
-				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
-			});
-		});
-	});
-});
-</script>
+      </div>
+    </div>   </div> <!-- /container -->
+
+  <footer class="aw-footer bg-danger">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center center-block aw-bottom">
+          <p>Life is best filled by learning as much as you can about as much as you can </p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License"
+              style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>

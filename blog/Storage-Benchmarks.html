@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Storage-Benchmark — SignalShore</title>
+  <meta name="description"
+    content="Title: Storage-Benchmark; Date: 2021-07-03; Author: Sohom">
+  <meta name="author" content="Sohom">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+      <!-- this  is the nav on the top of the page-->
+      <h4>
+        <a href="https://signalshore.github.io/about/">About</a>
+        |
+        <a href="https://signalshore.github.io/cv/">CV</a>
+        |
+
+        <a href="/archives/">Archives</a>
+        |
+        <a href="/tag/">Tag</a>
+        |
+
+        <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+          Atom
+        </a>
+
+      </h4>
+    </div>
+    <!-- From here starts the content blocks -->
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Storage-Benchmark</h1>
+		<time datetime="2021-07-03T00:00:00+05:30" itemprop="datePublished">Sat 03 July 2021</time>
+	</div>
+ 
+	<div>
+		Tags:
+		<span itemprop="keywords">
+			[<a href="https://signalshore.github.io/tag/cs.html" rel="tag">CS</a>]
+		</span>
+		
+		<span itemprop="keywords">
+			[<a href="https://signalshore.github.io/tag/tech.html" rel="tag">Tech</a>]
+		</span>
+		
+	</div>
+	<div itemprop="articleBody" class="article-body"><!-- Summary: Started using the Raspberry-Pi4 seriously and ran sone benchmarks testing out a Fan-Case that is locally available in India. -->
+
+<p>I bought myself a 5TB external Hard-drive from Seagate. I am going to use this for my home-server build. The computer will the the Raspberry-Pi which I already have. It's time to up my seeding game. Before installing it on my server I wanted to run some benchmarks on it.</p>
+<ul>
+<li><a href="#whatwhy-benchmark-">What/Why Benchmark ?</a></li>
+<li><a href="#the-setup">The Setup</a></li>
+<li><a href="#benchmark-results">Benchmark Results</a><ul>
+<li><a href="#laptop-128gb-usb-drive">Laptop 128Gb Usb drive</a></li>
+<li><a href="#laptop-5tb-hdd">Laptop 5TB HDD</a></li>
+<li><a href="#raspberry-pi-128gb-usb-drive">Raspberry Pi 128GB Usb drive</a></li>
+<li><a href="#raspberry-pi-5tb-hdd">Raspberry Pi 5TB hdd</a></li>
+</ul>
+</li>
+<li><a href="#results-summary">Results Summary</a><ul>
+<li><a href="#laptop">Laptop</a></li>
+<li><a href="#rpi">Rpi</a></li>
+</ul>
+</li>
+<li><a href="#observations">Observations</a></li>
+<li><a href="#what-is-block-size-why-is-it-so-important-">What is Block Size? Why is it so important ?</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<h1 id="whatwhy-benchmark">What/Why Benchmark ?</h1>
+<p>In this Benchmark I will be comparing the performance of the HDD in various filesystem configurations on the Raspberry Pi. I want to run an encrypted setup and I also need a way in which I can just add new drives later on and not have to repartition the entire thing.</p>
+<p>My main concern is that the Raspberry is too low powered to run an encrypted btrfs setup. I want to run btrfs as it makes adding new drives to your setup very very easy.</p>
+<p>The test will be done on my laptop which will be the control, and then on the Pi I will be running an entire set of different tests which will look at CPU and temperature as well.</p>
+<p>I will also use a SanDisk 128GB USB drive and measure its performance just for fun.</p>
+<h1 id="the-setup">The Setup</h1>
+<p>There are two drives. One is a 128GB SanDisk USB pen-drive, the other is a Seagate 5TB Backup Plus external 2.5 inch HDD.</p>
+<p>Each drive is partitioned into 4 partition of equal size. Then filesystems are built on these partitons.
+I want to test two file-systems; btrfs and ext4.
+I want to test full disk encryption using Luks along with these file-systems.</p>
+<p>I already know that btrfs is going to be slower that ext4, I just want to know by how much.</p>
+<p>The following combinations were created</p>
+<div class="highlight"><pre><span></span><span class="p">|</span> part <span class="nb">type</span>    <span class="p">|</span> allocation <span class="p">|</span> label     <span class="p">|</span>
+<span class="p">|</span> ------------ <span class="p">|</span> ---------- <span class="p">|</span> --------- <span class="p">|</span>
+<span class="p">|</span> ext4         <span class="p">|</span> <span class="m">25</span>%        <span class="p">|</span> ext4Only  <span class="p">|</span>
+<span class="p">|</span> luks + ext4  <span class="p">|</span> <span class="m">25</span>%        <span class="p">|</span> ext4Lks   <span class="p">|</span>
+<span class="p">|</span> btrfs        <span class="p">|</span> <span class="m">25</span>%        <span class="p">|</span> btrfsOnly <span class="p">|</span>
+<span class="p">|</span> luks + btrfs <span class="p">|</span> <span class="m">25</span>%        <span class="p">|</span> btrfsLuks <span class="p">|</span>
+</pre></div>
+
+
+<p>This is the output from <code>parted</code></p>
+<div class="highlight"><pre><span></span><span class="o">(</span>parted<span class="o">)</span> print
+Model: SanDisk Ultra USB <span class="m">3</span>.0 <span class="o">(</span>scsi<span class="o">)</span>
+Disk /dev/sda: 123GB
+Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: 512B/512B
+Partition Table: msdos
+Disk Flags:
+
+Number  Start   End     Size    Type     File system  Flags
+<span class="m">1</span>      1049kB  <span class="m">30</span>.8GB  <span class="m">30</span>.8GB  primary  ext4         lba
+<span class="m">2</span>      <span class="m">30</span>.8GB  <span class="m">61</span>.5GB  <span class="m">30</span>.8GB  primary               lba
+<span class="m">3</span>      <span class="m">61</span>.5GB  <span class="m">92</span>.3GB  <span class="m">30</span>.8GB  primary  btrfs        lba
+<span class="m">4</span>      <span class="m">92</span>.3GB  123GB   <span class="m">30</span>.8GB  primary               lba
+</pre></div>
+
+
+<p>We build a <code>btrfs</code> filesystem(s) in single data-mode. This makes sure that btrfs as a file-system is not being too smart and just writes data into disks as they arrive.</p>
+<p>In the partitions where encryption was set-up we first build a LUKs encrypted volume and then build the filesystem on top of it.</p>
+<p>Then we mount all of the partitions under  <code>/mnt/</code>. It looks like this</p>
+<div class="highlight"><pre><span></span>~ ❯❯❯ lsblk /dev/sda
+NAME          MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+sda             <span class="m">8</span>:0    <span class="m">1</span> <span class="m">114</span>.6G  <span class="m">0</span> disk
+├─sda1          <span class="m">8</span>:1    <span class="m">1</span>  <span class="m">28</span>.7G  <span class="m">0</span> part  /mnt/ext4Only
+├─sda2          <span class="m">8</span>:2    <span class="m">1</span>  <span class="m">28</span>.7G  <span class="m">0</span> part
+│ └─ext4Luks  <span class="m">253</span>:4    <span class="m">0</span>  <span class="m">28</span>.7G  <span class="m">0</span> crypt /mnt/ext4Luks
+├─sda3          <span class="m">8</span>:3    <span class="m">1</span>  <span class="m">28</span>.7G  <span class="m">0</span> part  /mnt/btrfsOnly
+└─sda4          <span class="m">8</span>:4    <span class="m">1</span>  <span class="m">28</span>.7G  <span class="m">0</span> part
+└─btrfsLuks <span class="m">253</span>:3    <span class="m">0</span>  <span class="m">28</span>.7G  <span class="m">0</span> crypt /mnt/btrfsLuks
+</pre></div>
+
+
+<p>I am using this tool called <code>fio</code> for running the benchmark and I am using <code>netdata</code> for reporting the state of the system and for displaying fancy visualizations.</p>
+<p>Using fio, you can run multiple tests, but the one I focused on were the sequential read and write tests. The configuration for fio is as follows</p>
+<div class="highlight"><pre><span></span><span class="c1"># sudo fio --bs=4k --rw=read --direct=1 --ioengine=libaio --size=2G --name=test --iodepth=64 --filename=&lt;destination&gt;`</span>
+</pre></div>
+
+
+<p>I wrote a script that would perform a write test, followed by a read test on each of the 4 partitions going serially (i.e. ext4Only, ext4Luks, btrfsOnly, btrfsLuks).</p>
+<h1 id="benchmark-results">Benchmark Results</h1>
+<p>Sharing the screenshots of the Netdata dashboard highlighting the disk I/O for tests run on my laptop (the control).
+For tests run on the Raspberry-Pi I was also looking at CPU, Temp and Disk I/O. Those charts are also present below.</p>
+<p>The results are summarized in a table at the end.</p>
+<p>I ran the tests with block-size as 4K initially, but then discovered that changing it to 4M was giving me better throughput.
+The charts below are for the 4M tests. Total data being written and read from the disk for each run was 2GB.</p>
+<p>The data-dump will have all the results for you to look at if you want to.
+There is something really interesting wrt the Raspberry Pi when we use a higher block size. A section will be there that talks about it.</p>
+<h2 id="laptop-128gb-usb-drive">Laptop 128Gb Usb drive</h2>
+<p><img alt="laptop_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/Laptop/4M/laptop_ssd_4M.png"></p>
+<h2 id="laptop-5tb-hdd">Laptop 5TB HDD</h2>
+<p><img alt="hdd_laptop_4M" src="/assets/2021-07-03-Storage-Benchmarks/5_TB/Laptop/4M/hdd_laptop_4M.png"></p>
+<h2 id="raspberry-pi-128gb-usb-drive">Raspberry Pi 128GB Usb drive</h2>
+<p><img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_io.png"></p>
+<blockquote>
+<p>Disk I/O (4M bs)</p>
+</blockquote>
+<p><img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_cpu.png"></p>
+<blockquote>
+<p>CPU Utilization and Load Average (4M bs)</p>
+</blockquote>
+<p><img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_temp.png"></p>
+<blockquote>
+<p>Temp (4M bs)</p>
+</blockquote>
+<p><img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb.png"></p>
+<blockquote>
+<p>Disk I/O (4k bs)</p>
+</blockquote>
+<p><img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb_cpu.png"></p>
+<blockquote>
+<p>CPU Utilization and Load Average (4k bs)</p>
+</blockquote>
+<h2 id="raspberry-pi-5tb-hdd">Raspberry Pi 5TB hdd</h2>
+<p><img alt="" src="/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_io.png"></p>
+<blockquote>
+<p>Disk I/O</p>
+</blockquote>
+<p><img alt="" src="/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_cpu.png"></p>
+<blockquote>
+<p>CPU Utilization and Load Average</p>
+</blockquote>
+<p><img alt="" src="/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_temp.png"></p>
+<blockquote>
+<p>Temp</p>
+</blockquote>
+<h1 id="results-summary">Results Summary</h1>
+<p>The units are <code>MB/s</code> and the format is <code>Write/Read</code></p>
+<h2 id="laptop">Laptop</h2>
+<div class="highlight"><pre><span></span>| Device | Storage Device | Block Size | ext4Only | ext4Luks | btrfsOnly | btrfsLuks |
+| ------ | -------------- | ---------- | -------- | -------- | --------- | --------- |
+| Laptop | HDD            | 4M         | 104/124  | 117/118  | 101/96.5  | 82.5/82.2 |
+|        |                | 4k         | 52.1/106 | 20.4/106 | 31.2/90.3 | 20.2/85.7 |
+|        | USB            | 4M         | 27.1/159 | 20.4/159 | 27.1/159  | 25.8/159  |
+|        |                | 4k         | 27.1/129 | 21.3/127 | 19/117    | 19.9/102  |
+</pre></div>
+
+
+<h2 id="rpi">Rpi</h2>
+<div class="highlight"><pre><span></span>| Device | Storage Device | Block Size | ext4Only  | ext4Luks  | btrfsOnly | btrfsLuks |
+| ------ | -------------- | ---------- | --------- | --------- | --------- | --------- |
+| RPI    | HDD            | 4M         | 126/123   | 77.8/109  | 97.4/95   | 57.7/80   |
+|        |                | 4k         | 23.8/58.8 | 20.9/47.6 | 19.2/48.4 | 21.5/40.8 |
+|        | USB            | 4M         | 28.2/115  | 22.4/120  | 24.9/116  | 18.2/89.2 |
+|        |                | 4k         | 21.1/108  | 13.9/82.6 | 18.7/84.8 | 13.4/58.6 |
+</pre></div>
+
+
+<h1 id="observations">Observations</h1>
+<ol>
+<li>On a laptop the file-systems do not really matter as long as the device is fairly powerful. This is illustrated in chart 1. I can basically max out the reads/writes to the USB drive.</li>
+<li>Btrfs is slower, which is expected. Adding encryption slows everything down across the spectrum. Again, nothing unexpected.</li>
+<li>The HDD performance starts degrading as we move to a more complex system.</li>
+<li>Vanilla ext4 is very simple on the Raspberry-Pi</li>
+<li>Adding encryption and btrfs makes things bad and performance starts to degrade properly.</li>
+<li>Reading and Writing to encrypted drives is very CPU intensive.</li>
+<li>Sequential reads from encrypted devices causes a significant rise in CPU temp for the Raspberry Pi. This is almost as much as performing a stress test on the CPUs.</li>
+<li>Changing Block Size from 4k to 4M has significant improvement, though it causes a huge rise in CPU Utilisation for the USB on the Raspberry PI.</li>
+<li>Overall anything but vanilla ext4 has quite significant CPU load.</li>
+<li>If you notice carefully then you should see that the writes are not zeroed in-between the tests. This is because ext4 has a lazyinit feature which allows for faster creation of the filesystem by not initializing all the inode tables at the start (i.e. during mkfs). Instead it defers the initialization to a background process when the filesystem is mounted and uses roughly 10% of the available bandwidth. Btw, initializing the inode tables basically means that when a new filesystem is created, the exisiting regions of the inode tables must be reset to <code>0</code>.</li>
+</ol>
+<h1 id="what-is-block-size-why-is-it-so-important">What is Block Size? Why is it so important ?</h1>
+<p>The operating system talks to block I/O devices using get/set operations. These are called IOPS.
+A block is simply the amount of data that the OS can read during a single operation.</p>
+<p>Thus throughput is basically <code>IOPS * block_size</code>.</p>
+<p>I ran the tests with bs set as 4k and was surprised that the reported values were not as high. Infact they were a lot lower than the disk speed I was getting from a pure <code>rsync</code> workload. During one such run, I happened to look at the netdata dashboard and discovered that the operations/s was much lower for the rsync workload than the fio workload, even though rsync had a much larger throughput. This gave me the idea that we can in-fact change the bs to get much better results.</p>
+<p><img alt="4m_vs_4k" src="/assets/2021-07-03-Storage-Benchmarks/4M_vs_4k.png">
+Here in this photo we can clearly see the difference that block_size causes. The first write is done using a higher block_size which explains the lower operations per second along with the higher throughput; similarly the second write has lower throughput along with higher operations per second. This is characteristic for lower block_size.</p>
+<p>Check <a href="https://medium.com/@duhroach/the-impact-of-blocksize-on-persistent-disk-performance-7e50a85b2647">this</a> to get a better understanding of block size.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>I will probably just LVM this drive and use ext4. Maybe use btrfs when I have a x86 processor. Thanks.
+Will keep sharing more details about the home-server build.</p>
+<p><a href="https://github.com/83bytes/storage-benchmark-files">This</a> is the Github link to the entire data-dump for the benchmark.</p></div>
+	<hr>
+	<!-- <h2>Comments</h2> -->
+	<!--  -->
+	<!--  -->
+</div>
+      </div>
+    </div>   </div> <!-- /container -->
+
+  <footer class="aw-footer bg-danger">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center center-block aw-bottom">
+          <p>Life is best filled by learning as much as you can about as much as you can </p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License"
+              style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

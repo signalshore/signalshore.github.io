@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Container Networking, Namespaces and Tcpdump. — SignalShore</title>
+  <meta name="description"
+    content="Title: Container Networking, Namespaces and Tcpdump.; Date: 2020-06-16; Author: Sohom">
+  <meta name="author" content="Sohom">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+      <!-- this  is the nav on the top of the page-->
+      <h4>
+        <a href="https://signalshore.github.io/about/">About</a>
+        |
+        <a href="https://signalshore.github.io/cv/">CV</a>
+        |
+
+        <a href="/archives/">Archives</a>
+        |
+        <a href="/tag/">Tag</a>
+        |
+
+        <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+          Atom
+        </a>
+
+      </h4>
+    </div>
+    <!-- From here starts the content blocks -->
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Container Networking, Namespaces and Tcpdump.</h1>
+		<time datetime="2020-06-16T00:00:00+05:30" itemprop="datePublished">Tue 16 June 2020</time>
+	</div>
+ 
+	<div>
+		Tags:
+		<span itemprop="keywords">
+			[<a href="https://signalshore.github.io/tag/cs.html" rel="tag">CS</a>]
+		</span>
+		
+		<span itemprop="keywords">
+			[<a href="https://signalshore.github.io/tag/tech.html" rel="tag">Tech</a>]
+		</span>
+		
+	</div>
+	<div itemprop="articleBody" class="article-body"><!-- Summary:  -->
+
+<p>How do you run tcpdump only on a container ? How does container
+networking even work ?</p>
+<p>In this we will explore some bits of container networking and figure
+out how to run tcpdump in such a way that only the traffic from a
+container is captured.</p>
+<p>Normally running <code>tcpdump</code> on the eth0 interface on a instance is good
+enough, but what do you do when your container host is running
+multiple containers and you do not need to see all of their traffic ?</p>
+<p>As usual this was a debugging scenario on prod. </p>
+<h1 id="the-problem">The Problem</h1>
+<p>There was a nasty connection timeout issue when I was involved in the
+debugging discussion. My initial reaction was to break out tcpdump
+and let it capture on the primary <code>eth0</code> interface.</p>
+<p>As I would soon discover, the volume of data flowing through that
+instance was very high and capturing on the interface is not
+feasible. If you are capturing upwards of 100MB + files every second,
+things get bad really soon. Furthermore, you don't need all the
+packets, you only need the packets destined for that specific
+container.</p>
+<p>Time for some container networking lessons</p>
+<h1 id="container-networking">Container Networking</h1>
+<p>Containers use a Linux isolation framework called namespaces in order
+to isolate process running on a host. For networking, every container
+runs in its own separate networking namespace so that it is isolated
+from other processes and connection between these different namespaces
+is established by using Virtual Ethernet devices called <code>veth</code>.</p>
+<p>From the man page of <a href="https://man7.org/linux/man-pages/man4/veth.4.html">veth</a>.</p>
+<blockquote>
+<p>The veth devices are virtual Ethernet devices.  They can act as
+     tunnels between network namespaces to create a bridge to a
+     physical network device in another namespace. They are created in
+     pairs.</p>
+</blockquote>
+<p>We can think of them as virtual Ethernet cables that are connected to
+something on both ends to some network interface. The interfaces are
+like virtual Ethernet ports similar to the Ethernet port on your
+computer.</p>
+<p>So now, we can have to look at the scenario from two different
+perspectives, from the host's perspective and from the containers
+perspective.</p>
+<p>I am running a simple <code>sh</code> shell in alpine.</p>
+<div class="highlight"><pre><span></span><span class="s s-Atom">#</span> <span class="s s-Atom">docker</span> <span class="s s-Atom">run</span> <span class="o">-</span><span class="s s-Atom">it</span> <span class="nn">alpine</span><span class="p">:</span><span class="s s-Atom">latest</span> <span class="o">/</span><span class="s s-Atom">bin</span><span class="o">/</span><span class="s s-Atom">sh</span>
+<span class="s s-Atom">#</span> <span class="s s-Atom">echo</span> <span class="s2">&quot;Hello :-) &quot;</span>
+<span class="s s-Atom">#</span> <span class="nv">Hello</span> <span class="p">:-)</span> 
+<span class="s s-Atom">#</span>
+</pre></div>
+
+
+<p>Now, I am run <code>ip link</code> which will describe the network interfaces.</p>
+<div class="highlight"><pre><span></span><span class="c1"># ip link</span>
+<span class="m">1</span>: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state UNKNOWN qlen <span class="m">1000</span>
+    link/loopback <span class="m">00</span>:00:00:00:00:00 brd <span class="m">00</span>:00:00:00:00:00
+<span class="m">17</span>: eth0@if18: &lt;BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN&gt; mtu <span class="m">1500</span> qdisc noqueue state UP 
+    link/ether <span class="m">02</span>:42:ac:1e:01:00 brd ff:ff:ff:ff:ff:ff
+</pre></div>
+
+
+<p>Here, we that <code>eth0@if18</code> has an <code>@ifXX</code> in it which makes things very
+interesting. This signifies two things. The '@' shows us that this
+interface is linked to another interface and the '<em>ifXX</em>' tells us
+that the interface it is linked to is not in the same network
+namespace.</p>
+<p>Every interface is supposed to be connected on both ends and every
+interface has an interface index. This is the value that we see on the
+above output as 1 and 17. This can be found out by reading the value
+at <code>/sys/class/net/&lt;interface&gt;/ifindex</code></p>
+<div class="highlight"><pre><span></span><span class="c1"># cat /sys/class/net/eth0/ifindex </span>
+<span class="m">17</span>
+</pre></div>
+
+
+<p>We can read the value of the linked interface from <code>/sys/class/&lt;interface&gt;</code></p>
+<p>The one it is connected to is called the
+peer link and we can look at its index in
+<code>/sys/class/net/&lt;interface&gt;/iflink</code></p>
+<div class="highlight"><pre><span></span><span class="c1"># cat /sys/class/net/eth0/iflink</span>
+<span class="m">18</span>
+</pre></div>
+
+
+<p>But, that is surprising because my container does not have any
+interface with <em>ifindex</em>=18. That is not a mistake. This shows that
+the interface 17 on the container is linked to interface 18 on my
+<em>host</em>.</p>
+<p>This is what <code>ip link</code> shows on my host.</p>
+<div class="highlight"><pre><span></span><span class="m">1</span>: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
+    link/loopback <span class="m">00</span>:00:00:00:00:00 brd <span class="m">00</span>:00:00:00:00:00
+<span class="m">2</span>: enp0s31f6: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu <span class="m">1500</span> <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
+    link/ether e8:6a:64:c1:0d:3f brd ff:ff:ff:ff:ff:ff
+<span class="m">3</span>: wlp6s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
+    link/ether <span class="m">98</span>:2c:bc:4d:d9:b0 brd ff:ff:ff:ff:ff:ff
+<span class="m">4</span>: docker0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
+    link/ether <span class="m">02</span>:42:27:9a:cf:32 brd ff:ff:ff:ff:ff:ff
+<span class="m">18</span>: veth01f0f9d@if17: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
+    link/ether f6:7c:d7:20:73:f4 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="m">0</span>
+</pre></div>
+
+
+<p><strong>NOTE</strong> Notice how interface <em>18</em> is linked to interface <em>17</em> on another namespace. This will be important.</p>
+<h3 id="why-dont-we-have-a-iflink-for-some-interfaces">Why don't we have a iflink for some interfaces.... ?</h3>
+<p>Interfaces that represent physical devices (eth0, wlan0) are linked to themselves and hence the '@' is not used.</p>
+<div class="highlight"><pre><span></span><span class="c1"># cat /sys/class/net/wlp6s0/ifindex</span>
+<span class="m">3</span>
+<span class="c1"># cat /sys/class/net/wlp6s0/iflink</span>
+<span class="m">3</span>
+</pre></div>
+
+
+<h2 id="how-is-this-related-to-tcpdump">How is this related to tcpdump ?</h2>
+<p>Well, we have figured out that all traffic from the container is
+flowing through the host machine via a linked network interface, so
+in order to sniff packets only from that container, we can tell tcpdump
+to point to that interface only.</p>
+<p><code>tcpdump -i &lt;interface&gt; -w output.pcap</code></p>
+<p>and  Voila!!! Now  we can  sit  and sniff  packet only  from a  docker
+container.</p>
+<p>Not only does this vastly reduce the size of the capture files, it
+also reduces complexity during the analysis phase.</p>
+<p>That is it. Thanks for reading and happy sniffing.</p></div>
+	<hr>
+	<!-- <h2>Comments</h2> -->
+	<!--  -->
+	<!--  -->
+</div>
+      </div>
+    </div>   </div> <!-- /container -->
+
+  <footer class="aw-footer bg-danger">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center center-block aw-bottom">
+          <p>Life is best filled by learning as much as you can about as much as you can </p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License"
+              style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

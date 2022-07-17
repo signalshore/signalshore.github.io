@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bash and Netcat — SignalShore</title>
+  <meta name="description"
+    content="Title: Bash and Netcat; Date: 2020-01-12; Author: Sohom">
+  <meta name="author" content="Sohom">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+      <!-- this  is the nav on the top of the page-->
+      <h4>
+        <a href="https://signalshore.github.io/about/">About</a>
+        |
+        <a href="https://signalshore.github.io/cv/">CV</a>
+        |
+
+        <a href="/archives/">Archives</a>
+        |
+        <a href="/tag/">Tag</a>
+        |
+
+        <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+          Atom
+        </a>
+
+      </h4>
+    </div>
+    <!-- From here starts the content blocks -->
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Bash and Netcat</h1>
+		<time datetime="2020-01-12T00:00:00+05:30" itemprop="datePublished">Sun 12 January 2020</time>
+	</div>
+ 
+	<div>
+		Tags:
+		<span itemprop="keywords">
+			[<a href="https://signalshore.github.io/tag/tech.html" rel="tag">Tech</a>]
+		</span>
+		
+	</div>
+	<div itemprop="articleBody" class="article-body"><p>I have a fascination for bash based tooling. I prefer awk, sed, grep
+over any fancy tooling. Anyway, recently I have discovered two really
+cool features about Bash.</p>
+<h1 id="tcp-proxy-using-named-pipes">TCP proxy using Named Pipes</h1>
+<p>We all know what pipes are in bash. Pipes in bash let you create data
+streams from one process to another process. However the syntax of
+using pipes with processess can be a bit difficult and restrictive.</p>
+<p>For example, 
+If you want to push the output of process A into process B, you would write it as such</p>
+<div class="highlight"><pre><span></span><span class="sx">!bash</span><span class="w"></span>
+<span class="n">A</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span><span class="w"></span>
+</pre></div>
+
+
+<p>This is similar to </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>A &gt; file $ B &lt; file
+</pre></div>
+</td></tr></table>
+
+<p>Named pipes are special files that can be used to pass data between
+two processess. When a process writes to a named pipe the kernel
+processess the data internally and does not write data to the file
+system. Moreover named pipes are blocking, i.e. if there is no reader
+present then you can not write to a named pipe. This feature makes it
+ideal to signal backpressure etc etc.</p>
+<p>You make a named pipe is bash using the <code>mkfifo &lt;filename&gt;</code> command. As you can
+see, a named pipe is nothing but a first-in-first-out stream (with
+some added bells and whistles).</p>
+<p>In a cool hack you can make a TCP proxy using netcat and named pipes</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>nc -lp <span class="m">6000</span> &lt;primary <span class="p">|</span> nc localhost <span class="m">5000</span> &gt;primary
+</pre></div>
+</td></tr></table>
+
+<p>This uses the named pipe <code>primary</code> as a bidirectional pipe.</p>
+<p>Let us see what is going on here.</p>
+<ul>
+<li><code>nc -lp 6000 &lt;primary</code> tells netcat to listen on locahost:6000 and accept inputs from the primary fifo.</li>
+<li>Then we push the output (which in this case is the response to the input that is being piped from the fifo) to the next netcat instance.</li>
+<li><code>nc localhost 5000 &gt;primary</code> this tells netcat to connect to a server running at port 5000 and send the output to the primary fifo.</li>
+</ul>
+<h2 id="whats-more">Whats more ?</h2>
+<p>You can even copy the entire TCP stream using this little tool called <code>tee</code>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>nc -lvp <span class="m">6000</span> &lt;primary <span class="p">|</span> tee mirror <span class="p">|</span> nc localhost <span class="m">5000</span> &gt;primary
+</pre></div>
+</td></tr></table>
+
+<p>In this case you have to read from the <code>mirror</code> fifo and you should be
+able to see all the traffic flowing through your proxy. Change the
+fifo <code>mirror</code> to a real file and you will have a copy of the traffic.</p></div>
+	<hr>
+	<!-- <h2>Comments</h2> -->
+	<!--  -->
+	<!--  -->
+</div>
+      </div>
+    </div>   </div> <!-- /container -->
+
+  <footer class="aw-footer bg-danger">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center center-block aw-bottom">
+          <p>Life is best filled by learning as much as you can about as much as you can </p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License"
+              style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

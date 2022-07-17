@@ -1,0 +1,65 @@
+Saturday 26 June 2021 02:58:00 PM IST  :=>  btrfsLuks-write
+========================================
+btrfsLuks: (g=0): rw=write, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=64
+fio-3.16
+Starting 1 process
+btrfsLuks: Laying out IO file (1 file / 2048MiB)
+
+btrfsLuks: (groupid=0, jobs=1): err= 0: pid=960191: Sat Jun 26 14:59:46 2021
+  write: IOPS=4929, BW=19.3MiB/s (20.2MB/s)(2048MiB/106353msec); 0 zone resets
+    slat (usec): min=5, max=5025, avg=17.15, stdev=23.91
+    clat (usec): min=512, max=819280, avg=12963.67, stdev=20963.65
+     lat (usec): min=522, max=819291, avg=12981.07, stdev=20966.64
+    clat percentiles (usec):
+     |  1.00th=[  1532],  5.00th=[  1614], 10.00th=[  1663], 20.00th=[  1909],
+     | 30.00th=[  3458], 40.00th=[  4146], 50.00th=[  8848], 60.00th=[ 16909],
+     | 70.00th=[ 16909], 80.00th=[ 17171], 90.00th=[ 17433], 95.00th=[ 26346],
+     | 99.00th=[107480], 99.50th=[125305], 99.90th=[170918], 99.95th=[219153],
+     | 99.99th=[809501]
+   bw (  KiB/s): min=  942, max=95240, per=100.00%, avg=19730.39, stdev=13123.05, samples=212
+   iops        : min=  235, max=23810, avg=4932.58, stdev=3280.77, samples=212
+  lat (usec)   : 750=0.05%, 1000=0.17%
+  lat (msec)   : 2=20.62%, 4=15.53%, 10=14.05%, 20=43.15%, 50=3.14%
+  lat (msec)   : 100=1.99%, 250=1.24%, 500=0.02%, 750=0.01%, 1000=0.01%
+  cpu          : usr=1.59%, sys=9.62%, ctx=246011, majf=0, minf=11
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwts: total=0,524288,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+  WRITE: bw=19.3MiB/s (20.2MB/s), 19.3MiB/s-19.3MiB/s (20.2MB/s-20.2MB/s), io=2048MiB (2147MB), run=106353-106353msec
+
+Saturday 26 June 2021 02:59:57 PM IST  :=>  btrfsLuks-read
+========================================
+btrfsLuks: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=64
+fio-3.16
+Starting 1 process
+
+btrfsLuks: (groupid=0, jobs=1): err= 0: pid=960300: Sat Jun 26 15:00:22 2021
+  read: IOPS=20.9k, BW=81.8MiB/s (85.7MB/s)(2048MiB/25047msec)
+    slat (usec): min=2, max=5785, avg= 7.13, stdev=11.82
+    clat (usec): min=393, max=307571, avg=3049.25, stdev=4778.40
+     lat (usec): min=400, max=307578, avg=3056.51, stdev=4778.69
+    clat percentiles (usec):
+     |  1.00th=[  1385],  5.00th=[  1827], 10.00th=[  2409], 20.00th=[  2442],
+     | 30.00th=[  2474], 40.00th=[  2573], 50.00th=[  2573], 60.00th=[  2606],
+     | 70.00th=[  2638], 80.00th=[  3392], 90.00th=[  3556], 95.00th=[  4146],
+     | 99.00th=[  7373], 99.50th=[ 13304], 99.90th=[ 86508], 99.95th=[105382],
+     | 99.99th=[189793]
+   bw (  KiB/s): min=43504, max=96648, per=100.00%, avg=83790.06, stdev=14717.07, samples=50
+   iops        : min=10876, max=24162, avg=20947.48, stdev=3679.25, samples=50
+  lat (usec)   : 500=0.04%, 750=0.18%, 1000=0.15%
+  lat (msec)   : 2=5.24%, 4=88.49%, 10=5.11%, 20=0.43%, 50=0.20%
+  lat (msec)   : 100=0.08%, 250=0.07%, 500=0.01%
+  cpu          : usr=3.23%, sys=16.66%, ctx=214601, majf=0, minf=75
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwts: total=524288,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=81.8MiB/s (85.7MB/s), 81.8MiB/s-81.8MiB/s (85.7MB/s-85.7MB/s), io=2048MiB (2147MB), run=25047-25047msec
+

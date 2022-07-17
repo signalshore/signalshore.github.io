@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<title>Scheme - Part 3 - Higher Order Procedures (intro) — SignalShore</title>
-	<meta name="description" content="Title: Scheme - Part 3 - Higher Order Procedures (intro); Date: 2017-12-20; Author: Sohom">
-	<meta name="author" content="Sohom">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src="https://signalshore.github.io/theme/html5.js"></script>
-		<![endif]-->
-	<link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
-	<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
-	<link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Scheme - Part 3 - Higher Order Procedures (intro) — SignalShore</title>
+  <meta name="description"
+    content="Title: Scheme - Part 3 - Higher Order Procedures (intro); Date: 2017-12-20; Author: Sohom">
+  <meta name="author" content="Sohom">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://signalshore.github.io/theme/css/ipython.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/local.css" rel="stylesheet">
+  <link href="https://signalshore.github.io/theme/css/pygments.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<div class="container">
-	<div class="page-header">
-		<h1><a href="https://signalshore.github.io/">SignalShore</a>
-			<br>	</div>
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+  <div class="container">
+    <div class="page-header">
+      <h1><a href="https://signalshore.github.io/">SignalShore</a></h1>
+
+      <!-- this  is the nav on the top of the page-->
+      <h4>
+        <a href="https://signalshore.github.io/about/">About</a>
+        |
+        <a href="https://signalshore.github.io/cv/">CV</a>
+        |
+
+        <a href="/archives/">Archives</a>
+        |
+        <a href="/tag/">Tag</a>
+        |
+
+        <a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml">
+          Atom
+        </a>
+
+      </h4>
+    </div>
+    <!-- From here starts the content blocks -->
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="text-center article-header">
 		<h1 itemprop="name headline" class="article-title">Scheme - Part 3 - Higher Order Procedures (intro)</h1>
@@ -42,7 +61,7 @@
 		</span>
 		
 	</div>
-	<div itemprop="articleBody" class="article-body"><h3>Higher Order procedures</h3>
+	<div itemprop="articleBody" class="article-body"><h3 id="higher-order-procedures">Higher Order procedures</h3>
 <p><s>Lisp is a functional programming language</s></p>
 <p>Lisp is a <a href="https://en.wikipedia.org/wiki/Metaprogramming">Metaprogramming Language</a></p>
 <p>Actually, I really don't know what Lisp is myself and I'm just trying
@@ -85,18 +104,18 @@ the following</p>
 </blockquote>
 <p>We will look at the first point in this post today. The topics are too
 dense for a single post.</p>
-<h3>Procedures as arguments</h3>
+<h3 id="procedures-as-arguments">Procedures as arguments</h3>
 <p>Instead of just jumping right in, allow me to use an example that will
 inspire the idea of procedures that take procedures as arguments.</p>
 <p>Let us look at this mathematical expression and write a procedure for it.</p>
 <div class="math">$$ Sum = 1 + 2 + 3 + 4 + \dots +  \infty $$</div>
 <p>The Lisp procedure to compute this would be like </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">sum-integers</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">sum-integers</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
         <span class="mi">0</span>
         <span class="p">(</span><span class="nb">+ </span><span class="nv">a</span> <span class="p">(</span><span class="nf">sum-integers</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">a</span> <span class="mi">1</span><span class="p">)</span> <span class="nv">b</span><span class="p">))))</span>
@@ -108,10 +127,10 @@ inspire the idea of procedures that take procedures as arguments.</p>
 <p>Now let us look at this expression </p>
 <div class="math">$$ Sum = 1^3 + 2^3 + 3^3 + \dots + \infty $$</div>
 <p>This is a series of the sum of cubes. The procedure would look like this</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">sum-cubes</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">sum-cubes</span> <span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span> <span class="nv">b</span> <span class="p">)</span>
         <span class="mi">0</span>
         <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">cube</span> <span class="nv">a</span><span class="p">)</span> <span class="p">(</span><span class="nf">sum-cubes</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">a</span> <span class="mi">1</span><span class="p">)</span> <span class="nv">b</span><span class="p">))))</span>
@@ -134,11 +153,11 @@ can be rewritten as :</p>
 <p>This lets us capture the idea of summation in the Sigma notation like </p>
 <div class="math">$$ \sum_{n=a}^b f(n) = f(a) + \dots + f(b) $$</div>
 <p>and we can use that idea to write a procedure; like so..</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">sum</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
         <span class="mi">0</span>
         <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">term</span> <span class="nv">a</span><span class="p">)</span>
@@ -153,12 +172,12 @@ Sigma notation. Next is a procedure that determines how the function
 will iterate.</p>
 <p>Thus for <span class="math">\(\sum_{n=1}^\infty n^3 = 1^3 + 2^3 + 3^3 + \dots + \infty\)</span>
 the Lisp procedure would be</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">cube</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">x</span> <span class="nv">x</span><span class="p">))</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">cube</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">x</span> <span class="nv">x</span><span class="p">))</span>
 
 <span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">next</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="mi">1</span><span class="p">))</span>
 
@@ -169,11 +188,11 @@ the Lisp procedure would be</p>
 
 <p>This is not the end. We can use this idea to create multiple such abstractions. </p>
 <p>For example the multiplication procedure <span class="math">\(\coprod_{n=a}^b f(n) = f(a) * \dots * f(b)\)</span> can be coded like</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">product</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">product</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
     <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
         <span class="mi">1</span>
         <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nf">term</span> <span class="nv">a</span><span class="p">)</span>
@@ -182,10 +201,10 @@ the Lisp procedure would be</p>
 </td></tr></table>
 
 <p>We can use the multiplication abstraction to calculate factorials.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">factorial</span> <span class="nv">x</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">factorial</span> <span class="nv">x</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">product</span> <span class="nv">identity</span> <span class="mi">1</span> <span class="nv">next</span> <span class="nv">x</span><span class="p">))</span> <span class="c1">;;defined above</span>
 
 <span class="p">(</span><span class="nf">factorial</span> <span class="mi">5</span><span class="p">)</span>                  <span class="c1">;; prints 120</span>
@@ -197,18 +216,18 @@ the summation procedure. Thus we can define another procedure called
 the <code>accumulate</code> and abstract away the idea of summation and
 multiplication into two different methods of doing the same thing;
 accumulating.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">accumulate</span> <span class="nv">combiner</span> <span class="nv">null-value</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">accumulate</span> <span class="nv">combiner</span> <span class="nv">null-value</span> <span class="nv">term</span> <span class="nv">a</span> <span class="nv">next</span> <span class="nv">b</span><span class="p">)</span>
 <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span>
     <span class="nv">null-value</span>
     <span class="p">(</span><span class="nf">combiner</span> <span class="p">(</span><span class="nf">term</span> <span class="nv">a</span><span class="p">)</span>
@@ -225,7 +244,7 @@ accumulating.</p>
 
 <p>The <code>combiner</code> in the above procedure is a procedure that takes in two inputs and combines them. For addition this is <code>+</code> and for multiplication this is <code>*</code>.</p>
 <p>The <code>null-value</code> is the value to be used when the range runs out. This is same the the value used the <code>(&gt; a b)</code> evaluates to false.</p>
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p>This is the beginning of the chapter in the book that deals with this stuff
 <a href="https://mitpress.mit.edu/sicp/full-text/book/book-Z-H-12.html#%_sec_1.3">Book</a></p>
 <p>This post turned out to be bigger than I anticipated. In the next post
@@ -251,10 +270,13 @@ thing!!!</p>
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
     mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -268,6 +290,8 @@ thing!!!</p>
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -288,6 +312,8 @@ thing!!!</p>
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script></div>
@@ -296,75 +322,20 @@ thing!!!</p>
 	<!--  -->
 	<!--  -->
 </div>
-		</div>
-	</div> 	<!-- <hr> -->
-</div> <!-- /container -->
-<footer class="aw-footer bg-danger">
-	<div class="container"> <!-- footer -->
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row">
-					<div class="col-md-3">
-						<h4>Navigation</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://signalshore.github.io/about.html"><i class="fa fa-About "></i> About</a></li>
-							<li><a href="https://signalshore.github.io/cv.html"><i class="fa fa-CV "></i> CV</a></li>
-							<li><a href="https://signalshore.github.io/feeds/all.atom" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<h4>Social</h4>
-						<ul class="list-unstyled my-list-style">
-							<li><a href="https://twitter.com/sohom154">Twitter</a></li>
-							<li><a href="https://github.com/83bytes">Github</a></li>
-							<li><a href="https://gitlab.com/83bytes">Gitlab</a></li>
-						</ul>
-					</div>
-					<div class="col-md-6">
-						<h4>Tags</h4>
-						<ul class="list-unstyled my-list-style">
-						<a href="https://signalshore.github.io/tag/travel.html">Travel</a>,
-						<a href="https://signalshore.github.io/tag/env.html">Env</a>,
-						<a href="https://signalshore.github.io/tag/meta.html">Meta</a>,
-						<a href="https://signalshore.github.io/tag/cs.html">CS</a>,
-						<a href="https://signalshore.github.io/tag/misc.html">Misc</a>,
-						<a href="https://signalshore.github.io/tag/math.html">Math</a>,
-						<a href="https://signalshore.github.io/tag/data.html">Data</a>,
-						<a href="https://signalshore.github.io/tag/cycling.html">Cycling</a>,
-						<a href="https://signalshore.github.io/tag/guix.html">Guix</a>,
-						<a href="https://signalshore.github.io/tag/work.html">Work</a>,
-						<a href="https://signalshore.github.io/tag/scheme.html">Scheme</a>,
-						<a href="https://signalshore.github.io/tag/activism.html">Activism</a>,
-						<a href="https://signalshore.github.io/tag/linux.html">Linux</a>,
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 text-center center-block aw-bottom">
-		  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
-		</div>
-	</div>
-</div>
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-jQuery(document).ready(function($) {
-	$("div.collapseheader").click(function () {
-		$header = $(this).children("span").first();
-		$codearea = $(this).children(".input_area");
-		$codearea.slideToggle(500, function () {
-			$header.text(function () {
-				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
-			});
-		});
-	});
-});
-</script>
+      </div>
+    </div>   </div> <!-- /container -->
+
+  <footer class="aw-footer bg-danger">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center center-block aw-bottom">
+          <p>Life is best filled by learning as much as you can about as much as you can </p>
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License"
+              style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>
