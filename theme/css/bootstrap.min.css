@@ -1168,13 +1168,13 @@ textarea {
 }
 
 a {
-    color: #d9230f;
+    /* color: #d9230f; */
     text-decoration: none
 }
 
 a:hover,
 a:focus {
-    color: #91170a;
+    /* color: #91170a; */
     text-decoration: underline
 }
 
@@ -1450,11 +1450,11 @@ mark,
 }
 
 .text-primary {
-    color: #d9230f
+    /* color: #d9230f */
 }
 
 a.text-primary:hover {
-    color: #a91b0c
+    /* color: #a91b0c */
 }
 
 .text-success {
@@ -1491,11 +1491,11 @@ a.text-danger:hover {
 
 .bg-primary {
     color: #fff;
-    background-color: #d9230f
+    /* background-color: #d9230f */
 }
 
 a.bg-primary:hover {
-    background-color: #a91b0c
+    /* background-color: #a91b0c */
 }
 
 .bg-success {
