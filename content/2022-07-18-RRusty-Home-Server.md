@@ -1,8 +1,7 @@
 Title: RRusty; Home Server
-Date: 2021-11-21
+Date: 2022-07-18
 Tags: CS, Tech, HomeServer
 Summary: A live record of my home-server journey and the learnings so far in this endeavour
-Status: Draft
 
 There be detailed posts about the setup and learnings from each of the sections below.
 
