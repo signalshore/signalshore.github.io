@@ -16,7 +16,7 @@ Notice the '/' in the command he typed, Yep true story. Completely nuked all the
 
 Okay we need some context. This is how `lsblk` looks on our system (Sam). The important partitions that store all the main data and media (movies and documentaries and Pics) are the `/dev/sda4` and `/dev/sda5`. As both of them were mounted they both were completely deleted. 
 
-![image](/assets/images/2017-07-20/lsblk.png)
+![image](assets/images/2017-07-20/lsblk.png)
 
 ### Aftermath ###
 
