@@ -99,18 +99,17 @@ plaintext file with other text processing tools available on Linux
 <p>With ledger-cli you do not have to learn a bunch of things just to
 use it.</p>
 <p>Each transaction in ledger looks like this</p>
-<div class="highlight"><pre><span></span><span class="mf">2019</span><span class="o">/</span><span class="mf">04</span><span class="o">/</span><span class="mf">19</span> <span class="n">Bought</span> <span class="n">some</span> <span class="n">icecream</span>
-    <span class="n">AccountA</span><span class="p">:</span><span class="n">SubAccountA1</span>  <span class="mf">3000</span>
-    <span class="n">AccountB</span><span class="p">:</span><span class="n">SubAccountB1</span>  <span class="o">-</span><span class="mf">3000</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="mf">2019</span><span class="o">/</span><span class="mf">04</span><span class="o">/</span><span class="mf">19</span><span class="w"> </span><span class="n">Bought</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">icecream</span><span class="w"></span>
+<span class="w">    </span><span class="n">AccountA</span><span class="p">:</span><span class="n">SubAccountA1</span><span class="w">  </span><span class="mf">3000</span><span class="w"></span>
+<span class="w">    </span><span class="n">AccountB</span><span class="p">:</span><span class="n">SubAccountB1</span><span class="w">  </span><span class="o">-</span><span class="mf">3000</span><span class="w"></span>
+</code></pre></div>
 
 <p>That's about it. It basically says that for buying some coffee you paid
 3000 (in any unit of currency) from SubAccountB1 to SubAccountA1.
 The <code>Account:SubAccountA1</code> is used to illustrate that you can have nested accounts.</p>
 <p>Ledger also does amazing reporting.
 For example: This is how much I've spent on travelling over the two years (This exclude everyday transport using busses and autos)</p>
-<div class="highlight"><pre><span></span>$ ledger -f personal.ledger balance Expenses:travel
+<div class="highlight"><pre><span></span><code>$ ledger -f personal.ledger balance Expenses:travel
         <span class="m">78331</span>.94  Expenses:Travel
           <span class="m">543</span>.51    Cab
             <span class="m">4137</span>    Cancel
@@ -120,11 +119,10 @@ For example: This is how much I've spent on travelling over the two years (This 
          <span class="m">6445</span>.43    Trains
 ----------------
         <span class="m">78331</span>.94
-</pre></div>
-
+</code></pre></div>
 
 <p>For example: This shows how much I've spent on House Rent and etc etc stuff. (I only have an audible subscription that I share)</p>
-<div class="highlight"><pre><span></span>$ ledger -f personal.ledger balance Expenses:Utilities
+<div class="highlight"><pre><span></span><code>$ ledger -f personal.ledger balance Expenses:Utilities
           <span class="m">162243</span>  Expenses:Utilities
            <span class="m">11833</span>    Electricity Bill
           <span class="m">142900</span>    House Rent
@@ -133,8 +131,7 @@ For example: This is how much I've spent on travelling over the two years (This 
              <span class="m">100</span>    Subscriptions
 ----------------
           <span class="m">162243</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Its just fun. You also use sed/awk to generate reports/graphs of your own.</p>
 <h1 id="for-the-future">For the Future</h1>

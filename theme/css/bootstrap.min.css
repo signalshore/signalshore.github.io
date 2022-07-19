@@ -3839,7 +3839,7 @@ fieldset[disabled] .btn-link {
 
 .btn-link:hover,
 .btn-link:focus {
-    color: #91170a;
+    /* color: #91170a; */
     text-decoration: underline;
     background-color: transparent
 }

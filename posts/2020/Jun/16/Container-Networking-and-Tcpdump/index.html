@@ -104,21 +104,19 @@ computer.</p>
 perspectives, from the host's perspective and from the containers
 perspective.</p>
 <p>I am running a simple <code>sh</code> shell in alpine.</p>
-<div class="highlight"><pre><span></span><span class="s s-Atom">#</span> <span class="s s-Atom">docker</span> <span class="s s-Atom">run</span> <span class="o">-</span><span class="s s-Atom">it</span> <span class="nn">alpine</span><span class="p">:</span><span class="s s-Atom">latest</span> <span class="o">/</span><span class="s s-Atom">bin</span><span class="o">/</span><span class="s s-Atom">sh</span>
+<div class="highlight"><pre><span></span><code><span class="s s-Atom">#</span> <span class="s s-Atom">docker</span> <span class="s s-Atom">run</span> <span class="o">-</span><span class="s s-Atom">it</span> <span class="s s-Atom">alpine</span><span class="p">:</span><span class="s s-Atom">latest</span> <span class="o">/</span><span class="s s-Atom">bin</span><span class="o">/</span><span class="s s-Atom">sh</span>
 <span class="s s-Atom">#</span> <span class="s s-Atom">echo</span> <span class="s2">&quot;Hello :-) &quot;</span>
-<span class="s s-Atom">#</span> <span class="nv">Hello</span> <span class="p">:-)</span> 
+<span class="s s-Atom">#</span> <span class="nv">Hello</span> <span class="o">:-</span><span class="p">)</span> 
 <span class="s s-Atom">#</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>Now, I am run <code>ip link</code> which will describe the network interfaces.</p>
-<div class="highlight"><pre><span></span><span class="c1"># ip link</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># ip link</span>
 <span class="m">1</span>: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state UNKNOWN qlen <span class="m">1000</span>
     link/loopback <span class="m">00</span>:00:00:00:00:00 brd <span class="m">00</span>:00:00:00:00:00
 <span class="m">17</span>: eth0@if18: &lt;BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN&gt; mtu <span class="m">1500</span> qdisc noqueue state UP 
     link/ether <span class="m">02</span>:42:ac:1e:01:00 brd ff:ff:ff:ff:ff:ff
-</pre></div>
-
+</code></pre></div>
 
 <p>Here, we that <code>eth0@if18</code> has an <code>@ifXX</code> in it which makes things very
 interesting. This signifies two things. The '@' shows us that this
@@ -129,26 +127,24 @@ namespace.</p>
 interface has an interface index. This is the value that we see on the
 above output as 1 and 17. This can be found out by reading the value
 at <code>/sys/class/net/&lt;interface&gt;/ifindex</code></p>
-<div class="highlight"><pre><span></span><span class="c1"># cat /sys/class/net/eth0/ifindex </span>
+<div class="highlight"><pre><span></span><code><span class="c1"># cat /sys/class/net/eth0/ifindex </span>
 <span class="m">17</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>We can read the value of the linked interface from <code>/sys/class/&lt;interface&gt;</code></p>
 <p>The one it is connected to is called the
 peer link and we can look at its index in
 <code>/sys/class/net/&lt;interface&gt;/iflink</code></p>
-<div class="highlight"><pre><span></span><span class="c1"># cat /sys/class/net/eth0/iflink</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># cat /sys/class/net/eth0/iflink</span>
 <span class="m">18</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>But, that is surprising because my container does not have any
 interface with <em>ifindex</em>=18. That is not a mistake. This shows that
 the interface 17 on the container is linked to interface 18 on my
 <em>host</em>.</p>
 <p>This is what <code>ip link</code> shows on my host.</p>
-<div class="highlight"><pre><span></span><span class="m">1</span>: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
+<div class="highlight"><pre><span></span><code><span class="m">1</span>: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
     link/loopback <span class="m">00</span>:00:00:00:00:00 brd <span class="m">00</span>:00:00:00:00:00
 <span class="m">2</span>: enp0s31f6: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu <span class="m">1500</span> <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
     link/ether e8:6a:64:c1:0d:3f brd ff:ff:ff:ff:ff:ff
@@ -158,18 +154,16 @@ the interface 17 on the container is linked to interface 18 on my
     link/ether <span class="m">02</span>:42:27:9a:cf:32 brd ff:ff:ff:ff:ff:ff
 <span class="m">18</span>: veth01f0f9d@if17: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
     link/ether f6:7c:d7:20:73:f4 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="m">0</span>
-</pre></div>
-
+</code></pre></div>
 
 <p><strong>NOTE</strong> Notice how interface <em>18</em> is linked to interface <em>17</em> on another namespace. This will be important.</p>
 <h3 id="why-dont-we-have-a-iflink-for-some-interfaces">Why don't we have a iflink for some interfaces.... ?</h3>
 <p>Interfaces that represent physical devices (eth0, wlan0) are linked to themselves and hence the '@' is not used.</p>
-<div class="highlight"><pre><span></span><span class="c1"># cat /sys/class/net/wlp6s0/ifindex</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># cat /sys/class/net/wlp6s0/ifindex</span>
 <span class="m">3</span>
 <span class="c1"># cat /sys/class/net/wlp6s0/iflink</span>
 <span class="m">3</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2 id="how-is-this-related-to-tcpdump">How is this related to tcpdump ?</h2>
 <p>Well, we have figured out that all traffic from the container is

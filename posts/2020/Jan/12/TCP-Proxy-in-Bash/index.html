@@ -66,15 +66,13 @@ streams from one process to another process. However the syntax of
 using pipes with processess can be a bit difficult and restrictive.</p>
 <p>For example, 
 If you want to push the output of process A into process B, you would write it as such</p>
-<div class="highlight"><pre><span></span><span class="sx">!bash</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="sx">!bash</span><span class="w"></span>
 <span class="n">A</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span><span class="w"></span>
-</pre></div>
-
+</code></pre></div>
 
 <p>This is similar to </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>A &gt; file $ B &lt; file
-</pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>A &gt; file $ B &lt; file
+</code></pre></div></td></tr></table></div>
 
 <p>Named pipes are special files that can be used to pass data between
 two processess. When a process writes to a named pipe the kernel
@@ -86,9 +84,8 @@ ideal to signal backpressure etc etc.</p>
 see, a named pipe is nothing but a first-in-first-out stream (with
 some added bells and whistles).</p>
 <p>In a cool hack you can make a TCP proxy using netcat and named pipes</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>nc -lp <span class="m">6000</span> &lt;primary <span class="p">|</span> nc localhost <span class="m">5000</span> &gt;primary
-</pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>nc -lp <span class="m">6000</span> &lt;primary <span class="p">|</span> nc localhost <span class="m">5000</span> &gt;primary
+</code></pre></div></td></tr></table></div>
 
 <p>This uses the named pipe <code>primary</code> as a bidirectional pipe.</p>
 <p>Let us see what is going on here.</p>
@@ -99,9 +96,8 @@ some added bells and whistles).</p>
 </ul>
 <h2 id="whats-more">Whats more ?</h2>
 <p>You can even copy the entire TCP stream using this little tool called <code>tee</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>nc -lvp <span class="m">6000</span> &lt;primary <span class="p">|</span> tee mirror <span class="p">|</span> nc localhost <span class="m">5000</span> &gt;primary
-</pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>nc -lvp <span class="m">6000</span> &lt;primary <span class="p">|</span> tee mirror <span class="p">|</span> nc localhost <span class="m">5000</span> &gt;primary
+</code></pre></div></td></tr></table></div>
 
 <p>In this case you have to read from the <code>mirror</code> fifo and you should be
 able to see all the traffic flowing through your proxy. Change the

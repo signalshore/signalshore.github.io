@@ -136,32 +136,30 @@ config is a dual-booted uefi setup with Arch Linux)</p>
 In this section I have put together a list of things that should be essential to a smooth start.</p>
 <h3 id="per-user-profile">Per-User profile</h3>
 <p>In the previous section we talked about how you guix maintain packages on a per-user basis. One easy method to maintain per user profiles is to create a manifest file. A manifest file is a scheme file that contains all the packages for a specific user. This way you can specify only the packages that you want to be available globally in the system configuration file and other packages can be installed on a per-user basis using the manifest file.</p>
-<div class="highlight"><pre><span></span>#bash
+<div class="highlight"><pre><span></span><code>#bash
 $ guix package -m profile.scm
-</pre></div>
-
+</code></pre></div>
 
 <p>This will tell guix package to install the packages from that file. </p>
 <p>Manifest file syntax:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">use-package-modules</span> <span class="nv">&lt;module1&gt;</span> <span class="nv">&lt;module2&gt;</span><span class="p">)</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="nf">use-package-modules</span><span class="w"> </span><span class="nv">&lt;module1&gt;</span><span class="w"> </span><span class="nv">&lt;module2&gt;</span><span class="p">)</span><span class="w"></span>
 
-<span class="p">(</span><span class="nf">package-&gt;manifest</span>
-    <span class="p">(</span><span class="nb">list </span><span class="nv">package1</span>
-          <span class="nv">package2</span>
-          <span class="nv">package3</span><span class="p">))</span>
-</pre></div>
-</td></tr></table>
+<span class="p">(</span><span class="nf">package-&gt;manifest</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="nv">package1</span><span class="w"></span>
+<span class="w">          </span><span class="nv">package2</span><span class="w"></span>
+<span class="w">          </span><span class="nv">package3</span><span class="p">))</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>Package modules are the basically the scheme files within which each of the packages are defined. 
 You can find out which package module a given package belongs to by running the <code>guix package -s &lt;package-name&gt;</code> command and looking at the <em>location</em> field.</p>
 <p>Here is <a href="https://gitlab.com/83bytes/guix/blob/master/myConfig.scm">my Profile.</a></p>
 <p>For example: this is the output of the command <code>guix package -s emacs-neotree</code></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -172,7 +170,7 @@ You can find out which package module a given package belongs to by running the 
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ guix package -s emacs-neotree
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>$ guix package -s emacs-neotree
 name: emacs-neotree
 version: <span class="m">0</span>.5.2
 outputs: out
@@ -184,8 +182,7 @@ license: GPL <span class="m">3</span>+
 synopsis: Folder tree view <span class="k">for</span> Emacs  
 description: This Emacs package provides a folder tree view.
 relevance: <span class="m">4</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>The file under <em>gnu/packages/</em> is the module name.</p>
 <h3 id="updating-and-maintaining">Updating and maintaining</h3>

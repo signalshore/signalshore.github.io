@@ -95,17 +95,16 @@ I want to test two file-systems; btrfs and ext4.
 I want to test full disk encryption using Luks along with these file-systems.</p>
 <p>I already know that btrfs is going to be slower that ext4, I just want to know by how much.</p>
 <p>The following combinations were created</p>
-<div class="highlight"><pre><span></span><span class="p">|</span> part <span class="nb">type</span>    <span class="p">|</span> allocation <span class="p">|</span> label     <span class="p">|</span>
+<div class="highlight"><pre><span></span><code><span class="p">|</span> part <span class="nb">type</span>    <span class="p">|</span> allocation <span class="p">|</span> label     <span class="p">|</span>
 <span class="p">|</span> ------------ <span class="p">|</span> ---------- <span class="p">|</span> --------- <span class="p">|</span>
 <span class="p">|</span> ext4         <span class="p">|</span> <span class="m">25</span>%        <span class="p">|</span> ext4Only  <span class="p">|</span>
 <span class="p">|</span> luks + ext4  <span class="p">|</span> <span class="m">25</span>%        <span class="p">|</span> ext4Lks   <span class="p">|</span>
 <span class="p">|</span> btrfs        <span class="p">|</span> <span class="m">25</span>%        <span class="p">|</span> btrfsOnly <span class="p">|</span>
 <span class="p">|</span> luks + btrfs <span class="p">|</span> <span class="m">25</span>%        <span class="p">|</span> btrfsLuks <span class="p">|</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>This is the output from <code>parted</code></p>
-<div class="highlight"><pre><span></span><span class="o">(</span>parted<span class="o">)</span> print
+<div class="highlight"><pre><span></span><code><span class="o">(</span>parted<span class="o">)</span> print
 Model: SanDisk Ultra USB <span class="m">3</span>.0 <span class="o">(</span>scsi<span class="o">)</span>
 Disk /dev/sda: 123GB
 Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: 512B/512B
@@ -117,13 +116,12 @@ Number  Start   End     Size    Type     File system  Flags
 <span class="m">2</span>      <span class="m">30</span>.8GB  <span class="m">61</span>.5GB  <span class="m">30</span>.8GB  primary               lba
 <span class="m">3</span>      <span class="m">61</span>.5GB  <span class="m">92</span>.3GB  <span class="m">30</span>.8GB  primary  btrfs        lba
 <span class="m">4</span>      <span class="m">92</span>.3GB  123GB   <span class="m">30</span>.8GB  primary               lba
-</pre></div>
-
+</code></pre></div>
 
 <p>We build a <code>btrfs</code> filesystem(s) in single data-mode. This makes sure that btrfs as a file-system is not being too smart and just writes data into disks as they arrive.</p>
 <p>In the partitions where encryption was set-up we first build a LUKs encrypted volume and then build the filesystem on top of it.</p>
 <p>Then we mount all of the partitions under  <code>/mnt/</code>. It looks like this</p>
-<div class="highlight"><pre><span></span>~ ❯❯❯ lsblk /dev/sda
+<div class="highlight"><pre><span></span><code>~ ❯❯❯ lsblk /dev/sda
 NAME          MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
 sda             <span class="m">8</span>:0    <span class="m">1</span> <span class="m">114</span>.6G  <span class="m">0</span> disk
 ├─sda1          <span class="m">8</span>:1    <span class="m">1</span>  <span class="m">28</span>.7G  <span class="m">0</span> part  /mnt/ext4Only
@@ -132,14 +130,12 @@ sda             <span class="m">8</span>:0    <span class="m">1</span> <span cla
 ├─sda3          <span class="m">8</span>:3    <span class="m">1</span>  <span class="m">28</span>.7G  <span class="m">0</span> part  /mnt/btrfsOnly
 └─sda4          <span class="m">8</span>:4    <span class="m">1</span>  <span class="m">28</span>.7G  <span class="m">0</span> part
 └─btrfsLuks <span class="m">253</span>:3    <span class="m">0</span>  <span class="m">28</span>.7G  <span class="m">0</span> crypt /mnt/btrfsLuks
-</pre></div>
-
+</code></pre></div>
 
 <p>I am using this tool called <code>fio</code> for running the benchmark and I am using <code>netdata</code> for reporting the state of the system and for displaying fancy visualizations.</p>
 <p>Using fio, you can run multiple tests, but the one I focused on were the sequential read and write tests. The configuration for fio is as follows</p>
-<div class="highlight"><pre><span></span><span class="c1"># sudo fio --bs=4k --rw=read --direct=1 --ioengine=libaio --size=2G --name=test --iodepth=64 --filename=&lt;destination&gt;`</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="c1"># sudo fio --bs=4k --rw=read --direct=1 --ioengine=libaio --size=2G --name=test --iodepth=64 --filename=&lt;destination&gt;`</span>
+</code></pre></div>
 
 <p>I wrote a script that would perform a write test, followed by a read test on each of the 4 partitions going serially (i.e. ext4Only, ext4Luks, btrfsOnly, btrfsLuks).</p>
 <h1 id="benchmark-results">Benchmark Results</h1>
@@ -191,24 +187,22 @@ There is something really interesting wrt the Raspberry Pi when we use a higher 
 <h1 id="results-summary">Results Summary</h1>
 <p>The units are <code>MB/s</code> and the format is <code>Write/Read</code></p>
 <h2 id="laptop">Laptop</h2>
-<div class="highlight"><pre><span></span>| Device | Storage Device | Block Size | ext4Only | ext4Luks | btrfsOnly | btrfsLuks |
+<div class="highlight"><pre><span></span><code>| Device | Storage Device | Block Size | ext4Only | ext4Luks | btrfsOnly | btrfsLuks |
 | ------ | -------------- | ---------- | -------- | -------- | --------- | --------- |
 | Laptop | HDD            | 4M         | 104/124  | 117/118  | 101/96.5  | 82.5/82.2 |
 |        |                | 4k         | 52.1/106 | 20.4/106 | 31.2/90.3 | 20.2/85.7 |
 |        | USB            | 4M         | 27.1/159 | 20.4/159 | 27.1/159  | 25.8/159  |
 |        |                | 4k         | 27.1/129 | 21.3/127 | 19/117    | 19.9/102  |
-</pre></div>
-
+</code></pre></div>
 
 <h2 id="rpi">Rpi</h2>
-<div class="highlight"><pre><span></span>| Device | Storage Device | Block Size | ext4Only  | ext4Luks  | btrfsOnly | btrfsLuks |
+<div class="highlight"><pre><span></span><code>| Device | Storage Device | Block Size | ext4Only  | ext4Luks  | btrfsOnly | btrfsLuks |
 | ------ | -------------- | ---------- | --------- | --------- | --------- | --------- |
 | RPI    | HDD            | 4M         | 126/123   | 77.8/109  | 97.4/95   | 57.7/80   |
 |        |                | 4k         | 23.8/58.8 | 20.9/47.6 | 19.2/48.4 | 21.5/40.8 |
 |        | USB            | 4M         | 28.2/115  | 22.4/120  | 24.9/116  | 18.2/89.2 |
 |        |                | 4k         | 21.1/108  | 13.9/82.6 | 18.7/84.8 | 13.4/58.6 |
-</pre></div>
-
+</code></pre></div>
 
 <h1 id="observations">Observations</h1>
 <ol>

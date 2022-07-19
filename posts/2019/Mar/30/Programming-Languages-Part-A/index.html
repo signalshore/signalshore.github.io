@@ -104,23 +104,21 @@ exercises and homework assignments. That was fun.</p>
 type checked by the compiler before being run.</p>
 <p>A typical program in SML with all types explicitly mentioned looks
 like this. Its a simple function that takes two numbers and adds them.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">add</span> <span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">int</span><span class="p">):</span> <span class="n">int</span> <span class="p">=</span> 
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">fun</span> <span class="nf">add</span> <span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">int</span><span class="p">):</span> <span class="n">int</span> <span class="p">=</span> 
     <span class="n">x</span> <span class="n">+</span> <span class="n">y</span><span class="p">;</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>The type of the <code>add</code> function is <code>fn: int * int -&gt; int</code></p>
 <p>Let's write a recursive program that calculates <code>n raised to m</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">pow</span> <span class="p">(</span><span class="n">m</span> <span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">n</span> <span class="p">:</span> <span class="n">int</span><span class="p">)</span> <span class="p">=</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">fun</span> <span class="nf">pow</span> <span class="p">(</span><span class="n">m</span> <span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">n</span> <span class="p">:</span> <span class="n">int</span><span class="p">)</span> <span class="p">=</span>
     <span class="kr">if</span> <span class="n">m</span><span class="p">=</span><span class="mi">0</span>
     <span class="kr">then</span> <span class="mi">1</span>
     <span class="kr">else</span> <span class="n">m</span> <span class="n">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n-</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>The type of <code>pow</code> function is <code>fn: int * int -&gt; int</code></p>
 <p>I had some trouble understanding how the type system worked in SML,
@@ -137,21 +135,20 @@ very un-intuitive at first, but reading about the process made it
 quite obvious.</p>
 <p>Let us rewrite the above functions without explicitly mentioning
 types.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">add</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">fun</span> <span class="nf">add</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span>
     <span class="n">x</span> <span class="n">+</span> <span class="n">y</span><span class="p">;</span>
 
 <span class="kr">fun</span> <span class="nf">pow</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">=</span>
     <span class="kr">if</span> <span class="n">m</span><span class="p">=</span><span class="mi">0</span>
     <span class="kr">then</span> <span class="mi">1</span>
     <span class="kr">else</span> <span class="n">m</span> <span class="n">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n-</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>In both these cases the type checker can infer the types of the
 functions and the arguments and the final type for both the functions
@@ -175,11 +172,10 @@ more-general way to write your program so that it can work for <em>more
 than a single type</em> of arguments. It does this even if you specify a
 type. What this means is that your programs become more general. </p>
 <p>Let's write a function with polymorphic data-types.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">add_to_list</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">fun</span> <span class="nf">add_to_list</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span>
     <span class="n">x</span> <span class="n">::</span> <span class="n">y</span><span class="p">;</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>The function <code>add_to_list</code> builds a list by taking a object and a list
 and adds the object to the front of the list. The type of this
@@ -187,14 +183,14 @@ function is <code>fn: 'a * 'a list -&gt; 'a list</code> where <code>'a</code> is
 datatype as in it can take the type of any value passed to the
 function. Hence this function works for both integers and strings. </p>
 <p>Look the the results of the function calls in the comments.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">add_to_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,[]);</span> 
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">add_to_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,[]);</span> 
 <span class="cm">(* [2] : int list *)</span>
 <span class="n">add_to_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
 <span class="cm">(* [2,2,3] : int list *)</span>
@@ -202,19 +198,17 @@ function. Hence this function works for both integers and strings. </p>
 <span class="cm">(* [&quot;S&quot;] : string list *)</span>
 <span class="n">add_to_list</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="s2">&quot;t&quot;</span><span class="p">]);</span>
 <span class="cm">(* [&quot;S&quot;,&quot;t&quot;,&quot;a&quot;,&quot;r&quot;,&quot;t&quot;] : string list *)</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>It should be noted  that this functions will only work  if the type of
 the object and the type of the object  that the list is made up of are
 the same. This  is by definition since in SML  the <code>::</code> operator works
 like that. Hence the following call will not type check because we are
 trying to add <code>S</code> to the list <code>[2,3]</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">add_to_list</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">add_to_list</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
 <span class="cm">(* Does not type check *)</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <h3 id="pattern-matching">Pattern Matching</h3>
 <p>Writing about pattern matching is tricky because it makes absolutely
@@ -225,31 +219,30 @@ with this. Let me try.</p>
 the fact that a case expression can handle multiple branches or
 multiple cases.</p>
 <p>The case expression in SML has the form</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">case</span> <span class="n">expr_0</span> <span class="kr">of</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">case</span> <span class="n">expr_0</span> <span class="kr">of</span>
     <span class="n">patt_1</span> <span class="p">=&gt;</span> <span class="n">expr_1</span>
   <span class="n">|</span> <span class="n">patt_2</span> <span class="p">=&gt;</span> <span class="n">expr_2</span>
   <span class="n">|</span> <span class="p">...</span>
   <span class="n">|</span> <span class="n">patt_n</span> <span class="p">=&gt;</span> <span class="n">expr_n</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>This is evaluated by first evaluating the <code>expr_0</code> to <code>val_0</code> and then
 pattern-matching it with <code>patt_i</code> and then based on which pattern it
 matches with, the corresponding <code>expr_i</code> is evaluated.</p>
 <p>The pattern part is super cool because it lets you use constructors and operators within the pattern to pattern match against and you can also do variable binding within the pattern itself. </p>
 <p>Let's see that in action. In the following program I will add all the elements of a list together.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">add_list</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="p">=</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">fun</span> <span class="nf">add_list</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="p">=</span>
     <span class="kr">case</span> <span class="n">xs</span> <span class="kr">of</span>
         <span class="p">[]</span> <span class="p">=&gt;</span> <span class="mi">0</span>
      <span class="n">|</span> <span class="n">x::xs&#39;</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="n">+</span> <span class="n">add_list</span><span class="p">(</span><span class="n">xs&#39;</span><span class="p">);</span>
@@ -257,25 +250,23 @@ matches with, the corresponding <code>expr_i</code> is evaluated.</p>
 <span class="n">add_list</span><span class="p">([]);</span>
 <span class="n">add_list</span><span class="p">([</span><span class="mi">2</span><span class="p">]);</span>
 <span class="n">add_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]);</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>In this example basically we are matching against the cases where the list is either empty or not. If the list is empty we return 0 as the sum, otherwise we use pattern matching to split the list into the first element and the rest of the list (without the first element) and then recursively compute the sum.</p>
 <h3 id="lexical-scope-and-closures">Lexical Scope and Closures</h3>
 <p>The body of a function is evaluated in the environment where the
 function is defined, not the environment where the function is called.</p>
 <p>We will see it in this example.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">val</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">val</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="kr">fun</span> <span class="nf">test</span> <span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="p">=</span> <span class="n">y</span> <span class="n">+</span> <span class="n">x</span><span class="p">;</span>
 <span class="kr">val</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
 <span class="n">test</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="cm">(* 5 *)</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>The output of this function is <code>5</code> and not <code>9</code> because when the
 function <code>test</code> was defined, the value of <code>x = 2</code> in the
@@ -302,27 +293,26 @@ Mathematically we can define the factorial of a number as</p>
 <p>factorial(n) = n * factorial (n - 1) ; when n &gt; 1</p>
 </blockquote>
 <p>We can write this in SML like,</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">fun</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=</span>
     <span class="kr">if</span> <span class="n">x</span><span class="p">=</span><span class="mi">0</span>
     <span class="kr">then</span> <span class="mi">1</span>
     <span class="kr">else</span> <span class="n">x</span> <span class="n">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">x</span> <span class="n">-</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>Now, this is fine and it works; BUT, its not tail recursive. 
 This is because the calling function has to multiply the result from the recursive call with <code>x</code> and then get the result.</p>
 <p>Let's write the tail recursive version of this.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">fac_tail</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">=</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">fun</span> <span class="nf">fac_tail</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">=</span>
     <span class="kr">let</span> <span class="kr">fun</span> <span class="nf">helper</span><span class="p">(</span><span class="n">acc</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">=</span>
             <span class="kr">if</span> <span class="n">n</span><span class="p">=</span><span class="mi">0</span>
             <span class="kr">then</span> <span class="n">acc</span>
@@ -330,8 +320,7 @@ This is because the calling function has to multiply the result from the recursi
         <span class="kr">in</span>
         <span class="n">helper</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
     <span class="kr">end</span><span class="p">;</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>Over here we have a helper function that takes two parameters.  The
 first parameter stores the value of <code>factorial(n - 1)</code> and the second

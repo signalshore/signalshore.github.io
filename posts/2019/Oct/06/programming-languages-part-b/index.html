@@ -85,25 +85,22 @@ are constructed.</p>
 sub-expressions first before evaluating the actual function. This is
 called applicative order evaluation.</p>
 <p>For example consider this function which tries to emulate the functionality of the 'if' expression.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="n">my-if</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">if</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span><span class="p">))</span>
-</pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">my-if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">c</span><span class="p">))</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>Let's use this 'my-if' as we would use a normal if clause</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">my-if</span> <span class="p">(</span><span class="nb">=</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span>
-<span class="c1">;; result :=&gt; 3</span>
-</pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="n">my-if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="c1">;; result :=&gt; 3</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>This works properly. However, the next one doesn't.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">my-if</span> <span class="p">(</span><span class="nb">=</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
-<span class="c1">;; result :=&gt; Error</span>
-</pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="n">my-if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span><span class="w"></span>
+<span class="c1">;; result :=&gt; Error</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>This is because when 'my-if' is being evaluated, then all the three
 arguments to the function is evaluated first before evaluating
@@ -117,20 +114,18 @@ arguments. Thus we can pass this lambda function around as much as  we
 want and we can evaluate it when we need it by using an extras set of
 parenthesis.</p>
 <p>Thus we need to rewrite the old functions. We can do it as</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="n">new-if</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">if</span> <span class="n">a</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">(</span><span class="n">c</span><span class="p">)))</span>
-</pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">new-if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">)))</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>and we will call this function as </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">new-if</span> <span class="p">(</span><span class="nb">=</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> 
-        <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span> <span class="p">(</span><span class="mi">1</span> <span class="mi">2</span><span class="p">))</span>
-        <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span> <span class="p">(</span><span class="mi">2</span> <span class="mi">3</span><span class="p">)))</span>
-</pre></div>
-</td></tr></table>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="n">new-if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"></span>
+<span class="w">        </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)))</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>This is called thunking. When we wrap a function in an empty lambda
 function, then we create a thunk. Instead of 'e1' we use '(lambda ()
@@ -164,7 +159,7 @@ function, we can just look up the value in the cons cell.</p>
 <p>Basically when we implement a system where we store the output of a
 function if it has been evaluated once. As noted above this can be
 done easily using mutable cons cells.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -172,17 +167,16 @@ done easily using mutable cons cells.</p>
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="k">delay</span> <span class="n">f</span><span class="p">)</span>
-    <span class="p">(</span><span class="nb">mcons</span> <span class="no">#f</span> <span class="n">f</span><span class="p">))</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="k">delay</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nb">mcons</span><span class="w"> </span><span class="no">#f</span><span class="w"> </span><span class="n">f</span><span class="p">))</span><span class="w"></span>
 
-<span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nb">force</span> <span class="k">thunk</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nb">mcar</span> <span class="k">thunk</span><span class="p">)</span>
-        <span class="p">(</span><span class="nb">mcdr</span> <span class="k">thunk</span><span class="p">)</span>
-        <span class="p">(</span><span class="k">begin</span> <span class="p">(</span><span class="nb">set-mcar!</span> <span class="k">thunk</span> <span class="no">#t</span><span class="p">)</span>               <span class="c1">;; set the flag to true</span>
-               <span class="p">(</span><span class="n">set_mcdr!</span> <span class="k">thunk</span> <span class="p">((</span><span class="nb">mcdr</span> <span class="k">thunk</span><span class="p">)))</span>   <span class="c1">;; replace the thunk with the result</span>
-               <span class="p">(</span><span class="nb">mcdr</span> <span class="k">thunk</span><span class="p">))))</span>                    <span class="c1">;; return the result</span>
-</pre></div>
-</td></tr></table>
+<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nb">force</span><span class="w"> </span><span class="k">thunk</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">mcar</span><span class="w"> </span><span class="k">thunk</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">(</span><span class="nb">mcdr</span><span class="w"> </span><span class="k">thunk</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">(</span><span class="k">begin</span><span class="w"> </span><span class="p">(</span><span class="nb">set-mcar!</span><span class="w"> </span><span class="k">thunk</span><span class="w"> </span><span class="no">#t</span><span class="p">)</span><span class="w">               </span><span class="c1">;; set the flag to true</span><span class="w"></span>
+<span class="w">               </span><span class="p">(</span><span class="n">set_mcdr!</span><span class="w"> </span><span class="k">thunk</span><span class="w"> </span><span class="p">((</span><span class="nb">mcdr</span><span class="w"> </span><span class="k">thunk</span><span class="p">)))</span><span class="w">   </span><span class="c1">;; replace the thunk with the result</span><span class="w"></span>
+<span class="w">               </span><span class="p">(</span><span class="nb">mcdr</span><span class="w"> </span><span class="k">thunk</span><span class="p">))))</span><span class="w">                    </span><span class="c1">;; return the result</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>This is something that hit me in the face with a brick when I first understood it.
 It's so beautiful and cool. :-)</p>
@@ -228,7 +222,7 @@ wherein the first element is the first element and the second element
 is a thunk that has everything we need to get all the elements from 2
 to infinity.</p>
 <p>Let us write a stream that just produces an infinite stream of 1's</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -236,17 +230,16 @@ to infinity.</p>
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define</span> <span class="n">ones-st</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span> <span class="p">(</span><span class="nb">cons</span> <span class="mi">1</span> <span class="n">ones</span><span class="p">)))</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="n">ones-st</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ones</span><span class="p">)))</span><span class="w"></span>
 
-<span class="c1">;; we call this stream by</span>
+<span class="c1">;; we call this stream by</span><span class="w"></span>
 
-<span class="c1">;; this gives the first element</span>
-<span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="n">one-st</span><span class="p">))</span>
+<span class="c1">;; this gives the first element</span><span class="w"></span>
+<span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="p">(</span><span class="n">one-st</span><span class="p">))</span><span class="w"></span>
 
-<span class="c1">;; this gives us the second element</span>
-<span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="nb">cdr</span> <span class="p">(</span><span class="n">one-st</span><span class="p">)))</span>
-</pre></div>
-</td></tr></table>
+<span class="c1">;; this gives us the second element</span><span class="w"></span>
+<span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="p">(</span><span class="n">one-st</span><span class="p">)))</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>The stream is a thunk which when evaluated gives a pair. The first
 element in the pair is the first value in the stream and the second
@@ -257,43 +250,40 @@ transformation that is taking place between the subsequent elements.</p>
 <p>Now we will define the same stream and put a transformation function
 in the middle. This function will not do anything but it will act as a
 good placeholder for future transformations.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="n">ones</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="n">ones-help</span> <span class="n">x</span><span class="p">)</span>
-    <span class="p">(</span><span class="nb">cons</span> <span class="n">x</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span> <span class="p">(</span><span class="n">ones-help</span> <span class="p">(</span><span class="nb">+</span> <span class="n">x</span> <span class="mi">0</span><span class="p">)))))</span>
-<span class="p">(</span><span class="n">ones-help</span> <span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</td></tr></table>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">ones</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">ones-help</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="n">ones-help</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">0</span><span class="p">)))))</span><span class="w"></span>
+<span class="p">(</span><span class="n">ones-help</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>In this way we have a framework of how to go about designing different streams. 
 Let use write an infinite stream of the square of all the natural numbers.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="n">square</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="n">square-help</span> <span class="n">x</span><span class="p">)</span>
-    <span class="p">(</span><span class="nb">cons</span> <span class="p">(</span><span class="nb">*</span> <span class="n">x</span> <span class="n">x</span><span class="p">)</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span> <span class="p">(</span><span class="n">square-help</span> <span class="p">(</span><span class="nb">+</span> <span class="n">x</span> <span class="mi">1</span><span class="p">)))))</span>
-<span class="p">(</span><span class="n">square-help</span> <span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</td></tr></table>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">square</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">square-help</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="n">square-help</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">1</span><span class="p">)))))</span><span class="w"></span>
+<span class="p">(</span><span class="n">square-help</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>How do we get elements from the stream ? </p>
 <p>To get the first element we evaluate the stream and get the first
 element form the pair. To get the second element from the stream we
 evaluate the cdr of the pair we get.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">car</span> <span class="p">(</span><span class="n">square</span><span class="p">))</span>
-<span class="c1">;; first element</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="p">(</span><span class="n">square</span><span class="p">))</span><span class="w"></span>
+<span class="c1">;; first element</span><span class="w"></span>
 
-<span class="p">(</span><span class="nb">car</span> <span class="p">((</span><span class="nb">cdr</span> <span class="p">(</span><span class="n">square</span><span class="p">))))</span>
-<span class="c1">;; second element</span>
-</pre></div>
-</td></tr></table>
+<span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="p">((</span><span class="nb">cdr</span><span class="w"> </span><span class="p">(</span><span class="n">square</span><span class="p">))))</span><span class="w"></span>
+<span class="c1">;; second element</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>Thus we can get new elements from the list.</p>
 <p>Note: This is the exact same way in which Alonzo Church defines Church Numerals. </p>
@@ -302,14 +292,14 @@ evaluate the cdr of the pair we get.</p>
 dataypes and data-structures and it lets us use pattern matching to
 get the desired data out form the data structure.</p>
 <p>For Example,</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">val</span> <span class="nv">record_test</span> <span class="p">=</span>  <span class="p">{</span> <span class="n">first</span> <span class="p">=</span> <span class="s2">&quot;sohom&quot;</span><span class="p">,</span> <span class="n">second</span> <span class="p">=</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">number</span> <span class="p">=</span> <span class="mi">1000</span> <span class="p">};</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">val</span> <span class="nv">record_test</span> <span class="p">=</span>  <span class="p">{</span> <span class="n">first</span> <span class="p">=</span> <span class="s2">&quot;sohom&quot;</span><span class="p">,</span> <span class="n">second</span> <span class="p">=</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">number</span> <span class="p">=</span> <span class="mi">1000</span> <span class="p">};</span>
 <span class="cm">(* creates a new record in the env and binds it to record_test *)</span>
 
 <span class="kr">val</span> <span class="p">{</span> <span class="n">first</span> <span class="p">=</span> <span class="n">t</span> <span class="p">:</span> <span class="n">string</span> <span class="p">,</span> <span class="n">second</span> <span class="p">=</span> <span class="n">tt</span> <span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">number</span> <span class="p">=</span> <span class="n">ttt</span> <span class="p">:</span> <span class="n">int</span> <span class="p">}</span> <span class="p">=</span> <span class="n">record_test</span><span class="p">;</span>
@@ -317,23 +307,21 @@ get the desired data out form the data structure.</p>
 <span class="cm">(* This pattern matches the record on the left with the record on</span>
 <span class="cm">the right and binds the values after extracting them from the</span>
 <span class="cm">record *)</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p>We could implement the same kind of the thing in Racket using cons
 cells but there is an even better way in Racket. In Racket we can use
 structs to define custom data types.</p>
 <p>When we add a new datatype with <code>struct</code> it introduces a bunch of
 other functions into the environment. Let me illustrate this with an example.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">struct</span> <span class="n">foo</span> <span class="p">(</span><span class="n">field1</span> <span class="n">field2</span> <span class="n">field3</span><span class="p">))</span>
-</pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="p">(</span><span class="n">field1</span><span class="w"> </span><span class="n">field2</span><span class="w"> </span><span class="n">field3</span><span class="p">))</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>This will introduce a constructor for this struct, a checker for this
 struct and accessor functions for each field in the struct. This is
 super handy.</p>
 <p>So we can do things like</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -345,21 +333,20 @@ super handy.</p>
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define</span> <span class="n">new_t</span> <span class="p">(</span><span class="n">foo</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="n">new_t</span><span class="w"> </span><span class="p">(</span><span class="n">foo</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span><span class="w"></span>
 
-<span class="p">(</span><span class="n">foo?</span> <span class="n">new_t</span><span class="p">)</span>
-<span class="c1">;; evaluates to #t</span>
+<span class="p">(</span><span class="n">foo?</span><span class="w"> </span><span class="n">new_t</span><span class="p">)</span><span class="w"></span>
+<span class="c1">;; evaluates to #t</span><span class="w"></span>
 
-<span class="p">(</span><span class="n">foo-field1</span> <span class="n">new_t</span><span class="p">)</span>
-<span class="c1">;; evaluates to 1</span>
+<span class="p">(</span><span class="n">foo-field1</span><span class="w"> </span><span class="n">new_t</span><span class="p">)</span><span class="w"></span>
+<span class="c1">;; evaluates to 1</span><span class="w"></span>
 
-<span class="p">(</span><span class="n">foo-field2</span> <span class="n">new_t</span><span class="p">)</span>
-<span class="c1">;; evaluates to 2</span>
+<span class="p">(</span><span class="n">foo-field2</span><span class="w"> </span><span class="n">new_t</span><span class="p">)</span><span class="w"></span>
+<span class="c1">;; evaluates to 2</span><span class="w"></span>
 
-<span class="p">(</span><span class="n">foo-field3</span> <span class="n">new_t</span><span class="p">)</span>
-<span class="c1">;; evaluates to 3</span>
-</pre></div>
-</td></tr></table>
+<span class="p">(</span><span class="n">foo-field3</span><span class="w"> </span><span class="n">new_t</span><span class="p">)</span><span class="w"></span>
+<span class="c1">;; evaluates to 3</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>I think this is really cool. Especially because the user does not have
 to write accessor functions for all the types they define, but instead

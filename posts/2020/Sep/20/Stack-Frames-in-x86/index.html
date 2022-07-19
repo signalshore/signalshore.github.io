@@ -96,35 +96,32 @@ the stack frame for that function as well as tearing down the stack
 frame when the control-flow needs to return to the caller function.</p>
 <h1 id="let-us-read-some-assembly">Let us read some Assembly!!</h1>
 <p>Let us use an example program to understand this.</p>
-<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">x</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
 
 <p>Compile this using gcc to a 32 bit target. </p>
-<div class="highlight"><pre><span></span>gcc -m32 func_call.c
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>gcc -m32 func_call.c
+</code></pre></div>
 
 <p>Now, generate the assembly output using <code>objdump</code>. (you can use gdb for this too, or any other too you like)</p>
-<div class="highlight"><pre><span></span>objdump -d -M intel a.out
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>objdump -d -M intel a.out
+</code></pre></div>
 
 <p>The only sections that we will focus on are the <code>main</code> and the <code>foo</code> sections.</p>
-<div class="highlight"><pre><span></span><span class="mh">000004ed</span> <span class="p">&lt;</span><span class="nf">foo</span><span class="p">&gt;:</span>
+<div class="highlight"><pre><span></span><code><span class="mh">000004ed</span><span class="w"> </span><span class="p">&lt;</span><span class="nf">foo</span><span class="p">&gt;:</span>
 <span class="x">    4ed:    55                      push   ebp</span>
 <span class="x">    4ee:    89 e5                   mov    ebp,esp</span>
 <span class="x">    4f0:    83 ec 10                sub    esp,0x10</span>
@@ -138,7 +135,7 @@ frame when the control-flow needs to return to the caller function.</p>
 <span class="x">    514:    c9                      leave  </span>
 <span class="x">    515:    c3                      ret</span>
 
-<span class="mh">00000516</span> <span class="p">&lt;</span><span class="nf">main</span><span class="p">&gt;:</span>
+<span class="mh">00000516</span><span class="w"> </span><span class="p">&lt;</span><span class="nf">main</span><span class="p">&gt;:</span>
 <span class="x">    516:    55                      push   ebp</span>
 <span class="x">    517:    89 e5                   mov    ebp,esp</span>
 <span class="x">    519:    83 ec 10                sub    esp,0x10</span>
@@ -152,20 +149,18 @@ frame when the control-flow needs to return to the caller function.</p>
 <span class="x">    53f:    b8 00 00 00 00          mov    eax,0x0</span>
 <span class="x">    544:    c9                      leave  </span>
 <span class="x">    545:    c3                      ret</span>
-</pre></div>
-
+</code></pre></div>
 
 <h6 id="note-this-is-assembly-in-intel-syntax-which-follows-the-oeprand-destination-source-format">Note: This is assembly in Intel syntax. Which follows the [oeprand destination, source] format.</h6>
-<p><br>
-<hr></p>
+<p><br></p>
+<hr>
 <blockquote>
 <p>We will walk through the calling  code, the entry sequence and the sequence to get a better understanding.</p>
 </blockquote>
 <h3 id="the-function-call-sequence">The Function-Call sequence</h3>
-<div class="highlight"><pre><span></span><span class="nf">push</span>   <span class="kt">DWORD</span> <span class="nv">PTR</span> <span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mh">0x8</span><span class="p">]</span>
-<span class="nf">call</span>   <span class="mi">4</span><span class="nv">ed</span> <span class="o">&lt;</span><span class="nv">foo</span><span class="o">&gt;</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nf">push</span><span class="w">   </span><span class="kt">DWORD</span><span class="w"> </span><span class="nv">PTR</span><span class="w"> </span><span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mh">0x8</span><span class="p">]</span><span class="w"></span>
+<span class="nf">call</span><span class="w">   </span><span class="mi">4</span><span class="nv">ed</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">foo</span><span class="o">&gt;</span><span class="w"></span>
+</code></pre></div>
 
 <p>In this segment we are leading the value stored in the memory
 location <code>ebp-0x8</code> into the stack and then we <code>call</code> the foo
@@ -178,10 +173,9 @@ branched from. It is generally <code>ip+0x2</code></p>
 <h6 id="note-to-understand-this-we-will-ignore-the-dword-ptr-it-is-not-too-imp-for-our-goals">NOTE: To understand this, we will ignore the <code>DWORD PTR</code>. It is not too imp for our goals.</h6>
 <h3 id="the-entry-sequence">The Entry Sequence</h3>
 <p>Notice the first two lines of both the functions.</p>
-<div class="highlight"><pre><span></span><span class="nf">push</span>   <span class="nb">ebp</span>
-<span class="nf">mov</span>    <span class="nb">ebp</span><span class="p">,</span><span class="nb">esp</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nf">push</span><span class="w">   </span><span class="nb">ebp</span><span class="w"></span>
+<span class="nf">mov</span><span class="w">    </span><span class="nb">ebp</span><span class="p">,</span><span class="nb">esp</span><span class="w"></span>
+</code></pre></div>
 
 <p>In this sequence we built the stack from for the current function. </p>
 <p>After ther <em>call</em> in the previous section, the control flow jumps to
@@ -195,7 +189,7 @@ current frame.  Note that the <em>esp</em> is currently pointing to the top
 of the stack. This effectively starts a new frame.</p>
 <h5 id="note-as-every-frame-contains-a-reference-to-the-base-pointer-of-the-previous-frame-this-enables-debuggers-to-walk-the-call-stack">Note: As every frame contains a reference to the base pointer of the previous frame, this enables debuggers to <em>walk</em> the call-stack.</h5>
 <p>Thus the <code>stack frame</code> for <code>foo</code> function (or the <code>callee</code> function) contains the following.</p>
-<div class="highlight"><pre><span></span>+<span class="o">========================</span>+
+<div class="highlight"><pre><span></span><code>+<span class="o">========================</span>+
 <span class="p">|</span>                        <span class="p">|</span>
 <span class="p">|</span>  Previous Stack-Frame  <span class="p">|</span>
 <span class="p">|</span>      <span class="o">(</span>main func<span class="o">)</span>       <span class="p">|</span>
@@ -211,14 +205,12 @@ of the stack. This effectively starts a new frame.</p>
 +------------------------+
 <span class="p">|</span>     Local variables    <span class="p">|</span> 
 +<span class="o">========================</span>+ &lt;---- esp foo
-</pre></div>
-
+</code></pre></div>
 
 <h3 id="the-exit-sequence">The Exit Sequence</h3>
-<div class="highlight"><pre><span></span><span class="nf">leave</span>
-<span class="nf">ret</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="nf">leave</span><span class="w"></span>
+<span class="nf">ret</span><span class="w"></span>
+</code></pre></div>
 
 <p>Now, the function has finished executing and it needs to return the
 control flow to the calling function. We need to do some cleanup

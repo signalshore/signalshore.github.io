@@ -89,18 +89,17 @@ variable, etc.</p>
 <h4 id="what-is-the-deal-with-higher-order-functions"><strong>What is the deal with Higher-Order Functions ?</strong></h4>
 <p><a href="https://en.wikipedia.org/wiki/Higher-order_function">Higher-Order functions</a> are not limited to programming languages. This concept covers functions in a much more general and mathematical sense. The idea is that Higher-Order Functions accepts other functions as arguments, and can returns functions as results. </p>
 <p>The differential function in mathematics is an example of Higher-Order Function. It accepts a function as its input and returns the derivative of that function which is also a function. </p>
-<div class="math">$$ d(f(x)) / dx = f'(x)$$</div>
-<p>In this equation the differential operator accepts the function <span class="math">\(f(x)\)</span> as an argument and the result of the operation is <span class="math">\(f'(x)\)</span>. </p>
+<p>$$ d(f(x)) / dx = f'(x)$$</p>
+<p>In this equation the differential operator accepts the function $f(x)$ as an argument and the result of the operation is $f'(x)$. </p>
 <p>From a programming language perspective we can see multiple examples of higher order functions. A very common example is the <code>map</code> function in python.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">lists</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">lists</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="k">def</span> <span class="nf">sqrr</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
 <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">sqrr</span><span class="p">,</span> <span class="n">lists</span><span class="p">))</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
-</pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 
 <p><em><a href="https://docs.python.org/3.5/library/functions.html#map">map</a></em> takes a function and a list of elements and it returns a list with the function applied to all the elements of the input list.</p>
 <p>Alright now that we have covered some literature, let's dive in...</p>
@@ -108,95 +107,85 @@ variable, etc.</p>
 <h3 id="lambdas"><strong>Lambdas</strong></h3>
 <p>Scheme offers a special form that allows us to create procedures. Lambdas in Scheme lets us create anonymous procedures i.e. procedures without any names. This might not seem like a very big and special thing, but this is exactly what gives Scheme (and other similar programming languages)so much power.</p>
 <p>To illustrate this concept we will write some procedures. Recall that procedures in Scheme are written using <code>define</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">summ-old</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">summ-old</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">))</span><span class="w"></span>
 
-<span class="p">(</span><span class="nf">summ-old</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+<span class="p">(</span><span class="nf">summ-old</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>This same procedure can be written using lambdas like so ...</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="nv">summ</span> <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)))</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">summ</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">x</span><span class="w"> </span><span class="nv">y</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">)))</span><span class="w"></span>
 
-<span class="p">(</span><span class="nf">summ</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+<span class="p">(</span><span class="nf">summ</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>Basically a lambda is used to create procedures the same way define is used, but with lambda no name of the procedure is mentioned. 
 The syntax of lambdas is </p>
 <p><code>(lambda (&lt;formal_parameters) (body))</code></p>
 <p>These are very useful in cases where we do not require naming a procedure because that procedure will be used only once. 
 Such a definition looks like this ..</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">((</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))</span> 
-  <span class="mi">3</span>
-  <span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">((</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">x</span><span class="w"> </span><span class="nv">y</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">))</span><span class="w"> </span>
+<span class="w">  </span><span class="mi">3</span><span class="w"></span>
+<span class="w">  </span><span class="mi">4</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <h4 id="returning-procedures"><strong>Returning Procedures</strong></h4>
 <p>In Scheme we can use lambdas to create procedures that return other procedures.</p>
 <p>Let us illustrate this idea with some examples.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="p">(</span><span class="nf">adder</span> <span class="nv">x</span><span class="p">)</span>
-    <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">m</span><span class="p">)</span> 
-        <span class="p">(</span><span class="nb">+ </span><span class="nv">m</span>  <span class="nv">x</span><span class="p">)))</span>
-</pre></div>
-</td></tr></table>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">adder</span><span class="w"> </span><span class="nv">x</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">m</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">m</span><span class="w">  </span><span class="nv">x</span><span class="p">)))</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>In this example we have a procedure <em>adder</em> that accepts an argument and returns another procedure (that is what the lambda does) that accepts another parameter and returns the sum of the two numbers.</p>
 <p>We can eliminate the first parameter altogether also. Such a function would look like this</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">define </span><span class="nv">adder-2</span>
-    <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span> 
-        <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">m</span><span class="p">)</span>
-            <span class="p">(</span><span class="nb">+ </span><span class="nv">m</span> <span class="nv">x</span><span class="p">))))</span>
-</pre></div>
-</td></tr></table>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">adder-2</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">m</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">m</span><span class="w"> </span><span class="nv">x</span><span class="p">))))</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>The procedure <em>adder-2</em> returns a procedure that accepts an argument and returns another procedure that accepts an argument and returns the sum of these two arguments.</p>
 <p>If all this sounds too complex do not worry! How we go about applying these two procedures to operands should make things a lot clearer.</p>
 <p>For applying <em>adder</em> the thing that we should keep in mind is that <em>adder</em>  returns a function that needs an argument. </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">((</span><span class="nf">adder</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">((</span><span class="nf">adder</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>It is quite easy to see what is going on here. Let us assume that the inner set of parenthesis is evaluated to a procedure <em>f</em> so after the first set of evaluation the statement should look like this </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">f</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="nf">f</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>and the resulting output should be 15. </p>
 <p>This is also true for the <em>adder-2</em> procedure. </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">((</span><span class="nf">adder-2</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">((</span><span class="nf">adder-2</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>The <em>adder-2</em> procedure returns a procedure that accepts 5 as an argument and then returns a procedure that accepts 10 as an argument.</p>
 <p>This lets us do all sorts of interesting things with these functions. For example we can chain them together to add more than two numbers.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">((</span><span class="nf">adder</span> <span class="p">((</span><span class="nf">adder</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">5</span><span class="p">))</span> <span class="mi">5</span><span class="p">)</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">((</span><span class="nf">adder</span><span class="w"> </span><span class="p">((</span><span class="nf">adder</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
 
-<span class="p">((</span><span class="nf">adder-2</span> <span class="p">((</span><span class="nf">adder-2</span> <span class="mi">5</span><span class="p">)</span> <span class="mi">5</span><span class="p">))</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+<span class="p">((</span><span class="nf">adder-2</span><span class="w"> </span><span class="p">((</span><span class="nf">adder-2</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <p>Both of these procedures return 15.</p>
 <h4 id="some-practical-uses-of-lambdas"><strong>Some practical uses of lambdas</strong></h4>
 <p>Lambdas can be very useful when you need to write a procedure but there is no need to name the procedure. Situations where you will not be calling the procedure suing the name in any scenario whatsoever. </p>
 <p>Personally I have a lambda function written in my Emacs config file that opens my To-Do list everytime I press F6 on my keyboard. I did not write this function; I just copied it from some answer on Stack Overflow, but nevertheless it is a good start.</p>
 <p>This is the function.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">global-set-key</span> <span class="p">(</span><span class="nf">kbd</span> <span class="s">&quot;&lt;f6&gt;&quot;</span><span class="p">)</span> <span class="p">(</span><span class="nf">lambda</span><span class="p">()</span> <span class="p">(</span><span class="nf">interactive</span><span class="p">)(</span><span class="nf">find-file</span> <span class="s">&quot;path/to/file.org&quot;</span><span class="p">)))</span>
-</pre></div>
-</td></tr></table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="nf">global-set-key</span><span class="w"> </span><span class="p">(</span><span class="nf">kbd</span><span class="w"> </span><span class="s">&quot;&lt;f6&gt;&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="nf">interactive</span><span class="p">)(</span><span class="nf">find-file</span><span class="w"> </span><span class="s">&quot;path/to/file.org&quot;</span><span class="p">)))</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
 
 <h3 id="now">now ...</h3>
 <p>This marks the end of the first chapter of the book. I will continue with more posts when I find something interesting (which should be often :-P).</p>
@@ -204,69 +193,7 @@ Such a definition looks like this ..</p>
 <p>This is my last semester in college so things are a bit hectic, so delays should be expected. </p>
 <p>I went to FSMK camp 2018 last week and I met a couple of my readers. That was fun. :-) (and cheers to you people!!)</p>
 <p>That is it!! (for now)</p>
-<p>p.s. The code for this post can be found <a href="/assets/files/scheme-4.scm">here</a>.</p>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script></div>
+<p>p.s. The code for this post can be found <a href="/assets/files/scheme-4.scm">here</a>.</p></div>
 	<hr>
 	<!-- <h2>Comments</h2> -->
 	<!--  -->

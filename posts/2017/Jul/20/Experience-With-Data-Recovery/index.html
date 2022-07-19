@@ -100,22 +100,19 @@ Our first idea was to launch <a href="http://nongnu.org/ranger/">ranger</a> and 
 But there was a major flaw with this system. There were a lot of files in those directories and going through each one of them would be a tedious and a very very stupid thing to do. </p>
 <p>So we started making a list of the things that we lost and the things that we wanted to recovered from the mess. We figured that if we could not remember something that we had lost them we probably did not need it in the first place. Thus we figured that the most important stuff in the data directory ware the scripts that we had written for our Arch System. We also realized that we mostly needed text files from this partition recovery so we could delete all the non-text files and thus we started this massive assault on all non essential files. </p>
 <p>Initially we were writing scripts like </p>
-<div class="highlight"><pre><span></span>$ <span class="k">for</span> file <span class="k">in</span> <span class="o">(</span>find ./ -name <span class="s2">&quot;*.jar&quot;</span><span class="o">)</span><span class="p">;</span> rm -vf <span class="nv">$file</span><span class="p">;</span> end<span class="p">;</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>$ <span class="k">for</span> file <span class="k">in</span> <span class="o">(</span>find ./ -name <span class="s2">&quot;*.jar&quot;</span><span class="o">)</span><span class="p">;</span> rm -vf <span class="nv">$file</span><span class="p">;</span> end<span class="p">;</span>
+</code></pre></div>
 
 <p>which worked like a charm. </p>
 <p>Then we figured out the better version of this command i.e.</p>
-<div class="highlight"><pre><span></span>$ find ./ -name <span class="s2">&quot;*.jar&quot;</span> -delete
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>$ find ./ -name <span class="s2">&quot;*.jar&quot;</span> -delete
+</code></pre></div>
 
 <p>which does the same thing; finds files with a particular extension (JAR files in this case) and delete them.</p>
 <p>We kept doing this for a huge set of files unless we were left with only text files.</p>
 <p>Now we needed to get all the DOCX files so we did this</p>
-<div class="highlight"><pre><span></span>$ <span class="k">for</span> file <span class="k">in</span> <span class="o">(</span>find ./ -name <span class="s2">&quot;*.docx&quot;</span><span class="o">)</span><span class="p">;</span> cp -c <span class="nv">$file</span> ../store<span class="p">;</span> end<span class="p">;</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>$ <span class="k">for</span> file <span class="k">in</span> <span class="o">(</span>find ./ -name <span class="s2">&quot;*.docx&quot;</span><span class="o">)</span><span class="p">;</span> cp -c <span class="nv">$file</span> ../store<span class="p">;</span> end<span class="p">;</span>
+</code></pre></div>
 
 <p>Now comes the interesting part. Remember those scripts that we wrote. We had a fairly good idea about the contents of those scripts so we could do a recursive grep with those keywords and BOOM! </p>
 <p>This is the first script which had a lot of i3-msg in it.
@@ -127,9 +124,8 @@ Similarly we found all the other scripts.</p>
 <p>As you can see both the files have the same MD5 hash and thus they are essentially the same files. So now we needed a script that would sort the duplicate files out.</p>
 <p>We followed the instructions in this article and installed fdupes and let it run amok and remove all the duplicate files we had.</p>
 <p>Also we figured out that there were a lot of files that were 100kb or less. These were thumbnail files we believe. So we did this</p>
-<div class="highlight"><pre><span></span>$ find ./ -size -100k -delete
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>$ find ./ -size -100k -delete
+</code></pre></div>
 
 <p>and all of them annoying files were gone. :p</p>
 <h3 id="conclusion">Conclusion</h3>
