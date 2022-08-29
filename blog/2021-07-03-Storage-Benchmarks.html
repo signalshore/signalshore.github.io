@@ -147,40 +147,40 @@ The charts below are for the 4M tests. Total data being written and read from th
 <p>The data-dump will have all the results for you to look at if you want to.
 There is something really interesting wrt the Raspberry Pi when we use a higher block size. A section will be there that talks about it.</p>
 <h2 id="laptop-128gb-usb-drive">Laptop 128Gb Usb drive</h2>
-<p><img alt="laptop_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/Laptop/4M/laptop_ssd_4M.png"></p>
+<p><img alt="laptop_ssd_4M" src="assets/2021-07-03-Storage-Benchmarks/SSD_USB/Laptop/4M/laptop_ssd_4M.png"></p>
 <h2 id="laptop-5tb-hdd">Laptop 5TB HDD</h2>
-<p><img alt="hdd_laptop_4M" src="/assets/2021-07-03-Storage-Benchmarks/5_TB/Laptop/4M/hdd_laptop_4M.png"></p>
+<p><img alt="hdd_laptop_4M" src="assets/2021-07-03-Storage-Benchmarks/5_TB/Laptop/4M/hdd_laptop_4M.png"></p>
 <h2 id="raspberry-pi-128gb-usb-drive">Raspberry Pi 128GB Usb drive</h2>
-<p><img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_io.png"></p>
+<p><img alt="rpi_ssd_4M" src="assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_io.png"></p>
 <blockquote>
 <p>Disk I/O (4M bs)</p>
 </blockquote>
-<p><img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_cpu.png"></p>
+<p><img alt="rpi_ssd_4M" src="assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_cpu.png"></p>
 <blockquote>
 <p>CPU Utilization and Load Average (4M bs)</p>
 </blockquote>
-<p><img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_temp.png"></p>
+<p><img alt="rpi_ssd_4M" src="assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_temp.png"></p>
 <blockquote>
 <p>Temp (4M bs)</p>
 </blockquote>
-<p><img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb.png"></p>
+<p><img alt="rpi_ssd_4M" src="assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb.png"></p>
 <blockquote>
 <p>Disk I/O (4k bs)</p>
 </blockquote>
-<p><img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb_cpu.png"></p>
+<p><img alt="rpi_ssd_4M" src="assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb_cpu.png"></p>
 <blockquote>
 <p>CPU Utilization and Load Average (4k bs)</p>
 </blockquote>
 <h2 id="raspberry-pi-5tb-hdd">Raspberry Pi 5TB hdd</h2>
-<p><img alt="" src="/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_io.png"></p>
+<p><img alt="" src="assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_io.png"></p>
 <blockquote>
 <p>Disk I/O</p>
 </blockquote>
-<p><img alt="" src="/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_cpu.png"></p>
+<p><img alt="" src="assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_cpu.png"></p>
 <blockquote>
 <p>CPU Utilization and Load Average</p>
 </blockquote>
-<p><img alt="" src="/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_temp.png"></p>
+<p><img alt="" src="assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_temp.png"></p>
 <blockquote>
 <p>Temp</p>
 </blockquote>
@@ -222,7 +222,7 @@ There is something really interesting wrt the Raspberry Pi when we use a higher 
 A block is simply the amount of data that the OS can read during a single operation.</p>
 <p>Thus throughput is basically <code>IOPS * block_size</code>.</p>
 <p>I ran the tests with bs set as 4k and was surprised that the reported values were not as high. Infact they were a lot lower than the disk speed I was getting from a pure <code>rsync</code> workload. During one such run, I happened to look at the netdata dashboard and discovered that the operations/s was much lower for the rsync workload than the fio workload, even though rsync had a much larger throughput. This gave me the idea that we can in-fact change the bs to get much better results.</p>
-<p><img alt="4m_vs_4k" src="/assets/2021-07-03-Storage-Benchmarks/4M_vs_4k.png">
+<p><img alt="4m_vs_4k" src="assets/2021-07-03-Storage-Benchmarks/4M_vs_4k.png">
 Here in this photo we can clearly see the difference that block_size causes. The first write is done using a higher block_size which explains the lower operations per second along with the higher throughput; similarly the second write has lower throughput along with higher operations per second. This is characteristic for lower block_size.</p>
 <p>Check <a href="https://medium.com/@duhroach/the-impact-of-blocksize-on-persistent-disk-performance-7e50a85b2647">this</a> to get a better understanding of block size.</p>
 <h1 id="conclusion">Conclusion</h1>

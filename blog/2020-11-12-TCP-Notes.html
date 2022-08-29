@@ -93,7 +93,7 @@ these chunks and creates the TCP segments. Then IP information is
 added onto these segments to create IP datagrams. These are the PDUs
 handled by the lower layer (Network). IP datagrams are called <em>packets</em>.</p>
 <blockquote>
-<p><img alt="img" src="/assets/images/tcp/tcp_segment_header.png">
+<p><img alt="img" src="assets/images/tcp/tcp_segment_header.png">
 A TCP segment header. 
 (This is copied form Wikipedia)
 <a id="orgc93f5b9"></a></p>
@@ -145,7 +145,7 @@ acknowledgement number.</p>
 <li>Connection Termination</li>
 </ol>
 <blockquote>
-<p><img alt="img" src="/assets/images/tcp/2020-10-24-13-55-17_tcp_flow.png"> </p>
+<p><img alt="img" src="assets/images/tcp/2020-10-24-13-55-17_tcp_flow.png"> </p>
 </blockquote>
 <h3 id="note">Note</h3>
 <p>Once Connection is set up, both sides can send data, thus it does
@@ -237,13 +237,13 @@ this state machine is that there are two parts of the state machine we
 need to keep track of. The client and the server.</p>
 <p>This is the photo of the state machine from <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol#/media/File:Tcp_state_diagram_fixed_new.svg">Wikipedia</a> </p>
 <blockquote>
-<p><img alt="img" src="/assets/images/tcp/tcp_state.png"></p>
+<p><img alt="img" src="assets/images/tcp/tcp_state.png"></p>
 <p><em>By Scil100, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=30810617">https://commons.wikimedia.org/w/index.php?curid=30810617</a></em></p>
 </blockquote>
 <p>This image from IBM makes it quite clear. Look at the Legend for detailed information.
 The states are described below for reference.</p>
 <blockquote>
-<p><img alt="img" src="/assets/images/tcp/tcp_state_1.png"></p>
+<p><img alt="img" src="assets/images/tcp/tcp_state_1.png"></p>
 </blockquote>
 <p>Note on terms:</p>
 <ul>
@@ -334,11 +334,11 @@ Time-Wait Assasinations. It does this by ignoring <em>RST</em> when the
 connection is in <em>TIME_WAIT</em> state. This is good for the server, but
 the client still sees a bad connection phase with a bunch of RSTs.</p>
 <blockquote>
-<p><img alt="img" src="/assets/images/tcp/twa_1.png">
+<p><img alt="img" src="assets/images/tcp/twa_1.png">
 Here is an image from a packet trace dring such an event.
 <br>
 <br>
-<img alt="img" src="/assets/images/tcp/twa_flow_graph.png">
+<img alt="img" src="assets/images/tcp/twa_flow_graph.png">
 Here is a Flow&#x2013;Graph of the same packet trace</p>
 </blockquote>
 <p><a id="org94c1afb"></a></p>

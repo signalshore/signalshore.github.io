@@ -98,7 +98,7 @@ as tree such that
 - Every other element of that list is a child of that node and are the
   operators for that operand.</p>
 <p>The tree of the expression <code>(+ 2 3)</code> will look like this</p>
-<p><img alt="single tree" src="/assets/images/2017-11-30/single.jpg"></p>
+<p><img alt="single tree" src="assets/images/2017-11-30/single.jpg"></p>
 <p>A LISP program is very easily parse-able by a computer as Trees do
 not need complicated rules for traversal and other operations. In-fact
 this sounds almost similar to the parse-tree of a
@@ -141,7 +141,7 @@ a look!</p>
 expression <code>(+ 2 4 (+ 2 2))</code> and then it evaluates the internal list
 first. Which is <code>(+ 2 2)</code>. This expression evaluates to <code>4</code>.</p>
 <p>In the tree form this is how the above expression would look</p>
-<p><img alt="double" src="/assets/images/2017-11-30/double.jpg"></p>
+<p><img alt="double" src="assets/images/2017-11-30/double.jpg"></p>
 <p>Then the evaluator <em>substitutes</em> that result to the actual expression
 before continuing on with the evaluation. So now the expression looks
 like this <code>(+ 2 4 4)</code> and then we get the final answer.</p>

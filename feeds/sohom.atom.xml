@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore - Sohom</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/sohom.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2022-07-18T00:00:00+05:30</updated><entry><title>RRusty; Home Server</title><link href="https://signalshore.github.io/blog/2022-07-18-RRusty-Home-Server.html" rel="alternate"></link><published>2022-07-18T00:00:00+05:30</published><updated>2022-07-18T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2022-07-18:/blog/2022-07-18-RRusty-Home-Server.html</id><summary type="html">&lt;p&gt;A live record of my home-server journey and the learnings so far in this endeavour&lt;/p&gt;</summary><content type="html">&lt;p&gt;There be detailed posts about the setup and learnings from each of the sections below.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore - Sohom</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/sohom.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2022-08-01T00:00:00+05:30</updated><entry><title>Anti-Blog (and other updates)</title><link href="https://signalshore.github.io/blog/2022-08-01-Anti-Blog.html" rel="alternate"></link><published>2022-08-01T00:00:00+05:30</published><updated>2022-08-01T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2022-08-01:/blog/2022-08-01-Anti-Blog.html</id><summary type="html">&lt;p&gt;A couple of updates about how I am planning to use this site from now.&lt;/p&gt;</summary><content type="html">&lt;p&gt;For a while I was very dissatissfied with how I read and write stuff.
+The entire system that I had built on top of Emacs is gone as of now. A LOT of things have changed.&lt;/p&gt;
+&lt;p&gt;This is the logical continuation of that train of thought.&lt;/p&gt;
+&lt;p&gt;I have always struggled with the question of how I can add new material to older blogs.
+I also felt that it was pointless to maintain two sets of notes; one more detailed for myself and one less detailed for the blog. A LOT of the material was shared and it felt extremely pointless.&lt;/p&gt;
+&lt;p&gt;The goals that I have for this new system and this site is this.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Single source of truth for articles.&lt;ul&gt;
+&lt;li&gt;A single file will hold all the data about a topic. The goal is for me to be able to read it later.&lt;/li&gt;
+&lt;li&gt;This is a dump of things I know and How i know them.&lt;/li&gt;
+&lt;li&gt;This should be visible from the blog as well as the github repo with any decent markdown viewer. This is non-negotiable because I need to be able to not use the brower to look at my "notes"&lt;/li&gt;
+&lt;li&gt;I will update things on my "notes" as and when I learn new things. I do not need to feel guilty about updating the date etc. etc. &lt;/li&gt;
+&lt;li&gt;These will be for things tagged as "notes"&lt;/li&gt;
+&lt;li&gt;For other things, it will have the normal blog type things.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Other things:
+- Im shifting all the "tracking" to CSV files that work on google-docs and calc.
+- This includes things like books, movies and reading list etc etc.
+- Lets not reinvent the wheel when it comes to spreadsheets.&lt;/p&gt;</content><category term="misc"></category><category term="Tech"></category></entry><entry><title>RRusty; Home Server</title><link href="https://signalshore.github.io/blog/2022-07-18-RRusty-Home-Server.html" rel="alternate"></link><published>2022-07-18T00:00:00+05:30</published><updated>2022-07-18T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2022-07-18:/blog/2022-07-18-RRusty-Home-Server.html</id><summary type="html">&lt;p&gt;A live record of my home-server journey and the learnings so far in this endeavour&lt;/p&gt;</summary><content type="html">&lt;p&gt;There be detailed posts about the setup and learnings from each of the sections below.&lt;/p&gt;
 &lt;h1 id="the-hardware"&gt;The Hardware.&lt;/h1&gt;
 &lt;p&gt;The primary computer is a Raspberry Pi model 4.
 The primary storage is a seagate 5TB drive.
@@ -202,40 +222,40 @@ The charts below are for the 4M tests. Total data being written and read from th
 &lt;p&gt;The data-dump will have all the results for you to look at if you want to.
 There is something really interesting wrt the Raspberry Pi when we use a higher block size. A section will be there that talks about it.&lt;/p&gt;
 &lt;h2 id="laptop-128gb-usb-drive"&gt;Laptop 128Gb Usb drive&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="laptop_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/Laptop/4M/laptop_ssd_4M.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="laptop_ssd_4M" src="assets/2021-07-03-Storage-Benchmarks/SSD_USB/Laptop/4M/laptop_ssd_4M.png"&gt;&lt;/p&gt;
 &lt;h2 id="laptop-5tb-hdd"&gt;Laptop 5TB HDD&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="hdd_laptop_4M" src="/assets/2021-07-03-Storage-Benchmarks/5_TB/Laptop/4M/hdd_laptop_4M.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="hdd_laptop_4M" src="assets/2021-07-03-Storage-Benchmarks/5_TB/Laptop/4M/hdd_laptop_4M.png"&gt;&lt;/p&gt;
 &lt;h2 id="raspberry-pi-128gb-usb-drive"&gt;Raspberry Pi 128GB Usb drive&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_io.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="rpi_ssd_4M" src="assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_io.png"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Disk I/O (4M bs)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_cpu.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="rpi_ssd_4M" src="assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_cpu.png"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;CPU Utilization and Load Average (4M bs)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_temp.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="rpi_ssd_4M" src="assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_temp.png"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Temp (4M bs)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="rpi_ssd_4M" src="assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb.png"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Disk I/O (4k bs)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="rpi_ssd_4M" src="/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb_cpu.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="rpi_ssd_4M" src="assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb_cpu.png"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;CPU Utilization and Load Average (4k bs)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id="raspberry-pi-5tb-hdd"&gt;Raspberry Pi 5TB hdd&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="" src="/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_io.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_io.png"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Disk I/O&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_cpu.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_cpu.png"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;CPU Utilization and Load Average&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_temp.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_temp.png"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Temp&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -277,7 +297,7 @@ There is something really interesting wrt the Raspberry Pi when we use a higher 
 A block is simply the amount of data that the OS can read during a single operation.&lt;/p&gt;
 &lt;p&gt;Thus throughput is basically &lt;code&gt;IOPS * block_size&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;I ran the tests with bs set as 4k and was surprised that the reported values were not as high. Infact they were a lot lower than the disk speed I was getting from a pure &lt;code&gt;rsync&lt;/code&gt; workload. During one such run, I happened to look at the netdata dashboard and discovered that the operations/s was much lower for the rsync workload than the fio workload, even though rsync had a much larger throughput. This gave me the idea that we can in-fact change the bs to get much better results.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="4m_vs_4k" src="/assets/2021-07-03-Storage-Benchmarks/4M_vs_4k.png"&gt;
+&lt;p&gt;&lt;img alt="4m_vs_4k" src="assets/2021-07-03-Storage-Benchmarks/4M_vs_4k.png"&gt;
 Here in this photo we can clearly see the difference that block_size causes. The first write is done using a higher block_size which explains the lower operations per second along with the higher throughput; similarly the second write has lower throughput along with higher operations per second. This is characteristic for lower block_size.&lt;/p&gt;
 &lt;p&gt;Check &lt;a href="https://medium.com/@duhroach/the-impact-of-blocksize-on-persistent-disk-performance-7e50a85b2647"&gt;this&lt;/a&gt; to get a better understanding of block size.&lt;/p&gt;
 &lt;h1 id="conclusion"&gt;Conclusion&lt;/h1&gt;
@@ -311,9 +331,9 @@ The tool that I am using to stress-test the board is &lt;a href="https://github.
 &lt;p&gt;The screws that hold the fan onto the top of the case can come loose. a small annoyance, that needs to be taken care of.&lt;/p&gt;
 &lt;p&gt;Here are some photos of said product.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/case_1.png"&gt;
+&lt;p&gt;&lt;img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/case_1.png"&gt;
 The closed case
-&lt;img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/case_2.png"&gt;
+&lt;img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/case_2.png"&gt;
 The top cover removed. The cover has some gap to aid in airflow.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;It is a plastic case with a fan. The recommended way is to install the fan in a push configuration. This means that the fan will be blowing air onto the CPU heat sink. I am using the stock-heat sink that came with the pi.&lt;/p&gt;
@@ -337,25 +357,25 @@ The blue line represents the temp and the orange line is the CPU-Freq.&lt;/p&gt;
 &lt;p&gt;The Pi throttles itself at 85-C. We only see this behaviour in one of the test cases.&lt;/p&gt;
 &lt;h2 id="bare-board"&gt;Bare-Board&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/bare.out.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/bare.out.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The Pi idles at &lt;code&gt;50-C&lt;/code&gt; and the temperature starts climbing as soon as we start stressing it.
 It settles at &lt;code&gt;75-C&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id="case-no-fan"&gt;Case - No Fan&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/case_only.out.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/case_only.out.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The Pi idles at &lt;code&gt;55-C&lt;/code&gt; and the temperature starts climbing as soon as we start stressing it.
 It settles at &lt;code&gt;85-C&lt;/code&gt; We can see throttling in the chart.&lt;/p&gt;
 &lt;h2 id="fan-33v"&gt;Fan - 3.3V&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3.out.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3.out.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The Pi idles at &lt;code&gt;43-C&lt;/code&gt; and the temperature starts climbing as soon as we start stressing it.
 It settles at &lt;code&gt;60-C&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id="fan-5v"&gt;Fan 5V&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/fan_5.out.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/fan_5.out.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The Pi idles at &lt;code&gt;38-C&lt;/code&gt; and the temperature starts climbing as soon as we start stressing it.
 It settles at &lt;code&gt;52-C&lt;/code&gt;. This was the coolest config, but the fan started making a very shrill noise which was very annoying.&lt;/p&gt;
@@ -365,7 +385,7 @@ Its not too cool, its not too loud.&lt;/p&gt;
 &lt;p&gt;One thing I need to keep in mind is that the day these tests were performed was a rather cool day. So I have not taken the environmental factors into account. Maybe in the summer months, &lt;code&gt;5V&lt;/code&gt; will be neccesary. We will cross that bridge when we get to it.&lt;/p&gt;
 &lt;p&gt;To test my decision, I ran antoher test, this time for 30 mins to see if anythig changes. I was happy with the results.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3_extend.out.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3_extend.out.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id="improvement"&gt;Improvement&lt;/h1&gt;
 &lt;p&gt;I am planning to use the GPIO headers on the PI to automate the on-off situation of the Pi. This way, it can tell the fan when to run and what-not.&lt;/p&gt;
@@ -373,11 +393,11 @@ Its not too cool, its not too loud.&lt;/p&gt;
 &lt;h2 id="data-files"&gt;Data-Files&lt;/h2&gt;
 &lt;p&gt;You can download the files:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/assets/2021-06-20-Raspberry-Pi-Cooling/bare.out"&gt;bare&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/assets/2021-06-20-Raspberry-Pi-Cooling/case_only.out"&gt;case_only&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3.out"&gt;fan_3.3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/assets/2021-06-20-Raspberry-Pi-Cooling/fan_5.out"&gt;fan_5&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3_extend.out"&gt;fan_3.3_extend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="assets/2021-06-20-Raspberry-Pi-Cooling/bare.out"&gt;bare&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="assets/2021-06-20-Raspberry-Pi-Cooling/case_only.out"&gt;case_only&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3.out"&gt;fan_3.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="assets/2021-06-20-Raspberry-Pi-Cooling/fan_5.out"&gt;fan_5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3_extend.out"&gt;fan_3.3_extend&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="misc"></category><category term="CS"></category><category term="Tech"></category></entry><entry><title>TCP - Notes</title><link href="https://signalshore.github.io/blog/2020-11-12-TCP-Notes.html" rel="alternate"></link><published>2020-11-12T00:00:00+05:30</published><updated>2020-11-12T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2020-11-12:/blog/2020-11-12-TCP-Notes.html</id><summary type="html">&lt;p&gt;The tcp is a protocol that is responsible for making sure that small
 packets of data can get to their destinations reliably.&lt;/p&gt;
 &lt;p&gt;It has a vast array of features that are designed so that tcp offers
@@ -414,7 +434,7 @@ these chunks and creates the TCP segments. Then IP information is
 added onto these segments to create IP datagrams. These are the PDUs
 handled by the lower layer (Network). IP datagrams are called &lt;em&gt;packets&lt;/em&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="img" src="/assets/images/tcp/tcp_segment_header.png"&gt;
+&lt;p&gt;&lt;img alt="img" src="assets/images/tcp/tcp_segment_header.png"&gt;
 A TCP segment header. 
 (This is copied form Wikipedia)
 &lt;a id="orgc93f5b9"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -466,7 +486,7 @@ acknowledgement number.&lt;/p&gt;
 &lt;li&gt;Connection Termination&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="img" src="/assets/images/tcp/2020-10-24-13-55-17_tcp_flow.png"&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img alt="img" src="assets/images/tcp/2020-10-24-13-55-17_tcp_flow.png"&gt; &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id="note"&gt;Note&lt;/h3&gt;
 &lt;p&gt;Once Connection is set up, both sides can send data, thus it does
@@ -558,13 +578,13 @@ this state machine is that there are two parts of the state machine we
 need to keep track of. The client and the server.&lt;/p&gt;
 &lt;p&gt;This is the photo of the state machine from &lt;a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol#/media/File:Tcp_state_diagram_fixed_new.svg"&gt;Wikipedia&lt;/a&gt; &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="img" src="/assets/images/tcp/tcp_state.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img" src="assets/images/tcp/tcp_state.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;By Scil100, CC BY-SA 3.0, &lt;a href="https://commons.wikimedia.org/w/index.php?curid=30810617"&gt;https://commons.wikimedia.org/w/index.php?curid=30810617&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This image from IBM makes it quite clear. Look at the Legend for detailed information.
 The states are described below for reference.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="img" src="/assets/images/tcp/tcp_state_1.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img" src="assets/images/tcp/tcp_state_1.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Note on terms:&lt;/p&gt;
 &lt;ul&gt;
@@ -655,11 +675,11 @@ Time-Wait Assasinations. It does this by ignoring &lt;em&gt;RST&lt;/em&gt; when 
 connection is in &lt;em&gt;TIME_WAIT&lt;/em&gt; state. This is good for the server, but
 the client still sees a bad connection phase with a bunch of RSTs.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="img" src="/assets/images/tcp/twa_1.png"&gt;
+&lt;p&gt;&lt;img alt="img" src="assets/images/tcp/twa_1.png"&gt;
 Here is an image from a packet trace dring such an event.
 &lt;br&gt;
 &lt;br&gt;
-&lt;img alt="img" src="/assets/images/tcp/twa_flow_graph.png"&gt;
+&lt;img alt="img" src="assets/images/tcp/twa_flow_graph.png"&gt;
 Here is a Flow&amp;#x2013;Graph of the same packet trace&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a id="org94c1afb"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -814,7 +834,7 @@ exercise to solidify our understanding of how this works.
 The Memory cgroup is used to limit/account the amount of memory that is used by a process.&lt;/p&gt;
 &lt;p&gt;This is how the cgroup we created under the memory subsystem called &lt;strong&gt;demom&lt;/strong&gt; looks just after creation.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="img" src="/assets/images/containers/cg_mem.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img" src="assets/images/containers/cg_mem.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Quick Ref for the cg :&lt;/p&gt;
 &lt;ul&gt;
@@ -844,8 +864,8 @@ The Memory cgroup is used to limit/account the amount of memory that is used by 
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This is how &lt;strong&gt;dmesg&lt;/strong&gt; looks when an OOM-kill occurs
-&lt;img alt="img" src="/assets/images/containers/oom1.png"&gt;
-&lt;img alt="img" src="/assets/images/containers/oom2.png"&gt;&lt;/p&gt;
+&lt;img alt="img" src="assets/images/containers/oom1.png"&gt;
+&lt;img alt="img" src="assets/images/containers/oom2.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Look at this &lt;em&gt;&lt;a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-memory"&gt;Detailed Memory
 Reference&lt;/a&gt;&lt;/em&gt;
@@ -868,7 +888,7 @@ The PID subsystem is used to limit the number of processess that are running (or
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="img" src="/assets/images/containers/pid1.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="img" src="assets/images/containers/pid1.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h6 id="this-is-for-cgroup-v1-there-is-also-cgroup2-which-i-havent-looked-at-yet"&gt;This is for cgroup v1. There is also cgroup2 which I havent looked at yet!&lt;/h6&gt;
 &lt;p&gt;&lt;a id="org3d234e3"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2825,7 +2845,7 @@ found a better way.&lt;/p&gt;
 &lt;p&gt;Its been a long time since I finished this course. I got detracted
 from my plan to start Part B ASAP. &lt;/p&gt;
 &lt;p&gt;I plan to revisit the challenge problems of week 2 and week 3 before
-starting Part B, which should take about a week more.&lt;/p&gt;</content><category term="misc"></category><category term="Learning"></category><category term="CS"></category></entry><entry><title>Kumara-Parvatha and Savandurga</title><link href="https://signalshore.github.io/blog/2019-03-17-Bangalore-Treks.html" rel="alternate"></link><published>2019-03-17T00:00:00+05:30</published><updated>2019-03-17T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2019-03-17:/blog/2019-03-17-Bangalore-Treks.html</id><summary type="html">&lt;p&gt;In the second week of January I had a trip planned to Bangalore. The
+starting Part B, which should take about a week more.&lt;/p&gt;</content><category term="misc"></category><category term="Learning"></category><category term="CS"></category></entry><entry><title>Kumara Parvatha and Savandurga</title><link href="https://signalshore.github.io/blog/2019-03-17-Bangalore-Treks.html" rel="alternate"></link><published>2019-03-17T00:00:00+05:30</published><updated>2019-03-17T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2019-03-17:/blog/2019-03-17-Bangalore-Treks.html</id><summary type="html">&lt;p&gt;In the second week of January I had a trip planned to Bangalore. The
 main goal here was to figure out some work in Bangalore and college. &lt;/p&gt;
 &lt;p&gt;However during the Sandakphu trek some of the trekkers there
 convinced me that Western Ghats is amazing and that I should
@@ -2852,7 +2872,7 @@ Bangalore. Reach Bangalore early morning and then head off to meet
 the other group for the Savandurga trek. Then finish the Savandurga
 trek by 1800 hrs and get back home.&lt;/p&gt;
 &lt;p&gt;Things clearly did not go as planned. They never do.&lt;/p&gt;
-&lt;h1 id="s0-kumaraparvatha"&gt;S0.. Kumaraparvatha ..&lt;/h1&gt;
+&lt;h1 id="so-kumaraparvatha"&gt;So.. Kumaraparvatha ..&lt;/h1&gt;
 &lt;p&gt;Friday turned out to be the day when Richard Stallman was giving the
 talk at RVCE. I HAD to attend it. So, did that; which got over at
 15:00 hrs. The bus was at 20:00. I had 7 hours. I needed to finish
@@ -2892,7 +2912,7 @@ forest office, and also more technical, so if you do not start from
 the forest office before 12 noon, it can get dangerous.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;In this photo we have Sonakshi and Niranjan far into the frame. 
-&lt;img alt="One of the flatter stretches" src="/assets/images/2019-03-17/kum2.jpg"&gt;&lt;/p&gt;
+&lt;img alt="One of the flatter stretches" src="assets/images/2019-03-17/kum2.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;On the way to the top there is a section where you come across a steep
 rock-face which looked inviting. But Sonakshi and Niranjan being the
@@ -2900,7 +2920,7 @@ saner members of the group stopped me from climbing via that route. I
 was disappointed.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The Big rock face is question. (it is Not as steep as it looks)
-&lt;img alt="big rock" src="/assets/images/2019-03-17/kum3.jpg"&gt;&lt;/p&gt;
+&lt;img alt="big rock" src="assets/images/2019-03-17/kum3.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;We reached the top in about 6 hours. We slept for a very very short
 time and had the packed food before starting back. By this time it was
@@ -2908,12 +2928,12 @@ afternoon and the sun was over our heads. We did not have too much
 water with us as well.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;We took some photos from the somewhere near the top&lt;/p&gt;
-&lt;p&gt;&lt;img alt="big rock" src="/assets/images/2019-03-17/kum1.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="big rock" src="assets/images/2019-03-17/kum1.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This is the other side from the same location
-&lt;img alt="big rock" src="/assets/images/2019-03-17/kum4.jpg"&gt;&lt;/p&gt;
+&lt;img alt="big rock" src="assets/images/2019-03-17/kum4.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The first part of the descent was somewhat difficult because of the
 heat, and we ran out of water just before reaching Buttaramane but
@@ -2942,7 +2962,7 @@ Savandurga. I got lucky logistically.&lt;/p&gt;
 &lt;p&gt;Let's end this section with a picture of team Kumaraparvatha. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;TEAM Kumaraparvatha!!
-&lt;img alt="team_kum" src="/assets/images/2019-03-17/team_kum.jpg"&gt;&lt;/p&gt;
+&lt;img alt="team_kum" src="assets/images/2019-03-17/team_kum.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1 id="part-2-savandurga"&gt;Part 2 .. Savandurga..&lt;/h1&gt;
@@ -2957,7 +2977,7 @@ team members expressed their concerns over the difficulty of what
 awaited them.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This is how Savndurga looks from the road.
-&lt;img alt="savnd" src="/assets/images/2019-03-17/savn3.jpg"&gt;&lt;/p&gt;
+&lt;img alt="savnd" src="assets/images/2019-03-17/savn3.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;We reached Savandurga in about 90 minutes.The team was quite worried
 when we saw the monolith. We were making good time, however we
@@ -2976,7 +2996,7 @@ the afternoon sun, but by the time we started it was almost 12 when we
 started.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Look at the gradient.
-&lt;img alt="savnd-grad" src="/assets/images/2019-03-17/savn1.jpg"&gt;&lt;/p&gt;
+&lt;img alt="savnd-grad" src="assets/images/2019-03-17/savn1.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;A friend got really exhausted during the climb and she decided that
 she would not continue. The plan was that she would wait at a resting
@@ -3001,7 +3021,7 @@ pics here.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The view from the top. That is the temple below that we can see.
 That is the Manchanbele reservoir that we can see in the back
-&lt;img alt="savnd-temple" src="/assets/images/2019-03-17/savn2.jpg"&gt;&lt;/p&gt;
+&lt;img alt="savnd-temple" src="assets/images/2019-03-17/savn2.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;On our way back we met the friend who decided to stay back just below
 the spot. She started feeling better so she decided to trek to the top
@@ -3014,13 +3034,13 @@ doing. Its very very very dangerous to run down a hill which is as
 steep as Savandurga. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This is how descending looks. 
-&lt;img alt="savnd-desc" src="/assets/images/2019-03-17/savn4.jpg"&gt;&lt;/p&gt;
+&lt;img alt="savnd-desc" src="assets/images/2019-03-17/savn4.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;We had a mini celebration after descending from the hill. It was
 fun. These folks had completed their very first trek. &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This is the team.
-&lt;img alt="savnd-team" src="/assets/images/2019-03-17/team_savn.jpg"&gt;&lt;/p&gt;
+&lt;img alt="savnd-team" src="assets/images/2019-03-17/team_savn.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;We returned to Bangalore soon enough. I took an hour long nap for the
 major part of the journey back home. The others I believe took some
@@ -3030,18 +3050,18 @@ embarrassing photos of me sleeping.&lt;/p&gt;
 Here are screenshots.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Kumaraparvatha
-&lt;img alt="kumara-gpx" src="/assets/images/2019-03-17/kumara.png"&gt;&lt;/p&gt;
+&lt;img alt="kumara-gpx" src="assets/images/2019-03-17/kumara.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;As we can see, the total time for the recording is 11 hours and 25
 minutes and the total distance recorded is 23.7
-kms. &lt;a href="/assets/files/2019-03-17/KumaraParvatha.gpx.zip"&gt;Here&lt;/a&gt; is the
+kms. &lt;a href="assets/files/2019-03-17/KumaraParvatha.gpx.zip"&gt;Here&lt;/a&gt; is the
 GPX-track for Kumaraparvatha.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Savandurga
-&lt;img alt="savand-gpx" src="/assets/images/2019-03-17/savnd.png"&gt;&lt;/p&gt;
+&lt;img alt="savand-gpx" src="assets/images/2019-03-17/savnd.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;In this trek we covered 5.9 kms in about 4 hours and 9 minutes.
-&lt;a href="/assets/files/2019-03-17/savandurga.gpx.zip"&gt;Here&lt;/a&gt; is the GPX file.&lt;/p&gt;
+&lt;a href="assets/files/2019-03-17/savandurga.gpx.zip"&gt;Here&lt;/a&gt; is the GPX file.&lt;/p&gt;
 &lt;h1 id="the-end"&gt;The End&lt;/h1&gt;
 &lt;p&gt;Overall this was a fun trek. I do think I will return to
 Kumaraparvatha once again after monsoon. This is the time when the
@@ -3050,7 +3070,7 @@ Western Ghats is in its full glory. :-)&lt;/p&gt;
 &lt;p&gt;Oh! BTW;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This is me sleeping. Open mouth for better breathing.
-&lt;img alt="me-sleeping" src="/assets/images/2019-03-17/me.jpg"&gt;&lt;/p&gt;
+&lt;img alt="me-sleeping" src="assets/images/2019-03-17/me.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</content><category term="misc"></category><category term="Travel"></category><category term="Env"></category><category term="Trek"></category></entry><entry><title>Sandakphu Trek</title><link href="https://signalshore.github.io/blog/2019-02-24-Sandakphu-Trek.html" rel="alternate"></link><published>2019-02-24T00:00:00+05:30</published><updated>2019-02-24T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2019-02-24:/blog/2019-02-24-Sandakphu-Trek.html</id><summary type="html">&lt;p&gt;Growing up I've always been interested in trekking; So, naturally when
 a friend suggested that we should go for a trek in 2018, I was kinda
 skeptical and kinda excited. Skeptical mainly because it was a
@@ -3123,7 +3143,7 @@ everyday, which is a welcome change from the normal stuff we are used
 to seeing everyday. :-P&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Lhotse, Everest, Makalu peaks from the right.
-&lt;img alt="Everest" src="/assets/images/2019-02-24/everest.png"&gt;&lt;/p&gt;
+&lt;img alt="Everest" src="assets/images/2019-02-24/everest.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The weather was quite cold which was quite enjoyable for me. I went
 for a walk after dinner to experience the cold and also to test my
@@ -3136,7 +3156,7 @@ Kalipokhri all of us gathered in the hut where we were supposed to
 have dinner a all of us sang. It was a beautiful experience.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Kanchenjunga.                                         &lt;br&gt;
-&lt;img alt="Kanchenjunga" src="/assets/images/2019-02-24/kanchenjunga.png"&gt;&lt;/p&gt;
+&lt;img alt="Kanchenjunga" src="assets/images/2019-02-24/kanchenjunga.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;After dinner I headed out for another walk. I told three people that I
 would be going outside and where I would be going and gave them a
@@ -3167,7 +3187,7 @@ meters. This place was really cold. I helped pitch some toilet tents. &lt;/p&gt;
 the milky-way.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This was our camp location at Sabargram.
-&lt;img alt="camp" src="/assets/images/2019-02-24/camp.png"&gt;&lt;/p&gt;
+&lt;img alt="camp" src="assets/images/2019-02-24/camp.png"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;On 27th we were supposed to reach Phalut which is at 3642 meters and
 then descend back to Gorkhey which is at 2300 meters. This day was too
@@ -3205,7 +3225,7 @@ delayed. We all said our goodbyes and promised to stay in touch. &lt;/p&gt;
 &lt;p&gt;And that was it. My first trek had ended. :-)&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The entire group for the trek
-&lt;img alt="group" src="/assets/images/2019-02-24/team.jpg"&gt;&lt;/p&gt;
+&lt;img alt="group" src="assets/images/2019-02-24/team.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id="what-does-trekking-mean-for-me"&gt;What does trekking mean for me ?&lt;/h2&gt;
 &lt;p&gt;I like being self-reliant. I get a lot of pleasure out of doing
@@ -3237,7 +3257,7 @@ feasible. Maybe someday. Right now, this is good enough. :-)&lt;/p&gt;
 &lt;p&gt;That's it. Thanks for reading. :-)&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I will end this with a picture of me. 
-&lt;img alt="ME" src="/assets/images/2019-02-24/me.jpg"&gt;&lt;/p&gt;
+&lt;img alt="ME" src="assets/images/2019-02-24/me.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</content><category term="misc"></category><category term="Travel"></category><category term="Env"></category><category term="Trek"></category></entry><entry><title>Reduce waste Part 1</title><link href="https://signalshore.github.io/blog/2019-02-03-What-a-waste.html" rel="alternate"></link><published>2019-02-03T00:00:00+05:30</published><updated>2019-02-03T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2019-02-03:/blog/2019-02-03-What-a-waste.html</id><summary type="html">&lt;h1 id="motivation"&gt;Motivation&lt;/h1&gt;
 &lt;p&gt;I've been an arm-chair environmentalist for far too long. &lt;/p&gt;
 &lt;p&gt;Starting 2019 I decided to do something real for a change.  I am
@@ -3286,7 +3306,7 @@ I do think that these travels increased my consumption by some margin. &lt;/p&gt
 &lt;h1 id="so-what-do-we-have-here"&gt;So, what do we have here!&lt;/h1&gt;
 &lt;p&gt;This is a photo of all the stuff I collected. It's grouped into 4 sections&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="Photo of the stuff" src="/assets/images/2019-02-03/waste.png"&gt;
+&lt;p&gt;&lt;img alt="Photo of the stuff" src="assets/images/2019-02-03/waste.png"&gt;
 I apologize for the atrocious photo editing skills&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Anyway, the stuff is divided into 4 groups. &lt;/p&gt;
@@ -3958,7 +3978,7 @@ culminated in a very generous job offer from a company in Mumbai. The
 best part is that this is the most &lt;em&gt;perfect&lt;/em&gt; job that I could hope
 for.  My "official" job title is Linux Administrator, but there is
 more to it.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="that tweet" src="/assets/images/2018-08-06/twitter.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="that tweet" src="assets/images/2018-08-06/twitter.png"&gt;&lt;/p&gt;
 &lt;h5 id="this-is-the-tweet-that-changed-everything-p"&gt;This is the tweet that changed everything... :-P&lt;/h5&gt;
 &lt;h3 id="tldr"&gt;Tl;Dr&lt;/h3&gt;
 &lt;p&gt;I am moving to Mumbai. In fact I leave in like half an hour for my
@@ -4000,7 +4020,7 @@ to a different city and vacating their accommodation of three years.&lt;/p&gt;
 &lt;p&gt;So technically I can literally stuff everything I own into three
 bags. :-) &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img alt="that tweet" src="/assets/images/2018-08-06/luggage.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="that tweet" src="assets/images/2018-08-06/luggage.jpg"&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;I have been very very fortunate to meet/know some of the people that I
 know. All of them have had some impact on my life. I wanted to list
@@ -4225,11 +4245,11 @@ really very shocking (maybe I was expecting something else :-P)&lt;/p&gt;
 &lt;h2 id="results"&gt;Results&lt;/h2&gt;
 &lt;h3 id="correlation-between-co2-per-capita-and-gdp-per-capita-for-india"&gt;Correlation between CO2 per capita and GDP per capita for INDIA&lt;/h3&gt;
 &lt;p&gt;Here is the graph that shows the CO2 emissions per capita from 1960 to 2011.
-&lt;img alt="India CO2 per capita" src="/assets/images/2018-06-21/indiaCo2.png"&gt;&lt;/p&gt;
+&lt;img alt="India CO2 per capita" src="assets/images/2018-06-21/indiaCo2.png"&gt;&lt;/p&gt;
 &lt;p&gt;Next, let us see the GDP from 1960 to 2014.
-&lt;img alt="India GDP per capita" src="/assets/images/2018-06-21/indiaGdp.png"&gt;&lt;/p&gt;
+&lt;img alt="India GDP per capita" src="assets/images/2018-06-21/indiaGdp.png"&gt;&lt;/p&gt;
 &lt;p&gt;Now we will use a scatter plot to look at the correlation.
-&lt;img alt="India correlation" src="/assets/images/2018-06-21/indiaCor.png"&gt;&lt;/p&gt;
+&lt;img alt="India correlation" src="assets/images/2018-06-21/indiaCor.png"&gt;&lt;/p&gt;
 &lt;p&gt;We have calculated a correlation value of 0.967 using the
 the
 &lt;a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.corrcoef.html"&gt;numpy.corrcoef&lt;/a&gt; method. This
@@ -4238,28 +4258,28 @@ the
 &lt;a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient"&gt;Pearson correlation coefficient&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id="correlation-between-co2-per-capita-and-gdp-per-capita-for-usa"&gt;Correlation between CO2 per Capita and GDP per capita for USA&lt;/h3&gt;
 &lt;p&gt;Here is the graph that shows the CO2 emissions per capita from 1960 to 2011.
-&lt;img alt="USA CO2 per capita" src="/assets/images/2018-06-21/usaCo2.png"&gt;&lt;/p&gt;
+&lt;img alt="USA CO2 per capita" src="assets/images/2018-06-21/usaCo2.png"&gt;&lt;/p&gt;
 &lt;p&gt;Next, let us see the GDP from 1960 to 2014.
-&lt;img alt="USA GDP per capita" src="/assets/images/2018-06-21/usaGdp.png"&gt;&lt;/p&gt;
+&lt;img alt="USA GDP per capita" src="assets/images/2018-06-21/usaGdp.png"&gt;&lt;/p&gt;
 &lt;p&gt;Now we will use a scatter plot to look at the correlation.
-&lt;img alt="USA correlation" src="/assets/images/2018-06-21/usaCor.png"&gt;&lt;/p&gt;
+&lt;img alt="USA correlation" src="assets/images/2018-06-21/usaCor.png"&gt;&lt;/p&gt;
 &lt;p&gt;We have calculated a correlation value of 0.067 which is almost negligible.&lt;/p&gt;
 &lt;p&gt;NOTE: Can we take a moment here and just marvel at the staggering difference in the Y-axis vales for the CO2 emissions per capita and the GDP per capita vales for India and USA.&lt;/p&gt;
 &lt;p&gt;For India the range of the Y-axis of the CO2 emissions is 0-2.0 metric tons per capita while the same range is 0-25 metric tons per capita or the USA.&lt;/p&gt;
 &lt;p&gt;Similarly the range of the Y-axis of GDP per capita is 0-1200 US for India while the same range is 0-50000 US$ for the USA. &lt;/p&gt;
 &lt;h3 id="co2-emissions-by-fuel-types-in-india-and-usa"&gt;CO2 emissions by fuel types in India and USA&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="India State" src="/assets/images/2018-06-21/indiaState.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="India State" src="assets/images/2018-06-21/indiaState.png"&gt;&lt;/p&gt;
 &lt;p&gt;In this we can see that most of CO2 emissions in India are due to solid fuels. &lt;/p&gt;
-&lt;p&gt;&lt;img alt="USA State" src="/assets/images/2018-06-21/usaState.png"&gt;
+&lt;p&gt;&lt;img alt="USA State" src="assets/images/2018-06-21/usaState.png"&gt;
 In USA the major source of CO2 emission is from the combustion of liquid forms of fuel. &lt;/p&gt;
 &lt;h3 id="co2-emissions-by-economic-activities"&gt;CO2 emissions by economic activities&lt;/h3&gt;
 &lt;p&gt;Now in this graph we show the different sets of economic activities that are responsible for CO2 emissions.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="India per" src="/assets/images/2018-06-21/indiaPer.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="India per" src="assets/images/2018-06-21/indiaPer.png"&gt;&lt;/p&gt;
 &lt;p&gt;As we can see that the major contributor of CO2 emissions in India is
 the production of Electricity and Heating, followed by the
 Manufacturing and Construction related activities.&lt;/p&gt;
 &lt;p&gt;Now, let us look at the graph for the USA.
-&lt;img alt="USA per" src="/assets/images/2018-06-21/usaPer.png"&gt;&lt;/p&gt;
+&lt;img alt="USA per" src="assets/images/2018-06-21/usaPer.png"&gt;&lt;/p&gt;
 &lt;p&gt;These two graphs are more or less similar in nature with one major
 difference. In the USA the Transportation sector is th second largest
 contributor to CO2 emissions unlike in India where the Manufacturing
@@ -4590,9 +4610,9 @@ for &lt;a href="https://en.wikipedia.org/wiki/Currying"&gt;Currying&lt;/a&gt;&lt
 &lt;p&gt;Surprisingly I met a bunch of classmates from college who were having some family festival at a temple right in the foot of the hill. They invited me to have lunch with them when I come back and also allowed to keep my bicycle in their house. This was a welcome change to the trip plan. :-)&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h4 id="some-photos"&gt;Some photos&lt;/h4&gt;
-&lt;p&gt;&lt;img alt="somewhere on Magdi Road" src="/assets/images/2018-04-10/A1.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="somewhere on Magdi Road" src="/assets/images/2018-04-10/A2.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="somewhere on Magdi Road" src="/assets/images/2018-04-10/A3.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="somewhere on Magdi Road" src="assets/images/2018-04-10/A1.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="somewhere on Magdi Road" src="assets/images/2018-04-10/A2.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="somewhere on Magdi Road" src="assets/images/2018-04-10/A3.jpg"&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="part-b-trekking"&gt;Part B - Trekking&lt;/h2&gt;
 &lt;p&gt;This was my first time to Savandurga so I had no idea about what to expect and what not to expect. So with a clear head I approached the base of the hill. To my surprise the hill is marked with white arrows that show you the way around the hill to the top. Even though the route was marked around the hill the climb was in no way easier. &lt;/p&gt;
@@ -4605,17 +4625,17 @@ for &lt;a href="https://en.wikipedia.org/wiki/Currying"&gt;Currying&lt;/a&gt;&lt
 &lt;p&gt;Before starting the next leg of the trip I waited at my friends place for about 2 hours and had a delicious lunch. &lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h4 id="some-photos_1"&gt;Some photos&lt;/h4&gt;
-&lt;p&gt;&lt;img alt="on the hill" src="/assets/images/2018-04-10/B1.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="on the hill" src="assets/images/2018-04-10/B1.jpg"&gt;&lt;/p&gt;
 &lt;h6 id="this-is-me-at-the-bottom-of-the-hill-"&gt;This is me at the bottom of the hill. :-)&lt;/h6&gt;
-&lt;p&gt;&lt;img alt="on the hill" src="/assets/images/2018-04-10/B2.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="on the hill" src="/assets/images/2018-04-10/B3.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="on the hill" src="/assets/images/2018-04-10/B4.jpg"&gt;
+&lt;p&gt;&lt;img alt="on the hill" src="assets/images/2018-04-10/B2.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="on the hill" src="assets/images/2018-04-10/B3.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="on the hill" src="assets/images/2018-04-10/B4.jpg"&gt;
 &lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h4 id="these-are-from-the-very-top-of-the-hill-"&gt;These are from the very top of the hill. :-)&lt;/h4&gt;
-&lt;p&gt;&lt;img alt="on the hill" src="/assets/images/2018-04-10/Btop1.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="on the hill" src="assets/images/2018-04-10/Btop1.jpg"&gt;&lt;/p&gt;
 &lt;h6 id="that-is-the-temple-on-the-top-of-the-hill"&gt;That is the temple on the top of the hill&lt;/h6&gt;
-&lt;p&gt;&lt;img alt="on the hill" src="/assets/images/2018-04-10/Btop2.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="on the hill" src="/assets/images/2018-04-10/Btop3.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="on the hill" src="assets/images/2018-04-10/Btop2.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="on the hill" src="assets/images/2018-04-10/Btop3.jpg"&gt;&lt;/p&gt;
 &lt;h6 id="that-is-the-manchanbele-dam-reservoir-in-the-distance"&gt;That is the Manchanbele Dam reservoir in the distance&lt;/h6&gt;
 &lt;hr&gt;
 &lt;h2 id="part-c-returning"&gt;Part C - Returning&lt;/h2&gt;
@@ -4625,11 +4645,11 @@ for &lt;a href="https://en.wikipedia.org/wiki/Currying"&gt;Currying&lt;/a&gt;&lt
 &lt;p&gt;I was enjoying the riding so I decided to skip the IDSN and Dodda Alada Mara and cycle directly to the Outer Ring Road and then follow the Outer Ring Road to my home. This is fairly uneventful but at least the road was nice. I stopped in the way to have tender coconut. These are really great fruits. :-)&lt;/p&gt;
 &lt;p&gt;I reached my home at about 1800 hrs. &lt;/p&gt;
 &lt;p&gt;&lt;br&gt;
-&lt;img alt="on the way to Manchanbele" src="/assets/images/2018-04-10/C1.jpg"&gt;&lt;/p&gt;
+&lt;img alt="on the way to Manchanbele" src="assets/images/2018-04-10/C1.jpg"&gt;&lt;/p&gt;
 &lt;h6 id="the-narrow-twisty-road-to-manchanbele-dam-it-was-really-blissful"&gt;The narrow twisty road to Manchanbele Dam. (it was really blissful)&lt;/h6&gt;
-&lt;p&gt;&lt;img alt="the dam itself" src="/assets/images/2018-04-10/C2.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="the dam itself" src="assets/images/2018-04-10/C2.jpg"&gt;&lt;/p&gt;
 &lt;h6 id="the-dam-itself"&gt;The Dam itself!!&lt;/h6&gt;
-&lt;p&gt;&lt;img alt="the reservoir" src="/assets/images/2018-04-10/C3.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="the reservoir" src="assets/images/2018-04-10/C3.jpg"&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="aftermath"&gt;Aftermath&lt;/h2&gt;
 &lt;p&gt;Even though the trip covered somewhat less distance than my previous trips, I think this trip was lot more straining than the previous ones. &lt;/p&gt;
@@ -4938,7 +4958,7 @@ getting the equipment it was also my responsibility to check if all
 the NodeMCUs were working or not. This was the most fun part of the
 whole exercise. I ended up making a temporary production line sort of
 thing so as to optimize my testing and packing routine. :-P&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Iot" src="/assets/images/2018-02-16/iot.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Iot" src="assets/images/2018-02-16/iot.jpg"&gt;&lt;/p&gt;
 &lt;h6 id="iot-team-some-are-missing-some-are-extra"&gt;Iot team (some are missing, some are extra)&lt;/h6&gt;
 &lt;h2 id="being-a-speaker"&gt;Being a speaker&lt;/h2&gt;
 &lt;p&gt;I was a speaker at this camp. This was the most scary part for me. I
@@ -4986,7 +5006,7 @@ phones and switched on their flashlights and pointed it towards the
 stage. It was a beautiful moment. It made me realize that as long as
 we are united, we can do anything we want to and nothing is
 impossible.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="lights!!" src="/assets/images/2018-02-16/light.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="lights!!" src="assets/images/2018-02-16/light.jpg"&gt;&lt;/p&gt;
 &lt;h6 id="people-holding-up-lights"&gt;People holding up lights!!&lt;/h6&gt;
 &lt;h2 id="meeting-new-people"&gt;Meeting new people&lt;/h2&gt;
 &lt;p&gt;Meeting new people is always fun and I really enjoy meeting new
@@ -5028,13 +5048,13 @@ serving food whenever I could. I like doing this because this means
 that I can interact with everyone even if it is for a short time. I
 also threw in some weird pleasantries like "happy lunching" and so
 on! :-P&lt;/p&gt;
-&lt;p&gt;&lt;img alt="people serving breakfast" src="/assets/images/2018-02-16/food.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="people serving breakfast" src="assets/images/2018-02-16/food.jpg"&gt;&lt;/p&gt;
 &lt;h6 id="people-serving-breakfast"&gt;People serving breakfast&lt;/h6&gt;
 &lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;I think I have covered everything that I wanted to. If not I think I
 will add/edit something later on.&lt;/p&gt;
 &lt;p&gt;Group photo at the end of the camp.
-&lt;img alt="group pic" src="/assets/images/2018-02-16/group.jpg"&gt;&lt;/p&gt;</content><category term="misc"></category><category term="Misc"></category><category term="Work"></category></entry><entry><title>Scheme - Part 4 - Higher Order Procedures (contd.)</title><link href="https://signalshore.github.io/blog/2018-02-06-Scheme-Part-4.html" rel="alternate"></link><published>2018-02-06T00:00:00+05:30</published><updated>2018-02-06T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-06:/blog/2018-02-06-Scheme-Part-4.html</id><summary type="html">&lt;h4 id="recap"&gt;Recap&lt;/h4&gt;
+&lt;img alt="group pic" src="assets/images/2018-02-16/group.jpg"&gt;&lt;/p&gt;</content><category term="misc"></category><category term="Misc"></category><category term="Work"></category></entry><entry><title>Scheme - Part 4 - Higher Order Procedures (contd.)</title><link href="https://signalshore.github.io/blog/2018-02-06-Scheme-Part-4.html" rel="alternate"></link><published>2018-02-06T00:00:00+05:30</published><updated>2018-02-06T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-06:/blog/2018-02-06-Scheme-Part-4.html</id><summary type="html">&lt;h4 id="recap"&gt;Recap&lt;/h4&gt;
 &lt;p&gt;In the previous post we talked about the first part of what it means to be a Higher-Order Function.&lt;/p&gt;
 &lt;p&gt;In this post we will talk about the second part of that idea. And, we will explore Higher-Order functions and First Class Functions/Citizens. &lt;/p&gt;
 &lt;h3 id="procedures-as-returned-values"&gt;Procedures as returned values&lt;/h3&gt;
@@ -5170,7 +5190,7 @@ Such a definition looks like this ..&lt;/p&gt;
 &lt;p&gt;This is my last semester in college so things are a bit hectic, so delays should be expected. &lt;/p&gt;
 &lt;p&gt;I went to FSMK camp 2018 last week and I met a couple of my readers. That was fun. :-) (and cheers to you people!!)&lt;/p&gt;
 &lt;p&gt;That is it!! (for now)&lt;/p&gt;
-&lt;p&gt;p.s. The code for this post can be found &lt;a href="/assets/files/scheme-4.scm"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="misc"></category><category term="CS"></category><category term="Scheme"></category></entry><entry><title>Open Access</title><link href="https://signalshore.github.io/blog/2018-02-01-Open-Access.html" rel="alternate"></link><published>2018-02-01T00:00:00+05:30</published><updated>2018-02-01T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-01:/blog/2018-02-01-Open-Access.html</id><summary type="html">&lt;h2 id="what-is-open-access"&gt;What is Open Access ?&lt;/h2&gt;
+&lt;p&gt;p.s. The code for this post can be found &lt;a href="assets/files/scheme-4.scm"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="misc"></category><category term="CS"></category><category term="Scheme"></category></entry><entry><title>Open Access</title><link href="https://signalshore.github.io/blog/2018-02-01-Open-Access.html" rel="alternate"></link><published>2018-02-01T00:00:00+05:30</published><updated>2018-02-01T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-01:/blog/2018-02-01-Open-Access.html</id><summary type="html">&lt;h2 id="what-is-open-access"&gt;What is Open Access ?&lt;/h2&gt;
 &lt;p&gt;According to &lt;a href="https://en.wikipedia.org/wiki/Open_access"&gt;Wikipedia&lt;/a&gt;
 Open access refers to online research outputs that are free of all
 restrictions on access (e.g. access tolls) and free of many
@@ -5679,7 +5699,7 @@ as tree such that
 - Every other element of that list is a child of that node and are the
   operators for that operand.&lt;/p&gt;
 &lt;p&gt;The tree of the expression &lt;code&gt;(+ 2 3)&lt;/code&gt; will look like this&lt;/p&gt;
-&lt;p&gt;&lt;img alt="single tree" src="/assets/images/2017-11-30/single.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="single tree" src="assets/images/2017-11-30/single.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;A LISP program is very easily parse-able by a computer as Trees do
 not need complicated rules for traversal and other operations. In-fact
 this sounds almost similar to the parse-tree of a
@@ -5722,7 +5742,7 @@ a look!&lt;/p&gt;
 expression &lt;code&gt;(+ 2 4 (+ 2 2))&lt;/code&gt; and then it evaluates the internal list
 first. Which is &lt;code&gt;(+ 2 2)&lt;/code&gt;. This expression evaluates to &lt;code&gt;4&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;In the tree form this is how the above expression would look&lt;/p&gt;
-&lt;p&gt;&lt;img alt="double" src="/assets/images/2017-11-30/double.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="double" src="assets/images/2017-11-30/double.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Then the evaluator &lt;em&gt;substitutes&lt;/em&gt; that result to the actual expression
 before continuing on with the evaluation. So now the expression looks
 like this &lt;code&gt;(+ 2 4 4)&lt;/code&gt; and then we get the final answer.&lt;/p&gt;
@@ -5839,7 +5859,7 @@ approached computer science and programming in general. I want to
 share those.&lt;/p&gt;
 &lt;h3 id="lets-start"&gt;Lets start&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Let us write a program&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="sum pic" src="/assets/images/2017-11-20/sum.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="sum pic" src="assets/images/2017-11-20/sum.png"&gt;&lt;/p&gt;
 &lt;p&gt;(these are cropped screen-shots of Emacs)&lt;/p&gt;
 &lt;p&gt;This program takes three numbers and adds them. This is also how the
 scheme syntax looks. Scheme syntax is
@@ -5853,10 +5873,10 @@ symbolic expressions.&lt;/p&gt;
 &lt;p&gt;In scheme we use the "define" keyword to define a procedure.&lt;/p&gt;
 &lt;p&gt;Its syntax is like this &lt;code&gt;(define (&amp;lt;name&amp;gt; &amp;lt;formal parameters) (&amp;lt;body&amp;gt;))&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Let us define a procedure&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="sumProcedure" src="/assets/images/2017-11-20/procedureSum.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="sumProcedure" src="assets/images/2017-11-20/procedureSum.png"&gt;&lt;/p&gt;
 &lt;p&gt;This is how the procedure looks. The name of the procedure is "sum" and it takes in two numbers and produces their sum.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Let us write something a bit complicated&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="sumOfSquare" src="/assets/images/2017-11-20/sumOfSquares.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="sumOfSquare" src="assets/images/2017-11-20/sumOfSquares.png"&gt;&lt;/p&gt;
 &lt;p&gt;This procedure uses the previous "sum" procedure to compute the sum of
 the square of two numbers. I this process you should see another
 procedure that we have defined which is called "square". This is an
@@ -5992,7 +6012,7 @@ optimum carrying requirements
 - My helmet&lt;/p&gt;
 &lt;p&gt;Here is the full inventory laid out for a photo. Note that the tube is
 missing because I forgot to keep it
-there.  &lt;img alt="Stuff I carried" src="/assets/images/2017-11-08/contents.jpg"&gt;&lt;/p&gt;
+there.  &lt;img alt="Stuff I carried" src="assets/images/2017-11-08/contents.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;I fit a bottle holder on the cycle and put a 1 Liter bottle
 there. Also I used an attachment to fix the portable pump onto the
 frame of the cycle itself. So in the end I was carrying about 2
@@ -6010,7 +6030,7 @@ checked the indexing of the gears, loaded up the gears, dressed up for
 the event and Left. :-P I left at 5:30 in the morning which was a mere
 half hour behind schedule.&lt;/p&gt;
 &lt;p&gt;This is how it looked fully loaded.
-&lt;img alt="Fully Loaded" src="/assets/images/2017-11-08/fullyLoaded.jpg"&gt;&lt;/p&gt;
+&lt;img alt="Fully Loaded" src="assets/images/2017-11-08/fullyLoaded.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;The first leg of the journey was amazing without any hiccups. The
 weather was amazing, it was cool and the sun was merciful. I crossed
 the "Welcome to Tumkur" sign on the highway at 8:22. So this leg took
@@ -6020,7 +6040,7 @@ average speed of 20 kmph which is not at all bad especially if we
 consider the fact this is my first 100km ride and my third long
 distance ride in my life (yes!!).&lt;/p&gt;
 &lt;p&gt;Here is a pic. :-P
-&lt;img alt="Welcome to Tumkur" src="/assets/images/2017-11-08/welcomeToTumkur.jpg"&gt;&lt;/p&gt;
+&lt;img alt="Welcome to Tumkur" src="assets/images/2017-11-08/welcomeToTumkur.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Then I stopped at a bakery to have some jam-bun (white-bread + jam)
 which was good decision as I think that this gave me more than enough
 energy and also some well-needed rest for my legs. I also refilled my
@@ -6028,7 +6048,7 @@ water bottle. I had used only about 750ml out of the total water that
 I was carrying.&lt;/p&gt;
 &lt;p&gt;Weird thing. There was a distance marker at Tumkur that said that
 Bangalore was 70kms from that point. Here it is.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="weird distance marker" src="/assets/images/2017-11-08/signBoard1.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="weird distance marker" src="assets/images/2017-11-08/signBoard1.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;This was very unsettling because this was weird, conflicting and new
 information. Then it hit me that maybe what is Bangalore and what is
 Tumkur is not fixed. Maybe they were measuring Bangalore from that
@@ -6046,22 +6066,22 @@ especially on a sunny day) for multiples times. I think I had to push
 my cycle about 4 or 5 times. I did not push them too much, maybe just
 about 1 km or so. But yeah these were some well needed rests.&lt;/p&gt;
 &lt;p&gt;This is a pic when I was resting under a tree. 
-&lt;img alt="Random Stop" src="/assets/images/2017-11-08/randomStop.jpg"&gt;&lt;/p&gt;
+&lt;img alt="Random Stop" src="assets/images/2017-11-08/randomStop.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;I reached my hostel at 12:30 which was over 6 hours. I am actually very
 surprised that I managed to maintain a decent 20kmps overall. :-P&lt;/p&gt;
 &lt;h3 id="photos"&gt;PHOTOS!!!&lt;/h3&gt;
 &lt;p&gt;Did I mention that I took photos :-P ? (I absolutely love the camera
 in this new phone :-) )&lt;/p&gt;
 &lt;p&gt;This was just before starting right in front of my hostel gate.
-&lt;img alt="Starting" src="/assets/images/2017-11-08/justStarting.jpg"&gt;&lt;/p&gt;
+&lt;img alt="Starting" src="assets/images/2017-11-08/justStarting.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;This was a random location where I stopped
-&lt;img alt="random" src="/assets/images/2017-11-08/firstStop.jpg"&gt;&lt;/p&gt;
+&lt;img alt="random" src="assets/images/2017-11-08/firstStop.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;A random tree with a random hill in the background.
-&lt;img alt="random" src="/assets/images/2017-11-08/randomShot1.jpg"&gt;&lt;/p&gt;
+&lt;img alt="random" src="assets/images/2017-11-08/randomShot1.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;A random hill with weird looking clouds
-&lt;img alt="random" src="/assets/images/2017-11-08/randomShot2.jpg"&gt;&lt;/p&gt;
+&lt;img alt="random" src="assets/images/2017-11-08/randomShot2.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;The not-random sun behind weird clouds
-&lt;img alt="random" src="/assets/images/2017-11-08/randomShot3.jpg"&gt;&lt;/p&gt;
+&lt;img alt="random" src="assets/images/2017-11-08/randomShot3.jpg"&gt;&lt;/p&gt;
 &lt;h3 id="conclusion"&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;It was super fun and I think that I will keep on doing this again and
 again. Next goal is Mysore. :-P&lt;/p&gt;
@@ -6070,15 +6090,15 @@ phenomenal. I had no idea it would be this amazing.&lt;/p&gt;
 &lt;p&gt;Here is what OsmAnd has to say about the trip with Speed (Orange) and
 Altitude (Blue) on the same graph. I think we can clearly see the
 correlation between the altitude and the speed.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="osmand Overall" src="/assets/images/2017-11-08/osmandBoth.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="osmand Overall" src="assets/images/2017-11-08/osmandBoth.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;The speed part of the GPX track is also interesting which says my
 maximum speed was 46 km/hr which was just for a short while during the
 starting phase. I think this was during the descend from my hostel
 towards jalahalli via Tumkur Road.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="osmand speed" src="/assets/images/2017-11-08/osmandSpeed.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="osmand speed" src="assets/images/2017-11-08/osmandSpeed.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Here is
 the
-&lt;a href="/assets/files/2017-11-08/2017-11-02_05-39_Thu(100KM).gpx"&gt;GPX track&lt;/a&gt;
+&lt;a href="assets/files/2017-11-08/2017-11-02_05-39_Thu(100KM).gpx"&gt;GPX track&lt;/a&gt;
 just in case.&lt;/p&gt;
 &lt;p&gt;p.s. this was longer than I expected it would be. :-P&lt;/p&gt;</content><category term="misc"></category><category term="Cycling"></category><category term="Travel"></category></entry><entry><title>My First Bicycle</title><link href="https://signalshore.github.io/blog/2017-10-26-My-First-Bicycle.html" rel="alternate"></link><published>2017-10-26T00:00:00+05:30</published><updated>2017-10-26T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-10-26:/blog/2017-10-26-My-First-Bicycle.html</id><summary type="html">&lt;h3 id="prologue"&gt;Prologue&lt;/h3&gt;
 &lt;p&gt;I have been interested in bicycles for as long as I can remember. For
@@ -6099,7 +6119,7 @@ buy one myself. :-)&lt;/p&gt;
 at IISc and he was going home after completing his studies. He had
 really cared for this cycle. It is about 5 years old but the
 components are really really well maintained. &lt;/p&gt;
-&lt;p&gt;Here it is. &lt;img alt="My cycle pic" src="/assets/images/2017-10-26/normal.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Here it is. &lt;img alt="My cycle pic" src="assets/images/2017-10-26/normal.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Before riding a premium cycle I had no idea that premium bicycles were
 this good. The first time I rode a premium bicycle was a btwin
 original. I had borrowed this cycle from Arun and we went for a 50k
@@ -6140,7 +6160,7 @@ wheels and stuff. It was a great experience.&lt;/p&gt;
 for a quick ride because of an emergency.&lt;/p&gt;
 &lt;p&gt;I was planning to clean the chain using kerosene but that never
 happened. It's on my to-do list though!&lt;/p&gt;
-&lt;p&gt;Here is a photo of the process. &lt;img alt="Cleaning" src="/assets/images/2017-10-26/clean.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Here is a photo of the process. &lt;img alt="Cleaning" src="assets/images/2017-10-26/clean.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;blue&gt; What is so special about cycling anyway ?  &lt;/blue&gt; &lt;/p&gt;
 &lt;p&gt;Even though I can not put a finger on it, I would it is the open-ness
 of the whole system that appeals to me at a personal level. As much as
@@ -6375,18 +6395,18 @@ Notice the '/' in the command he typed, Yep true story. Completely nuked all the
 &lt;p&gt;Now this is where we will trace the thinking that enabled us to get back almost all of our data. &lt;/p&gt;
 &lt;p&gt;The First thing that we did was to unmount the affected partitions so as stop any data being overwritten on those partitions. This would increase the chances of getting most of our data back.&lt;/p&gt;
 &lt;p&gt;Then we downloaded &lt;a href="https://www.cgsecurity.org/wiki/PhotoRec"&gt;PhotoRec&lt;/a&gt; ( in Arch it is packaged with the TestDisk package ). We started PhotoRec form the terminal and followed the steps to select the partition we wanted to recover and also we had to select the partition where the recovered files would be stored. It is recommended that the partition where you store the recovered files and the partition that you want to recover data from be different partitions as this would reduce the chances of the old data being overwritten. &lt;/p&gt;
-&lt;p&gt;Now after this you might see something like this. &lt;img alt="PhotoRec working" src="/assets/images/2017-07-20/photorec.png"&gt;.&lt;/p&gt;
+&lt;p&gt;Now after this you might see something like this. &lt;img alt="PhotoRec working" src="assets/images/2017-07-20/photorec.png"&gt;.&lt;/p&gt;
 &lt;p&gt;This is normal and its perfectly fine to go about doing other stuff that you have to do while PhotoRec "walks" through the file-system and recovers files for you. &lt;/p&gt;
 &lt;p&gt;One thing we should remember is that the recovery part is not such a pain! PhotoRec is amazing and does an amazing job. The main pain is actually picking up the files that YOU want from he whole bunch of recovered files. This is because since PhotoRec does not have any method to determine if the deleted files were deleted accidentally or not, it recovers everything that was deleted and not overwritten. Thus we have a LOT of work to do. &lt;/p&gt;
 &lt;h3 id="after-the-recovery"&gt;After the recovery&lt;/h3&gt;
 &lt;p&gt;These are some of the things that PhotoRec does after recovering the files.
-* Stores everything under multiple &lt;code&gt;recup_dir.&amp;lt;integer&amp;gt;&lt;/code&gt; directories. It looks something like this &lt;img alt="recovery ls" src="/assets/images/2017-07-20/reco_ls.png"&gt;
+* Stores everything under multiple &lt;code&gt;recup_dir.&amp;lt;integer&amp;gt;&lt;/code&gt; directories. It looks something like this &lt;img alt="recovery ls" src="assets/images/2017-07-20/reco_ls.png"&gt;
 * Every file other than text files are properly named. As in other than text files all other files have their proper extensions. Thus PhotoRec doesn't mix up JPEG and PNG files.
 * That being said it does mix up text files. As in recovered Java files would sometimes be named as C++ header files and so on.
 * PhotoRec also recovers ELF files which are nothing but executable files.&lt;/p&gt;
 &lt;p&gt;&lt;blue&gt; How do we go about sorting this mess ?&lt;/blue&gt;
 Our first idea was to launch &lt;a href="http://nongnu.org/ranger/"&gt;ranger&lt;/a&gt; and inspect every single directory and delete directories if the contents didn't feel too important. Something like this.
-&lt;img alt="manual" src="/assets/images/2017-07-20/manual.png"&gt;
+&lt;img alt="manual" src="assets/images/2017-07-20/manual.png"&gt;
 But there was a major flaw with this system. There were a lot of files in those directories and going through each one of them would be a tedious and a very very stupid thing to do. &lt;/p&gt;
 &lt;p&gt;So we started making a list of the things that we lost and the things that we wanted to recovered from the mess. We figured that if we could not remember something that we had lost them we probably did not need it in the first place. Thus we figured that the most important stuff in the data directory ware the scripts that we had written for our Arch System. We also realized that we mostly needed text files from this partition recovery so we could delete all the non-text files and thus we started this massive assault on all non essential files. &lt;/p&gt;
 &lt;p&gt;Initially we were writing scripts like &lt;/p&gt;
@@ -6406,11 +6426,11 @@ But there was a major flaw with this system. There were a lot of files in those 
 
 &lt;p&gt;Now comes the interesting part. Remember those scripts that we wrote. We had a fairly good idea about the contents of those scripts so we could do a recursive grep with those keywords and BOOM! &lt;/p&gt;
 &lt;p&gt;This is the first script which had a lot of i3-msg in it.
-&lt;img alt="i3-msg" src="/assets/images/2017-07-20/i3-msg.png"&gt;
+&lt;img alt="i3-msg" src="assets/images/2017-07-20/i3-msg.png"&gt;
 Similarly we found all the other scripts.&lt;/p&gt;
 &lt;h3 id="the-second-partition"&gt;The Second Partition&lt;/h3&gt;
 &lt;p&gt;This partition posed a different kind of challenge. We wanted to recover all the images that we had. We ran PhotoRec with the option that would only recover only the JPEG files. But even after that we had about 12000+ JPEG files. Moreover inspection with ranger showed that certain files were duplicated. To confirm our assumption we check the MD5 hash of two such files.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="duplicate" src="/assets/images/2017-07-20/dupli.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="duplicate" src="assets/images/2017-07-20/dupli.png"&gt;&lt;/p&gt;
 &lt;p&gt;As you can see both the files have the same MD5 hash and thus they are essentially the same files. So now we needed a script that would sort the duplicate files out.&lt;/p&gt;
 &lt;p&gt;We followed the instructions in this article and installed fdupes and let it run amok and remove all the duplicate files we had.&lt;/p&gt;
 &lt;p&gt;Also we figured out that there were a lot of files that were 100kb or less. These were thumbnail files we believe. So we did this&lt;/p&gt;

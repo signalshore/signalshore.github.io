@@ -89,9 +89,9 @@ The tool that I am using to stress-test the board is <a href="https://github.com
 <p>The screws that hold the fan onto the top of the case can come loose. a small annoyance, that needs to be taken care of.</p>
 <p>Here are some photos of said product.</p>
 <blockquote>
-<p><img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/case_1.png">
+<p><img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/case_1.png">
 The closed case
-<img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/case_2.png">
+<img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/case_2.png">
 The top cover removed. The cover has some gap to aid in airflow.</p>
 </blockquote>
 <p>It is a plastic case with a fan. The recommended way is to install the fan in a push configuration. This means that the fan will be blowing air onto the CPU heat sink. I am using the stock-heat sink that came with the pi.</p>
@@ -115,25 +115,25 @@ The blue line represents the temp and the orange line is the CPU-Freq.</p>
 <p>The Pi throttles itself at 85-C. We only see this behaviour in one of the test cases.</p>
 <h2 id="bare-board">Bare-Board</h2>
 <blockquote>
-<p><img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/bare.out.png"></p>
+<p><img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/bare.out.png"></p>
 </blockquote>
 <p>The Pi idles at <code>50-C</code> and the temperature starts climbing as soon as we start stressing it.
 It settles at <code>75-C</code></p>
 <h2 id="case-no-fan">Case - No Fan</h2>
 <blockquote>
-<p><img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/case_only.out.png"></p>
+<p><img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/case_only.out.png"></p>
 </blockquote>
 <p>The Pi idles at <code>55-C</code> and the temperature starts climbing as soon as we start stressing it.
 It settles at <code>85-C</code> We can see throttling in the chart.</p>
 <h2 id="fan-33v">Fan - 3.3V</h2>
 <blockquote>
-<p><img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3.out.png"></p>
+<p><img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3.out.png"></p>
 </blockquote>
 <p>The Pi idles at <code>43-C</code> and the temperature starts climbing as soon as we start stressing it.
 It settles at <code>60-C</code>.</p>
 <h2 id="fan-5v">Fan 5V</h2>
 <blockquote>
-<p><img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/fan_5.out.png"></p>
+<p><img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/fan_5.out.png"></p>
 </blockquote>
 <p>The Pi idles at <code>38-C</code> and the temperature starts climbing as soon as we start stressing it.
 It settles at <code>52-C</code>. This was the coolest config, but the fan started making a very shrill noise which was very annoying.</p>
@@ -143,7 +143,7 @@ Its not too cool, its not too loud.</p>
 <p>One thing I need to keep in mind is that the day these tests were performed was a rather cool day. So I have not taken the environmental factors into account. Maybe in the summer months, <code>5V</code> will be neccesary. We will cross that bridge when we get to it.</p>
 <p>To test my decision, I ran antoher test, this time for 30 mins to see if anythig changes. I was happy with the results.</p>
 <blockquote>
-<p><img alt="" src="/assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3_extend.out.png"></p>
+<p><img alt="" src="assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3_extend.out.png"></p>
 </blockquote>
 <h1 id="improvement">Improvement</h1>
 <p>I am planning to use the GPIO headers on the PI to automate the on-off situation of the Pi. This way, it can tell the fan when to run and what-not.</p>
@@ -151,11 +151,11 @@ Its not too cool, its not too loud.</p>
 <h2 id="data-files">Data-Files</h2>
 <p>You can download the files:</p>
 <ul>
-<li><a href="/assets/2021-06-20-Raspberry-Pi-Cooling/bare.out">bare</a></li>
-<li><a href="/assets/2021-06-20-Raspberry-Pi-Cooling/case_only.out">case_only</a></li>
-<li><a href="/assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3.out">fan_3.3</a></li>
-<li><a href="/assets/2021-06-20-Raspberry-Pi-Cooling/fan_5.out">fan_5</a></li>
-<li><a href="/assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3_extend.out">fan_3.3_extend</a></li>
+<li><a href="assets/2021-06-20-Raspberry-Pi-Cooling/bare.out">bare</a></li>
+<li><a href="assets/2021-06-20-Raspberry-Pi-Cooling/case_only.out">case_only</a></li>
+<li><a href="assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3.out">fan_3.3</a></li>
+<li><a href="assets/2021-06-20-Raspberry-Pi-Cooling/fan_5.out">fan_5</a></li>
+<li><a href="assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3_extend.out">fan_3.3_extend</a></li>
 </ul></div>
 	<hr>
 	<!-- <h2>Comments</h2> -->
