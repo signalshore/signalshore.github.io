@@ -85,7 +85,7 @@ everyday, which is a welcome change from the normal stuff we are used
 to seeing everyday. :-P
 
 >Lhotse, Everest, Makalu peaks from the right.
->![Everest](/assets/images/2019-02-24/everest.png)
+>![Everest](assets/images/2019-02-24/everest.png)
 
 
 The weather was quite cold which was quite enjoyable for me. I went
@@ -100,7 +100,7 @@ Kalipokhri all of us gathered in the hut where we were supposed to
 have dinner a all of us sang. It was a beautiful experience.
 
 >Kanchenjunga.                                           
->![Kanchenjunga](/assets/images/2019-02-24/kanchenjunga.png)
+>![Kanchenjunga](assets/images/2019-02-24/kanchenjunga.png)
 
 
 After dinner I headed out for another walk. I told three people that I
@@ -138,7 +138,7 @@ We also managed to do some amazing photography and got good shots of
 the milky-way.
 
 > This was our camp location at Sabargram.
->![camp](/assets/images/2019-02-24/camp.png)
+>![camp](assets/images/2019-02-24/camp.png)
 
 
 On 27th we were supposed to reach Phalut which is at 3642 meters and
@@ -185,7 +185,7 @@ delayed. We all said our goodbyes and promised to stay in touch.
 And that was it. My first trek had ended. :-)
 
 >The entire group for the trek
->![group](/assets/images/2019-02-24/team.jpg)
+>![group](assets/images/2019-02-24/team.jpg)
 
 
 ## What does trekking mean for me ? ##
@@ -224,4 +224,4 @@ feasible. Maybe someday. Right now, this is good enough. :-)
 That's it. Thanks for reading. :-)
 
 >I will end this with a picture of me. 
->![ME](/assets/images/2019-02-24/me.jpg)
+>![ME](assets/images/2019-02-24/me.jpg)

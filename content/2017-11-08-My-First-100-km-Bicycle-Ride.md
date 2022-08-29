@@ -106,7 +106,7 @@ optimum carrying requirements
 
 Here is the full inventory laid out for a photo. Note that the tube is
 missing because I forgot to keep it
-there.  ![Stuff I carried](/assets/images/2017-11-08/contents.jpg)
+there.  ![Stuff I carried](assets/images/2017-11-08/contents.jpg)
 
 I fit a bottle holder on the cycle and put a 1 Liter bottle
 there. Also I used an attachment to fix the portable pump onto the
@@ -130,7 +130,7 @@ the event and Left. :-P I left at 5:30 in the morning which was a mere
 half hour behind schedule.
 
 This is how it looked fully loaded.
-![Fully Loaded](/assets/images/2017-11-08/fullyLoaded.jpg)
+![Fully Loaded](assets/images/2017-11-08/fullyLoaded.jpg)
 
 The first leg of the journey was amazing without any hiccups. The
 weather was amazing, it was cool and the sun was merciful. I crossed
@@ -142,7 +142,7 @@ consider the fact this is my first 100km ride and my third long
 distance ride in my life (yes!!).
 
 Here is a pic. :-P
-![Welcome to Tumkur](/assets/images/2017-11-08/welcomeToTumkur.jpg)
+![Welcome to Tumkur](assets/images/2017-11-08/welcomeToTumkur.jpg)
 
 Then I stopped at a bakery to have some jam-bun (white-bread + jam)
 which was good decision as I think that this gave me more than enough
@@ -153,7 +153,7 @@ I was carrying.
 Weird thing. There was a distance marker at Tumkur that said that
 Bangalore was 70kms from that point. Here it is.
 
-![weird distance marker](/assets/images/2017-11-08/signBoard1.jpg)
+![weird distance marker](assets/images/2017-11-08/signBoard1.jpg)
 
 This was very unsettling because this was weird, conflicting and new
 information. Then it hit me that maybe what is Bangalore and what is
@@ -176,7 +176,7 @@ about 1 km or so. But yeah these were some well needed rests.
 
 
 This is a pic when I was resting under a tree. 
-![Random Stop](/assets/images/2017-11-08/randomStop.jpg)
+![Random Stop](assets/images/2017-11-08/randomStop.jpg)
 
 I reached my hostel at 12:30 which was over 6 hours. I am actually very
 surprised that I managed to maintain a decent 20kmps overall. :-P
@@ -187,19 +187,19 @@ Did I mention that I took photos :-P ? (I absolutely love the camera
 in this new phone :-) )
 
 This was just before starting right in front of my hostel gate.
-![Starting](/assets/images/2017-11-08/justStarting.jpg)
+![Starting](assets/images/2017-11-08/justStarting.jpg)
 
 This was a random location where I stopped
-![random](/assets/images/2017-11-08/firstStop.jpg)
+![random](assets/images/2017-11-08/firstStop.jpg)
 
 A random tree with a random hill in the background.
-![random](/assets/images/2017-11-08/randomShot1.jpg)
+![random](assets/images/2017-11-08/randomShot1.jpg)
 
 A random hill with weird looking clouds
-![random](/assets/images/2017-11-08/randomShot2.jpg)
+![random](assets/images/2017-11-08/randomShot2.jpg)
 
 The not-random sun behind weird clouds
-![random](/assets/images/2017-11-08/randomShot3.jpg)
+![random](assets/images/2017-11-08/randomShot3.jpg)
 
 
 ### Conclusion ###
@@ -214,7 +214,7 @@ Here is what OsmAnd has to say about the trip with Speed (Orange) and
 Altitude (Blue) on the same graph. I think we can clearly see the
 correlation between the altitude and the speed.
 
-![osmand Overall](/assets/images/2017-11-08/osmandBoth.jpg)
+![osmand Overall](assets/images/2017-11-08/osmandBoth.jpg)
 
 
 The speed part of the GPX track is also interesting which says my
@@ -222,11 +222,11 @@ maximum speed was 46 km/hr which was just for a short while during the
 starting phase. I think this was during the descend from my hostel
 towards jalahalli via Tumkur Road.
 
-![osmand speed](/assets/images/2017-11-08/osmandSpeed.jpg)
+![osmand speed](assets/images/2017-11-08/osmandSpeed.jpg)
 
 Here is
 the
-[GPX track](/assets/files/2017-11-08/2017-11-02_05-39_Thu(100KM).gpx)
+[GPX track](assets/files/2017-11-08/2017-11-02_05-39_Thu(100KM).gpx)
 just in case.
 
 p.s. this was longer than I expected it would be. :-P

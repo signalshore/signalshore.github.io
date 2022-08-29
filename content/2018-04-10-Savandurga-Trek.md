@@ -50,11 +50,11 @@ Surprisingly I met a bunch of classmates from college who were having some famil
 <br>
 #### Some photos ####
 
-![somewhere on Magdi Road](/assets/images/2018-04-10/A1.jpg)
+![somewhere on Magdi Road](assets/images/2018-04-10/A1.jpg)
 
-![somewhere on Magdi Road](/assets/images/2018-04-10/A2.jpg)
+![somewhere on Magdi Road](assets/images/2018-04-10/A2.jpg)
 
-![somewhere on Magdi Road](/assets/images/2018-04-10/A3.jpg)
+![somewhere on Magdi Road](assets/images/2018-04-10/A3.jpg)
 
 
 ___
@@ -80,24 +80,24 @@ Before starting the next leg of the trip I waited at my friends place for about 
 
 #### Some photos ####
 
-![on the hill](/assets/images/2018-04-10/B1.jpg)
+![on the hill](assets/images/2018-04-10/B1.jpg)
 
 ###### This is me at the bottom of the hill. :-) ######
 
-![on the hill](/assets/images/2018-04-10/B2.jpg)
+![on the hill](assets/images/2018-04-10/B2.jpg)
 
-![on the hill](/assets/images/2018-04-10/B3.jpg)
+![on the hill](assets/images/2018-04-10/B3.jpg)
 
-![on the hill](/assets/images/2018-04-10/B4.jpg)
+![on the hill](assets/images/2018-04-10/B4.jpg)
 <br><br>
 #### These are from the very top of the hill. :-) ####
 
-![on the hill](/assets/images/2018-04-10/Btop1.jpg)
+![on the hill](assets/images/2018-04-10/Btop1.jpg)
 ###### That is the temple on the top of the hill ######
 
-![on the hill](/assets/images/2018-04-10/Btop2.jpg)
+![on the hill](assets/images/2018-04-10/Btop2.jpg)
 
-![on the hill](/assets/images/2018-04-10/Btop3.jpg)
+![on the hill](assets/images/2018-04-10/Btop3.jpg)
 
 ###### That is the Manchanbele Dam reservoir in the distance ######
 
@@ -115,15 +115,15 @@ I was enjoying the riding so I decided to skip the IDSN and Dodda Alada Mara and
 I reached my home at about 1800 hrs. 
 
 <br>
-![on the way to Manchanbele](/assets/images/2018-04-10/C1.jpg)
+![on the way to Manchanbele](assets/images/2018-04-10/C1.jpg)
 
 ###### The narrow twisty road to Manchanbele Dam. (it was really blissful) ######
 
-![the dam itself](/assets/images/2018-04-10/C2.jpg)
+![the dam itself](assets/images/2018-04-10/C2.jpg)
 
 ###### The Dam itself!! ######
 
-![the reservoir](/assets/images/2018-04-10/C3.jpg)
+![the reservoir](assets/images/2018-04-10/C3.jpg)
 
 ___
 ## Aftermath ##

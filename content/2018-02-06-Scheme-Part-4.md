@@ -178,4 +178,4 @@ I went to FSMK camp 2018 last week and I met a couple of my readers. That was fu
 That is it!! (for now)
 
 
-p.s. The code for this post can be found [here](/assets/files/scheme-4.scm).
+p.s. The code for this post can be found [here](assets/files/scheme-4.scm).

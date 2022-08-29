@@ -33,9 +33,9 @@ The case I bought is [this](https://www.amazon.in/gp/product/B082ZQSHFZ/ref=ppx_
 The screws that hold the fan onto the top of the case can come loose. a small annoyance, that needs to be taken care of.
 
 Here are some photos of said product.
->![](/assets/2021-06-20-Raspberry-Pi-Cooling/case_1.png)
+>![](assets/2021-06-20-Raspberry-Pi-Cooling/case_1.png)
 > The closed case
->![](/assets/2021-06-20-Raspberry-Pi-Cooling/case_2.png)
+>![](assets/2021-06-20-Raspberry-Pi-Cooling/case_2.png)
 > The top cover removed. The cover has some gap to aid in airflow.
 
 It is a plastic case with a fan. The recommended way is to install the fan in a push configuration. This means that the fan will be blowing air onto the CPU heat sink. I am using the stock-heat sink that came with the pi.
@@ -68,28 +68,28 @@ The Pi throttles itself at 85-C. We only see this behaviour in one of the test c
 
 ## Bare-Board
 
->![](/assets/2021-06-20-Raspberry-Pi-Cooling/bare.out.png)
+>![](assets/2021-06-20-Raspberry-Pi-Cooling/bare.out.png)
 
 The Pi idles at `50-C` and the temperature starts climbing as soon as we start stressing it.
 It settles at `75-C`
 
 ## Case - No Fan
 
->![](/assets/2021-06-20-Raspberry-Pi-Cooling/case_only.out.png)
+>![](assets/2021-06-20-Raspberry-Pi-Cooling/case_only.out.png)
 
 The Pi idles at `55-C` and the temperature starts climbing as soon as we start stressing it.
 It settles at `85-C` We can see throttling in the chart.
 
 ## Fan - 3.3V
 
->![](/assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3.out.png)
+>![](assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3.out.png)
 
 The Pi idles at `43-C` and the temperature starts climbing as soon as we start stressing it.
 It settles at `60-C`.
 
 ## Fan 5V
 
->![](/assets/2021-06-20-Raspberry-Pi-Cooling/fan_5.out.png)
+>![](assets/2021-06-20-Raspberry-Pi-Cooling/fan_5.out.png)
 
 The Pi idles at `38-C` and the temperature starts climbing as soon as we start stressing it.
 It settles at `52-C`. This was the coolest config, but the fan started making a very shrill noise which was very annoying.
@@ -102,7 +102,7 @@ One thing I need to keep in mind is that the day these tests were performed was 
 
 To test my decision, I ran antoher test, this time for 30 mins to see if anythig changes. I was happy with the results.
 
->![](/assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3_extend.out.png)
+>![](assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3_extend.out.png)
 
 
 # Improvement
@@ -113,8 +113,8 @@ I could also take better photographs!!!
 ## Data-Files
 You can download the files:
 
-- [bare](/assets/2021-06-20-Raspberry-Pi-Cooling/bare.out)
-- [case_only](/assets/2021-06-20-Raspberry-Pi-Cooling/case_only.out)
-- [fan_3.3](/assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3.out)
-- [fan_5](/assets/2021-06-20-Raspberry-Pi-Cooling/fan_5.out)
-- [fan_3.3_extend](/assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3_extend.out)
+- [bare](assets/2021-06-20-Raspberry-Pi-Cooling/bare.out)
+- [case_only](assets/2021-06-20-Raspberry-Pi-Cooling/case_only.out)
+- [fan_3.3](assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3.out)
+- [fan_5](assets/2021-06-20-Raspberry-Pi-Cooling/fan_5.out)
+- [fan_3.3_extend](assets/2021-06-20-Raspberry-Pi-Cooling/fan_3.3_extend.out)

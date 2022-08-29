@@ -22,7 +22,7 @@ at IISc and he was going home after completing his studies. He had
 really cared for this cycle. It is about 5 years old but the
 components are really really well maintained. 
 
-Here it is. ![My cycle pic](/assets/images/2017-10-26/normal.jpg)
+Here it is. ![My cycle pic](assets/images/2017-10-26/normal.jpg)
 
 Before riding a premium cycle I had no idea that premium bicycles were
 this good. The first time I rode a premium bicycle was a btwin
@@ -76,7 +76,7 @@ for a quick ride because of an emergency.
 I was planning to clean the chain using kerosene but that never
 happened. It's on my to-do list though!
 
-Here is a photo of the process. ![Cleaning](/assets/images/2017-10-26/clean.jpg)
+Here is a photo of the process. ![Cleaning](assets/images/2017-10-26/clean.jpg)
 
 <blue> What is so special about cycling anyway ?  </blue> 
 

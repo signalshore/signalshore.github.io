@@ -39,7 +39,7 @@ the NodeMCUs were working or not. This was the most fun part of the
 whole exercise. I ended up making a temporary production line sort of
 thing so as to optimize my testing and packing routine. :-P
 
-![Iot](/assets/images/2018-02-16/iot.jpg)
+![Iot](assets/images/2018-02-16/iot.jpg)
 
 ###### Iot team (some are missing, some are extra)######
 
@@ -98,7 +98,7 @@ stage. It was a beautiful moment. It made me realize that as long as
 we are united, we can do anything we want to and nothing is
 impossible.
 
-![lights!!](/assets/images/2018-02-16/light.jpg)
+![lights!!](assets/images/2018-02-16/light.jpg)
 
 ###### People holding up lights!! ######
 
@@ -152,7 +152,7 @@ that I can interact with everyone even if it is for a short time. I
 also threw in some weird pleasantries like "happy lunching" and so
 on! :-P
 
-![people serving breakfast](/assets/images/2018-02-16/food.jpg)
+![people serving breakfast](assets/images/2018-02-16/food.jpg)
 
 ###### People serving breakfast ######
 
@@ -161,4 +161,4 @@ I think I have covered everything that I wanted to. If not I think I
 will add/edit something later on.
 
 Group photo at the end of the camp.
-![group pic](/assets/images/2018-02-16/group.jpg)
+![group pic](assets/images/2018-02-16/group.jpg)

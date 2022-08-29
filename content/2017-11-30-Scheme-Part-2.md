@@ -50,7 +50,7 @@ as tree such that
 
 The tree of the expression `(+ 2 3)` will look like this
 
-![single tree](/assets/images/2017-11-30/single.jpg)
+![single tree](assets/images/2017-11-30/single.jpg)
 
 
 A LISP program is very easily parse-able by a computer as Trees do
@@ -98,7 +98,7 @@ first. Which is `(+ 2 2)`. This expression evaluates to `4`.
 
 In the tree form this is how the above expression would look
 
-![double](/assets/images/2017-11-30/double.jpg)
+![double](assets/images/2017-11-30/double.jpg)
 
 Then the evaluator _substitutes_ that result to the actual expression
 before continuing on with the evaluation. So now the expression looks

@@ -1,4 +1,4 @@
-Title: Kumara-Parvatha and Savandurga
+Title: Kumara Parvatha and Savandurga
 Date: 2019-03-17
 Tags: Travel, Env, Trek
 
@@ -31,7 +31,7 @@ trek by 1800 hrs and get back home.
 
 Things clearly did not go as planned. They never do.
 
-# S0.. Kumaraparvatha ..
+# So.. Kumaraparvatha ..
 
 Friday turned out to be the day when Richard Stallman was giving the
 talk at RVCE. I HAD to attend it. So, did that; which got over at
@@ -78,7 +78,7 @@ forest office, and also more technical, so if you do not start from
 the forest office before 12 noon, it can get dangerous.
 
 > In this photo we have Sonakshi and Niranjan far into the frame. 
-> ![One of the flatter stretches](/assets/images/2019-03-17/kum2.jpg)
+> ![One of the flatter stretches](assets/images/2019-03-17/kum2.jpg)
 
 
 On the way to the top there is a section where you come across a steep
@@ -87,7 +87,7 @@ saner members of the group stopped me from climbing via that route. I
 was disappointed.
 
 > The Big rock face is question. (it is Not as steep as it looks)
-> ![big rock](/assets/images/2019-03-17/kum3.jpg)
+> ![big rock](assets/images/2019-03-17/kum3.jpg)
 
 
 We reached the top in about 6 hours. We slept for a very very short
@@ -97,11 +97,11 @@ water with us as well.
 
 > We took some photos from the somewhere near the top
 
-> ![big rock](/assets/images/2019-03-17/kum1.jpg)
+> ![big rock](assets/images/2019-03-17/kum1.jpg)
 
 <br>
 > This is the other side from the same location
-> ![big rock](/assets/images/2019-03-17/kum4.jpg)
+> ![big rock](assets/images/2019-03-17/kum4.jpg)
 
 The first part of the descent was somewhat difficult because of the
 heat, and we ran out of water just before reaching Buttaramane but
@@ -134,7 +134,7 @@ Savandurga. I got lucky logistically.
 Let's end this section with a picture of team Kumaraparvatha. 
 
 > TEAM Kumaraparvatha!!
-> ![team_kum](/assets/images/2019-03-17/team_kum.jpg)
+> ![team_kum](assets/images/2019-03-17/team_kum.jpg)
 
 
 <hr>
@@ -151,7 +151,7 @@ team members expressed their concerns over the difficulty of what
 awaited them.
 
 > This is how Savndurga looks from the road.
-> ![savnd](/assets/images/2019-03-17/savn3.jpg)
+> ![savnd](assets/images/2019-03-17/savn3.jpg)
 
 We reached Savandurga in about 90 minutes.The team was quite worried
 when we saw the monolith. We were making good time, however we
@@ -171,7 +171,7 @@ the afternoon sun, but by the time we started it was almost 12 when we
 started.
 
 > Look at the gradient.
-> ![savnd-grad](/assets/images/2019-03-17/savn1.jpg)
+> ![savnd-grad](assets/images/2019-03-17/savn1.jpg)
 
 A friend got really exhausted during the climb and she decided that
 she would not continue. The plan was that she would wait at a resting
@@ -199,7 +199,7 @@ pics here.
 
 > The view from the top. That is the temple below that we can see.
 > That is the Manchanbele reservoir that we can see in the back
-> ![savnd-temple](/assets/images/2019-03-17/savn2.jpg)
+> ![savnd-temple](assets/images/2019-03-17/savn2.jpg)
 
 
 On our way back we met the friend who decided to stay back just below
@@ -214,13 +214,13 @@ doing. Its very very very dangerous to run down a hill which is as
 steep as Savandurga. 
 
 > This is how descending looks. 
-> ![savnd-desc](/assets/images/2019-03-17/savn4.jpg)
+> ![savnd-desc](assets/images/2019-03-17/savn4.jpg)
 
 We had a mini celebration after descending from the hill. It was
 fun. These folks had completed their very first trek. 
 
 > This is the team.
-> ![savnd-team](/assets/images/2019-03-17/team_savn.jpg)
+> ![savnd-team](assets/images/2019-03-17/team_savn.jpg)
 
 
 We returned to Bangalore soon enough. I took an hour long nap for the
@@ -234,19 +234,19 @@ I was recording both of these treks just for the heck of it.
 Here are screenshots.
 
 > Kumaraparvatha
-> ![kumara-gpx](/assets/images/2019-03-17/kumara.png)
+> ![kumara-gpx](assets/images/2019-03-17/kumara.png)
 
 As we can see, the total time for the recording is 11 hours and 25
 minutes and the total distance recorded is 23.7
-kms. [Here](/assets/files/2019-03-17/KumaraParvatha.gpx.zip) is the
+kms. [Here](assets/files/2019-03-17/KumaraParvatha.gpx.zip) is the
 GPX-track for Kumaraparvatha.
 
 
 > Savandurga
-> ![savand-gpx](/assets/images/2019-03-17/savnd.png)
+> ![savand-gpx](assets/images/2019-03-17/savnd.png)
 
 In this trek we covered 5.9 kms in about 4 hours and 9 minutes.
-[Here](/assets/files/2019-03-17/savandurga.gpx.zip) is the GPX file.
+[Here](assets/files/2019-03-17/savandurga.gpx.zip) is the GPX file.
 
 # The End
 Overall this was a fun trek. I do think I will return to
@@ -257,4 +257,4 @@ Until then!
 
 Oh! BTW;
 > This is me sleeping. Open mouth for better breathing.
-> ![me-sleeping](/assets/images/2019-03-17/me.jpg)
+> ![me-sleeping](assets/images/2019-03-17/me.jpg)

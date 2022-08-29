@@ -16,7 +16,7 @@ best part is that this is the most *perfect* job that I could hope
 for.  My "official" job title is Linux Administrator, but there is
 more to it.
 
-![that tweet](/assets/images/2018-08-06/twitter.png)
+![that tweet](assets/images/2018-08-06/twitter.png)
 
 ##### This is the tweet that changed everything... :-P
 
@@ -69,7 +69,7 @@ to a different city and vacating their accommodation of three years.
 
 So technically I can literally stuff everything I own into three
 bags. :-) 
-> ![that tweet](/assets/images/2018-08-06/luggage.jpg)
+> ![that tweet](assets/images/2018-08-06/luggage.jpg)
 
 
 I have been very very fortunate to meet/know some of the people that I

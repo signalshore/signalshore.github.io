@@ -56,13 +56,13 @@ really very shocking (maybe I was expecting something else :-P)
 ### Correlation between CO2 per capita and GDP per capita for INDIA
 
 Here is the graph that shows the CO2 emissions per capita from 1960 to 2011.
-![India CO2 per capita](/assets/images/2018-06-21/indiaCo2.png)
+![India CO2 per capita](assets/images/2018-06-21/indiaCo2.png)
 	
 Next, let us see the GDP from 1960 to 2014.
-![India GDP per capita](/assets/images/2018-06-21/indiaGdp.png)
+![India GDP per capita](assets/images/2018-06-21/indiaGdp.png)
 
 Now we will use a scatter plot to look at the correlation.
-![India correlation](/assets/images/2018-06-21/indiaCor.png)
+![India correlation](assets/images/2018-06-21/indiaCor.png)
 
 We have calculated a correlation value of 0.967 using the
 the
@@ -74,13 +74,13 @@ the
 ### Correlation between CO2 per Capita and GDP per capita for USA
 
 Here is the graph that shows the CO2 emissions per capita from 1960 to 2011.
-![USA CO2 per capita](/assets/images/2018-06-21/usaCo2.png)
+![USA CO2 per capita](assets/images/2018-06-21/usaCo2.png)
 	
 Next, let us see the GDP from 1960 to 2014.
-![USA GDP per capita](/assets/images/2018-06-21/usaGdp.png)
+![USA GDP per capita](assets/images/2018-06-21/usaGdp.png)
 
 Now we will use a scatter plot to look at the correlation.
-![USA correlation](/assets/images/2018-06-21/usaCor.png)
+![USA correlation](assets/images/2018-06-21/usaCor.png)
 
 We have calculated a correlation value of 0.067 which is almost negligible.
 
@@ -92,25 +92,25 @@ Similarly the range of the Y-axis of GDP per capita is 0-1200 US for India while
 
 ### CO2 emissions by fuel types in India and USA
 
-![India State](/assets/images/2018-06-21/indiaState.png)
+![India State](assets/images/2018-06-21/indiaState.png)
 
 In this we can see that most of CO2 emissions in India are due to solid fuels. 
 
-![USA State](/assets/images/2018-06-21/usaState.png)
+![USA State](assets/images/2018-06-21/usaState.png)
 In USA the major source of CO2 emission is from the combustion of liquid forms of fuel. 
 
 ### CO2 emissions by economic activities
 
 Now in this graph we show the different sets of economic activities that are responsible for CO2 emissions.
 
-![India per](/assets/images/2018-06-21/indiaPer.png)
+![India per](assets/images/2018-06-21/indiaPer.png)
 
 As we can see that the major contributor of CO2 emissions in India is
 the production of Electricity and Heating, followed by the
 Manufacturing and Construction related activities.
 
 Now, let us look at the graph for the USA.
-![USA per](/assets/images/2018-06-21/usaPer.png)
+![USA per](assets/images/2018-06-21/usaPer.png)
 
 These two graphs are more or less similar in nature with one major
 difference. In the USA the Transportation sector is th second largest

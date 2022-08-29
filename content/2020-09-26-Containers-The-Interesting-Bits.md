@@ -170,7 +170,7 @@ The Memory cgroup is used to limit/account the amount of memory that is used by 
 
 This is how the cgroup we created under the memory subsystem called **demom** looks just after creation.
 
-> ![img](/assets/images/containers/cg_mem.png)
+> ![img](assets/images/containers/cg_mem.png)
 
 Quick Ref for the cg :
 
@@ -197,8 +197,8 @@ Steps :
 -   delete the cg using **cgdelete**
 
 > This is how **dmesg** looks when an OOM-kill occurs
-> ![img](/assets/images/containers/oom1.png)
-> ![img](/assets/images/containers/oom2.png)
+> ![img](assets/images/containers/oom1.png)
+> ![img](assets/images/containers/oom2.png)
 
 Look at this *[Detailed Memory
 Reference](<https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-memory>)*
@@ -224,7 +224,7 @@ Steps:
     
     The whole demo looks like this. 
     
->![img](/assets/images/containers/pid1.png)
+>![img](assets/images/containers/pid1.png)
     
 ###### This is for cgroup v1. There is also cgroup2 which I havent looked at yet! ######
 

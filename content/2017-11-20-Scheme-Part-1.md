@@ -41,7 +41,7 @@ share those.
 
 __Let us write a program__
 
-![sum pic](/assets/images/2017-11-20/sum.png)
+![sum pic](assets/images/2017-11-20/sum.png)
 
 (these are cropped screen-shots of Emacs)
 
@@ -64,13 +64,13 @@ Its syntax is like this `(define (<name> <formal parameters) (<body>))`
 
 __Let us define a procedure__
 
-![sumProcedure](/assets/images/2017-11-20/procedureSum.png)
+![sumProcedure](assets/images/2017-11-20/procedureSum.png)
 
 This is how the procedure looks. The name of the procedure is "sum" and it takes in two numbers and produces their sum.
 
 __Let us write something a bit complicated__
 
-![sumOfSquare](/assets/images/2017-11-20/sumOfSquares.png)
+![sumOfSquare](assets/images/2017-11-20/sumOfSquares.png)
 
 This procedure uses the previous "sum" procedure to compute the sum of
 the square of two numbers. I this process you should see another

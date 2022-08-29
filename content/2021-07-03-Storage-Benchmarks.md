@@ -107,35 +107,35 @@ The data-dump will have all the results for you to look at if you want to.
 There is something really interesting wrt the Raspberry Pi when we use a higher block size. A section will be there that talks about it.
 
 ## Laptop 128Gb Usb drive
-![laptop_ssd_4M](/assets/2021-07-03-Storage-Benchmarks/SSD_USB/Laptop/4M/laptop_ssd_4M.png)
+![laptop_ssd_4M](assets/2021-07-03-Storage-Benchmarks/SSD_USB/Laptop/4M/laptop_ssd_4M.png)
 ## Laptop 5TB HDD
-![hdd_laptop_4M](/assets/2021-07-03-Storage-Benchmarks/5_TB/Laptop/4M/hdd_laptop_4M.png)
+![hdd_laptop_4M](assets/2021-07-03-Storage-Benchmarks/5_TB/Laptop/4M/hdd_laptop_4M.png)
 
 ## Raspberry Pi 128GB Usb drive
-![rpi_ssd_4M](/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_io.png)
+![rpi_ssd_4M](assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_io.png)
 > Disk I/O (4M bs)
 
-![rpi_ssd_4M](/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_cpu.png)
+![rpi_ssd_4M](assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_cpu.png)
 > CPU Utilization and Load Average (4M bs)
 
-![rpi_ssd_4M](/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_temp.png)
+![rpi_ssd_4M](assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/4M/rpi_ssd_4M_temp.png)
 > Temp (4M bs)
 
-![rpi_ssd_4M](/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb.png)
+![rpi_ssd_4M](assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb.png)
 > Disk I/O (4k bs)
 
-![rpi_ssd_4M](/assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb_cpu.png)
+![rpi_ssd_4M](assets/2021-07-03-Storage-Benchmarks/SSD_USB/RPI/rpi_ssd_usb_cpu.png)
 > CPU Utilization and Load Average (4k bs)
 
 
 ## Raspberry Pi 5TB hdd
-![](/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_io.png)
+![](assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_io.png)
 > Disk I/O
 
-![](/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_cpu.png)
+![](assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_cpu.png)
 > CPU Utilization and Load Average
 
-![](/assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_temp.png)
+![](assets/2021-07-03-Storage-Benchmarks/5_TB/RPI/4M/rpi_hdd_4M_temp.png)
 > Temp
 
 
@@ -179,7 +179,7 @@ Thus throughput is basically `IOPS * block_size`.
 
 I ran the tests with bs set as 4k and was surprised that the reported values were not as high. Infact they were a lot lower than the disk speed I was getting from a pure `rsync` workload. During one such run, I happened to look at the netdata dashboard and discovered that the operations/s was much lower for the rsync workload than the fio workload, even though rsync had a much larger throughput. This gave me the idea that we can in-fact change the bs to get much better results.
 
-![4m_vs_4k](/assets/2021-07-03-Storage-Benchmarks/4M_vs_4k.png)
+![4m_vs_4k](assets/2021-07-03-Storage-Benchmarks/4M_vs_4k.png)
 Here in this photo we can clearly see the difference that block_size causes. The first write is done using a higher block_size which explains the lower operations per second along with the higher throughput; similarly the second write has lower throughput along with higher operations per second. This is characteristic for lower block_size.
 
 Check [this](https://medium.com/@duhroach/the-impact-of-blocksize-on-persistent-disk-performance-7e50a85b2647) to get a better understanding of block size.

@@ -55,7 +55,7 @@ I also went trekking in Bangalore so there is some extra waste associated with t
 
 This is a photo of all the stuff I collected. It's grouped into 4 sections
 
->![Photo of the stuff](/assets/images/2019-02-03/waste.png)
+>![Photo of the stuff](assets/images/2019-02-03/waste.png)
 > I apologize for the atrocious photo editing skills
 
 Anyway, the stuff is divided into 4 groups. 
