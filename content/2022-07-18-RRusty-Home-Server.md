@@ -3,14 +3,14 @@ Date: 2022-07-18
 Tags: CS, Tech, HomeServer
 Summary: A live record of my home-server journey and the learnings so far in this endeavour
 
-There be detailed posts about the setup and learnings from each of the sections below.
+This is just a brief summary of things. I will be creating larger/detailed posts about things later on.
 
 # The Hardware.
-The primary computer is a Raspberry Pi model 4.
-The primary storage is a seagate 5TB drive.
-For secondary storage I have another seagate 2Tb drive. This one is meant for critical backups only.
-There is an additional 1TB drive from Western Digital. I use this primarily for the seedbox set-up. This drive is too unreliable for any critical use case.
-For the networking part I have a NetGear AC6850 router. This is a beast. I will probably run open-wrt on this.
+- Primary Computer is a Raspberry Pi model 4; 8GB.
+- Primary storage is a Seagate 5TB 2.5inch Drive
+- Secondary storage Seagate 2Tb drive which is meant for critical off-site backups
+- An additional 1TB Western Digital drive. I use this primarily for the seedbox set-up. This drive is too unreliable for any critical use case.
+- A NetGear AC6850 router. This is a beast. I will probably run open-wrt on this.
 
 # The Use-case(s)
 The Raspberry Pi was bought purely out of FOMO. I did not have a plan as to what I would do with it, but I figured having a less power-hungry computer around would not harm me much.
