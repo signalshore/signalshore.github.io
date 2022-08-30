@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all.atom" rel="self"></link><id>https://signalshore.github.io/</id><updated>2022-08-01T00:00:00+05:30</updated><entry><title>Anti-Blog (and other updates)</title><link href="https://signalshore.github.io/blog/2022-08-01-Anti-Blog.html" rel="alternate"></link><published>2022-08-01T00:00:00+05:30</published><updated>2022-08-01T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2022-08-01:/blog/2022-08-01-Anti-Blog.html</id><summary type="html">&lt;p&gt;A couple of updates about how I am planning to use this site from now.&lt;/p&gt;</summary><content type="html">&lt;p&gt;For a while I was very dissatissfied with how I read and write stuff.
-The entire system that I had built on top of Emacs is gone as of now. A LOT of things have changed.&lt;/p&gt;
-&lt;p&gt;This is the logical continuation of that train of thought.&lt;/p&gt;
-&lt;p&gt;I have always struggled with the question of how I can add new material to older blogs.
-I also felt that it was pointless to maintain two sets of notes; one more detailed for myself and one less detailed for the blog. A LOT of the material was shared and it felt extremely pointless.&lt;/p&gt;
-&lt;p&gt;The goals that I have for this new system and this site is this.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Single source of truth for articles.&lt;ul&gt;
-&lt;li&gt;A single file will hold all the data about a topic. The goal is for me to be able to read it later.&lt;/li&gt;
-&lt;li&gt;This is a dump of things I know and How i know them.&lt;/li&gt;
-&lt;li&gt;This should be visible from the blog as well as the github repo with any decent markdown viewer. This is non-negotiable because I need to be able to not use the brower to look at my "notes"&lt;/li&gt;
-&lt;li&gt;I will update things on my "notes" as and when I learn new things. I do not need to feel guilty about updating the date etc. etc. &lt;/li&gt;
-&lt;li&gt;These will be for things tagged as "notes"&lt;/li&gt;
-&lt;li&gt;For other things, it will have the normal blog type things.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Other things:
-- Im shifting all the "tracking" to CSV files that work on google-docs and calc.
-- This includes things like books, movies and reading list etc etc.
-- Lets not reinvent the wheel when it comes to spreadsheets.&lt;/p&gt;</content><category term="misc"></category><category term="Tech"></category></entry><entry><title>RRusty; Home Server</title><link href="https://signalshore.github.io/blog/2022-07-18-RRusty-Home-Server.html" rel="alternate"></link><published>2022-07-18T00:00:00+05:30</published><updated>2022-07-18T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2022-07-18:/blog/2022-07-18-RRusty-Home-Server.html</id><summary type="html">&lt;p&gt;A live record of my home-server journey and the learnings so far in this endeavour&lt;/p&gt;</summary><content type="html">&lt;p&gt;There be detailed posts about the setup and learnings from each of the sections below.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all.atom" rel="self"></link><id>https://signalshore.github.io/</id><updated>2022-07-18T00:00:00+05:30</updated><entry><title>RRusty; Home Server</title><link href="https://signalshore.github.io/blog/2022-07-18-RRusty-Home-Server.html" rel="alternate"></link><published>2022-07-18T00:00:00+05:30</published><updated>2022-07-18T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2022-07-18:/blog/2022-07-18-RRusty-Home-Server.html</id><summary type="html">&lt;p&gt;A live record of my home-server journey and the learnings so far in this endeavour&lt;/p&gt;</summary><content type="html">&lt;p&gt;There be detailed posts about the setup and learnings from each of the sections below.&lt;/p&gt;
 &lt;h1 id="the-hardware"&gt;The Hardware.&lt;/h1&gt;
 &lt;p&gt;The primary computer is a Raspberry Pi model 4.
 The primary storage is a seagate 5TB drive.
