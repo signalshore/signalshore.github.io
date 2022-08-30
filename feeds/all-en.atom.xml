@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all-en.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2022-07-18T00:00:00+05:30</updated><entry><title>RRusty; Home Server</title><link href="https://signalshore.github.io/blog/2022-07-18-RRusty-Home-Server.html" rel="alternate"></link><published>2022-07-18T00:00:00+05:30</published><updated>2022-07-18T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2022-07-18:/blog/2022-07-18-RRusty-Home-Server.html</id><summary type="html">&lt;p&gt;A live record of my home-server journey and the learnings so far in this endeavour&lt;/p&gt;</summary><content type="html">&lt;p&gt;There be detailed posts about the setup and learnings from each of the sections below.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all-en.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2022-07-18T00:00:00+05:30</updated><entry><title>RRusty; Home Server</title><link href="https://signalshore.github.io/blog/2022-07-18-RRusty-Home-Server.html" rel="alternate"></link><published>2022-07-18T00:00:00+05:30</published><updated>2022-07-18T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2022-07-18:/blog/2022-07-18-RRusty-Home-Server.html</id><summary type="html">&lt;p&gt;A live record of my home-server journey and the learnings so far in this endeavour&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is just a brief summary of things. I will be creating larger/detailed posts about things later on.&lt;/p&gt;
 &lt;h1 id="the-hardware"&gt;The Hardware.&lt;/h1&gt;
-&lt;p&gt;The primary computer is a Raspberry Pi model 4.
-The primary storage is a seagate 5TB drive.
-For secondary storage I have another seagate 2Tb drive. This one is meant for critical backups only.
-There is an additional 1TB drive from Western Digital. I use this primarily for the seedbox set-up. This drive is too unreliable for any critical use case.
-For the networking part I have a NetGear AC6850 router. This is a beast. I will probably run open-wrt on this.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Primary Computer is a Raspberry Pi model 4; 8GB.&lt;/li&gt;
+&lt;li&gt;Primary storage is a Seagate 5TB 2.5inch Drive&lt;/li&gt;
+&lt;li&gt;Secondary storage Seagate 2Tb drive which is meant for critical off-site backups&lt;/li&gt;
+&lt;li&gt;An additional 1TB Western Digital drive. I use this primarily for the seedbox set-up. This drive is too unreliable for any critical use case.&lt;/li&gt;
+&lt;li&gt;A NetGear AC6850 router. This is a beast. I will probably run open-wrt on this.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h1 id="the-use-cases"&gt;The Use-case(s)&lt;/h1&gt;
 &lt;p&gt;The Raspberry Pi was bought purely out of FOMO. I did not have a plan as to what I would do with it, but I figured having a less power-hungry computer around would not harm me much.
 I wanted this to try as many things as possible without much cost. This is something that would not be possible with my company-issued laptop.&lt;/p&gt;
@@ -75,7 +77,6 @@ The Seagate 2TB drive is for off-site backups.&lt;/p&gt;
 &lt;li&gt;1 Btwin MyBike (Medium size)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The Btwin MyBike is a very simple bike. It is a very &lt;em&gt;no-bs&lt;/em&gt; bicycle. This bicycle will stay at home home in Kolkata. In my absence a friend promised that they will happily look after the bike. Otherwise, the bike is simple enough that there aren't enough things to go wrong. It is pretty bullet-proof from that perspective.&lt;/p&gt;
-&lt;h1 id="bicycles-that-are-not-with-me-anymore"&gt;Bicycles that are not with me anymore.&lt;/h1&gt;
 &lt;h1 id="misc"&gt;Misc&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;1 x Transcend powered USB-Hub&lt;/li&gt;
@@ -88,7 +89,7 @@ The Seagate 2TB drive is for off-site backups.&lt;/p&gt;
 &lt;h3 id="bicycle"&gt;Bicycle&lt;/h3&gt;
 &lt;p&gt;I had a &lt;code&gt;Merida Crossway 20-MD&lt;/code&gt; which I bought used in Mumbai. I used it quite a bit in Mumbai, but then when the pandemic began, I left it with a friend of mine. My friend ended up buying the bicycle as she had fallen in love with it. :)&lt;/p&gt;
 &lt;h3 id="kindle"&gt;Kindle&lt;/h3&gt;
-&lt;p&gt;I do not read enough books on the Kindle for me to own it. Most of my reading is done on my android phone. &lt;a href="./2019-08-04-The-Book-System.md"&gt;The Book Plan&lt;/a&gt; failed.&lt;/p&gt;</content><category term="misc"></category><category term="Tech"></category></entry><entry><title>New City: Pune</title><link href="https://signalshore.github.io/blog/2022-02-09-New-City-Pune.html" rel="alternate"></link><published>2022-02-09T00:00:00+05:30</published><updated>2022-02-09T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2022-02-09:/blog/2022-02-09-New-City-Pune.html</id><summary type="html">&lt;p&gt;Moved to a new city; Pune!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello, I moved to Pune&lt;/p&gt;
+&lt;p&gt;I do not read enough books on the Kindle for me to own it. Most of my reading is done on my android phone. &lt;a href="2019-08-04-The-Book-System.md"&gt;The Book Plan&lt;/a&gt; failed.&lt;/p&gt;</content><category term="misc"></category><category term="Tech"></category></entry><entry><title>New City: Pune</title><link href="https://signalshore.github.io/blog/2022-02-09-New-City-Pune.html" rel="alternate"></link><published>2022-02-09T00:00:00+05:30</published><updated>2022-02-09T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2022-02-09:/blog/2022-02-09-New-City-Pune.html</id><summary type="html">&lt;p&gt;Moved to a new city; Pune!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello, I moved to Pune&lt;/p&gt;
 &lt;p&gt;I took a rather rash decision and moved to Pune at the end of January 2022.
 After almost 2 years of living at home this feels like the right call. The idea of moving to a new city began to scare me, at which point I knew that I had to move in order to preserve my sanity. The initial move was uneventful, but after getting an apartment, the real shit hits you in the face. It does take some calibration to get used to.&lt;/p&gt;
 &lt;p&gt;Generally when you are moving to a new city, you do not have any place to stay for the initial part. My office took care of this. They put me up in a fancy hotel which helped me immensely.&lt;/p&gt;
