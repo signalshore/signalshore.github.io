@@ -99,9 +99,9 @@ plaintext file with other text processing tools available on Linux
 <p>With ledger-cli you do not have to learn a bunch of things just to
 use it.</p>
 <p>Each transaction in ledger looks like this</p>
-<div class="highlight"><pre><span></span><code><span class="mf">2019</span><span class="o">/</span><span class="mf">04</span><span class="o">/</span><span class="mf">19</span><span class="w"> </span><span class="n">Bought</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">icecream</span><span class="w"></span>
-<span class="w">    </span><span class="n">AccountA</span><span class="p">:</span><span class="n">SubAccountA1</span><span class="w">  </span><span class="mf">3000</span><span class="w"></span>
-<span class="w">    </span><span class="n">AccountB</span><span class="p">:</span><span class="n">SubAccountB1</span><span class="w">  </span><span class="o">-</span><span class="mf">3000</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="mf">2019</span><span class="o">/</span><span class="mf">04</span><span class="o">/</span><span class="mf">19</span><span class="w"> </span><span class="n">Bought</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">icecream</span>
+<span class="w">    </span><span class="n">AccountA</span><span class="p">:</span><span class="n">SubAccountA1</span><span class="w">  </span><span class="mf">3000</span>
+<span class="w">    </span><span class="n">AccountB</span><span class="p">:</span><span class="n">SubAccountB1</span><span class="w">  </span><span class="o">-</span><span class="mf">3000</span>
 </code></pre></div>
 
 <p>That's about it. It basically says that for buying some coffee you paid
@@ -109,28 +109,28 @@ use it.</p>
 The <code>Account:SubAccountA1</code> is used to illustrate that you can have nested accounts.</p>
 <p>Ledger also does amazing reporting.
 For example: This is how much I've spent on travelling over the two years (This exclude everyday transport using busses and autos)</p>
-<div class="highlight"><pre><span></span><code>$ ledger -f personal.ledger balance Expenses:travel
-        <span class="m">78331</span>.94  Expenses:Travel
-          <span class="m">543</span>.51    Cab
-            <span class="m">4137</span>    Cancel
-           <span class="m">55661</span>    Flight
-           <span class="m">10855</span>    Package
-             <span class="m">690</span>    Rent
-         <span class="m">6445</span>.43    Trains
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ledger<span class="w"> </span>-f<span class="w"> </span>personal.ledger<span class="w"> </span>balance<span class="w"> </span>Expenses:travel
+<span class="w">        </span><span class="m">78331</span>.94<span class="w">  </span>Expenses:Travel
+<span class="w">          </span><span class="m">543</span>.51<span class="w">    </span>Cab
+<span class="w">            </span><span class="m">4137</span><span class="w">    </span>Cancel
+<span class="w">           </span><span class="m">55661</span><span class="w">    </span>Flight
+<span class="w">           </span><span class="m">10855</span><span class="w">    </span>Package
+<span class="w">             </span><span class="m">690</span><span class="w">    </span>Rent
+<span class="w">         </span><span class="m">6445</span>.43<span class="w">    </span>Trains
 ----------------
-        <span class="m">78331</span>.94
+<span class="w">        </span><span class="m">78331</span>.94
 </code></pre></div>
 
 <p>For example: This shows how much I've spent on House Rent and etc etc stuff. (I only have an audible subscription that I share)</p>
-<div class="highlight"><pre><span></span><code>$ ledger -f personal.ledger balance Expenses:Utilities
-          <span class="m">162243</span>  Expenses:Utilities
-           <span class="m">11833</span>    Electricity Bill
-          <span class="m">142900</span>    House Rent
-            <span class="m">3744</span>    Internet
-            <span class="m">3666</span>    Phone Recharge
-             <span class="m">100</span>    Subscriptions
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ledger<span class="w"> </span>-f<span class="w"> </span>personal.ledger<span class="w"> </span>balance<span class="w"> </span>Expenses:Utilities
+<span class="w">          </span><span class="m">162243</span><span class="w">  </span>Expenses:Utilities
+<span class="w">           </span><span class="m">11833</span><span class="w">    </span>Electricity<span class="w"> </span>Bill
+<span class="w">          </span><span class="m">142900</span><span class="w">    </span>House<span class="w"> </span>Rent
+<span class="w">            </span><span class="m">3744</span><span class="w">    </span>Internet
+<span class="w">            </span><span class="m">3666</span><span class="w">    </span>Phone<span class="w"> </span>Recharge
+<span class="w">             </span><span class="m">100</span><span class="w">    </span>Subscriptions
 ----------------
-          <span class="m">162243</span>
+<span class="w">          </span><span class="m">162243</span>
 </code></pre></div>
 
 <p>Its just fun. You also use sed/awk to generate reports/graphs of your own.</p>

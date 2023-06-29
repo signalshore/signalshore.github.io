@@ -112,10 +112,10 @@ perspective.</p>
 
 <p>Now, I am run <code>ip link</code> which will describe the network interfaces.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># ip link</span>
-<span class="m">1</span>: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state UNKNOWN qlen <span class="m">1000</span>
-    link/loopback <span class="m">00</span>:00:00:00:00:00 brd <span class="m">00</span>:00:00:00:00:00
-<span class="m">17</span>: eth0@if18: &lt;BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN&gt; mtu <span class="m">1500</span> qdisc noqueue state UP 
-    link/ether <span class="m">02</span>:42:ac:1e:01:00 brd ff:ff:ff:ff:ff:ff
+<span class="m">1</span>:<span class="w"> </span>lo:<span class="w"> </span>&lt;LOOPBACK,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">65536</span><span class="w"> </span>qdisc<span class="w"> </span>noqueue<span class="w"> </span>state<span class="w"> </span>UNKNOWN<span class="w"> </span>qlen<span class="w"> </span><span class="m">1000</span>
+<span class="w">    </span>link/loopback<span class="w"> </span><span class="m">00</span>:00:00:00:00:00<span class="w"> </span>brd<span class="w"> </span><span class="m">00</span>:00:00:00:00:00
+<span class="m">17</span>:<span class="w"> </span>eth0@if18:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span>qdisc<span class="w"> </span>noqueue<span class="w"> </span>state<span class="w"> </span>UP<span class="w"> </span>
+<span class="w">    </span>link/ether<span class="w"> </span><span class="m">02</span>:42:ac:1e:01:00<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
 </code></pre></div>
 
 <p>Here, we that <code>eth0@if18</code> has an <code>@ifXX</code> in it which makes things very
@@ -144,16 +144,16 @@ interface with <em>ifindex</em>=18. That is not a mistake. This shows that
 the interface 17 on the container is linked to interface 18 on my
 <em>host</em>.</p>
 <p>This is what <code>ip link</code> shows on my host.</p>
-<div class="highlight"><pre><span></span><code><span class="m">1</span>: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
-    link/loopback <span class="m">00</span>:00:00:00:00:00 brd <span class="m">00</span>:00:00:00:00:00
-<span class="m">2</span>: enp0s31f6: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu <span class="m">1500</span> <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
-    link/ether e8:6a:64:c1:0d:3f brd ff:ff:ff:ff:ff:ff
-<span class="m">3</span>: wlp6s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
-    link/ether <span class="m">98</span>:2c:bc:4d:d9:b0 brd ff:ff:ff:ff:ff:ff
-<span class="m">4</span>: docker0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
-    link/ether <span class="m">02</span>:42:27:9a:cf:32 brd ff:ff:ff:ff:ff:ff
-<span class="m">18</span>: veth01f0f9d@if17: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> <span class="o">[[</span>EXTRA DETAILS TRUNCATED<span class="o">]]</span>
-    link/ether f6:7c:d7:20:73:f4 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="m">0</span>
+<div class="highlight"><pre><span></span><code><span class="m">1</span>:<span class="w"> </span>lo:<span class="w"> </span>&lt;LOOPBACK,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">65536</span><span class="w"> </span>qdisc<span class="w"> </span>noqueue<span class="w"> </span>state<span class="w"> </span><span class="o">[[</span>EXTRA<span class="w"> </span>DETAILS<span class="w"> </span>TRUNCATED<span class="o">]]</span>
+<span class="w">    </span>link/loopback<span class="w"> </span><span class="m">00</span>:00:00:00:00:00<span class="w"> </span>brd<span class="w"> </span><span class="m">00</span>:00:00:00:00:00
+<span class="m">2</span>:<span class="w"> </span>enp0s31f6:<span class="w"> </span>&lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="o">[[</span>EXTRA<span class="w"> </span>DETAILS<span class="w"> </span>TRUNCATED<span class="o">]]</span>
+<span class="w">    </span>link/ether<span class="w"> </span>e8:6a:64:c1:0d:3f<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
+<span class="m">3</span>:<span class="w"> </span>wlp6s0:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="o">[[</span>EXTRA<span class="w"> </span>DETAILS<span class="w"> </span>TRUNCATED<span class="o">]]</span>
+<span class="w">    </span>link/ether<span class="w"> </span><span class="m">98</span>:2c:bc:4d:d9:b0<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
+<span class="m">4</span>:<span class="w"> </span>docker0:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="o">[[</span>EXTRA<span class="w"> </span>DETAILS<span class="w"> </span>TRUNCATED<span class="o">]]</span>
+<span class="w">    </span>link/ether<span class="w"> </span><span class="m">02</span>:42:27:9a:cf:32<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
+<span class="m">18</span>:<span class="w"> </span>veth01f0f9d@if17:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="o">[[</span>EXTRA<span class="w"> </span>DETAILS<span class="w"> </span>TRUNCATED<span class="o">]]</span>
+<span class="w">    </span>link/ether<span class="w"> </span>f6:7c:d7:20:73:f4<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff<span class="w"> </span>link-netnsid<span class="w"> </span><span class="m">0</span>
 </code></pre></div>
 
 <p><strong>NOTE</strong> Notice how interface <em>18</em> is linked to interface <em>17</em> on another namespace. This will be important.</p>

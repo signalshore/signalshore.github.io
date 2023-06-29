@@ -95,41 +95,41 @@ I want to test two file-systems; btrfs and ext4.
 I want to test full disk encryption using Luks along with these file-systems.</p>
 <p>I already know that btrfs is going to be slower that ext4, I just want to know by how much.</p>
 <p>The following combinations were created</p>
-<div class="highlight"><pre><span></span><code><span class="p">|</span> part <span class="nb">type</span>    <span class="p">|</span> allocation <span class="p">|</span> label     <span class="p">|</span>
-<span class="p">|</span> ------------ <span class="p">|</span> ---------- <span class="p">|</span> --------- <span class="p">|</span>
-<span class="p">|</span> ext4         <span class="p">|</span> <span class="m">25</span>%        <span class="p">|</span> ext4Only  <span class="p">|</span>
-<span class="p">|</span> luks + ext4  <span class="p">|</span> <span class="m">25</span>%        <span class="p">|</span> ext4Lks   <span class="p">|</span>
-<span class="p">|</span> btrfs        <span class="p">|</span> <span class="m">25</span>%        <span class="p">|</span> btrfsOnly <span class="p">|</span>
-<span class="p">|</span> luks + btrfs <span class="p">|</span> <span class="m">25</span>%        <span class="p">|</span> btrfsLuks <span class="p">|</span>
+<div class="highlight"><pre><span></span><code><span class="p">|</span><span class="w"> </span>part<span class="w"> </span><span class="nb">type</span><span class="w">    </span><span class="p">|</span><span class="w"> </span>allocation<span class="w"> </span><span class="p">|</span><span class="w"> </span>label<span class="w">     </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>------------<span class="w"> </span><span class="p">|</span><span class="w"> </span>----------<span class="w"> </span><span class="p">|</span><span class="w"> </span>---------<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>ext4<span class="w">         </span><span class="p">|</span><span class="w"> </span><span class="m">25</span>%<span class="w">        </span><span class="p">|</span><span class="w"> </span>ext4Only<span class="w">  </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>luks<span class="w"> </span>+<span class="w"> </span>ext4<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">25</span>%<span class="w">        </span><span class="p">|</span><span class="w"> </span>ext4Lks<span class="w">   </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>btrfs<span class="w">        </span><span class="p">|</span><span class="w"> </span><span class="m">25</span>%<span class="w">        </span><span class="p">|</span><span class="w"> </span>btrfsOnly<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>luks<span class="w"> </span>+<span class="w"> </span>btrfs<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">25</span>%<span class="w">        </span><span class="p">|</span><span class="w"> </span>btrfsLuks<span class="w"> </span><span class="p">|</span>
 </code></pre></div>
 
 <p>This is the output from <code>parted</code></p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>parted<span class="o">)</span> print
-Model: SanDisk Ultra USB <span class="m">3</span>.0 <span class="o">(</span>scsi<span class="o">)</span>
-Disk /dev/sda: 123GB
-Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: 512B/512B
-Partition Table: msdos
-Disk Flags:
+<div class="highlight"><pre><span></span><code><span class="o">(</span>parted<span class="o">)</span><span class="w"> </span>print
+Model:<span class="w"> </span>SanDisk<span class="w"> </span>Ultra<span class="w"> </span>USB<span class="w"> </span><span class="m">3</span>.0<span class="w"> </span><span class="o">(</span>scsi<span class="o">)</span>
+Disk<span class="w"> </span>/dev/sda:<span class="w"> </span>123GB
+Sector<span class="w"> </span>size<span class="w"> </span><span class="o">(</span>logical/physical<span class="o">)</span>:<span class="w"> </span>512B/512B
+Partition<span class="w"> </span>Table:<span class="w"> </span>msdos
+Disk<span class="w"> </span>Flags:
 
-Number  Start   End     Size    Type     File system  Flags
-<span class="m">1</span>      1049kB  <span class="m">30</span>.8GB  <span class="m">30</span>.8GB  primary  ext4         lba
-<span class="m">2</span>      <span class="m">30</span>.8GB  <span class="m">61</span>.5GB  <span class="m">30</span>.8GB  primary               lba
-<span class="m">3</span>      <span class="m">61</span>.5GB  <span class="m">92</span>.3GB  <span class="m">30</span>.8GB  primary  btrfs        lba
-<span class="m">4</span>      <span class="m">92</span>.3GB  123GB   <span class="m">30</span>.8GB  primary               lba
+Number<span class="w">  </span>Start<span class="w">   </span>End<span class="w">     </span>Size<span class="w">    </span>Type<span class="w">     </span>File<span class="w"> </span>system<span class="w">  </span>Flags
+<span class="m">1</span><span class="w">      </span>1049kB<span class="w">  </span><span class="m">30</span>.8GB<span class="w">  </span><span class="m">30</span>.8GB<span class="w">  </span>primary<span class="w">  </span>ext4<span class="w">         </span>lba
+<span class="m">2</span><span class="w">      </span><span class="m">30</span>.8GB<span class="w">  </span><span class="m">61</span>.5GB<span class="w">  </span><span class="m">30</span>.8GB<span class="w">  </span>primary<span class="w">               </span>lba
+<span class="m">3</span><span class="w">      </span><span class="m">61</span>.5GB<span class="w">  </span><span class="m">92</span>.3GB<span class="w">  </span><span class="m">30</span>.8GB<span class="w">  </span>primary<span class="w">  </span>btrfs<span class="w">        </span>lba
+<span class="m">4</span><span class="w">      </span><span class="m">92</span>.3GB<span class="w">  </span>123GB<span class="w">   </span><span class="m">30</span>.8GB<span class="w">  </span>primary<span class="w">               </span>lba
 </code></pre></div>
 
 <p>We build a <code>btrfs</code> filesystem(s) in single data-mode. This makes sure that btrfs as a file-system is not being too smart and just writes data into disks as they arrive.</p>
 <p>In the partitions where encryption was set-up we first build a LUKs encrypted volume and then build the filesystem on top of it.</p>
 <p>Then we mount all of the partitions under  <code>/mnt/</code>. It looks like this</p>
-<div class="highlight"><pre><span></span><code>~ ❯❯❯ lsblk /dev/sda
-NAME          MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
-sda             <span class="m">8</span>:0    <span class="m">1</span> <span class="m">114</span>.6G  <span class="m">0</span> disk
-├─sda1          <span class="m">8</span>:1    <span class="m">1</span>  <span class="m">28</span>.7G  <span class="m">0</span> part  /mnt/ext4Only
-├─sda2          <span class="m">8</span>:2    <span class="m">1</span>  <span class="m">28</span>.7G  <span class="m">0</span> part
-│ └─ext4Luks  <span class="m">253</span>:4    <span class="m">0</span>  <span class="m">28</span>.7G  <span class="m">0</span> crypt /mnt/ext4Luks
-├─sda3          <span class="m">8</span>:3    <span class="m">1</span>  <span class="m">28</span>.7G  <span class="m">0</span> part  /mnt/btrfsOnly
-└─sda4          <span class="m">8</span>:4    <span class="m">1</span>  <span class="m">28</span>.7G  <span class="m">0</span> part
-└─btrfsLuks <span class="m">253</span>:3    <span class="m">0</span>  <span class="m">28</span>.7G  <span class="m">0</span> crypt /mnt/btrfsLuks
+<div class="highlight"><pre><span></span><code>~<span class="w"> </span>❯❯❯<span class="w"> </span>lsblk<span class="w"> </span>/dev/sda
+NAME<span class="w">          </span>MAJ:MIN<span class="w"> </span>RM<span class="w">   </span>SIZE<span class="w"> </span>RO<span class="w"> </span>TYPE<span class="w">  </span>MOUNTPOINT
+sda<span class="w">             </span><span class="m">8</span>:0<span class="w">    </span><span class="m">1</span><span class="w"> </span><span class="m">114</span>.6G<span class="w">  </span><span class="m">0</span><span class="w"> </span>disk
+├─sda1<span class="w">          </span><span class="m">8</span>:1<span class="w">    </span><span class="m">1</span><span class="w">  </span><span class="m">28</span>.7G<span class="w">  </span><span class="m">0</span><span class="w"> </span>part<span class="w">  </span>/mnt/ext4Only
+├─sda2<span class="w">          </span><span class="m">8</span>:2<span class="w">    </span><span class="m">1</span><span class="w">  </span><span class="m">28</span>.7G<span class="w">  </span><span class="m">0</span><span class="w"> </span>part
+│<span class="w"> </span>└─ext4Luks<span class="w">  </span><span class="m">253</span>:4<span class="w">    </span><span class="m">0</span><span class="w">  </span><span class="m">28</span>.7G<span class="w">  </span><span class="m">0</span><span class="w"> </span>crypt<span class="w"> </span>/mnt/ext4Luks
+├─sda3<span class="w">          </span><span class="m">8</span>:3<span class="w">    </span><span class="m">1</span><span class="w">  </span><span class="m">28</span>.7G<span class="w">  </span><span class="m">0</span><span class="w"> </span>part<span class="w">  </span>/mnt/btrfsOnly
+└─sda4<span class="w">          </span><span class="m">8</span>:4<span class="w">    </span><span class="m">1</span><span class="w">  </span><span class="m">28</span>.7G<span class="w">  </span><span class="m">0</span><span class="w"> </span>part
+└─btrfsLuks<span class="w"> </span><span class="m">253</span>:3<span class="w">    </span><span class="m">0</span><span class="w">  </span><span class="m">28</span>.7G<span class="w">  </span><span class="m">0</span><span class="w"> </span>crypt<span class="w"> </span>/mnt/btrfsLuks
 </code></pre></div>
 
 <p>I am using this tool called <code>fio</code> for running the benchmark and I am using <code>netdata</code> for reporting the state of the system and for displaying fancy visualizations.</p>

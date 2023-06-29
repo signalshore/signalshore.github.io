@@ -66,12 +66,12 @@ streams from one process to another process. However the syntax of
 using pipes with processess can be a bit difficult and restrictive.</p>
 <p>For example, 
 If you want to push the output of process A into process B, you would write it as such</p>
-<div class="highlight"><pre><span></span><code><span class="sx">!bash</span><span class="w"></span>
-<span class="n">A</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="sx">!bash</span>
+<span class="n">A</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span>
 </code></pre></div>
 
 <p>This is similar to </p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>A &gt; file $ B &lt; file
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>A<span class="w"> </span>&gt;<span class="w"> </span>file<span class="w"> </span>$<span class="w"> </span>B<span class="w"> </span>&lt;<span class="w"> </span>file
 </code></pre></div></td></tr></table></div>
 
 <p>Named pipes are special files that can be used to pass data between
@@ -84,7 +84,7 @@ ideal to signal backpressure etc etc.</p>
 see, a named pipe is nothing but a first-in-first-out stream (with
 some added bells and whistles).</p>
 <p>In a cool hack you can make a TCP proxy using netcat and named pipes</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>nc -lp <span class="m">6000</span> &lt;primary <span class="p">|</span> nc localhost <span class="m">5000</span> &gt;primary
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>nc<span class="w"> </span>-lp<span class="w"> </span><span class="m">6000</span><span class="w"> </span>&lt;primary<span class="w"> </span><span class="p">|</span><span class="w"> </span>nc<span class="w"> </span>localhost<span class="w"> </span><span class="m">5000</span><span class="w"> </span>&gt;primary
 </code></pre></div></td></tr></table></div>
 
 <p>This uses the named pipe <code>primary</code> as a bidirectional pipe.</p>
@@ -96,7 +96,7 @@ some added bells and whistles).</p>
 </ul>
 <h2 id="whats-more">Whats more ?</h2>
 <p>You can even copy the entire TCP stream using this little tool called <code>tee</code>.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>nc -lvp <span class="m">6000</span> &lt;primary <span class="p">|</span> tee mirror <span class="p">|</span> nc localhost <span class="m">5000</span> &gt;primary
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>nc<span class="w"> </span>-lvp<span class="w"> </span><span class="m">6000</span><span class="w"> </span>&lt;primary<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>mirror<span class="w"> </span><span class="p">|</span><span class="w"> </span>nc<span class="w"> </span>localhost<span class="w"> </span><span class="m">5000</span><span class="w"> </span>&gt;primary
 </code></pre></div></td></tr></table></div>
 
 <p>In this case you have to read from the <code>mirror</code> fifo and you should be

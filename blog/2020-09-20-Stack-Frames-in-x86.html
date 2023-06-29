@@ -96,28 +96,28 @@ the stack frame for that function as well as tearing down the stack
 frame when the control-flow needs to return to the caller function.</p>
 <h1 id="let-us-read-some-assembly">Let us read some Assembly!!</h1>
 <p>Let us use an example program to understand this.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
 
 <p>Compile this using gcc to a 32 bit target. </p>
-<div class="highlight"><pre><span></span><code>gcc -m32 func_call.c
+<div class="highlight"><pre><span></span><code>gcc<span class="w"> </span>-m32<span class="w"> </span>func_call.c
 </code></pre></div>
 
 <p>Now, generate the assembly output using <code>objdump</code>. (you can use gdb for this too, or any other too you like)</p>
-<div class="highlight"><pre><span></span><code>objdump -d -M intel a.out
+<div class="highlight"><pre><span></span><code>objdump<span class="w"> </span>-d<span class="w"> </span>-M<span class="w"> </span>intel<span class="w"> </span>a.out
 </code></pre></div>
 
 <p>The only sections that we will focus on are the <code>main</code> and the <code>foo</code> sections.</p>
@@ -158,8 +158,8 @@ frame when the control-flow needs to return to the caller function.</p>
 <p>We will walk through the calling  code, the entry sequence and the sequence to get a better understanding.</p>
 </blockquote>
 <h3 id="the-function-call-sequence">The Function-Call sequence</h3>
-<div class="highlight"><pre><span></span><code><span class="nf">push</span><span class="w">   </span><span class="kt">DWORD</span><span class="w"> </span><span class="nv">PTR</span><span class="w"> </span><span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mh">0x8</span><span class="p">]</span><span class="w"></span>
-<span class="nf">call</span><span class="w">   </span><span class="mi">4</span><span class="nv">ed</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">foo</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nf">push</span><span class="w">   </span><span class="kt">DWORD</span><span class="w"> </span><span class="nv">PTR</span><span class="w"> </span><span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mh">0x8</span><span class="p">]</span>
+<span class="nf">call</span><span class="w">   </span><span class="mi">4</span><span class="nv">ed</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">foo</span><span class="o">&gt;</span>
 </code></pre></div>
 
 <p>In this segment we are leading the value stored in the memory
@@ -173,8 +173,8 @@ branched from. It is generally <code>ip+0x2</code></p>
 <h6 id="note-to-understand-this-we-will-ignore-the-dword-ptr-it-is-not-too-imp-for-our-goals">NOTE: To understand this, we will ignore the <code>DWORD PTR</code>. It is not too imp for our goals.</h6>
 <h3 id="the-entry-sequence">The Entry Sequence</h3>
 <p>Notice the first two lines of both the functions.</p>
-<div class="highlight"><pre><span></span><code><span class="nf">push</span><span class="w">   </span><span class="nb">ebp</span><span class="w"></span>
-<span class="nf">mov</span><span class="w">    </span><span class="nb">ebp</span><span class="p">,</span><span class="nb">esp</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nf">push</span><span class="w">   </span><span class="nb">ebp</span>
+<span class="nf">mov</span><span class="w">    </span><span class="nb">ebp</span><span class="p">,</span><span class="nb">esp</span>
 </code></pre></div>
 
 <p>In this sequence we built the stack from for the current function. </p>
@@ -190,26 +190,26 @@ of the stack. This effectively starts a new frame.</p>
 <h5 id="note-as-every-frame-contains-a-reference-to-the-base-pointer-of-the-previous-frame-this-enables-debuggers-to-walk-the-call-stack">Note: As every frame contains a reference to the base pointer of the previous frame, this enables debuggers to <em>walk</em> the call-stack.</h5>
 <p>Thus the <code>stack frame</code> for <code>foo</code> function (or the <code>callee</code> function) contains the following.</p>
 <div class="highlight"><pre><span></span><code>+<span class="o">========================</span>+
-<span class="p">|</span>                        <span class="p">|</span>
-<span class="p">|</span>  Previous Stack-Frame  <span class="p">|</span>
-<span class="p">|</span>      <span class="o">(</span>main func<span class="o">)</span>       <span class="p">|</span>
-<span class="p">|</span>                        <span class="p">|</span>
+<span class="p">|</span><span class="w">                        </span><span class="p">|</span>
+<span class="p">|</span><span class="w">  </span>Previous<span class="w"> </span>Stack-Frame<span class="w">  </span><span class="p">|</span>
+<span class="p">|</span><span class="w">      </span><span class="o">(</span>main<span class="w"> </span>func<span class="o">)</span><span class="w">       </span><span class="p">|</span>
+<span class="p">|</span><span class="w">                        </span><span class="p">|</span>
 +<span class="o">========================</span>+
-<span class="p">|</span>      Parameter <span class="m">1</span>       <span class="p">|</span>
+<span class="p">|</span><span class="w">      </span>Parameter<span class="w"> </span><span class="m">1</span><span class="w">       </span><span class="p">|</span>
 +------------------------+
-<span class="p">|</span>     Return Address     <span class="p">|</span>
+<span class="p">|</span><span class="w">     </span>Return<span class="w"> </span>Address<span class="w">     </span><span class="p">|</span>
 +------------------------+
-<span class="p">|</span>   Base Pointer <span class="o">(</span>main<span class="o">)</span>  <span class="p">|</span>
-+------------------------+ &lt;---- ebp foo
-<span class="p">|</span>     Local variables    <span class="p">|</span>
+<span class="p">|</span><span class="w">   </span>Base<span class="w"> </span>Pointer<span class="w"> </span><span class="o">(</span>main<span class="o">)</span><span class="w">  </span><span class="p">|</span>
++------------------------+<span class="w"> </span>&lt;----<span class="w"> </span>ebp<span class="w"> </span>foo
+<span class="p">|</span><span class="w">     </span>Local<span class="w"> </span>variables<span class="w">    </span><span class="p">|</span>
 +------------------------+
-<span class="p">|</span>     Local variables    <span class="p">|</span> 
-+<span class="o">========================</span>+ &lt;---- esp foo
+<span class="p">|</span><span class="w">     </span>Local<span class="w"> </span>variables<span class="w">    </span><span class="p">|</span><span class="w"> </span>
++<span class="o">========================</span>+<span class="w"> </span>&lt;----<span class="w"> </span>esp<span class="w"> </span>foo
 </code></pre></div>
 
 <h3 id="the-exit-sequence">The Exit Sequence</h3>
-<div class="highlight"><pre><span></span><code><span class="nf">leave</span><span class="w"></span>
-<span class="nf">ret</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nf">leave</span>
+<span class="nf">ret</span>
 </code></pre></div>
 
 <p>Now, the function has finished executing and it needs to return the

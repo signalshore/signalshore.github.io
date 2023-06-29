@@ -122,19 +122,19 @@ the rest are treated as the operands.</p>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">;; + is the operator and 2, 3, 4 are the operands</span><span class="w"></span>
-<span class="nb">&gt;</span><span class="w"> </span><span class="mi">9</span><span class="w"></span>
-<span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">;; * is the operator and 2, 3, 4 are the operands</span><span class="w"></span>
-<span class="nb">&gt;</span><span class="w"> </span><span class="mi">24</span><span class="w"></span>
-<span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w">   </span><span class="c1">;; &gt; is the operator; this is equivalent to 2 &gt; 3 </span><span class="w"></span>
-<span class="nb">&gt;</span><span class="w"> </span><span class="nv">f</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">;; + is the operator and 2, 3, 4 are the operands</span>
+<span class="nb">&gt;</span><span class="w"> </span><span class="mi">9</span>
+<span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">;; * is the operator and 2, 3, 4 are the operands</span>
+<span class="nb">&gt;</span><span class="w"> </span><span class="mi">24</span>
+<span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w">   </span><span class="c1">;; &gt; is the operator; this is equivalent to 2 &gt; 3 </span>
+<span class="nb">&gt;</span><span class="w"> </span><span class="nv">f</span>
 </code></pre></div></td></tr></table></div>
 
 <p>This also applied for lists that have other lists in them. Let's have
 a look!</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"></span>
-<span class="nb">&gt;</span><span class="w"> </span><span class="mi">9</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">&gt;</span><span class="w"> </span><span class="mi">9</span>
 </code></pre></div></td></tr></table></div>
 
 <p>Let us trace what happens here.  First the evaluator receives the
@@ -164,12 +164,12 @@ evaluated.</p>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">recursive</span><span class="w"> </span><span class="nv">x</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="mi">0</span><span class="w"></span>
-<span class="w">        </span><span class="p">(</span><span class="nf">recursive</span><span class="w"> </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">recursive</span><span class="w"> </span><span class="nv">x</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">(</span><span class="nf">recursive</span><span class="w"> </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span>
 
-<span class="p">(</span><span class="nf">recursive</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nf">recursive</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 
 <p>What happens when we evaluate the last expression ? Nothing
@@ -184,8 +184,8 @@ would lead to an infinite loop. But the if-constructs uses <a href="https://en.w
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">new-if</span><span class="w"> </span><span class="nv">predicate</span><span class="w"> </span><span class="nv">exp1</span><span class="w"> </span><span class="nv">exp2</span><span class="p">)</span><span class="w"> </span>
-<span class="w">    </span><span class="p">(</span><span class="k">cond</span><span class="w"> </span><span class="p">(</span><span class="nf">predicate</span><span class="w"> </span><span class="nv">exp1</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">(</span><span class="k">else</span><span class="w"> </span><span class="nv">exp2</span><span class="p">)))</span><span class="w"></span>
+<span class="w">    </span><span class="p">(</span><span class="k">cond</span><span class="w"> </span><span class="p">(</span><span class="nf">predicate</span><span class="w"> </span><span class="nv">exp1</span><span class="p">)</span>
+<span class="w">        </span><span class="p">(</span><span class="k">else</span><span class="w"> </span><span class="nv">exp2</span><span class="p">)))</span>
 </code></pre></div></td></tr></table></div>
 
 <p>This is the <em>new-if</em> procedure. Let us use this in our previous program.</p>
@@ -194,12 +194,12 @@ would lead to an infinite loop. But the if-constructs uses <a href="https://en.w
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">recursive-new</span><span class="w"> </span><span class="nv">x</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="nf">new-if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="mi">0</span><span class="w"></span>
-<span class="w">        </span><span class="p">(</span><span class="nf">recursive-new</span><span class="w"> </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w"></span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">recursive-new</span><span class="w"> </span><span class="nv">x</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">new-if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">(</span><span class="nf">recursive-new</span><span class="w"> </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span>
 
-<span class="p">(</span><span class="nf">recursive-new</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="p">(</span><span class="nf">recursive-new</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 
 <p>What happens now ? </p>
