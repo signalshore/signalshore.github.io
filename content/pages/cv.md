@@ -9,10 +9,19 @@ Title: CV
 
 ## Experience - Full Time ##
 
-### Druva Data Solutions ###
-*Software Engineer*, Jan 2021 - Present
+### [Last9](https://last9.io/) ###
+*Site Reliability Engineer*, Jan 2023 - Present
 
-- Software Generalist in Druva Labs Team (CTO's office)
+- Doing SRE things
+- Managing a TSDB (Levitate) that we are building
+- Wrote Ansible to handle over 800 individual nodes in a TSDB cluster
+- Maintained a system with ingestion rates of more than 350 Million Transactions per min. 
+- Automation of various reports (cost etc etc)
+
+### [Druva Data Solutions](https://www.druva.com/) ###
+*Software Engineer*, Jan 2021 - Dec 2022
+
+- Software Generalist in [Druva Labs](https://www.druva.com/labs/) (CTO's office)
 - Kubernetes Protection Project; Productization
     - Integrated Observability tools (Prometheus and Fluentd) into Operator Helm chart for one-click install
     - Wrote custom Language on top of go-templates to mutate yaml manifests in the backup controller
@@ -24,7 +33,7 @@ Title: CV
 - Participated in PoCs to help other teams streamline their workflows (logging etc)
 - Helped onboard two junior engineers to the team.
 
-### People Interactive ###
+### [Shaadi.com](https://www.shaadi.com) ###
 *DevOps Engineer*, June 2018 - Jan 2021
 
 - Sole maintainer of container-platform
@@ -42,7 +51,7 @@ standalone ZooKeeper cluster and EBS for data persistence.
 - Migrated live Redis from AWS to Redis Labs without service
 interruption in production.
 - Handle day-to-day DevOps tasks on aws including the staging
-and production environments for multiple BUs
+and production environments for multiple BUs ([shaadi.com](https://www.shaadi.com) and [sangam.com](https://www.sangam.com))
 - Helped train internal teams about containers and AWS in general
 - Designed and evaluated hiring tests and handled interviews for
 the DevOps team
@@ -52,9 +61,9 @@ the DevOps team
 
 *DevOps Engineer*, June 2018 - June 2019
 
-- Infra with Ansible, Terraform and Packer
-- CI with Jenkins.
-- Everything else with Python, Bash etc :-P
+- As a part of my first job, I got hands on learning of Devops life cycle - Packaging images, Provisioning, configuration management and CI/CD
+- Tools: Packer, Terraform, Ansible, Jenkins, GCP
+- Everyday scripting with bash and Python
 - Database (Riak) benchmarks and performance optimisations for JVM
 - Built a small data-cleaning tool in Python using Pandas and regular expressions.
 - Built systems to help onboard new engineers to the team.

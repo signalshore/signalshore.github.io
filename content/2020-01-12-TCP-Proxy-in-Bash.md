@@ -14,7 +14,7 @@ using pipes with processess can be a bit difficult and restrictive.
 
 For example, 
 If you want to push the output of process A into process B, you would write it as such
-    
+
     !bash
     A | B
 
@@ -22,7 +22,7 @@ This is similar to
 
     #!bash
     A > file $ B < file
-    
+   
 
 Named pipes are special files that can be used to pass data between
 two processess. When a process writes to a named pipe the kernel

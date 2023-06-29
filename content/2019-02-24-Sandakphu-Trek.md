@@ -84,7 +84,8 @@ Everest on the left and Kanchenjunga on the right. We could see them
 everyday, which is a welcome change from the normal stuff we are used
 to seeing everyday. :-P
 
->Lhotse, Everest, Makalu peaks from the right.
+> Lhotse, Everest, Makalu peaks from the right.
+
 >![Everest](assets/images/2019-02-24/everest.png)
 
 
@@ -99,7 +100,8 @@ remember the details of this days trek. I do remember that at
 Kalipokhri all of us gathered in the hut where we were supposed to
 have dinner a all of us sang. It was a beautiful experience.
 
->Kanchenjunga.                                           
+>Kanchenjunga.       
+
 >![Kanchenjunga](assets/images/2019-02-24/kanchenjunga.png)
 
 
@@ -138,6 +140,7 @@ We also managed to do some amazing photography and got good shots of
 the milky-way.
 
 > This was our camp location at Sabargram.
+
 >![camp](assets/images/2019-02-24/camp.png)
 
 
