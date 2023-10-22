@@ -28,6 +28,8 @@
         |
         <a href="https://signalshore.github.io/cv/">CV</a>
         |
+        <a href="https://signalshore.github.io/my-values/">My Values</a>
+        |
 
         <a href="/archives/">Archives</a>
         |
@@ -136,8 +138,8 @@ config is a dual-booted uefi setup with Arch Linux)</p>
 In this section I have put together a list of things that should be essential to a smooth start.</p>
 <h3 id="per-user-profile">Per-User profile</h3>
 <p>In the previous section we talked about how you guix maintain packages on a per-user basis. One easy method to maintain per user profiles is to create a manifest file. A manifest file is a scheme file that contains all the packages for a specific user. This way you can specify only the packages that you want to be available globally in the system configuration file and other packages can be installed on a per-user basis using the manifest file.</p>
-<div class="highlight"><pre><span></span><code>#bash
-$ guix package -m profile.scm
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="nx">bash</span>
+<span class="err">$</span><span class="w"> </span><span class="nx">guix</span><span class="w"> </span><span class="kn">package</span><span class="w"> </span><span class="o">-</span><span class="nx">m</span><span class="w"> </span><span class="nx">profile</span><span class="p">.</span><span class="nx">scm</span>
 </code></pre></div>
 
 <p>This will tell guix package to install the packages from that file. </p>

@@ -28,6 +28,8 @@
         |
         <a href="https://signalshore.github.io/cv/">CV</a>
         |
+        <a href="https://signalshore.github.io/my-values/">My Values</a>
+        |
 
         <a href="/archives/">Archives</a>
         |
@@ -192,15 +194,15 @@ on some arbitrary input.</p>
 <p>The Halting Problem is a decision problem of determining whether any
 arbitrary Turing Machine will halt on an arbitrary string input or
 not. </p>
-<p>In other words lets say that we have a Language $H_{Lang}$ which is
-made up of all string encoding of the form $<B,w>$ where $B$ is a
-Turing Machine and $w$ is a string and $B$ halts on $w$. We need to
-show that $H_{Lang}$ is undecidable. Which means that there isn't a
-single imaginable Turing Machine that can decide $H_{Lang}$.</p>
+<p>In other words lets say that we have a Language <span class="math">\(H_{Lang}\)</span> which is
+made up of all string encoding of the form <span class="math">\(&lt;B,w&gt;\)</span> where <span class="math">\(B\)</span> is a
+Turing Machine and <span class="math">\(w\)</span> is a string and <span class="math">\(B\)</span> halts on <span class="math">\(w\)</span>. We need to
+show that <span class="math">\(H_{Lang}\)</span> is undecidable. Which means that there isn't a
+single imaginable Turing Machine that can decide <span class="math">\(H_{Lang}\)</span>.</p>
 <blockquote>
 <p>Which means that no one can ever design a Turing Machine that will
-be able to take an arbitrary string $w$ and an arbitrary Turing
-machine $B$ and tell whether $B$ will halt on $w$ or not. </p>
+be able to take an arbitrary string <span class="math">\(w\)</span> and an arbitrary Turing
+machine <span class="math">\(B\)</span> and tell whether <span class="math">\(B\)</span> will halt on <span class="math">\(w\)</span> or not. </p>
 </blockquote>
 <p>Now, this might seem like a fairly un-important detail but this has
 some far-reaching implications as we will soon see. But before that we
@@ -208,41 +210,41 @@ will prove the above statement. This is a fun proof that illustrates
 how to think about these problems in general.</p>
 <h3 id="proof">Proof</h3>
 <p>Let us assume that such a machine does exist and let us call it
-$H_{TM}$.</p>
-<p>Construction of $H_{TM}$:</p>
+<span class="math">\(H_{TM}\)</span>.</p>
+<p>Construction of <span class="math">\(H_{TM}\)</span>:</p>
 <ul>
-<li><strong>Input :</strong> String $<B,w>$, where $B$ is a TM and $w$ is a string.</li>
-<li><strong>Run :</strong> Simulates $w$ on $B$.</li>
-<li><strong>Accepts :</strong> $w$ if $B$ halts on $w$</li>
-<li><strong>Rejects :</strong> $w$ if $B$ does not halt on $w$.</li>
+<li><strong>Input :</strong> String <span class="math">\(&lt;B,w&gt;\)</span>, where <span class="math">\(B\)</span> is a TM and <span class="math">\(w\)</span> is a string.</li>
+<li><strong>Run :</strong> Simulates <span class="math">\(w\)</span> on <span class="math">\(B\)</span>.</li>
+<li><strong>Accepts :</strong> <span class="math">\(w\)</span> if <span class="math">\(B\)</span> halts on <span class="math">\(w\)</span></li>
+<li><strong>Rejects :</strong> <span class="math">\(w\)</span> if <span class="math">\(B\)</span> does not halt on <span class="math">\(w\)</span>.</li>
 </ul>
 <p><em>This</em> is the decider that we have to prove can not exist.</p>
-<p>Now, since $H_{TM}$ already exists we can use this machine to
-construct another Turing Machine $D_{TM_H}$ which has $H_{TM}$ as a
+<p>Now, since <span class="math">\(H_{TM}\)</span> already exists we can use this machine to
+construct another Turing Machine <span class="math">\(D_{TM_H}\)</span> which has <span class="math">\(H_{TM}\)</span> as a
 subroutine (hence the sub-subscript notation).</p>
-<p>Construction of $D_{TM_H}$:</p>
+<p>Construction of <span class="math">\(D_{TM_H}\)</span>:</p>
 <ul>
-<li><strong>Input :</strong> String $<M>$, where $M$ is a Turing machine</li>
-<li><strong>Runs :</strong> Simulates $<M, \<M>>$ on $H_{TM}$</li>
-<li><strong>Accepts :</strong> $<M>$ if $H_{TM}$ rejects $<M, \<M>>$, i.e. if $M$ rejects $<M>$</li>
-<li><strong>Rejects :</strong> $<M>$ if $H_{TM}$ accepts $<M, \<M>>$, i.e. if $M$ accepts $<M>$</li>
+<li><strong>Input :</strong> String <span class="math">\(&lt;M&gt;\)</span>, where <span class="math">\(M\)</span> is a Turing machine</li>
+<li><strong>Runs :</strong> Simulates <span class="math">\(&lt;M, &lt;M&gt;&gt;\)</span> on <span class="math">\(H_{TM}\)</span></li>
+<li><strong>Accepts :</strong> <span class="math">\(&lt;M&gt;\)</span> if <span class="math">\(H_{TM}\)</span> rejects <span class="math">\(&lt;M, &lt;M&gt;&gt;\)</span>, i.e. if <span class="math">\(M\)</span> rejects <span class="math">\(&lt;M&gt;\)</span></li>
+<li><strong>Rejects :</strong> <span class="math">\(&lt;M&gt;\)</span> if <span class="math">\(H_{TM}\)</span> accepts <span class="math">\(&lt;M, &lt;M&gt;&gt;\)</span>, i.e. if <span class="math">\(M\)</span> accepts <span class="math">\(&lt;M&gt;\)</span></li>
 </ul>
 <blockquote>
-<p><strong>Now, what happens if we run $D_{TM_H}$ on $<D_{TM_H}>$ ?</strong></p>
+<p><strong>Now, what happens if we run <span class="math">\(D_{TM_H}\)</span> on <span class="math">\(&lt;D_{TM_H}&gt;\)</span> ?</strong></p>
 </blockquote>
 <p>By the above Accept and Reject conditions, </p>
 <ul>
-<li>If $D_{TM_H}$ <strong>accepts</strong> $<D_{TM_H}>$, then it means that $H_{TM}$
-  rejected $<D_{TM_H}, \<D_{TM_H} >>$ which means that $D_{TM_H}$
-  <strong>rejects</strong> $<D_{TM_H}>$</li>
-<li>If $D_{TM_H}$ <strong>rejects</strong> $<D_{TM_H}>$, then it means that $H_{TM}$
-  accepted $<D_{TM_H}, \<D_{TM_H} >>$ which means that $D_{TM_H}$
-  <strong>accepted</strong> $<D_{TM_H}>$</li>
+<li>If <span class="math">\(D_{TM_H}\)</span> <strong>accepts</strong> <span class="math">\(&lt;D_{TM_H}&gt;\)</span>, then it means that <span class="math">\(H_{TM}\)</span>
+  rejected <span class="math">\(&lt;D_{TM_H}, &lt;D_{TM_H} &gt;&gt;\)</span> which means that <span class="math">\(D_{TM_H}\)</span>
+  <strong>rejects</strong> <span class="math">\(&lt;D_{TM_H}&gt;\)</span></li>
+<li>If <span class="math">\(D_{TM_H}\)</span> <strong>rejects</strong> <span class="math">\(&lt;D_{TM_H}&gt;\)</span>, then it means that <span class="math">\(H_{TM}\)</span>
+  accepted <span class="math">\(&lt;D_{TM_H}, &lt;D_{TM_H} &gt;&gt;\)</span> which means that <span class="math">\(D_{TM_H}\)</span>
+  <strong>accepted</strong> <span class="math">\(&lt;D_{TM_H}&gt;\)</span></li>
 </ul>
-<p>This is a contradiction because it implies that $D_{TM_H}$ accepts
+<p>This is a contradiction because it implies that <span class="math">\(D_{TM_H}\)</span> accepts
 itself if it rejects itself.</p>
-<p>Hence our initial assumption about the existence of $H_{TM}$ must be
-wrong. Hence $H_{TM}$ can not exist.</p>
+<p>Hence our initial assumption about the existence of <span class="math">\(H_{TM}\)</span> must be
+wrong. Hence <span class="math">\(H_{TM}\)</span> can not exist.</p>
 <h6 id="there-is-another-proof-for-this-that-uses-the-cantors-diagonalisation-argument">There is another proof for this that uses the Cantor's diagonalisation argument</h6>
 <h3 id="conclusion">Conclusion</h3>
 <p>This means that</p>
@@ -255,7 +257,69 @@ they are not 100% accurate, because they are mathematically guaranteed
 to not be 100% accurate.</p>
 <p>This post is part of a series of posts that I have planned. In the
 next one we will talk about Godels Incompletelness Theorems and
-Hilberts Problems.</p></div>
+Hilberts Problems.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script></div>
 	<hr>
 	<!-- <h2>Comments</h2> -->
 	<!--  -->

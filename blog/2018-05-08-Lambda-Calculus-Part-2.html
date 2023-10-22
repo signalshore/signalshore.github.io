@@ -28,6 +28,8 @@
         |
         <a href="https://signalshore.github.io/cv/">CV</a>
         |
+        <a href="https://signalshore.github.io/my-values/">My Values</a>
+        |
 
         <a href="/archives/">Archives</a>
         |
@@ -94,20 +96,20 @@ Church came up with Lambda Calculus to capture the very same thing but in a math
 expressions (we call them Lambda Expressions), variables, constants
 and combinations of all these.</p>
 <p>We will look at the syntax in  CFG form (Context Free Grammar)</p>
-<p>$expr \thinspace$ $:=$ $\thinspace constant$</p>
-<p>$\qquad \qquad$ $|$ $variable$ </p>
-<p>$\qquad \qquad$ $|$ $(expr \space expr)$ </p>
-<p>$\qquad \qquad$ $|$ $( \lambda \thinspace variable.expr)$</p>
+<p><span class="math">\(expr \thinspace\)</span> <span class="math">\(:=\)</span> <span class="math">\(\thinspace constant\)</span></p>
+<p><span class="math">\(\qquad \qquad\)</span> <span class="math">\(|\)</span> <span class="math">\(variable\)</span> </p>
+<p><span class="math">\(\qquad \qquad\)</span> <span class="math">\(|\)</span> <span class="math">\((expr \space expr)\)</span> </p>
+<p><span class="math">\(\qquad \qquad\)</span> <span class="math">\(|\)</span> <span class="math">\(( \lambda \thinspace variable.expr)\)</span></p>
 <p>Now that we have the CFG down. Let us break it down a little bit.
 Writing the syntax in the form of a CFG is very beneficial because this
-format allows us to define the evaluation of a $\lambda$-calculus
+format allows us to define the evaluation of a <span class="math">\(\lambda\)</span>-calculus
 expression in terms of derivations of the CFG. We will see that in a
 bit.</p>
 <ul>
-<li>The first rule states that any $\lambda$-calculus expression can be
+<li>The first rule states that any <span class="math">\(\lambda\)</span>-calculus expression can be
 replaced with a constant. Constants can be anything; from numbers like
 <strong>0</strong> or <strong>1</strong> to even other <strong>functions</strong> (yeah!!)</li>
-<li>The second rule states that $\lambda$-calculus expression can be
+<li>The second rule states that <span class="math">\(\lambda\)</span>-calculus expression can be
   replaced with a variable. A variable are names like <strong>x</strong> or <strong>y</strong></li>
 <li>The third rule allows us to apply one expression to another
   expression. This rule capture the idea of function application.</li>
@@ -118,71 +120,133 @@ replaced with a constant. Constants can be anything; from numbers like
 <li>Rule 3 allows us to apply one expression to another expression <strong>only</strong></li>
 <li>Rule 4 allows use to define functions that have <em>only</em> one variable.</li>
 </ul>
-<h3 id="a-very-simple-lambda-expression">A very simple  $\lambda$-expression</h3>
+<h3 id="a-very-simple-lambda-expression">A very simple  <span class="math">\(\lambda\)</span>-expression</h3>
 <p>Let us consider the lambda expression </p>
-<p>$\lambda x . ((+ 1) x)$</p>
+<p><span class="math">\(\lambda x . ((+ 1) x)\)</span></p>
 <p>This is quite a tedious form of writing this expression and we can simplify this quite a lot. The simplified version looks like this.</p>
-<p>$\lambda x . (+ 1 \thinspace x )$</p>
+<p><span class="math">\(\lambda x . (+ 1 \thinspace x )\)</span></p>
 <p><strong>Observe</strong> that in the second form we have one function <em>+</em> applied to two arguments - <em>1</em> and <em>x</em>. This is not actually allowed according to the rules but they mean the the same things. </p>
 <p>Evaluating this expression we perform simple substitutions according to the rules of the CFG (for this we will use leftmost derivations).</p>
-<p>$expr \Rightarrow (\lambda variable . expr)$</p>
-<p>$expr \Rightarrow (\lambda x . expr)$</p>
-<p>$expr \Rightarrow (\lambda x . (expr \space expr))$</p>
-<p>$expr \Rightarrow (\lambda x . ((expr \space expr) \space expr))$</p>
-<p>$expr \Rightarrow (\lambda x . ((constant \space expr) \space expr))$</p>
-<p>$expr \Rightarrow (\lambda x . ((constant \space constant) \space expr))$</p>
-<p>$expr \Rightarrow (\lambda x . ((+ \space 1) \space expr))$</p>
-<p>$expr \Rightarrow (\lambda x . ((+ \space 1) \space variable))$</p>
-<p>$expr \Rightarrow (\lambda x . ((+ \space 1) \space x))$</p>
+<p><span class="math">\(expr \Rightarrow (\lambda variable . expr)\)</span></p>
+<p><span class="math">\(expr \Rightarrow (\lambda x . expr)\)</span></p>
+<p><span class="math">\(expr \Rightarrow (\lambda x . (expr \space expr))\)</span></p>
+<p><span class="math">\(expr \Rightarrow (\lambda x . ((expr \space expr) \space expr))\)</span></p>
+<p><span class="math">\(expr \Rightarrow (\lambda x . ((constant \space expr) \space expr))\)</span></p>
+<p><span class="math">\(expr \Rightarrow (\lambda x . ((constant \space constant) \space expr))\)</span></p>
+<p><span class="math">\(expr \Rightarrow (\lambda x . ((+ \space 1) \space expr))\)</span></p>
+<p><span class="math">\(expr \Rightarrow (\lambda x . ((+ \space 1) \space variable))\)</span></p>
+<p><span class="math">\(expr \Rightarrow (\lambda x . ((+ \space 1) \space x))\)</span></p>
 <p><strong>Observe</strong> that the derivation that the $\lambda&amp; expression returns is actually a <em>function</em>. This function needs to applied to a variable to get something useful happening out of it. </p>
-<p>$(\lambda x . (+ 1 x )5) := (+ \space 1 \space 5) := 6$</p>
+<p><span class="math">\((\lambda x . (+ 1 x )5) := (+ \space 1 \space 5) := 6\)</span></p>
 <p>In Scheme this would be something like this</p>
 <div class="highlight"><pre><span></span><code><span class="p">((</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="p">))</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
 
 <h3 id="the-abstraction-operator">The Abstraction Operator</h3>
-<p>The $\lambda$ (lambda) is the abstraction operator used in Lambda Calculus.</p>
-<p>In any $\lambda$-expression there are two kinds of variables. <strong>Free</strong> and <strong>Bound</strong> variables.</p>
+<p>The <span class="math">\(\lambda\)</span> (lambda) is the abstraction operator used in Lambda Calculus.</p>
+<p>In any <span class="math">\(\lambda\)</span>-expression there are two kinds of variables. <strong>Free</strong> and <strong>Bound</strong> variables.</p>
 <p>Consider the following expression</p>
-<p>$(\lambda x. (+ \space x \space y \space y \space x))$</p>
-<p>$x$ is a bound variable and $y$ is a free variable. </p>
+<p><span class="math">\((\lambda x. (+ \space x \space y \space y \space x))\)</span></p>
+<p><span class="math">\(x\)</span> is a bound variable and <span class="math">\(y\)</span> is a free variable. </p>
 <p>The abstraction operator binds a variable with the body of the
 abstraction. Thus a variable that falls within the scope of the
 abstraction is called a <em>bound</em> variable. All other variables are
 <em>free</em> variables.</p>
-<p>In the given example variable $x$ is bound to the expression $(+
-\space x \space y \space y \space x)$. Thus when this function is
-being evaluated with an argument then all the occurrences of $x$ in the
+<p>In the given example variable <span class="math">\(x\)</span> is bound to the expression <span class="math">\((+
+\space x \space y \space y \space x)\)</span>. Thus when this function is
+being evaluated with an argument then all the occurrences of <span class="math">\(x\)</span> in the
 expression will be replaced by the argument.</p>
-<p>$((\lambda x. (+ \space x \space y \space y \space x)) 5) = (+ \space 5 \space y \space  y \space 5)$</p>
+<p><span class="math">\(((\lambda x. (+ \space x \space y \space y \space x)) 5) = (+ \space 5 \space y \space  y \space 5)\)</span></p>
 <h3 id="currying">Currying</h3>
-<p>Rule 4 states that we can have function definitions only in the form of $expr := (\lambda variable . expr)$</p>
+<p>Rule 4 states that we can have function definitions only in the form of <span class="math">\(expr := (\lambda variable . expr)\)</span></p>
 <p>Thus this means that in the lambda calculus model we can have
 functions with only one variable. However, as we will see that this is
 not a limitation, in fact it is quite the opposite as it opens up new
 possibilities about what you can do with your programming language.</p>
 <p>Currying is a technique that lets us translate functions that take
 multiple arguments to a sequence of functions that accept only a
-single argument. This is useful in $\lambda$-calculus because this
+single argument. This is useful in <span class="math">\(\lambda\)</span>-calculus because this
 allows us to define complex functions that take multiple arguments and
 still not disturb the 4th Rule.</p>
 <p>For example, consider the expression </p>
-<p>$expr := (\lambda x \thinspace y. \thinspace (+ \thinspace x \thinspace y))$</p>
+<p><span class="math">\(expr := (\lambda x \thinspace y. \thinspace (+ \thinspace x \thinspace y))\)</span></p>
 <p>This function will take two arguments </p>
-<p>$expr := ((\lambda x \thinspace y. \thinspace (+ \thinspace x \thinspace y))3 \thinspace 5)$</p>
-<p>In this expression the abstraction operator will take the first variable (i.e. $x$) and substitute all the occurrences of $x$ in the expression with the value of the first argument (i.e. $3$). This will also happen for the second variable and we will have the expression $(+ \thinspace 3 \thinspace 5)$. </p>
-<p>Actually the expression $expr := ((\lambda x \thinspace y. \thinspace
-(+ \thinspace x \thinspace y))3 \thinspace 5)$ is just the curried
+<p><span class="math">\(expr := ((\lambda x \thinspace y. \thinspace (+ \thinspace x \thinspace y))3 \thinspace 5)\)</span></p>
+<p>In this expression the abstraction operator will take the first variable (i.e. <span class="math">\(x\)</span>) and substitute all the occurrences of <span class="math">\(x\)</span> in the expression with the value of the first argument (i.e. <span class="math">\(3\)</span>). This will also happen for the second variable and we will have the expression <span class="math">\((+ \thinspace 3 \thinspace 5)\)</span>. </p>
+<p>Actually the expression <span class="math">\(expr := ((\lambda x \thinspace y. \thinspace
+(+ \thinspace x \thinspace y))3 \thinspace 5)\)</span> is just the curried
 version of the expression;</p>
-<p>$expr := ((\lambda x (\lambda y. \thinspace (+ \thinspace x \thinspace y))3 )\thinspace 5)$</p>
+<p><span class="math">\(expr := ((\lambda x (\lambda y. \thinspace (+ \thinspace x \thinspace y))3 )\thinspace 5)\)</span></p>
 <p>The derivation of this expression,</p>
-<p>$expr := ((\lambda x (+ \thinspace x \thinspace 3)\thinspace 5)$</p>
-<p>$expr := (+ \thinspace 5 \thinspace 3)$</p>
+<p><span class="math">\(expr := ((\lambda x (+ \thinspace x \thinspace 3)\thinspace 5)\)</span></p>
+<p><span class="math">\(expr := (+ \thinspace 5 \thinspace 3)\)</span></p>
 <p>Currying is not just a technique used in Lambda Calculus. It is used
 in a lot of different fields of mathematics logic. Just have a look at
 the Wikipedia page
 for <a href="https://en.wikipedia.org/wiki/Currying">Currying</a></p>
-<p>Currying is named after Haskell Curry. (The Haskell programming languages is also named after him)</p></div>
+<p>Currying is named after Haskell Curry. (The Haskell programming languages is also named after him)</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script></div>
 	<hr>
 	<!-- <h2>Comments</h2> -->
 	<!--  -->
