@@ -8,6 +8,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
+NOTESDIR="/home/sohom/wkspc/personal/Notes"
 GITHUB_PAGES_BRANCH=master
 
 
@@ -47,26 +48,19 @@ help:
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
 
-html:
-	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+links:
+	ln -s -r -f "$(NOTESDIR)/assets" ./content/
+	ln -s -r -f "$(NOTESDIR)/2023-06-29-Anti-Blog.md" ./content/
+	ln -s -r -f "$(NOTESDIR)/my-values.md" ./content/pages/
 
 clean:
 	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
 
-regenerate:
-	"$(PELICAN)" -r "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
-
 serve:
 	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
-serve-global:
-	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS) -b $(SERVER)
-
 devserver:
 	"$(PELICAN)" -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
-
-devserver-global:
-	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -b 0.0.0.0
 
 publish:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
