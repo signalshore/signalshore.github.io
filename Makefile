@@ -8,7 +8,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-NOTESDIR="/home/sohom/wkspc/personal/Notes"
+NOTESDIR=/home/sohom/wkspc/personal/Notes
 GITHUB_PAGES_BRANCH=master
 
 
@@ -48,10 +48,13 @@ help:
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
 
+# todo: find a better way of doing this
 links:
 	ln -s -r -f "$(NOTESDIR)/assets" ./content/
 	ln -s -r -f "$(NOTESDIR)/2023-06-29-Anti-Blog.md" ./content/
 	ln -s -r -f "$(NOTESDIR)/my-values.md" ./content/pages/
+	ln -s -r -f "$(NOTESDIR)/2023-10-22-First-car-accident.md" ./content/
+
 
 clean:
 	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
@@ -59,16 +62,17 @@ clean:
 serve:
 	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
-devserver:
+devserver: links scrubimage
 	"$(PELICAN)" -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
-publish:
+publish: links scrubimage
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 
 github: publish
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) "$(OUTPUTDIR)"
-	git push origin blog
-	git push origin master
+	git push origin blog:blog master:master
 
+scrubimage:
+	exiftool -All= -TagsFromFile @ -ColorSpaceTags -OverWrite_Original -r "$(NOTESDIR)/assets/"
 
 .PHONY: html help clean regenerate serve serve-global devserver publish github
