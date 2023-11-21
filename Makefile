@@ -54,6 +54,7 @@ links:
 	ln -s -r -f "$(NOTESDIR)/2023-06-29-Anti-Blog.md" ./content/
 	ln -s -r -f "$(NOTESDIR)/my-values.md" ./content/pages/
 	ln -s -r -f "$(NOTESDIR)/2023-10-22-First-car-accident.md" ./content/
+	ln -s -r -f "$(NOTESDIR)/2023-11-14-Konkan-Bike-Tour.md" ./content/
 
 
 clean:

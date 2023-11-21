@@ -1,0 +1,1 @@
+../../../Notes/2023-11-14-Konkan-Bike-Tour.md

@@ -6,7 +6,7 @@ title: About
 # About
 I am Sohom.
 
-Professionally, I work with computers. I throw around the term "DevOps" and "Software Engineer" rather casually in my CV. Strictly speaking, I aim to be a **generalist**. I like networks, sistributed-systems and systems in general. The words are vague for a reason. I do not want to be specific. Being vague gives me a lot of space to explore.
+Professionally, I work with computers. I throw around the term "DevOps" and "Software Engineer" rather casually in my CV. Strictly speaking, I aim to be a **generalist**. I like networks, distributed-systems and systems in general. The words are vague for a reason. I do not want to be specific. Being vague gives me a lot of space to explore.
 
 Personally, I enjoy learning things for the sake of learning things. I am a bit skewed towards STEM fields with an even bigger skew towards Computers.
 
