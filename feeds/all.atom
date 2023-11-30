@@ -1,5 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all.atom" rel="self"></link><id>https://signalshore.github.io/</id><updated>2023-11-14T00:00:00+05:30</updated><entry><title>Konkan Bike Tour (2022)</title><link href="https://signalshore.github.io/blog/2023-11-14-Konkan-Bike-Tour.html" rel="alternate"></link><published>2023-11-14T00:00:00+05:30</published><updated>2023-11-14T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2023-11-14:/blog/2023-11-14-Konkan-Bike-Tour.html</id><summary type="html">&lt;p&gt;I quit my job and went on a 7 day motorcycle trip with barely any prior experience. It was amazing.&lt;/p&gt;</summary><content type="html">&lt;h1 id="the-situation"&gt;The situation.&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all.atom" rel="self"></link><id>https://signalshore.github.io/</id><updated>2023-12-01T00:00:00+05:30</updated><entry><title>Motorbike Accident #1 (retro: May 31, 2022)</title><link href="https://signalshore.github.io/blog/2023-12-01-First-motorbike-accident.html" rel="alternate"></link><published>2023-12-01T00:00:00+05:30</published><updated>2023-12-01T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2023-12-01:/blog/2023-12-01-First-motorbike-accident.html</id><summary type="html">&lt;p&gt;A short story about how I passed out on the bike, slid on the highway, walked out slight harmed and then rode back (after a day) home.&lt;/p&gt;</summary><content type="html">&lt;h1 id="the-setup-to-the-crash"&gt;The setup (to the crash)&lt;/h1&gt;
+&lt;p&gt;The month before the crash was a very very busy month at work. We had pulled multiple 15 hour days for months on end. This was also the first time I was being on-call for a TSDB. I take my job extra-seriously when the word "database" is involved.&lt;/p&gt;
+&lt;p&gt;This IPL was extra special because this was my first IPL working at &lt;a href="last9.io"&gt;last9&lt;/a&gt;
+Moreover, we were running our events-pipeline for the first time during an IPL and I was the only on-call SRE who was involved in this project from day-1. So I had the most context of the system. The other on-call SREs were involved in the metrics-pipeline.&lt;/p&gt;
+&lt;p&gt;Naturally, when the festivities (IPL) ended, I decided that a good way to spend my days would be to travel to Bengaluru on the bike. A trip to Bengaluru was long overdue. Little did I know that I would not be travelling to Bengaluru anytime soon.&lt;/p&gt;
+&lt;h2 id="the-days-before-day-0"&gt;The days before Day-0&lt;/h2&gt;
+&lt;p&gt;The last match of IPL 2022 was on 29th May. After the match we spent about 2/3 days cleaning up the system that was scaled to huge proportions to support the load.&lt;/p&gt;
+&lt;p&gt;I had promised myself, that I would buy a paid of Motorcycling Gloves before my next long trip. What I did not anticipate was that the "next long tour" would happen so soon. So on that Sunday (28th) I went to the Rynox showroom in Viman Nagar and purchased a pair of gloves. That day, I headed to Taminhi Ghat to test out the gloves. Afterall, you never test out a new equipment without familiarising yourself with it first.&lt;/p&gt;
+&lt;p&gt;The total distance from Pune to Bengaluru is about 844kms. I am not crazy (read: stupid/careless) enough to even attempt this distance without prior practise. So I decided that stopping at Hubballi would be a good decision. I even booked a cheap hotel with covered parking. I like to plan my end-of-day stays as it helps me not think about getting to a town early enough to look for stays. My previous single-day distance record was a little bit over 350kms and the distance from Pune to Hubballi is about  430kms. So not-too-bad overall.&lt;/p&gt;
+&lt;h2 id="day-0-and-early-day-1"&gt;Day-0 and early Day-1&lt;/h2&gt;
+&lt;p&gt;The plan was to get done with work early, pack and go to bed early. This was supposed to be the day before the trip and all the books/blogs/YouTube videos of motorbikers say that getting a good night's sleep and proper hydration is crucial. This will be important later on.&lt;/p&gt;
+&lt;p&gt;As with all plans, things soon went to shit. Work took long. Packing took lesser time. Packing always takes lesser time than allocated.&lt;/p&gt;
+&lt;p&gt;What was unexpected was that a certain person called me and all logic went out of the window. We spent a good couple hours on the phone talking about random crap like we had done many times before.&lt;/p&gt;
+&lt;p&gt;Anyway, we said the "goodnight"s and I went off to bed. This was 3AM of day-1. This was my big mistake-1.&lt;/p&gt;
+&lt;h2 id="day-1"&gt;Day-1&lt;/h2&gt;
+&lt;p&gt;Woke up at 6am. It was a beautiful morning. I made some strong coffee, took a bath and set off. I was on the road by 6:30 AM.&lt;/p&gt;
+&lt;p&gt;The road towards Bengaluru is beautiful. The road is unblemished and very very smooth. It is a very well-maintained road. One could almost fall asleep on this road. ;) ;)&lt;/p&gt;
+&lt;p&gt;Sometime during this day, the vibrations on the handlebar of the motorbike finally screwed the optical image stabilisation motors on the mobile phone camera. As a result my camera does not focus anymore. On a Google Pixel 4a, this is a weird set of circumstances.&lt;/p&gt;
+&lt;h2 id="first-signs-of-trouble"&gt;First signs of trouble.&lt;/h2&gt;
+&lt;p&gt;The initial 120 kms were good. No complications. No fatigue.&lt;/p&gt;
+&lt;p&gt;During this ride, my hands were getting very uncomfortable, so I would ride for a while with my gloves on and then take off my gloves and ride a bit more; before putting them back on again. This cycle put me in a good routine and I was stopping every 90 mins or so. After Satara the fatigue started to kick in.&lt;/p&gt;
+&lt;p&gt;There were episodes of &lt;a href="https://health.clevelandclinic.org/what-you-should-know-about-microsleep"&gt;microsleep&lt;/a&gt;. This is something which I had read about before, but failed to recognise them for what they were. I should have turned back now itself. This was mistake-2.&lt;/p&gt;
+&lt;p&gt;There was once a point where I clearly remember seeing the rear of a truck in front of me. A moment later, I see that the truck is a bit too close to me. I had completely lost the last second of my life. It's as if I had zoomed-in on the back of the truck. This is what a microsleep episode looks like.&lt;/p&gt;
+&lt;p&gt;I remember stopping at a tea-stall for some tea. I should have turned back then. I did'nt.&lt;/p&gt;
+&lt;p&gt;I was constantly aware of how tired I was; but I kept going since I had a schedule to stick to. I had promised my friends that I would visit them. I had taken "leaves" from office. I had miles to go before I slept. As we would soon see; the universe has a weird sense of humor.&lt;/p&gt;
+&lt;p&gt;Anyway, I reached Kolhapur. I put of my golves. I pushed on.&lt;/p&gt;
+&lt;h2 id="trouble"&gt;Trouble&lt;/h2&gt;
+&lt;p&gt;Barely 60kms out of Kolhapur, there is a slight bend where the highway turns right. I woke up from a microsleep episode and noticed that I was too close to the edge of the road. I did a hard turn even though it was too late. &lt;/p&gt;
+&lt;p&gt;The front wheel dropped on the dirt (piled along the side of the road) and the bike fell on its right side; hit the highway and slid for some time before coming to a stop.&lt;/p&gt;
+&lt;p&gt;I remember feeling the helmet hit the ground. I remember seeing the concrete scrape under the visor. I remember feeling my hands slide on the concrete.&lt;/p&gt;
+&lt;p&gt;Soon, the sliding stopped. I got up and did some damage assessment.&lt;/p&gt;
+&lt;h2 id="the-aftermath"&gt;The aftermath&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;I was not bleeding severely. There were a number of scratches here and there.&lt;/li&gt;
+&lt;li&gt;My arms were also not broken. This was a major relief.&lt;/li&gt;
+&lt;li&gt;I was barefoot as both of my shoes were removed in this ordeal. I even lost the right sock was it sustained too many damages.&lt;/li&gt;
+&lt;li&gt;My arms were hurt. Wrists were twisted and the fingers were badly hurt. I couldn't move them properly.&lt;/li&gt;
+&lt;li&gt;My legs were hurt. The bike landed on the left lower-leg. It hurt like hell.&lt;/li&gt;
+&lt;li&gt;My bag was flung off and slid on the ground for a while. Some parts of the bag were completely rubbed into the ground. &lt;/li&gt;
+&lt;li&gt;The bike lost its right foot-peg and half of its right brake lever. The forks were twisted.&lt;/li&gt;
+&lt;li&gt;The entire front section of the bike; i.e. the headlight assembly, the indicators, the tank-cover, the right-side crash guard, the silencer pipe cover etc were damaged.&lt;/li&gt;
+&lt;li&gt;My gloves were intact, but they did take a beating. Fortunately, none of my skin was lost to the ground. &lt;/li&gt;
+&lt;li&gt;My helmet has bad scratches, but same here, my face and neck were unhurt.&lt;/li&gt;
+&lt;li&gt;The Denim Jacket I was wearing performed nicely too.&lt;/li&gt;
+&lt;li&gt;The decathlon pant that I use for motorcycling also didn't tear as it was sliding on the highway. Although there is a small hole in the pant.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By this time some people gathered nearby and were busy collecting my stuff which was strewn all over the road by this point. I couldn't help feeling bad that I was bothering these people for no good reason. Now how fucked do you have to be in the head to think this while you are standing barefoot on a highway after getting dropped from a bike going at 70kmph. Anyway.&lt;/p&gt;
+&lt;p&gt;With the help of a couple of these folks, I managed to pick up the bike and start it. Fortunately it started up. I was back in action.&lt;/p&gt;
+&lt;p&gt;I drank a lot of water and washed my face with some of it. Then some of the locals urged me to take the bike to a garage and get the bike checked out. I complied. The mechanic at the garage told me that the bike was OK and in perfect drive-able condition. So, I decided that the best course of action for me was to head to the largest town nearby (which was Kolhapur) and to stay there for a day and to get myself checked out at a doctors.&lt;/p&gt;
+&lt;p&gt;Kolhapur was 60kms in the other direction. So off I went. Halfway on my way to Kolhapur I realised that I didn't know where the accident occurred and more importantly, i did not have pictures of the accident site. So i stopped the bike and took some pics. It was also from here that I called my brother and told him what had happened.&lt;/p&gt;
+&lt;h2 id="in-kolhapur"&gt;In Kolhapur&lt;/h2&gt;
+&lt;p&gt;Finding a place to stay at Kolhapur was easy. By the time I got into the parking of the hotel, it was drizzling. &lt;/p&gt;
+&lt;p&gt;I rested in the hotel for a bit before stepping out. There was a medical-store nearby with a doctor's chamber attached. I went there and got a tetanus shot. The doctor also did a series of basic checks to rule out anything major and sent me away. There was nothing seriously wrong with me which was caused by the accident.&lt;/p&gt;
+&lt;p&gt;I went for a walk and explored the road nearby. It was fun. I came back and called my friends. Almost everyone suggested that I arrange a truck to carry the bike and myself back home. I said I would.&lt;/p&gt;
+&lt;p&gt;That evening, unexpectedly I had severe diarrhoea. Apparently trauma makes the digestive system go wonky. Additionally my left leg started hurting a LOT more than it previously did.
+Fortunately, I always carry a decent medical kit. I had a bunch of ORS sachets and a compressive-bandage.&lt;/p&gt;
+&lt;p&gt;I was super tired and ready to fall asleep. So, I put on the bandage, put my leg on a set of pillows and drank a lot of ORS and went to sleep.&lt;/p&gt;
+&lt;p&gt;I had to use the bathroom in the middle of night multiple times, but by morning I was almost OK.&lt;/p&gt;
+&lt;h2 id="the-return"&gt;The return&lt;/h2&gt;
+&lt;p&gt;I lied to my friends about taking a truck. I wanted to drive the bike back. So I did. 
+This time, armed with the humbling knowledge of fatigue I stopped the bike every 55 mins and drank water / ate something. &lt;/p&gt;
+&lt;p&gt;I even stopped at a place to have some Falooda. It was fun.&lt;/p&gt;
+&lt;h2 id="lesson-learnt"&gt;Lesson learnt ?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;life affirming. &lt;ul&gt;
+&lt;li&gt;closest ive been to getting killed. It does something to you.&lt;/li&gt;
+&lt;li&gt;suddenly some things became more imp.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="misc"></category><category term="#accident #biking"></category></entry><entry><title>Konkan Bike Tour (2022)</title><link href="https://signalshore.github.io/blog/2023-11-14-Konkan-Bike-Tour.html" rel="alternate"></link><published>2023-11-14T00:00:00+05:30</published><updated>2023-11-14T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2023-11-14:/blog/2023-11-14-Konkan-Bike-Tour.html</id><summary type="html">&lt;p&gt;I quit my job and went on a 7 day motorcycle trip with barely any prior experience. It was amazing.&lt;/p&gt;</summary><content type="html">&lt;h1 id="the-situation"&gt;The situation.&lt;/h1&gt;
 &lt;p&gt;At the middle of last year I found myself at a very tricky spot. Work started to be weird. I knew that the ending was near. As the end of the year approached, I sort of started looking elsewhere and I found a spot with some folks that I had already known. So I resigned from Druva during November, and December something was my last day at druva.&lt;/p&gt;
 &lt;p&gt;Very soon I found myself with 3 weeks of idle time. A bike trip was the last thing on my list, mainly because I didnt not have a proper luggage setup and more importantly, I promised myself that I would not take the bike on any long distance trip if I had less than 1000kms on the odometer.  As this was my first bike, the distance on the odo is also my total experience with a two-wheeler.&lt;/p&gt;
 &lt;p&gt;Things changed when a friend sent me his old Viaterra claw luggage. It arrived and I was off in 3 days time.&lt;/p&gt;
@@ -195,10 +264,10 @@ My face was slammed with the airbags. This smashed my glasses against my face. M
 &lt;p&gt;I have a LOT of respect for airbags and seat-belts now. It is one thing to know that these things save lives and it is quite something else to live through that experience.&lt;/p&gt;
 &lt;p&gt;My opinion that personal vehicles (especially cars) should be phased out in favour of robust public transport has solidified even more.&lt;/p&gt;
 &lt;p&gt;I get to say that I have paid for and used the airbags of a car. :)&lt;/p&gt;
-&lt;h6 id="ps-this-is-car-accident-1-because-i-do-not-want-to-be-cocky-and-challenge-the-universe"&gt;# p.s. this is car accident #1 because I do not want to be cocky and challenge the universe.&lt;/h6&gt;</content><category term="misc"></category><category term="#Accident"></category></entry><entry><title>Anti-Blog (and other updates)</title><link href="https://signalshore.github.io/blog/2023-06-29-Anti-Blog.html" rel="alternate"></link><published>2023-06-29T00:00:00+05:30</published><updated>2023-06-29T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2023-06-29:/blog/2023-06-29-Anti-Blog.html</id><summary type="html">&lt;p&gt;A couple of updates about how I am planning to use this site from now.&lt;/p&gt;</summary><content type="html">&lt;p&gt;For a while I was very dissatissfied with how I read and write stuff.
+&lt;h6 id="ps-this-is-car-accident-1-because-i-do-not-want-to-be-cocky-and-challenge-the-universe"&gt;# p.s. this is car accident #1 because I do not want to be cocky and challenge the universe.&lt;/h6&gt;</content><category term="misc"></category><category term="#accident"></category></entry><entry><title>Anti-Blog (and other updates)</title><link href="https://signalshore.github.io/blog/2023-06-29-Anti-Blog.html" rel="alternate"></link><published>2023-06-29T00:00:00+05:30</published><updated>2023-06-29T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2023-06-29:/blog/2023-06-29-Anti-Blog.html</id><summary type="html">&lt;p&gt;A couple of updates about how I am planning to use this site from now.&lt;/p&gt;</summary><content type="html">&lt;p&gt;For a while I was very dissatissfied with how I read and write stuff.
 The entire system that I had built on top of Emacs is gone as of now. A lot of things have changed and I have not been able to keep up with those changes.&lt;/p&gt;
 &lt;p&gt;I have always struggled with the question of how I can add new material to older blogs.
-I also felt that it was pointless to maintain two sets of notes; one more detailed for myself and one less detailed for the blog. A LOT of the material was shared and it was geting extremely difficult to keep all of them updated with the latest information.&lt;/p&gt;
+I also felt that it was pointless to maintain two sets of notes; one more detailed for myself and one less detailed for the blog. A LOT of the material was shared and it was getting extremely difficult to keep all of them updated with the latest information.&lt;/p&gt;
 &lt;p&gt;The goals that I have for this new system and this site is this&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Single source of truth for information (articles / notes)&lt;ul&gt;
