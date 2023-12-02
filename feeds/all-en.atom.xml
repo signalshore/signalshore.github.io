@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all-en.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2023-12-01T00:00:00+05:30</updated><entry><title>Motorbike Accident #1 (retro: May 31, 2022)</title><link href="https://signalshore.github.io/blog/2023-12-01-First-motorbike-accident.html" rel="alternate"></link><published>2023-12-01T00:00:00+05:30</published><updated>2023-12-01T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2023-12-01:/blog/2023-12-01-First-motorbike-accident.html</id><summary type="html">&lt;p&gt;A short story about how I passed out on the bike, slid on the highway, walked out slight harmed and then rode back (after a day) home.&lt;/p&gt;</summary><content type="html">&lt;h1 id="the-setup-to-the-crash"&gt;The setup (to the crash)&lt;/h1&gt;
-&lt;p&gt;The month before the crash was a very very busy month at work. We had pulled multiple 15 hour days for months on end. This was also the first time I was being on-call for a TSDB. I take my job extra-seriously when the word "database" is involved.&lt;/p&gt;
-&lt;p&gt;This IPL was extra special because this was my first IPL working at &lt;a href="last9.io"&gt;last9&lt;/a&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all-en.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2023-12-01T00:00:00+05:30</updated><entry><title>Motorbike Accident #1 (retro: May 31, 2022)</title><link href="https://signalshore.github.io/blog/2023-12-01-First-motorbike-accident.html" rel="alternate"></link><published>2023-12-01T00:00:00+05:30</published><updated>2023-12-01T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2023-12-01:/blog/2023-12-01-First-motorbike-accident.html</id><summary type="html">&lt;p&gt;A short story about how I passed out on the bike, slid on the highway, walked out slight harmed and then rode back (after a day) home.&lt;/p&gt;</summary><content type="html">&lt;h2 id="the-setup-to-the-crash"&gt;The setup (to the crash)&lt;/h2&gt;
+&lt;p&gt;The month before the crash was a very very busy month at work. We had pulled multiple 15 hour days for weeks. This was also the first time I was being on-call for a TSDB. I take my job extra-seriously when the word "database" is involved.&lt;/p&gt;
+&lt;p&gt;This IPL was extra special because this was my first IPL working at &lt;a href="last9.io"&gt;last9&lt;/a&gt;.
 Moreover, we were running our events-pipeline for the first time during an IPL and I was the only on-call SRE who was involved in this project from day-1. So I had the most context of the system. The other on-call SREs were involved in the metrics-pipeline.&lt;/p&gt;
 &lt;p&gt;Naturally, when the festivities (IPL) ended, I decided that a good way to spend my days would be to travel to Bengaluru on the bike. A trip to Bengaluru was long overdue. Little did I know that I would not be travelling to Bengaluru anytime soon.&lt;/p&gt;
 &lt;h2 id="the-days-before-day-0"&gt;The days before Day-0&lt;/h2&gt;
@@ -33,9 +33,8 @@ Moreover, we were running our events-pipeline for the first time during an IPL a
 &lt;h2 id="the-aftermath"&gt;The aftermath&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;I was not bleeding severely. There were a number of scratches here and there.&lt;/li&gt;
-&lt;li&gt;My arms were also not broken. This was a major relief.&lt;/li&gt;
+&lt;li&gt;My arms were also not broken. This was a major relief. My arms were hurt. Wrists were twisted and the fingers were badly hurt. I couldn't move them properly.&lt;/li&gt;
 &lt;li&gt;I was barefoot as both of my shoes were removed in this ordeal. I even lost the right sock was it sustained too many damages.&lt;/li&gt;
-&lt;li&gt;My arms were hurt. Wrists were twisted and the fingers were badly hurt. I couldn't move them properly.&lt;/li&gt;
 &lt;li&gt;My legs were hurt. The bike landed on the left lower-leg. It hurt like hell.&lt;/li&gt;
 &lt;li&gt;My bag was flung off and slid on the ground for a while. Some parts of the bag were completely rubbed into the ground. &lt;/li&gt;
 &lt;li&gt;The bike lost its right foot-peg and half of its right brake lever. The forks were twisted.&lt;/li&gt;
@@ -52,23 +51,49 @@ Moreover, we were running our events-pipeline for the first time during an IPL a
 &lt;h2 id="in-kolhapur"&gt;In Kolhapur&lt;/h2&gt;
 &lt;p&gt;Finding a place to stay at Kolhapur was easy. By the time I got into the parking of the hotel, it was drizzling. &lt;/p&gt;
 &lt;p&gt;I rested in the hotel for a bit before stepping out. There was a medical-store nearby with a doctor's chamber attached. I went there and got a tetanus shot. The doctor also did a series of basic checks to rule out anything major and sent me away. There was nothing seriously wrong with me which was caused by the accident.&lt;/p&gt;
-&lt;p&gt;I went for a walk and explored the road nearby. It was fun. I came back and called my friends. Almost everyone suggested that I arrange a truck to carry the bike and myself back home. I said I would.&lt;/p&gt;
+&lt;p&gt;I had some difficulty walking; so I went for a walk and explored the road nearby. I wanted to see how badly was I hurt. I came back and called my friends. Almost everyone suggested that I arrange a truck to carry the bike and myself back home. I said I would.&lt;/p&gt;
 &lt;p&gt;That evening, unexpectedly I had severe diarrhoea. Apparently trauma makes the digestive system go wonky. Additionally my left leg started hurting a LOT more than it previously did.
 Fortunately, I always carry a decent medical kit. I had a bunch of ORS sachets and a compressive-bandage.&lt;/p&gt;
-&lt;p&gt;I was super tired and ready to fall asleep. So, I put on the bandage, put my leg on a set of pillows and drank a lot of ORS and went to sleep.&lt;/p&gt;
-&lt;p&gt;I had to use the bathroom in the middle of night multiple times, but by morning I was almost OK.&lt;/p&gt;
+&lt;p&gt;I was super tired and ready to fall asleep. I was also extremely hungry. I ordered some food but ended up not eating all of it. I didn't have the appetite for it. I decided that i would much rather sleep and wake up the next day. So, I put on the bandage, put my leg on a set of pillows and drank a lot of ORS and went to sleep.&lt;/p&gt;
+&lt;p&gt;I had to use the bathroom in the middle of night multiple times, but by morning I was almost OK. The swelling in the left leg was much lesser. It almost didn't hurt to move my fingers anymore.&lt;/p&gt;
 &lt;h2 id="the-return"&gt;The return&lt;/h2&gt;
-&lt;p&gt;I lied to my friends about taking a truck. I wanted to drive the bike back. So I did. 
-This time, armed with the humbling knowledge of fatigue I stopped the bike every 55 mins and drank water / ate something. &lt;/p&gt;
-&lt;p&gt;I even stopped at a place to have some Falooda. It was fun.&lt;/p&gt;
+&lt;p&gt;I lied to my friends about taking a truck. I wanted to drive the bike back. So I did. The only person who knew about this trip was my brother.&lt;/p&gt;
+&lt;p&gt;This time, armed with the humbling knowledge of fatigue I stopped the bike every 55 mins and drank water / ate something. I also called my brother for a "heartbeat" report everytime I did.&lt;/p&gt;
+&lt;p&gt;During one of these stops, a friend called and I lied to them too about being on a truck. If you are reading this, I am sorry.&lt;/p&gt;
+&lt;p&gt;I even stopped at a place to have some Falooda. One person was watering the plants outside his shop. I asked him to kindly spray me with water and he did. It was a relief on a day and hot day.&lt;/p&gt;
+&lt;p&gt;I got home at about 3 pm that evening. The ride back home was largely uneventful. I didnt even miss the broken foot-peg and the broken brake-lever.&lt;/p&gt;
+&lt;h2 id="some-photos"&gt;Some photos&lt;/h2&gt;
+&lt;p&gt;Do note that my phone camera had stopped focusing by this time. So most of the photos are selfies. :p&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="front section of the bike was damaged" src="assets/2023-12-01-First-motorbike-accident/front1.jpg"&gt;
+In this photo we can see that the headlight assembly is damaged. The speedometer console is also damaged. The entire right side of the vehicle took heavy damage. Note the broken brake-lever. It was still effective though.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="the side of the bike" src="assets/2023-12-01-First-motorbike-accident/front2.jpg"&gt;
+The damage on the handlebars is more clearly visible here.  You also also see the bag that was dragged and the right foot-peg which is missing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt="the gloves that saved my hands" src="assets/2023-12-01-First-motorbike-accident/gloves.jpg"&gt;
+These are the &lt;a href="https://rynoxgear.com/collections/gloves/products/rynox-urban-x-gloves-camo-blue"&gt;Rynox Urban X&lt;/a&gt; gloves. They are phenomenal. In the photo you can see that the palm sliders did their job perfectly. I shudder to think what would have happened if I was not wearing these gloves. Im sure bone would have been exposed. Maybe more.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img alt=" the helmet " src="assets/2023-12-01-First-motorbike-accident/helmet.jpg"&gt;
+This is the helmet. As we can all see, there is considerably scratches. I decided not the replace the helmet because it didnt really hit the ground; instead it slid on it. Maybe I should replace this. Again, If i didn't have this on, something worse would have happened entirely.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id="lesson-learnt"&gt;Lesson learnt ?&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;life affirming. &lt;ul&gt;
-&lt;li&gt;closest ive been to getting killed. It does something to you.&lt;/li&gt;
-&lt;li&gt;suddenly some things became more imp.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content><category term="misc"></category><category term="#accident #biking"></category></entry><entry><title>Konkan Bike Tour (2022)</title><link href="https://signalshore.github.io/blog/2023-11-14-Konkan-Bike-Tour.html" rel="alternate"></link><published>2023-11-14T00:00:00+05:30</published><updated>2023-11-14T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2023-11-14:/blog/2023-11-14-Konkan-Bike-Tour.html</id><summary type="html">&lt;p&gt;I quit my job and went on a 7 day motorcycle trip with barely any prior experience. It was amazing.&lt;/p&gt;</summary><content type="html">&lt;h1 id="the-situation"&gt;The situation.&lt;/h1&gt;
+&lt;p&gt;My friends know that I like to joke about death and accidents a lot. I find it funny.&lt;/p&gt;
+&lt;p&gt;This was the first time I was really scared. This accident actually made death seem very real to me. I always knew about the risks involved, but I also assumed that I would not get into a fatal accident. This could have been one.&lt;/p&gt;
+&lt;p&gt;I clearly remember getting up after the crash and thinking that I had so many more things to do. I am acutely aware that whatever happened could have gone in a really bad direction. Motorcycles are not to be taken un-seriously. I have made that mistake.&lt;/p&gt;
+&lt;p&gt;In light of these events, I have started to take some aspects of life a bit more seriously. 
+I have also decided that I will let my plans go fuck themselves if my body says otherwise. Pushing your fatigued body beyond a certain point is foolish. If your body is telling you something, you should listen to it.&lt;/p&gt;
+&lt;p&gt;Let's face it, this was completely avoidable and I can not blame anyone but myself. I should have slept well that night. I should have started later that morning, since I had not slept well.
+I should have turned back the moment I felt tired and I still had 200 kms to go.  I didn't. This was extremely irresponsible and careless of me. I should have known better.&lt;/p&gt;
+&lt;p&gt;As one friend put it, I am not an island and whatever I do has repercussions around the people in my life. I should treat myself and them with more respect. &lt;/p&gt;
+&lt;p&gt;Finally, I have a sense of urgency now. I've got a lof of things to do and I think I should get at them. If i wait around for the "right time", I might never do them. :)&lt;/p&gt;
+&lt;p&gt;Thanks for reading and ride safe.&lt;/p&gt;</content><category term="misc"></category><category term="#accident #biking"></category></entry><entry><title>Konkan Bike Tour (2022)</title><link href="https://signalshore.github.io/blog/2023-11-14-Konkan-Bike-Tour.html" rel="alternate"></link><published>2023-11-14T00:00:00+05:30</published><updated>2023-11-14T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2023-11-14:/blog/2023-11-14-Konkan-Bike-Tour.html</id><summary type="html">&lt;p&gt;I quit my job and went on a 7 day motorcycle trip with barely any prior experience. It was amazing.&lt;/p&gt;</summary><content type="html">&lt;h1 id="the-situation"&gt;The situation.&lt;/h1&gt;
 &lt;p&gt;At the middle of last year I found myself at a very tricky spot. Work started to be weird. I knew that the ending was near. As the end of the year approached, I sort of started looking elsewhere and I found a spot with some folks that I had already known. So I resigned from Druva during November, and December something was my last day at druva.&lt;/p&gt;
 &lt;p&gt;Very soon I found myself with 3 weeks of idle time. A bike trip was the last thing on my list, mainly because I didnt not have a proper luggage setup and more importantly, I promised myself that I would not take the bike on any long distance trip if I had less than 1000kms on the odometer.  As this was my first bike, the distance on the odo is also my total experience with a two-wheeler.&lt;/p&gt;
 &lt;p&gt;Things changed when a friend sent me his old Viaterra claw luggage. It arrived and I was off in 3 days time.&lt;/p&gt;
