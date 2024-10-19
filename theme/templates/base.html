@@ -29,28 +29,16 @@
         {% if DISPLAY_PAGES_ON_MENU %}
         {% for page in pages %}
         <a href="{{ SITEURL }}/{{ page.url }}">{{page.title}}</a>
-        |
+        {% if not loop.last %} | {% endif %}
         {% endfor %}
         {% endif %}
 
         {% if LINKS %}
         {% for name, link in LINKS %}
-        <a href="{{ link }}">{{ name }}</a>
-        |
+        {% if name == "Now" %}
+        | <a href="{{ link }}">{{ name }}</a>
+        {% endif %}
         {% endfor %}
-        {% endif %}
-
-        {% if FEED_ALL_ATOM %}
-        <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml">
-          Atom
-        </a>
-        {% endif %}
-
-        {% if FEED_ALL_RSS %}
-        <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml">
-          RSS
-        </a>
-        |
         {% endif %}
       </h4>
     </div>
@@ -67,6 +55,24 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center center-block aw-bottom">
+        {% if LINKS %}
+        {% for name, link in LINKS %}
+        <a href="{{ link }}">{{ name }}</a>
+        |
+        {% endfor %}
+        {% endif %}
+
+        {% if FEED_ALL_ATOM %}
+        <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml">
+          Feed - Atom
+        </a>
+        {% endif %}
+
+        {% if FEED_ALL_RSS %}
+        <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml">
+          RSS
+        </a>
+        {% endif %}
           <p>Life is best filled by learning as much as you can about as much as you can </p>
           <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License"
               style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /> </a>

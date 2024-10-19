@@ -13,7 +13,7 @@ posts. Each post is tagged with multiple tags.
 <h1>Tags : <small> All tags used for all articles </small> </h1>
 <ul>
   {% for tag, articles in tags %}
-  <li><a href='{{ SITEURL }}/{{ tag.url }}'>{{ tag }} [{{ articles | count }}]</a> </li>
+  <li><a href='{{ SITEURL }}/{{ tag.url }}'>{{ tag }} - {{ articles | count }}</a> </li>
   {% endfor %}
 </ul>
 </table>

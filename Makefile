@@ -55,7 +55,9 @@ links:
 	ln -s -r -f "$(NOTESDIR)/my-values.md" ./content/pages/
 	ln -s -r -f "$(NOTESDIR)/2023-10-22-First-car-accident.md" ./content/
 	ln -s -r -f "$(NOTESDIR)/2023-11-14-Konkan-Bike-Tour.md" ./content/
-	#ln -s -r -f "$(NOTESDIR)/2023-12-01-First-motorbike-accident.md" ./content/
+	ln -s -r -f "$(NOTESDIR)/2023-12-01-First-motorbike-accident.md" ./content/
+	ln -s -r -f "$(NOTESDIR)/2024-10-19-Now-BMC-Zig-etc.md" ./content/
+
 
 
 
@@ -66,7 +68,7 @@ serve:
 	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
 devserver: links scrubimage
-	"$(PELICAN)" -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	"$(PELICAN)" -v -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
 publish: links scrubimage
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)

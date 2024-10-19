@@ -2,6 +2,17 @@
 {% block description %}All posts which refer to tag {{ tag }}{% endblock %}
 {% block title %}{{ tag }} — {{ SITENAME }}{% endblock %}
 {% block content %}
+{% if tag == '#now' %}
+    <div itemprop="articleBody" class="article-body">
+    
+    This is my /now page.
+    <br>
+    I maintian a log of what I am up to now.
+    <br>
+    I update this as often as I like.
+    </div>
+{% endif %}
+ <!-- Code to execute if tag is not '#now' -->
 <h1>Tag <small>: {{tag}} : {{articles | count}}</small></h1>
 <table class="table">
     <tbody>
