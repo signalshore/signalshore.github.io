@@ -1,0 +1,1 @@
+../../../Notes/2024-12-05-Now-Nov-Recap.md

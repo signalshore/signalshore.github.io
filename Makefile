@@ -57,6 +57,7 @@ links:
 	ln -s -r -f "$(NOTESDIR)/2023-11-14-Konkan-Bike-Tour.md" ./content/
 	ln -s -r -f "$(NOTESDIR)/2023-12-01-First-motorbike-accident.md" ./content/
 	ln -s -r -f "$(NOTESDIR)/2024-10-19-Now-BMC-Zig-etc.md" ./content/
+	ln -s -r -f "$(NOTESDIR)/2024-12-05-Now-Nov-Recap.md" ./content/
 
 
 
