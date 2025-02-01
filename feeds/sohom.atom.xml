@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore - Sohom</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/sohom.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2025-01-02T00:00:00+05:30</updated><entry><title>Now - January 2025 (Recap 2024)</title><link href="https://signalshore.github.io/blog/2025-01-02-Recap-2024.html" rel="alternate"></link><published>2025-01-02T00:00:00+05:30</published><updated>2025-01-02T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2025-01-02:/blog/2025-01-02-Recap-2024.html</id><summary type="html">&lt;p&gt;A recap of 2024 and new plans for 2025&lt;/p&gt;</summary><content type="html">&lt;p&gt;I will keep this short and sweet (hopefully) and divide the whole thing into a bunch of chapters.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore - Sohom</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/sohom.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2025-02-02T00:00:00+05:30</updated><entry><title>Now - January 2025</title><link href="https://signalshore.github.io/blog/2025-02-02-Now-Jan.html" rel="alternate"></link><published>2025-02-02T00:00:00+05:30</published><updated>2025-02-02T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2025-02-02:/blog/2025-02-02-Now-Jan.html</id><summary type="html">&lt;p&gt;January 2025 has been amazing. Feeling strong and excited for the BMC. My current work is coming to an end. This is the precipice.&lt;/p&gt;</summary><content type="html">&lt;h1 id="knee-pain"&gt;Knee Pain :(&lt;/h1&gt;
+&lt;p&gt;In my &lt;a href="2025-01-02-Recap-2024.md"&gt;2025-01-02-Recap-2024&lt;/a&gt; I mentioned that the left knee had started hurting after the Kumara-Parvatha hike. After weeks of trying to retrigger the pain, I was able to trigger it finally on a timed loop climb of the Nandi-Steps &lt;a href="https://www.strava.com/activities/13331893463"&gt;Strava Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I was extremely scared after this; however my physiotherapist said this was just a bout of ITBS. I am extremely glad that this is not something that is wrong with my inner-knee components as that would mean that I would have to go through the BMC with a compromised knee.&lt;/p&gt;
+&lt;h1 id="mountains"&gt;Mountains&lt;/h1&gt;
+&lt;p&gt;The only plan this year was to complete the Basic Mountaineering Course. However, a couple friends and I made plans to complete the &lt;a href="https://www.nepalhightrek.com/activities/manaslu-circuit-trek/"&gt;Manaslu Circuit Trek&lt;/a&gt; in Nepal during the second half to May.&lt;/p&gt;
+&lt;p&gt;This is a very very exciting development. I have always wanted to hike in Nepal. This will also be my first international trip.&lt;/p&gt;
+&lt;h1 id="work"&gt;Work&lt;/h1&gt;
+&lt;p&gt;January is also the end of my stint at &lt;a href="https://last9.io"&gt;last9-io&lt;/a&gt;. I've spent 2 years here building out the metrics backend infrastructure here. It is at a stable-enough state that I feel good about myself leaving the org.
+I am severely burnt-out and I need to escape. I can see my work and personal relationships suffer because of this.&lt;/p&gt;
+&lt;p&gt;Over the last month I was working on the 2.0 version of our infra which would make the stack completely Kubernetes-native. This is a major breakthrough for us, but I am slightly sad that I could not wait long enough to see all of our backend infra being migrated to the &lt;em&gt;2.0&lt;/em&gt; stack. No harm though; my friends tell me that my mental-sanity is more important that completing any project. I will take their word for it. :)&lt;/p&gt;
+&lt;p&gt;I am going on a break. I will look for a new job after I come back from the mountains. I plan to spend my time reading and programming recreationally. Will update on what I do.&lt;/p&gt;
+&lt;h1 id="pycon-2025"&gt;PyCon 2025&lt;/h1&gt;
+&lt;p&gt;This year I am volunteering for PyCon from the very beginning. 
+The last couple of calls were amazing. I am learning a lot.
+I am on the techology workgroup. I will look at the server and I am building the initial website for the conference
+I love this bunch.&lt;/p&gt;
+&lt;h1 id="live-close-to-friends"&gt;Live close to Friends&lt;/h1&gt;
+&lt;p&gt;January has been very nice. Living close to your friends is the best decision that I took last year. I LOVE the fact that my friends can visit me without significant planning and vice-versa.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://tanvibhakta.in/"&gt;Tanvi&lt;/a&gt; keeps visiting me randomly and I LOVE it.
+A friend &lt;a href="swatimodi.com"&gt;Swati&lt;/a&gt; has been living with me (and my other flatmate) because she is yet to find a place in BLR to rent. It has been amazing.
+Another friend Rizwan came over and stayed with us for a week. It was greater. &lt;/p&gt;
+&lt;p&gt;I cooked food for the the bunch one day. They liked it.&lt;/p&gt;
+&lt;p&gt;My flatmate (Srijan) and Swati have seen me spiral sometimes during this period. I mean if you live with someone, it's hard not to see them spiral. To my surprise it wasn't as bad as I thought it would be. Having them around really helped me stabilise myself.&lt;/p&gt;
+&lt;p&gt;There was also a house-warming party that was very very nice. I had lots of fun.&lt;/p&gt;
+&lt;p&gt;Living close to friends is awesome. My heart is full and I can not take it. :)&lt;/p&gt;
+&lt;h1 id="setting-boundaries"&gt;Setting Boundaries&lt;/h1&gt;
+&lt;p&gt;For some reason I always shied away from setting boundaries. A part of my reasoning was that I need to be &lt;em&gt;easy to love&lt;/em&gt; in order to be loved. I've known this for a while but I didn't really do anything about it.&lt;/p&gt;
+&lt;p&gt;Now as I've grown older, I have gotten more and more comfortable in my skin. I can occupy space without feeling guilty. However setting boundaries is something I still struggle at. This was rudely pointed out one day and since then, I must admit that things have been much much better.&lt;/p&gt;
+&lt;p&gt;What I learnt is this: &lt;em&gt;Good people will respect and uphold your boundaries&lt;/em&gt;
+and these are the people you want in your life.&lt;/p&gt;
+&lt;h1 id="bought-a-domain-and-new-blog"&gt;Bought a domain and new Blog&lt;/h1&gt;
+&lt;p&gt;As I write this I am migrating my blog out of Pelican and into a mk-docs format. 
+I also bought a domain. 
+Hopefully by the end of this month, I will set it up.&lt;/p&gt;
+&lt;h1 id="gym-pr"&gt;Gym PR&lt;/h1&gt;
+&lt;p&gt;Before leaving Bangalore, I went to the gym for one last session as I will be returning to Bangalore only after May. 
+In this session I set 2 PR for myself. 
+I was able to squat a 100 Kilos and perform 3 deadlifts with 100 kilos. &lt;/p&gt;
+&lt;p&gt;:)&lt;/p&gt;</content><category term="misc"></category><category term="#now"></category><category term="#meta"></category></entry><entry><title>Now - January 2025 (Recap 2024)</title><link href="https://signalshore.github.io/blog/2025-01-02-Recap-2024.html" rel="alternate"></link><published>2025-01-02T00:00:00+05:30</published><updated>2025-01-02T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2025-01-02:/blog/2025-01-02-Recap-2024.html</id><summary type="html">&lt;p&gt;A recap of 2024 and new plans for 2025&lt;/p&gt;</summary><content type="html">&lt;p&gt;I will keep this short and sweet (hopefully) and divide the whole thing into a bunch of chapters.&lt;/p&gt;
 &lt;h2 id="physical-health"&gt;Physical Health&lt;/h2&gt;
 &lt;p&gt;This year started badly with the knee injury and stuff. This injury was not just limited to the knee. The right ankle, right knee, left hip and the right shoulder all were affected in differing degrees. However being under physiotherapy for 9 months really helped and I ended the year pain-free. &lt;/p&gt;
 &lt;p&gt;I started going to the gym and focusing on strength training this year. It was an interesting experience. Generally I find the gym to be a very boring place, however since I a training for the Basic Mountaineering Course, the gym started to grow on me. Also, in absence of any other physical movement because of the injury and rehab, the gym was the only place I could go and move physically.&lt;/p&gt;
@@ -4283,15 +4321,15 @@ on some arbitrary input.&lt;/p&gt;
 &lt;p&gt;The Halting Problem is a decision problem of determining whether any
 arbitrary Turing Machine will halt on an arbitrary string input or
 not. &lt;/p&gt;
-&lt;p&gt;In other words lets say that we have a Language &lt;span class="math"&gt;\(H_{Lang}\)&lt;/span&gt; which is
-made up of all string encoding of the form &lt;span class="math"&gt;\(&amp;lt;B,w&amp;gt;\)&lt;/span&gt; where &lt;span class="math"&gt;\(B\)&lt;/span&gt; is a
-Turing Machine and &lt;span class="math"&gt;\(w\)&lt;/span&gt; is a string and &lt;span class="math"&gt;\(B\)&lt;/span&gt; halts on &lt;span class="math"&gt;\(w\)&lt;/span&gt;. We need to
-show that &lt;span class="math"&gt;\(H_{Lang}\)&lt;/span&gt; is undecidable. Which means that there isn't a
-single imaginable Turing Machine that can decide &lt;span class="math"&gt;\(H_{Lang}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In other words lets say that we have a Language $H_{Lang}$ which is
+made up of all string encoding of the form $&lt;B,w&gt;$ where $B$ is a
+Turing Machine and $w$ is a string and $B$ halts on $w$. We need to
+show that $H_{Lang}$ is undecidable. Which means that there isn't a
+single imaginable Turing Machine that can decide $H_{Lang}$.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Which means that no one can ever design a Turing Machine that will
-be able to take an arbitrary string &lt;span class="math"&gt;\(w\)&lt;/span&gt; and an arbitrary Turing
-machine &lt;span class="math"&gt;\(B\)&lt;/span&gt; and tell whether &lt;span class="math"&gt;\(B\)&lt;/span&gt; will halt on &lt;span class="math"&gt;\(w\)&lt;/span&gt; or not. &lt;/p&gt;
+be able to take an arbitrary string $w$ and an arbitrary Turing
+machine $B$ and tell whether $B$ will halt on $w$ or not. &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Now, this might seem like a fairly un-important detail but this has
 some far-reaching implications as we will soon see. But before that we
@@ -4299,41 +4337,41 @@ will prove the above statement. This is a fun proof that illustrates
 how to think about these problems in general.&lt;/p&gt;
 &lt;h3 id="proof"&gt;Proof&lt;/h3&gt;
 &lt;p&gt;Let us assume that such a machine does exist and let us call it
-&lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Construction of &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt;:&lt;/p&gt;
+$H_{TM}$.&lt;/p&gt;
+&lt;p&gt;Construction of $H_{TM}$:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Input :&lt;/strong&gt; String &lt;span class="math"&gt;\(&amp;lt;B,w&amp;gt;\)&lt;/span&gt;, where &lt;span class="math"&gt;\(B\)&lt;/span&gt; is a TM and &lt;span class="math"&gt;\(w\)&lt;/span&gt; is a string.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Run :&lt;/strong&gt; Simulates &lt;span class="math"&gt;\(w\)&lt;/span&gt; on &lt;span class="math"&gt;\(B\)&lt;/span&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Accepts :&lt;/strong&gt; &lt;span class="math"&gt;\(w\)&lt;/span&gt; if &lt;span class="math"&gt;\(B\)&lt;/span&gt; halts on &lt;span class="math"&gt;\(w\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rejects :&lt;/strong&gt; &lt;span class="math"&gt;\(w\)&lt;/span&gt; if &lt;span class="math"&gt;\(B\)&lt;/span&gt; does not halt on &lt;span class="math"&gt;\(w\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Input :&lt;/strong&gt; String $&lt;B,w&gt;$, where $B$ is a TM and $w$ is a string.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Run :&lt;/strong&gt; Simulates $w$ on $B$.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accepts :&lt;/strong&gt; $w$ if $B$ halts on $w$&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rejects :&lt;/strong&gt; $w$ if $B$ does not halt on $w$.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;em&gt;This&lt;/em&gt; is the decider that we have to prove can not exist.&lt;/p&gt;
-&lt;p&gt;Now, since &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; already exists we can use this machine to
-construct another Turing Machine &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt; which has &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; as a
+&lt;p&gt;Now, since $H_{TM}$ already exists we can use this machine to
+construct another Turing Machine $D_{TM_H}$ which has $H_{TM}$ as a
 subroutine (hence the sub-subscript notation).&lt;/p&gt;
-&lt;p&gt;Construction of &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;Construction of $D_{TM_H}$:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Input :&lt;/strong&gt; String &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt;, where &lt;span class="math"&gt;\(M\)&lt;/span&gt; is a Turing machine&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Runs :&lt;/strong&gt; Simulates &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt; on &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Accepts :&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt; if &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; rejects &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt;, i.e. if &lt;span class="math"&gt;\(M\)&lt;/span&gt; rejects &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rejects :&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt; if &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; accepts &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt;, i.e. if &lt;span class="math"&gt;\(M\)&lt;/span&gt; accepts &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Input :&lt;/strong&gt; String $&lt;M&gt;$, where $M$ is a Turing machine&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Runs :&lt;/strong&gt; Simulates $&lt;M, \&lt;M&gt;&gt;$ on $H_{TM}$&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accepts :&lt;/strong&gt; $&lt;M&gt;$ if $H_{TM}$ rejects $&lt;M, \&lt;M&gt;&gt;$, i.e. if $M$ rejects $&lt;M&gt;$&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rejects :&lt;/strong&gt; $&lt;M&gt;$ if $H_{TM}$ accepts $&lt;M, \&lt;M&gt;&gt;$, i.e. if $M$ accepts $&lt;M&gt;$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Now, what happens if we run &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt; on &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}&amp;gt;\)&lt;/span&gt; ?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Now, what happens if we run $D_{TM_H}$ on $&lt;D_{TM_H}&gt;$ ?&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;By the above Accept and Reject conditions, &lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;If &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt; &lt;strong&gt;accepts&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}&amp;gt;\)&lt;/span&gt;, then it means that &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt;
-  rejected &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}, &amp;lt;D_{TM_H} &amp;gt;&amp;gt;\)&lt;/span&gt; which means that &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt;
-  &lt;strong&gt;rejects&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}&amp;gt;\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;If &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt; &lt;strong&gt;rejects&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}&amp;gt;\)&lt;/span&gt;, then it means that &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt;
-  accepted &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}, &amp;lt;D_{TM_H} &amp;gt;&amp;gt;\)&lt;/span&gt; which means that &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt;
-  &lt;strong&gt;accepted&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}&amp;gt;\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;If $D_{TM_H}$ &lt;strong&gt;accepts&lt;/strong&gt; $&lt;D_{TM_H}&gt;$, then it means that $H_{TM}$
+  rejected $&lt;D_{TM_H}, \&lt;D_{TM_H} &gt;&gt;$ which means that $D_{TM_H}$
+  &lt;strong&gt;rejects&lt;/strong&gt; $&lt;D_{TM_H}&gt;$&lt;/li&gt;
+&lt;li&gt;If $D_{TM_H}$ &lt;strong&gt;rejects&lt;/strong&gt; $&lt;D_{TM_H}&gt;$, then it means that $H_{TM}$
+  accepted $&lt;D_{TM_H}, \&lt;D_{TM_H} &gt;&gt;$ which means that $D_{TM_H}$
+  &lt;strong&gt;accepted&lt;/strong&gt; $&lt;D_{TM_H}&gt;$&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This is a contradiction because it implies that &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt; accepts
+&lt;p&gt;This is a contradiction because it implies that $D_{TM_H}$ accepts
 itself if it rejects itself.&lt;/p&gt;
-&lt;p&gt;Hence our initial assumption about the existence of &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; must be
-wrong. Hence &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; can not exist.&lt;/p&gt;
+&lt;p&gt;Hence our initial assumption about the existence of $H_{TM}$ must be
+wrong. Hence $H_{TM}$ can not exist.&lt;/p&gt;
 &lt;h6 id="there-is-another-proof-for-this-that-uses-the-cantors-diagonalisation-argument"&gt;There is another proof for this that uses the Cantor's diagonalisation argument&lt;/h6&gt;
 &lt;h3 id="conclusion"&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;This means that&lt;/p&gt;
@@ -4346,69 +4384,7 @@ they are not 100% accurate, because they are mathematically guaranteed
 to not be 100% accurate.&lt;/p&gt;
 &lt;p&gt;This post is part of a series of posts that I have planned. In the
 next one we will talk about Godels Incompletelness Theorems and
-Hilberts Problems.&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="misc"></category><category term="CS"></category></entry><entry><title>Moving from Bangalore to Mumbai</title><link href="https://signalshore.github.io/blog/2018-08-06-Bangalore-To-Mumbai.html" rel="alternate"></link><published>2018-08-06T00:00:00+05:30</published><updated>2018-08-06T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-08-06:/blog/2018-08-06-Bangalore-To-Mumbai.html</id><summary type="html">&lt;p&gt;So things got really interesting in the previous month. &lt;/p&gt;
+Hilberts Problems.&lt;/p&gt;</content><category term="misc"></category><category term="CS"></category></entry><entry><title>Moving from Bangalore to Mumbai</title><link href="https://signalshore.github.io/blog/2018-08-06-Bangalore-To-Mumbai.html" rel="alternate"></link><published>2018-08-06T00:00:00+05:30</published><updated>2018-08-06T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-08-06:/blog/2018-08-06-Bangalore-To-Mumbai.html</id><summary type="html">&lt;p&gt;So things got really interesting in the previous month. &lt;/p&gt;
 &lt;p&gt;After my degree course got over, I was supposed to join Deloitte as a
 campus recruit. Before the joining I attended the training program for
 campus recruits for about two weeks.&lt;/p&gt;
@@ -4532,9 +4508,9 @@ neither am I qualified enough nor do we want a post of infinite
 length. So we will focus on two infinite sets in mathematics.&lt;/p&gt;
 &lt;p&gt;The set of whole numbers in Mathematics. This set is a set of all
 positive integers beginning from 0 and this is an infinite set. This
-is the famous set &lt;span class="math"&gt;\(\mathbb{N}\)&lt;/span&gt; and the set of all Real numbers. This
+is the famous set $\mathbb{N}$ and the set of all Real numbers. This
 set consists of any number that can be represented on a number
-line. This is the famous set &lt;span class="math"&gt;\(\mathbb{R}\)&lt;/span&gt;.&lt;/p&gt;
+line. This is the famous set $\mathbb{R}$.&lt;/p&gt;
 &lt;h2 id="are-all-infinities-equal"&gt;Are all infinities equal ?&lt;/h2&gt;
 &lt;p&gt;That is a loaded question!! It sounds simple doesn't it?  If infinity
 means that something is never ending then all infinities must be
@@ -4542,14 +4518,14 @@ equal; right ?&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;WRONG !!&lt;/strong&gt; Turns out there are different kinds of
 infinities. Countable Infinities and Un-countable infinities.&lt;/p&gt;
 &lt;p&gt;Let's unpack this argument from the beginning and in the end we will
-compare the two sets we talked about before (&lt;span class="math"&gt;\(\mathbb{N}\)&lt;/span&gt; and
-&lt;span class="math"&gt;\(\mathbb{R}\)&lt;/span&gt;)&lt;/p&gt;
+compare the two sets we talked about before ($\mathbb{N}$ and
+$\mathbb{R}$)&lt;/p&gt;
 &lt;p&gt;Two sets P and Q are said to be equal sets if they have the same
 number of elements (or they sets have the same cardinality). Now the
 question arises that if two sets are infinite then how do we compare
 if they have the same number of elements or not.&lt;/p&gt;
-&lt;p&gt;This is the brilliance of it all. To establish the equality between &lt;span class="math"&gt;\(P\)&lt;/span&gt;
-and &lt;span class="math"&gt;\(Q\)&lt;/span&gt; we do not need to and we can not count the number of elements in
+&lt;p&gt;This is the brilliance of it all. To establish the equality between $P$
+and $Q$ we do not need to and we can not count the number of elements in
 each set and show that they are equal, we just need to show that &lt;em&gt;if&lt;/em&gt;
 counting the number of elements were possible then the sets would be
 equal. We do this by showing
@@ -4558,30 +4534,30 @@ a
 the elements of the two sets. This, is a fancy way to say that we have
 to show that we can pair every element of the first set with an
 element of the second set.&lt;/p&gt;
-&lt;p&gt;Comparing the two sets (&lt;span class="math"&gt;\(\mathbb{N}\)&lt;/span&gt; and &lt;span class="math"&gt;\(\mathbb{R}\)&lt;/span&gt;) will make this
-idea more clear.  Set &lt;span class="math"&gt;\(\mathbb{N}\)&lt;/span&gt; is the set of Natural numbers and
-set &lt;span class="math"&gt;\(\mathbb{R}\)&lt;/span&gt; is the set of Real numbers. For this experiment we
+&lt;p&gt;Comparing the two sets ($\mathbb{N}$ and $\mathbb{R}$) will make this
+idea more clear.  Set $\mathbb{N}$ is the set of Natural numbers and
+set $\mathbb{R}$ is the set of Real numbers. For this experiment we
 will only consider the numbers between 0 and 1 from the set
-&lt;span class="math"&gt;\(\mathbb{R}\)&lt;/span&gt;. Thus this small interval will include numbers like 
-&lt;span class="math"&gt;\(0.01, 0.0001, 0.00235421, ...)\)&lt;/span&gt;. Now, let us select such numbers from
+$\mathbb{R}$. Thus this small interval will include numbers like 
+$0.01, 0.0001, 0.00235421, ...)$. Now, let us select such numbers from
 this interval in ascending order and pair them up with each element
-from the set &lt;span class="math"&gt;\(\mathbb{N}\)&lt;/span&gt;. &lt;/p&gt;
-&lt;p&gt;Soon, we will run out of numbers from &lt;span class="math"&gt;\(\mathbb{N}\)&lt;/span&gt;. This happens
+from the set $\mathbb{N}$. &lt;/p&gt;
+&lt;p&gt;Soon, we will run out of numbers from $\mathbb{N}$. This happens
 because no matter how you choose, you &lt;strong&gt;can not&lt;/strong&gt; choose numbers in
-ascending order (or any order for that matter) from set &lt;span class="math"&gt;\(\mathbb{R}\)&lt;/span&gt;.
-Say you choose &lt;span class="math"&gt;\(0.01\)&lt;/span&gt; and the next number you choose is &lt;em&gt;0.02&lt;/em&gt;,
-however there are still numbers like &lt;span class="math"&gt;\(0.001\)&lt;/span&gt; and &lt;span class="math"&gt;\(0.000001\)&lt;/span&gt; and so on.
+ascending order (or any order for that matter) from set $\mathbb{R}$.
+Say you choose $0.01$ and the next number you choose is &lt;em&gt;0.02&lt;/em&gt;,
+however there are still numbers like $0.001$ and $0.000001$ and so on.
 In fact, there are infinitely many numbers between any two numbers from
-the set &lt;span class="math"&gt;\(\mathbb{R}\)&lt;/span&gt;. &lt;/p&gt;
+the set $\mathbb{R}$. &lt;/p&gt;
 &lt;p&gt;You can image this as having numbers on a number line and you can just
 &lt;em&gt;zoom&lt;/em&gt; into the line indefinitely and all you would do is just
 increase the granularity of the numbers. The numbers would &lt;strong&gt;never&lt;/strong&gt; end.&lt;/p&gt;
-&lt;p&gt;Thus the set &lt;span class="math"&gt;\(\mathbb{N}\)&lt;/span&gt; is a countably-infinite set while the set
-&lt;span class="math"&gt;\(\mathbb{R}\)&lt;/span&gt; is uncountably-infinite.&lt;/p&gt;
+&lt;p&gt;Thus the set $\mathbb{N}$ is a countably-infinite set while the set
+$\mathbb{R}$ is uncountably-infinite.&lt;/p&gt;
 &lt;h2 id="another-wild-idea"&gt;Another WILD idea ...&lt;/h2&gt;
 &lt;p&gt;Take the set of all Natural numbers. This set contains all numbers
 from 1 to infinity.  Take another set containing all the even numbers
-from &lt;span class="math"&gt;\(2\)&lt;/span&gt; to infinity.&lt;/p&gt;
+from $2$ to infinity.&lt;/p&gt;
 &lt;p&gt;So now we have two different sets. What is the size of each of these sets ? &lt;/p&gt;
 &lt;p&gt;Basic intuition suggests that the set of all natural numbers will be
 twice as large as the set of all even numbers. But, that is not the
@@ -4597,18 +4573,18 @@ If you multiply infinity by a number; you get back infinity.&lt;/p&gt;
 &lt;p&gt;If the last section didn't rattle your brains enough, then let us look
 at something more bizarre.&lt;/p&gt;
 &lt;p&gt;This is a thought experiment. Let us imagine a circle with radius
-&lt;span class="math"&gt;\(r\)&lt;/span&gt;. Thus the circumference of this circle is &lt;span class="math"&gt;\(2 \pi r\)&lt;/span&gt;. Thus the
+$r$. Thus the circumference of this circle is $2 \pi r$. Thus the
 circumference of a circle is not rational. It is however a Real
 Number.&lt;/p&gt;
-&lt;p&gt;Now, if you start from point &lt;span class="math"&gt;\(A\)&lt;/span&gt; on the circumference of this circle
-and you take &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; steps every time then you will never reach the same
-point &lt;span class="math"&gt;\(A\)&lt;/span&gt; ever again. &lt;/p&gt;
+&lt;p&gt;Now, if you start from point $A$ on the circumference of this circle
+and you take $\pi$ steps every time then you will never reach the same
+point $A$ ever again. &lt;/p&gt;
 &lt;p&gt;This happens because of the irrationality of the circumference. You
 can imagine the circumference of the circle as two points marked on
-the Real number line at &lt;span class="math"&gt;\(0\)&lt;/span&gt; and at &lt;span class="math"&gt;\(2 \pi r\)&lt;/span&gt;. As we have seen
+the Real number line at $0$ and at $2 \pi r$. As we have seen
 previously there can be infinitely many numbers between any two
 numbers on the real number line. Now if we were to remove the original
-point &lt;span class="math"&gt;\(A\)&lt;/span&gt; the circle would remain as it is and the "gap" in its
+point $A$ the circle would remain as it is and the "gap" in its
 position will be replaced by some other point since we have an
 infinite supply of points. &lt;/p&gt;
 &lt;p&gt;There is also an incredible paradox called
@@ -4640,69 +4616,7 @@ much sense. &lt;/p&gt;
 "wait-a-minute-but-how" then please go ahead and read about infinity! &lt;/p&gt;
 &lt;p&gt;It's amazing. &lt;/p&gt;
 &lt;p&gt;And finally a huge thanks to Vasauce for &lt;a href="https://www.youtube.com/watch?v=s86-Z-CbaHA"&gt;this video&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This post was primarily inspired by that video!! :-)&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="misc"></category><category term="Misc"></category><category term="Math"></category></entry><entry><title>CO2 trends between India and USA</title><link href="https://signalshore.github.io/blog/2018-06-21-CO2-trends-between-India-and-USA.html" rel="alternate"></link><published>2018-06-21T00:00:00+05:30</published><updated>2018-06-21T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-06-21:/blog/2018-06-21-CO2-trends-between-India-and-USA.html</id><summary type="html">&lt;h1 id="disclaimer-and-introduction"&gt;Disclaimer and Introduction&lt;/h1&gt;
+&lt;p&gt;This post was primarily inspired by that video!! :-)&lt;/p&gt;</content><category term="misc"></category><category term="Misc"></category><category term="Math"></category></entry><entry><title>CO2 trends between India and USA</title><link href="https://signalshore.github.io/blog/2018-06-21-CO2-trends-between-India-and-USA.html" rel="alternate"></link><published>2018-06-21T00:00:00+05:30</published><updated>2018-06-21T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-06-21:/blog/2018-06-21-CO2-trends-between-India-and-USA.html</id><summary type="html">&lt;h1 id="disclaimer-and-introduction"&gt;Disclaimer and Introduction&lt;/h1&gt;
 &lt;p&gt;I am by no means an expert in Data Science. I am just starting to
 explore the vast field of data science because of a lot of other cool
 things that I like reading about rely heavily on Data Analystics.&lt;/p&gt;
@@ -4995,20 +4909,20 @@ Church came up with Lambda Calculus to capture the very same thing but in a math
 expressions (we call them Lambda Expressions), variables, constants
 and combinations of all these.&lt;/p&gt;
 &lt;p&gt;We will look at the syntax in  CFG form (Context Free Grammar)&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr \thinspace\)&lt;/span&gt; &lt;span class="math"&gt;\(:=\)&lt;/span&gt; &lt;span class="math"&gt;\(\thinspace constant\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(\qquad \qquad\)&lt;/span&gt; &lt;span class="math"&gt;\(|\)&lt;/span&gt; &lt;span class="math"&gt;\(variable\)&lt;/span&gt; &lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(\qquad \qquad\)&lt;/span&gt; &lt;span class="math"&gt;\(|\)&lt;/span&gt; &lt;span class="math"&gt;\((expr \space expr)\)&lt;/span&gt; &lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(\qquad \qquad\)&lt;/span&gt; &lt;span class="math"&gt;\(|\)&lt;/span&gt; &lt;span class="math"&gt;\(( \lambda \thinspace variable.expr)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$expr \thinspace$ $:=$ $\thinspace constant$&lt;/p&gt;
+&lt;p&gt;$\qquad \qquad$ $|$ $variable$ &lt;/p&gt;
+&lt;p&gt;$\qquad \qquad$ $|$ $(expr \space expr)$ &lt;/p&gt;
+&lt;p&gt;$\qquad \qquad$ $|$ $( \lambda \thinspace variable.expr)$&lt;/p&gt;
 &lt;p&gt;Now that we have the CFG down. Let us break it down a little bit.
 Writing the syntax in the form of a CFG is very beneficial because this
-format allows us to define the evaluation of a &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;-calculus
+format allows us to define the evaluation of a $\lambda$-calculus
 expression in terms of derivations of the CFG. We will see that in a
 bit.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;The first rule states that any &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;-calculus expression can be
+&lt;li&gt;The first rule states that any $\lambda$-calculus expression can be
 replaced with a constant. Constants can be anything; from numbers like
 &lt;strong&gt;0&lt;/strong&gt; or &lt;strong&gt;1&lt;/strong&gt; to even other &lt;strong&gt;functions&lt;/strong&gt; (yeah!!)&lt;/li&gt;
-&lt;li&gt;The second rule states that &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;-calculus expression can be
+&lt;li&gt;The second rule states that $\lambda$-calculus expression can be
   replaced with a variable. A variable are names like &lt;strong&gt;x&lt;/strong&gt; or &lt;strong&gt;y&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;The third rule allows us to apply one expression to another
   expression. This rule capture the idea of function application.&lt;/li&gt;
@@ -5019,133 +4933,71 @@ replaced with a constant. Constants can be anything; from numbers like
 &lt;li&gt;Rule 3 allows us to apply one expression to another expression &lt;strong&gt;only&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;Rule 4 allows use to define functions that have &lt;em&gt;only&lt;/em&gt; one variable.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="a-very-simple-lambda-expression"&gt;A very simple  &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;-expression&lt;/h3&gt;
+&lt;h3 id="a-very-simple-lambda-expression"&gt;A very simple  $\lambda$-expression&lt;/h3&gt;
 &lt;p&gt;Let us consider the lambda expression &lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(\lambda x . ((+ 1) x)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$\lambda x . ((+ 1) x)$&lt;/p&gt;
 &lt;p&gt;This is quite a tedious form of writing this expression and we can simplify this quite a lot. The simplified version looks like this.&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(\lambda x . (+ 1 \thinspace x )\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$\lambda x . (+ 1 \thinspace x )$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Observe&lt;/strong&gt; that in the second form we have one function &lt;em&gt;+&lt;/em&gt; applied to two arguments - &lt;em&gt;1&lt;/em&gt; and &lt;em&gt;x&lt;/em&gt;. This is not actually allowed according to the rules but they mean the the same things. &lt;/p&gt;
 &lt;p&gt;Evaluating this expression we perform simple substitutions according to the rules of the CFG (for this we will use leftmost derivations).&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr \Rightarrow (\lambda variable . expr)\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr \Rightarrow (\lambda x . expr)\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr \Rightarrow (\lambda x . (expr \space expr))\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr \Rightarrow (\lambda x . ((expr \space expr) \space expr))\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr \Rightarrow (\lambda x . ((constant \space expr) \space expr))\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr \Rightarrow (\lambda x . ((constant \space constant) \space expr))\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr \Rightarrow (\lambda x . ((+ \space 1) \space expr))\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr \Rightarrow (\lambda x . ((+ \space 1) \space variable))\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr \Rightarrow (\lambda x . ((+ \space 1) \space x))\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$expr \Rightarrow (\lambda variable . expr)$&lt;/p&gt;
+&lt;p&gt;$expr \Rightarrow (\lambda x . expr)$&lt;/p&gt;
+&lt;p&gt;$expr \Rightarrow (\lambda x . (expr \space expr))$&lt;/p&gt;
+&lt;p&gt;$expr \Rightarrow (\lambda x . ((expr \space expr) \space expr))$&lt;/p&gt;
+&lt;p&gt;$expr \Rightarrow (\lambda x . ((constant \space expr) \space expr))$&lt;/p&gt;
+&lt;p&gt;$expr \Rightarrow (\lambda x . ((constant \space constant) \space expr))$&lt;/p&gt;
+&lt;p&gt;$expr \Rightarrow (\lambda x . ((+ \space 1) \space expr))$&lt;/p&gt;
+&lt;p&gt;$expr \Rightarrow (\lambda x . ((+ \space 1) \space variable))$&lt;/p&gt;
+&lt;p&gt;$expr \Rightarrow (\lambda x . ((+ \space 1) \space x))$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Observe&lt;/strong&gt; that the derivation that the $\lambda&amp;amp; expression returns is actually a &lt;em&gt;function&lt;/em&gt;. This function needs to applied to a variable to get something useful happening out of it. &lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\((\lambda x . (+ 1 x )5) := (+ \space 1 \space 5) := 6\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$(\lambda x . (+ 1 x )5) := (+ \space 1 \space 5) := 6$&lt;/p&gt;
 &lt;p&gt;In Scheme this would be something like this&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3 id="the-abstraction-operator"&gt;The Abstraction Operator&lt;/h3&gt;
-&lt;p&gt;The &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt; (lambda) is the abstraction operator used in Lambda Calculus.&lt;/p&gt;
-&lt;p&gt;In any &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;-expression there are two kinds of variables. &lt;strong&gt;Free&lt;/strong&gt; and &lt;strong&gt;Bound&lt;/strong&gt; variables.&lt;/p&gt;
+&lt;p&gt;The $\lambda$ (lambda) is the abstraction operator used in Lambda Calculus.&lt;/p&gt;
+&lt;p&gt;In any $\lambda$-expression there are two kinds of variables. &lt;strong&gt;Free&lt;/strong&gt; and &lt;strong&gt;Bound&lt;/strong&gt; variables.&lt;/p&gt;
 &lt;p&gt;Consider the following expression&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\((\lambda x. (+ \space x \space y \space y \space x))\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(x\)&lt;/span&gt; is a bound variable and &lt;span class="math"&gt;\(y\)&lt;/span&gt; is a free variable. &lt;/p&gt;
+&lt;p&gt;$(\lambda x. (+ \space x \space y \space y \space x))$&lt;/p&gt;
+&lt;p&gt;$x$ is a bound variable and $y$ is a free variable. &lt;/p&gt;
 &lt;p&gt;The abstraction operator binds a variable with the body of the
 abstraction. Thus a variable that falls within the scope of the
 abstraction is called a &lt;em&gt;bound&lt;/em&gt; variable. All other variables are
 &lt;em&gt;free&lt;/em&gt; variables.&lt;/p&gt;
-&lt;p&gt;In the given example variable &lt;span class="math"&gt;\(x\)&lt;/span&gt; is bound to the expression &lt;span class="math"&gt;\((+
-\space x \space y \space y \space x)\)&lt;/span&gt;. Thus when this function is
-being evaluated with an argument then all the occurrences of &lt;span class="math"&gt;\(x\)&lt;/span&gt; in the
+&lt;p&gt;In the given example variable $x$ is bound to the expression $(+
+\space x \space y \space y \space x)$. Thus when this function is
+being evaluated with an argument then all the occurrences of $x$ in the
 expression will be replaced by the argument.&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(((\lambda x. (+ \space x \space y \space y \space x)) 5) = (+ \space 5 \space y \space  y \space 5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$((\lambda x. (+ \space x \space y \space y \space x)) 5) = (+ \space 5 \space y \space  y \space 5)$&lt;/p&gt;
 &lt;h3 id="currying"&gt;Currying&lt;/h3&gt;
-&lt;p&gt;Rule 4 states that we can have function definitions only in the form of &lt;span class="math"&gt;\(expr := (\lambda variable . expr)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Rule 4 states that we can have function definitions only in the form of $expr := (\lambda variable . expr)$&lt;/p&gt;
 &lt;p&gt;Thus this means that in the lambda calculus model we can have
 functions with only one variable. However, as we will see that this is
 not a limitation, in fact it is quite the opposite as it opens up new
 possibilities about what you can do with your programming language.&lt;/p&gt;
 &lt;p&gt;Currying is a technique that lets us translate functions that take
 multiple arguments to a sequence of functions that accept only a
-single argument. This is useful in &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;-calculus because this
+single argument. This is useful in $\lambda$-calculus because this
 allows us to define complex functions that take multiple arguments and
 still not disturb the 4th Rule.&lt;/p&gt;
 &lt;p&gt;For example, consider the expression &lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr := (\lambda x \thinspace y. \thinspace (+ \thinspace x \thinspace y))\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$expr := (\lambda x \thinspace y. \thinspace (+ \thinspace x \thinspace y))$&lt;/p&gt;
 &lt;p&gt;This function will take two arguments &lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr := ((\lambda x \thinspace y. \thinspace (+ \thinspace x \thinspace y))3 \thinspace 5)\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;In this expression the abstraction operator will take the first variable (i.e. &lt;span class="math"&gt;\(x\)&lt;/span&gt;) and substitute all the occurrences of &lt;span class="math"&gt;\(x\)&lt;/span&gt; in the expression with the value of the first argument (i.e. &lt;span class="math"&gt;\(3\)&lt;/span&gt;). This will also happen for the second variable and we will have the expression &lt;span class="math"&gt;\((+ \thinspace 3 \thinspace 5)\)&lt;/span&gt;. &lt;/p&gt;
-&lt;p&gt;Actually the expression &lt;span class="math"&gt;\(expr := ((\lambda x \thinspace y. \thinspace
-(+ \thinspace x \thinspace y))3 \thinspace 5)\)&lt;/span&gt; is just the curried
+&lt;p&gt;$expr := ((\lambda x \thinspace y. \thinspace (+ \thinspace x \thinspace y))3 \thinspace 5)$&lt;/p&gt;
+&lt;p&gt;In this expression the abstraction operator will take the first variable (i.e. $x$) and substitute all the occurrences of $x$ in the expression with the value of the first argument (i.e. $3$). This will also happen for the second variable and we will have the expression $(+ \thinspace 3 \thinspace 5)$. &lt;/p&gt;
+&lt;p&gt;Actually the expression $expr := ((\lambda x \thinspace y. \thinspace
+(+ \thinspace x \thinspace y))3 \thinspace 5)$ is just the curried
 version of the expression;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr := ((\lambda x (\lambda y. \thinspace (+ \thinspace x \thinspace y))3 )\thinspace 5)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$expr := ((\lambda x (\lambda y. \thinspace (+ \thinspace x \thinspace y))3 )\thinspace 5)$&lt;/p&gt;
 &lt;p&gt;The derivation of this expression,&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr := ((\lambda x (+ \thinspace x \thinspace 3)\thinspace 5)\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(expr := (+ \thinspace 5 \thinspace 3)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$expr := ((\lambda x (+ \thinspace x \thinspace 3)\thinspace 5)$&lt;/p&gt;
+&lt;p&gt;$expr := (+ \thinspace 5 \thinspace 3)$&lt;/p&gt;
 &lt;p&gt;Currying is not just a technique used in Lambda Calculus. It is used
 in a lot of different fields of mathematics logic. Just have a look at
 the Wikipedia page
 for &lt;a href="https://en.wikipedia.org/wiki/Currying"&gt;Currying&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Currying is named after Haskell Curry. (The Haskell programming languages is also named after him)&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="misc"></category><category term="CS"></category></entry><entry><title>Savandurga Trek</title><link href="https://signalshore.github.io/blog/2018-04-10-Savandurga-Trek.html" rel="alternate"></link><published>2018-04-10T00:00:00+05:30</published><updated>2018-04-10T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-04-10:/blog/2018-04-10-Savandurga-Trek.html</id><summary type="html">&lt;p&gt;I came to know about Savandurga Hill a couple of weeks back when me and my friend went there for a casual ride (motorcycle). When we went there the trekking part of the hill was already closed. This was okay since both of us did not plan on trekking anyway …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I came to know about Savandurga Hill a couple of weeks back when me and my friend went there for a casual ride (motorcycle). When we went there the trekking part of the hill was already closed. This was okay since both of us did not plan on trekking anyway. &lt;/p&gt;
+&lt;p&gt;Currying is named after Haskell Curry. (The Haskell programming languages is also named after him)&lt;/p&gt;</content><category term="misc"></category><category term="CS"></category></entry><entry><title>Savandurga Trek</title><link href="https://signalshore.github.io/blog/2018-04-10-Savandurga-Trek.html" rel="alternate"></link><published>2018-04-10T00:00:00+05:30</published><updated>2018-04-10T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-04-10:/blog/2018-04-10-Savandurga-Trek.html</id><summary type="html">&lt;p&gt;I came to know about Savandurga Hill a couple of weeks back when me and my friend went there for a casual ride (motorcycle). When we went there the trekking part of the hill was already closed. This was okay since both of us did not plan on trekking anyway …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I came to know about Savandurga Hill a couple of weeks back when me and my friend went there for a casual ride (motorcycle). When we went there the trekking part of the hill was already closed. This was okay since both of us did not plan on trekking anyway. &lt;/p&gt;
 &lt;p&gt;However I was hooked by the moment I saw the hill. It is mind-blowing. So after I returned I tried to convince my friends to come along with me, but that did not happen. So I decided to ride to Savandurga and come back. &lt;/p&gt;
 &lt;p&gt;This turned out to be an amazing idea.&lt;/p&gt;
 &lt;hr&gt;
@@ -5374,14 +5226,14 @@ relevance:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&g
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Method of Abstraction&lt;/strong&gt; - A way to bind lambda expression to names, so that they can be referred to easily. Lambda Calculus allows us to bind variables to expressions. This allows us to create functions in Lambda calculus. The &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt; (lambda) and the /./ (dot) symbols are used to create abstraction.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Method of Abstraction&lt;/strong&gt; - A way to bind lambda expression to names, so that they can be referred to easily. Lambda Calculus allows us to bind variables to expressions. This allows us to create functions in Lambda calculus. The $\lambda$ (lambda) and the /./ (dot) symbols are used to create abstraction.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(\lambda\)&lt;/span&gt; x.E&lt;/li&gt;
+&lt;li&gt;$\lambda$ x.E&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;In this example the expression &lt;span class="math"&gt;\(E\)&lt;/span&gt; is bound to &lt;span class="math"&gt;\(x\)&lt;/span&gt;. This allows us apply these functions to arguments. &lt;/p&gt;
+&lt;p&gt;In this example the expression $E$ is bound to $x$. This allows us apply these functions to arguments. &lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Method of Application&lt;/strong&gt; - Now that we can create functions, what else can we do with them ? We can apply them. Lambda calculus allows us to apply functions to other expressions. The &lt;span class="math"&gt;\(()\)&lt;/span&gt; symbols are used to indicate applications of functions. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Method of Application&lt;/strong&gt; - Now that we can create functions, what else can we do with them ? We can apply them. Lambda calculus allows us to apply functions to other expressions. The $()$ symbols are used to indicate applications of functions. &lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://en.wikipedia.org/wiki/Lambda_calculus_definition"&gt;Mathematically&lt;/a&gt;&lt;/strong&gt;, Lambda Expressions are composed of &lt;/p&gt;
@@ -5390,33 +5242,33 @@ relevance:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&g
 &lt;p&gt;variables&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;abstraction symbols &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt; and &lt;em&gt;.&lt;/em&gt; (dot)&lt;/p&gt;
+&lt;p&gt;abstraction symbols $\lambda$ and &lt;em&gt;.&lt;/em&gt; (dot)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;parenthesis &lt;span class="math"&gt;\(()\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;parenthesis $()$&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;A set of valid Lambda Expressions &lt;span class="math"&gt;\(\Lambda\)&lt;/span&gt; can be defined recursively as..&lt;/p&gt;
+&lt;p&gt;A set of valid Lambda Expressions $\Lambda$ can be defined recursively as..&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;If &lt;span class="math"&gt;\(x\)&lt;/span&gt; is a variable, then &lt;span class="math"&gt;\(x \in \Lambda\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;If &lt;span class="math"&gt;\(x\)&lt;/span&gt; is a variable and &lt;span class="math"&gt;\(M \in \Lambda\)&lt;/span&gt;, then &lt;span class="math"&gt;\(( \lambda x. M ) \in \Lambda\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;If  &lt;span class="math"&gt;\(M, N \in \Lambda\)&lt;/span&gt;, then &lt;span class="math"&gt;\((M N) \in \Lambda\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;If $x$ is a variable, then $x \in \Lambda$&lt;/li&gt;
+&lt;li&gt;If $x$ is a variable and $M \in \Lambda$, then $( \lambda x. M ) \in \Lambda$&lt;/li&gt;
+&lt;li&gt;If  $M, N \in \Lambda$, then $(M N) \in \Lambda$&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;Rule 2&lt;/strong&gt; represents the idea of abstraction and is called &lt;strong&gt;Lambda-abstraction&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Rule 3&lt;/strong&gt; represents the idea of application and is called &lt;strong&gt;application&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;The lambda abstraction &lt;span class="math"&gt;\(\lambda x.M\)&lt;/span&gt; defines an anonymous function that takes &lt;span class="math"&gt;\(x\)&lt;/span&gt; as input argument and maps it to &lt;span class="math"&gt;\(M\)&lt;/span&gt;. Thus the function &lt;span class="math"&gt;\(f(x) = x + 1\)&lt;/span&gt; is &lt;span class="math"&gt;\(\lambda x . x + 1\)&lt;/span&gt;, where &lt;span class="math"&gt;\(M\)&lt;/span&gt; is &lt;span class="math"&gt;\(x+1\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;The application is equivalent to calling function &lt;span class="math"&gt;\(M\)&lt;/span&gt; on input &lt;span class="math"&gt;\(N\)&lt;/span&gt; i.e. &lt;span class="math"&gt;\(M(N)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The lambda abstraction $\lambda x.M$ defines an anonymous function that takes $x$ as input argument and maps it to $M$. Thus the function $f(x) = x + 1$ is $\lambda x . x + 1$, where $M$ is $x+1$&lt;/p&gt;
+&lt;p&gt;The application is equivalent to calling function $M$ on input $N$ i.e. $M(N)$&lt;/p&gt;
 &lt;h2 id="how-to-run-lambda-calculus-programs"&gt;How to run Lambda Calculus programs ?&lt;/h2&gt;
 &lt;p&gt;Now we have seen how Lambda calculus expressions can be formed. In this section we will see how Lambda calculus expressions can be reduced. This is also equivalent to saying "How can we run lambda calculus programs ?"&lt;/p&gt;
-&lt;p&gt;There are multiple reduction rules, but the most important and the most relevant one is the &lt;span class="math"&gt;\(\beta\)&lt;/span&gt;-reduction. &lt;span class="math"&gt;\(\beta\)&lt;/span&gt;-reduction is defined in terms of substitution rules. This rule captures the idea of function application. &lt;/p&gt;
-&lt;p&gt;The &lt;span class="math"&gt;\(\beta\)&lt;/span&gt; reduction rule states that in an expression of the form &lt;span class="math"&gt;\((\lambda x.t)v\)&lt;/span&gt; we replace all the occurrences of &lt;span class="math"&gt;\(x\)&lt;/span&gt; in &lt;span class="math"&gt;\(t\)&lt;/span&gt; with &lt;span class="math"&gt;\(v\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;There are multiple reduction rules, but the most important and the most relevant one is the $\beta$-reduction. $\beta$-reduction is defined in terms of substitution rules. This rule captures the idea of function application. &lt;/p&gt;
+&lt;p&gt;The $\beta$ reduction rule states that in an expression of the form $(\lambda x.t)v$ we replace all the occurrences of $x$ in $t$ with $v$.&lt;/p&gt;
 &lt;h4 id="examples"&gt;Examples&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;span class="math"&gt;\((\lambda  x. x^2)5 \thinspace := \thinspace 5^2 \thinspace := \thinspace 25\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$(\lambda  x. x^2)5 \thinspace := \thinspace 5^2 \thinspace := \thinspace 25$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(((\lambda x. \lambda y. x + y)\thinspace 5 \thinspace 4) \thinspace:= \thinspace 5 + 4 \thinspace := \thinspace 9\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$((\lambda x. \lambda y. x + y)\thinspace 5 \thinspace 4) \thinspace:= \thinspace 5 + 4 \thinspace := \thinspace 9$&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="church-encoding"&gt;Church Encoding&lt;/h2&gt;
@@ -5426,39 +5278,39 @@ relevance:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&g
 &lt;p&gt;Under Church Encoding we have a bunch of different formats. Over here we will be discussing only two of them.&lt;/p&gt;
 &lt;h2 id="church-numerals"&gt;Church Numerals&lt;/h2&gt;
 &lt;p&gt;The basic idea of church numerals is to use multiple applications of a function to represent numbers and the number of times the function is applied is equal the number that the lambda expression represents.&lt;/p&gt;
-&lt;p&gt;Starting with the number &lt;span class="math"&gt;\(0\)&lt;/span&gt; where the function is not applied even once. We define zero as &lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(0\thinspace := \thinspace  \lambda \thinspace f. \thinspace \lambda x.\thinspace x\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(1\thinspace := \thinspace \lambda \thinspace f. \thinspace \lambda x. fx\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(2\thinspace := \thinspace \lambda \thinspace f. \thinspace \lambda x. f(fx)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Starting with the number $0$ where the function is not applied even once. We define zero as &lt;/p&gt;
+&lt;p&gt;$0\thinspace := \thinspace  \lambda \thinspace f. \thinspace \lambda x.\thinspace x$&lt;/p&gt;
+&lt;p&gt;$1\thinspace := \thinspace \lambda \thinspace f. \thinspace \lambda x. fx$&lt;/p&gt;
+&lt;p&gt;$2\thinspace := \thinspace \lambda \thinspace f. \thinspace \lambda x. f(fx)$&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h3 id="successor-function"&gt;Successor Function&lt;/h3&gt;
 &lt;p&gt;We define the successor function as &lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(S := \lambda n. \thinspace \lambda f.\thinspace \lambda x.\thinspace f \thinspace ( \thinspace n \thinspace f \thinspace x \thinspace )\)&lt;/span&gt; &lt;/p&gt;
+&lt;p&gt;$S := \lambda n. \thinspace \lambda f.\thinspace \lambda x.\thinspace f \thinspace ( \thinspace n \thinspace f \thinspace x \thinspace )$ &lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h3 id="application"&gt;Application&lt;/h3&gt;
-&lt;p&gt;Now, we can confirm the working of this setup by applying the successor function to the definition of &lt;span class="math"&gt;\(0\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(S0 := (\lambda n. \lambda f. \lambda x. f \thinspace (n \thinspace f \thinspace x))( \lambda f. \lambda x. \thinspace x)\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(S0 := \lambda f. \lambda x. \thinspace f(( \lambda f. \lambda x. x) f x)\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(S0 := \lambda f. \lambda x. fx\)&lt;/span&gt;, which is &lt;span class="math"&gt;\(1\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Now, we can confirm the working of this setup by applying the successor function to the definition of $0$.&lt;/p&gt;
+&lt;p&gt;$S0 := (\lambda n. \lambda f. \lambda x. f \thinspace (n \thinspace f \thinspace x))( \lambda f. \lambda x. \thinspace x)$&lt;/p&gt;
+&lt;p&gt;$S0 := \lambda f. \lambda x. \thinspace f(( \lambda f. \lambda x. x) f x)$&lt;/p&gt;
+&lt;p&gt;$S0 := \lambda f. \lambda x. fx$, which is $1$&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Similarly, we can define &lt;span class="math"&gt;\(2\)&lt;/span&gt; by applying the successor function to &lt;span class="math"&gt;\(0\)&lt;/span&gt; twice &lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(S2 := S(S0)\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(S2 := (\lambda n. \lambda f. \lambda x. f \thinspace (n \thinspace f \thinspace x))( \lambda f. \lambda x. f \thinspace x)\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(S2 := \lambda f. \lambda x. f((\lambda f. \lambda x. fx)fx)\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(S2 := \lambda f. \lambda x. f(fx)\)&lt;/span&gt;, which is &lt;span class="math"&gt;\(2\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Similarly, we can define $2$ by applying the successor function to $0$ twice &lt;/p&gt;
+&lt;p&gt;$S2 := S(S0)$&lt;/p&gt;
+&lt;p&gt;$S2 := (\lambda n. \lambda f. \lambda x. f \thinspace (n \thinspace f \thinspace x))( \lambda f. \lambda x. f \thinspace x)$&lt;/p&gt;
+&lt;p&gt;$S2 := \lambda f. \lambda x. f((\lambda f. \lambda x. fx)fx)$&lt;/p&gt;
+&lt;p&gt;$S2 := \lambda f. \lambda x. f(fx)$, which is $2$&lt;/p&gt;
 &lt;p&gt;So, right now in this programming language we have the ability to use numbers.&lt;/p&gt;
 &lt;h2 id="church-boolean"&gt;Church Boolean&lt;/h2&gt;
 &lt;p&gt;We can define Boolean values (True and False) quite simple using church Encoding. The way these Boolean values are defines is very intriguing.&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(T := \lambda x. \lambda y. x\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(F := \lambda x. \lambda y. y\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Basically, &lt;span class="math"&gt;\(T\)&lt;/span&gt; is defined as a function that takes in two arguments and returns the first one and &lt;span class="math"&gt;\(F\)&lt;/span&gt; is defined as a function that takes in two arguments and returns the second one.&lt;/p&gt;
+&lt;p&gt;$T := \lambda x. \lambda y. x$&lt;/p&gt;
+&lt;p&gt;$F := \lambda x. \lambda y. y$&lt;/p&gt;
+&lt;p&gt;Basically, $T$ is defined as a function that takes in two arguments and returns the first one and $F$ is defined as a function that takes in two arguments and returns the second one.&lt;/p&gt;
 &lt;p&gt;What is surprising is that we can define all logical operations using a clever combination of these functions.    &lt;/p&gt;
 &lt;h3 id="boolean-operations"&gt;Boolean Operations&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(\wedge := \lambda x. \lambda y. x y (\lambda u. \lambda v. v) := \lambda x. \lambda y. x y F\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$\wedge := \lambda x. \lambda y. x y (\lambda u. \lambda v. v) := \lambda x. \lambda y. x y F$&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(\wedge M N := (\lambda x. \lambda y. x y F) M N := M N F\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;$\wedge M N := (\lambda x. \lambda y. x y F) M N := M N F$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -5466,9 +5318,9 @@ relevance:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&g
 
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(\vee := \lambda x. \lambda y. x (\lambda u. \lambda v. u) y := \lambda x. \lambda y. x T y\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$\vee := \lambda x. \lambda y. x (\lambda u. \lambda v. u) y := \lambda x. \lambda y. x T y$&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(\vee M N := (\lambda x. \lambda y. x T y) M N := M T N\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;$\vee M N := (\lambda x. \lambda y. x T y) M N := M T N$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -5476,82 +5328,20 @@ relevance:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&g
 
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(\neg := \lambda x. x (\lambda u. \lambda v. v) (\lambda p. \lambda q. p) := \lambda x. x F T\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;$\neg := \lambda x. x (\lambda u. \lambda v. v) (\lambda p. \lambda q. p) := \lambda x. x F T$&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;span class="math"&gt;\(\neg M := (\lambda x. x F T)M := M F T\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;$\neg M := (\lambda x. x F T)M := M F T$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;br&gt;
-In the previous equations replace &lt;span class="math"&gt;\(M\)&lt;/span&gt; and &lt;span class="math"&gt;\(N\)&lt;/span&gt; with any Boolean you want (either &lt;span class="math"&gt;\(T\)&lt;/span&gt; or &lt;span class="math"&gt;\(F\)&lt;/span&gt;) and then evaluate the resulting expression. &lt;/p&gt;
-&lt;p&gt;For Example for the equation 1. we can have &lt;span class="math"&gt;\(M = T\)&lt;/span&gt; and &lt;span class="math"&gt;\(N = F\)&lt;/span&gt;, which makes the equation&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(M N F := T F F := (\lambda x. \lambda y. x) F F := F\)&lt;/span&gt; &lt;em&gt;(because T takes in two inputs and chooses the first one)&lt;/em&gt; &lt;/p&gt;
-&lt;p&gt;Thus an &lt;span class="math"&gt;\(AND\)&lt;/span&gt; operation on &lt;span class="math"&gt;\(T\)&lt;/span&gt; and &lt;span class="math"&gt;\(F\)&lt;/span&gt; is &lt;span class="math"&gt;\(F\)&lt;/span&gt;. &lt;/p&gt;
+In the previous equations replace $M$ and $N$ with any Boolean you want (either $T$ or $F$) and then evaluate the resulting expression. &lt;/p&gt;
+&lt;p&gt;For Example for the equation 1. we can have $M = T$ and $N = F$, which makes the equation&lt;/p&gt;
+&lt;p&gt;$M N F := T F F := (\lambda x. \lambda y. x) F F := F$ &lt;em&gt;(because T takes in two inputs and chooses the first one)&lt;/em&gt; &lt;/p&gt;
+&lt;p&gt;Thus an $AND$ operation on $T$ and $F$ is $F$. &lt;/p&gt;
 &lt;p&gt;The same can be shows for the rest also.&lt;/p&gt;
 &lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;New posts should be up &lt;em&gt;not-so-shortly&lt;/em&gt;. In that I will explore each aspect of Lambda Calculus in more detail.&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="misc"></category><category term="CS"></category></entry><entry><title>FSMK Winter Camp, Hassan</title><link href="https://signalshore.github.io/blog/2018-02-16-FSMK-Winter-Camp.html" rel="alternate"></link><published>2018-02-16T00:00:00+05:30</published><updated>2018-02-16T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-16:/blog/2018-02-16-FSMK-Winter-Camp.html</id><summary type="html">&lt;p&gt;&lt;a href="https://fsmk.org/"&gt;Free Software Movement Karnataka (FSMK)&lt;/a&gt; conducted
+&lt;p&gt;New posts should be up &lt;em&gt;not-so-shortly&lt;/em&gt;. In that I will explore each aspect of Lambda Calculus in more detail.&lt;/p&gt;</content><category term="misc"></category><category term="CS"></category></entry><entry><title>FSMK Winter Camp, Hassan</title><link href="https://signalshore.github.io/blog/2018-02-16-FSMK-Winter-Camp.html" rel="alternate"></link><published>2018-02-16T00:00:00+05:30</published><updated>2018-02-16T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-16:/blog/2018-02-16-FSMK-Winter-Camp.html</id><summary type="html">&lt;p&gt;&lt;a href="https://fsmk.org/"&gt;Free Software Movement Karnataka (FSMK)&lt;/a&gt; conducted
 a winter camp
 at &lt;a href="http://rithassan.org/"&gt;Rajeev Institute of Technology&lt;/a&gt;, Hassan
 from 22nd January to 27th January.&lt;/p&gt;
@@ -5716,8 +5506,8 @@ variable, etc.&lt;/p&gt;
 &lt;h4 id="what-is-the-deal-with-higher-order-functions"&gt;&lt;strong&gt;What is the deal with Higher-Order Functions ?&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Higher-order_function"&gt;Higher-Order functions&lt;/a&gt; are not limited to programming languages. This concept covers functions in a much more general and mathematical sense. The idea is that Higher-Order Functions accepts other functions as arguments, and can returns functions as results. &lt;/p&gt;
 &lt;p&gt;The differential function in mathematics is an example of Higher-Order Function. It accepts a function as its input and returns the derivative of that function which is also a function. &lt;/p&gt;
-&lt;div class="math"&gt;$$ d(f(x)) / dx = f'(x)$$&lt;/div&gt;
-&lt;p&gt;In this equation the differential operator accepts the function &lt;span class="math"&gt;\(f(x)\)&lt;/span&gt; as an argument and the result of the operation is &lt;span class="math"&gt;\(f'(x)\)&lt;/span&gt;. &lt;/p&gt;
+&lt;p&gt;$$ d(f(x)) / dx = f'(x)$$&lt;/p&gt;
+&lt;p&gt;In this equation the differential operator accepts the function $f(x)$ as an argument and the result of the operation is $f'(x)$. &lt;/p&gt;
 &lt;p&gt;From a programming language perspective we can see multiple examples of higher order functions. A very common example is the &lt;code&gt;map&lt;/code&gt; function in python.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
@@ -5820,69 +5610,7 @@ Such a definition looks like this ..&lt;/p&gt;
 &lt;p&gt;This is my last semester in college so things are a bit hectic, so delays should be expected. &lt;/p&gt;
 &lt;p&gt;I went to FSMK camp 2018 last week and I met a couple of my readers. That was fun. :-) (and cheers to you people!!)&lt;/p&gt;
 &lt;p&gt;That is it!! (for now)&lt;/p&gt;
-&lt;p&gt;p.s. The code for this post can be found &lt;a href="assets/files/scheme-4.scm"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="misc"></category><category term="CS"></category><category term="Scheme"></category></entry><entry><title>Open Access</title><link href="https://signalshore.github.io/blog/2018-02-01-Open-Access.html" rel="alternate"></link><published>2018-02-01T00:00:00+05:30</published><updated>2018-02-01T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-01:/blog/2018-02-01-Open-Access.html</id><summary type="html">&lt;h2 id="what-is-open-access"&gt;What is Open Access ?&lt;/h2&gt;
+&lt;p&gt;p.s. The code for this post can be found &lt;a href="assets/files/scheme-4.scm"&gt;here&lt;/a&gt;.&lt;/p&gt;</content><category term="misc"></category><category term="CS"></category><category term="Scheme"></category></entry><entry><title>Open Access</title><link href="https://signalshore.github.io/blog/2018-02-01-Open-Access.html" rel="alternate"></link><published>2018-02-01T00:00:00+05:30</published><updated>2018-02-01T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-01:/blog/2018-02-01-Open-Access.html</id><summary type="html">&lt;h2 id="what-is-open-access"&gt;What is Open Access ?&lt;/h2&gt;
 &lt;p&gt;According to &lt;a href="https://en.wikipedia.org/wiki/Open_access"&gt;Wikipedia&lt;/a&gt;
 Open access refers to online research outputs that are free of all
 restrictions on access (e.g. access tolls) and free of many
@@ -6210,7 +5938,7 @@ dense for a single post.&lt;/p&gt;
 &lt;p&gt;Instead of just jumping right in, allow me to use an example that will
 inspire the idea of procedures that take procedures as arguments.&lt;/p&gt;
 &lt;p&gt;Let us look at this mathematical expression and write a procedure for it.&lt;/p&gt;
-&lt;div class="math"&gt;$$ Sum = 1 + 2 + 3 + 4 + \dots +  \infty $$&lt;/div&gt;
+&lt;p&gt;$$ Sum = 1 + 2 + 3 + 4 + \dots +  \infty $$&lt;/p&gt;
 &lt;p&gt;The Lisp procedure to compute this would be like &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
@@ -6226,7 +5954,7 @@ inspire the idea of procedures that take procedures as arguments.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
 
 &lt;p&gt;Now let us look at this expression &lt;/p&gt;
-&lt;div class="math"&gt;$$ Sum = 1^3 + 2^3 + 3^3 + \dots + \infty $$&lt;/div&gt;
+&lt;p&gt;$$ Sum = 1^3 + 2^3 + 3^3 + \dots + \infty $$&lt;/p&gt;
 &lt;p&gt;This is a series of the sum of cubes. The procedure would look like this&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
@@ -6243,15 +5971,15 @@ is some abstraction that needs further investigation. If you think
 about it, in both the previous examples we are computing the sum of
 different terms. If we can capture the idea of &lt;code&gt;summing&lt;/code&gt; in a
 procedure then that would give us the required
-abstraction. Mathematicians have done this using the &lt;span class="math"&gt;\(\Sigma\)&lt;/span&gt;
+abstraction. Mathematicians have done this using the $\Sigma$
 notation. The Sigma notation captures the idea of the summation
 without knowing what we are summing. Thus the above two expressions
 can be rewritten as :&lt;/p&gt;
-&lt;div class="math"&gt;$$ \sum_{n=1}^\infty n = 1 + 2 + 3 + \dots + \infty $$&lt;/div&gt;
+&lt;p&gt;$$ \sum_{n=1}^\infty n = 1 + 2 + 3 + \dots + \infty $$ &lt;/p&gt;
 &lt;p&gt;and &lt;/p&gt;
-&lt;div class="math"&gt;$$ \sum_{n=1}^\infty n^3 = 1^3 + 2^3 + 3^3 + \dots + \infty $$&lt;/div&gt;
+&lt;p&gt;$$ \sum_{n=1}^\infty n^3 = 1^3 + 2^3 + 3^3 + \dots + \infty $$&lt;/p&gt;
 &lt;p&gt;This lets us capture the idea of summation in the Sigma notation like &lt;/p&gt;
-&lt;div class="math"&gt;$$ \sum_{n=a}^b f(n) = f(a) + \dots + f(b) $$&lt;/div&gt;
+&lt;p&gt;$$ \sum_{n=a}^b f(n) = f(a) + \dots + f(b) $$&lt;/p&gt;
 &lt;p&gt;and we can use that idea to write a procedure; like so..&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
@@ -6266,10 +5994,10 @@ can be rewritten as :&lt;/p&gt;
 
 &lt;p&gt;In the above procedure "term" and "next" are procedures too.  Term is
 a procedure that computes the value of each term. This procedure is
-the Lisp equivalent of the function &lt;span class="math"&gt;\(f(x)\)&lt;/span&gt; in the mathematical
+the Lisp equivalent of the function $f(x)$ in the mathematical
 Sigma notation. Next is a procedure that determines how the function
 will iterate.&lt;/p&gt;
-&lt;p&gt;Thus for &lt;span class="math"&gt;\(\sum_{n=1}^\infty n^3 = 1^3 + 2^3 + 3^3 + \dots + \infty\)&lt;/span&gt;
+&lt;p&gt;Thus for $\sum_{n=1}^\infty n^3 = 1^3 + 2^3 + 3^3 + \dots + \infty$
 the Lisp procedure would be&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
@@ -6285,7 +6013,7 @@ the Lisp procedure would be&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
 
 &lt;p&gt;This is not the end. We can use this idea to create multiple such abstractions. &lt;/p&gt;
-&lt;p&gt;For example the multiplication procedure &lt;span class="math"&gt;\(\coprod_{n=a}^b f(n) = f(a) * \dots * f(b)\)&lt;/span&gt; can be coded like&lt;/p&gt;
+&lt;p&gt;For example the multiplication procedure $\coprod_{n=a}^b f(n) = f(a) * \dots * f(b)$ can be coded like&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;span class="normal"&gt;1&lt;/span&gt;
 &lt;span class="normal"&gt;2&lt;/span&gt;
 &lt;span class="normal"&gt;3&lt;/span&gt;
@@ -6349,69 +6077,7 @@ some sense. ;-)&lt;/p&gt;
 &lt;p&gt;p.p.s This was mighty amazing. I took about 1 minute
 to write the accumulate procedure. I took about 2 weeks to fully
 understand the sum procedure. I think I am getting a hang of this
-thing!!!&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="misc"></category><category term="CS"></category><category term="Scheme"></category></entry><entry><title>Scheme - Part 2 - Expressions and Evaluations</title><link href="https://signalshore.github.io/blog/2017-11-30-Scheme-Part-2.html" rel="alternate"></link><published>2017-11-30T00:00:00+05:30</published><updated>2017-11-30T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-11-30:/blog/2017-11-30-Scheme-Part-2.html</id><summary type="html">&lt;h3 id="s-expressions"&gt;S-expressions&lt;/h3&gt;
+thing!!!&lt;/p&gt;</content><category term="misc"></category><category term="CS"></category><category term="Scheme"></category></entry><entry><title>Scheme - Part 2 - Expressions and Evaluations</title><link href="https://signalshore.github.io/blog/2017-11-30-Scheme-Part-2.html" rel="alternate"></link><published>2017-11-30T00:00:00+05:30</published><updated>2017-11-30T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-11-30:/blog/2017-11-30-Scheme-Part-2.html</id><summary type="html">&lt;h3 id="s-expressions"&gt;S-expressions&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/S-expression"&gt;S-expressions&lt;/a&gt; or Sexprs or Symbolic Expressions are used to
 represented list like data. This was invented for and popularized by
 LISP. Lisp stands for LISt Processing. &lt;/p&gt;
