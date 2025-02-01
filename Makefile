@@ -59,6 +59,7 @@ links:
 	ln -s -r -f "$(NOTESDIR)/2024-10-19-Now-BMC-Zig-etc.md" ./content/
 	ln -s -r -f "$(NOTESDIR)/2024-12-05-Now-Nov-Recap.md" ./content/
 	ln -s -r -f "$(NOTESDIR)/2025-01-02-Recap-2024.md" ./content/
+	ln -s -r -f "$(NOTESDIR)/2025-02-02-Now-Jan.md" ./content/
 
 
 
