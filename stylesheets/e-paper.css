@@ -1,0 +1,417 @@
+/* E-Paper Display Theme for MkDocs Material */
+/* High contrast black and white design mimicking e-ink displays */
+
+:root {
+  /* Solarized Light + E-Paper Hybrid Palette */
+  --ep-white: #fdf6e3;      /* Solarized base3 - warm cream background */
+  --ep-light-gray: #eee8d5; /* Solarized base2 - light warm gray */
+  --ep-gray: #93a1a1;       /* Solarized base1 - medium gray for borders */
+  --ep-dark-gray: #586e75;  /* Solarized base01 - darker gray for secondary text */
+  --ep-black: #000000;      /* pure black for headers and emphasis */
+  --ep-body-text: #002b36;  /* Solarized base03 - dark blue-gray for body text */
+  --ep-link-cyan: #2aa198; /* Solarized cyan - for links */
+
+  --ep-shadow: rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+/* E-Paper Light Theme */
+[data-md-color-scheme="e-paper-light"] {
+  /* Background colors - Solarized warm cream */
+  --md-default-bg-color: var(--ep-white);
+  --md-default-fg-color: var(--ep-body-text);
+  --md-primary-bg-color: var(--ep-white);
+  --md-primary-fg-color: var(--ep-body-text);
+  
+  /* Text colors - body text in dark blue-gray, headers in black */
+  --md-typeset-color: var(--ep-body-text);
+  --md-typeset-a-color: var(--ep-link-cyan);
+  
+  /* Navigation colors */
+  --md-nav-bg-color: var(--ep-white);
+  --md-nav-fg-color: var(--ep-body-text);
+  
+  /* Header colors - keep header text black for emphasis */
+  --md-header-bg-color: var(--ep-white);
+  --md-header-fg-color: var(--ep-black);
+  
+  /* Code block colors */
+  --md-code-bg-color: var(--ep-light-gray);
+  --md-code-fg-color: var(--ep-body-text);
+  
+  /* Links - green color with underline */
+  --md-accent-fg-color: var(--ep-link-cyan);
+  --md-accent-bg-color: var(--ep-white);
+  
+  /* Sidebar colors */
+  --md-sidebar-bg-color: var(--ep-white);
+  --md-sidebar-fg-color: var(--ep-body-text);
+  
+  /* Footer colors */
+  --md-footer-bg-color: var(--ep-light-gray);
+  --md-footer-fg-color: var(--ep-body-text);
+}
+
+/* Custom styling for tags page chronological listing */
+.tag-post-date {
+  display: inline-block;
+  font-size: 0.8em;
+  color: var(--ep-dark-gray);
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', monospace;
+  min-width: 5.5em;
+}
+
+.tag-post-separator {
+  color: var(--ep-dark-gray);
+  margin: 0 0.5em;
+}
+
+/* Custom styling for tag count display */
+.md-tag {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', monospace;
+}
+
+/* E-Paper Light Theme specific styling */
+[data-md-color-scheme="e-paper-light"] {
+  /* Remove all shadows and gradients for flat e-paper look */
+  --md-shadow-z1: none;
+  --md-shadow-z2: none;
+  --md-shadow-z3: none;
+  
+  /* All headings use pure black */
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3,
+  .md-typeset h4,
+  .md-typeset h5,
+  .md-typeset h6 {
+    color: var(--ep-black);
+    font-weight: 700;
+  }
+  
+  /* Links get underline for e-paper clarity */
+  .md-typeset a {
+    color: var(--ep-link-cyan);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+  
+  .md-typeset a:hover {
+    color: var(--ep-dark-gray);
+    text-decoration-thickness: 2px;
+  }
+  
+  /* Code highlighting - minimal gray background */
+  .md-typeset code {
+    background-color: var(--ep-light-gray);
+    color: var(--ep-body-text);
+    border: 1px solid var(--ep-gray);
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .md-typeset pre {
+    background-color: var(--ep-light-gray);
+    border: 1px solid var(--ep-gray);
+    box-shadow: none;
+  }
+  
+  .md-typeset pre code {
+    background-color: transparent;
+    border: none;
+  }
+  
+  /* Blockquotes - clean left border */
+  .md-typeset blockquote {
+    color: var(--ep-body-text);
+    border-left: 4px solid var(--ep-black);
+    background-color: var(--ep-light-gray);
+    font-style: italic;
+    box-shadow: none;
+  }
+  
+  /* Tables - clean lines */
+  .md-typeset table:not([class]) {
+    border: 2px solid var(--ep-black);
+    box-shadow: none;
+  }
+  
+  .md-typeset table:not([class]) th {
+    background-color: var(--ep-light-gray);
+    color: var(--ep-black);
+    border-bottom: 2px solid var(--ep-black);
+    font-weight: 700;
+  }
+  
+  .md-typeset table:not([class]) td {
+    border-bottom: 1px solid var(--ep-gray);
+    color: var(--ep-body-text);
+  }
+  
+  /* Navigation tabs - clean and minimal */
+  .md-tabs {
+    background-color: var(--ep-white);
+    border-bottom: 1px solid var(--ep-gray);
+    box-shadow: none;
+  }
+  
+  .md-tabs__link {
+    color: var(--ep-body-text);
+  }
+  
+  .md-tabs__link--active {
+    color: var(--ep-black);
+    border-bottom: 2px solid var(--ep-black);
+    font-weight: 600;
+  }
+  
+  /* Search - clean input */
+  .md-search__input {
+    background-color: #ffffff;
+    color: var(--ep-body-text);
+    border: 1px solid var(--ep-gray);
+    box-shadow: none;
+  }
+  
+  .md-search__input::placeholder {
+    color: var(--ep-dark-gray);
+  }
+  
+  /* Buttons - minimal black border design */
+  .md-button {
+    color: var(--ep-black);
+    background-color: #ffffff;
+    border: 2px solid var(--ep-black);
+    box-shadow: none;
+    font-weight: 600;
+  }
+  
+  .md-button:hover {
+    background-color: var(--ep-black);
+    color: var(--ep-white);
+  }
+  
+  /* Tags - simple black labels */
+  .md-tag {
+    background-color: var(--ep-light-gray);
+    color: var(--ep-black);
+    border: 1px solid var(--ep-gray);
+    font-weight: 500;
+  }
+  
+  /* Admonitions - clean bordered boxes */
+  .md-typeset .admonition {
+    border: 2px solid var(--ep-black);
+    background-color: var(--ep-light-gray);
+    box-shadow: none;
+  }
+  
+  .md-typeset .admonition-title {
+    background-color: var(--ep-black);
+    color: var(--ep-white);
+    font-weight: 700;
+  }
+  
+  /* Remove all rounded corners for sharp e-paper look (except MathJax) */
+  *:not(mjx-container):not(mjx-container *):not(.MathJax):not(.MathJax *) {
+    border-radius: 0 !important;
+  }
+  
+  /* Header - clean top border */
+  .md-header {
+    background-color: var(--ep-white);
+    color: var(--ep-black);
+    border-bottom: 1px solid var(--ep-gray);
+    box-shadow: none;
+  }
+  
+  /* Content area */
+  .md-content {
+    background-color: var(--ep-white);
+  }
+  
+  /* Sidebar navigation */
+  .md-nav--primary .md-nav__title {
+    background-color: var(--ep-white);
+    color: var(--ep-black);
+    border-bottom: 1px solid var(--ep-gray);
+  }
+  
+  /* List items */
+  .md-typeset ul li,
+  .md-typeset ol li {
+    color: var(--ep-body-text);
+  }
+  
+  /* Task list checkboxes */
+  .md-typeset .task-list-item input[type="checkbox"]:checked::before {
+    background-color: var(--ep-black);
+  }
+  
+  /* Horizontal rules */
+  .md-typeset hr {
+    border-bottom: 2px solid var(--ep-black);
+  }
+  
+  /* Footnotes */
+  .md-typeset .footnote {
+    color: var(--ep-dark-gray);
+    font-size: 0.85em;
+  }
+
+  /* Tabbed content */
+  .md-typeset .tabbed-set {
+    border: 1px solid var(--ep-gray);
+  }
+  
+  .md-typeset .tabbed-set > input:checked + label {
+    background-color: var(--ep-black);
+    color: var(--ep-white);
+  }
+  
+  .md-typeset .tabbed-set > label {
+    background-color: var(--ep-light-gray);
+    color: var(--ep-black);
+    border-bottom: 1px solid var(--ep-gray);
+  }
+  
+  /* Math expressions - ensure MathJax works properly with hybrid theme */
+  .MathJax,
+  .MathJax_Display,
+  .MathJax_Preview,
+  mjx-container,
+  mjx-container[jax="CHTML"],
+  mjx-container[jax="CHTML"][display="true"] {
+    color: var(--ep-body-text) !important;
+    background: transparent !important;
+  }
+  
+  /* MathJax inline math */
+  mjx-container[jax="CHTML"]:not([display="true"]) {
+    display: inline !important;
+    margin: 0 !important;
+  }
+  
+  /* MathJax display math */
+  mjx-container[jax="CHTML"][display="true"] {
+    display: block !important;
+    text-align: center !important;
+    margin: 1em 0 !important;
+  }
+  
+  /* Additional MathJax styling for better integration */
+  mjx-math {
+    color: var(--ep-body-text) !important;
+  }
+  
+  mjx-mrow,
+  mjx-mi,
+  mjx-mo,
+  mjx-mn,
+  mjx-mfrac,
+  mjx-msup,
+  mjx-msub {
+    color: inherit !important;
+  }
+}
+
+/* E-Paper Dark Theme */
+[data-md-color-scheme="e-paper-dark"] {
+  /* Dark e-paper palette */
+  --ep-dark-bg: #1a1a1a;      /* soft dark gray background */
+  --ep-dark-surface: #2a2a2a;  /* slightly lighter for surfaces */
+  --ep-dark-border: #404040;   /* border color */
+  --ep-light-text: #e0e0e0;   /* light gray text */
+  --ep-white-text: #ffffff;   /* pure white for emphasis */
+  --ep-link-cyan-dark: #b5bd68; /* lighter green for dark theme links */
+  
+  /* Background colors */
+  --md-default-bg-color: var(--ep-dark-bg);
+  --md-default-fg-color: var(--ep-white-text);
+  --md-primary-bg-color: var(--ep-dark-bg);
+  --md-primary-fg-color: var(--ep-white-text);
+  
+  /* Text colors */
+  --md-typeset-color: var(--ep-white-text);
+  --md-typeset-a-color: var(--ep-link-cyan-dark);
+  
+  /* Navigation colors */
+  --md-nav-bg-color: var(--ep-dark-bg);
+  --md-nav-fg-color: var(--ep-white-text);
+  
+  /* Header colors */
+  --md-header-bg-color: var(--ep-dark-bg);
+  --md-header-fg-color: var(--ep-white-text);
+  
+  /* Code block colors */
+  --md-code-bg-color: var(--ep-dark-surface);
+  --md-code-fg-color: var(--ep-light-text);
+  
+  /* Links */
+  --md-accent-fg-color: var(--ep-link-cyan-dark);
+  --md-accent-bg-color: var(--ep-dark-bg);
+  
+  /* Sidebar colors */
+  --md-sidebar-bg-color: var(--ep-dark-bg);
+  --md-sidebar-fg-color: var(--ep-white-text);
+  
+  /* Footer colors */
+  --md-footer-bg-color: var(--ep-dark-surface);
+  --md-footer-fg-color: var(--ep-white-text);
+  
+  /* Remove all shadows and gradients */
+  --md-shadow-z1: none;
+  --md-shadow-z2: none;
+  --md-shadow-z3: none;
+  
+  /* All headings use white */
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3,
+  .md-typeset h4,
+  .md-typeset h5,
+  .md-typeset h6 {
+    color: var(--ep-white-text);
+    font-weight: 700;
+  }
+  
+  /* Links get underline */
+  .md-typeset a {
+    color: var(--ep-link-cyan-dark);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+  
+  .md-typeset a:hover {
+    color: var(--ep-light-text);
+    text-decoration-thickness: 2px;
+  }
+  
+  /* Code highlighting */
+  .md-typeset code {
+    background-color: var(--ep-dark-surface);
+    color: var(--ep-light-text);
+    border: 1px solid var(--ep-dark-border);
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .md-typeset pre {
+    background-color: var(--ep-dark-surface);
+    border: 1px solid var(--ep-dark-border);
+    box-shadow: none;
+  }
+  
+  .md-typeset pre code {
+    background-color: transparent;
+    border: none;
+  }
+  
+  /* Math expressions */
+  .MathJax,
+  .MathJax_Display,
+  .MathJax_Preview,
+  mjx-container,
+  mjx-container[jax="CHTML"],
+  mjx-container[jax="CHTML"][display="true"] {
+    color: var(--ep-white-text) !important;
+    background: transparent !important;
+  }
+}
