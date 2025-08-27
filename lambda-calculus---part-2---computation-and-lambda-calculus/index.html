@@ -1,0 +1,1088 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../savandurga-trek/">
+      
+      
+        <link rel="next" href="../planet-list/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Lambda Calculus - Part 2 - Computation and Lambda Calculus - SignalShore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/e-paper.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="e-paper-light" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#Prologue" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SignalShore" class="md-header__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SignalShore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lambda Calculus - Part 2 - Computation and Lambda Calculus
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SignalShore" class="md-nav__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SignalShore
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../now/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Now
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Now
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Highlights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/my-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My Values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2019/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Prologue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prologue
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#What-is-Computation-" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Computation ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#What-is-Lambda-Calculus" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Lambda Calculus
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Lambda Calculus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#A-very-simple-lambda-expression" class="md-nav__link">
+    <span class="md-ellipsis">
+      A very simple \(\lambda\)-expression
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#The-Abstraction-Operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Abstraction Operator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Currying" class="md-nav__link">
+    <span class="md-ellipsis">
+      Currying
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="javascript:history.back()" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2018-05-08 00:00:00+00:00" class="md-ellipsis">May 8, 2018</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              5 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../tags/#tag:cs" class="md-tag">cs</a>
+      
+    
+  </nav>
+
+
+
+  <h1>Lambda Calculus - Part 2 - Computation and Lambda Calculus</h1>
+
+<h3 id="Prologue">Prologue<a class="headerlink" href="#Prologue" title="Permanent link">&para;</a></h3>
+<p>This is the second part of my Lambda Calculus<br />
+series. The<br />
+<a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-1.html">first part</a> can<br />
+be found here. I strongly recommend reading it first before starting off with<br />
+this one.</p>
+<h3 id="What-is-Computation-">What is Computation ?<a class="headerlink" href="#What-is-Computation-" title="Permanent link">&para;</a></h3>
+<p>Lambda calculus is formal system for representing computation in<br />
+Mathematical Logic. Sit and think about the phrase <em>representing<br />
+computation</em> for a moment.</p>
+<p>What does it mean for something to be computable ?</p>
+<p>Everyday in out lives we use a computer in one form or another,<br />
+i.e. computation takes place every single day in numerous ways, but<br />
+do we know what computation really is ? </p>
+<p>Gerald Jay Sussman said in SICP (Structure and Interpretation of Computer Programs) and I might be paraphrasing him a bit here:</p>
+<blockquote>
+<p>It's always harder in computer science to talk about what something<br />
+means than to go about and do it.</p>
+</blockquote>
+<p>When a computer computes something, what does it actually do ?</p>
+<p>I am sure that we could answer this question with some electronics<br />
+based answer and that would in fact be accurate; but, that is not what<br />
+we are concerned with here. We are more concerned about the logical<br />
+meaning of computation.</p>
+<p>Alan Turing invented the Turing machine which is one of the most<br />
+robust models of computation. When we talk about <em>models of<br />
+computation</em> we abstract away all the boring details (like time<br />
+complexity and space complexity etc :-P ) and try to deal with the<br />
+meaning of computation at a much abstract level.  Alan Turing's Turing<br />
+Machine captures the idea of computation in a mechanical sense.</p>
+<p>At the same time (actually before Alan Turing) the logician Alonzo<br />
+Church came up with Lambda Calculus to capture the very same thing but in a mathematically formal manner. </p>
+<h3 id="What-is-Lambda-Calculus">What is Lambda Calculus<a class="headerlink" href="#What-is-Lambda-Calculus" title="Permanent link">&para;</a></h3>
+<p>Lambda Calculus syntax is very simple. It mainly consists of<br />
+expressions (we call them Lambda Expressions), variables, constants<br />
+and combinations of all these.</p>
+<p>We will look at the syntax in  CFG form (Context Free Grammar)</p>
+<p><span class="arithmatex">\(expr \thinspace\)</span> <span class="arithmatex">\(:=\)</span> <span class="arithmatex">\(\thinspace constant\)</span></p>
+<p><span class="arithmatex">\(\qquad \qquad\)</span> <span class="arithmatex">\(|\)</span> <span class="arithmatex">\(variable\)</span> </p>
+<p><span class="arithmatex">\(\qquad \qquad\)</span> <span class="arithmatex">\(|\)</span> <span class="arithmatex">\((expr \space expr)\)</span> </p>
+<p><span class="arithmatex">\(\qquad \qquad\)</span> <span class="arithmatex">\(|\)</span> <span class="arithmatex">\(( \lambda \thinspace variable.expr)\)</span></p>
+<p>Now that we have the CFG down. Let us break it down a little bit.<br />
+Writing the syntax in the form of a CFG is very beneficial because this<br />
+format allows us to define the evaluation of a <span class="arithmatex">\(\lambda\)</span>-calculus<br />
+expression in terms of derivations of the CFG. We will see that in a<br />
+bit.</p>
+<ul>
+<li>The first rule states that any <span class="arithmatex">\(\lambda\)</span>-calculus expression can be<br />
+replaced with a constant. Constants can be anything; from numbers like<br />
+<strong>0</strong> or <strong>1</strong> to even other <strong>functions</strong> (yeah!!)</li>
+<li>The second rule states that <span class="arithmatex">\(\lambda\)</span>-calculus expression can be<br />
+  replaced with a variable. A variable are names like <strong>x</strong> or <strong>y</strong></li>
+<li>The third rule allows us to apply one expression to another<br />
+  expression. This rule capture the idea of function application.</li>
+<li>The fourth and the final rules gives is the <strong>Lambda notation</strong>. This is notation that allows us to bind variables to expression (the variables names in rule 2 work because of this)</li>
+</ul>
+<h4 id="Observation"><strong>Observation</strong><a class="headerlink" href="#Observation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Rule 3 allows us to apply one expression to another expression <strong>only</strong></li>
+<li>Rule 4 allows use to define functions that have <em>only</em> one variable.</li>
+</ul>
+<h3 id="A-very-simple-lambda-expression">A very simple  <span class="arithmatex">\(\lambda\)</span>-expression<a class="headerlink" href="#A-very-simple-lambda-expression" title="Permanent link">&para;</a></h3>
+<p>Let us consider the lambda expression </p>
+<p><span class="arithmatex">\(\lambda x . ((+ 1) x)\)</span></p>
+<p>This is quite a tedious form of writing this expression and we can simplify this quite a lot. The simplified version looks like this.</p>
+<p><span class="arithmatex">\(\lambda x . (+ 1 \thinspace x )\)</span></p>
+<p><strong>Observe</strong> that in the second form we have one function <em>+</em> applied to two arguments - <em>1</em> and <em>x</em>. This is not actually allowed according to the rules but they mean the the same things. </p>
+<p>Evaluating this expression we perform simple substitutions according to the rules of the CFG (for this we will use leftmost derivations).</p>
+<p><span class="arithmatex">\(expr \Rightarrow (\lambda variable . expr)\)</span></p>
+<p><span class="arithmatex">\(expr \Rightarrow (\lambda x . expr)\)</span></p>
+<p><span class="arithmatex">\(expr \Rightarrow (\lambda x . (expr \space expr))\)</span></p>
+<p><span class="arithmatex">\(expr \Rightarrow (\lambda x . ((expr \space expr) \space expr))\)</span></p>
+<p><span class="arithmatex">\(expr \Rightarrow (\lambda x . ((constant \space expr) \space expr))\)</span></p>
+<p><span class="arithmatex">\(expr \Rightarrow (\lambda x . ((constant \space constant) \space expr))\)</span></p>
+<p><span class="arithmatex">\(expr \Rightarrow (\lambda x . ((+ \space 1) \space expr))\)</span></p>
+<p><span class="arithmatex">\(expr \Rightarrow (\lambda x . ((+ \space 1) \space variable))\)</span></p>
+<p><span class="arithmatex">\(expr \Rightarrow (\lambda x . ((+ \space 1) \space x))\)</span></p>
+<p><strong>Observe</strong> that the derivation that the $\lambda&amp; expression returns is actually a <em>function</em>. This function needs to applied to a variable to get something useful happening out of it. </p>
+<p><span class="arithmatex">\((\lambda x . (+ 1 x )5) := (+ \space 1 \space 5) := 6\)</span></p>
+<p>In Scheme this would be something like this</p>
+<div class="codehilite"><pre><span></span><code><span class="p">((</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="p">))</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="The-Abstraction-Operator">The Abstraction Operator<a class="headerlink" href="#The-Abstraction-Operator" title="Permanent link">&para;</a></h3>
+<p>The <span class="arithmatex">\(\lambda\)</span> (lambda) is the abstraction operator used in Lambda Calculus.</p>
+<p>In any <span class="arithmatex">\(\lambda\)</span>-expression there are two kinds of variables. <strong>Free</strong> and <strong>Bound</strong> variables.</p>
+<p>Consider the following expression</p>
+<p><span class="arithmatex">\((\lambda x. (+ \space x \space y \space y \space x))\)</span></p>
+<p><span class="arithmatex">\(x\)</span> is a bound variable and <span class="arithmatex">\(y\)</span> is a free variable. </p>
+<p>The abstraction operator binds a variable with the body of the<br />
+abstraction. Thus a variable that falls within the scope of the<br />
+abstraction is called a <em>bound</em> variable. All other variables are<br />
+<em>free</em> variables.</p>
+<p>In the given example variable <span class="arithmatex">\(x\)</span> is bound to the expression <span class="arithmatex">\((+
+\space x \space y \space y \space x)\)</span>. Thus when this function is<br />
+being evaluated with an argument then all the occurrences of <span class="arithmatex">\(x\)</span> in the<br />
+expression will be replaced by the argument.</p>
+<p><span class="arithmatex">\(((\lambda x. (+ \space x \space y \space y \space x)) 5) = (+ \space 5 \space y \space  y \space 5)\)</span></p>
+<h3 id="Currying">Currying<a class="headerlink" href="#Currying" title="Permanent link">&para;</a></h3>
+<p>Rule 4 states that we can have function definitions only in the form of <span class="arithmatex">\(expr := (\lambda variable . expr)\)</span></p>
+<p>Thus this means that in the lambda calculus model we can have<br />
+functions with only one variable. However, as we will see that this is<br />
+not a limitation, in fact it is quite the opposite as it opens up new<br />
+possibilities about what you can do with your programming language.</p>
+<p>Currying is a technique that lets us translate functions that take<br />
+multiple arguments to a sequence of functions that accept only a<br />
+single argument. This is useful in <span class="arithmatex">\(\lambda\)</span>-calculus because this<br />
+allows us to define complex functions that take multiple arguments and<br />
+still not disturb the 4<sup>th</sup> Rule.</p>
+<p>For example, consider the expression </p>
+<p><span class="arithmatex">\(expr := (\lambda x \thinspace y. \thinspace (+ \thinspace x \thinspace y))\)</span></p>
+<p>This function will take two arguments </p>
+<p><span class="arithmatex">\(expr := ((\lambda x \thinspace y. \thinspace (+ \thinspace x \thinspace y))3 \thinspace 5)\)</span></p>
+<p>In this expression the abstraction operator will take the first variable (i.e. <span class="arithmatex">\(x\)</span>) and substitute all the occurrences of <span class="arithmatex">\(x\)</span> in the expression with the value of the first argument (i.e. <span class="arithmatex">\(3\)</span>). This will also happen for the second variable and we will have the expression <span class="arithmatex">\((+ \thinspace 3 \thinspace 5)\)</span>. </p>
+<p>Actually the expression <span class="arithmatex">\(expr := ((\lambda x \thinspace y. \thinspace
+(+ \thinspace x \thinspace y))3 \thinspace 5)\)</span> is just the curried<br />
+version of the expression;</p>
+<p><span class="arithmatex">\(expr := ((\lambda x (\lambda y. \thinspace (+ \thinspace x \thinspace y))3 )\thinspace 5)\)</span></p>
+<p>The derivation of this expression,</p>
+<p><span class="arithmatex">\(expr := ((\lambda x (+ \thinspace x \thinspace 3)\thinspace 5)\)</span></p>
+<p><span class="arithmatex">\(expr := (+ \thinspace 5 \thinspace 3)\)</span></p>
+<p>Currying is not just a technique used in Lambda Calculus. It is used<br />
+in a lot of different fields of mathematics logic. Just have a look at<br />
+the Wikipedia page<br />
+for <a href="https://en.wikipedia.org/wiki/Currying">Currying</a></p>
+<p>Currying is named after Haskell Curry. (The Haskell programming languages is also named after him)</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">SignalShore</span> by <span property="cc:attributionName">Sohom Bhattacharjee</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.instant", "navigation.tabs.sticky", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../overrides/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

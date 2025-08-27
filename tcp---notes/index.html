@@ -1,0 +1,1418 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../containers-the-interesting-bits/">
+      
+      
+        <link rel="next" href="../raspberry-pi-cooling/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>TCP - Notes - SignalShore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/e-paper.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="e-paper-light" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#Table-of-Contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SignalShore" class="md-header__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SignalShore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TCP - Notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SignalShore" class="md-nav__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SignalShore
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../now/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Now
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Now
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Highlights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/my-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My Values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2019/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#TCP-Packet" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Packet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#TCP-sockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP sockets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#The-Sequence-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Sequence number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#The-Acknowledgement-Number" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Acknowledgement Number
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#A-complete-TCP-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      A complete TCP flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A complete TCP flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Connection-Establishment-3-way-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection Establishment (3-way handshake)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Establishment (3-way handshake)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#SYN" class="md-nav__link">
+    <span class="md-ellipsis">
+      SYN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#SYN-ACK" class="md-nav__link">
+    <span class="md-ellipsis">
+      SYN-ACK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ACK" class="md-nav__link">
+    <span class="md-ellipsis">
+      ACK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Connection-Termination-4-way-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection Termination (4-way handshake)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Termination (4-way handshake)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#FIN-from-side-A" class="md-nav__link">
+    <span class="md-ellipsis">
+      FIN (from side A)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ACK-from-side-B" class="md-nav__link">
+    <span class="md-ellipsis">
+      ACK (from side B)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#FIN-from-side-B" class="md-nav__link">
+    <span class="md-ellipsis">
+      FIN (from side B)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ACK-from-side-A" class="md-nav__link">
+    <span class="md-ellipsis">
+      ACK (from side A)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#The-tcp-state-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      The tcp state machines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Tcp-RST" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tcp RST
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#TCP-Flow-Control-Window-Size" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Flow Control (Window Size)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP Flow Control (Window Size)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#How-does-this-work-in-practise-" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does this work in practise ?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#TCP-Congestion-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP Congestion control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#TIME_WAIT-Assassinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      TIME_WAIT Assassinations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#References" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="javascript:history.back()" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2020-11-12 00:00:00+00:00" class="md-ellipsis">November 12, 2020</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              10 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../tags/#tag:cs" class="md-tag">cs</a>
+      
+    
+      
+      
+      
+        <a href="../tags/#tag:tech" class="md-tag">tech</a>
+      
+    
+  </nav>
+
+
+
+<p>The tcp is a protocol that is responsible for making sure that small<br />
+packets of data can get to their destinations reliably.</p>
+<p>It has a vast array of features that are designed so that tcp offers<br />
+the best throughput and ensures quality of the transmission media,<br />
+i.e. TCP will be as fast as possible without abusing the<br />
+transmission media/channel.</p>
+<h1 id="Table-of-Contents">Table of Contents<a class="headerlink" href="#Table-of-Contents" title="Permanent link">&para;</a></h1>
+<ol>
+<li><a href="#org969302b">TCP Packet</a></li>
+<li><a href="#orgc93f5b9">TCP sockets</a></li>
+<li><a href="#org4aadf72">The Sequence number</a></li>
+<li><a href="#org93ff0ca">The Acknowledgement Number</a></li>
+<li><a href="#orgcf415ef">A complete TCP flow</a></li>
+<li><a href="#org3b04a50">Connection Establishment (3-way handshake)</a></li>
+<li><a href="#orgf7aecb7">Connection Termination (4-way handshake)</a></li>
+<li><a href="#orgf677745">The tcp state machines</a></li>
+<li><a href="#org9e2d70e">Tcp RST</a></li>
+<li><a href="#orgba980c0">TCP Flow Control (Window Size)</a></li>
+<li><a href="#orged3a245">TCP Congestion control</a></li>
+<li><a href="#orgdc9b74e">TIME_WAIT Assassinations</a></li>
+<li><a href="#org94c1afb">References</a></li>
+</ol>
+<p><a id="org969302b"></a></p>
+<h2 id="TCP-Packet">TCP Packet<a class="headerlink" href="#TCP-Packet" title="Permanent link">&para;</a></h2>
+<p>Each layer works with a certain <em>unit</em> of data. This unit is called<br />
+the <span class="underline">Protocol Data Unit</span>.</p>
+<p>In TCP the PDU is a <em>segment</em>. TCP takes the data from upper layers and<br />
+divides it into small chunks; then it adds TCP segment information on<br />
+these chunks and creates the TCP segments. Then IP information is<br />
+added onto these segments to create IP datagrams. These are the PDUs<br />
+handled by the lower layer (Network). IP datagrams are called <em>packets</em>.</p>
+<blockquote>
+<p><img alt="img" src="../assets/images/tcp/tcp_segment_header.png" /><br />
+A TCP segment header. <br />
+(This is copied form Wikipedia)<br />
+<a id="orgc93f5b9"></a></p>
+</blockquote>
+<h2 id="TCP-sockets">TCP sockets<a class="headerlink" href="#TCP-sockets" title="Permanent link">&para;</a></h2>
+<p>Sockets act like an interface through which you can send data to<br />
+and receive data form. It basically is an abstraction layer on top<br />
+the low leave networking hardware stuff (the NIC, the ring buffer, the<br />
+OS etc)</p>
+<p>To establish a connection you ask your OS to establish a connection to<br />
+another computer (ip:port) and once that is done, you (your<br />
+application) will have a socket. At the simplest level the socket can<br />
+be very simple, you can just <em>send</em> and <em>receive</em> from the socket.</p>
+<p><a id="org4aadf72"></a></p>
+<h2 id="The-Sequence-number">The Sequence number<a class="headerlink" href="#The-Sequence-number" title="Permanent link">&para;</a></h2>
+<p>This is a number that is used to track the total amount of data sent<br />
+in that session. This has a special function during connection<br />
+setup. Apart from that, this value is also used for correct ordering<br />
+of packets and to detect packet loss and re-transmission. </p>
+<p>It is incremented on every byte sent.</p>
+<p>If the SYN flag is set, then it means that this is the first segment<br />
+of a connection, thus the sequence number is random. However the<br />
+resulting ack of this SYN packet is the random seq number + 1.</p>
+<p>Note the increase in the ack no even though no data was sent. This is<br />
+called the <span class="underline">ghost byte</span> This byte is the reason that the <span class="underline">ack no</span> is<br />
+always 1 ahead of the last seq no. It's always the next expected seq<br />
+no.</p>
+<p><a id="org93ff0ca"></a></p>
+<h2 id="The-Acknowledgement-Number">The Acknowledgement Number<a class="headerlink" href="#The-Acknowledgement-Number" title="Permanent link">&para;</a></h2>
+<p>This is the value of the sequence number of the next segment that the<br />
+receiver is expecting.</p>
+<p>This is used to detect if there is any packet loss, because if the<br />
+sender does not a get an ACK within a time-frame, then it will<br />
+re-transmit (there are other rules here as well).</p>
+<p>Ack is very important in TCP because a lot of functions of TCP<br />
+revolves around whether the receiver is getting all the packets<br />
+that are being sent. This is what means by a connection oriented<br />
+protocol. The sender and the receiver need to be in sync. </p>
+<p>TCP also does rate limiting on the sender's side if it figures out<br />
+that the channel is getting congested or the receiver is not able<br />
+to handle the load. All of this is enabled through the<br />
+acknowledgement number.</p>
+<p><a id="orgcf415ef"></a></p>
+<h2 id="A-complete-TCP-flow">A complete TCP flow<a class="headerlink" href="#A-complete-TCP-flow" title="Permanent link">&para;</a></h2>
+<p>A complete TCP flow includes the following parts.</p>
+<ol>
+<li>Connection Establishment</li>
+<li>Communication</li>
+<li>Connection Termination</li>
+</ol>
+<blockquote>
+<p><img alt="img" src="../assets/images/tcp/2020-10-24-13-55-17_tcp_flow.png" /> </p>
+</blockquote>
+<h3 id="Note">Note<a class="headerlink" href="#Note" title="Permanent link">&para;</a></h3>
+<p>Once Connection is set up, both sides can send data, thus it does<br />
+not make sense to talk in terms of client-server. Because these<br />
+things tend to keep changing (unless it makes sense to use<br />
+server-client).</p>
+<p>We will talk about <em>this-side</em> as the one who is sending the said<br />
+packets, and <em>the other side</em> as the side who is the intended<br />
+recipient.</p>
+<p><a id="org3b04a50"></a></p>
+<h2 id="Connection-Establishment-3-way-handshake">Connection Establishment (3-way handshake)<a class="headerlink" href="#Connection-Establishment-3-way-handshake" title="Permanent link">&para;</a></h2>
+<p>As TCP is a connection oriented protocol, both sides need to agree<br />
+to a set of rules before any communication can take place. This is<br />
+called setting up the <span class="underline">tcp connection</span> or <span class="underline">connection<br />
+establishment</span> and is received through a three-way handshake.</p>
+<p>The parts involved are here (in-order):</p>
+<ul>
+<li>SYN</li>
+<li>SYN-ACK</li>
+<li>ACK</li>
+</ul>
+<h3 id="SYN">SYN<a class="headerlink" href="#SYN" title="Permanent link">&para;</a></h3>
+<p>When the <em>client</em> wants to establish a new connection with the<br />
+<em>server</em>, it sends a packet with the <strong>SYN</strong> flag set.</p>
+<p>This end is now in <strong>SYN_SENT</strong> state.</p>
+<h3 id="SYN-ACK">SYN-ACK<a class="headerlink" href="#SYN-ACK" title="Permanent link">&para;</a></h3>
+<p>When <em>server</em> gets a request for a new connection (i.e. gets a<br />
+packet with the <strong>SYN</strong> flag set), it sends out a packet with both<br />
+the <strong>SYN</strong> and the <strong>ACK</strong> flags set.</p>
+<p>This serves dual purpose. It tells the client that the server has<br />
+in-fact received the SYN and that the server is also ready to start<br />
+receiving traffic. </p>
+<p>This end is now in <strong>SYN_RECEIVED</strong> state.</p>
+<h3 id="ACK">ACK<a class="headerlink" href="#ACK" title="Permanent link">&para;</a></h3>
+<p>This is used to signal to the server that the client has in-fact received the SYN-ACK.</p>
+<p><a id="orgf7aecb7"></a></p>
+<h2 id="Connection-Termination-4-way-handshake">Connection Termination (4-way handshake)<a class="headerlink" href="#Connection-Termination-4-way-handshake" title="Permanent link">&para;</a></h2>
+<p>During connection termination a 4-way handshake takes place between<br />
+the client and the server. This is done to ensure that both the<br />
+client and the server have finished sending data. The handshake<br />
+enabled either side to acknowledge that the other side wants to<br />
+close to close the connection, but at the same time, the other end<br />
+needs the data it asked for. </p>
+<p>Imagine a situation where the client is asking for a web-page and<br />
+the request is short, so the client sends a <em>FIN</em> as soon as the<br />
+request payload is sent. This indicates that it does not intend to<br />
+send any more data.</p>
+<p>Now, the server can keep on sending as much data as it was asked<br />
+(while acknowledging that the client is not going to send<br />
+anything). Once the server has finished sending data, it can tell<br />
+the client that the server is also going to close its side of the<br />
+connection.</p>
+<p>The 4 steps are :</p>
+<ul>
+<li>FIN (from Side A; this side is performing the active-close)</li>
+<li>ACK (from Side B)</li>
+<li>FIN (from Side B)</li>
+<li>ACK (from Side A)</li>
+</ul>
+<p>(side A &amp; B are arbitrary)</p>
+<h3 id="FIN-from-side-A">FIN (from side A)<a class="headerlink" href="#FIN-from-side-A" title="Permanent link">&para;</a></h3>
+<p>This flag is sent by whoever wants to close the connection first.<br />
+This indicates to the other end that <em>this side</em> has finished<br />
+sending data.</p>
+<p>(This side can still receive data from the other side)</p>
+<h3 id="ACK-from-side-B">ACK (from side B)<a class="headerlink" href="#ACK-from-side-B" title="Permanent link">&para;</a></h3>
+<p>This is sent when one side receives a <strong>FIN</strong>. It indicates that the<br />
+other side wishes to terminate the connections. Now it informs the<br />
+application using the TCP connection that the other side wishes to<br />
+close the connection.</p>
+<h3 id="FIN-from-side-B">FIN (from side B)<a class="headerlink" href="#FIN-from-side-B" title="Permanent link">&para;</a></h3>
+<p>When the application on side B is ready to close the connection,<br />
+it does a <em>close</em> and then a FIN is sent to side A.</p>
+<p>At this point the side which originally asked to close the<br />
+connection, has received an ACK from its pair, and has also<br />
+received a FIN from that side.</p>
+<p>This indicates that both sides have acknowledged that they have<br />
+finished sending data and are closing the connections</p>
+<h3 id="ACK-from-side-A">ACK (from side A)<a class="headerlink" href="#ACK-from-side-A" title="Permanent link">&para;</a></h3>
+<p>Now side A has acknowledged that it has received the <strong>FIN</strong> from<br />
+the other side.  </p>
+<p>This is important in TCP because in the absence of an ACK the<br />
+protocols re-transmission mechanisms kick in.</p>
+<p><a id="orgf677745"></a></p>
+<h2 id="The-tcp-state-machines">The tcp state machines<a class="headerlink" href="#The-tcp-state-machines" title="Permanent link">&para;</a></h2>
+<p>The TCP protocol can be represented as a State Machine, using tcp<br />
+<em>commands</em> as labels for the transition. The interesting part about<br />
+this state machine is that there are two parts of the state machine we<br />
+need to keep track of. The client and the server.</p>
+<p>This is the photo of the state machine from <a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol#/media/File:Tcp_state_diagram_fixed_new.svg">Wikipedia</a> </p>
+<blockquote>
+<p><img alt="img" src="../assets/images/tcp/tcp_state.png" /></p>
+<p><em>By Scil100, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=30810617">https://commons.wikimedia.org/w/index.php?curid=30810617</a></em></p>
+</blockquote>
+<p>This image from IBM makes it quite clear. Look at the Legend for detailed information.<br />
+The states are described below for reference.</p>
+<blockquote>
+<p><img alt="img" src="../assets/images/tcp/tcp_state_1.png" /></p>
+</blockquote>
+<p>Note on terms:</p>
+<ul>
+<li><strong>Active Open:</strong> This is meant for the side in TCP that opens a connection to a server.</li>
+<li><strong>Passive Open:</strong> This is the server that is listening for incoming connection requests</li>
+<li><strong>Active Close:</strong> This is meant for the side that closes the connection first.</li>
+<li><strong>Passive Close:</strong> This is the side that passively closes the connection.</li>
+</ul>
+<p>The states (from the top):</p>
+<ul>
+<li><strong>LISTEN:</strong> the TCP state where the end is listening for incoming connections requests, this is a passive open</li>
+<li><strong>SYN_SENT:</strong> waiting for a response from a remote tcp end after sending a new connection request</li>
+<li><strong>SYN_RECEIVED:</strong> this end has sent a SYN and an ACK in response to the incoming request and is waiting for an ACK from the other end</li>
+<li><strong>ESTABLISHED:</strong> The there way handshake is complete and communication can take place</li>
+<li><strong>FIN_WAIT_1:</strong> sender has sent a FIN and is waiting for and acknowledgement from the other side OR a simultaneous termination request from the other side</li>
+<li><strong>FIN_WAIT_2:</strong> side performing active close has received acknowledgement of FIN and is waiting to get a FIN back from the remote</li>
+<li><strong>CLOSE WAIT:</strong> received close request from remote end and is waiting for a close from the application layer</li>
+<li><strong>CLOSING:</strong> the sender of termination request is waiting for an acknowledgement</li>
+<li><strong>LAST_ACK:</strong> waiting for ack of previously sent termination request</li>
+<li><strong>TIME_WAIT:</strong> waiting for enough time to pass to ensure that both sides has ack'ed the termination requests.</li>
+<li><strong>CLOSED:</strong> the TCP connection is closed</li>
+</ul>
+<p><a id="org9e2d70e"></a></p>
+<h2 id="Tcp-RST">Tcp RST<a class="headerlink" href="#Tcp-RST" title="Permanent link">&para;</a></h2>
+<p>A discussion on TCP is incomplete without talking about <strong>RST</strong></p>
+<p>RST is the TCP reset flag which is used to reset the TCP connection.</p>
+<p>This is used when something that gone wrong and either end wants to<br />
+signal to reset the connection and start a new connection.</p>
+<p><a id="orgba980c0"></a></p>
+<h2 id="TCP-Flow-Control-Window-Size">TCP Flow Control (Window Size)<a class="headerlink" href="#TCP-Flow-Control-Window-Size" title="Permanent link">&para;</a></h2>
+<p>TCP is a very careful protocol that cares if the data is received<br />
+properly or not. In order to do this, it implements flow control and<br />
+congestion control. <em>Flow Control</em> is used to make sure that the<br />
+sender is not overwhelming the receiver bby sending more data than<br />
+what the receiver cna handle.</p>
+<p>To enable flow control, every side involved in a TCP connection sends<br />
+a <em>window size</em> parameter in every TCP segment. This is used to signal<br />
+to the other side, the amount of receive buffer available. The sender<br />
+can send only the amount of data available in the receive buffer<br />
+untill it must wait for an acknowledgement from the receiver end.</p>
+<p>Thus the receiver controls the rate according to the capabilities.</p>
+<p>If for whatever reason, the receiver advertises a window size of 0,<br />
+then the sender stop transmission and starts a <em>persist</em> timer. Once<br />
+this timer runs out, it sends a small packet so that it can get an<br />
+updated window size on the acknowledgement from the receiver.</p>
+<p><a id="orge62a41c"></a></p>
+<h3 id="How-does-this-work-in-practise-">How does this work in practise ?<a class="headerlink" href="#How-does-this-work-in-practise-" title="Permanent link">&para;</a></h3>
+<p>Sender is A; Receiver is B.</p>
+<p>When A sends data to B, it gets a <em>window-size</em> from B as a part of<br />
+the handshake. Now <em>A</em> can send <em>window-size</em> amount of data in the<br />
+form of multiple TCP segments (if-required).</p>
+<p>If <em>B</em> is processing incoming segemnts quickly then it will start<br />
+sending <em>ACK</em> as soon as possible and these segemtns will contain the<br />
+data for the next <em>window-size</em>. </p>
+<p>However, let's assume that <em>B</em> is not processing the segments fast<br />
+enough. Now the data will keep piling on the buffer and when <em>B</em> will<br />
+send abck an <em>ACK</em> it will contain progressively smaller <em>window-size</em><br />
+values.</p>
+<p>Once the window size hits 0 from side B, then side <em>A</em> will stop<br />
+sending more data untill it gets a <em>window-update</em>. Sender generally<br />
+starts a <em>persist</em> timer once receive window is reset to 0, so that it<br />
+is not waiting indefinitely untill side <em>B</em> reponds with a new<br />
+window-size.</p>
+<p><a id="orged3a245"></a></p>
+<h2 id="TCP-Congestion-control">TCP Congestion control<a class="headerlink" href="#TCP-Congestion-control" title="Permanent link">&para;</a></h2>
+<p>TCP uses acknowledgements and RTT information to guess the congestion<br />
+status of the network and control its rate.</p>
+<p>Haven't studied this much. Will update this section when I do.</p>
+<p><a id="orgdc9b74e"></a></p>
+<h2 id="TIME_WAIT-Assassinations">TIME_WAIT Assassinations<a class="headerlink" href="#TIME_WAIT-Assassinations" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>This is a very cool problem that we faced at work. <br />
+needless to say, as a person who was not too well versed with TCP, this was an interesting problem to debug. <br />
+I leart TCP and wireshark along the way. Win-Win-Win.</p>
+</blockquote>
+<p>So, this is the scenario. Sometimes when the server is in the<br />
+<em>TIME_WAIT</em> state, out of order (or delayed) tcp segments can<br />
+arrive. These segments will cause the server to send an <em>ACK</em>. </p>
+<p>Now if the client is making multiple connections to the server, then<br />
+there is a chance that it is reusing some ports (on the client side)<br />
+and when it reeives an <em>ACK</em> from the server with same destination and<br />
+source ports but a different <em>sequence no</em> the client sends an <em>RST</em><br />
+and resets the connection. This causes the TCP state on the server<br />
+side (it was in TIME_WAIT before) to exit.</p>
+<p>The error we were facing involved an AWS Application Load<br />
+Balancer. The ALB implements some techniques to protect against<br />
+Time-Wait Assasinations. It does this by ignoring <em>RST</em> when the<br />
+connection is in <em>TIME_WAIT</em> state. This is good for the server, but<br />
+the client still sees a bad connection phase with a bunch of RSTs.</p>
+<blockquote>
+<p><img alt="img" src="../assets/images/tcp/twa_1.png" /><br />
+Here is an image from a packet trace dring such an event.<br />
+<br><br />
+<br><br />
+<img alt="img" src="../assets/images/tcp/twa_flow_graph.png" /><br />
+Here is a Flow&#x2013;Graph of the same packet trace</p>
+</blockquote>
+<p><a id="org94c1afb"></a></p>
+<h2 id="References">References<a class="headerlink" href="#References" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://vincent.bernat.ch/en/blog/2014-tcp-time-wait-state-linux">https://vincent.bernat.ch/en/blog/2014-tcp-time-wait-state-linux</a></li>
+<li><a href="https://en.wikipedia.org/wiki/transmission_control_protocol">https://en.wikipedia.org/wiki/transmission_control_protocol</a></li>
+<li><a href="https://www.brianstorti.com/tcp-flow-control/">https://www.brianstorti.com/tcp-flow-control/</a></li>
+<li><a href="https://tools.ietf.org/html/rfc1337">https://tools.ietf.org/html/rfc1337</a></li>
+<li><a href="https://benohead.com/blog/2013/07/21/tcp-about-fin_wait_2-time_wait-and-close_wait/">https://benohead.com/blog/2013/07/21/tcp-about-fin_wait_2-time_wait-and-close_wait/</a></li>
+<li><a href="https://packetlife.net/blog/2010/jun/7/understanding-tcp-sequence-acknowledgment-numbers/">https://packetlife.net/blog/2010/jun/7/understanding-tcp-sequence-acknowledgment-numbers/</a></li>
+<li><a href="https://tech.flipkart.com/linux-tcp-so-reuseport-usage-and-implementation-6bfbf642885a">https://tech.flipkart.com/linux-tcp-so-reuseport-usage-and-implementation-6bfbf642885a</a></li>
+<li><a href="https://www.ibm.com/support/knowledgecenter/ssltbw_2.1.0/com.ibm.zos.v2r1.halu101/constatus.htm">https://www.ibm.com/support/knowledgecenter/ssltbw_2.1.0/com.ibm.zos.v2r1.halu101/constatus.htm</a></li>
+</ul>
+<p><br><br />
+<br></p>
+<blockquote>
+<p>This is the end for now. As this is a part of my personal notes. I will add to this as I learn more. :)</p>
+</blockquote>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">SignalShore</span> by <span property="cc:attributionName">Sohom Bhattacharjee</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.instant", "navigation.tabs.sticky", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../overrides/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

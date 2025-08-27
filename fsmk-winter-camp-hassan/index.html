@@ -1,0 +1,1150 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../scheme---part-4---higher-order-procedures-contd/">
+      
+      
+        <link rel="next" href="../lambda-calculus---part-1/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>FSMK Winter Camp, Hassan - SignalShore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/e-paper.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="e-paper-light" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#The-IoT-track" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SignalShore" class="md-header__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SignalShore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FSMK Winter Camp, Hassan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SignalShore" class="md-nav__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SignalShore
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../now/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Now
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Now
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Highlights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/my-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My Values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2019/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#The-IoT-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      The IoT track
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The IoT track">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Iot-team-some-are-missing-some-are-extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iot team (some are missing, some are extra)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Being-a-speaker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Being a speaker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Being a speaker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#did-you-see-what-I-did-there---P" class="md-nav__link">
+    <span class="md-ellipsis">
+      did you see what I did there ?? :-P
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Getting-out-of-my-comfort-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting out of my comfort zone
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#The-power-of-the-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      The power of the community
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The power of the community">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#People-holding-up-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      People holding up lights!!
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Meeting-new-people" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meeting new people
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Food" class="md-nav__link">
+    <span class="md-ellipsis">
+      Food
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Food">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#People-serving-breakfast" class="md-nav__link">
+    <span class="md-ellipsis">
+      People serving breakfast
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="javascript:history.back()" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2018-02-16 00:00:00+00:00" class="md-ellipsis">February 16, 2018</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              6 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../tags/#tag:misc" class="md-tag">misc</a>
+      
+    
+      
+      
+      
+        <a href="../tags/#tag:work" class="md-tag">work</a>
+      
+    
+  </nav>
+
+
+
+  <h1>FSMK Winter Camp, Hassan</h1>
+
+<p><a href="https://fsmk.org/">Free Software Movement Karnataka (FSMK)</a> conducted<br />
+a winter camp<br />
+at <a href="http://rithassan.org/">Rajeev Institute of Technology</a>, Hassan<br />
+from 22<sup>nd</sup> January to 27<sup>th</sup> January.</p>
+<p>It was a 6 day camp for the the participants with 2 days dedicated to<br />
+volunteer training before the camp. In this camp we had three<br />
+different areas of CS that we were focusing on viz. Web Development<br />
+using Ruby on Rails, Android Development and IoT. This camp was<br />
+organized by the Hassan level regional glugs of FSMK.</p>
+<p>I volunteered for IoT track because I have no interest in Web<br />
+Development and Android Development. Apart from this the main speaker<br />
+for the hardware track<br />
+was <a href="https://cosmobird.github.io">Ganesh (cosmobird)</a>. He has been a<br />
+great source of inspiration to me ever since I met him for the first<br />
+time in camp 2016. Moreover hardware and electronics are something<br />
+that I love to read about but I was never too <em>hands-on</em> with and I<br />
+wanted o remedy that.</p>
+<h2 id="The-IoT-track">The IoT track<a class="headerlink" href="#The-IoT-track" title="Permanent link">&para;</a></h2>
+<p>The IoT track was mind-blowing. We were using NodeMCU chips as the<br />
+basic hardware for this track. The main syllabus of the track focused<br />
+on creating a weather station along with Mesh Networks and Software<br />
+Defined Radio. In fact Ganesh and his friends (Niranjan and Mugilan)<br />
+gave the participants a live demonstration of Software Defined Radio<br />
+with an RTL-SDR chip.</p>
+<p>Fun-Fact: I was given the responsibility (read: volunteered) to<br />
+procure some of the hardware for the IoT participant kits that we were<br />
+supposed to give to the students. We had ordered 45 Kits. Apart from<br />
+getting the equipment it was also my responsibility to check if all<br />
+the NodeMCUs were working or not. This was the most fun part of the<br />
+whole exercise. I ended up making a temporary production line sort of<br />
+thing so as to optimize my testing and packing routine. :-P</p>
+<p><img alt="Iot" src="../assets/images/2018-02-16/iot.jpg" /></p>
+<h6 id="Iot-team-some-are-missing-some-are-extra">Iot team (some are missing, some are extra)<a class="headerlink" href="#Iot-team-some-are-missing-some-are-extra" title="Permanent link">&para;</a></h6>
+<h2 id="Being-a-speaker">Being a speaker<a class="headerlink" href="#Being-a-speaker" title="Permanent link">&para;</a></h2>
+<p>I was a speaker at this camp. This was the most scary part for me. I<br />
+had never spoken at such an event before.</p>
+<p>Being a speaker in this camp was admittedly a new, scary and<br />
+profoundly educational experience for me. </p>
+<p>My session was the introductory session (the <em>hello-world</em> into<br />
+NodeMCU programming).  The <em>hello-world</em> involved getting the<br />
+participants' laptops to boot with the LIVE OS (Fedora) and then<br />
+connecting the NodeMCU and the pushing the first code into it.</p>
+<p>Just to keep things a bit funny and interesting I threw in an arduino<br />
+joke.  While introducing the participants about the function<br />
+<em>digitalWrite(PIN, MODE)</em>. I said</p>
+<blockquote>
+<p>With digitalWrite you can set a specific pin to be either HIGH or sober.</p>
+</blockquote>
+<h6 id="did-you-see-what-I-did-there---P">did you see what I did there ?? :-P<a class="headerlink" href="#did-you-see-what-I-did-there---P" title="Permanent link">&para;</a></h6>
+<p>This cracked up all the stoners in the group. </p>
+<p>Being a speaker I realized that I do like teaching and that I am quite<br />
+good at it. Even though I was very scared of taking the session I was<br />
+surprised when people started to tell me that I was a good speaker and<br />
+that they enjoyed my session very much. This gave me a much needed<br />
+boost.</p>
+<p>Other than that I was also a volunteer every volunteer was assigned a<br />
+group of 5 people. My group was amazing. My group was self-sufficient<br />
+in a way, other than any super-complicated issue the group had learnt<br />
+to help themselves out. This often meant that someone in the group who<br />
+had the problem figured out would help out the rest pf the people. I<br />
+am so proud of them. :')</p>
+<h2 id="Getting-out-of-my-comfort-zone">Getting out of my comfort zone<a class="headerlink" href="#Getting-out-of-my-comfort-zone" title="Permanent link">&para;</a></h2>
+<p>I DO NOT dance, because I am terrible at it and I do not want to kill<br />
+a human being who witnesses that. But, in this camp I did something<br />
+that I do no think I would have ever done. During the <em>Ethnic Day</em> at<br />
+camp we had a cultural program and I along with some other friends<br />
+went up to the stage during a weird flash-mob kind of scenario and<br />
+danced (those who were present will tell you that I was just moving<br />
+back and forth with a very low frequency but I call it<br />
+dancing. :-P). This was the first time I did something like this and<br />
+it was an interesting experience.</p>
+<h2 id="The-power-of-the-community">The power of the community<a class="headerlink" href="#The-power-of-the-community" title="Permanent link">&para;</a></h2>
+<p>Sometime during the culturals the power went out in the auditorium<br />
+went out during a dance performance by some of the participants. What<br />
+happened next was that the entire audience broke out their mobile<br />
+phones and switched on their flashlights and pointed it towards the<br />
+stage. It was a beautiful moment. It made me realize that as long as<br />
+we are united, we can do anything we want to and nothing is<br />
+impossible.</p>
+<p><img alt="lights!!" src="../assets/images/2018-02-16/light.jpg" /></p>
+<h6 id="People-holding-up-lights">People holding up lights!!<a class="headerlink" href="#People-holding-up-lights" title="Permanent link">&para;</a></h6>
+<h2 id="Meeting-new-people">Meeting new people<a class="headerlink" href="#Meeting-new-people" title="Permanent link">&para;</a></h2>
+<p>Meeting new people is always fun and I really enjoy meeting new<br />
+people. This was something that I was actively looking forward to<br />
+during this camp.</p>
+<p>Compared to camp 2016 I have grown up a lot; from being a person who<br />
+used to be shit-scared of meeting new people I have become this person<br />
+who actually enjoys meeting new people and is also a fun person to be<br />
+around(I've been told that I should stop the dead-baby jokes though!<br />
+:-P).</p>
+<p>In camp I also met two people who said that they liked my blog. This<br />
+<strong>was</strong> so amazing to hear. I gave me such intense happiness to know<br />
+that someone actually reads what I like and that they also enjoy it<br />
+and have been motivated by it.</p>
+<p>I also met Nithin who is also into the same topics of CS that I am<br />
+into viz. Functional Programming, Programming Language Theory and<br />
+Category Theory. Me and him, we talked a lot about Functional<br />
+Programming and Compiler Designs. Also Nithin is working with a team<br />
+that designs a compiler at National Instruments. So, meeting Nithin<br />
+was really awesome because I got to meet a real-life compiler<br />
+designer.  :-)</p>
+<p>I met a bunch of people from the Open-Hardware<br />
+GLUG <a href="geon.fsmk.org">GEON</a>. This the Government Engineering College<br />
+Glug. I am not too good with the details. However, these people are<br />
+really good with hardware and localization. They have done some amazing <a href="https://geongech.wordpress.com/2017/11/15/not-a-days-work/">work on localization</a>. </p>
+<p>Since I mentioned localization I think I should mention the work Rizma<br />
+and her team did with respect<br />
+to <a href="https://gitlab.com/Frogster/Namma-Fedora">Namma-Fedora</a>. In this<br />
+project they have localized most of the Fedora Xfce Desktop<br />
+environment. I have seen it running and its amazing.</p>
+<p>Meeting new people is always inspiring.</p>
+<h2 id="Food">Food<a class="headerlink" href="#Food" title="Permanent link">&para;</a></h2>
+<p>Anyone who knows me knows that I do not care much about food. I am a<br />
+flexitarian, which means that I really don't care about the food as<br />
+long as it is edible.</p>
+<p>I really enjoy serving food in these community<br />
+events and so even in this camp I took up the responsibility of<br />
+serving food whenever I could. I like doing this because this means<br />
+that I can interact with everyone even if it is for a short time. I<br />
+also threw in some weird pleasantries like "happy lunching" and so<br />
+on! :-P</p>
+<p><img alt="people serving breakfast" src="../assets/images/2018-02-16/food.jpg" /></p>
+<h6 id="People-serving-breakfast">People serving breakfast<a class="headerlink" href="#People-serving-breakfast" title="Permanent link">&para;</a></h6>
+<h2 id="Conclusion">Conclusion<a class="headerlink" href="#Conclusion" title="Permanent link">&para;</a></h2>
+<p>I think I have covered everything that I wanted to. If not I think I<br />
+will add/edit something later on.</p>
+<p>Group photo at the end of the camp.<br />
+<img alt="group pic" src="../assets/images/2018-02-16/group.jpg" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">SignalShore</span> by <span property="cc:attributionName">Sohom Bhattacharjee</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.instant", "navigation.tabs.sticky", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../overrides/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

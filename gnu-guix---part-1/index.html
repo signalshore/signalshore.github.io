@@ -1,0 +1,1110 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../lambda-calculus---part-1/">
+      
+      
+        <link rel="next" href="../savandurga-trek/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>GNU Guix - Part 1 - SignalShore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/e-paper.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="e-paper-light" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#That-was-then-This-is-now" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SignalShore" class="md-header__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SignalShore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GNU Guix - Part 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SignalShore" class="md-nav__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SignalShore
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../now/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Now
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Now
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Highlights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/my-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My Values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2019/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#That-was-then-This-is-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      That was then, This is now
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="That was then, This is now">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#What-is-GNU-Guix-" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is GNU Guix ?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#What-is-GuixSD-" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is GuixSD ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Installing-Guix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing Guix
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#After-Installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      After Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="After Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Per-User-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per-User profile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Updating-and-maintaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating and maintaining
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="javascript:history.back()" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2018-03-19 00:00:00+00:00" class="md-ellipsis">March 19, 2018</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              7 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../tags/#tag:bash" class="md-tag">bash</a>
+      
+    
+      
+      
+      
+        <a href="../tags/#tag:cs" class="md-tag">cs</a>
+      
+    
+      
+      
+      
+        <a href="../tags/#tag:linux" class="md-tag">linux</a>
+      
+    
+      
+      
+      
+        <a href="../tags/#tag:tech" class="md-tag">tech</a>
+      
+    
+  </nav>
+
+
+
+  <h1>GNU Guix - Part 1</h1>
+
+<p>I was considering the idea of moving to GNU GuixSD as my full time operating system for a long time. I tried GuixSD for some time but I gave up because I was frustrated with the config system. (I was un-doubtedly stupid back then)</p>
+<h2 id="That-was-then-This-is-now">That was then, This is now<a class="headerlink" href="#That-was-then-This-is-now" title="Permanent link">&para;</a></h2>
+<p>I have finally transitioned to using Guix full time. In fact this essay is from my GUIX system itself. In this essay I will outline <strong>couple</strong> of things that I found to be a bit difficult for an absolute beginner and a <strong>lot</strong> of things that I find totally awesome and exciting about GNU Guix. </p>
+<h3 id="What-is-GNU-Guix-">What is GNU Guix ?<a class="headerlink" href="#What-is-GNU-Guix-" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.gnu.org/software/guix/">GNU Guix</a> is a package manager. But, make no mistake, it is not a traditional package manager. It is a package manager on steroids. I will explain what I mean by <em>on steroids</em>. </p>
+<p>Some of the most important and most powerful features of the Guix package manager IMHO are ...</p>
+<ul>
+<li>
+<p><strong>The gnu store (<code>/gnu/store/</code>)</strong> is heart of the Guix package manager. This is the directory where all the packages and profile are stored in Guix. Unlike traditional package managers where the packages are stored in either <code>/bin</code> or <code>/usr/bin/</code> or anything, in Guix all the packages that are installed are installed under the <code>/gnu/store/</code> directory and the entire system is a web of symbolic links.</p>
+</li>
+<li>
+<p><strong>Per-user profiles</strong> In guix packages are not installed globally. Traditionally in GNU/Linux when some package is installed it is available for use by everyone in the system with no exceptions. This makes sense because traditionally the packages are installed in the file-system itself, so there is no way of separating which user has which package. </p>
+<p>Things are quite different on the Guix Land (I apologize to the community for using <em>Guix Land</em>(I couldn't help myself)). In Guix, packages are managed using per-user profiles. This means that every user on the system has their own profile which makes sure that they have the packages that they want to use and nothing else. This also means that in guix installing packages does not need superuser privileges, since everyone can have authority over which packages they want to use. How Guix accomplishes this by using a series of symbolic links the actual binaries which reside in the Gnu Store. So if two users have different packages then it means that they just have different symbolic links pointing to the actual binaries in the gnu store. Same goes for different users having different versions of the same package.</p>
+<p>The per-user-profiles are stored under the directory <code>~/.guix-profile</code> </p>
+</li>
+<li>
+<p><strong>Purely Functional</strong> approach to package management. A <a href="https://en.wikipedia.org/wiki/Pure_function">pure function</a> is a function that produces the same output <em>every-time</em> given the same set of arguments. Guix embraces this idea. Every package build in guix is treated as a function in which the inputs are the compiler, libraries, build scripts, etc and the output is the built package. This along with isolated build environment (I don't know much about it as I haven't had time to explore it yet) ensures that built packages are bit-identical even when they are built on different machines.</p>
+</li>
+<li>
+<p><strong>Transactional Upgrades and Rollbacks</strong> Guix package upgrades are transactional in nature, this means that either the entire upgrade takes place or nothing gets upgraded so in case of a power-failure during upgrade, your system will not be left in a corrupt state. </p>
+<p>Also package upgrades, installs etc can be rolled back (yes! just like in git!!)</p>
+</li>
+<li>
+<p><strong>Guile</strong> Guix is completely written in GNU Guile which is a dialect of LISP. </p>
+</li>
+</ul>
+<p>There are lots of more fun stuff that I could write about but </p>
+<ol>
+<li>I haven't explored the system enough to talk about it in detail and I do not want to speculate at this point</li>
+<li>Things will get really long.. really fast</li>
+</ol>
+<h2 id="What-is-GuixSD-">What is GuixSD ?<a class="headerlink" href="#What-is-GuixSD-" title="Permanent link">&para;</a></h2>
+<p><s>GuixSD is the Linux Based Operating system built around the GUIX package manager.</s></p>
+<p><a href="https://www.gnu.org/software/guix/">GuixSD</a> or the Guix System Distribution is an advanced distribution of the GNU operating system developed by the GNU Project—which respects the freedom of computer users. </p>
+<p>That is what it says on their main website. I don't know much but the core idea of GuixSD is that there should be a configuration file in which users will be able to specify the <em>final</em> state the installed system and the installer should be intelligent enough to figure out how to do that. </p>
+<p>This is in addition to the philosophies of the GNU community and Free and Open Source Software. GuixSD runs the Libre Linux Kernel.</p>
+<h2 id="Installing-Guix">Installing Guix<a class="headerlink" href="#Installing-Guix" title="Permanent link">&para;</a></h2>
+<p>You can follow<br />
+the<br />
+<a href="https://www.gnu.org/software/guix/manual/html_node/System-Installation.html#System-Installation">instructions</a> on<br />
+the main Guix page. They are quite good. Over here I will highlight<br />
+certain key ideas.</p>
+<p>The installation was quite simple actually involving 3 major steps</p>
+<ol>
+<li>
+<p><strong>Setting up Networking :</strong> Once you boot into the live USB you are required to set up networking because the installation process will download the required files over the internet.</p>
+</li>
+<li>
+<p><strong>Disk Partitioning :</strong> This part is actually quite tricky to get right especially if you are using a UEFI system. <br />
+    During this step one is required to mount the target file system under /mnt and then mount the other related file-systems relative to <code>/mnt</code>. This means that if you want to have a custom boot dir then you would have to mount it at <code>/mnt/boot</code>.</p>
+<p>On the contrary if you are using a UEFI system then you are required to have an esp (efi system partition) and you have to mount it at <code>/boot/efi</code>. This mount point should <strong>not</strong> be relative. i.e. you should not mount the esp at <code>/mnt/boot/efi</code> but instead at <code>/boot/efi</code>. This was weird for me and this caused a lot of trouble for me.</p>
+</li>
+<li>
+<p><strong>Final installation</strong> In this step we configure our system and install it.<br />
+    The guix <a href="https://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html#Using-the-Configuration-System">System Configuration</a> is the most important thing to get right while installing Guix. This file is responsible for setting up the entire system including users, groups, and services (guix uses <a href="https://www.gnu.org/software/shepherd/">Gnu Shepherd</a> as the service manager)</p>
+<p>This config file is nothing but a Scheme file which is read by the Guix package manager when you are installing the system. </p>
+<p>The<br />
+<a href="https://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html#Using-the-Configuration-System">default configurations</a> that<br />
+are provided are quite good for normal everyday use. If however you<br />
+need to use a more complex configuration you can refer<br />
+to<br />
+<a href="https://gitlab.com/83bytes/guix/blob/master/myConfig.scm">my configuration</a> (my<br />
+config is a dual-booted uefi setup with Arch Linux)</p>
+</li>
+</ol>
+<p><strong>NOTE:</strong> In Guix if you are dual-booting please make sure that the bootloader is installed properly since if it is not, you <strong>CAN NOT</strong> use the traditional fixes that we are used to (like bootrepair, or grub reinstall etc) because of how the GuixSD system is structured internally.</p>
+<h2 id="After-Installation">After Installation<a class="headerlink" href="#After-Installation" title="Permanent link">&para;</a></h2>
+<p>So, installation is only half the trouble. After installation comes the important part of actually using the system. <br />
+In this section I have put together a list of things that should be essential to a smooth start.</p>
+<h3 id="Per-User-profile">Per-User profile<a class="headerlink" href="#Per-User-profile" title="Permanent link">&para;</a></h3>
+<p>In the previous section we talked about how you guix maintain packages on a per-user basis. One easy method to maintain per user profiles is to create a manifest file. A manifest file is a scheme file that contains all the packages for a specific user. This way you can specify only the packages that you want to be available globally in the system configuration file and other packages can be installed on a per-user basis using the manifest file.</p>
+<div class="codehilite"><pre><span></span><code>#bash
+$ guix package -m profile.scm
+</code></pre></div>
+
+<p>This will tell guix package to install the packages from that file. </p>
+<p>Manifest file syntax:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nf">use-package-modules</span><span class="w"> </span><span class="nv">&lt;module1&gt;</span><span class="w"> </span><span class="nv">&lt;module2&gt;</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nf">package-&gt;manifest</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="nv">package1</span>
+<span class="w">          </span><span class="nv">package2</span>
+<span class="w">          </span><span class="nv">package3</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Package modules are the basically the scheme files within which each of the packages are defined. <br />
+You can find out which package module a given package belongs to by running the <code>guix package -s &lt;package-name&gt;</code> command and looking at the <em>location</em> field.</p>
+<p>Here is <a href="https://gitlab.com/83bytes/guix/blob/master/myConfig.scm">my Profile.</a></p>
+<p>For example: this is the output of the command <code>guix package -s emacs-neotree</code></p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>guix<span class="w"> </span>package<span class="w"> </span>-s<span class="w"> </span>emacs-neotree
+name:<span class="w"> </span>emacs-neotree
+version:<span class="w"> </span><span class="m">0</span>.5.2
+outputs:<span class="w"> </span>out
+systems:<span class="w"> </span>x86_64-linux<span class="w"> </span>i686-linux<span class="w"> </span>armhf-linux<span class="w"> </span>aarch64-linux<span class="w"> </span>mips64el-linux
+dependencies:<span class="w"> </span>
+location:<span class="w"> </span>gnu/packages/emacs.scm:4474:2
+homepage:<span class="w"> </span>https://github.com/jaypei/emacs-neotree
+license:<span class="w"> </span>GPL<span class="w"> </span><span class="m">3</span>+
+synopsis:<span class="w"> </span>Folder<span class="w"> </span>tree<span class="w"> </span>view<span class="w"> </span><span class="k">for</span><span class="w"> </span>Emacs<span class="w">  </span>
+description:<span class="w"> </span>This<span class="w"> </span>Emacs<span class="w"> </span>package<span class="w"> </span>provides<span class="w"> </span>a<span class="w"> </span>folder<span class="w"> </span>tree<span class="w"> </span>view.
+relevance:<span class="w"> </span><span class="m">4</span>
+</code></pre></div>
+
+<p>The file under <em>gnu/packages/</em> is the module name.</p>
+<h3 id="Updating-and-maintaining">Updating and maintaining<a class="headerlink" href="#Updating-and-maintaining" title="Permanent link">&para;</a></h3>
+<p>Updating the GuixSD done through the command <code>guix pull</code>.</p>
+<p>guix pull will result in Guix pulling all the new changes from the repo and building them locally. This generally takes a long time. </p>
+<p>Once this is done then we can run <code>guix system reconfigure &lt;config file&gt;</code></p>
+<p><strong>Running <code>guix pull</code> as a normal user will NOT habe any effect on running <code>guix system reconfigure</code> as root</strong></p>
+<p><code>guix pull</code> can be run as a non root user. However <code>guix system reconfigure</code> must be run as root. Hence when you want to upgrade the system, run <code>guix pull</code> and <code>guix system reconfigure</code> as root. This will ensure that the whole system is upgraded at once.</p>
+<p>This command will again take the config file and reset Guix to the state described in the config file. </p>
+<p>After this we can again use <code>guix package -m &lt;profile file&gt;</code> to get the updated packages into the user profile.</p>
+<h3 id="Conclusion">Conclusion<a class="headerlink" href="#Conclusion" title="Permanent link">&para;</a></h3>
+<p>That should be it for now. I know I am not posting regularly. I was very busy recently. However things are clearing up and I think I will write another essay about Lambda Calculus and Internals of Guix very soon (not <em>so</em> soon!!)!! </p>
+<p>:-)</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">SignalShore</span> by <span property="cc:attributionName">Sohom Bhattacharjee</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.instant", "navigation.tabs.sticky", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../overrides/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

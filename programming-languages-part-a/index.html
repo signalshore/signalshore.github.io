@@ -1,0 +1,1154 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kumara-parvatha-and-savandurga/">
+      
+      
+        <link rel="next" href="../instant-messaging-et-al/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Programming Languages Part A - SignalShore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/e-paper.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="e-paper-light" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#Structure" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SignalShore" class="md-header__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SignalShore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Programming Languages Part A
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SignalShore" class="md-nav__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SignalShore
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../now/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Now
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Now
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Highlights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/my-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My Values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2019/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#NOTE-havent-taken-parts-B-and-C-of-the-course-so-Im-not-too-clear-on-that" class="md-nav__link">
+    <span class="md-ellipsis">
+      NOTE: haven't taken parts B and C of the course so I'm not too clear on that.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="javascript:history.back()" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2019-03-30 00:00:00+00:00" class="md-ellipsis">March 30, 2019</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              8 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../tags/#tag:cs" class="md-tag">cs</a>
+      
+    
+      
+      
+      
+        <a href="../tags/#tag:learning" class="md-tag">learning</a>
+      
+    
+  </nav>
+
+
+
+<p>I am planning to use the <a href="https://signalshore.github.io/tag/learning.html">Learning</a> tag to create a series of posts<br />
+about <em>every</em> online course I will take. The idea is to document<br />
+everything in my blog. Having something that I can refer to is also<br />
+super awesome.</p>
+<h1 id="Structure">Structure<a class="headerlink" href="#Structure" title="Permanent link">&para;</a></h1>
+<p>The entire course is quite long. The way Dan (the instructor) has<br />
+structured the course is that he divided the course into 3 parts. </p>
+<p>In Part A we used the programming language SML (Standard Meta<br />
+Language) since the primary focus of this part of the course is to<br />
+learn about functional programming languages with static type checking<br />
+(I will talk about these later). In Part B we use Racket and in Part C<br />
+we use Ruby.</p>
+<h4 id="NOTE-havent-taken-parts-B-and-C-of-the-course-so-Im-not-too-clear-on-that"><em>NOTE: haven't taken parts B and C of the course so I'm not too clear on that.</em><a class="headerlink" href="#NOTE-havent-taken-parts-B-and-C-of-the-course-so-Im-not-too-clear-on-that" title="Permanent link">&para;</a></h4>
+<h1 id="Part-A--SML">Part A : SML<a class="headerlink" href="#Part-A--SML" title="Permanent link">&para;</a></h1>
+<p>I will write get to the point and write about each major topic that I<br />
+learned.</p>
+<h3 id="Functional-Programming-and-Pure-Functions">Functional Programming and Pure Functions<a class="headerlink" href="#Functional-Programming-and-Pure-Functions" title="Permanent link">&para;</a></h3>
+<p>This section defined functional programming for me. I have programmed<br />
+a little bit in Scheme before (due to SICP) but I never really learned<br />
+what Functional Programming really means. As a result I could not<br />
+define it when someone asked me what it is. </p>
+<p>Turns out that I never really understood <em>pure functions</em>, which is<br />
+the core concept around which functional programming revolves. Now,<br />
+pure functions are a mathematical concept. Mathematically a function<br />
+just takes a value and returns a result. It does <em>nothing</em> else, or<br />
+more specifically it changes nothing else. Moreover a function has to<br />
+return the same result for the same argument <em>always</em>.</p>
+<p>Well, how does this translate into programming ?</p>
+<p>In programming terms, a pure function has to have no <em>side effects</em><br />
+Side effects is a term computer people use to confuse non-computer<br />
+people. It means that a function should not mutate any mutable<br />
+variables/references in the environment. This gets tricky sometimes,<br />
+especially if the programming language allows and encourages<br />
+mutations.  Object-Oriented languages allow mutation and that can lead<br />
+to some interesting problems (and security vulnerabilities) in<br />
+software.</p>
+<p>Essentially I wrote a lot of <em>functional</em> code for this course and its<br />
+exercises and homework assignments. That was fun.</p>
+<h3 id="Static-Typing">Static Typing<a class="headerlink" href="#Static-Typing" title="Permanent link">&para;</a></h3>
+<p>SML is a statically typed language, which means that the programs are<br />
+type checked by the compiler before being run.</p>
+<p>A typical program in SML with all types explicitly mentioned looks<br />
+like this. Its a simple function that takes two numbers and adds them.</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">add</span> <span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">int</span><span class="p">):</span> <span class="n">int</span> <span class="p">=</span> 
+    <span class="n">x</span> <span class="n">+</span> <span class="n">y</span><span class="p">;</span>
+</code></pre></div>
+
+<p>The type of the <code>add</code> function is <code>fn: int * int -&gt; int</code></p>
+<p>Let's write a recursive program that calculates <code>n raised to m</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">pow</span> <span class="p">(</span><span class="n">m</span> <span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">n</span> <span class="p">:</span> <span class="n">int</span><span class="p">)</span> <span class="p">=</span>
+    <span class="kr">if</span> <span class="n">m</span><span class="p">=</span><span class="mi">0</span>
+    <span class="kr">then</span> <span class="mi">1</span>
+    <span class="kr">else</span> <span class="n">m</span> <span class="n">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<p>The type of <code>pow</code> function is <code>fn: int * int -&gt; int</code></p>
+<p>I had some trouble understanding how the type system worked in SML,<br />
+but things got quite clear after a bunch of exercises where we are<br />
+required to write a very limited type checker ourselves. This was one<br />
+of the best exercises in the entire course in my opinion. Turns out the<br />
+type checker is just a massively logical piece of code and not <em>magic</em><br />
+and things do make sense if you know the type checking rules really<br />
+well.</p>
+<h3 id="Type-Inference">Type-Inference<a class="headerlink" href="#Type-Inference" title="Permanent link">&para;</a></h3>
+<p>In SML you are not required to explicitly mention the types of every<br />
+expression, the type checker can infer the types itself. I found this<br />
+very un-intuitive at first, but reading about the process made it<br />
+quite obvious.</p>
+<p>Let us rewrite the above functions without explicitly mentioning<br />
+types.</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">add</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span>
+    <span class="n">x</span> <span class="n">+</span> <span class="n">y</span><span class="p">;</span>
+
+<span class="kr">fun</span> <span class="nf">pow</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">=</span>
+    <span class="kr">if</span> <span class="n">m</span><span class="p">=</span><span class="mi">0</span>
+    <span class="kr">then</span> <span class="mi">1</span>
+    <span class="kr">else</span> <span class="n">m</span> <span class="n">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<p>In both these cases the type checker can infer the types of the<br />
+functions and the arguments and the final type for both the functions<br />
+is <code>fn: int * int -&gt; int</code>. The type checker can do this by <code>looking
+ahead</code> into the function and inspecting the operations being performed<br />
+on the arguments. The intuition being that when you check if an<br />
+argument value is equal to <code>0</code> or not, then the argument must be an<br />
+integer. Similarly, if you are adding two arguments, they must be<br />
+integers. To carry the idea forward, the static type checker would<br />
+throw an error if you tried to perform some operation on incompatible<br />
+types (like adding a string to an integer). This is also possible<br />
+because the operators are not overloaded like how in python the <code>+</code><br />
+operator can do both addition for integers and concatenation for<br />
+strings. Having non-overloaded operators means that every operator has<br />
+a very specific type of operands that it accepts, and anything<br />
+otherwise would not type-check.</p>
+<h3 id="Polymorphic-Data-types">Polymorphic Data-types<a class="headerlink" href="#Polymorphic-Data-types" title="Permanent link">&para;</a></h3>
+<p>Another thing that I found beautiful was the concept of polymorphic<br />
+types in SML. In SML the type checker can figure out if there is a<br />
+more-general way to write your program so that it can work for <em>more<br />
+than a single type</em> of arguments. It does this even if you specify a<br />
+type. What this means is that your programs become more general. </p>
+<p>Let's write a function with polymorphic data-types.</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">add_to_list</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span>
+    <span class="n">x</span> <span class="n">::</span> <span class="n">y</span><span class="p">;</span>
+</code></pre></div>
+
+<p>The function <code>add_to_list</code> builds a list by taking a object and a list<br />
+and adds the object to the front of the list. The type of this<br />
+function is <code>fn: 'a * 'a list -&gt; 'a list</code> where <code>'a</code> is a polymorphic<br />
+datatype as in it can take the type of any value passed to the<br />
+function. Hence this function works for both integers and strings. </p>
+<p>Look the the results of the function calls in the comments.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">add_to_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,[]);</span> 
+<span class="cm">(* [2] : int list *)</span>
+<span class="n">add_to_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
+<span class="cm">(* [2,2,3] : int list *)</span>
+<span class="n">add_to_list</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,[]);</span>
+<span class="cm">(* [&quot;S&quot;] : string list *)</span>
+<span class="n">add_to_list</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="s2">&quot;t&quot;</span><span class="p">]);</span>
+<span class="cm">(* [&quot;S&quot;,&quot;t&quot;,&quot;a&quot;,&quot;r&quot;,&quot;t&quot;] : string list *)</span>
+</code></pre></div>
+
+<p>It should be noted  that this functions will only work  if the type of<br />
+the object and the type of the object  that the list is made up of are<br />
+the same. This  is by definition since in SML  the <code>::</code> operator works<br />
+like that. Hence the following call will not type check because we are<br />
+trying to add <code>S</code> to the list <code>[2,3]</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">add_to_list</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
+<span class="cm">(* Does not type check *)</span>
+</code></pre></div>
+
+<h3 id="Pattern-Matching">Pattern Matching<a class="headerlink" href="#Pattern-Matching" title="Permanent link">&para;</a></h3>
+<p>Writing about pattern matching is tricky because it makes absolutely<br />
+no sense without any context, and in order to establish context we<br />
+would another series of blog posts which is not where I want to go<br />
+with this. Let me try.</p>
+<p>Imagine a <code>case</code> expression. The utility of a case expression lies in<br />
+the fact that a case expression can handle multiple branches or<br />
+multiple cases.</p>
+<p>The case expression in SML has the form</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">case</span> <span class="n">expr_0</span> <span class="kr">of</span>
+    <span class="n">patt_1</span> <span class="p">=&gt;</span> <span class="n">expr_1</span>
+  <span class="n">|</span> <span class="n">patt_2</span> <span class="p">=&gt;</span> <span class="n">expr_2</span>
+  <span class="n">|</span> <span class="p">...</span>
+  <span class="n">|</span> <span class="n">patt_n</span> <span class="p">=&gt;</span> <span class="n">expr_n</span>
+</code></pre></div>
+
+<p>This is evaluated by first evaluating the <code>expr_0</code> to <code>val_0</code> and then<br />
+pattern-matching it with <code>patt_i</code> and then based on which pattern it<br />
+matches with, the corresponding <code>expr_i</code> is evaluated.</p>
+<p>The pattern part is super cool because it lets you use constructors and operators within the pattern to pattern match against and you can also do variable binding within the pattern itself. </p>
+<p>Let's see that in action. In the following program I will add all the elements of a list together.</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">add_list</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="p">=</span>
+    <span class="kr">case</span> <span class="n">xs</span> <span class="kr">of</span>
+        <span class="p">[]</span> <span class="p">=&gt;</span> <span class="mi">0</span>
+     <span class="n">|</span> <span class="n">x::xs&#39;</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="n">+</span> <span class="n">add_list</span><span class="p">(</span><span class="n">xs&#39;</span><span class="p">);</span>
+
+<span class="n">add_list</span><span class="p">([]);</span>
+<span class="n">add_list</span><span class="p">([</span><span class="mi">2</span><span class="p">]);</span>
+<span class="n">add_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]);</span>
+</code></pre></div>
+
+<p>In this example basically we are matching against the cases where the list is either empty or not. If the list is empty we return 0 as the sum, otherwise we use pattern matching to split the list into the first element and the rest of the list (without the first element) and then recursively compute the sum.</p>
+<h3 id="Lexical-Scope-and-Closures">Lexical Scope and Closures<a class="headerlink" href="#Lexical-Scope-and-Closures" title="Permanent link">&para;</a></h3>
+<p>The body of a function is evaluated in the environment where the<br />
+function is defined, not the environment where the function is called.</p>
+<p>We will see it in this example.</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">val</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kr">fun</span> <span class="nf">test</span> <span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="p">=</span> <span class="n">y</span> <span class="n">+</span> <span class="n">x</span><span class="p">;</span>
+<span class="kr">val</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">test</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="cm">(* 5 *)</span>
+</code></pre></div>
+
+<p>The output of this function is <code>5</code> and not <code>9</code> because when the<br />
+function <code>test</code> was defined, the value of <code>x = 2</code> in the<br />
+environment. Hence when the function was called it used that value of<br />
+x as opposed the newer value where x is redefined to 4.</p>
+<p>A function always has an environment associated with it. This<br />
+environment contains the bindings at the time when the function was<br />
+defined.  This associating of a function and its environment (lexical<br />
+environment) is called a function closure, or simply; a closure.</p>
+<p>Closures are really cool. I did not know before but as it turns out<br />
+all the fancy things that I like about Functional Programming like<br />
+Currying, Partial Applications etc etc are just closure idioms.</p>
+<p>There are still <em>LOTS</em> of details that I have not covered about<br />
+pattern-matching.</p>
+<h3 id="Tail-Recursion">Tail Recursion<a class="headerlink" href="#Tail-Recursion" title="Permanent link">&para;</a></h3>
+<p>After all this tail recursion is a relatively light-headed concept.</p>
+<p>A tail call is a function call that is the very last operation in the<br />
+calling function. i.e. the calling function has nothing to do after<br />
+the function call and the result it receives from the function call is<br />
+the final answer. </p>
+<p>We will look at this using the factorial function.<br />
+Mathematically we can define the factorial of a number as</p>
+<blockquote>
+<p>factorial(n) = n * factorial (n - 1) ; when n &gt; 1</p>
+</blockquote>
+<p>We can write this in SML like,</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=</span>
+    <span class="kr">if</span> <span class="n">x</span><span class="p">=</span><span class="mi">0</span>
+    <span class="kr">then</span> <span class="mi">1</span>
+    <span class="kr">else</span> <span class="n">x</span> <span class="n">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">x</span> <span class="n">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Now, this is fine and it works; BUT, its not tail recursive. <br />
+This is because the calling function has to multiply the result from the recursive call with <code>x</code> and then get the result.</p>
+<p>Let's write the tail recursive version of this.</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">fac_tail</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">=</span>
+    <span class="kr">let</span> <span class="kr">fun</span> <span class="nf">helper</span><span class="p">(</span><span class="n">acc</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">=</span>
+            <span class="kr">if</span> <span class="n">n</span><span class="p">=</span><span class="mi">0</span>
+            <span class="kr">then</span> <span class="n">acc</span>
+            <span class="kr">else</span> <span class="n">helper</span><span class="p">(</span><span class="n">n</span> <span class="n">*</span> <span class="n">acc</span><span class="p">,</span> <span class="n">n</span> <span class="n">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="kr">in</span>
+        <span class="n">helper</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+    <span class="kr">end</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Over here we have a helper function that takes two parameters.  The<br />
+first parameter stores the value of <code>factorial(n - 1)</code> and the second<br />
+one keeps track of <code>n</code>. </p>
+<p>If we look at how we are calling the helper function recursively, we see that after the recursive call returns a value, we do not need to perform any operations on the result, since it is already the result we want. This is a tail call. </p>
+<p>The benefits of tail calls is that compilers are smart enough to optimize tail calls and hence these recursive calls are not as expensive computationally.</p>
+<p>Moreover, because of lexical scoping we can use any variable binding<br />
+in the helper function without explicitly passing it during every<br />
+call. This makes for very readable code. Using an accumulator to store the intermediate results also helps us avoid re-computation of already computed values. This is called memoization. </p>
+<h1 id="Wrapping-up-and-Reflections">Wrapping up and Reflections.<a class="headerlink" href="#Wrapping-up-and-Reflections" title="Permanent link">&para;</a></h1>
+<p>This was by-far the most amazing course I have ever taken. I am 95%<br />
+confident that this is exactly what I want to study going forward. It<br />
+was quite challenging as well. Had a tough tiem figuring out work (I<br />
+need to pay my bills :-P) and this course and a bunch of ofther<br />
+commitments. I reckon I spent about 20 hours a week on this particular<br />
+course. Anyway, super fun, can't wait for Part B.</p>
+<p>Since I paid for this course (first online course I paid for) I got a<br />
+certificate. My official final score is 95.1% which is good<br />
+enough. <a href="https://www.coursera.org/account/accomplishments/certificate/PF8DZ3V2S6N2">This</a> is<br />
+my online certificate. </p>
+<p>I am using the Gitlab<br />
+repo<br />
+<a href="https://gitlab.com/83bytes/programming_languages_coursera">Programming_languages_coursera</a> to<br />
+keep track of all my exercises and solutions. Currently I am keeping<br />
+notes in a single large document with tons of comments. I haven't<br />
+found a better way.</p>
+<p>Its been a long time since I finished this course. I got detracted<br />
+from my plan to start Part B ASAP. </p>
+<p>I plan to revisit the challenge problems of week 2 and week 3 before<br />
+starting Part B, which should take about a week more.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">SignalShore</span> by <span property="cc:attributionName">Sohom Bhattacharjee</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.instant", "navigation.tabs.sticky", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../overrides/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

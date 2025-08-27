@@ -1,0 +1,1123 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../stack-frames-in-x86/">
+      
+      
+        <link rel="next" href="../tcp---notes/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Containers; The Interesting Bits - SignalShore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/e-paper.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="e-paper-light" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#Container" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SignalShore" class="md-header__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SignalShore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Containers; The Interesting Bits
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SignalShore" class="md-nav__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SignalShore
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../now/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Now
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Now
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Highlights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/my-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My Values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2019/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="javascript:history.back()" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2020-09-26 00:00:00+00:00" class="md-ellipsis">September 26, 2020</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              7 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../tags/#tag:cs" class="md-tag">cs</a>
+      
+    
+      
+      
+      
+        <a href="../tags/#tag:tech" class="md-tag">tech</a>
+      
+    
+  </nav>
+
+
+
+<p><a id="org1f3b3fd"></a></p>
+<h1 id="Container">Container<a class="headerlink" href="#Container" title="Permanent link">&para;</a></h1>
+<p><a id="orgd7d2bf9"></a></p>
+<p>A container is a <span class="underline">fancy</span> Linux (unix) process.</p>
+<p>The fancy-ness of the process comes from the fact that this process<br />
+is running in a very isolated environment and a very restricted<br />
+environment. This means that the process can not see other<br />
+processess and it has very limited access to system resources.</p>
+<p>This is essentially a container. It is made up two features of the<br />
+Linux Kernel called <span class="underline">control groups</span> (or cgroups for short) and<br />
+<span class="underline">namespaces</span>. </p>
+<p>Docker on Mac OS runs the Linux Kernel as a VM so that you can run<br />
+containers on top it.</p>
+<h1 id="Table-of-Contents">Table of Contents<a class="headerlink" href="#Table-of-Contents" title="Permanent link">&para;</a></h1>
+<ol>
+<li><a href="#org1f3b3fd">Container</a><ol>
+<li><a href="#orgd7d2bf9">What are containers ?</a></li>
+<li><a href="#org91f8bf2">Containers vs VMs</a></li>
+<li><a href="#org5641d24">Docker Basics</a></li>
+<li><a href="#orged10953">Linux Process-fu</a></li>
+</ol>
+</li>
+<li><a href="#org8542faf">Cgroups and Namespaces</a><ol>
+<li><a href="#orgcdfaeba">Control Groups</a><ol>
+<li><a href="#orgece3764">Operations with Control Groups</a></li>
+<li><a href="#org5a69f04">Cgroup demo - memory subsystem</a></li>
+<li><a href="#org43d6014">Cgroup demo - PID subsystem</a></li>
+</ol>
+</li>
+<li><a href="#org3d234e3">Namespaces</a><ol>
+<li><a href="#org2631bea">Pid and Network namspace.</a></li>
+</ol>
+</li>
+<li><a href="#org34f6f5d">Reference</a></li>
+</ol>
+</li>
+</ol>
+<p><a id="org91f8bf2"></a></p>
+<h2 id="Containers-vs-VMs">Containers vs VMs<a class="headerlink" href="#Containers-vs-VMs" title="Permanent link">&para;</a></h2>
+<p>A container is a fancy process; a Virtual Machine on the other hand is<br />
+an entire <span class="underline">virtual computer</span>. It is not difficult to see the<br />
+differences from here. In a VM you set up an entirely new OS on top of<br />
+virtualied hardware. In a contianer you limit the execution<br />
+envrionment of the process. Essentially, a VM is a OS level isolation,<br />
+while a contianer is a process level isolation mechanism.</p>
+<p><a id="org5641d24"></a></p>
+<h2 id="Docker-Basics">Docker Basics<a class="headerlink" href="#Docker-Basics" title="Permanent link">&para;</a></h2>
+<p>The course at <a href="https://docker-curriculum.com/">Docker-Curriculum</a> is<br />
+highly recommended for beginners.</p>
+<p>As a refresher we will look at the common docker commands:</p>
+<ul>
+<li><strong>docker build:</strong> build an image from a recipe</li>
+<li><strong>docker run  :</strong> run an image</li>
+<li><strong>docker stop :</strong> stop a running contianer</li>
+<li><strong>docker kill :</strong> kill a running container</li>
+<li><strong>docker ps   :</strong> List running containers</li>
+</ul>
+<p><a id="orged10953"></a></p>
+<h2 id="Linux-Process-fu">Linux Process-fu<a class="headerlink" href="#Linux-Process-fu" title="Permanent link">&para;</a></h2>
+<p>This is a brief (albeit incomplete and highly simplified) description<br />
+of how processess work in linux; i.e. how they are created, managed<br />
+and cleaned-up.</p>
+<p>In linux, processess are managed using a tree like structure, with<br />
+processess having a parent-child relationship. Processess have a<br />
+unique idenfier called the process-id (or pid). The first process that starts<br />
+when a Linux computer starts is called the <em>init</em> process and it has<br />
+<em>PID 1</em> and it is responsible for starting/managing all other<br />
+processess.</p>
+<p>When a process creates a child-process, the parent process gets a<br />
+child-pid. This is important because the parent processess need to<br />
+wait for the child process to finish its execution. The parent is also<br />
+responsible for cleaning up after its children.</p>
+<p><a id="org8542faf"></a></p>
+<h1 id="Cgroups-and-Namespaces">Cgroups and Namespaces<a class="headerlink" href="#Cgroups-and-Namespaces" title="Permanent link">&para;</a></h1>
+<p>Container is OS level virutalisation framework that uses namespaces<br />
+(provided by the linux kernel) to isolate system resources into<br />
+namespaces such that the processess that run in different namespaces<br />
+are isolated from each other; i.e. they can not see each other. Thus<br />
+they do not step on each others toes.</p>
+<p>It also uses cgroups which is a kernel feature that is used to limit<br />
+and monitor the usage of system resouces like CPU, memory, pids etc.</p>
+<p>So, with these tools, we can isolate process into a sandbox of their<br />
+own AND limit them with the amount of CPU/Memory they can use.</p>
+<p>Apart from this the filesystem that is used by containers is also<br />
+interesting. This file system is implemented as layers and this<br />
+enables some really interesting use-cases.</p>
+<p>Things are not that simple. There are other things like seccomp<br />
+(which is a mechanism that is used to limit the system calls that a<br />
+process can use.)</p>
+<p>(there are some extra bits as well which I haven't studied yet)</p>
+<p><a id="orgcdfaeba"></a></p>
+<h2 id="Control-Groups">Control Groups<a class="headerlink" href="#Control-Groups" title="Permanent link">&para;</a></h2>
+<p>Control Groups or cgroups are a kernel feature that lets us allocate<br />
+system resource to processes in a very granular way. Using cgroups you<br />
+can also do granular resource level accounting for tasks.</p>
+<p>You can find the cgroups data-structure at <strong>/sys/fs/cgroups</strong> The<br />
+different directories represent the different subsystem (or<br />
+controller) which are used to control various resources. </p>
+<p>Cgroups is heirarchical in nature. Which means the child cgroup,<br />
+inherits the properties of the parent cgroup. Each directory in one of<br />
+these subsystems is a cgroup. There are multiple files is each of<br />
+these directories. This is how the kernel exposes the control<br />
+variables and accouting information. We will look at 3 of them in<br />
+<span class="underline">slight</span> detail.</p>
+<p><a id="orgece3764"></a></p>
+<h3 id="Operations-with-Control-Groups">Operations with Control Groups<a class="headerlink" href="#Operations-with-Control-Groups" title="Permanent link">&para;</a></h3>
+<p>In order to create a new cgroup, we can just create a directory under<br />
+the desired controller (we can also use the <strong>cgcreate</strong> command). Once<br />
+you create a directory under any of the cgroups, relevant files for<br />
+that cgroup will automatically be created under that directory.</p>
+<p>After a process is added to a cgroup, all child processess will be<br />
+created in that cgroup itself.</p>
+<p>Quick refrence for operations (non exhaustive):</p>
+<ul>
+<li><strong>lscgroup</strong>- to view all the cgroups present</li>
+<li><strong>systemd-cgls</strong>- to view all cgroups</li>
+<li><strong>cat /proc/cgroups</strong>- to show global stats</li>
+<li><strong>cat /proc/pid/cgroups</strong>- to show the cgroups for a single process</li>
+<li><strong>cgdelete -g subsystem:groupname</strong>- This will delete the control group.</li>
+<li><strong><cgdir>/tasks</strong>- This file contains the pids of all the processes in that cgroup</li>
+<li><strong>cgexec -g <subsystem>:<groupname> <process></strong>- This will run that process (and all child processess) in that cgroup.</li>
+</ul>
+<p><a id="org5a69f04"></a></p>
+<h3 id="Cgroup-demo---memory-subsystem">Cgroup demo - memory subsystem<a class="headerlink" href="#Cgroup-demo---memory-subsystem" title="Permanent link">&para;</a></h3>
+<p>In this demo we will look at the <strong>memory</strong> subsystem and do a small<br />
+exercise to solidify our understanding of how this works.<br />
+The Memory cgroup is used to limit/account the amount of memory that is used by a process.</p>
+<p>This is how the cgroup we created under the memory subsystem called <strong>demom</strong> looks just after creation.</p>
+<blockquote>
+<p><img alt="img" src="../assets/images/containers/cg_mem.png" /></p>
+</blockquote>
+<p>Quick Ref for the cg :</p>
+<ul>
+<li><strong>memory.failcnt</strong> : shows how many times the tasks running in the group have reached the max limit</li>
+<li><strong>memory.limit_in_bytes</strong> : controls the limit in bytes</li>
+<li><strong>memory.swappiness</strong> : control the <span class="underline">eagerness</span> with which swapping occurs</li>
+<li><strong>memory.usage_in_bytes</strong> : shows accounting of the memory used by all the tasks in the cgroup</li>
+<li><strong>memory.tasks</strong> : contains all the pids for all the tasks in this cgroup</li>
+<li><strong>memory.stat</strong> : shows all memory related stats for this cgroup</li>
+</ul>
+<p>Steps :</p>
+<ul>
+<li>create a new control group under the <strong>sys/fs/cgroup/memory</strong> directory</li>
+<li>start a bash shell and get its pid by <strong>echo $$</strong></li>
+<li>check the cgroups of the shell using <strong>cat /proc/$$/cgroup</strong></li>
+<li>put a shell in the cgroup that we created by adding the pid to <strong>tasks</strong> OR using <strong>sudo cgexec -g memory:demo1 bash</strong></li>
+<li>Now, check the cgroups of the shell using <strong>cat /proc/$$/cgroup</strong> again. it should be different.</li>
+<li>set limit by <strong>echo <value> &gt; memory.limit_in_bytes</strong></li>
+</ul>
+<blockquote>
+<p>if this is smaller than <strong>memory.usage_in__bytes</strong> then we will get <strong>resource busy</strong> error</p>
+</blockquote>
+<ul>
+<li>set <strong>echo 0 &gt; memory.swappiness</strong> (otherwise things will be sent to swap and OOM wont happen) (do not know why this happens)</li>
+<li>now run something big in here (docker pull works) and it should be killed.</li>
+<li>delete the cg using <strong>cgdelete</strong></li>
+</ul>
+<blockquote>
+<p>This is how <strong>dmesg</strong> looks when an OOM-kill occurs<br />
+<img alt="img" src="../assets/images/containers/oom1.png" /><br />
+<img alt="img" src="../assets/images/containers/oom2.png" /></p>
+</blockquote>
+<p>Look at this <em><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-memory">Detailed Memory<br />
+Reference</a></em><br />
+for a Deep-Dive.</p>
+<p><a id="org43d6014"></a></p>
+<h3 id="Cgroup-demo---PID-subsystem">Cgroup demo - PID subsystem<a class="headerlink" href="#Cgroup-demo---PID-subsystem" title="Permanent link">&para;</a></h3>
+<p>We now do a demo with the pid subsystem to get a better understanding. <br />
+This is very helpful as it will protect you case of a fork-bomb.<br />
+The PID subsystem is used to limit the number of processess that are running (or can run). We will see it in action soon.</p>
+<p>Steps:</p>
+<ul>
+<li>create a new control group under the <strong>sys/fs/cgroup/pid</strong> directory</li>
+<li>put a shell in there by adding the pid to <strong>tasks</strong> OR using <strong>sudo cgexec -g memory:demo bash</strong></li>
+<li>check <strong>pids.max</strong>. This should be set to <strong>max</strong> by default. This controls the number of tasks this cgroup can run (by limiting the no of pids)</li>
+<li>set limit by <strong>echo 2 &gt; pids.max</strong> [default is /max/]</li>
+<li>Now run <strong>$(cat tasks 1&gt;&amp;2)</strong> (this creates 3 tasks)</li>
+<li>
+<p>It should fail with <strong>Resource Temporarily unavailable</strong></p>
+<p>The whole demo looks like this. </p>
+</li>
+</ul>
+<blockquote>
+<p><img alt="img" src="../assets/images/containers/pid1.png" /></p>
+</blockquote>
+<h6 id="This-is-for-cgroup-v1-There-is-also-cgroup2-which-I-havent-looked-at-yet">This is for cgroup v1. There is also cgroup2 which I havent looked at yet!<a class="headerlink" href="#This-is-for-cgroup-v1-There-is-also-cgroup2-which-I-havent-looked-at-yet" title="Permanent link">&para;</a></h6>
+<p><a id="org3d234e3"></a></p>
+<h2 id="Namespaces">Namespaces<a class="headerlink" href="#Namespaces" title="Permanent link">&para;</a></h2>
+<p>Namespaces allow users to isolate the execution environment for a<br />
+process.  Currently there are 8 namespaces available (which means you<br />
+can isolate 8 different resources between your process):</p>
+<ul>
+<li>mount (<strong>mnt</strong>)</li>
+<li>process id (<strong>pid</strong>)</li>
+<li>network (<strong>net</strong>)</li>
+<li>IPC (<strong>ipc</strong>)</li>
+<li>time </li>
+<li>UTS (<strong>hostname</strong>)</li>
+<li>cgroup (<strong>cgroup</strong>)</li>
+<li>User(<strong>user</strong>)</li>
+</ul>
+<p><a id="org2631bea"></a></p>
+<h3 id="Pid-and-Network-namspace">Pid and Network namspace.<a class="headerlink" href="#Pid-and-Network-namspace" title="Permanent link">&para;</a></h3>
+<ul>
+<li>We can create namespces using the <strong>unshare</strong> command</li>
+<li>Running <strong>unshare &#x2013;fork &#x2013;pid &#x2013;net &#x2013;mount-proc bash</strong> will run a bash shell in a different network and pid namespace.<ul>
+<li>This means, no internet (unless we manually enable it) and bash is running as <strong>pid 1</strong> (how cool is that ?)</li>
+</ul>
+</li>
+</ul>
+<p>The <strong>bash</strong> process is runnig as pid 1. This is because its running<br />
+inside a new PID namespace. The PID namespace provides a set of<br />
+processess an new independent set of process-ids.</p>
+<p>To fix this we need to add a veth device to the new namespace and<br />
+stuff.</p>
+<p><em>TODO:  Demo : adding veth devices to namespaces shells and establish communication between them</em></p>
+<p><a id="org34f6f5d"></a></p>
+<h2 id="Reference">Reference<a class="headerlink" href="#Reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=mGWWTP1Jeso">Life of a Container - Indradhanush Gupta</a></li>
+<li><a href="https://www.youtube.com/watch?v=q1BnNRId0R4">Alice Goldfuss - The Container Operators manual</a></li>
+<li><a href="https://jvns.ca/blog/2016/10/10/what-even-is-a-container/">Julia Evans - What is even a container</a></li>
+<li><a href="https://www.youtube.com/watch?v=hgN8pCMLI2U">PWL NYC - Bryan Cantril - Solaris Jails &amp; Zones</a></li>
+<li><a href="https://dev.to/polarbit/how-docker-container-networking-works-mimic-it-using-linux-network-namespaces-9mj">Set Up container namespaces manually, ref 1</a></li>
+<li><a href="https://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/">Container Networking, ref 2</a></li>
+<li><a href="https://man7.org/linux/man-pages/man4/veth.4.html">veth man page</a></li>
+<li><a href="https://www.youtube.com/watch?v=-YnMr1lj4Z8">LiveOverfllow video on Docker</a></li>
+<li><a href="https://www.youtube.com/watch?v=sK5i-N34im8">what are containers made from</a></li>
+<li><a href="https://0xax.gitbooks.io/linux-insides/content/Cgroups/linux-cgroups-1.html">Gitbook - Linux Insides - Control Groups</a></li>
+<li><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-memory">Detailed Memory CGroup Reference</a></li>
+<li><a href="https://man7.org/linux/man-pages/man7/capabilities.7.html">Capabilities man page</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">SignalShore</span> by <span property="cc:attributionName">Sohom Bhattacharjee</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.instant", "navigation.tabs.sticky", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../overrides/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

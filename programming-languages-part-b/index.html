@@ -1,0 +1,1387 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../the-book-system/">
+      
+      
+        <link rel="next" href="../the-quest-for-truth-and-other-things/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Programming Languages Part B - SignalShore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/e-paper.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="e-paper-light" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#Part-B--Racket" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SignalShore" class="md-header__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SignalShore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Programming Languages Part B
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SignalShore" class="md-nav__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SignalShore
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../now/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Now
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Now
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Highlights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/my-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My Values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2019/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Dynamic-Typing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Typing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Delayed-Evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delayed Evaluation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Delay--Force-call-by-need-or-lazy-evaluation-or-promises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delay &amp; Force (call by need or lazy evaluation or promises)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Delay &amp; Force (call by need or lazy evaluation or promises)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#What-is-Lazy-evaluation-" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Lazy evaluation ?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Streams-Producers-and-Consumers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Streams; Producers and Consumers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Datatype-with-structs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datatype with structs.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Implementing-a-Programming-Language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementing a Programming Language
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementing a Programming Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#What-is-the-environment-" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is the environment ?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Closures-and-Lexical-Scoping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closures and Lexical Scoping
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Static-Checking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static Checking
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Static Checking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Correctness-of-a-type-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correctness of a type system
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Correctness of a type system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Soundness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Soundness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Completeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Completeness
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Thats-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      That's it
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="javascript:history.back()" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2019-10-06 00:00:00+00:00" class="md-ellipsis">October 6, 2019</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              11 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../tags/#tag:cs" class="md-tag">cs</a>
+      
+    
+      
+      
+      
+        <a href="../tags/#tag:f" class="md-tag">f</a>
+      
+    
+      
+      
+      
+        <a href="../tags/#tag:learning" class="md-tag">learning</a>
+      
+    
+      
+      
+      
+        <a href="../tags/#tag:t" class="md-tag">t</a>
+      
+    
+  </nav>
+
+
+
+<p>In Part B we study functional programming languages with dynamic type<br />
+checking. For this we use the programming language Racket which is a<br />
+dialect of the LISP programming language. During the second week we<br />
+also implement a programming language interpreter. Even though it is a<br />
+toy language it gives a lot of insight into how interpreters work.</p>
+<h1 id="Part-B--Racket">Part B : Racket<a class="headerlink" href="#Part-B--Racket" title="Permanent link">&para;</a></h1>
+<p>I will highlight what were the major learning points for me.</p>
+<h2 id="Dynamic-Typing">Dynamic Typing<a class="headerlink" href="#Dynamic-Typing" title="Permanent link">&para;</a></h2>
+<p>Static or dynamic typing is defined on the basis of when the type<br />
+checking takes place during the life-cycle of a program. In static type<br />
+checking the type checking happens at compile time while in dynamic<br />
+type checking the type checking happens at run time. Dynamic typing<br />
+can be convenient when you are writing programs as you do not have to<br />
+figure out the types of arguments and variables in your program<br />
+beforehand and more programs are accepted by the system, but at the<br />
+same time this also means the most of the errors happen at run-time.</p>
+<h2 id="Delayed-Evaluation">Delayed Evaluation<a class="headerlink" href="#Delayed-Evaluation" title="Permanent link">&para;</a></h2>
+<p>In a programming language the manner in which expressions (and<br />
+sub-expressions) are evaluated can have a large impact on how programs<br />
+are constructed.</p>
+<p>Generally when we evaluate a function expression, we evaluate the<br />
+sub-expressions first before evaluating the actual function. This is<br />
+called applicative order evaluation.</p>
+<p>For example consider this function which tries to emulate the functionality of the 'if' expression.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">my-if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">c</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Let's use this 'my-if' as we would use a normal if clause</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="n">my-if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="c1">;; result :=&gt; 3</span>
+</code></pre></div>
+
+<p>This works properly. However, the next one doesn't.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="n">my-if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
+<span class="c1">;; result :=&gt; Error</span>
+</code></pre></div>
+
+<p>This is because when 'my-if' is being evaluated, then all the three<br />
+arguments to the function is evaluated first before evaluating<br />
+'my-if'. This does not happen when we use the normal 'if' conditional<br />
+because if is a special form. It evaluates the conditional argument<br />
+first and based on that result it evaluates either of the branches.</p>
+<p>There should be a way of passing around expression in a language<br />
+without actually evaluating them. In Racket we can do this by wrapping<br />
+the function that we want to dealy in a lambda function that takes no<br />
+arguments. Thus we can pass this lambda function around as much as  we<br />
+want and we can evaluate it when we need it by using an extras set of<br />
+parenthesis.</p>
+<p>Thus we need to rewrite the old functions. We can do it as</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">new-if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">)))</span>
+</code></pre></div>
+
+<p>and we will call this function as </p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="n">new-if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+<span class="w">        </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)))</span>
+</code></pre></div>
+
+<p>This is called thunking. When we wrap a function in an empty lambda<br />
+function, then we create a thunk. Instead of 'e1' we use '(lambda ()<br />
+e1)'. So when the thunk is passed to a function, the thunk gets<br />
+evaluated first into the function and then we can evaluate the<br />
+function to get the result.</p>
+<p>This is just one of the many programming idioms that are there that we<br />
+can use to mess around with the order of evaluation in a program.</p>
+<h2 id="Delay--Force-call-by-need-or-lazy-evaluation-or-promises">Delay &amp; Force (call by need or lazy evaluation or promises)<a class="headerlink" href="#Delay--Force-call-by-need-or-lazy-evaluation-or-promises" title="Permanent link">&para;</a></h2>
+<p>So thunking provides us a solution to the problem of evaluating<br />
+expression that are not needed.  What about expressions that can be<br />
+used in multiple places in a program ? If we use thunking we can delay<br />
+the evaluation untill needed but we will still have to evaluate it<br />
+every single time it is needed. Here we see another design<br />
+consideration. It is not only important to have a framework to delay<br />
+evaluation, it is also important to have to framework that allows you<br />
+to avoid re-computation.</p>
+<p>This is called call-by-need or lazy evaluation.</p>
+<h3 id="What-is-Lazy-evaluation-">What is Lazy evaluation ?<a class="headerlink" href="#What-is-Lazy-evaluation-" title="Permanent link">&para;</a></h3>
+<p>Lazy evaluation is an evaluation strategy in which an expression is<br />
+not evaluated when they are bound to variables. Instead they are<br />
+evaluated when their results are needed by other computations. This is<br />
+the default mode of evaluation used in the Haskell programming<br />
+Language.</p>
+<p>One way to do this (in Racket) is to transform every function call<br />
+into a value look-up. We can store the thunk of the function in a cons<br />
+cell along with the result. If the result is not computed then we will<br />
+evaluate the thunk and store the value in the cell (we will mutate the<br />
+cons cell) and thus, the next time we need to evaluate the same<br />
+function, we can just look up the value in the cons cell.</p>
+<p>Basically when we implement a system where we store the output of a<br />
+function if it has been evaluated once. As noted above this can be<br />
+done easily using mutable cons cells.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="k">delay</span><span class="w"> </span><span class="n">f</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">mcons</span><span class="w"> </span><span class="no">#f</span><span class="w"> </span><span class="n">f</span><span class="p">))</span>
+
+<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nb">force</span><span class="w"> </span><span class="k">thunk</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">mcar</span><span class="w"> </span><span class="k">thunk</span><span class="p">)</span>
+<span class="w">        </span><span class="p">(</span><span class="nb">mcdr</span><span class="w"> </span><span class="k">thunk</span><span class="p">)</span>
+<span class="w">        </span><span class="p">(</span><span class="k">begin</span><span class="w"> </span><span class="p">(</span><span class="nb">set-mcar!</span><span class="w"> </span><span class="k">thunk</span><span class="w"> </span><span class="no">#t</span><span class="p">)</span><span class="w">               </span><span class="c1">;; set the flag to true</span>
+<span class="w">               </span><span class="p">(</span><span class="n">set_mcdr!</span><span class="w"> </span><span class="k">thunk</span><span class="w"> </span><span class="p">((</span><span class="nb">mcdr</span><span class="w"> </span><span class="k">thunk</span><span class="p">)))</span><span class="w">   </span><span class="c1">;; replace the thunk with the result</span>
+<span class="w">               </span><span class="p">(</span><span class="nb">mcdr</span><span class="w"> </span><span class="k">thunk</span><span class="p">))))</span><span class="w">                    </span><span class="c1">;; return the result</span>
+</code></pre></div>
+
+<p>This is something that hit me in the face with a brick when I first understood it.<br />
+It's so beautiful and cool. :-)</p>
+<h2 id="Streams-Producers-and-Consumers">Streams; Producers and Consumers<a class="headerlink" href="#Streams-Producers-and-Consumers" title="Permanent link">&para;</a></h2>
+<p>Let me preface this section by stating that before this I had no idea<br />
+what streams were and how they worked.</p>
+<p>A stream (in the context of computers) is an infinite source of<br />
+data. It is never ending. This is a very hand-wavy definition and it<br />
+does not paint a truthful picture but it is good enough for<br />
+now. Streams are produced by something called as a producer. The<br />
+producers knows only how to produce a stream of data endlessly.</p>
+<p>Now, that we have an endless stream of data, what do we do with it ?<br />
+This is where consumers come in. Consumers consume the data from the<br />
+stream in whatever manner they want.</p>
+<p>A good analogy is rivers. A glacier is the producer which produces and<br />
+endless stream of water and humans are the consumers. The consumers<br />
+get to decide how to and how much to consume the stream.</p>
+<p>Constructing an endless source of data is quite impossible since you<br />
+never really know when to stop. So how do producers produce an endless<br />
+stream of data ? To do that producers use a short-cut. To construct an<br />
+infinite stream of data all you need is a starting point and a method<br />
+to go to the next point. With these two information you can create<br />
+data on-demand without needing to know when to stop.</p>
+<p>We will try to understand this with an example.</p>
+<p>Consider the set of all Natural Numbers which we can all agree that is<br />
+an infinite set.</p>
+<p>How would one go about printing out all the natural numbers if the<br />
+entire set is infinite ?</p>
+<p>The answer is that one does not need to print all the natural numbers<br />
+all at once. All one needs to do is to keep track of the current<br />
+number being printed and then increment the number by 1 when the next<br />
+natural number is needed. In this case the starting point is 1 and the<br />
+method of obtaining the next number is that you increment the current<br />
+number by 1.</p>
+<p>This gives us a good starting point of how to go about designing<br />
+streams.  In a stream (in this case) the flow of data is controlled by<br />
+the consumer as data is produced only when it is asked for by the<br />
+consumer and the only two pieces of information needed by either the<br />
+producer or the consumer is the starting element of the stream and the<br />
+formula.</p>
+<p>So we can code up streams by writing a thunk that evaluates to a pair<br />
+wherein the first element is the first element and the second element<br />
+is a thunk that has everything we need to get all the elements from 2<br />
+to infinity.</p>
+<p>Let us write a stream that just produces an infinite stream of 1's</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="n">ones-st</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ones</span><span class="p">)))</span>
+
+<span class="c1">;; we call this stream by</span>
+
+<span class="c1">;; this gives the first element</span>
+<span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="p">(</span><span class="n">one-st</span><span class="p">))</span>
+
+<span class="c1">;; this gives us the second element</span>
+<span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="p">(</span><span class="n">one-st</span><span class="p">)))</span>
+</code></pre></div>
+
+<p>The stream is a thunk which when evaluated gives a pair. The first<br />
+element in the pair is the first value in the stream and the second<br />
+element is another thunk. We can clearly see how this works in the way<br />
+we call it.</p>
+<p>This stream is a bit easy to understand since there is not<br />
+transformation that is taking place between the subsequent elements.</p>
+<p>Now we will define the same stream and put a transformation function<br />
+in the middle. This function will not do anything but it will act as a<br />
+good placeholder for future transformations.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">ones</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">ones-help</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="n">ones-help</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">0</span><span class="p">)))))</span>
+<span class="p">(</span><span class="n">ones-help</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div>
+
+<p>In this way we have a framework of how to go about designing different streams. <br />
+Let use write an infinite stream of the square of all the natural numbers.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">square-help</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="n">square-help</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">1</span><span class="p">)))))</span>
+<span class="p">(</span><span class="n">square-help</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div>
+
+<p>How do we get elements from the stream ? </p>
+<p>To get the first element we evaluate the stream and get the first<br />
+element form the pair. To get the second element from the stream we<br />
+evaluate the cdr of the pair we get.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
+<span class="c1">;; first element</span>
+
+<span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="p">((</span><span class="nb">cdr</span><span class="w"> </span><span class="p">(</span><span class="n">square</span><span class="p">))))</span>
+<span class="c1">;; second element</span>
+</code></pre></div>
+
+<p>Thus we can get new elements from the list.</p>
+<p>Note: This is the exact same way in which Alonzo Church defines Church Numerals. </p>
+<h2 id="Datatype-with-structs">Datatype with structs.<a class="headerlink" href="#Datatype-with-structs" title="Permanent link">&para;</a></h2>
+<p>SML has records and datatype bindings that allows us to make compound<br />
+dataypes and data-structures and it lets us use pattern matching to<br />
+get the desired data out form the data structure.</p>
+<p>For Example,</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">val</span> <span class="nv">record_test</span> <span class="p">=</span>  <span class="p">{</span> <span class="n">first</span> <span class="p">=</span> <span class="s2">&quot;sohom&quot;</span><span class="p">,</span> <span class="n">second</span> <span class="p">=</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">number</span> <span class="p">=</span> <span class="mi">1000</span> <span class="p">};</span>
+<span class="cm">(* creates a new record in the env and binds it to record_test *)</span>
+
+<span class="kr">val</span> <span class="p">{</span> <span class="n">first</span> <span class="p">=</span> <span class="n">t</span> <span class="p">:</span> <span class="n">string</span> <span class="p">,</span> <span class="n">second</span> <span class="p">=</span> <span class="n">tt</span> <span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">number</span> <span class="p">=</span> <span class="n">ttt</span> <span class="p">:</span> <span class="n">int</span> <span class="p">}</span> <span class="p">=</span> <span class="n">record_test</span><span class="p">;</span>
+
+<span class="cm">(* This pattern matches the record on the left with the record on</span>
+<span class="cm">the right and binds the values after extracting them from the</span>
+<span class="cm">record *)</span>
+</code></pre></div>
+
+<p>We could implement the same kind of the thing in Racket using cons<br />
+cells but there is an even better way in Racket. In Racket we can use<br />
+structs to define custom data types.</p>
+<p>When we add a new datatype with <code>struct</code> it introduces a bunch of<br />
+other functions into the environment. Let me illustrate this with an example.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="p">(</span><span class="n">field1</span><span class="w"> </span><span class="n">field2</span><span class="w"> </span><span class="n">field3</span><span class="p">))</span>
+</code></pre></div>
+
+<p>This will introduce a constructor for this struct, a checker for this<br />
+struct and accessor functions for each field in the struct. This is<br />
+super handy.</p>
+<p>So we can do things like</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="n">new_t</span><span class="w"> </span><span class="p">(</span><span class="n">foo</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
+
+<span class="p">(</span><span class="n">foo?</span><span class="w"> </span><span class="n">new_t</span><span class="p">)</span>
+<span class="c1">;; evaluates to #t</span>
+
+<span class="p">(</span><span class="n">foo-field1</span><span class="w"> </span><span class="n">new_t</span><span class="p">)</span>
+<span class="c1">;; evaluates to 1</span>
+
+<span class="p">(</span><span class="n">foo-field2</span><span class="w"> </span><span class="n">new_t</span><span class="p">)</span>
+<span class="c1">;; evaluates to 2</span>
+
+<span class="p">(</span><span class="n">foo-field3</span><span class="w"> </span><span class="n">new_t</span><span class="p">)</span>
+<span class="c1">;; evaluates to 3</span>
+</code></pre></div>
+
+<p>I think this is really cool. Especially because the user does not have<br />
+to write accessor functions for all the types they define, but instead<br />
+the language system generates them. Also, struct is not a syntactic<br />
+sugar for some list or something else. Struct actually creates a new<br />
+type in the environment.</p>
+<h2 id="Implementing-a-Programming-Language">Implementing a Programming Language<a class="headerlink" href="#Implementing-a-Programming-Language" title="Permanent link">&para;</a></h2>
+<p>This something that we actually have to do this course. It's a part of<br />
+the homework.</p>
+<p>I will not go into the details but this week was particularly very<br />
+interesting because you had to first understand the syntax and the<br />
+semantics of the programming language that you were supposed to build<br />
+and then write the interpreter for it. </p>
+<p>One thing that I did get over was my fear of interpreters and realize<br />
+that a compiler or an interpreter is just a normal program; there is<br />
+nothing too fancy about it. It is a normal program in the sense that<br />
+it takes data input in some form, and produces an output in some form<br />
+which is mostly transformation based on certain rules.</p>
+<p>I had a really great time trying and implementing Closures and writing<br />
+the main eval function.</p>
+<h3 id="What-is-the-environment-">What is the environment ?<a class="headerlink" href="#What-is-the-environment-" title="Permanent link">&para;</a></h3>
+<p>During programming we often hear about the "environment" a lot but we<br />
+do not spend too much time thinking about what it actually is. Turns<br />
+out that the environment is just a mapping that stores the identifiers<br />
+that the values/expressions are bound too. When you think about it,<br />
+this makes sense, right ?</p>
+<p>I mean, what is the role of the environment ? Like all the environment<br />
+is supposed to do is to make sure that when the expressions are<br />
+evaluated they get evaluated with the correct values.</p>
+<p>In the made up programming language we  do this by using a list as the<br />
+environment.</p>
+<h3 id="Closures-and-Lexical-Scoping">Closures and Lexical Scoping<a class="headerlink" href="#Closures-and-Lexical-Scoping" title="Permanent link">&para;</a></h3>
+<p>In the MUPL (made up programming language), we implement lexical<br />
+scoping and closures.</p>
+<p>It's quite simple. When the interpreter encounter a function definition<br />
+it just wraps the function along with the env in a data structure<br />
+(like a cons of two elements) and that is about it.</p>
+<p>The most challenging part of this whole exercise was to write the case<br />
+for the function calls.</p>
+<h2 id="Static-Checking">Static Checking<a class="headerlink" href="#Static-Checking" title="Permanent link">&para;</a></h2>
+<p>We talked briefly about static checking in the first paragraph.<br />
+In this section we will look at static checking in more detail.</p>
+<p>Couple of thing first.</p>
+<ul>
+<li>ML has static type checking</li>
+<li>Racket does not have static type checking</li>
+</ul>
+<p>The job of static checker is to reject programs after they have been<br />
+parsed but before they have been run.</p>
+<p>The static checker checks the program for correctness. </p>
+<p>How do we define this correctness ?</p>
+<p>One way we check for correctness is by evaluating the program against<br />
+a set of rules. Most commonly these rules are the typing rules. Mix<br />
+all of these together and you the type checker and the set of rules<br />
+that are used to evaluate the correctness of a program is called the<br />
+type system.</p>
+<h3 id="Correctness-of-a-type-system">Correctness of a type system<a class="headerlink" href="#Correctness-of-a-type-system" title="Permanent link">&para;</a></h3>
+<p>The type system is a part of the programming language definition that<br />
+specifies what type of programs are legal and what are not in that<br />
+programming language.</p>
+<p>The Type System is designed to prevent a certain kind of bad behaviour<br />
+in the programming language. If the type system prevents the behaviour<br />
+that it claims to prevent then the type system is correct.</p>
+<p>We use two different and opposing metrics to determine the correctness<br />
+of a type system:</p>
+<h4 id="Soundness"><strong>Soundness</strong><a class="headerlink" href="#Soundness" title="Permanent link">&para;</a></h4>
+<p>A type system is sound if all type-checked programs are correct.<br />
+This means that the type checker will never accept an in-correct<br />
+program, i.e. there wont be any false negetives. </p>
+<h4 id="Completeness"><strong>Completeness</strong><a class="headerlink" href="#Completeness" title="Permanent link">&para;</a></h4>
+<p>A type system is complete if all correct programs can be accepted by<br />
+the type checker. This means that the Type Checker will never reject a<br />
+correct program, i.e. there wont be any false positives.</p>
+<p>We define the positives/negetives with respect to the ppresence of<br />
+undesirable bugs in a program. These are the bugs that the type<br />
+checker is designed to prevent. Hence, for <em>negetive</em> the type checker<br />
+claims that the bug is not present in the program i.e. the program is<br />
+correct and vice-versa.</p>
+<p>In the broader context of logic systems these terms have some interesting meanings.<br />
+1. A system is sound if only true statemenats are proveable.<br />
+2. A system is complete if <em>all</em>  true statements are proveable.</p>
+<p>Now, completeness is much more difficult to have than soundness. This<br />
+is because for a type checker to be complete it needs to show that all<br />
+correct programs are accepted by it and the set of <em>all correct<br />
+programs</em> is inifinite in nature. The tradeoff that gets made is that<br />
+programming language designers will rather have a sound system than a<br />
+complete system.</p>
+<h2 id="Thats-it">That's it<a class="headerlink" href="#Thats-it" title="Permanent link">&para;</a></h2>
+<p>This course bought me immense joy and I hope that it's the same for<br />
+you as well.  Bear in mind that week 2 will be quite difficult but<br />
+just push through. It will be worth it.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">SignalShore</span> by <span property="cc:attributionName">Sohom Bhattacharjee</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.instant", "navigation.tabs.sticky", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../overrides/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

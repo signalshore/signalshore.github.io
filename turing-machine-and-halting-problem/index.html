@@ -1,0 +1,1175 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../moving-from-bangalore-to-mumbai/">
+      
+      
+        <link rel="next" href="../undecidability-and-incompleteness/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Turing Machine and Halting Problem - SignalShore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/e-paper.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="e-paper-light" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#Context" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SignalShore" class="md-header__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SignalShore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Turing Machine and Halting Problem
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SignalShore" class="md-nav__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SignalShore
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../now/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Now
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Now
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Highlights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/my-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My Values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2019/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#The-Idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Idea
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Problems-for-a-Turing-Machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problems for a Turing Machine.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Universal-Turing-Machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Universal Turing Machine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#The-Halting-Problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Halting Problem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Halting Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proof
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proof">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#There-is-another-proof-for-this-that-uses-the-Cantors-diagonalisation-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      There is another proof for this that uses the Cantor's diagonalisation argument
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="javascript:history.back()" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2018-08-30 00:00:00+00:00" class="md-ellipsis">August 30, 2018</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              7 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../tags/#tag:cs" class="md-tag">cs</a>
+      
+    
+  </nav>
+
+
+
+  <h1>Turing Machine and Halting Problem</h1>
+
+<p>In a <a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-2.html">previous post</a><br />
+I talked briefly about Alan Turing's model of computation, called the<br />
+Turing Machine.</p>
+<p>Today we will look into this in more detail and discuss an interesting<br />
+problem called the Halting problem.</p>
+<h2 id="Context">Context<a class="headerlink" href="#Context" title="Permanent link">&para;</a></h2>
+<p>Alan Turing was interested in what it meant to <em>compute</em> something. <br />
+To fully grasp the severity of this problem we need to step back in time. </p>
+<p>This is the 1930s that we are talking about, there were no <em>proper</em><br />
+computers yet. Computers and the whole computer science field was not<br />
+yet born. So in this context a computer was something (or someone)<br />
+that could perform arithmetic operations. Humans who did this were<br />
+called <a href="https://en.wikipedia.org/wiki/Human_computer">human computers</a><br />
+There were<br />
+mechanical<br />
+<a href="https://en.wikipedia.org/wiki/Mechanical_calculator">calculators</a><br />
+that existed back then but again, they all required a human operator.</p>
+<p>So ultimately it was the operator who was responsible for making<br />
+decisions about what to do with the numbers. There was not automated<br />
+reasoning that any machine could follow.</p>
+<p>What Alan Turing was interested in; was to understand the meaning of<br />
+what it means for a task to be computable. This is one of the core<br />
+areas in Philosophy of Computer Science. However to answer this<br />
+question he needed a a formal definition of computation itself (which<br />
+did not exist at that time). </p>
+<blockquote>
+<p><strong>NOTE :</strong> <em>As a mental exercise before doing anything else just sit back and<br />
+think about this yourself. We use computers daily but at its very<br />
+core, what does computation mean ?</em></p>
+</blockquote>
+<p>So in order to have a formal definition of computation we needed a<br />
+model for computation. This is what Alan Turing came up with and this<br />
+is what we now call the Turing Machine.</p>
+<h2 id="The-Idea">The Idea<a class="headerlink" href="#The-Idea" title="Permanent link">&para;</a></h2>
+<p>Picture a typewriter.  The Turing Machine is heavily inspired by this<br />
+system (typewriter + operator). In the book "Alan Turing: The Enigma"<br />
+the writer Andrew Hodges tells us that Alan was fascinated by<br />
+typewriters. We can see this inspiring his work.</p>
+<p>What does a typewriter have ? A typewriter has a paper for printing, a<br />
+system that outputs characters on said paper, a mechanism for input<br />
+that tells the typewriter what to print.  Additionally the typewriter<br />
+system also has the user whose job is to tell the typewrite what to do<br />
+and it keeps track of what the typewriter has already done.</p>
+<p>Now, the Turing Machine is a hypothetical machine (or more precisely a<br />
+mathematical model); it does not exist in real life. It is a state<br />
+machine which means that the machine has a finite number of states in<br />
+which it can be. It can read information/instructions from a tape and<br />
+based on that it moves from one state to another. The number of states<br />
+is finite. It can also write data on the tape.</p>
+<p>A Turing Machine has 4 main parts:</p>
+<ul>
+<li>The tape</li>
+<li>The head</li>
+<li>The state</li>
+<li>The transition table</li>
+</ul>
+<p>The <strong>tape</strong> is the memory of the machine. The tape is divided into<br />
+blocks of the same width and only one symbol is present in one<br />
+block. The machine can read symbols from this tape and can write<br />
+symbols to this tape. At a given time there is only one symbol in the<br />
+machine. This symbol is referred to as the <em>scanned</em> symbol. The<br />
+machine can be supplied with an infinitely long tape.</p>
+<p>The <strong>head</strong> is a contraption that can read symbols from the tape and can<br />
+write symbols to the tape as well. The head can also move the tape to<br />
+the left or right but by only one block at a time.</p>
+<p>The <strong>state</strong> of the Turing Machine. This state is a intriguing<br />
+concept. This <em>state</em> is used to replace the <em>state of mind</em> of the<br />
+typewriter operator (or any person performing any computation for that<br />
+matter). At any time the Turing Machine can be one of many finite<br />
+states.</p>
+<p>The <strong>transition table</strong> is a set of finite rules that given the current<br />
+state the machine is currently and the scanned symbol tells the Turing<br />
+Machine to write a symbol into the tape, then move the tape left or<br />
+right and finally to assume a new state (or stay in the same one).</p>
+<p>Now the Turing Machine is a model of computation, thus it must be<br />
+able to do some computation; right? So how does it do that. </p>
+<h2 id="Problems-for-a-Turing-Machine">Problems for a Turing Machine.<a class="headerlink" href="#Problems-for-a-Turing-Machine" title="Permanent link">&para;</a></h2>
+<p>Problems in Automata Theory are generally of the form that involves<br />
+some "computer" determining if some string belongs to a set of strings<br />
+or not, based on some rules. This set of strings is called that follow<br />
+a general rule for membership is called a Language and the "computer"<br />
+involved is called an automaton which is nothing but a model of<br />
+computation. We choose to represent various computational problems as<br />
+languages because we already have established a terminology for<br />
+dealing with languages.</p>
+<p>To perform some computation in a Turing Machine we write a program<br />
+for the machine. This program is basically a set of transition rules.</p>
+<p>Given any string as input the Turing Machine can do one of three<br />
+things. It can stop and <strong>accept</strong> the string or it can <strong>reject</strong> the<br />
+string or it can <strong>loop</strong> indefinitely over the input.</p>
+<p>When the TM is in either the accept or the reject state after<br />
+processing a string then we say that the TM has halted (as in stopped<br />
+running on the output). On the other hand if the TM does not halt and<br />
+instead keeps on looping indefinitely then it means that the TM will<br />
+never stop working or never halt. When a TM has halted it indicates<br />
+that the TM has decided the string (either accept or reject) on the<br />
+other hand when it does not halt then the string (or rather the<br />
+problem) is said to be undecidable.</p>
+<p>All this can get quite intense, so here is an intuitive definition of<br />
+computation by a Turing<br />
+Machine. The<br />
+<a href="https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis">Church-Turing thesis</a> showed<br />
+that a Turing Machine algorithm captures <strong>all</strong> algorithms. This<br />
+means that if for a given problem we can design a Turing Machine<br />
+algorithms then that problem is actually solvable. As we will soon<br />
+see that there are certain problems that are so complex that there<br />
+exists no algorithm that can solve them. In-fact while describing<br />
+Turing Machine algorithms we do not need to go into the implementation<br />
+level details of how the head and the tapes move; instead we can just<br />
+use English prose to describe an algorithm. The only requirement is<br />
+that an algorithm to stop in a finite number of steps (this is quite<br />
+literally the definition of an algorithm).</p>
+<h2 id="Universal-Turing-Machine">Universal Turing Machine<a class="headerlink" href="#Universal-Turing-Machine" title="Permanent link">&para;</a></h2>
+<p>A Turing Machine is generally programmed to perform only a single type<br />
+of computation. However there is a class of Turing Machines called the<br />
+Universal Turing Machine which can perform any sort of computation. In<br />
+fact this property of this Turing Machine is what makes a Turing<br />
+Machine such a powerful model for computation. </p>
+<p>The Universal Turing Machine can simulate any arbitrary Turing machine<br />
+on any arbitrary string. It does this by reading the description of<br />
+the Turing machine and the string input from its own tape and then<br />
+processing them.</p>
+<p>This makes the Turing Machine capable of answering questions about the<br />
+behavior of other Turing machines. This model of computation is a<br />
+very accurate model of modern computers where computers have access to<br />
+a random access memory. This is the same as the tape in a Turing<br />
+Machine.</p>
+<p>Thus the problems these Turing Machines can tackle are generally of<br />
+the form where we test the behavior of some arbitrary Turing machine<br />
+on some arbitrary input.</p>
+<h2 id="The-Halting-Problem">The Halting Problem<a class="headerlink" href="#The-Halting-Problem" title="Permanent link">&para;</a></h2>
+<p>The Halting Problem is a decision problem of determining whether any<br />
+arbitrary Turing Machine will halt on an arbitrary string input or<br />
+not. </p>
+<p>In other words lets say that we have a Language <span class="arithmatex">\(H_{Lang}\)</span> which is<br />
+made up of all string encoding of the form <span class="arithmatex">\(&lt;B,w&gt;\)</span> where <span class="arithmatex">\(B\)</span> is a<br />
+Turing Machine and <span class="arithmatex">\(w\)</span> is a string and <span class="arithmatex">\(B\)</span> halts on <span class="arithmatex">\(w\)</span>. We need to<br />
+show that <span class="arithmatex">\(H_{Lang}\)</span> is undecidable. Which means that there isn't a<br />
+single imaginable Turing Machine that can decide <span class="arithmatex">\(H_{Lang}\)</span>.</p>
+<blockquote>
+<p>Which means that no one can ever design a Turing Machine that will<br />
+be able to take an arbitrary string <span class="arithmatex">\(w\)</span> and an arbitrary Turing<br />
+machine <span class="arithmatex">\(B\)</span> and tell whether <span class="arithmatex">\(B\)</span> will halt on <span class="arithmatex">\(w\)</span> or not. </p>
+</blockquote>
+<p>Now, this might seem like a fairly un-important detail but this has<br />
+some far-reaching implications as we will soon see. But before that we<br />
+will prove the above statement. This is a fun proof that illustrates<br />
+how to think about these problems in general.</p>
+<h3 id="Proof">Proof<a class="headerlink" href="#Proof" title="Permanent link">&para;</a></h3>
+<p>Let us assume that such a machine does exist and let us call it<br />
+<span class="arithmatex">\(H_{TM}\)</span>.</p>
+<p>Construction of <span class="arithmatex">\(H_{TM}\)</span>:</p>
+<ul>
+<li><strong>Input :</strong> String <span class="arithmatex">\(&lt;B,w&gt;\)</span>, where <span class="arithmatex">\(B\)</span> is a TM and <span class="arithmatex">\(w\)</span> is a string.</li>
+<li><strong>Run :</strong> Simulates <span class="arithmatex">\(w\)</span> on <span class="arithmatex">\(B\)</span>.</li>
+<li><strong>Accepts :</strong> <span class="arithmatex">\(w\)</span> if <span class="arithmatex">\(B\)</span> halts on <span class="arithmatex">\(w\)</span></li>
+<li><strong>Rejects :</strong> <span class="arithmatex">\(w\)</span> if <span class="arithmatex">\(B\)</span> does not halt on <span class="arithmatex">\(w\)</span>.</li>
+</ul>
+<p><em>This</em> is the decider that we have to prove can not exist.</p>
+<p>Now, since <span class="arithmatex">\(H_{TM}\)</span> already exists we can use this machine to<br />
+construct another Turing Machine <span class="arithmatex">\(D_{TM_H}\)</span> which has <span class="arithmatex">\(H_{TM}\)</span> as a<br />
+subroutine (hence the sub-subscript notation).</p>
+<p>Construction of <span class="arithmatex">\(D_{TM_H}\)</span>:</p>
+<ul>
+<li><strong>Input :</strong> String <span class="arithmatex">\(&lt;M&gt;\)</span>, where <span class="arithmatex">\(M\)</span> is a Turing machine</li>
+<li><strong>Runs :</strong> Simulates <span class="arithmatex">\(&lt;M, &lt;M&gt;&gt;\)</span> on <span class="arithmatex">\(H_{TM}\)</span></li>
+<li><strong>Accepts :</strong> <span class="arithmatex">\(&lt;M&gt;\)</span> if <span class="arithmatex">\(H_{TM}\)</span> rejects <span class="arithmatex">\(&lt;M, &lt;M&gt;&gt;\)</span>, i.e. if <span class="arithmatex">\(M\)</span> rejects <span class="arithmatex">\(&lt;M&gt;\)</span></li>
+<li><strong>Rejects :</strong> <span class="arithmatex">\(&lt;M&gt;\)</span> if <span class="arithmatex">\(H_{TM}\)</span> accepts <span class="arithmatex">\(&lt;M, &lt;M&gt;&gt;\)</span>, i.e. if <span class="arithmatex">\(M\)</span> accepts <span class="arithmatex">\(&lt;M&gt;\)</span></li>
+</ul>
+<blockquote>
+<p><strong>Now, what happens if we run <span class="arithmatex">\(D_{TM_H}\)</span> on <span class="arithmatex">\(&lt;D_{TM_H}&gt;\)</span> ?</strong></p>
+</blockquote>
+<p>By the above Accept and Reject conditions, </p>
+<ul>
+<li>If <span class="arithmatex">\(D_{TM_H}\)</span> <strong>accepts</strong> <span class="arithmatex">\(&lt;D_{TM_H}&gt;\)</span>, then it means that <span class="arithmatex">\(H_{TM}\)</span><br />
+  rejected <span class="arithmatex">\(&lt;D_{TM_H}, &lt;D_{TM_H} &gt;&gt;\)</span> which means that <span class="arithmatex">\(D_{TM_H}\)</span><br />
+<strong>rejects</strong> <span class="arithmatex">\(&lt;D_{TM_H}&gt;\)</span></li>
+<li>If <span class="arithmatex">\(D_{TM_H}\)</span> <strong>rejects</strong> <span class="arithmatex">\(&lt;D_{TM_H}&gt;\)</span>, then it means that <span class="arithmatex">\(H_{TM}\)</span><br />
+  accepted <span class="arithmatex">\(&lt;D_{TM_H}, &lt;D_{TM_H} &gt;&gt;\)</span> which means that <span class="arithmatex">\(D_{TM_H}\)</span><br />
+<strong>accepted</strong> <span class="arithmatex">\(&lt;D_{TM_H}&gt;\)</span></li>
+</ul>
+<p>This is a contradiction because it implies that <span class="arithmatex">\(D_{TM_H}\)</span> accepts<br />
+itself if it rejects itself.</p>
+<p>Hence our initial assumption about the existence of <span class="arithmatex">\(H_{TM}\)</span> must be<br />
+wrong. Hence <span class="arithmatex">\(H_{TM}\)</span> can not exist.</p>
+<h6 id="There-is-another-proof-for-this-that-uses-the-Cantors-diagonalisation-argument">There is another proof for this that uses the Cantor's diagonalisation argument<a class="headerlink" href="#There-is-another-proof-for-this-that-uses-the-Cantors-diagonalisation-argument" title="Permanent link">&para;</a></h6>
+<h3 id="Conclusion">Conclusion<a class="headerlink" href="#Conclusion" title="Permanent link">&para;</a></h3>
+<p>This means that</p>
+<blockquote>
+<p>There does not exist a single algorithm that can us if another<br />
+algorithm will halt or not</p>
+</blockquote>
+<p>Static analyzers try and do solve some of these limitations but yes,<br />
+they are not 100% accurate, because they are mathematically guaranteed<br />
+to not be 100% accurate.</p>
+<p>This post is part of a series of posts that I have planned. In the<br />
+next one we will talk about Godels Incompletelness Theorems and<br />
+Hilberts Problems.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">SignalShore</span> by <span property="cc:attributionName">Sohom Bhattacharjee</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.instant", "navigation.tabs.sticky", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../overrides/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

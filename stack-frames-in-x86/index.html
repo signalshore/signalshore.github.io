@@ -1,0 +1,1074 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../work--pandemic-update/">
+      
+      
+        <link rel="next" href="../containers-the-interesting-bits/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Stack Frames in x86 - SignalShore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/e-paper.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="e-paper-light" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#The-Stack-x86" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SignalShore" class="md-header__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SignalShore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Stack Frames in x86
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SignalShore" class="md-nav__button md-logo" aria-label="SignalShore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SignalShore
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../now/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Now
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Now
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Highlights
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/cv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/my-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    My Values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2023
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2022
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2021
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2020
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2019/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2019
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2018
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2017
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="javascript:history.back()" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2020-09-20 00:00:00+00:00" class="md-ellipsis">September 20, 2020</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              5 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <a href="../tags/#tag:cs" class="md-tag">cs</a>
+      
+    
+      
+      
+      
+        <a href="../tags/#tag:tech" class="md-tag">tech</a>
+      
+    
+  </nav>
+
+
+
+<p>A very brief primer on x86 Stack Frames. Stumbled onto this while<br />
+reading about Linux performance monitoring tools. It's been a while<br />
+since I looked at assembly code so this was more fun than I expected.</p>
+<p>Anyhow, This post will summarize some basics of what are Stack Frames<br />
+and How function calls work.</p>
+<p>Note: In our study of the stack we will talk about a program that has multiple functions in it. These functions are "sub-routines".</p>
+<h1 id="The-Stack-x86">The Stack (x86)<a class="headerlink" href="#The-Stack-x86" title="Permanent link">&para;</a></h1>
+<p>When a program is being executed, it is called a process. Every<br />
+process is given some amount of memory for them to use. This chunk of<br />
+memory is called the process' stack.</p>
+<p>The Stack is a Last In First Out data structure. In x86 the stack grows<br />
+downwards. Which means that the <code>bottom</code> of the stack has the highest<br />
+memory address and the <code>top</code> of the stack has the lowest memory<br />
+address. We will not get into the reasons for such a design, but there<br />
+are other systems where the stack does not work this way.</p>
+<p>The main function of the stack is to keep track of execution<br />
+environment of the entire process and to maintain the control-flow<br />
+between function calls. This means keeping track of the important<br />
+details for every function call. This is done by using "Stack<br />
+Frames". Essentially a new "stack frame" is created on the stack when<br />
+a new function is executed.</p>
+<h1 id="The-x86-Stack-Frame">The x86 Stack Frame<a class="headerlink" href="#The-x86-Stack-Frame" title="Permanent link">&para;</a></h1>
+<p>The Stack Frame is a part of the process' stack that is responsible<br />
+for keeping track of the execution env that is relevant only to that<br />
+function call. </p>
+<p>The processor creates a new stack frame whenever there is a new<br />
+function call. Each stack frame hold the following details</p>
+<ul>
+<li>Parameters</li>
+<li>Frame Pointer to previous Stack Frame's base </li>
+<li>Return Address </li>
+<li>Data (Local variables and Parameters)</li>
+</ul>
+<p>When we look at the assembly code, every function has a prologue and<br />
+an epilogue. These are the sections that are responsible for building<br />
+the stack frame for that function as well as tearing down the stack<br />
+frame when the control-flow needs to return to the caller function.</p>
+<h1 id="Let-us-read-some-Assembly">Let us read some Assembly!!<a class="headerlink" href="#Let-us-read-some-Assembly" title="Permanent link">&para;</a></h1>
+<p>Let us use an example program to understand this.</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Compile this using gcc to a 32 bit target. </p>
+<div class="codehilite"><pre><span></span><code>gcc<span class="w"> </span>-m32<span class="w"> </span>func_call.c
+</code></pre></div>
+
+<p>Now, generate the assembly output using <code>objdump</code>. (you can use gdb for this too, or any other too you like)</p>
+<div class="codehilite"><pre><span></span><code>objdump<span class="w"> </span>-d<span class="w"> </span>-M<span class="w"> </span>intel<span class="w"> </span>a.out
+</code></pre></div>
+
+<p>The only sections that we will focus on are the <code>main</code> and the <code>foo</code> sections.</p>
+<div class="codehilite"><pre><span></span><code><span class="mh">000004ed</span><span class="w"> </span><span class="p">&lt;</span><span class="nf">foo</span><span class="p">&gt;:</span>
+<span class="x">    4ed:    55                      push   ebp</span>
+<span class="x">    4ee:    89 e5                   mov    ebp,esp</span>
+<span class="x">    4f0:    83 ec 10                sub    esp,0x10</span>
+<span class="x">    4f3:    e8 4e 00 00 00          call   546 &lt;__x86.get_pc_thunk.ax&gt;</span>
+<span class="x">    4f8:    05 e4 1a 00 00          add    eax,0x1ae4</span>
+<span class="x">    4fd:    c7 45 f8 02 00 00 00    mov    DWORD PTR [ebp-0x8],0x2</span>
+<span class="x">    504:    c7 45 fc 03 00 00 00    mov    DWORD PTR [ebp-0x4],0x3</span>
+<span class="x">    50b:    8b 45 08                mov    eax,DWORD PTR [ebp+0x8]</span>
+<span class="x">    50e:    01 45 f8                add    DWORD PTR [ebp-0x8],eax</span>
+<span class="x">    511:    8b 45 f8                mov    eax,DWORD PTR [ebp-0x8]</span>
+<span class="x">    514:    c9                      leave  </span>
+<span class="x">    515:    c3                      ret</span>
+
+<span class="mh">00000516</span><span class="w"> </span><span class="p">&lt;</span><span class="nf">main</span><span class="p">&gt;:</span>
+<span class="x">    516:    55                      push   ebp</span>
+<span class="x">    517:    89 e5                   mov    ebp,esp</span>
+<span class="x">    519:    83 ec 10                sub    esp,0x10</span>
+<span class="x">    51c:    e8 25 00 00 00          call   546 &lt;__x86.get_pc_thunk.ax&gt;</span>
+<span class="x">    521:    05 bb 1a 00 00          add    eax,0x1abb</span>
+<span class="x">    526:    c7 45 f8 02 00 00 00    mov    DWORD PTR [ebp-0x8],0x2</span>
+<span class="x">    52d:    c7 45 fc 01 00 00 00    mov    DWORD PTR [ebp-0x4],0x1</span>
+<span class="x">    534:    ff 75 f8                push   DWORD PTR [ebp-0x8]</span>
+<span class="x">    537:    e8 b1 ff ff ff          call   4ed &lt;foo&gt;</span>
+<span class="x">    53c:    83 c4 04                add    esp,0x4</span>
+<span class="x">    53f:    b8 00 00 00 00          mov    eax,0x0</span>
+<span class="x">    544:    c9                      leave  </span>
+<span class="x">    545:    c3                      ret</span>
+</code></pre></div>
+
+<h6 id="Note-This-is-assembly-in-Intel-syntax-Which-follows-the-oeprand-destination-source-format">Note: This is assembly in Intel syntax. Which follows the [oeprand destination, source] format.<a class="headerlink" href="#Note-This-is-assembly-in-Intel-syntax-Which-follows-the-oeprand-destination-source-format" title="Permanent link">&para;</a></h6>
+<p><br></p>
+<hr>
+<blockquote>
+<p>We will walk through the calling  code, the entry sequence and the sequence to get a better understanding.</p>
+</blockquote>
+<h3 id="The-Function-Call-sequence">The Function-Call sequence<a class="headerlink" href="#The-Function-Call-sequence" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nf">push</span><span class="w">   </span><span class="kt">DWORD</span><span class="w"> </span><span class="nv">PTR</span><span class="w"> </span><span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mh">0x8</span><span class="p">]</span>
+<span class="nf">call</span><span class="w">   </span><span class="mi">4</span><span class="nv">ed</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">foo</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<p>In this segment we are leading the value stored in the memory<br />
+location <code>ebp-0x8</code> into the stack and then we <code>call</code> the foo<br />
+subroutine. parameters are passed using the stack (pushed onto the<br />
+stack) and the results are returned by using the <code>eax</code> register.</p>
+<p>The <code>call</code> instruction also pushes the return address onto the<br />
+stack. This is done so that the control-flow can return to where it<br />
+branched from. It is generally <code>ip+0x2</code></p>
+<p>Read more about this in the <a href="https://en.wikipedia.org/wiki/X86_calling_conventions">x86 calling conventions</a></p>
+<h6 id="NOTE-To-understand-this-we-will-ignore-the-DWORD-PTR-It-is-not-too-imp-for-our-goals">NOTE: To understand this, we will ignore the <code>DWORD PTR</code>. It is not too imp for our goals.<a class="headerlink" href="#NOTE-To-understand-this-we-will-ignore-the-DWORD-PTR-It-is-not-too-imp-for-our-goals" title="Permanent link">&para;</a></h6>
+<h3 id="The-Entry-Sequence">The Entry Sequence<a class="headerlink" href="#The-Entry-Sequence" title="Permanent link">&para;</a></h3>
+<p>Notice the first two lines of both the functions.</p>
+<div class="codehilite"><pre><span></span><code><span class="nf">push</span><span class="w">   </span><span class="nb">ebp</span>
+<span class="nf">mov</span><span class="w">    </span><span class="nb">ebp</span><span class="p">,</span><span class="nb">esp</span>
+</code></pre></div>
+
+<p>In this sequence we built the stack from for the current function. </p>
+<p>After ther <em>call</em> in the previous section, the control flow jumps to<br />
+this instruction. This instruction pushes the <em>current base pointer</em><br />
+to the stack. This is base pointer of the previous stack frame. <code>ebp</code><br />
+is a register, so the previous command effectively pushes the data<br />
+stored in that register onto the stack. This increments the <code>esp</code> as<br />
+well.</p>
+<p>After that we set the current value of the <em>esp</em> as the <em>ebp</em> for the<br />
+current frame.  Note that the <em>esp</em> is currently pointing to the top<br />
+of the stack. This effectively starts a new frame.</p>
+<h5 id="Note-As-every-frame-contains-a-reference-to-the-base-pointer-of-the-previous-frame-this-enables-debuggers-to-walk-the-call-stack">Note: As every frame contains a reference to the base pointer of the previous frame, this enables debuggers to <em>walk</em> the call-stack.<a class="headerlink" href="#Note-As-every-frame-contains-a-reference-to-the-base-pointer-of-the-previous-frame-this-enables-debuggers-to-walk-the-call-stack" title="Permanent link">&para;</a></h5>
+<p>Thus the <code>stack frame</code> for <code>foo</code> function (or the <code>callee</code> function) contains the following.</p>
+<div class="codehilite"><pre><span></span><code>+<span class="o">========================</span>+
+<span class="p">|</span><span class="w">                        </span><span class="p">|</span>
+<span class="p">|</span><span class="w">  </span>Previous<span class="w"> </span>Stack-Frame<span class="w">  </span><span class="p">|</span>
+<span class="p">|</span><span class="w">      </span><span class="o">(</span>main<span class="w"> </span>func<span class="o">)</span><span class="w">       </span><span class="p">|</span>
+<span class="p">|</span><span class="w">                        </span><span class="p">|</span>
++<span class="o">========================</span>+
+<span class="p">|</span><span class="w">      </span>Parameter<span class="w"> </span><span class="m">1</span><span class="w">       </span><span class="p">|</span>
++------------------------+
+<span class="p">|</span><span class="w">     </span>Return<span class="w"> </span>Address<span class="w">     </span><span class="p">|</span>
++------------------------+
+<span class="p">|</span><span class="w">   </span>Base<span class="w"> </span>Pointer<span class="w"> </span><span class="o">(</span>main<span class="o">)</span><span class="w">  </span><span class="p">|</span>
++------------------------+<span class="w"> </span>&lt;----<span class="w"> </span>ebp<span class="w"> </span>foo
+<span class="p">|</span><span class="w">     </span>Local<span class="w"> </span>variables<span class="w">    </span><span class="p">|</span>
++------------------------+
+<span class="p">|</span><span class="w">     </span>Local<span class="w"> </span>variables<span class="w">    </span><span class="p">|</span><span class="w"> </span>
++<span class="o">========================</span>+<span class="w"> </span>&lt;----<span class="w"> </span>esp<span class="w"> </span>foo
+</code></pre></div>
+
+<h3 id="The-Exit-Sequence">The Exit Sequence<a class="headerlink" href="#The-Exit-Sequence" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nf">leave</span>
+<span class="nf">ret</span>
+</code></pre></div>
+
+<p>Now, the function has finished executing and it needs to return the<br />
+control flow to the calling function. We need to do some cleanup<br />
+first.</p>
+<p>The first thing that happens is that the space on the stack that was<br />
+used for local variables is teared down. This is done by moving <em>esp</em><br />
+to the <em>ebp</em>. Since, the <em>esp</em> tracks the top of the stack, by moving<br />
+it, we effectively reset the stack. </p>
+<p>After that we pop the first element from the stack and store it in the<br />
+<code>ebp</code> register. Recall that the top of the stack contained the address<br />
+to the previous stack frame. Now, we store that address back in the <code>ebp</code>.</p>
+<p>All that is left to do is to return to the instruction that we should<br />
+execute after the call to this procedure. This is done by <em>poping</em> the<br />
+next element from the stack (the return address) and storing it in the<br />
+<code>isp</code> or the instruction pointer.</p>
+<p>This is basically what the above instructions do.</p>
+<h2 id="References">References<a class="headerlink" href="#References" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://imada.sdu.dk/~kslarsen/dm546/Material/IntelnATT.htm">Assembly Syntax</a> </li>
+<li><a href="https://en.wikipedia.org/wiki/Call_stack">Call Stack</a></li>
+<li><a href="https://www.cs.rutgers.edu/~pxk/419/notes/frames.html">Stack Frames</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Function_prologue">Function Prolouge</a></li>
+<li><a href="https://en.wikibooks.org/wiki/X86_Disassembly/The_Stack">The Stack</a></li>
+<li><a href="https://shantanugoel.com/2017/12/04/practical-reverse-engineering-tutorial-2-protostar-stack4/">Pratical Reverse Engineering</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Stack-based_memory_allocation">Stack Based memory Allocation</a></li>
+<li><a href="http://ref.x86asm.net/">x86 Opcode Reference</a></li>
+</ol>
+<p>This was jsut somethnig to stroke my systems-programming/hardware bug. This was super fun. </p>
+<p>Untill next time. :)</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">SignalShore</span> by <span property="cc:attributionName">Sohom Bhattacharjee</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.instant", "navigation.tabs.sticky", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../overrides/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
