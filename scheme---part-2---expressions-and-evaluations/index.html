@@ -1028,8 +1028,8 @@
 <p><a href="https://en.wikipedia.org/wiki/S-expression">S-expressions</a> or Sexprs or Symbolic Expressions are used to<br />
 represented list like data. This was invented for and popularized by<br />
 LISP. Lisp stands for LISt Processing. </p>
-<p>A list looks like this <code>(x y ... z)</code></p>
-<p>A list can be made up of other lists as well. Like so <code>(x (a b c) (d e f))</code></p>
+<p>A list looks like this <code class="language-text highlight">(x y ... z)</code></p>
+<p>A list can be made up of other lists as well. Like so <code class="language-text highlight">(x (a b c) (d e f))</code></p>
 <p>In Lisp (and any other lisps) every program is a represented as a<br />
 list. In-fact this is the one and only style of writing programs in<br />
 LISP and this leads to some very interesting properties of lisp<br />
@@ -1060,7 +1060,7 @@ as tree such that<br />
   in the tree. This is the operator.<br />
 - Every other element of that list is a child of that node and are the<br />
   operators for that operand.</p>
-<p>The tree of the expression <code>(+ 2 3)</code> will look like this</p>
+<p>The tree of the expression <code class="language-text highlight">(+ 2 3)</code> will look like this</p>
 <p><img alt="single tree" src="../assets/images/2017-11-30/single.jpg" /></p>
 <p>A LISP program is very easily parse-able by a computer as Trees do<br />
 not need complicated rules for traversal and other operations. In-fact<br />
@@ -1070,45 +1070,45 @@ this sounds almost similar to the parse-tree of a<br />
 <p>This is probably one of the most simplest models of evaluation. It is<br />
 also very powerful. It is also recursive in nature. Let us write a<br />
 basic definition of the Evaluator.</p>
-<p>Let the Evaluator be <code>E</code>. It accepts an expression as input and<br />
-evaluates it. Let the expression be <code>expr</code></p>
+<p>Let the Evaluator be <code class="language-text highlight">E</code>. It accepts an expression as input and<br />
+evaluates it. Let the expression be <code class="language-text highlight">expr</code></p>
 <ul>
 <li>On receiving an expression <em>expr</em> evaluate the sub-expressions (using<br />
-  the same model; so this is a recursive call to <em><code>E(sub_expr)</code></em> where<br />
+  the same model; so this is a recursive call to <em><code class="language-scdoc highlight">E(sub_expr)</code></em> where<br />
 <em>sub_expr</em> is the sub expression)</li>
 <li>Apply the results of the sub-lists as operands to the operator of this list.</li>
 </ul>
 <p>In list the first element of any List is treated as the operator while<br />
 the rest are treated as the operands.</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">;; + is the operator and 2, 3, 4 are the operands</span>
-<span class="nb">&gt;</span><span class="w"> </span><span class="mi">9</span>
-<span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">;; * is the operator and 2, 3, 4 are the operands</span>
-<span class="nb">&gt;</span><span class="w"> </span><span class="mi">24</span>
-<span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w">   </span><span class="c1">;; &gt; is the operator; this is equivalent to 2 &gt; 3 </span>
-<span class="nb">&gt;</span><span class="w"> </span><span class="nv">f</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gh">#</span>!scheme
+<span class="linenos" data-linenos="2 "></span><span class="k">&gt; </span><span class="ge">(+ 2 3 4) ;; + is the operator and 2, 3, 4 are the operands</span>
+<span class="linenos" data-linenos="3 "></span><span class="k">&gt; </span><span class="ge">9</span>
+<span class="linenos" data-linenos="4 "></span><span class="k">&gt; </span><span class="ge">(* 2 3 4) ;; * is the operator and 2, 3, 4 are the operands</span>
+<span class="linenos" data-linenos="5 "></span><span class="k">&gt; </span><span class="ge">24</span>
+<span class="linenos" data-linenos="6 "></span><span class="k">&gt; </span><span class="ge">(&gt; 2 3)   ;; &gt; is the operator; this is equivalent to 2 &gt; 3 </span>
+<span class="linenos" data-linenos="7 "></span><span class="k">&gt; </span><span class="ge">f</span>
 </code></pre></div>
-
 <p>This also applied for lists that have other lists in them. Let's have<br />
 a look!</p>
-<div class="codehilite"><pre><span></span><code><span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">&gt;</span><span class="w"> </span><span class="mi">9</span>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>#!scheme
+<span class="linenos" data-linenos="2 "></span>&gt; (+ 2 3 (+ 2 2))
+<span class="linenos" data-linenos="3 "></span>&gt; 9
 </code></pre></div>
-
 <p>Let us trace what happens here.  First the evaluator receives the<br />
-expression <code>(+ 2 4 (+ 2 2))</code> and then it evaluates the internal list<br />
-first. Which is <code>(+ 2 2)</code>. This expression evaluates to <code>4</code>.</p>
+expression <code class="language-text highlight">(+ 2 4 (+ 2 2))</code> and then it evaluates the internal list<br />
+first. Which is <code class="language-text highlight">(+ 2 2)</code>. This expression evaluates to <code class="language-cbmbas highlight"><span class="mf">4</span></code>.</p>
 <p>In the tree form this is how the above expression would look</p>
 <p><img alt="double" src="../assets/images/2017-11-30/double.jpg" /></p>
 <p>Then the evaluator <em>substitutes</em> that result to the actual expression<br />
 before continuing on with the evaluation. So now the expression looks<br />
-like this <code>(+ 2 4 4)</code> and then we get the final answer.</p>
+like this <code class="language-text highlight">(+ 2 4 4)</code> and then we get the final answer.</p>
 <h3 id="Evaluation-Strategies">Evaluation Strategies<a class="headerlink" href="#Evaluation-Strategies" title="Permanent link">&para;</a></h3>
 <p>Lisp uses an <a href="https://en.wikipedia.org/wiki/Evaluation_strategy#Applicative_order">Eager evaluation</a> strategy. This is also known as Strict<br />
 Evaluation or Applicative evaluation. In this strategy all the<br />
 operands are evaluated first before applying them to the function.</p>
 <p>In lisp this is the only structure that we have. So conditional<br />
 branching (if-else, case). The if-construct in LISP looks like this.</p>
-<p><code>(if (expression) (expression1) (expression2))</code></p>
+<p><code class="language-teratermmacro highlight"><span class="ss">(</span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="nv">expression</span><span class="ss">)</span><span class="w"> </span><span class="ss">(</span><span class="nv">expression1</span><span class="ss">)</span><span class="w"> </span><span class="ss">(</span><span class="nv">expression2</span><span class="ss">))</span></code></p>
 <p>Now the <em>if</em> macro is special because it does not follow the normal<br />
 evaluation strategy i.e. all the three expressions <em>expression</em>,<br />
 <em>expression1</em> and <em>expression2</em> are not evaluated before the procedure<br />
@@ -1116,37 +1116,36 @@ is applied. In this macro only the first expression (<em>expression</em>) is<br 
 evaluated first and if it evaluates to be true (<em>#t</em>) then<br />
 <em>expression1</em> will be evaluated. Otherwise <em>expression2</em> will be<br />
 evaluated.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">recursive</span><span class="w"> </span><span class="nv">x</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="w">        </span><span class="mi">0</span>
-<span class="w">        </span><span class="p">(</span><span class="nf">recursive</span><span class="w"> </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span>
-
-<span class="p">(</span><span class="nf">recursive</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<div class="language-teratermmacro highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>#<span class="o">!</span><span class="nv">scheme</span>
+<span class="linenos" data-linenos="2 "></span><span class="ss">(</span><span class="nv">define</span><span class="w"> </span><span class="ss">(</span><span class="nv">recursive</span><span class="w"> </span><span class="nv">x</span><span class="ss">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="ss">(</span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="o">=</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">0</span><span class="ss">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="mi">0</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="ss">(</span><span class="nv">recursive</span><span class="w"> </span><span class="ss">(</span><span class="o">-</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="ss">))))</span>
+<span class="linenos" data-linenos="6 "></span>
+<span class="linenos" data-linenos="7 "></span><span class="ss">(</span><span class="nv">recursive</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="ss">)</span>
 </code></pre></div>
-
 <p>What happens when we evaluate the last expression ? Nothing<br />
-spectacular. We just get the value <code>0</code> which is what it is supposed to<br />
+spectacular. We just get the value <code class="language-cbmbas highlight"><span class="mf">0</span></code> which is what it is supposed to<br />
 do. We get this answer only because LISP uses normal order evaluation<br />
 (lazy evaluation) for the <em>if</em> construct. If like the default strategy<br />
-it used applicative order evaluation then both the <code>0</code> and the <code>(recursive
-(- x 1))</code> would be evaluated before calling the procedure and that<br />
+it used applicative order evaluation then both the <code class="language-cbmbas highlight"><span class="mf">0</span></code> and the <code class="language-text highlight">(recursive(- x 1))</code> would be evaluated before calling the procedure and that<br />
 would lead to an infinite loop. But the if-constructs uses <a href="https://en.wikipedia.org/wiki/Evaluation_strategy#Non-strict_evaluation">Normal order</a> evaluation or non-strict evaluation.</p>
 <p>My next program will illustrate this. For that we will define a<br />
-<code>new-if</code> procedure that will do exactly what <code>if</code> does.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">new-if</span><span class="w"> </span><span class="nv">predicate</span><span class="w"> </span><span class="nv">exp1</span><span class="w"> </span><span class="nv">exp2</span><span class="p">)</span><span class="w"> </span>
-<span class="w">    </span><span class="p">(</span><span class="k">cond</span><span class="w"> </span><span class="p">(</span><span class="nf">predicate</span><span class="w"> </span><span class="nv">exp1</span><span class="p">)</span>
-<span class="w">        </span><span class="p">(</span><span class="k">else</span><span class="w"> </span><span class="nv">exp2</span><span class="p">)))</span>
+<code class="language-teratermmacro highlight"><span class="nv">new</span><span class="o">-</span><span class="k">if</span></code> procedure that will do exactly what <code class="language-teratermmacro highlight"><span class="k">if</span></code> does.</p>
+<div class="language-teratermmacro highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>#<span class="o">!</span><span class="nv">scheme</span>
+<span class="linenos" data-linenos="2 "></span><span class="ss">(</span><span class="nv">define</span><span class="w"> </span><span class="ss">(</span><span class="nv">new</span><span class="o">-</span><span class="k">if</span><span class="w"> </span><span class="nv">predicate</span><span class="w"> </span><span class="nv">exp1</span><span class="w"> </span><span class="nv">exp2</span><span class="ss">)</span><span class="w"> </span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="ss">(</span><span class="nv">cond</span><span class="w"> </span><span class="ss">(</span><span class="nv">predicate</span><span class="w"> </span><span class="nv">exp1</span><span class="ss">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="ss">(</span><span class="k">else</span><span class="w"> </span><span class="nv">exp2</span><span class="ss">)))</span>
 </code></pre></div>
-
 <p>This is the <em>new-if</em> procedure. Let us use this in our previous program.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">recursive-new</span><span class="w"> </span><span class="nv">x</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="nf">new-if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="w">        </span><span class="mi">0</span>
-<span class="w">        </span><span class="p">(</span><span class="nf">recursive-new</span><span class="w"> </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span>
-
-<span class="p">(</span><span class="nf">recursive-new</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<div class="language-teratermmacro highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>#<span class="o">!</span><span class="nv">scheme</span>
+<span class="linenos" data-linenos="2 "></span><span class="ss">(</span><span class="nv">define</span><span class="w"> </span><span class="ss">(</span><span class="nv">recursive</span><span class="o">-</span><span class="nv">new</span><span class="w"> </span><span class="nv">x</span><span class="ss">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="ss">(</span><span class="nv">new</span><span class="o">-</span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="o">=</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">0</span><span class="ss">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="mi">0</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="ss">(</span><span class="nv">recursive</span><span class="o">-</span><span class="nv">new</span><span class="w"> </span><span class="ss">(</span><span class="o">-</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="ss">))))</span>
+<span class="linenos" data-linenos="6 "></span>
+<span class="linenos" data-linenos="7 "></span><span class="ss">(</span><span class="nv">recursive</span><span class="o">-</span><span class="nv">new</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="ss">)</span>
 </code></pre></div>
-
 <p>What happens now ? </p>
 <p><strong>NOW</strong> the thing goes into a spectacular infinite loop. That is<br />
 because the <em>new-if</em> procedure will be evaluated using the applicative<br />
@@ -1220,6 +1219,8 @@ enough to cover the full depth and breadth of LISP</p>
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
         <script src="../overrides/javascripts/mathjax.js"></script>
       

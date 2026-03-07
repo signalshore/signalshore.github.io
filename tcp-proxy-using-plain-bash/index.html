@@ -1004,42 +1004,41 @@ streams from one process to another process. However the syntax of<br />
 using pipes with processess can be a bit difficult and restrictive.</p>
 <p>For example, <br />
 If you want to push the output of process A into process B, you would write it as such</p>
-<div class="codehilite"><pre><span></span><code>!bash
-A | B
+<div class="language-matlab highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="sx">!bash</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">A</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span>
 </code></pre></div>
-
 <p>This is similar to </p>
-<div class="codehilite"><pre><span></span><code>A<span class="w"> </span>&gt;<span class="w"> </span>file<span class="w"> </span>$<span class="w"> </span>B<span class="w"> </span>&lt;<span class="w"> </span>file
+<div class="language-bash highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="ch">#!bash</span>
+<span class="linenos" data-linenos="2 "></span>A<span class="w"> </span>&gt;<span class="w"> </span>file<span class="w"> </span>$<span class="w"> </span>B<span class="w"> </span>&lt;<span class="w"> </span>file
 </code></pre></div>
-
 <p>Named pipes are special files that can be used to pass data between<br />
 two processess. When a process writes to a named pipe the kernel<br />
 processess the data internally and does not write data to the file<br />
 system. Moreover named pipes are blocking, i.e. if there is no reader<br />
 present then you can not write to a named pipe. This feature makes it<br />
 ideal to signal backpressure etc etc.</p>
-<p>You make a named pipe is bash using the <code>mkfifo &lt;filename&gt;</code> command. As you can<br />
+<p>You make a named pipe is bash using the <code class="language-text highlight">mkfifo &lt;filename&gt;</code> command. As you can<br />
 see, a named pipe is nothing but a first-in-first-out stream (with<br />
 some added bells and whistles).</p>
 <p>In a cool hack you can make a TCP proxy using netcat and named pipes</p>
-<div class="codehilite"><pre><span></span><code>nc<span class="w"> </span>-lp<span class="w"> </span><span class="m">6000</span><span class="w"> </span>&lt;primary<span class="w"> </span><span class="p">|</span><span class="w"> </span>nc<span class="w"> </span>localhost<span class="w"> </span><span class="m">5000</span><span class="w"> </span>&gt;primary
+<div class="language-bash highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="ch">#!bash</span>
+<span class="linenos" data-linenos="2 "></span>nc<span class="w"> </span>-lp<span class="w"> </span><span class="m">6000</span><span class="w"> </span>&lt;primary<span class="w"> </span><span class="p">|</span><span class="w"> </span>nc<span class="w"> </span>localhost<span class="w"> </span><span class="m">5000</span><span class="w"> </span>&gt;primary
 </code></pre></div>
-
-<p>This uses the named pipe <code>primary</code> as a bidirectional pipe.</p>
+<p>This uses the named pipe <code class="language-text highlight">primary</code> as a bidirectional pipe.</p>
 <p>Let us see what is going on here.</p>
 <ul>
-<li><code>nc -lp 6000 &lt;primary</code> tells netcat to listen on locahost:6000 and accept inputs from the primary fifo.</li>
+<li><code class="language-text highlight">nc -lp 6000 &lt;primary</code> tells netcat to listen on locahost:6000 and accept inputs from the primary fifo.</li>
 <li>Then we push the output (which in this case is the response to the input that is being piped from the fifo) to the next netcat instance.</li>
-<li><code>nc localhost 5000 &gt;primary</code> this tells netcat to connect to a server running at port 5000 and send the output to the primary fifo.</li>
+<li><code class="language-text highlight">nc localhost 5000 &gt;primary</code> this tells netcat to connect to a server running at port 5000 and send the output to the primary fifo.</li>
 </ul>
 <h2 id="Whats-more-">Whats more ?<a class="headerlink" href="#Whats-more-" title="Permanent link">&para;</a></h2>
-<p>You can even copy the entire TCP stream using this little tool called <code>tee</code>.</p>
-<div class="codehilite"><pre><span></span><code>nc<span class="w"> </span>-lvp<span class="w"> </span><span class="m">6000</span><span class="w"> </span>&lt;primary<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>mirror<span class="w"> </span><span class="p">|</span><span class="w"> </span>nc<span class="w"> </span>localhost<span class="w"> </span><span class="m">5000</span><span class="w"> </span>&gt;primary
+<p>You can even copy the entire TCP stream using this little tool called <code class="language-text highlight">tee</code>.</p>
+<div class="language-bash highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="ch">#!bash</span>
+<span class="linenos" data-linenos="2 "></span>nc<span class="w"> </span>-lvp<span class="w"> </span><span class="m">6000</span><span class="w"> </span>&lt;primary<span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>mirror<span class="w"> </span><span class="p">|</span><span class="w"> </span>nc<span class="w"> </span>localhost<span class="w"> </span><span class="m">5000</span><span class="w"> </span>&gt;primary
 </code></pre></div>
-
-<p>In this case you have to read from the <code>mirror</code> fifo and you should be<br />
+<p>In this case you have to read from the <code class="language-text highlight">mirror</code> fifo and you should be<br />
 able to see all the traffic flowing through your proxy. Change the<br />
-fifo <code>mirror</code> to a real file and you will have a copy of the traffic.</p>
+fifo <code class="language-text highlight">mirror</code> to a real file and you will have a copy of the traffic.</p>
 
 
 
@@ -1102,6 +1101,8 @@ fifo <code>mirror</code> to a real file and you will have a copy of the traffic.
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
         <script src="../overrides/javascripts/mathjax.js"></script>
       

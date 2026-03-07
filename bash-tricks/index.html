@@ -1011,16 +1011,16 @@
 
 <h1 id="Bash-Tricks">Bash Tricks<a class="headerlink" href="#Bash-Tricks" title="Permanent link">&para;</a></h1>
 <p>Here is a bunch of neat little tricks that you can do with bash</p>
-<h2 id="Display-message-if-VAR-is-not-defined">Display <code>message</code> if $VAR is not defined<a class="headerlink" href="#Display-message-if-VAR-is-not-defined" title="Permanent link">&para;</a></h2>
-<p>While referring to variables in bash you can use the notation <code>${VAR:?message}</code><br />
-This will makes sure that if $VAR is not defined then the <code>message</code> thing will be used/displayed.</p>
+<h2 id="Display-message-if-VAR-is-not-defined">Display <code class="language-text highlight">message</code> if $VAR is not defined<a class="headerlink" href="#Display-message-if-VAR-is-not-defined" title="Permanent link">&para;</a></h2>
+<p>While referring to variables in bash you can use the notation <code class="language-genshi highlight"><span class="cp">${</span><span class="n">VAR</span><span class="p">:</span><span class="err">?</span><span class="n">message</span><span class="cp">}</span></code><br />
+This will makes sure that if $VAR is not defined then the <code class="language-text highlight">message</code> thing will be used/displayed.</p>
 <p>Here is a small example illustrating this feature.</p>
-<div class="highlight"><pre><span></span><code>~<span class="w"> </span>❯❯❯<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TEST_VAR</span><span class="p">?not defined; please check and try again</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">                                                                                                                       </span>
-zsh:<span class="w"> </span>TEST_VAR:<span class="w"> </span>not<span class="w"> </span>defined<span class="p">;</span><span class="w"> </span>please<span class="w"> </span>check<span class="w"> </span>and<span class="w"> </span>try<span class="w"> </span>again
-~<span class="w"> </span>❯❯❯<span class="w"> </span><span class="nv">TEST_VAR</span><span class="o">=</span><span class="s2">&quot;Hello my friend&quot;</span><span class="w">                                                                                                                                                       </span>
-~<span class="w"> </span>❯❯❯<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TEST_VAR</span><span class="p">?not defined; please check and try again</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">                                                                                                                       </span>
-Hello<span class="w"> </span>my<span class="w"> </span>friend
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="True-0-1"><span class="linenos" data-linenos="1 "></span>~<span class="w"> </span>❯❯❯<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TEST_VAR</span><span class="p">?not defined; please check and try again</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">                                                                                                                       </span>
+</span><span id="True-0-2"><span class="linenos" data-linenos="2 "></span>zsh:<span class="w"> </span>TEST_VAR:<span class="w"> </span>not<span class="w"> </span>defined<span class="p">;</span><span class="w"> </span>please<span class="w"> </span>check<span class="w"> </span>and<span class="w"> </span>try<span class="w"> </span>again
+</span><span id="True-0-3"><span class="linenos" data-linenos="3 "></span>~<span class="w"> </span>❯❯❯<span class="w"> </span><span class="nv">TEST_VAR</span><span class="o">=</span><span class="s2">&quot;Hello my friend&quot;</span><span class="w">                                                                                                                                                       </span>
+</span><span id="True-0-4"><span class="linenos" data-linenos="4 "></span>~<span class="w"> </span>❯❯❯<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TEST_VAR</span><span class="p">?not defined; please check and try again</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">                                                                                                                       </span>
+</span><span id="True-0-5"><span class="linenos" data-linenos="5 "></span>Hello<span class="w"> </span>my<span class="w"> </span>friend
+</span></code></pre></div>
 
 
 
@@ -1083,6 +1083,8 @@ Hello<span class="w"> </span>my<span class="w"> </span>friend
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
         <script src="../overrides/javascripts/mathjax.js"></script>
       

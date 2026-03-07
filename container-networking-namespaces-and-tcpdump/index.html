@@ -988,14 +988,14 @@ networking even work ?</p>
 <p>In this we will explore some bits of container networking and figure<br />
 out how to run tcpdump in such a way that only the traffic from a<br />
 container is captured.</p>
-<p>Normally running <code>tcpdump</code> on the eth0 interface on a instance is good<br />
+<p>Normally running <code class="language-text highlight">tcpdump</code> on the eth0 interface on a instance is good<br />
 enough, but what do you do when your container host is running<br />
 multiple containers and you do not need to see all of their traffic ?</p>
 <p>As usual this was a debugging scenario on prod. </p>
 <h1 id="The-Problem">The Problem<a class="headerlink" href="#The-Problem" title="Permanent link">&para;</a></h1>
 <p>There was a nasty connection timeout issue when I was involved in the<br />
 debugging discussion. My initial reaction was to break out tcpdump<br />
-and let it capture on the primary <code>eth0</code> interface.</p>
+and let it capture on the primary <code class="language-text highlight">eth0</code> interface.</p>
 <p>As I would soon discover, the volume of data flowing through that<br />
 instance was very high and capturing on the interface is not<br />
 feasible. If you are capturing upwards of 100MB + files every second,<br />
@@ -1008,7 +1008,7 @@ container.</p>
 to isolate process running on a host. For networking, every container<br />
 runs in its own separate networking namespace so that it is isolated<br />
 from other processes and connection between these different namespaces<br />
-is established by using Virtual Ethernet devices called <code>veth</code>.</p>
+is established by using Virtual Ethernet devices called <code class="language-text highlight">veth</code>.</p>
 <p>From the man page of <a href="https://man7.org/linux/man-pages/man4/veth.4.html">veth</a>.</p>
 <blockquote>
 <p>The veth devices are virtual Ethernet devices.  They can act as<br />
@@ -1023,22 +1023,22 @@ computer.</p>
 <p>So now, we can have to look at the scenario from two different<br />
 perspectives, from the host's perspective and from the containers<br />
 perspective.</p>
-<p>I am running a simple <code>sh</code> shell in alpine.</p>
-<div class="codehilite"><pre><span></span><code># docker run -it alpine:latest /bin/sh
-# echo &quot;Hello :-) &quot;
-# Hello :-) 
-#
+<p>I am running a simple <code class="language-text highlight">sh</code> shell in alpine.</p>
+<div class="language-cplint highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="o">:::</span><span class="s s-Atom">hell</span>
+<span class="linenos" data-linenos="2 "></span><span class="s s-Atom">#</span> <span class="s s-Atom">docker</span> <span class="s s-Atom">run</span> <span class="o">-</span><span class="s s-Atom">it</span> <span class="s s-Atom">alpine</span><span class="p">:</span><span class="s s-Atom">latest</span> <span class="o">/</span><span class="s s-Atom">bin</span><span class="o">/</span><span class="s s-Atom">sh</span>
+<span class="linenos" data-linenos="3 "></span><span class="s s-Atom">#</span> <span class="s s-Atom">echo</span> <span class="s2">&quot;Hello :-) &quot;</span>
+<span class="linenos" data-linenos="4 "></span><span class="s s-Atom">#</span> <span class="nv">Hello</span> <span class="o">:-</span><span class="p">)</span> 
+<span class="linenos" data-linenos="5 "></span><span class="s s-Atom">#</span>
 </code></pre></div>
-
-<p>Now, I am run <code>ip link</code> which will describe the network interfaces.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ip link</span>
-<span class="m">1</span>:<span class="w"> </span>lo:<span class="w"> </span>&lt;LOOPBACK,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">65536</span><span class="w"> </span>qdisc<span class="w"> </span>noqueue<span class="w"> </span>state<span class="w"> </span>UNKNOWN<span class="w"> </span>qlen<span class="w"> </span><span class="m">1000</span>
-<span class="w">    </span>link/loopback<span class="w"> </span><span class="m">00</span>:00:00:00:00:00<span class="w"> </span>brd<span class="w"> </span><span class="m">00</span>:00:00:00:00:00
-<span class="m">17</span>:<span class="w"> </span>eth0@if18:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span>qdisc<span class="w"> </span>noqueue<span class="w"> </span>state<span class="w"> </span>UP<span class="w"> </span>
-<span class="w">    </span>link/ether<span class="w"> </span><span class="m">02</span>:42:ac:1e:01:00<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
+<p>Now, I am run <code class="language-text highlight">ip link</code> which will describe the network interfaces.</p>
+<div class="language-nemerle highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">:::</span><span class="n">shell</span>
+<span class="linenos" data-linenos="2 "></span><span class="err">#</span><span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="n">link</span>
+<span class="linenos" data-linenos="3 "></span><span class="m">1</span><span class="p">:</span><span class="w"> </span><span class="n">lo</span><span class="p">:</span><span class="w"> </span><span class="p">&lt;</span><span class="n">LOOPBACK</span><span class="p">,</span><span class="n">UP</span><span class="p">,</span><span class="n">LOWER_UP</span><span class="p">&gt;</span><span class="w"> </span><span class="n">mtu</span><span class="w"> </span><span class="m">65536</span><span class="w"> </span><span class="n">qdisc</span><span class="w"> </span><span class="n">noqueue</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="n">UNKNOWN</span><span class="w"> </span><span class="n">qlen</span><span class="w"> </span><span class="m">1000</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">link</span><span class="p">/</span><span class="n">loopback</span><span class="w"> </span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="w"> </span><span class="n">brd</span><span class="w"> </span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span>
+<span class="linenos" data-linenos="5 "></span><span class="m">17</span><span class="p">:</span><span class="w"> </span><span class="n">eth0@if18</span><span class="p">:</span><span class="w"> </span><span class="p">&lt;</span><span class="n">BROADCAST</span><span class="p">,</span><span class="n">MULTICAST</span><span class="p">,</span><span class="n">UP</span><span class="p">,</span><span class="n">LOWER_UP</span><span class="p">,</span><span class="n">M</span><span class="p">-</span><span class="n">DOWN</span><span class="p">&gt;</span><span class="w"> </span><span class="n">mtu</span><span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="n">qdisc</span><span class="w"> </span><span class="n">noqueue</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="n">UP</span><span class="w"> </span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="n">link</span><span class="p">/</span><span class="n">ether</span><span class="w"> </span><span class="m">02</span><span class="p">:</span><span class="m">42</span><span class="p">:</span><span class="n">ac</span><span class="p">:</span><span class="m">1</span><span class="n">e</span><span class="p">:</span><span class="m">01</span><span class="p">:</span><span class="m">00</span><span class="w"> </span><span class="n">brd</span><span class="w"> </span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span>
 </code></pre></div>
-
-<p>Here, we that <code>eth0@if18</code> has an <code>@ifXX</code> in it which makes things very<br />
+<p>Here, we that <code class="language-nemerle highlight"><span class="n">eth0@if18</span></code> has an <code class="language-nemerle highlight"><span class="n">@ifXX</span></code> in it which makes things very<br />
 interesting. This signifies two things. The '@' shows us that this<br />
 interface is linked to another interface and the '<em>ifXX</em>' tells us<br />
 that the interface it is linked to is not in the same network<br />
@@ -1046,51 +1046,51 @@ namespace.</p>
 <p>Every interface is supposed to be connected on both ends and every<br />
 interface has an interface index. This is the value that we see on the<br />
 above output as 1 and 17. This can be found out by reading the value<br />
-at <code>/sys/class/net/&lt;interface&gt;/ifindex</code></p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># cat /sys/class/net/eth0/ifindex </span>
-<span class="m">17</span>
+at <code class="language-text highlight">/sys/class/net/&lt;interface&gt;/ifindex</code></p>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>:::shell
+<span class="linenos" data-linenos="2 "></span># cat /sys/class/net/eth0/ifindex 
+<span class="linenos" data-linenos="3 "></span>17
 </code></pre></div>
-
-<p>We can read the value of the linked interface from <code>/sys/class/&lt;interface&gt;</code></p>
+<p>We can read the value of the linked interface from <code class="language-text highlight">/sys/class/&lt;interface&gt;</code></p>
 <p>The one it is connected to is called the<br />
 peer link and we can look at its index in<br />
-<code>/sys/class/net/&lt;interface&gt;/iflink</code></p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># cat /sys/class/net/eth0/iflink</span>
-<span class="m">18</span>
+<code class="language-text highlight">/sys/class/net/&lt;interface&gt;/iflink</code></p>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>:::shell
+<span class="linenos" data-linenos="2 "></span># cat /sys/class/net/eth0/iflink
+<span class="linenos" data-linenos="3 "></span>18
 </code></pre></div>
-
 <p>But, that is surprising because my container does not have any<br />
 interface with <em>ifindex</em>=18. That is not a mistake. This shows that<br />
 the interface 17 on the container is linked to interface 18 on my<br />
 <em>host</em>.</p>
-<p>This is what <code>ip link</code> shows on my host.</p>
-<div class="codehilite"><pre><span></span><code><span class="m">1</span>:<span class="w"> </span>lo:<span class="w"> </span>&lt;LOOPBACK,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">65536</span><span class="w"> </span>qdisc<span class="w"> </span>noqueue<span class="w"> </span>state<span class="w"> </span><span class="o">[[</span>EXTRA<span class="w"> </span>DETAILS<span class="w"> </span>TRUNCATED<span class="o">]]</span>
-<span class="w">    </span>link/loopback<span class="w"> </span><span class="m">00</span>:00:00:00:00:00<span class="w"> </span>brd<span class="w"> </span><span class="m">00</span>:00:00:00:00:00
-<span class="m">2</span>:<span class="w"> </span>enp0s31f6:<span class="w"> </span>&lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="o">[[</span>EXTRA<span class="w"> </span>DETAILS<span class="w"> </span>TRUNCATED<span class="o">]]</span>
-<span class="w">    </span>link/ether<span class="w"> </span>e8:6a:64:c1:0d:3f<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
-<span class="m">3</span>:<span class="w"> </span>wlp6s0:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="o">[[</span>EXTRA<span class="w"> </span>DETAILS<span class="w"> </span>TRUNCATED<span class="o">]]</span>
-<span class="w">    </span>link/ether<span class="w"> </span><span class="m">98</span>:2c:bc:4d:d9:b0<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
-<span class="m">4</span>:<span class="w"> </span>docker0:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="o">[[</span>EXTRA<span class="w"> </span>DETAILS<span class="w"> </span>TRUNCATED<span class="o">]]</span>
-<span class="w">    </span>link/ether<span class="w"> </span><span class="m">02</span>:42:27:9a:cf:32<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
-<span class="m">18</span>:<span class="w"> </span>veth01f0f9d@if17:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="o">[[</span>EXTRA<span class="w"> </span>DETAILS<span class="w"> </span>TRUNCATED<span class="o">]]</span>
-<span class="w">    </span>link/ether<span class="w"> </span>f6:7c:d7:20:73:f4<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff<span class="w"> </span>link-netnsid<span class="w"> </span><span class="m">0</span>
+<p>This is what <code class="language-text highlight">ip link</code> shows on my host.</p>
+<div class="language-nemerle highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">:::</span><span class="n">shell</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="m">1</span><span class="p">:</span><span class="w"> </span><span class="n">lo</span><span class="p">:</span><span class="w"> </span><span class="p">&lt;</span><span class="n">LOOPBACK</span><span class="p">,</span><span class="n">UP</span><span class="p">,</span><span class="n">LOWER_UP</span><span class="p">&gt;</span><span class="w"> </span><span class="n">mtu</span><span class="w"> </span><span class="m">65536</span><span class="w"> </span><span class="n">qdisc</span><span class="w"> </span><span class="n">noqueue</span><span class="w"> </span><span class="n">state</span><span class="w"> </span><span class="p">[[</span><span class="n">EXTRA</span><span class="w"> </span><span class="n">DETAILS</span><span class="w"> </span><span class="n">TRUNCATED</span><span class="p">]]</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">link</span><span class="p">/</span><span class="n">loopback</span><span class="w"> </span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="w"> </span><span class="n">brd</span><span class="w"> </span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span><span class="p">:</span><span class="m">00</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="m">2</span><span class="p">:</span><span class="w"> </span><span class="n">enp0s31f6</span><span class="p">:</span><span class="w"> </span><span class="p">&lt;</span><span class="n">NO</span><span class="p">-</span><span class="n">CARRIER</span><span class="p">,</span><span class="n">BROADCAST</span><span class="p">,</span><span class="n">MULTICAST</span><span class="p">,</span><span class="n">UP</span><span class="p">&gt;</span><span class="w"> </span><span class="n">mtu</span><span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="p">[[</span><span class="n">EXTRA</span><span class="w"> </span><span class="n">DETAILS</span><span class="w"> </span><span class="n">TRUNCATED</span><span class="p">]]</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">link</span><span class="p">/</span><span class="n">ether</span><span class="w"> </span><span class="n">e8</span><span class="p">:</span><span class="m">6</span><span class="n">a</span><span class="p">:</span><span class="m">64</span><span class="p">:</span><span class="n">c1</span><span class="p">:</span><span class="m">0d</span><span class="p">:</span><span class="m">3f</span><span class="w"> </span><span class="n">brd</span><span class="w"> </span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="m">3</span><span class="p">:</span><span class="w"> </span><span class="n">wlp6s0</span><span class="p">:</span><span class="w"> </span><span class="p">&lt;</span><span class="n">BROADCAST</span><span class="p">,</span><span class="n">MULTICAST</span><span class="p">,</span><span class="n">UP</span><span class="p">,</span><span class="n">LOWER_UP</span><span class="p">&gt;</span><span class="w"> </span><span class="n">mtu</span><span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="p">[[</span><span class="n">EXTRA</span><span class="w"> </span><span class="n">DETAILS</span><span class="w"> </span><span class="n">TRUNCATED</span><span class="p">]]</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">link</span><span class="p">/</span><span class="n">ether</span><span class="w"> </span><span class="m">98</span><span class="p">:</span><span class="m">2</span><span class="n">c</span><span class="p">:</span><span class="n">bc</span><span class="p">:</span><span class="m">4d</span><span class="p">:</span><span class="n">d9</span><span class="p">:</span><span class="n">b0</span><span class="w"> </span><span class="n">brd</span><span class="w"> </span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="m">4</span><span class="p">:</span><span class="w"> </span><span class="n">docker0</span><span class="p">:</span><span class="w"> </span><span class="p">&lt;</span><span class="n">BROADCAST</span><span class="p">,</span><span class="n">MULTICAST</span><span class="p">,</span><span class="n">UP</span><span class="p">,</span><span class="n">LOWER_UP</span><span class="p">&gt;</span><span class="w"> </span><span class="n">mtu</span><span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="p">[[</span><span class="n">EXTRA</span><span class="w"> </span><span class="n">DETAILS</span><span class="w"> </span><span class="n">TRUNCATED</span><span class="p">]]</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="n">link</span><span class="p">/</span><span class="n">ether</span><span class="w"> </span><span class="m">02</span><span class="p">:</span><span class="m">42</span><span class="p">:</span><span class="m">27</span><span class="p">:</span><span class="m">9</span><span class="n">a</span><span class="p">:</span><span class="n">cf</span><span class="p">:</span><span class="m">32</span><span class="w"> </span><span class="n">brd</span><span class="w"> </span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span>
+<span class="linenos" data-linenos="10 "></span><span class="m">18</span><span class="p">:</span><span class="w"> </span><span class="n">veth01f0f9d@if17</span><span class="p">:</span><span class="w"> </span><span class="p">&lt;</span><span class="n">BROADCAST</span><span class="p">,</span><span class="n">MULTICAST</span><span class="p">,</span><span class="n">UP</span><span class="p">,</span><span class="n">LOWER_UP</span><span class="p">&gt;</span><span class="w"> </span><span class="n">mtu</span><span class="w"> </span><span class="m">1500</span><span class="w"> </span><span class="p">[[</span><span class="n">EXTRA</span><span class="w"> </span><span class="n">DETAILS</span><span class="w"> </span><span class="n">TRUNCATED</span><span class="p">]]</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="n">link</span><span class="p">/</span><span class="n">ether</span><span class="w"> </span><span class="n">f6</span><span class="p">:</span><span class="m">7</span><span class="n">c</span><span class="p">:</span><span class="n">d7</span><span class="p">:</span><span class="m">20</span><span class="p">:</span><span class="m">73</span><span class="p">:</span><span class="n">f4</span><span class="w"> </span><span class="n">brd</span><span class="w"> </span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="p">:</span><span class="n">ff</span><span class="w"> </span><span class="n">link</span><span class="p">-</span><span class="n">netnsid</span><span class="w"> </span><span class="m">0</span>
 </code></pre></div>
-
 <p><strong>NOTE</strong> Notice how interface <em>18</em> is linked to interface <em>17</em> on another namespace. This will be important.</p>
 <h3 id="Why-dont-we-have-a-iflink-for-some-interfaces-">Why don't we have a iflink for some interfaces.... ?<a class="headerlink" href="#Why-dont-we-have-a-iflink-for-some-interfaces-" title="Permanent link">&para;</a></h3>
 <p>Interfaces that represent physical devices (eth0, wlan0) are linked to themselves and hence the '@' is not used.</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># cat /sys/class/net/wlp6s0/ifindex</span>
-<span class="m">3</span>
-<span class="c1"># cat /sys/class/net/wlp6s0/iflink</span>
-<span class="m">3</span>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>:::shell
+<span class="linenos" data-linenos="2 "></span># cat /sys/class/net/wlp6s0/ifindex
+<span class="linenos" data-linenos="3 "></span>3
+<span class="linenos" data-linenos="4 "></span># cat /sys/class/net/wlp6s0/iflink
+<span class="linenos" data-linenos="5 "></span>3
 </code></pre></div>
-
 <h2 id="How-is-this-related-to-tcpdump-">How is this related to tcpdump ?<a class="headerlink" href="#How-is-this-related-to-tcpdump-" title="Permanent link">&para;</a></h2>
 <p>Well, we have figured out that all traffic from the container is<br />
 flowing through the host machine via a linked network interface, so<br />
 in order to sniff packets only from that container, we can tell tcpdump<br />
 to point to that interface only.</p>
-<p><code>tcpdump -i &lt;interface&gt; -w output.pcap</code></p>
+<p><code class="language-text highlight">tcpdump -i &lt;interface&gt; -w output.pcap</code></p>
 <p>and  Voila!!! Now  we can  sit  and sniff  packet only  from a  docker<br />
 container.</p>
 <p>Not only does this vastly reduce the size of the capture files, it<br />
@@ -1158,6 +1158,8 @@ also reduces complexity during the analysis phase.</p>
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
         <script src="../overrides/javascripts/mathjax.js"></script>
       

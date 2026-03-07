@@ -994,8 +994,8 @@ and How function calls work.</p>
 process is given some amount of memory for them to use. This chunk of<br />
 memory is called the process' stack.</p>
 <p>The Stack is a Last In First Out data structure. In x86 the stack grows<br />
-downwards. Which means that the <code>bottom</code> of the stack has the highest<br />
-memory address and the <code>top</code> of the stack has the lowest memory<br />
+downwards. Which means that the <code class="language-text highlight">bottom</code> of the stack has the highest<br />
+memory address and the <code class="language-text highlight">top</code> of the stack has the lowest memory<br />
 address. We will not get into the reasons for such a design, but there<br />
 are other systems where the stack does not work this way.</p>
 <p>The main function of the stack is to keep track of execution<br />
@@ -1022,61 +1022,61 @@ the stack frame for that function as well as tearing down the stack<br />
 frame when the control-flow needs to return to the caller function.</p>
 <h1 id="Let-us-read-some-Assembly">Let us read some Assembly!!<a class="headerlink" href="#Let-us-read-some-Assembly" title="Permanent link">&para;</a></h1>
 <p>Let us use an example program to understand this.</p>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="language-teratermmacro highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>:::<span class="nv">c</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nv">int</span><span class="w"> </span><span class="nv">foo</span><span class="ss">(</span><span class="nv">int</span><span class="w"> </span><span class="nv">a</span><span class="ss">)</span>
+<span class="linenos" data-linenos=" 3 "></span>{
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="nv">int</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="c1">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="nv">int</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="c1">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">x</span><span class="c1">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">x</span><span class="c1">;</span>
+<span class="linenos" data-linenos=" 8 "></span>}
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="nv">int</span><span class="w"> </span><span class="nv">main</span><span class="ss">()</span>
+<span class="linenos" data-linenos="11 "></span>{
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="nv">int</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="c1">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="nv">int</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="c1">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="nv">foo</span><span class="ss">(</span><span class="nv">a</span><span class="ss">)</span><span class="c1">;</span>
+<span class="linenos" data-linenos="15 "></span>}
 </code></pre></div>
-
 <p>Compile this using gcc to a 32 bit target. </p>
-<div class="codehilite"><pre><span></span><code>gcc<span class="w"> </span>-m32<span class="w"> </span>func_call.c
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>:::bash
+<span class="linenos" data-linenos="2 "></span>gcc -m32 func_call.c
 </code></pre></div>
-
-<p>Now, generate the assembly output using <code>objdump</code>. (you can use gdb for this too, or any other too you like)</p>
-<div class="codehilite"><pre><span></span><code>objdump<span class="w"> </span>-d<span class="w"> </span>-M<span class="w"> </span>intel<span class="w"> </span>a.out
+<p>Now, generate the assembly output using <code class="language-text highlight">objdump</code>. (you can use gdb for this too, or any other too you like)</p>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>:::bash
+<span class="linenos" data-linenos="2 "></span>objdump -d -M intel a.out
 </code></pre></div>
-
-<p>The only sections that we will focus on are the <code>main</code> and the <code>foo</code> sections.</p>
-<div class="codehilite"><pre><span></span><code><span class="mh">000004ed</span><span class="w"> </span><span class="p">&lt;</span><span class="nf">foo</span><span class="p">&gt;:</span>
-<span class="x">    4ed:    55                      push   ebp</span>
-<span class="x">    4ee:    89 e5                   mov    ebp,esp</span>
-<span class="x">    4f0:    83 ec 10                sub    esp,0x10</span>
-<span class="x">    4f3:    e8 4e 00 00 00          call   546 &lt;__x86.get_pc_thunk.ax&gt;</span>
-<span class="x">    4f8:    05 e4 1a 00 00          add    eax,0x1ae4</span>
-<span class="x">    4fd:    c7 45 f8 02 00 00 00    mov    DWORD PTR [ebp-0x8],0x2</span>
-<span class="x">    504:    c7 45 fc 03 00 00 00    mov    DWORD PTR [ebp-0x4],0x3</span>
-<span class="x">    50b:    8b 45 08                mov    eax,DWORD PTR [ebp+0x8]</span>
-<span class="x">    50e:    01 45 f8                add    DWORD PTR [ebp-0x8],eax</span>
-<span class="x">    511:    8b 45 f8                mov    eax,DWORD PTR [ebp-0x8]</span>
-<span class="x">    514:    c9                      leave  </span>
-<span class="x">    515:    c3                      ret</span>
-
-<span class="mh">00000516</span><span class="w"> </span><span class="p">&lt;</span><span class="nf">main</span><span class="p">&gt;:</span>
-<span class="x">    516:    55                      push   ebp</span>
-<span class="x">    517:    89 e5                   mov    ebp,esp</span>
-<span class="x">    519:    83 ec 10                sub    esp,0x10</span>
-<span class="x">    51c:    e8 25 00 00 00          call   546 &lt;__x86.get_pc_thunk.ax&gt;</span>
-<span class="x">    521:    05 bb 1a 00 00          add    eax,0x1abb</span>
-<span class="x">    526:    c7 45 f8 02 00 00 00    mov    DWORD PTR [ebp-0x8],0x2</span>
-<span class="x">    52d:    c7 45 fc 01 00 00 00    mov    DWORD PTR [ebp-0x4],0x1</span>
-<span class="x">    534:    ff 75 f8                push   DWORD PTR [ebp-0x8]</span>
-<span class="x">    537:    e8 b1 ff ff ff          call   4ed &lt;foo&gt;</span>
-<span class="x">    53c:    83 c4 04                add    esp,0x4</span>
-<span class="x">    53f:    b8 00 00 00 00          mov    eax,0x0</span>
-<span class="x">    544:    c9                      leave  </span>
-<span class="x">    545:    c3                      ret</span>
+<p>The only sections that we will focus on are the <code class="language-text highlight">main</code> and the <code class="language-text highlight">foo</code> sections.</p>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>:::objdump-nasm
+<span class="linenos" data-linenos=" 2 "></span>000004ed &lt;foo&gt;:
+<span class="linenos" data-linenos=" 3 "></span>    4ed:    55                      push   ebp
+<span class="linenos" data-linenos=" 4 "></span>    4ee:    89 e5                   mov    ebp,esp
+<span class="linenos" data-linenos=" 5 "></span>    4f0:    83 ec 10                sub    esp,0x10
+<span class="linenos" data-linenos=" 6 "></span>    4f3:    e8 4e 00 00 00          call   546 &lt;__x86.get_pc_thunk.ax&gt;
+<span class="linenos" data-linenos=" 7 "></span>    4f8:    05 e4 1a 00 00          add    eax,0x1ae4
+<span class="linenos" data-linenos=" 8 "></span>    4fd:    c7 45 f8 02 00 00 00    mov    DWORD PTR [ebp-0x8],0x2
+<span class="linenos" data-linenos=" 9 "></span>    504:    c7 45 fc 03 00 00 00    mov    DWORD PTR [ebp-0x4],0x3
+<span class="linenos" data-linenos="10 "></span>    50b:    8b 45 08                mov    eax,DWORD PTR [ebp+0x8]
+<span class="linenos" data-linenos="11 "></span>    50e:    01 45 f8                add    DWORD PTR [ebp-0x8],eax
+<span class="linenos" data-linenos="12 "></span>    511:    8b 45 f8                mov    eax,DWORD PTR [ebp-0x8]
+<span class="linenos" data-linenos="13 "></span>    514:    c9                      leave  
+<span class="linenos" data-linenos="14 "></span>    515:    c3                      ret
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span>00000516 &lt;main&gt;:
+<span class="linenos" data-linenos="17 "></span>    516:    55                      push   ebp
+<span class="linenos" data-linenos="18 "></span>    517:    89 e5                   mov    ebp,esp
+<span class="linenos" data-linenos="19 "></span>    519:    83 ec 10                sub    esp,0x10
+<span class="linenos" data-linenos="20 "></span>    51c:    e8 25 00 00 00          call   546 &lt;__x86.get_pc_thunk.ax&gt;
+<span class="linenos" data-linenos="21 "></span>    521:    05 bb 1a 00 00          add    eax,0x1abb
+<span class="linenos" data-linenos="22 "></span>    526:    c7 45 f8 02 00 00 00    mov    DWORD PTR [ebp-0x8],0x2
+<span class="linenos" data-linenos="23 "></span>    52d:    c7 45 fc 01 00 00 00    mov    DWORD PTR [ebp-0x4],0x1
+<span class="linenos" data-linenos="24 "></span>    534:    ff 75 f8                push   DWORD PTR [ebp-0x8]
+<span class="linenos" data-linenos="25 "></span>    537:    e8 b1 ff ff ff          call   4ed &lt;foo&gt;
+<span class="linenos" data-linenos="26 "></span>    53c:    83 c4 04                add    esp,0x4
+<span class="linenos" data-linenos="27 "></span>    53f:    b8 00 00 00 00          mov    eax,0x0
+<span class="linenos" data-linenos="28 "></span>    544:    c9                      leave  
+<span class="linenos" data-linenos="29 "></span>    545:    c3                      ret
 </code></pre></div>
-
 <h6 id="Note-This-is-assembly-in-Intel-syntax-Which-follows-the-oeprand-destination-source-format">Note: This is assembly in Intel syntax. Which follows the [oeprand destination, source] format.<a class="headerlink" href="#Note-This-is-assembly-in-Intel-syntax-Which-follows-the-oeprand-destination-source-format" title="Permanent link">&para;</a></h6>
 <p><br></p>
 <hr>
@@ -1084,60 +1084,60 @@ frame when the control-flow needs to return to the caller function.</p>
 <p>We will walk through the calling  code, the entry sequence and the sequence to get a better understanding.</p>
 </blockquote>
 <h3 id="The-Function-Call-sequence">The Function-Call sequence<a class="headerlink" href="#The-Function-Call-sequence" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nf">push</span><span class="w">   </span><span class="kt">DWORD</span><span class="w"> </span><span class="nv">PTR</span><span class="w"> </span><span class="p">[</span><span class="nb">ebp</span><span class="o">-</span><span class="mh">0x8</span><span class="p">]</span>
-<span class="nf">call</span><span class="w">   </span><span class="mi">4</span><span class="nv">ed</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">foo</span><span class="o">&gt;</span>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>:::nasm
+<span class="linenos" data-linenos="2 "></span>push   DWORD PTR [ebp-0x8]
+<span class="linenos" data-linenos="3 "></span>call   4ed &lt;foo&gt;
 </code></pre></div>
-
 <p>In this segment we are leading the value stored in the memory<br />
-location <code>ebp-0x8</code> into the stack and then we <code>call</code> the foo<br />
+location <code class="language-text highlight">ebp-0x8</code> into the stack and then we <code class="language-text highlight">call</code> the foo<br />
 subroutine. parameters are passed using the stack (pushed onto the<br />
-stack) and the results are returned by using the <code>eax</code> register.</p>
-<p>The <code>call</code> instruction also pushes the return address onto the<br />
+stack) and the results are returned by using the <code class="language-text highlight">eax</code> register.</p>
+<p>The <code class="language-text highlight">call</code> instruction also pushes the return address onto the<br />
 stack. This is done so that the control-flow can return to where it<br />
-branched from. It is generally <code>ip+0x2</code></p>
+branched from. It is generally <code class="language-text highlight">ip+0x2</code></p>
 <p>Read more about this in the <a href="https://en.wikipedia.org/wiki/X86_calling_conventions">x86 calling conventions</a></p>
-<h6 id="NOTE-To-understand-this-we-will-ignore-the-DWORD-PTR-It-is-not-too-imp-for-our-goals">NOTE: To understand this, we will ignore the <code>DWORD PTR</code>. It is not too imp for our goals.<a class="headerlink" href="#NOTE-To-understand-this-we-will-ignore-the-DWORD-PTR-It-is-not-too-imp-for-our-goals" title="Permanent link">&para;</a></h6>
+<h6 id="NOTE-To-understand-this-we-will-ignore-the-DWORD-PTR-It-is-not-too-imp-for-our-goals">NOTE: To understand this, we will ignore the <code class="language-text highlight">DWORD PTR</code>. It is not too imp for our goals.<a class="headerlink" href="#NOTE-To-understand-this-we-will-ignore-the-DWORD-PTR-It-is-not-too-imp-for-our-goals" title="Permanent link">&para;</a></h6>
 <h3 id="The-Entry-Sequence">The Entry Sequence<a class="headerlink" href="#The-Entry-Sequence" title="Permanent link">&para;</a></h3>
 <p>Notice the first two lines of both the functions.</p>
-<div class="codehilite"><pre><span></span><code><span class="nf">push</span><span class="w">   </span><span class="nb">ebp</span>
-<span class="nf">mov</span><span class="w">    </span><span class="nb">ebp</span><span class="p">,</span><span class="nb">esp</span>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>:::nasm
+<span class="linenos" data-linenos="2 "></span>push   ebp
+<span class="linenos" data-linenos="3 "></span>mov    ebp,esp
 </code></pre></div>
-
 <p>In this sequence we built the stack from for the current function. </p>
 <p>After ther <em>call</em> in the previous section, the control flow jumps to<br />
 this instruction. This instruction pushes the <em>current base pointer</em><br />
-to the stack. This is base pointer of the previous stack frame. <code>ebp</code><br />
+to the stack. This is base pointer of the previous stack frame. <code class="language-text highlight">ebp</code><br />
 is a register, so the previous command effectively pushes the data<br />
-stored in that register onto the stack. This increments the <code>esp</code> as<br />
+stored in that register onto the stack. This increments the <code class="language-text highlight">esp</code> as<br />
 well.</p>
 <p>After that we set the current value of the <em>esp</em> as the <em>ebp</em> for the<br />
 current frame.  Note that the <em>esp</em> is currently pointing to the top<br />
 of the stack. This effectively starts a new frame.</p>
 <h5 id="Note-As-every-frame-contains-a-reference-to-the-base-pointer-of-the-previous-frame-this-enables-debuggers-to-walk-the-call-stack">Note: As every frame contains a reference to the base pointer of the previous frame, this enables debuggers to <em>walk</em> the call-stack.<a class="headerlink" href="#Note-As-every-frame-contains-a-reference-to-the-base-pointer-of-the-previous-frame-this-enables-debuggers-to-walk-the-call-stack" title="Permanent link">&para;</a></h5>
-<p>Thus the <code>stack frame</code> for <code>foo</code> function (or the <code>callee</code> function) contains the following.</p>
-<div class="codehilite"><pre><span></span><code>+<span class="o">========================</span>+
-<span class="p">|</span><span class="w">                        </span><span class="p">|</span>
-<span class="p">|</span><span class="w">  </span>Previous<span class="w"> </span>Stack-Frame<span class="w">  </span><span class="p">|</span>
-<span class="p">|</span><span class="w">      </span><span class="o">(</span>main<span class="w"> </span>func<span class="o">)</span><span class="w">       </span><span class="p">|</span>
-<span class="p">|</span><span class="w">                        </span><span class="p">|</span>
-+<span class="o">========================</span>+
-<span class="p">|</span><span class="w">      </span>Parameter<span class="w"> </span><span class="m">1</span><span class="w">       </span><span class="p">|</span>
-+------------------------+
-<span class="p">|</span><span class="w">     </span>Return<span class="w"> </span>Address<span class="w">     </span><span class="p">|</span>
-+------------------------+
-<span class="p">|</span><span class="w">   </span>Base<span class="w"> </span>Pointer<span class="w"> </span><span class="o">(</span>main<span class="o">)</span><span class="w">  </span><span class="p">|</span>
-+------------------------+<span class="w"> </span>&lt;----<span class="w"> </span>ebp<span class="w"> </span>foo
-<span class="p">|</span><span class="w">     </span>Local<span class="w"> </span>variables<span class="w">    </span><span class="p">|</span>
-+------------------------+
-<span class="p">|</span><span class="w">     </span>Local<span class="w"> </span>variables<span class="w">    </span><span class="p">|</span><span class="w"> </span>
-+<span class="o">========================</span>+<span class="w"> </span>&lt;----<span class="w"> </span>esp<span class="w"> </span>foo
+<p>Thus the <code class="language-text highlight">stack frame</code> for <code class="language-text highlight">foo</code> function (or the <code class="language-text highlight">callee</code> function) contains the following.</p>
+<div class="language-brainfuck highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c">:::bash</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nb">+</span><span class="c">========================</span><span class="nb">+</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="c">|                        |</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="c">|  Previous Stack</span><span class="nb">-</span><span class="c">Frame  |</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c">|      (main func)       |</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="c">|                        |</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="nb">+</span><span class="c">========================</span><span class="nb">+</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="c">|      Parameter 1       |</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="nb">+------------------------+</span>
+<span class="linenos" data-linenos="10 "></span><span class="c">|     Return Address     |</span>
+<span class="linenos" data-linenos="11 "></span><span class="nb">+------------------------+</span>
+<span class="linenos" data-linenos="12 "></span><span class="c">|   Base Pointer (main)  |</span>
+<span class="linenos" data-linenos="13 "></span><span class="nb">+------------------------+</span><span class="c"> </span><span class="nv">&lt;</span><span class="nb">----</span><span class="c"> ebp foo</span>
+<span class="linenos" data-linenos="14 "></span><span class="c">|     Local variables    |</span>
+<span class="linenos" data-linenos="15 "></span><span class="nb">+------------------------+</span>
+<span class="linenos" data-linenos="16 "></span><span class="c">|     Local variables    | </span>
+<span class="linenos" data-linenos="17 "></span><span class="nb">+</span><span class="c">========================</span><span class="nb">+</span><span class="c"> </span><span class="nv">&lt;</span><span class="nb">----</span><span class="c"> esp foo</span>
 </code></pre></div>
-
 <h3 id="The-Exit-Sequence">The Exit Sequence<a class="headerlink" href="#The-Exit-Sequence" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nf">leave</span>
-<span class="nf">ret</span>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>:::nasm
+<span class="linenos" data-linenos="2 "></span>leave
+<span class="linenos" data-linenos="3 "></span>ret
 </code></pre></div>
-
 <p>Now, the function has finished executing and it needs to return the<br />
 control flow to the calling function. We need to do some cleanup<br />
 first.</p>
@@ -1146,12 +1146,12 @@ used for local variables is teared down. This is done by moving <em>esp</em><br 
 to the <em>ebp</em>. Since, the <em>esp</em> tracks the top of the stack, by moving<br />
 it, we effectively reset the stack. </p>
 <p>After that we pop the first element from the stack and store it in the<br />
-<code>ebp</code> register. Recall that the top of the stack contained the address<br />
-to the previous stack frame. Now, we store that address back in the <code>ebp</code>.</p>
+<code class="language-text highlight">ebp</code> register. Recall that the top of the stack contained the address<br />
+to the previous stack frame. Now, we store that address back in the <code class="language-text highlight">ebp</code>.</p>
 <p>All that is left to do is to return to the instruction that we should<br />
 execute after the call to this procedure. This is done by <em>poping</em> the<br />
 next element from the stack (the return address) and storing it in the<br />
-<code>isp</code> or the instruction pointer.</p>
+<code class="language-text highlight">isp</code> or the instruction pointer.</p>
 <p>This is basically what the above instructions do.</p>
 <h2 id="References">References<a class="headerlink" href="#References" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1228,6 +1228,8 @@ next element from the stack (the return address) and storing it in the<br />
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
         <script src="../overrides/javascripts/mathjax.js"></script>
       

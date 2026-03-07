@@ -1090,8 +1090,8 @@
 <li><strong>CIDR</strong> is a method for allocating IP addresses and IP routing.</li>
 <li>It replaced the older classful network addressing system.</li>
 <li><strong>Why it matters:</strong> It significantly improved IP address allocation efficiency and reduced the size of routing tables.</li>
-<li><strong>How it works:</strong> It uses a "slash notation" (<code>/xx</code>) to indicate the network portion of an IP address. The number after the slash specifies how many bits are in the network prefix.</li>
-<li><strong>Example:</strong> <code>192.168.1.0/24</code> means the first 24 bits define the network, and the remaining 8 bits are for host addresses within that network.</li>
+<li><strong>How it works:</strong> It uses a "slash notation" (<code class="language-text highlight">/xx</code>) to indicate the network portion of an IP address. The number after the slash specifies how many bits are in the network prefix.</li>
+<li><strong>Example:</strong> <code class="language-cbmbas highlight"><span class="mf">192.168.1.0</span><span class="o">/</span><span class="mf">24</span></code> means the first 24 bits define the network, and the remaining 8 bits are for host addresses within that network.</li>
 </ul>
 <hr />
 <h1 id="CIDR-and-Autonomous-Systems">CIDR and Autonomous Systems<a class="headerlink" href="#CIDR-and-Autonomous-Systems" title="Permanent link">&para;</a></h1>
@@ -1099,7 +1099,7 @@
 <li>ASes don't advertise individual IP addresses, but rather blocks of IP addresses.</li>
 <li>These blocks are defined using <strong>CIDR prefixes</strong>.</li>
 <li>An AS announces to the internet that it is the origin for specific CIDR blocks.</li>
-<li><strong>Example:</strong> AS100 might announce that it "owns" the IP range <code>1.1.1.0/24</code>, <code>1.1.2.0/24</code>, and so on.</li>
+<li><strong>Example:</strong> AS100 might announce that it "owns" the IP range <code class="language-cbmbas highlight"><span class="mf">1.1.1.0</span><span class="o">/</span><span class="mf">24</span></code>, <code class="language-cbmbas highlight"><span class="mf">1.1.2.0</span><span class="o">/</span><span class="mf">24</span></code>, and so on.</li>
 <li>BGP routers use these CIDR prefixes to build their global routing tables, directing traffic to the correct AS that hosts those IP addresses.</li>
 </ul>
 <hr />
@@ -1165,16 +1165,16 @@ IP Prefix</p>
 <hr />
 <h1 id="BGP-Show-Path-Command">BGP Show Path Command<a class="headerlink" href="#BGP-Show-Path-Command" title="Permanent link">&para;</a></h1>
 <ul>
-<li>The <code>show ip bgp paths</code> command on a router displays the BGP paths it has learned.</li>
+<li>The <code class="language-teratermmacro highlight"><span class="k">show</span><span class="w"> </span><span class="nv">ip</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">paths</span></code> command on a router displays the BGP paths it has learned.</li>
 <li>Example output:<br />
-<div class="highlight"><pre><span></span><code>Router# show ip bgp paths
-Hash Refcount Metric Path
-2    7        -      i
-1    1        -      i
-3    1        -      871 i
-</code></pre></div></li>
-<li>The <code>Path</code> column shows the AS path. In the last line, the path is through AS 871.</li>
-<li>The <code>i</code> at the end means the route originated from an IGP (Interior Gateway Protocol).</li>
+<div class="language-teratermmacro highlight"><pre><span></span><code><span id="True-0-1"><span class="linenos" data-linenos="1 "></span><span class="nv">Router</span>#<span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="nv">ip</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">paths</span>
+</span><span id="True-0-2"><span class="linenos" data-linenos="2 "></span><span class="nv">Hash</span><span class="w"> </span><span class="nv">Refcount</span><span class="w"> </span><span class="nv">Metric</span><span class="w"> </span><span class="nv">Path</span>
+</span><span id="True-0-3"><span class="linenos" data-linenos="3 "></span><span class="mi">2</span><span class="w">    </span><span class="mi">7</span><span class="w">        </span><span class="o">-</span><span class="w">      </span><span class="nv">i</span>
+</span><span id="True-0-4"><span class="linenos" data-linenos="4 "></span><span class="mi">1</span><span class="w">    </span><span class="mi">1</span><span class="w">        </span><span class="o">-</span><span class="w">      </span><span class="nv">i</span>
+</span><span id="True-0-5"><span class="linenos" data-linenos="5 "></span><span class="mi">3</span><span class="w">    </span><span class="mi">1</span><span class="w">        </span><span class="o">-</span><span class="w">      </span><span class="mi">871</span><span class="w"> </span><span class="nv">i</span>
+</span></code></pre></div></li>
+<li>The <code class="language-text highlight">Path</code> column shows the AS path. In the last line, the path is through AS 871.</li>
+<li>The <code class="language-text highlight">i</code> at the end means the route originated from an IGP (Interior Gateway Protocol).</li>
 </ul>
 <hr />
 <h1 id="Summary">Summary<a class="headerlink" href="#Summary" title="Permanent link">&para;</a></h1>
@@ -1251,6 +1251,8 @@ Hash Refcount Metric Path
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
         <script src="../overrides/javascripts/mathjax.js"></script>
       

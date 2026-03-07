@@ -1193,20 +1193,20 @@ are constructed.</p>
 sub-expressions first before evaluating the actual function. This is<br />
 called applicative order evaluation.</p>
 <p>For example consider this function which tries to emulate the functionality of the 'if' expression.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">my-if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">c</span><span class="p">))</span>
+<div class="language-teratermmacro highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>#<span class="o">!</span><span class="nv">Racket</span>
+<span class="linenos" data-linenos="2 "></span><span class="ss">(</span><span class="nv">define</span><span class="w"> </span><span class="ss">(</span><span class="nv">my</span><span class="o">-</span><span class="k">if</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="ss">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="ss">(</span><span class="k">if</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="ss">))</span>
 </code></pre></div>
-
 <p>Let's use this 'my-if' as we would use a normal if clause</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="n">my-if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
-<span class="c1">;; result :=&gt; 3</span>
+<div class="language-maple highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">#!Racket</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">(</span><span class="n">my</span><span class="o">-</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">;;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">:=&gt;</span><span class="w"> </span><span class="mi">3</span>
 </code></pre></div>
-
 <p>This works properly. However, the next one doesn't.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="n">my-if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
-<span class="c1">;; result :=&gt; Error</span>
+<div class="language-maple highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">#!Racket</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">(</span><span class="n">my</span><span class="o">-</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">;;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">:=&gt;</span><span class="w"> </span><span class="n">Error</span>
 </code></pre></div>
-
 <p>This is because when 'my-if' is being evaluated, then all the three<br />
 arguments to the function is evaluated first before evaluating<br />
 'my-if'. This does not happen when we use the normal 'if' conditional<br />
@@ -1219,16 +1219,16 @@ arguments. Thus we can pass this lambda function around as much as  we<br />
 want and we can evaluate it when we need it by using an extras set of<br />
 parenthesis.</p>
 <p>Thus we need to rewrite the old functions. We can do it as</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">new-if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">)))</span>
+<div class="language-teratermmacro highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>#<span class="o">!</span><span class="nv">Racket</span>
+<span class="linenos" data-linenos="2 "></span><span class="ss">(</span><span class="nv">define</span><span class="w"> </span><span class="ss">(</span><span class="nv">new</span><span class="o">-</span><span class="k">if</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="ss">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="ss">(</span><span class="k">if</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="ss">(</span><span class="nv">b</span><span class="ss">)</span><span class="w"> </span><span class="ss">(</span><span class="nv">c</span><span class="ss">)))</span>
 </code></pre></div>
-
 <p>and we will call this function as </p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="n">new-if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span>
-<span class="w">        </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
-<span class="w">        </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)))</span>
+<div class="language-teratermmacro highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>#<span class="o">!</span><span class="nv">Racket</span>
+<span class="linenos" data-linenos="2 "></span><span class="ss">(</span><span class="nv">new</span><span class="o">-</span><span class="k">if</span><span class="w"> </span><span class="ss">(</span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="ss">)</span><span class="w"> </span>
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="ss">(</span><span class="nv">lambda</span><span class="w"> </span><span class="ss">()</span><span class="w"> </span><span class="ss">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="ss">))</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="ss">(</span><span class="nv">lambda</span><span class="w"> </span><span class="ss">()</span><span class="w"> </span><span class="ss">(</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="ss">)))</span>
 </code></pre></div>
-
 <p>This is called thunking. When we wrap a function in an empty lambda<br />
 function, then we create a thunk. Instead of 'e1' we use '(lambda ()<br />
 e1)'. So when the thunk is passed to a function, the thunk gets<br />
@@ -1261,17 +1261,17 @@ function, we can just look up the value in the cons cell.</p>
 <p>Basically when we implement a system where we store the output of a<br />
 function if it has been evaluated once. As noted above this can be<br />
 done easily using mutable cons cells.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="k">delay</span><span class="w"> </span><span class="n">f</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">mcons</span><span class="w"> </span><span class="no">#f</span><span class="w"> </span><span class="n">f</span><span class="p">))</span>
-
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nb">force</span><span class="w"> </span><span class="k">thunk</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">mcar</span><span class="w"> </span><span class="k">thunk</span><span class="p">)</span>
-<span class="w">        </span><span class="p">(</span><span class="nb">mcdr</span><span class="w"> </span><span class="k">thunk</span><span class="p">)</span>
-<span class="w">        </span><span class="p">(</span><span class="k">begin</span><span class="w"> </span><span class="p">(</span><span class="nb">set-mcar!</span><span class="w"> </span><span class="k">thunk</span><span class="w"> </span><span class="no">#t</span><span class="p">)</span><span class="w">               </span><span class="c1">;; set the flag to true</span>
-<span class="w">               </span><span class="p">(</span><span class="n">set_mcdr!</span><span class="w"> </span><span class="k">thunk</span><span class="w"> </span><span class="p">((</span><span class="nb">mcdr</span><span class="w"> </span><span class="k">thunk</span><span class="p">)))</span><span class="w">   </span><span class="c1">;; replace the thunk with the result</span>
-<span class="w">               </span><span class="p">(</span><span class="nb">mcdr</span><span class="w"> </span><span class="k">thunk</span><span class="p">))))</span><span class="w">                    </span><span class="c1">;; return the result</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="gh">#</span>!Racket
+<span class="linenos" data-linenos=" 2 "></span>(define (delay f)
+<span class="linenos" data-linenos=" 3 "></span>    (mcons #f f))
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>(define (force thunk)
+<span class="linenos" data-linenos=" 6 "></span>    (if (mcar thunk)
+<span class="linenos" data-linenos=" 7 "></span>        (mcdr thunk)
+<span class="linenos" data-linenos=" 8 "></span>        (begin (set-mcar! thunk #t)               ;; set the flag to true
+<span class="linenos" data-linenos=" 9 "></span>               (set_mcdr! thunk ((mcdr thunk)))   ;; replace the thunk with the result
+<span class="linenos" data-linenos="10 "></span>               (mcdr thunk))))                    ;; return the result
 </code></pre></div>
-
 <p>This is something that hit me in the face with a brick when I first understood it.<br />
 It's so beautiful and cool. :-)</p>
 <h2 id="Streams-Producers-and-Consumers">Streams; Producers and Consumers<a class="headerlink" href="#Streams-Producers-and-Consumers" title="Permanent link">&para;</a></h2>
@@ -1316,17 +1316,17 @@ wherein the first element is the first element and the second element<br />
 is a thunk that has everything we need to get all the elements from 2<br />
 to infinity.</p>
 <p>Let us write a stream that just produces an infinite stream of 1's</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="n">ones-st</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">ones</span><span class="p">)))</span>
-
-<span class="c1">;; we call this stream by</span>
-
-<span class="c1">;; this gives the first element</span>
-<span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="p">(</span><span class="n">one-st</span><span class="p">))</span>
-
-<span class="c1">;; this gives us the second element</span>
-<span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="p">(</span><span class="n">one-st</span><span class="p">)))</span>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>#!Racket
+<span class="linenos" data-linenos=" 2 "></span>(define ones-st (lambda () (cons 1 ones)))
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span>;; we call this stream by
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span>;; this gives the first element
+<span class="linenos" data-linenos=" 7 "></span>(car (one-st))
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>;; this gives us the second element
+<span class="linenos" data-linenos="10 "></span>(car (cdr (one-st)))
 </code></pre></div>
-
 <p>The stream is a thunk which when evaluated gives a pair. The first<br />
 element in the pair is the first value in the stream and the second<br />
 element is another thunk. We can clearly see how this works in the way<br />
@@ -1336,31 +1336,31 @@ transformation that is taking place between the subsequent elements.</p>
 <p>Now we will define the same stream and put a transformation function<br />
 in the middle. This function will not do anything but it will act as a<br />
 good placeholder for future transformations.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">ones</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">ones-help</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="n">ones-help</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">0</span><span class="p">)))))</span>
-<span class="p">(</span><span class="n">ones-help</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>#!Racket
+<span class="linenos" data-linenos="2 "></span>(define (ones)
+<span class="linenos" data-linenos="3 "></span>    (define (ones-help x)
+<span class="linenos" data-linenos="4 "></span>    (cons x (lambda () (ones-help (+ x 0)))))
+<span class="linenos" data-linenos="5 "></span>(ones-help 1))
 </code></pre></div>
-
 <p>In this way we have a framework of how to go about designing different streams. <br />
 Let use write an infinite stream of the square of all the natural numbers.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="n">square-help</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">(</span><span class="n">square-help</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">1</span><span class="p">)))))</span>
-<span class="p">(</span><span class="n">square-help</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gh">#</span>!Racket
+<span class="linenos" data-linenos="2 "></span>(define (square)
+<span class="linenos" data-linenos="3 "></span>    (define (square-help x)
+<span class="linenos" data-linenos="4 "></span>    (cons (* x x) (lambda () (square-help (+ x 1)))))
+<span class="linenos" data-linenos="5 "></span>(square-help 1))
 </code></pre></div>
-
 <p>How do we get elements from the stream ? </p>
 <p>To get the first element we evaluate the stream and get the first<br />
 element form the pair. To get the second element from the stream we<br />
 evaluate the cdr of the pair we get.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="p">(</span><span class="n">square</span><span class="p">))</span>
-<span class="c1">;; first element</span>
-
-<span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="p">((</span><span class="nb">cdr</span><span class="w"> </span><span class="p">(</span><span class="n">square</span><span class="p">))))</span>
-<span class="c1">;; second element</span>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>#!Racket
+<span class="linenos" data-linenos="2 "></span>(car (square))
+<span class="linenos" data-linenos="3 "></span>;; first element
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span>(car ((cdr (square))))
+<span class="linenos" data-linenos="6 "></span>;; second element
 </code></pre></div>
-
 <p>Thus we can get new elements from the list.</p>
 <p>Note: This is the exact same way in which Alonzo Church defines Church Numerals. </p>
 <h2 id="Datatype-with-structs">Datatype with structs.<a class="headerlink" href="#Datatype-with-structs" title="Permanent link">&para;</a></h2>
@@ -1368,43 +1368,43 @@ evaluate the cdr of the pair we get.</p>
 dataypes and data-structures and it lets us use pattern matching to<br />
 get the desired data out form the data structure.</p>
 <p>For Example,</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">val</span> <span class="nv">record_test</span> <span class="p">=</span>  <span class="p">{</span> <span class="n">first</span> <span class="p">=</span> <span class="s2">&quot;sohom&quot;</span><span class="p">,</span> <span class="n">second</span> <span class="p">=</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">number</span> <span class="p">=</span> <span class="mi">1000</span> <span class="p">};</span>
-<span class="cm">(* creates a new record in the env and binds it to record_test *)</span>
-
-<span class="kr">val</span> <span class="p">{</span> <span class="n">first</span> <span class="p">=</span> <span class="n">t</span> <span class="p">:</span> <span class="n">string</span> <span class="p">,</span> <span class="n">second</span> <span class="p">=</span> <span class="n">tt</span> <span class="p">:</span> <span class="n">string</span><span class="p">,</span> <span class="n">number</span> <span class="p">=</span> <span class="n">ttt</span> <span class="p">:</span> <span class="n">int</span> <span class="p">}</span> <span class="p">=</span> <span class="n">record_test</span><span class="p">;</span>
-
-<span class="cm">(* This pattern matches the record on the left with the record on</span>
-<span class="cm">the right and binds the values after extracting them from the</span>
-<span class="cm">record *)</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gh">#</span>!SML
+<span class="linenos" data-linenos="2 "></span>val record_test =  { first = &quot;sohom&quot;, second = &quot;b&quot;, number = 1000 };
+<span class="linenos" data-linenos="3 "></span>(* creates a new record in the env and binds it to record_test <span class="gs">*)</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="gs">val { first = t : string , second = tt : string, number = ttt : int } = record_test;</span>
+<span class="linenos" data-linenos="6 "></span>
+<span class="linenos" data-linenos="7 "></span><span class="gs">(*</span> This pattern matches the record on the left with the record on
+<span class="linenos" data-linenos="8 "></span>the right and binds the values after extracting them from the
+<span class="linenos" data-linenos="9 "></span>record *)
 </code></pre></div>
-
 <p>We could implement the same kind of the thing in Racket using cons<br />
 cells but there is an even better way in Racket. In Racket we can use<br />
 structs to define custom data types.</p>
-<p>When we add a new datatype with <code>struct</code> it introduces a bunch of<br />
+<p>When we add a new datatype with <code class="language-text highlight">struct</code> it introduces a bunch of<br />
 other functions into the environment. Let me illustrate this with an example.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="p">(</span><span class="n">field1</span><span class="w"> </span><span class="n">field2</span><span class="w"> </span><span class="n">field3</span><span class="p">))</span>
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>#!Racket
+<span class="linenos" data-linenos="2 "></span>(struct foo (field1 field2 field3))
 </code></pre></div>
-
 <p>This will introduce a constructor for this struct, a checker for this<br />
 struct and accessor functions for each field in the struct. This is<br />
 super handy.</p>
 <p>So we can do things like</p>
-<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="n">new_t</span><span class="w"> </span><span class="p">(</span><span class="n">foo</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
-
-<span class="p">(</span><span class="n">foo?</span><span class="w"> </span><span class="n">new_t</span><span class="p">)</span>
-<span class="c1">;; evaluates to #t</span>
-
-<span class="p">(</span><span class="n">foo-field1</span><span class="w"> </span><span class="n">new_t</span><span class="p">)</span>
-<span class="c1">;; evaluates to 1</span>
-
-<span class="p">(</span><span class="n">foo-field2</span><span class="w"> </span><span class="n">new_t</span><span class="p">)</span>
-<span class="c1">;; evaluates to 2</span>
-
-<span class="p">(</span><span class="n">foo-field3</span><span class="w"> </span><span class="n">new_t</span><span class="p">)</span>
-<span class="c1">;; evaluates to 3</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="gh">#</span>!Racket
+<span class="linenos" data-linenos=" 2 "></span>(define new_t (foo 1 2 3))
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span>(foo? new_t)
+<span class="linenos" data-linenos=" 5 "></span><span class="c">;; evaluates to #t</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>(foo-field1 new_t)
+<span class="linenos" data-linenos=" 8 "></span><span class="c">;; evaluates to 1</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span>(foo-field2 new_t)
+<span class="linenos" data-linenos="11 "></span><span class="c">;; evaluates to 2</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span>(foo-field3 new_t)
+<span class="linenos" data-linenos="14 "></span><span class="c">;; evaluates to 3</span>
 </code></pre></div>
-
 <p>I think this is really cool. Especially because the user does not have<br />
 to write accessor functions for all the types they define, but instead<br />
 the language system generates them. Also, struct is not a syntactic<br />
@@ -1557,6 +1557,8 @@ just push through. It will be worth it.</p>
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
         <script src="../overrides/javascripts/mathjax.js"></script>
       

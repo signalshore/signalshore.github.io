@@ -1018,46 +1018,43 @@ plaintext file with other text processing tools available on Linux<br />
 <p>With ledger-cli you do not have to learn a bunch of things just to<br />
 use it.</p>
 <p>Each transaction in ledger looks like this</p>
-<div class="codehilite"><pre><span></span><code>2019/04/19 Bought some icecream
-    AccountA:SubAccountA1  3000
-    AccountB:SubAccountB1  -3000
+<div class="language-cbmbas highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="mf">2019</span><span class="o">/</span><span class="mf">04</span><span class="o">/</span><span class="mf">19</span><span class="w"> </span><span class="n">Bought</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">icecream</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">AccountA</span><span class="p">:</span><span class="n">SubAccountA1</span><span class="w">  </span><span class="mf">3000</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">AccountB</span><span class="p">:</span><span class="n">SubAccountB1</span><span class="w">  </span><span class="o">-</span><span class="mf">3000</span>
 </code></pre></div>
-
 <p>That's about it. It basically says that for buying some coffee you paid<br />
 3000 (in any unit of currency) from SubAccountB1 to SubAccountA1.<br />
-The <code>Account:SubAccountA1</code> is used to illustrate that you can have nested accounts.</p>
+The <code class="language-actionscript3 highlight"><span class="n">Account</span><span class="o">:</span><span class="n">SubAccountA1</span></code> is used to illustrate that you can have nested accounts.</p>
 <p>Ledger also does amazing reporting.<br />
 For example: This is how much I've spent on travelling over the two years (This exclude everyday transport using busses and autos)</p>
-<div class="codehilite"><pre><span></span><code>$ ledger -f personal.ledger balance Expenses:travel
-        78331.94  Expenses:Travel
-          543.51    Cab
-            4137    Cancel
-           55661    Flight
-           10855    Package
-             690    Rent
-         6445.43    Trains
-----------------
-        78331.94
+<div class="language-bash highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>$<span class="w"> </span>ledger<span class="w"> </span>-f<span class="w"> </span>personal.ledger<span class="w"> </span>balance<span class="w"> </span>Expenses:travel
+<span class="linenos" data-linenos=" 2 "></span><span class="w">        </span><span class="m">78331</span>.94<span class="w">  </span>Expenses:Travel
+<span class="linenos" data-linenos=" 3 "></span><span class="w">          </span><span class="m">543</span>.51<span class="w">    </span>Cab
+<span class="linenos" data-linenos=" 4 "></span><span class="w">            </span><span class="m">4137</span><span class="w">    </span>Cancel
+<span class="linenos" data-linenos=" 5 "></span><span class="w">           </span><span class="m">55661</span><span class="w">    </span>Flight
+<span class="linenos" data-linenos=" 6 "></span><span class="w">           </span><span class="m">10855</span><span class="w">    </span>Package
+<span class="linenos" data-linenos=" 7 "></span><span class="w">             </span><span class="m">690</span><span class="w">    </span>Rent
+<span class="linenos" data-linenos=" 8 "></span><span class="w">         </span><span class="m">6445</span>.43<span class="w">    </span>Trains
+<span class="linenos" data-linenos=" 9 "></span>----------------
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="m">78331</span>.94
 </code></pre></div>
-
 <p>For example: This shows how much I've spent on House Rent and etc etc stuff. (I only have an audible subscription that I share)</p>
-<div class="codehilite"><pre><span></span><code>$ ledger -f personal.ledger balance Expenses:Utilities
-          162243  Expenses:Utilities
-           11833    Electricity Bill
-          142900    House Rent
-            3744    Internet
-            3666    Phone Recharge
-             100    Subscriptions
-----------------
-          162243
+<div class="language-bash highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$<span class="w"> </span>ledger<span class="w"> </span>-f<span class="w"> </span>personal.ledger<span class="w"> </span>balance<span class="w"> </span>Expenses:Utilities
+<span class="linenos" data-linenos="2 "></span><span class="w">          </span><span class="m">162243</span><span class="w">  </span>Expenses:Utilities
+<span class="linenos" data-linenos="3 "></span><span class="w">           </span><span class="m">11833</span><span class="w">    </span>Electricity<span class="w"> </span>Bill
+<span class="linenos" data-linenos="4 "></span><span class="w">          </span><span class="m">142900</span><span class="w">    </span>House<span class="w"> </span>Rent
+<span class="linenos" data-linenos="5 "></span><span class="w">            </span><span class="m">3744</span><span class="w">    </span>Internet
+<span class="linenos" data-linenos="6 "></span><span class="w">            </span><span class="m">3666</span><span class="w">    </span>Phone<span class="w"> </span>Recharge
+<span class="linenos" data-linenos="7 "></span><span class="w">             </span><span class="m">100</span><span class="w">    </span>Subscriptions
+<span class="linenos" data-linenos="8 "></span>----------------
+<span class="linenos" data-linenos="9 "></span><span class="w">          </span><span class="m">162243</span>
 </code></pre></div>
-
 <p>Its just fun. You also use sed/awk to generate reports/graphs of your own.</p>
 <h1 id="For-the-Future">For the Future<a class="headerlink" href="#For-the-Future" title="Permanent link">&para;</a></h1>
 <p>I see more complexity coming my way as I start investing properly. I<br />
 only stick to mutual funds as of now, but tracking them has been a<br />
-pain. I am recording all the <code>buy</code>s in my system, but I don't record<br />
-the <code>sell</code>s properly.</p>
+pain. I am recording all the <code class="language-text highlight">buy</code>s in my system, but I don't record<br />
+the <code class="language-text highlight">sell</code>s properly.</p>
 <p>I also need to record Reimburseable expenses better and salaries better. </p>
 <p>Apart from that, this system looks robust as of now.</p>
 <h1 id="Why-do-this-at-all">Why do this at all?<a class="headerlink" href="#Why-do-this-at-all" title="Permanent link">&para;</a></h1>
@@ -1129,6 +1126,8 @@ money.</p>
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
         <script src="../overrides/javascripts/mathjax.js"></script>
       

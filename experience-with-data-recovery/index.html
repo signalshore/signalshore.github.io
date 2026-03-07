@@ -1072,10 +1072,10 @@
 <p>We have been planning to set up a backup utility on Sam but somehow we never quite got around to actually doing it. However this week we finally decided to do it. We decided to try out <a href="https://obnam.org/">Obnam</a>. Things were going good until we needed to delete a directory.</p>
 <p>Now remember that this directory was local directory and not a system directory unlike how the name suggests. The directory in question is "mnt".<br />
 Yes we had set up the dummy directory tree for experimenting with the backup tool and it had a mnt in it. </p>
-<p>So for deleting it Sohom should have typed <code>rm -rf mnt</code> but he typed <code>rm -rf /mnt</code>.<br />
+<p>So for deleting it Sohom should have typed <code class="language-text highlight">rm -rf mnt</code> but he typed <code class="language-text highlight">rm -rf /mnt</code>.<br />
 Notice the '/' in the command he typed, Yep true story. Completely nuked all the mounted partitions.</p>
 <h3 id="Some-Context">Some Context<a class="headerlink" href="#Some-Context" title="Permanent link">&para;</a></h3>
-<p>Okay we need some context. This is how <code>lsblk</code> looks on our system (Sam). The important partitions that store all the main data and media (movies and documentaries and Pics) are the <code>/dev/sda4</code> and <code>/dev/sda5</code>. As both of them were mounted they both were completely deleted. </p>
+<p>Okay we need some context. This is how <code class="language-text highlight">lsblk</code> looks on our system (Sam). The important partitions that store all the main data and media (movies and documentaries and Pics) are the <code class="language-text highlight">/dev/sda4</code> and <code class="language-text highlight">/dev/sda5</code>. As both of them were mounted they both were completely deleted. </p>
 <p><img alt="image" src="../assets/images/2017-07-20/lsblk.png" /></p>
 <h3 id="Aftermath">Aftermath<a class="headerlink" href="#Aftermath" title="Permanent link">&para;</a></h3>
 <p>Okay so what DID we lose ?</p>
@@ -1097,7 +1097,7 @@ Notice the '/' in the command he typed, Yep true story. Completely nuked all the
 <p>One thing we should remember is that the recovery part is not such a pain! PhotoRec is amazing and does an amazing job. The main pain is actually picking up the files that YOU want from he whole bunch of recovered files. This is because since PhotoRec does not have any method to determine if the deleted files were deleted accidentally or not, it recovers everything that was deleted and not overwritten. Thus we have a LOT of work to do. </p>
 <h3 id="After-the-recovery">After the recovery<a class="headerlink" href="#After-the-recovery" title="Permanent link">&para;</a></h3>
 <p>These are some of the things that PhotoRec does after recovering the files.<br />
-* Stores everything under multiple <code>recup_dir.&lt;integer&gt;</code> directories. It looks something like this <img alt="recovery ls" src="../assets/images/2017-07-20/reco_ls.png" /><br />
+* Stores everything under multiple <code class="language-scdoc highlight">recup_dir.&lt;integer&gt;</code> directories. It looks something like this <img alt="recovery ls" src="../assets/images/2017-07-20/reco_ls.png" /><br />
 * Every file other than text files are properly named. As in other than text files all other files have their proper extensions. Thus PhotoRec doesn't mix up JPEG and PNG files.<br />
 * That being said it does mix up text files. As in recovered Java files would sometimes be named as C++ header files and so on.<br />
 * PhotoRec also recovers ELF files which are nothing but executable files.</p>
@@ -1107,20 +1107,20 @@ Our first idea was to launch <a href="http://nongnu.org/ranger/">ranger</a> and 
 But there was a major flaw with this system. There were a lot of files in those directories and going through each one of them would be a tedious and a very very stupid thing to do. </p>
 <p>So we started making a list of the things that we lost and the things that we wanted to recovered from the mess. We figured that if we could not remember something that we had lost them we probably did not need it in the first place. Thus we figured that the most important stuff in the data directory ware the scripts that we had written for our Arch System. We also realized that we mostly needed text files from this partition recovery so we could delete all the non-text files and thus we started this massive assault on all non essential files. </p>
 <p>Initially we were writing scripts like </p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span>find<span class="w"> </span>./<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.jar&quot;</span><span class="o">)</span><span class="p">;</span><span class="w"> </span>rm<span class="w"> </span>-vf<span class="w"> </span><span class="nv">$file</span><span class="p">;</span><span class="w"> </span>end<span class="p">;</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>:::bash
+<span class="linenos" data-linenos="2 "></span>$ for file in (find ./ -name &quot;*.jar&quot;); rm -vf $file; end;
 </code></pre></div>
-
 <p>which worked like a charm. </p>
 <p>Then we figured out the better version of this command i.e.</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>./<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.jar&quot;</span><span class="w"> </span>-delete
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>:::bash
+<span class="linenos" data-linenos="2 "></span>$ find ./ -name &quot;*.jar&quot; -delete
 </code></pre></div>
-
 <p>which does the same thing; finds files with a particular extension (JAR files in this case) and delete them.</p>
 <p>We kept doing this for a huge set of files unless we were left with only text files.</p>
 <p>Now we needed to get all the DOCX files so we did this</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span>find<span class="w"> </span>./<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.docx&quot;</span><span class="o">)</span><span class="p">;</span><span class="w"> </span>cp<span class="w"> </span>-c<span class="w"> </span><span class="nv">$file</span><span class="w"> </span>../store<span class="p">;</span><span class="w"> </span>end<span class="p">;</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>:::bash
+<span class="linenos" data-linenos="2 "></span>$ for file in (find ./ -name &quot;*.docx&quot;); cp -c $file ../store; end;
 </code></pre></div>
-
 <p>Now comes the interesting part. Remember those scripts that we wrote. We had a fairly good idea about the contents of those scripts so we could do a recursive grep with those keywords and BOOM! </p>
 <p>This is the first script which had a lot of i3-msg in it.<br />
 <img alt="i3-msg" src="../assets/images/2017-07-20/i3-msg.png" /><br />
@@ -1131,9 +1131,9 @@ Similarly we found all the other scripts.</p>
 <p>As you can see both the files have the same MD5 hash and thus they are essentially the same files. So now we needed a script that would sort the duplicate files out.</p>
 <p>We followed the instructions in this article and installed fdupes and let it run amok and remove all the duplicate files we had.</p>
 <p>Also we figured out that there were a lot of files that were 100kb or less. These were thumbnail files we believe. So we did this</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span>./<span class="w"> </span>-size<span class="w"> </span>-100k<span class="w"> </span>-delete
+<div class="language-text highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>:::bash
+<span class="linenos" data-linenos="2 "></span>$ find ./ -size -100k -delete
 </code></pre></div>
-
 <p>and all of them annoying files were gone. :p</p>
 <h3 id="Conclusion">Conclusion<a class="headerlink" href="#Conclusion" title="Permanent link">&para;</a></h3>
 <p><blue> So what is the takeaway from all this ? </blue></p>
@@ -1204,6 +1204,8 @@ Similarly we found all the other scripts.</p>
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
         <script src="../overrides/javascripts/mathjax.js"></script>
       

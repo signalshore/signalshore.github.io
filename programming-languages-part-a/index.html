@@ -1045,19 +1045,19 @@ exercises and homework assignments. That was fun.</p>
 type checked by the compiler before being run.</p>
 <p>A typical program in SML with all types explicitly mentioned looks<br />
 like this. Its a simple function that takes two numbers and adds them.</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">add</span> <span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">int</span><span class="p">):</span> <span class="n">int</span> <span class="p">=</span> 
-    <span class="n">x</span> <span class="n">+</span> <span class="n">y</span><span class="p">;</span>
+<div class="language-css+lasso highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="err">#</span><span class="o">!</span><span class="nt">sml</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">fun</span><span class="w"> </span><span class="nt">add</span><span class="w"> </span><span class="o">(</span><span class="nt">x</span><span class="o">:</span><span class="w"> </span><span class="nt">int</span><span class="o">,</span><span class="w"> </span><span class="nt">y</span><span class="o">:</span><span class="w"> </span><span class="nt">int</span><span class="o">):</span><span class="w"> </span><span class="nt">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="nt">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nt">y</span><span class="o">;</span>
 </code></pre></div>
-
-<p>The type of the <code>add</code> function is <code>fn: int * int -&gt; int</code></p>
-<p>Let's write a recursive program that calculates <code>n raised to m</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">pow</span> <span class="p">(</span><span class="n">m</span> <span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">n</span> <span class="p">:</span> <span class="n">int</span><span class="p">)</span> <span class="p">=</span>
-    <span class="kr">if</span> <span class="n">m</span><span class="p">=</span><span class="mi">0</span>
-    <span class="kr">then</span> <span class="mi">1</span>
-    <span class="kr">else</span> <span class="n">m</span> <span class="n">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n-</span><span class="mi">1</span><span class="p">)</span>
+<p>The type of the <code class="language-text highlight">add</code> function is <code class="language-actionscript3 highlight"><span class="n">fn</span><span class="o">:</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">int</span></code></p>
+<p>Let's write a recursive program that calculates <code class="language-text highlight">n raised to m</code>.</p>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gh">#</span>!sml
+<span class="linenos" data-linenos="2 "></span>fun pow (m : int, n : int) =
+<span class="linenos" data-linenos="3 "></span>    if m=0
+<span class="linenos" data-linenos="4 "></span>    then 1
+<span class="linenos" data-linenos="5 "></span>    else m * pow(m, n-1)
 </code></pre></div>
-
-<p>The type of <code>pow</code> function is <code>fn: int * int -&gt; int</code></p>
+<p>The type of <code class="language-text highlight">pow</code> function is <code class="language-actionscript3 highlight"><span class="n">fn</span><span class="o">:</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">int</span></code></p>
 <p>I had some trouble understanding how the type system worked in SML,<br />
 but things got quite clear after a bunch of exercises where we are<br />
 required to write a very limited type checker ourselves. This was one<br />
@@ -1072,26 +1072,25 @@ very un-intuitive at first, but reading about the process made it<br />
 quite obvious.</p>
 <p>Let us rewrite the above functions without explicitly mentioning<br />
 types.</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">add</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span>
-    <span class="n">x</span> <span class="n">+</span> <span class="n">y</span><span class="p">;</span>
-
-<span class="kr">fun</span> <span class="nf">pow</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">=</span>
-    <span class="kr">if</span> <span class="n">m</span><span class="p">=</span><span class="mi">0</span>
-    <span class="kr">then</span> <span class="mi">1</span>
-    <span class="kr">else</span> <span class="n">m</span> <span class="n">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n-</span><span class="mi">1</span><span class="p">)</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gh">#</span>!sml
+<span class="linenos" data-linenos="2 "></span>fun add (x, y) =
+<span class="linenos" data-linenos="3 "></span>    x + y;
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span>fun pow (m, n) =
+<span class="linenos" data-linenos="6 "></span>    if m=0
+<span class="linenos" data-linenos="7 "></span>    then 1
+<span class="linenos" data-linenos="8 "></span>    else m * pow(m, n-1)
 </code></pre></div>
-
 <p>In both these cases the type checker can infer the types of the<br />
 functions and the arguments and the final type for both the functions<br />
-is <code>fn: int * int -&gt; int</code>. The type checker can do this by <code>looking
-ahead</code> into the function and inspecting the operations being performed<br />
+is <code class="language-actionscript3 highlight"><span class="n">fn</span><span class="o">:</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">int</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">int</span></code>. The type checker can do this by <code class="language-text highlight">lookingahead</code> into the function and inspecting the operations being performed<br />
 on the arguments. The intuition being that when you check if an<br />
-argument value is equal to <code>0</code> or not, then the argument must be an<br />
+argument value is equal to <code class="language-cbmbas highlight"><span class="mf">0</span></code> or not, then the argument must be an<br />
 integer. Similarly, if you are adding two arguments, they must be<br />
 integers. To carry the idea forward, the static type checker would<br />
 throw an error if you tried to perform some operation on incompatible<br />
 types (like adding a string to an integer). This is also possible<br />
-because the operators are not overloaded like how in python the <code>+</code><br />
+because the operators are not overloaded like how in python the <code class="language-text highlight">+</code><br />
 operator can do both addition for integers and concatenation for<br />
 strings. Having non-overloaded operators means that every operator has<br />
 a very specific type of operands that it accepts, and anything<br />
@@ -1103,80 +1102,80 @@ more-general way to write your program so that it can work for <em>more<br />
 than a single type</em> of arguments. It does this even if you specify a<br />
 type. What this means is that your programs become more general. </p>
 <p>Let's write a function with polymorphic data-types.</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">add_to_list</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span>
-    <span class="n">x</span> <span class="n">::</span> <span class="n">y</span><span class="p">;</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gh">#</span>!sml
+<span class="linenos" data-linenos="2 "></span>fun add_to_list (x, y) =
+<span class="linenos" data-linenos="3 "></span>    x :: y;
 </code></pre></div>
-
-<p>The function <code>add_to_list</code> builds a list by taking a object and a list<br />
+<p>The function <code class="language-scdoc highlight">add_to_list</code> builds a list by taking a object and a list<br />
 and adds the object to the front of the list. The type of this<br />
-function is <code>fn: 'a * 'a list -&gt; 'a list</code> where <code>'a</code> is a polymorphic<br />
+function is <code class="language-ecl highlight"><span class="n">fn</span><span class="o">:</span><span class="w"> </span><span class="s">&#39;a * &#39;</span><span class="n">a</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">&#39;a list</span></code> where <code class="language-text highlight">&#39;a</code> is a polymorphic<br />
 datatype as in it can take the type of any value passed to the<br />
 function. Hence this function works for both integers and strings. </p>
 <p>Look the the results of the function calls in the comments.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">add_to_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,[]);</span> 
-<span class="cm">(* [2] : int list *)</span>
-<span class="n">add_to_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
-<span class="cm">(* [2,2,3] : int list *)</span>
-<span class="n">add_to_list</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,[]);</span>
-<span class="cm">(* [&quot;S&quot;] : string list *)</span>
-<span class="n">add_to_list</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="s2">&quot;t&quot;</span><span class="p">]);</span>
-<span class="cm">(* [&quot;S&quot;,&quot;t&quot;,&quot;a&quot;,&quot;r&quot;,&quot;t&quot;] : string list *)</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gh">#</span>!sml
+<span class="linenos" data-linenos="2 "></span>add_to_list(2,[]); 
+<span class="linenos" data-linenos="3 "></span>(* [2] : int list <span class="gs">*)</span>
+<span class="linenos" data-linenos="4 "></span><span class="gs">add_to_list(2, [2,3]);</span>
+<span class="linenos" data-linenos="5 "></span><span class="gs">(*</span> [2,2,3] : int list <span class="gs">*)</span>
+<span class="linenos" data-linenos="6 "></span><span class="gs">add_to_list(&quot;S&quot;,[]);</span>
+<span class="linenos" data-linenos="7 "></span><span class="gs">(*</span> [&quot;S&quot;] : string list <span class="gs">*)</span>
+<span class="linenos" data-linenos="8 "></span><span class="gs">add_to_list(&quot;S&quot;,[&quot;t&quot;,&quot;a&quot;,&quot;r&quot;,&quot;t&quot;]);</span>
+<span class="linenos" data-linenos="9 "></span><span class="gs">(*</span> [&quot;S&quot;,&quot;t&quot;,&quot;a&quot;,&quot;r&quot;,&quot;t&quot;] : string list *)
 </code></pre></div>
-
 <p>It should be noted  that this functions will only work  if the type of<br />
 the object and the type of the object  that the list is made up of are<br />
-the same. This  is by definition since in SML  the <code>::</code> operator works<br />
+the same. This  is by definition since in SML  the <code class="language-text highlight">::</code> operator works<br />
 like that. Hence the following call will not type check because we are<br />
-trying to add <code>S</code> to the list <code>[2,3]</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">add_to_list</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
-<span class="cm">(* Does not type check *)</span>
+trying to add <code class="language-text highlight">S</code> to the list <code class="language-text highlight">[2,3]</code>.</p>
+<div class="language-carbon highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="err">#</span><span class="p">!</span><span class="nx">sml</span>
+<span class="linenos" data-linenos="2 "></span><span class="nx">add_to_list</span><span class="p">(</span><span class="s">&quot;S&quot;</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="nx">Does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">check</span><span class="w"> </span><span class="o">*</span><span class="p">)</span>
 </code></pre></div>
-
 <h3 id="Pattern-Matching">Pattern Matching<a class="headerlink" href="#Pattern-Matching" title="Permanent link">&para;</a></h3>
 <p>Writing about pattern matching is tricky because it makes absolutely<br />
 no sense without any context, and in order to establish context we<br />
 would another series of blog posts which is not where I want to go<br />
 with this. Let me try.</p>
-<p>Imagine a <code>case</code> expression. The utility of a case expression lies in<br />
+<p>Imagine a <code class="language-text highlight">case</code> expression. The utility of a case expression lies in<br />
 the fact that a case expression can handle multiple branches or<br />
 multiple cases.</p>
 <p>The case expression in SML has the form</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">case</span> <span class="n">expr_0</span> <span class="kr">of</span>
-    <span class="n">patt_1</span> <span class="p">=&gt;</span> <span class="n">expr_1</span>
-  <span class="n">|</span> <span class="n">patt_2</span> <span class="p">=&gt;</span> <span class="n">expr_2</span>
-  <span class="n">|</span> <span class="p">...</span>
-  <span class="n">|</span> <span class="n">patt_n</span> <span class="p">=&gt;</span> <span class="n">expr_n</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gh">#</span>!sml
+<span class="linenos" data-linenos="2 "></span>case expr_0 of
+<span class="linenos" data-linenos="3 "></span>    patt_1 =&gt; expr_1
+<span class="linenos" data-linenos="4 "></span>  | patt_2 =&gt; expr_2
+<span class="linenos" data-linenos="5 "></span>  | ...
+<span class="linenos" data-linenos="6 "></span>  | patt_n =&gt; expr_n
 </code></pre></div>
-
-<p>This is evaluated by first evaluating the <code>expr_0</code> to <code>val_0</code> and then<br />
-pattern-matching it with <code>patt_i</code> and then based on which pattern it<br />
-matches with, the corresponding <code>expr_i</code> is evaluated.</p>
+<p>This is evaluated by first evaluating the <code class="language-scdoc highlight">expr_0</code> to <code class="language-scdoc highlight">val_0</code> and then<br />
+pattern-matching it with <code class="language-scdoc highlight">patt_i</code> and then based on which pattern it<br />
+matches with, the corresponding <code class="language-scdoc highlight">expr_i</code> is evaluated.</p>
 <p>The pattern part is super cool because it lets you use constructors and operators within the pattern to pattern match against and you can also do variable binding within the pattern itself. </p>
 <p>Let's see that in action. In the following program I will add all the elements of a list together.</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">add_list</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="p">=</span>
-    <span class="kr">case</span> <span class="n">xs</span> <span class="kr">of</span>
-        <span class="p">[]</span> <span class="p">=&gt;</span> <span class="mi">0</span>
-     <span class="n">|</span> <span class="n">x::xs&#39;</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="n">+</span> <span class="n">add_list</span><span class="p">(</span><span class="n">xs&#39;</span><span class="p">);</span>
-
-<span class="n">add_list</span><span class="p">([]);</span>
-<span class="n">add_list</span><span class="p">([</span><span class="mi">2</span><span class="p">]);</span>
-<span class="n">add_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]);</span>
+<div class="language-css+lasso highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="err">#</span><span class="o">!</span><span class="nt">sml</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">fun</span><span class="w"> </span><span class="nt">add_list</span><span class="o">(</span><span class="nt">xs</span><span class="o">)</span><span class="w"> </span><span class="o">=</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="nt">case</span><span class="w"> </span><span class="nt">xs</span><span class="w"> </span><span class="nt">of</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="cp">[]</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nt">0</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="nt">x</span><span class="p">::</span><span class="nd">xs</span><span class="s1">&#39; =&gt; x + add_list(xs&#39;</span><span class="o">);</span>
+<span class="linenos" data-linenos="6 "></span>
+<span class="linenos" data-linenos="7 "></span><span class="nt">add_list</span><span class="o">(</span><span class="cp">[]</span><span class="o">);</span>
+<span class="linenos" data-linenos="8 "></span><span class="nt">add_list</span><span class="o">(</span><span class="cp">[</span><span class="mi">2</span><span class="cp">]</span><span class="o">);</span>
+<span class="linenos" data-linenos="9 "></span><span class="nt">add_list</span><span class="o">(</span><span class="cp">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="cp">]</span><span class="o">);</span>
 </code></pre></div>
-
 <p>In this example basically we are matching against the cases where the list is either empty or not. If the list is empty we return 0 as the sum, otherwise we use pattern matching to split the list into the first element and the rest of the list (without the first element) and then recursively compute the sum.</p>
 <h3 id="Lexical-Scope-and-Closures">Lexical Scope and Closures<a class="headerlink" href="#Lexical-Scope-and-Closures" title="Permanent link">&para;</a></h3>
 <p>The body of a function is evaluated in the environment where the<br />
 function is defined, not the environment where the function is called.</p>
 <p>We will see it in this example.</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">val</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
-<span class="kr">fun</span> <span class="nf">test</span> <span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="p">=</span> <span class="n">y</span> <span class="n">+</span> <span class="n">x</span><span class="p">;</span>
-<span class="kr">val</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
-<span class="n">test</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="cm">(* 5 *)</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gh">#</span>!sml
+<span class="linenos" data-linenos="2 "></span>val x = 2;
+<span class="linenos" data-linenos="3 "></span>fun test (y) = y + x;
+<span class="linenos" data-linenos="4 "></span>val x = 4;
+<span class="linenos" data-linenos="5 "></span>test(3)
+<span class="linenos" data-linenos="6 "></span>(* 5 *)
 </code></pre></div>
-
-<p>The output of this function is <code>5</code> and not <code>9</code> because when the<br />
-function <code>test</code> was defined, the value of <code>x = 2</code> in the<br />
+<p>The output of this function is <code class="language-cbmbas highlight"><span class="mf">5</span></code> and not <code class="language-cbmbas highlight"><span class="mf">9</span></code> because when the<br />
+function <code class="language-text highlight">test</code> was defined, the value of <code class="language-text highlight">x = 2</code> in the<br />
 environment. Hence when the function was called it used that value of<br />
 x as opposed the newer value where x is redefined to 4.</p>
 <p>A function always has an environment associated with it. This<br />
@@ -1200,28 +1199,28 @@ Mathematically we can define the factorial of a number as</p>
 <p>factorial(n) = n * factorial (n - 1) ; when n &gt; 1</p>
 </blockquote>
 <p>We can write this in SML like,</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=</span>
-    <span class="kr">if</span> <span class="n">x</span><span class="p">=</span><span class="mi">0</span>
-    <span class="kr">then</span> <span class="mi">1</span>
-    <span class="kr">else</span> <span class="n">x</span> <span class="n">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">x</span> <span class="n">-</span> <span class="mi">1</span><span class="p">)</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gh">#</span>!sml
+<span class="linenos" data-linenos="2 "></span>fun factorial(x) =
+<span class="linenos" data-linenos="3 "></span>    if x=0
+<span class="linenos" data-linenos="4 "></span>    then 1
+<span class="linenos" data-linenos="5 "></span>    else x * factorial(x - 1)
 </code></pre></div>
-
 <p>Now, this is fine and it works; BUT, its not tail recursive. <br />
-This is because the calling function has to multiply the result from the recursive call with <code>x</code> and then get the result.</p>
+This is because the calling function has to multiply the result from the recursive call with <code class="language-text highlight">x</code> and then get the result.</p>
 <p>Let's write the tail recursive version of this.</p>
-<div class="codehilite"><pre><span></span><code><span class="kr">fun</span> <span class="nf">fac_tail</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">=</span>
-    <span class="kr">let</span> <span class="kr">fun</span> <span class="nf">helper</span><span class="p">(</span><span class="n">acc</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">=</span>
-            <span class="kr">if</span> <span class="n">n</span><span class="p">=</span><span class="mi">0</span>
-            <span class="kr">then</span> <span class="n">acc</span>
-            <span class="kr">else</span> <span class="n">helper</span><span class="p">(</span><span class="n">n</span> <span class="n">*</span> <span class="n">acc</span><span class="p">,</span> <span class="n">n</span> <span class="n">-</span><span class="mi">1</span><span class="p">)</span>
-        <span class="kr">in</span>
-        <span class="n">helper</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-    <span class="kr">end</span><span class="p">;</span>
+<div class="language-scdoc highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gh">#</span>!sml
+<span class="linenos" data-linenos="2 "></span>fun fac_tail(n) =
+<span class="linenos" data-linenos="3 "></span>    let fun helper(acc, n) =
+<span class="linenos" data-linenos="4 "></span>            if n=0
+<span class="linenos" data-linenos="5 "></span>            then acc
+<span class="linenos" data-linenos="6 "></span>            else helper(n * acc, n -1)
+<span class="linenos" data-linenos="7 "></span>        in
+<span class="linenos" data-linenos="8 "></span>        helper(1,n)
+<span class="linenos" data-linenos="9 "></span>    end;
 </code></pre></div>
-
 <p>Over here we have a helper function that takes two parameters.  The<br />
-first parameter stores the value of <code>factorial(n - 1)</code> and the second<br />
-one keeps track of <code>n</code>. </p>
+first parameter stores the value of <code class="language-text highlight">factorial(n - 1)</code> and the second<br />
+one keeps track of <code class="language-text highlight">n</code>. </p>
 <p>If we look at how we are calling the helper function recursively, we see that after the recursive call returns a value, we do not need to perform any operations on the result, since it is already the result we want. This is a tail call. </p>
 <p>The benefits of tail calls is that compilers are smart enough to optimize tail calls and hence these recursive calls are not as expensive computationally.</p>
 <p>Moreover, because of lexical scoping we can use any variable binding<br />
@@ -1310,6 +1309,8 @@ starting Part B, which should take about a week more.</p>
     
     
       <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
         <script src="../overrides/javascripts/mathjax.js"></script>
       
