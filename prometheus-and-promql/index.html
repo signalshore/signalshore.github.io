@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../being-_easy-going_-and-_goofy_-is-hard-work-/">
+        <link rel="prev" href="../how-i-use-ai---llms/">
       
       
-        <link rel="next" href="../escaping-the-tyranny-of-the-screen/">
+        <link rel="next" href="../general-fitness/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Year in Review - 2025 - SignalShore</title>
+        <title>Prometheus and PromQL - SignalShore</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#Year-in-Review---2025" class="md-skip">
+        <a href="#Prometheus-and-PromQL" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Year in Review - 2025
+              Prometheus and PromQL
             
           </span>
         </div>
@@ -901,54 +901,138 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#Personal-Life" class="md-nav__link">
+  <a href="#Metric-Types" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Personal Life
+        Metric Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metric Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#Work" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#Gauges" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Work
+        Gauges
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#Mountains-and-me" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#Histogram" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mountains and me
+        Histogram
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Histogram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Working-Example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working Example
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#Movement--Gym-Climbing" class="md-nav__link">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Movement : Gym, Climbing
+        Summary
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#Running" class="md-nav__link">
+  <a href="#Operations-and-Patterns" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running
+        Operations and Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operations and Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Increase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Increase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Sum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sum
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
       
     </span>
   </a>
@@ -992,7 +1076,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2026-01-01 00:00:00+00:00" class="md-ellipsis">January 1, 2026</time>
+                        <time datetime="2026-03-15 00:00:00+00:00" class="md-ellipsis">March 15, 2026</time>
                       </div>
                     </li>
                     
@@ -1004,7 +1088,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              5 min read
+                              2 min read
                             
                           </span>
                         </div>
@@ -1032,63 +1116,103 @@
       
       
       
-        <a href="../tags/#tag:meta" class="md-tag">meta</a>
+        <a href="../tags/#tag:notes" class="md-tag">notes</a>
       
     
       
       
       
       
-        <a href="../now/#tag:now" class="md-tag">now</a>
+        <a href="../tags/#tag:prometheus" class="md-tag">prometheus</a>
       
     
   </nav>
 
 
 
-<h1 id="Year-in-Review---2025">Year in Review - 2025<a class="headerlink" href="#Year-in-Review---2025" title="Permanent link">&para;</a></h1>
-<p>2025 has been a year of transition: stepping back, recovering, and fulfilling some long term goals. I left a job, spent time in the mountains, and slowly rebuilt routines that felt sustainable. Below are the highlights and ramblings.</p>
-<h2 id="Personal-Life">Personal Life<a class="headerlink" href="#Personal-Life" title="Permanent link">&para;</a></h2>
-<p>The first couple of months of the year are a bit hazy — I was still at my previous job and had little time for personal life. After I quit I went to the mountains, which was restorative. I met someone there; we spent about three months together, and then a heartbreak followed. Hindsight suggests it was for the best.</p>
-<p>Once back in Bangalore I rediscovered how much not being burnt out helps social life. I became interested in seeing friends again and social activities. Activities the likes of which felt draining to me, suddenly because rich experience and I actually longed for.</p>
-<p>Dating was mostly quiet aside from the three months early in the year. A friend introduced me to a few people, but we didn't click. Another friend and I went on a couple of dates; we realised we were better as friends and agreed to stop pursuing a romantic relationship.</p>
-<p>My younger cousins are growing up and are moving out of the hometown. Until now, I was the one who was away and I would visit everyone else. But now I just visit a slightly emptier hometown. My sibling moved to UK which is also a big big change.</p>
-<p>I both gained and lost friends this year. Losing friendships was hard; I recognize I let some things slide and failed to accept differences when they mattered. I'm better (I think), and am being more intentional about who I spend time with.</p>
-<p>I also found an important friend through an unexpected event: a colleague with nearly identical quirks and shared values. Our idiosyncrasies are also extremely compatible. Abhishek—if you're reading this—you owe me a beer.</p>
-<p>My friendship with Tanvi deepened. We cooked together, made mayonnaise, and they helped me move into my new house. Because we finally live in the same city, casual hangouts are easy now. Some of the best plans were those where Tanvi gave me exactly 15 minutes notice before picking me up. At some point, you just dont need to pre-plan hangouts in advance. </p>
-<p>I'm a little envious of how well Tanvi keeps in touch with people while balancing work and hobbies; I want to be better at keeping plans with friends in 2026.</p>
-<p>In the last couple months I also started <a href="../cooking-for-friends/">Cooking for friends</a>. This was always something that I wanted to do and the experience was much richer and left me feeling loved. I have a lot of love to give and this is a way I get to show it to my loved ones.</p>
-<h2 id="Work">Work<a class="headerlink" href="#Work" title="Permanent link">&para;</a></h2>
-<p>The first half of the year was spent in the mountains while I considered whether guiding could be a career. I decided it wasn't — hiking remains a source of joy, but not something I want to do professionally. Not everything needs to be monetized.</p>
-<p>At the end of my sabbatical I took an opportunity at a data-centre company in India. On paper it looked interesting, but after four months our working styles clashed and I moved on. My dream of working at a public-cloud/data-centre company remains unfulfilled for now.</p>
-<p>After that I joined Cloudflare India as a Systems (Reliability) Engineer. I work with the APAC team building internal tooling to manage our COLOs (colocation facilities) worldwide. It's a fun job, and I love the internal documentation — there's a lot of knowledge to dig into.<br />
-This jon would not have happened if my friends (who have always seen me in a better light than I do myself) would not have pushed me to apply for the role. I was so sure of failure that I didn't even try. Lesson learnt. Thank You Saurabh and Vinayak.</p>
-<h2 id="Mountains-and-me">Mountains and me<a class="headerlink" href="#Mountains-and-me" title="Permanent link">&para;</a></h2>
-<p>I spent over two months in the hills this year, mostly hiking. I completed the <a href="../basic-mountaineering-course/">Basic Mountaineering Course</a> — something I'd been planning for a while — which felt like a major milestone. In December 2024 I still had a lot of knee pain and worried about finishing the course; during parts of the training I needed pain medication, but now I'm stronger and mostly pain-free. Thank the light.</p>
-<p>Traveling in Nepal was eye-opening. The country is rich in culture and a fantastic place for anyone who loves the mountains; I hope to return soon.</p>
-<p>I regret not visiting the mountains more often, but I have next year (and the year after). I also bought a lot of gear this year that will last me an entire lifetime: a tent, a decent sleeping bag, and a cooking system. Most of it will also work for motorcycle and bicycle trips.</p>
-<p>If work permits, I'd like to spend up to three months living and working from Manali or Bir to be closer to local hikes. I've concluded I don't want to live in a city for long stretches — I need to be near the hills.</p>
-<h2 id="Movement--Gym-Climbing">Movement : Gym, Climbing<a class="headerlink" href="#Movement--Gym-Climbing" title="Permanent link">&para;</a></h2>
-<p>I didn't go to the gym as much as I'd hoped. I'm mostly a solitary gym-goer, and many of the activities I enjoy happen outdoors. My membership will end soon, and I need to decide whether to renew. The gym feels too artificial.</p>
-<p>I want to visit the rock-climbing gym more often — I enjoy it and don't want to make excuses. My goal is to go at least once a week. In 2025 I did some climbing at the gym but not enough, and I did one outdoor climb with the Bangalore Climbing Initiative. I need to get a harness and helmet and do more outdoor climbs.</p>
-<p>That reminds me, I need to get better at driving. A LOT of adventures become easier if you know how to drive. Using a motorcycle is not the best idea in most of these cases as you often need to carry lots and lots of gear which is not practical on a motorcycle.</p>
-<p>I've been thinking about martial arts and want to enrol in an academy and train under a teacher; I'm still working out the logistics.</p>
-<h2 id="Running">Running<a class="headerlink" href="#Running" title="Permanent link">&para;</a></h2>
-<p>Running deserves its own section. I went from relying on painkillers for hikes to finishing a 32K ultra-marathon (with less-than-ideal timing), which felt like a breakthrough. For 2026 I want to keep this momentum: run a full marathon and attempt the Malnad Ultra (50K). That will require consistent training. Read about my <a href="../first-trail-run/">First Trail Run</a> here.</p>
-<p>I'm not yet sure how this schedule will fit into life, but a rough plan would be: rock-climb once a week, do martial arts twice a week, and run most days or every other day, with weekends for long slow walks. I'll iterate on the plan as I go.</p>
-<h1 id="Goals-for-2026">Goals for 2026:<a class="headerlink" href="#Goals-for-2026" title="Permanent link">&para;</a></h1>
+<h1 id="Prometheus-and-PromQL">Prometheus and PromQL<a class="headerlink" href="#Prometheus-and-PromQL" title="Permanent link">&para;</a></h1>
+<p>A brief set of notes for metrics and promql</p>
+<h2 id="Metric-Types">Metric Types<a class="headerlink" href="#Metric-Types" title="Permanent link">&para;</a></h2>
+<h3 id="Counter">Counter<a class="headerlink" href="#Counter" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Run a full marathon and attempt the Malnad Ultra (50K).</li>
-<li>Catch-up with friends / the community more regularly</li>
-<li>Date more (a man can hope)</li>
-<li>Climb outdoors more regularly</li>
-<li>Get into some form of martial arts</li>
-<li>Visit Nepal once</li>
-<li>Visit Munich (Oktoberfest ?)</li>
-<li>Spend up to three months living and working from the mountains (Manali or Bir) if work allows.</li>
+<li>Used for things that only go up</li>
+<li>Used for things where we want to calculate the <strong>rate of increase</strong> of said value (requests etc)</li>
+<li>rate(metrics_name[time_period]) <ul>
+<li>This will show us the per-second rate of <em>metric_name</em> averaged over a 5 min period</li>
 </ul>
-<p>That's it for 2025. I think 2026 will be a good year — though what counts as "good" is flexible.</p>
-<p>Cheers!</p>
+</li>
+<li>Ex<ul>
+<li>Request Count</li>
+<li>Tasks Completed</li>
+</ul>
+</li>
+</ul>
+<h3 id="Gauges">Gauges<a class="headerlink" href="#Gauges" title="Permanent link">&para;</a></h3>
+<ul>
+<li>For values which can go up or down</li>
+<li>For metrics where you do not need to calculate the rate</li>
+<li>Ex<ul>
+<li>CPU utilization</li>
+<li>Memory Utilization</li>
+<li>Queue Length</li>
+</ul>
+</li>
+</ul>
+<h3 id="Histogram">Histogram<a class="headerlink" href="#Histogram" title="Permanent link">&para;</a></h3>
+<ul>
+<li>measures the frequency of value observations that fall into specific pre-defined buckets. <ul>
+<li>For example we might want to keep track of http response times by bucketing every entry into buckets on range 0-0.005 , 0.005-0.1 , 0.1-1.0  etc etc and so on.</li>
+<li>We store the freqeuncy of no. of. requests that fall into those specific buckets.</li>
+<li>We might need to configure custom buckets if the predefined ones do not work for us.</li>
+</ul>
+</li>
+<li>Use this when<ul>
+<li>we want to later calculate averages or percentiles</li>
+<li>we are not bothered by the exact values and approximations work for us</li>
+<li>we know the range of values beforehand, so we can use the default bucket definitions or define our own buckets</li>
+</ul>
+</li>
+<li>Ex<ul>
+<li>request duration</li>
+<li>payload size</li>
+</ul>
+</li>
+</ul>
+<h4 id="Working-Example">Working Example<a class="headerlink" href="#Working-Example" title="Permanent link">&para;</a></h4>
+<p>If the name of the metric is <code class="language-scdoc highlight">request_duration</code>, then prometheus will automatically create other time_series for the same metric with additonal information; like</p>
+<ul>
+<li><code class="language-scdoc highlight">request_duration_bucket{le=0.005, }</code></li>
+<li><code class="language-scdoc highlight">request_duration_bucket{le=0.01, }</code></li>
+<li><code class="language-scdoc highlight">request_duration_bucket{le=0.025, }</code></li>
+<li><code class="language-scdoc highlight">request_duration_bucket{le=0..05, }</code></li>
+<li><code class="language-scdoc highlight">request_duration_count</code></li>
+<li><code class="language-scdoc highlight">request_duration_sum</code></li>
+</ul>
+<p>The last two <code class="language-scdoc highlight">_sum</code> and <code class="language-scdoc highlight">_count</code> are used to calculate averages and percentiles.</p>
+<h3 id="Summary">Summary<a class="headerlink" href="#Summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Histograms, but a bit complicated and weird.</li>
+<li>Use this mainly when we don't know the buckets beforehand and hence we can not use histograms</li>
+</ul>
+<h2 id="Operations-and-Patterns">Operations and Patterns<a class="headerlink" href="#Operations-and-Patterns" title="Permanent link">&para;</a></h2>
+<h4 id="rate">rate<a class="headerlink" href="#rate" title="Permanent link">&para;</a></h4>
+<p>calculates the per-second average rate of increase of the time series.<br />
+i.e. This gives you the acceleration in the distance-time graph</p>
+<h4 id="Increase">Increase<a class="headerlink" href="#Increase" title="Permanent link">&para;</a></h4>
+<p>calculates the increase in the time series.<br />
+syntactic sugar for <code class="language-tsql highlight"><span class="n">rate</span><span class="p">(</span><span class="n">time_series</span><span class="o">[</span><span class="n">xm</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">xm</span></code></p>
+<p>i.e. This gives you the increase in speed in a distance-time graph.</p>
+<h4 id="Sum">Sum<a class="headerlink" href="#Sum" title="Permanent link">&para;</a></h4>
+<p>For summing over dimensions in a metric. Imagine this as a <code class="language-scdoc highlight">group_by</code> operator.</p>
+<h2 id="Resources">Resources<a class="headerlink" href="#Resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=09bR9kJczKM">https://www.youtube.com/watch?v=09bR9kJczKM</a></li>
+<li><a href="https://www.youtube.com/watch?v=fhx0ehppMGM">https://www.youtube.com/watch?v=fhx0ehppMGM</a></li>
+<li><a href="https://promlabs.com/blog/2020/06/18/the-anatomy-of-a-promql-query/">https://promlabs.com/blog/2020/06/18/the-anatomy-of-a-promql-query/</a></li>
+<li><a href="https://www.robustperception.io/rate-then-sum-never-sum-then-rate/">https://www.robustperception.io/rate-then-sum-never-sum-then-rate/</a></li>
+<li><a href="https://www.robustperception.io/understanding-machine-cpu-usage/">https://www.robustperception.io/understanding-machine-cpu-usage/</a></li>
+<li><a href="https://stackoverflow.com/questions/54494394/do-i-understand-prometheuss-rate-vs-increase-functions-correctly">https://stackoverflow.com/questions/54494394/do-i-understand-prometheuss-rate-vs-increase-functions-correctly</a></li>
+</ul>
 
 
 
