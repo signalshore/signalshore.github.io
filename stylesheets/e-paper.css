@@ -485,9 +485,3 @@
   .MathJax_Display,
   .MathJax_Preview,
   mjx-container,
-  mjx-container[jax="CHTML"],
-  mjx-container[jax="CHTML"][display="true"] {
-    color: var(--ep-white-text) !important;
-    background: transparent !important;
-  }
-}
