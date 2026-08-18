@@ -196,38 +196,6 @@
     border: 1px solid var(--ep-gray);
     font-weight: 500;
   }
-
-  /* Blog feed link on the index page */
-  .md-blog-feed {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0.5em 0 1.5em;
-  }
-
-  .md-blog-feed__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4em;
-    padding: 0.35em 0.9em;
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', monospace;
-    font-size: 0.85em;
-    font-weight: 600;
-    color: var(--ep-black);
-    background-color: #ffffff;
-    border: 2px solid var(--ep-black);
-    text-decoration: none;
-  }
-
-  .md-blog-feed__link:hover {
-    background-color: var(--ep-black);
-    color: var(--ep-white);
-  }
-
-  .md-blog-feed__link svg {
-    width: 1.1em;
-    height: 1.1em;
-    fill: currentColor;
-  }
   
   /* Admonitions - clean bordered boxes */
   .md-typeset .admonition {
@@ -511,19 +479,7 @@
     background-color: transparent;
     border: none;
   }
-
-  /* Blog feed link on the index page */
-  .md-blog-feed__link {
-    color: var(--ep-white-text);
-    background-color: var(--ep-dark-surface);
-    border-color: var(--ep-dark-border);
-  }
-
-  .md-blog-feed__link:hover {
-    background-color: var(--ep-dark-border);
-    color: var(--ep-white-text);
-  }
-
+  
   /* Math expressions */
   .MathJax,
   .MathJax_Display,
