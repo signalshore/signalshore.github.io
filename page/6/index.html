@@ -58,6 +58,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/e-paper.css">
     
+      <link rel="stylesheet" href="../../stylesheets/lightbox.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -979,6 +981,73 @@
       <header class="md-typeset">
         <h1 id="Home">Home<a class="headerlink" href="#Home" title="Permanent link">&para;</a></h1>
       </header>
+      
+      
+        <!--
+  Custom post template that auto-truncates content after N lines
+  and always shows a continue reading link
+-->
+
+<!-- Do not render excerpt for "now" tagged posts -->
+
+<!-- Post excerpt -->
+<article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+
+    <!-- Post authors -->
+    
+
+    <!-- Post metadata -->
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+
+        <!-- Post date -->
+        <li class="md-meta__item">
+          <time datetime="2020-01-12 00:00:00+00:00">January 12, 2020</time></li>
+
+        <!-- Post categories -->
+        
+
+        <!-- Post readtime -->
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+
+      <!-- Draft marker -->
+      
+      
+    </div>
+  </header>
+
+  <!-- Post content -->
+  <div class="md-post__content md-typeset">
+ 
+      <!-- Fallback to auto-truncation logic -->
+      
+      
+      
+        
+        <h2 id="TCP-Proxy-using-plain-BASH"><a class="toclink" href="../../tcp-proxy-using-plain-bash/">TCP Proxy using plain BASH</a></h2>
+<p>I have a fascination for bash based tooling. I prefer awk, sed, grep<br />
+over any fancy tooling. Anyway, recently I have discovered two really<br />
+        
+        <!-- Always show continue reading link for truncated content -->
+        <nav class="md-post__action">
+          <a href="../../tcp-proxy-using-plain-bash/">
+            Continue reading
+          </a>
+        </nav>
+      
+    
+  </div>
+</article>
+
       
         <!--
   Custom post template that auto-truncates content after N lines
@@ -1904,72 +1973,6 @@ we looked at a Turing Machine and the Halting problem.  A Halting<br />
 </article>
 
       
-        <!--
-  Custom post template that auto-truncates content after N lines
-  and always shows a continue reading link
--->
-
-<!-- Do not render excerpt for "now" tagged posts -->
-
-<!-- Post excerpt -->
-<article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-
-    <!-- Post authors -->
-    
-
-    <!-- Post metadata -->
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-
-        <!-- Post date -->
-        <li class="md-meta__item">
-          <time datetime="2018-08-30 00:00:00+00:00">August 30, 2018</time></li>
-
-        <!-- Post categories -->
-        
-
-        <!-- Post readtime -->
-        
-          
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-      </ul>
-
-      <!-- Draft marker -->
-      
-      
-    </div>
-  </header>
-
-  <!-- Post content -->
-  <div class="md-post__content md-typeset">
- 
-      <!-- Fallback to auto-truncation logic -->
-      
-      
-      
-        
-        <h2 id="Turing-Machine-and-Halting-Problem"><a class="toclink" href="../../turing-machine-and-halting-problem/">Turing Machine and Halting Problem</a></h2>
-<p>In a <a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-2.html">previous post</a><br />
-I talked briefly about Alan Turing's model of computation, called the<br />
-        
-        <!-- Always show continue reading link for truncated content -->
-        <nav class="md-post__action">
-          <a href="../../turing-machine-and-halting-problem/">
-            Continue reading
-          </a>
-        </nav>
-      
-    
-  </div>
-</article>
-
-      
       
         
           
@@ -2028,7 +2031,9 @@ I talked briefly about Alan Turing's model of computation, called the<br />
       
         <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
-        <script src="../../overrides/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="../../javascripts/lightbox.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

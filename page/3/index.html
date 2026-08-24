@@ -58,6 +58,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/e-paper.css">
     
+      <link rel="stylesheet" href="../../stylesheets/lightbox.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -980,6 +982,73 @@
         <h1 id="Home">Home<a class="headerlink" href="#Home" title="Permanent link">&para;</a></h1>
       </header>
       
+      
+        <!--
+  Custom post template that auto-truncates content after N lines
+  and always shows a continue reading link
+-->
+
+<!-- Do not render excerpt for "now" tagged posts -->
+
+<!-- Post excerpt -->
+<article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+
+    <!-- Post authors -->
+    
+
+    <!-- Post metadata -->
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+
+        <!-- Post date -->
+        <li class="md-meta__item">
+          <time datetime="2025-10-21 00:00:00+00:00">October 21, 2025</time></li>
+
+        <!-- Post categories -->
+        
+
+        <!-- Post readtime -->
+        
+          
+          <li class="md-meta__item">
+            
+              3 min read
+            
+          </li>
+        
+      </ul>
+
+      <!-- Draft marker -->
+      
+      
+    </div>
+  </header>
+
+  <!-- Post content -->
+  <div class="md-post__content md-typeset">
+ 
+      <!-- Fallback to auto-truncation logic -->
+      
+      
+      
+        
+        <h2 id="Learning-to-be-Human"><a class="toclink" href="../../learning-to-be-human/">Learning to be Human</a></h2>
+<p>Ive spent a LOT of time belong alone; not just in the physical sense but also in the psychological sense.<br />
+I have become an extremely independent person as a result. This <em>super-power</em> comes with its own problems.</p>
+        
+        <!-- Always show continue reading link for truncated content -->
+        <nav class="md-post__action">
+          <a href="../../learning-to-be-human/">
+            Continue reading
+          </a>
+        </nav>
+      
+    
+  </div>
+</article>
+
+      
         <!--
   Custom post template that auto-truncates content after N lines
   and always shows a continue reading link
@@ -1672,72 +1741,6 @@ suited my blogging / notes style. I found TiddlyWiki which is a very good tool,<
 </article>
 
       
-        <!--
-  Custom post template that auto-truncates content after N lines
-  and always shows a continue reading link
--->
-
-<!-- Do not render excerpt for "now" tagged posts -->
-
-<!-- Post excerpt -->
-<article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-
-    <!-- Post authors -->
-    
-
-    <!-- Post metadata -->
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-
-        <!-- Post date -->
-        <li class="md-meta__item">
-          <time datetime="2025-04-21 00:00:00+00:00">April 21, 2025</time></li>
-
-        <!-- Post categories -->
-        
-
-        <!-- Post readtime -->
-        
-          
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-      </ul>
-
-      <!-- Draft marker -->
-      
-      
-    </div>
-  </header>
-
-  <!-- Post content -->
-  <div class="md-post__content md-typeset">
- 
-      <!-- Fallback to auto-truncation logic -->
-      
-      
-      
-        
-        <h2 id="MapTools"><a class="toclink" href="../../maptools/">MapTools</a></h2>
-<p>A list of all the tools that I use to play with maps and gpx files. This assumes that you are familiar with <a href="https://www.openstreetmap.org/about">OpenStreetMaps</a>.</p>
-<p>Some of these tools are proprietary and some are FOSS. I generally prefer to use FOSS tools whenever I can.<br />
-        
-        <!-- Always show continue reading link for truncated content -->
-        <nav class="md-post__action">
-          <a href="../../maptools/">
-            Continue reading
-          </a>
-        </nav>
-      
-    
-  </div>
-</article>
-
-      
       
         
           
@@ -1796,7 +1799,9 @@ suited my blogging / notes style. I found TiddlyWiki which is a very good tool,<
       
         <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
-        <script src="../../overrides/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="../../javascripts/lightbox.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

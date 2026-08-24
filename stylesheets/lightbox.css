@@ -1,0 +1,101 @@
+/* Site Lightbox - fullscreen photo viewer
+   Matches the e-paper theme: sharp corners, Solarized palette. */
+
+.lb-img {
+  cursor: zoom-in;
+}
+
+.lb-open {
+  overflow: hidden;
+}
+
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lb-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.lb-stage {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 94vw;
+  max-height: 94vh;
+  gap: 0.75rem;
+  touch-action: pan-y;
+}
+
+.lb-img-full {
+  max-width: 92vw;
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background-color: #ffffff;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
+}
+
+.lb-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 2.5rem;
+}
+
+.lb-caption {
+  margin: 0;
+  max-width: 85vw;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #fdf6e3;
+}
+
+.lb-counter {
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Code",
+    "Droid Sans Mono", monospace;
+  font-size: 0.8rem;
+  color: #93a1a1;
+  font-variant-numeric: tabular-nums;
+}
+
+.lb-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lb-controls button {
+  min-width: 2.5rem;
+  padding: 0.4rem 0.7rem;
+  background-color: transparent;
+  border: 1px solid #586e75;
+  color: #fdf6e3;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.lb-controls button:hover:not(:disabled) {
+  background-color: rgba(253, 246, 227, 0.12);
+  border-color: #fdf6e3;
+}
+
+.lb-controls button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.lb-close {
+  margin-left: 1rem;
+}
